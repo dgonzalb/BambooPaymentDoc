@@ -1,0 +1,254 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      .markdown-section pre {
+        font-family: "PT Mono", monospace !important;
+        font-size: 12px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 19px;
+        letter-spacing: normal;
+        color: #d2ea7a !important;
+      }
+    </style>
+  </head>
+</head>
+
+<body>
+  <!-- Tab links -->
+  <ul class="nav nav-tabs tab bbtab">
+    <li id="defaultOpen" class="tablinks" onclick="openRequestType(event, 'ccards'); return false">
+      <a class="nav-link active" href="#ccards">Cards</a>
+    </li>
+    <li class="nav-item tablinks" onclick="openRequestType(event, 'dredirect'); return false">
+      <a class="nav-link" href="dredirect">Debit Redirect</a>
+    </li>
+    <li class="nav-item tablinks" onclick="openRequestType(event, 'cash'); return false">
+      <a class="nav-link" href="#cash">Cash</a>
+    </li>
+    <li class="nav-item nav-item tablinks" onclick="openRequestType(event, 'banktransfer'); return false">
+      <a class="nav-link" href="#banktransfer">Bank Transfer</a>
+    </li>
+    <li class="nav-item tablinks" onclick="openRequestType(event, 'ewallet') ; return false">
+      <a class="nav-link" href="#ewallet">eWallet</a>
+    </li>
+    <li class="nav-item tablinks" onclick="openRequestType(event, 'loyalty') ; return false">
+      <a class="nav-link" href="#loyalty">Loyalty</a>
+    </li>
+    <li class="nav-item tablinks" onclick="openRequestType(event, 'paymentpage') ; return false">
+      <a class="nav-link" href="#v">Payment Page</a>
+    </li>
+  </ul>
+  <div id="bodybuilderbody">
+    <div id="ccards" class="tabcontent">
+      <form id="ccards">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="cardsrequestypebullets"><label for="paymentcc"><input type="radio" name="requesttype" value="Payment" id="paymentcc" checked="checked"> Payment</label><label for="authorizecc"><input type="radio" name="requesttype" value="Authorize" id="authorizecc"> Authorize</label><label for="capturecc"><input type="radio" name="requesttype" value="Capture" id="capturecc"> Capture</label><label for="chargecc"><input type="radio" name="requesttype" value="Charge" id="chargecc"> Charge</label><label for="creditcc"><input type="radio" name="requesttype" value="Credit" id="creditcc"> Credit</label><label for="voidcc"><input type="radio" name="requesttype" value="Void" id="voidcc"> Void</label><label for="refundcc"><input type="radio" name="requesttype" value="Refund" id="refundcc"> Refund</label><label for="tokencc"><input type="radio" name="requesttype" value="Token" id="tokencc"> Token</label></div>
+        </div>
+      </form>
+      <form>
+        <div class="provider-container">
+          <p class="selectproviders">
+            <b>Select providers</b>
+          </p>
+          <p>
+            <div class="providercolumns" id="cardproviders"><label for="alfabankcc"><input type="checkbox" id="alfabankcc" class=" Alfa-Bank" name="alfabankcc" value="alfabank"> Alfa-Bank</label><br><label for="braintreecc"><input type="checkbox" id="braintreecc" class=" Braintree" name="braintreecc" value="braintree"> Braintree</label><br><label for="chasepaymentechcc"><input type="checkbox" id="chasepaymentechcc" class=" Chase Paymentech" name="chasepaymentechcc" value="chasepaymentech"> Chase Paymentech</label><br><label for="credoraxcc"><input type="checkbox" id="credoraxcc" class=" Credorax" name="credoraxcc" value="credorax"> Credorax</label><br><label for="cybersourcecc"><input type="checkbox" id="cybersourcecc" class=" CyberSource" name="cybersourcecc" value="cybersource"> CyberSource</label><br><label for="dalenyscc"><input type="checkbox" id="dalenyscc" class=" Dalenys" name="dalenyscc" value="dalenys"> Dalenys</label><br><label for="payeasecupcc"><input type="checkbox" id="payeasecupcc" class=" Payease CUP" name="payeasecupcc" value="payeasecup"> Payease CUP</label><br><label for="payeezycc"><input type="checkbox" id="payeezycc" class=" Payeezy" name="payeezycc" value="payeezy"> Payeezy</label><br><label for="payuargentinacc"><input type="checkbox" id="payuargentinacc" class=" PayU Argentina" name="payuargentinacc" value="payuargentina"> PayU Argentina</label><br><label for="payubrazilcc"><input type="checkbox" id="payubrazilcc" class=" PayU Brazil" name="payubrazilcc" value="payubrazil"> PayU Brazil</label><br><label for="payuchilecc"><input type="checkbox" id="payuchilecc" class=" PayU Chile" name="payuchilecc" value="payuchile"> PayU Chile</label><br><label for="payucitrusindiacc"><input type="checkbox" id="payucitrusindiacc" class=" PayU Citrus (India)" name="payucitrusindiacc" value="payucitrusindia"> PayU Citrus (India)</label><br><label for="payucolombiacc"><input type="checkbox" id="payucolombiacc" class=" PayU Colombia" name="payucolombiacc" value="payucolombia"> PayU Colombia</label><br><label for="payuindiacc"><input type="checkbox" id="payuindiacc" class=" PayU India" name="payuindiacc" value="payuindia"> PayU India</label><br><label for="payukenyacc"><input type="checkbox" id="payukenyacc" class=" PayU Kenya" name="payukenyacc" value="payukenya"> PayU Kenya</label><br><label for="payumexicocc"><input type="checkbox" id="payumexicocc" class=" PayU Mexico" name="payumexicocc" value="payumexico"> PayU Mexico</label><br><label for="payunigeriacc"><input type="checkbox" id="payunigeriacc" class=" PayU Nigeria" name="payunigeriacc" value="payunigeria"> PayU Nigeria</label><br><label for="payupanamacc"><input type="checkbox" id="payupanamacc" class=" PayU Panama" name="payupanamacc" value="payupanama"> PayU Panama</label><br><label for="payuperucc"><input type="checkbox" id="payuperucc" class=" PayU Peru" name="payuperucc" value="payuperu"> PayU Peru</label><br><label for="payuromaniacc"><input type="checkbox" id="payuromaniacc" class=" PayU Romania" name="payuromaniacc" value="payuromania"> PayU Romania</label><br><label for="payurussiacc"><input type="checkbox" id="payurussiacc" class=" PayU Russia" name="payurussiacc" value="payurussia"> PayU Russia</label><br><label for="payusingleplatformcc"><input type="checkbox" id="payusingleplatformcc" class=" PayU Single Platform" name="payusingleplatformcc" value="payusingleplatform"> PayU Single Platform</label><br><label for="payusouthafricacc"><input type="checkbox" id="payusouthafricacc" class=" PayU South Africa" name="payusouthafricacc" value="payusouthafrica"> PayU South Africa</label><br><label for="payuturkeycc"><input type="checkbox" id="payuturkeycc" class=" PayU Turkey" name="payuturkeycc" value="payuturkey"> PayU Turkey</label><br><label for="rsbcc"><input type="checkbox" id="rsbcc" class=" RSB" name="rsbcc" value="rsb"> RSB</label><br><label for="safechargecc"><input type="checkbox" id="safechargecc" class=" SafeCharge" name="safechargecc" value="safecharge"> SafeCharge</label><br><label for="sberbankcc"><input type="checkbox" id="sberbankcc" class=" Sberbank" name="sberbankcc" value="sberbank"> Sberbank</label><br><label for="shvacc"><input type="checkbox" id="shvacc" class=" Shva" name="shvacc" value="shva"> Shva</label><br><label for="stripecc"><input type="checkbox" id="stripecc" class=" Stripe" name="stripecc" value="stripe"> Stripe</label><br><label for="vantivcc"><input type="checkbox" id="vantivcc" class=" Vantiv" name="vantivcc" value="vantiv"> Vantiv</label><br><label for="wirecardcc"><input type="checkbox" id="wirecardcc" class=" Wirecard" name="wirecardcc" value="wirecard"> Wirecard</label><br><label for="worldpayeucc"><input type="checkbox" id="worldpayeucc" class=" WorldPay" name="worldpayeucc" value="worldpayeu"> WorldPay</label><br></div>
+          </p>
+        </div>
+      </form>
+    </div>
+    <div id="dredirect" class="tabcontent"></div>
+    <div id="cash" class="tabcontent"></div>
+    <div id="banktransfer" class="tabcontent"></div>
+    <div id="ewallet" class="tabcontent"></div>
+    <div id="loyalty" class="tabcontent"></div>
+    <div id="paymentpage" class="tabcontent"></div>
+
+    <input type="checkbox" name="" value="" id="optionalscheckbox">
+    <label for="optionalscheckbox">Include optional fields in the output</label>
+
+    <label id="three_ds_checkbox" for="three_ds_input" style="display:none"><input id="three_ds_input" type="checkbox" name="" value="" disabled> Show 3DS 2 Internal fields</label>
+
+  </div>
+  <p>
+    <button id="analyze">Generate POST Request Body</button>
+    <script>
+      $(document).ready(function () {
+        // $('#three_ds_checkbox').prop( "disabled", true );
+
+        $("#analyze").click(function () {
+
+          if (sessionStorage.getItem("fileloadstatus") == "filesloadedok") {
+
+            var noOptionsSelected = (($("input:checked").val() == "") || (bodyBuilder.providers.length == 0))
+            var noBankTransferPaymentMethodSelected = ($('.banktransferpaymentmethods').is(":visible") && bodyBuilder.bankTransferPaymentMethod == null)
+            var noWalletPaymentMethodSelected = ($('.ewalletpaymentmethods').is(":visible") && bodyBuilder.eWalletPaymentMethod == null)
+            var noLoyaltyPaymentMethodSelected = ($('.loyaltypaymentmethods').is(":visible") && bodyBuilder.loyaltyPaymentMethod == null)
+            var noCashPaymentMethodSelected = ($('.cashpaymentmethods').is(":visible") && bodyBuilder.cashPaymentMethod == null)
+            var noDebitRediectPaymentMethodSelected = ($('.dredirectpaymentmethods').is(":visible") && bodyBuilder.dredirectPaymentMethod == null)
+
+            // there's already an output shown, clear it
+            bodyBuilder.checkBoxNames = [];
+            $('#outputsummarymessage').empty();
+            $('#custommessage').empty();
+            $('#ciResponseText').empty();
+            $(".fieldTables").empty();
+            $(".headerTables").empty();
+
+            // First check that request type is selected and at least one provider
+            if (noOptionsSelected || noBankTransferPaymentMethodSelected || noWalletPaymentMethodSelected || noLoyaltyPaymentMethodSelected || noCashPaymentMethodSelected || noDebitRediectPaymentMethodSelected) {
+
+              var noselectionmessage = document.getElementById('ciResponseText');
+
+              noselectionmessage.innerHTML = noProviderSelectedMessage
+
+              if (noBankTransferPaymentMethodSelected || noWalletPaymentMethodSelected || noLoyaltyPaymentMethodSelected || noCashPaymentMethodSelected || noDebitRediectPaymentMethodSelected) {
+
+                noselectionmessage.innerHTML = noPaymentMethodSelectedMessage
+
+              }
+
+            }
+            else {
+
+              // Get the checkbox names so you can show them in the output message
+              $(".provider-container :checked").each(function (i) {
+                bodyBuilder.checkBoxNames.push($(this).attr('class'))
+              });
+
+              $(".radiobuttons-providers-container :checked").each(function (i) {
+                bodyBuilder.checkBoxNames.push($(this).attr('class'))
+              });
+
+              // Load the file with the complete request structure
+              // The completerequestbody is loaded when the user selects
+              // a request type from the requesttypelist
+              // Show spinner as we get to work
+              $('#headerExample').addClass('spinner');
+              $('#ciResponseText').addClass('spinner');
+
+              $.getJSON(bodyBuilder.completerequestbody, function (result) {
+                bodyBuilder.completerequestjson = JSON.stringify(result);
+
+                // Start iterating over the request body
+                IterateCompleteRequestBody(bodyBuilder.completerequestjson);
+
+                if (bodyBuilder.ruleFields.length > 0) {
+                  checkRules();
+                }
+
+                if (!bodyBuilder.keepOptionals) {
+                  bodyBuilder.toremove = bodyBuilder.toremove.concat(bodyBuilder.optionalFields)
+                }
+
+                // Completed iterating; remove non-mandatory fields
+                bodyBuilder.completeRequestJSONObject = JSON.parse(bodyBuilder.completerequestjson)
+                removefields();
+
+                showoutput(function () {
+
+                  $('#headerExample').removeClass('spinner');
+                  $('#ciResponseText').removeClass('spinner');
+
+
+                });
+
+
+              });
+            }
+          }
+
+          else {
+
+            var filesLoadError = document.getElementById('ciResponseText');
+            filesLoadError.innerHTML = "Oops! Something went wrong. Please try again."
+          }
+
+        });
+      });
+    </script>
+    <div id="outputsummarymessage"> </div>
+    <div id="custommessage">
+  </div></p>
+  <p>
+
+    <pre id="headerExample">Sample header will be displayed here</pre>
+    </p><p></p>
+    <pre id="ciResponseText">Output will de displayed here.</pre>
+
+    <script>
+
+      var $checkboxes = $(".provider-container :checkbox");
+      $checkboxes.on("change", function () {
+        bodyBuilder.providers = new Array();
+
+        $(".provider-container :checked").each(function (i) {
+          bodyBuilder.providers[i] = $(this).val();
+          bodyBuilder.checkBoxNames.push($(this).attr('class'))
+          showHideThreeDsTwoCheckbox();
+
+        });
+      });
+
+      // Handle selection of Cards request type
+      $("#cardsrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#ccards').val())
+        bodyBuilder.requesttype = $("input:checked", '#ccards').val()
+        clearSelectionOnRequestChange();
+        disableProviders();
+      });
+
+      // Check if include optional fields is checked
+      var $optionalscheckbox = $("#optionalscheckbox");
+      $optionalscheckbox.on("change", function () {
+        if ($('#optionalscheckbox').is(':checked')) {
+           bodyBuilder.keepOptionals = true
+           showHideThreeDsTwoCheckbox();
+        }
+        
+        else { 
+          bodyBuilder.keepOptionals = false
+          showHideThreeDsTwoCheckbox();
+        }
+      });
+
+
+      // Check if threeds fields is checked
+      $('#three_ds_input').on("change", function () {
+        if ($('#three_ds_input').is(':checked')) {
+           bodyBuilder.keepThreeDs = true 
+        } 
+
+        else {
+          bodyBuilder.keepThreeDs = false
+        }
+      });
+     
+    </script>
+
+    <script>
+      var noProviderSelectedMessage = "No providers selected. Select at least one provider."
+
+      var noPaymentMethodSelectedMessage = "No payment method selected. Select a payment method."
+
+    </script>
+
+    <script type="text/javascript">
+
+      document.getElementById("defaultOpen").click();
+
+    </script>
+
+</body>
+
+</html>

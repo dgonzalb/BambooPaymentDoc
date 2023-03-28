@@ -1,0 +1,76 @@
+
+/* table.customtable {
+    width: 80%;
+    display: table;
+} */
+
+.customtable {
+  /* display: table !important; */
+  max-width: 80%;
+}
+.request-table-intro {
+  padding: 10px;
+}
+/**
+ * Tooltip Styles
+ */
+ .table-tooltip {
+   /* padding: 0.2em; */
+   margin-bottom: 4px;
+   padding-right: 0.2em;
+ }
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none; }
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 19px;
+  padding: 13px 16px;
+  width: 160px;
+  border-radius: 3px;
+  background-color: red;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 0.88em;
+  font-weight: 500;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute; 
+  bottom: 50%;
+  left: 26%;
+  margin-left: -136px;
+  margin-bottom: 10px;
+  width: 0;
+  content: " ";
+  font-size: 0;
+  line-height: 0; }
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1; }
+
+
+ .tooltip
+{
+
+ position: relative;
+}
+
+.tooltipicon {
+ 
+}
+
+.tooltipiconPosition {
+  padding: 4px 4px 0px 0px;
+  position: relative;
+  top: 1px;
+}

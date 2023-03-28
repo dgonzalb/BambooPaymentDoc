@@ -1,0 +1,91 @@
+<html>
+  <head>
+   <script language="JavaScript" type="text/javascript" src="https://js.paymentsos.com/v2/la%74est/secure-fields.min.js"></script>
+   <script language="JavaScript" type="text/javascript" src="/json-viewer.js"></script>
+   <script>
+     function setPublicKey() {
+         var input = document.getElementById("publickey").value;
+
+         if (input) {
+         document.getElementById("publickey").disabled = true;
+         document.getElementById("publickey").style.background = "grey";
+
+         POS.setPublicKey(input);
+         POS.disableLuhnValidation();
+         POS.initSecureFields('card-secure-fields');
+
+         var newp = document.createElement('p');
+         newp.id = 'ptext';
+         document.getElementById("setkey").appendChild(newp);
+         document.getElementById("ptext").innerHTML = "Refresh your browser window if you need to set your key again!";
+        }
+     }
+   </script>
+
+  </head>
+  <body>
+  <div class="payment-form-wrapper">  
+  <form id="setkey">
+  <label class="secformlabel">
+    <span>Public Key</span>
+    <input id="publickey" class="field" placeholder="Public Key from your Test Environment" value = "" onfocusout="setPublicKey()" />
+  </label>
+  </form>
+  <form id="payment-form">
+    <div class="group">
+      <label class="secformlabel">
+        <span>Name</span>
+        <input id="cardholder-name" class="field" placeholder="John Doe" />
+      </label>
+      <label class="secformlabel">
+        <span>Phone</span>
+        <input id="phone" class="field" placeholder="(123) 456-7890" type="tel" />
+      </label>
+    </div>
+    <div class="group">
+      <label class="secformlabel">
+        <span>Card</span>
+        <div id="card-secure-fields" class="field"></div>
+      </label>
+    </div>
+    <button type="submit">Create Token</button>
+  </form>
+</div>
+
+  <script>
+
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const additionalData = {
+        holder_name: document.getElementById('cardholder-name').value // This field is mandatory
+        }
+          POS.createToken(additionalData, function(result) {
+
+            if (document.getElementById("json")!=null){
+              var element = document.getElementById("json");
+              element.parentNode.removeChild(element);
+            }
+
+            var newdiv = document.createElement('div');
+            newdiv.id = 'json';
+            newdiv.style = "padding-top:10px !important;";
+
+            document.getElementById("payment-form").appendChild(newdiv);
+
+              var list = document.getElementById("json");
+              if (list.hasChildNodes()) {
+                  list.removeChild(list.childNodes[0]);
+              }
+
+             var jsonViewer = new JSONViewer();
+             document.querySelector("#json").appendChild(jsonViewer.getContainer());
+             jsonViewer.showJSON(JSON.parse(result), -1, -1);
+
+
+      });
+    });
+  </script>
+  <script>
+</script>
+  </body>
+</html>

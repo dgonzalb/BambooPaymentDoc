@@ -1,0 +1,74 @@
+<head>
+
+    
+
+
+</head>
+
+<body>
+    <ul class="nav nav-tabs tab bbtab"><li id="defaultOpenRequests" onclick="openSpecRequests(event,'ccards_requests'); return false"><a class="nav-link tablinksrequests active" href="#ccards_requests">Cards</a></li><li id="defaultOpenRequests" onclick="openSpecRequests(event,'cash_requests'); return false"><a class="nav-link tablinksrequests active" href="#cash_requests">Cash</a></li><li id="defaultOpenRequests" onclick="openSpecRequests(event,'banktransfer_requests'); return false"><a class="nav-link tablinksrequests active" href="#banktransfer_requests">Bank Transfer</a></li></ul>
+    <div id="requesttable">
+            <div id="ccards_requests" class="tabcontentrequests"><div class="request-table-intro">Supported requests for card transactions.</div><table class="customtable table"><thead class="thead-dark"><tr><th class="string">Request</th><th class="string">Partial/Multiple</th><th class="string">Mode</th><th class="string">Notes</th></tr></thead><tbody><tr><td class="string">Charge</td><td class="string"> Not Applicable</td><td class="string">Asynchronous or Synchronous</td><td class="string">The request can be synchronous or asynchronous, depending on your setup.</td></tr><tr><td class="string">Refund</td><td class="string"> Partial is supported</td><td class="string">Asynchronous</td><td class="string">Partial refunds require that you send unique partial refund requests.</td></tr></tbody></table></div>
+            <div id="dredirect_requests" class="tabcontentrequests"></div>
+            <div id="cash_requests" class="tabcontentrequests"><div class="request-table-intro">Supported requests for cash transactions.</div><table class="customtable table"><thead class="thead-dark"><tr><th class="string">Request</th><th class="string">Partial/Multiple</th><th class="string">Mode</th></tr></thead><tbody><tr><td class="string">Charge</td><td class="string"> Not Applicable</td><td class="string">Asynchronous</td></tr></tbody></table></div>
+            <div id="banktransfer_requests" class="tabcontentrequests"><div class="request-table-intro">Supported requests for bank transfer transactions.</div><table class="customtable table"><thead class="thead-dark"><tr><th class="string">Request</th><th class="string">Partial/Multiple</th><th class="string">Mode</th></tr></thead><tbody><tr><td class="string">Charge</td><td class="string"> Not Applicable</td><td class="string">Asynchronous</td></tr></tbody></table></div>
+            <div id="ewallet_requests" class="tabcontentrequests"></div>
+            <div id="loyalty_requests" class="tabcontentrequests"></div>
+
+            <div id="paymentpage_requests" class="tabcontentrequests"></div>
+    </div>
+    <script>
+      
+        document.getElementById("defaultOpenRequests").click();        
+
+        function openSpecRequests(evt, type) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontentrequests");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+    
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinksrequests");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(type).style.display = "block";
+            let el = evt.currentTarget.querySelector('.tablinksrequests');
+            if (el) {
+                el.classList.add('active');
+            }
+        }
+
+        function openSpecPaymentMethods(evt, type) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontentpaymentmethods");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(type).style.display = "block";
+            let el = evt.currentTarget.querySelector('.tablinks');
+            if (el) {
+                el.classList.add('active');
+            }
+        }
+    </script>
+
+
+</body>

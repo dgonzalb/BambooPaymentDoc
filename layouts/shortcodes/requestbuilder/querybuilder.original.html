@@ -1,0 +1,522 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./requestbuilder/mainflowhelpers.js"></script>
+    <script src="./requestbuilder/loadinputfilesv9.js"></script>
+    <script src="./requestbuilder/requestbodies/modifyauthchargecreditrequestjson.js"></script>
+    <script src="./requestbuilder/iteraterequestbodyv6.js"></script>
+    <script src="./requestbuilder/checkstatusperkeyv5.js"></script>
+    <script src="./requestbuilder/removefieldsv3.js"></script>
+    <script src="./requestbuilder/showoutputv6.js"></script>
+    <script src="./requestbuilder/messages/custommessagesv6.js"></script>
+    <script src="./requestbuilder/messages/stringsv7.js"></script>
+    <script src="./requestbuilder/rules/checkrulesv4.js"></script>
+    <script src="./requestbuilder/rules/parentrulesv2.js"></script>
+    <script src="./requestbuilder/rules/levelonerulesv1.js"></script>
+    <script src="./requestbuilder/orderfieldsintable.js"></script>
+    <script src="./requestbuilder/buildfieldstablev7.js"></script>
+    <script src="./requestbuilder/buildheadertable.js"></script>
+    <script src="./requestbuilder/configlookups/unsupportedrequests.js"></script>
+    <script src="./requestbuilder/configlookups/ipaddressheader.js"></script>
+    <script src="./requestbuilder/fielddescriptions/headerfielddescriptions.js"></script>
+    <style>
+      .markdown-section pre {
+        font-family: "PT Mono", monospace !important;
+        font-size: 12px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 19px;
+        letter-spacing: normal;
+        color: #d2ea7a !important;
+      }
+      
+    </style>
+  </head>
+</head>
+
+<body>
+  <!-- Tab links -->
+  <div class="tab bbtab">
+    <button id="defaultOpen" class="tablinks" onclick="openRequestType(event, 'ccards')">Cards</button>
+    <button class="tablinks" onclick="openRequestType(event, 'dredirect')">Debit Redirect</button>
+    <button class="tablinks" onclick="openRequestType(event, 'cash')">Cash</button>
+    <button class="tablinks" onclick="openRequestType(event, 'banktransfer')">Bank Transfer</button>
+    <button class="tablinks" onclick="openRequestType(event, 'ewallet')">eWallet</button>
+  </div>
+  <div id="bodybuilderbody">
+    <div id="ccards" class="tabcontent">
+      <form id="ccards">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="cardsrequestypebullets">
+            <label for="payment">
+              <input type="radio" name="requesttype" value="Payment" id="paymentcc" checked="checked"> Payment</label>
+            <label for="authorize">
+              <input type="radio" name="requesttype" value="Authorize" id="authorize"> Authorize</label>
+            <label for="capture">
+              <input type="radio" name="requesttype" value="Capture" id="capture"> Capture</label>
+            <label for="charge">
+              <input type="radio" name="requesttype" value="Charge" id="charge"> Charge</label>
+            <label for="credit">
+              <input type="radio" name="requesttype" value="Credit" id="credit"> Credit</label>
+            <label for="void">
+              <input type="radio" name="requesttype" value="Void" id="void"> Void</label>
+            <label for="refund">
+              <input type="radio" name="requesttype" value="Refund" id="refund"> Refund</label>
+            <label for="token">
+              <input type="radio" name="requesttype" value="Token" id="token"> Token</label>
+          </div>
+        </div>
+      </form>
+      <form>
+        <div class="provider-container">
+          <p class="selectproviders">
+            <b>Select providers</b>
+            <p>
+              <div class="providercolumns">
+                <input type="checkbox" id= "alfabank" class=' Alfa-Bank' name="alfabank" value="alfabank"> Alfa-Bank
+                <br>
+                <input type="checkbox" id="braintree" class=' Braintree' name="braintree" value="braintree"> Braintree
+                <br>
+                <input type="checkbox" id="chasepaymentech" class=' Chase Paymentech' name="chasepaymentech" value="chasepaymentech"> Chase Paymentech
+                <br>
+                <input type="checkbox" id="credorax" class=' Credorax' name="credorax" value="credorax"> Credorax
+                <br>
+                <input type="checkbox" id="cybersource" class=' CyberSource' name="cybersource" value="cybersource"> CyberSource
+                <br>
+                <input type="checkbox" id="payeasecup" class=' Payease CUP' name="payeasecup" value="payeasecup"> Payease CUP
+                <br>
+                <input type="checkbox" id="payuargentina" class=' PayU Argentina' name="payuargentina" value="payuargentina"> PayU Argentina
+                <br>
+                <input type="checkbox" id="payubrazil" class=' PayU Brazil' name="payubrazil" value="payubrazil"> PayU Brazil
+                <br>
+                <input type="checkbox" id="payuchile" class=' PayU Chile' name="payuchile" value="payuchile"> PayU Chile
+                <br>
+                <input type="checkbox" id="payucitrusindia" class=' PayU Citrus (India)' name="payucitrusindia" value="payucitrusindia"> PayU Citrus (India)
+                <br>
+                <input type="checkbox" id="payucolombia" class=' PayU Colombia' name="payucolombia" value="payucolombia"> PayU Colombia
+                <br>
+                <input type="checkbox" id="payuindia" class=' PayU India' name="payuindia" value="payuindia"> PayU India
+                <br>
+                <input type="checkbox" id="payumexico" class=' PayU Mexico' name="payumexico" value="payumexico"> PayU Mexico
+                <br>
+                <input type="checkbox" id="payunigeria" class=' PayU Nigeria' name="payunigeria" value="payunigeria"> PayU Nigeria
+                <br>
+                <input type="checkbox" id="payupanama" class=' PayU Panama' name="payupanama" value="payupanama"> PayU Panama
+                <br>
+                <input type="checkbox" id="payuperu" class=' PayU Peru' name="payuperu" value="payuperu"> PayU Peru
+                <br>
+                <input type="checkbox" id="payuromania" class=' PayU Romania' name="payuromania" value="payuromania"> PayU Romania
+                <br>
+                <input type="checkbox" id="payurussia" class=' PayU Russia' name="payurussia" value="payurussia"> PayU Russia
+                <br>
+                <input type="checkbox" id="payusingleplatform" class=' PayU Single Platform' name="payusingleplatform" value="payusingleplatform"> PayU Single Platform
+                <br>
+                <input type="checkbox" id="payusouthafrica" class=' PayU South Africa' name="payusouthafrica" value="payusouthafrica"> PayU South Africa
+                <br>
+                <input type="checkbox" id="payuturkey" class=' PayU Turkey' name="payuturkey" value="payuturkey"> PayU Turkey
+                <br>
+                <input type="checkbox" id="rsb" class=' Russian Standard Bank (RSB)' name="rsb" value="rsb"> Russian Standard Bank (RSB)
+                <br>
+                <input type="checkbox" id="safecharge" class=' SafeCharge' name="safecharge" value="safecharge"> SafeCharge
+                <br>
+                <input type="checkbox" id="sberbank" class=' Sberbank' name="sberbank" value="sberbank"> Sberbank
+                <br>
+                <input type="checkbox" id="shva" class=' Shva' name="shva" value="shva"> Shva
+                <br>
+                <input type="checkbox" id="stripe" class=' Stripe' name="stripe" value="stripe"> Stripe
+                <br>
+                <input type="checkbox" id="vantiv" class=' Vantiv' name="vantiv" value="vantiv"> Vantiv
+                <br>
+                <input type="checkbox" id="wirecard" class=' Wirecard' name="wirecard" value="wirecard"> Wirecard
+                <br>
+                <input type="checkbox" id="worldpayeu" class=' Worldpay EU' name="worldpayeu" value="worldpayeu"> Worldpay EU
+                <br>
+              </div>
+        </div>
+      </form>
+    </div>
+    <div id="dredirect" class="tabcontent">
+      <form id="dredirect">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="dredirectrequestypebullets">
+            <label for="payment">
+              <input type="radio" name="requesttype" value="Payment" id="paymentapm" checked="checked"> Payment</label>
+            <label for="charge">
+              <input type="radio" name="requesttype" value="Charge" id="charge"> Charge</label>
+          </div>
+        </div>
+      </form>
+      <form>
+        <div class="radiobuttons-providers-container">
+          <p>
+            <b>Select providers</b>
+            <p>
+              <div class="providercolumns">
+                <input type="radio" class=' PayU Chile' name="provider" value="payuchile"> PayU Chile
+                <br>
+              </div>
+        </div>
+      </form>
+    </div>
+    <div id="cash" class="tabcontent">
+      <form id="cash">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="cashrequestypebullets">
+            <label for="payment">
+              <input type="radio" name="requesttype" value="Payment" id="paymentcash" checked="checked"> Payment</label>
+            <label for="charge">
+              <input type="radio" name="requesttype" value="Charge" id="charge"> Charge</label>
+          </div>
+        </div>
+        <!-- <input type="checkbox" name="" value="" id="optionalscheckbox">
+          <label for="optionalscheckbox">Include optional fields in the output</label> -->
+      </form>
+      <form>
+        <div class="radiobuttons-providers-container">
+          <p>
+            <b>Select providers</b>
+            <p>
+              <div class="providercolumns">
+                <input type="radio" class=' PayU Argentina' name="provider" value="payuargentina"> PayU Argentina
+                <br>
+                <input type="radio" class=' PayU Brazil' name="provider" value="payubrazil"> PayU Brazil
+                <br>
+                <input type="radio" class=' PayU Chile' name="provider" value="payuchile"> PayU Chile
+                <br>
+                <input type="radio" class=' PayU Colombia' name="provider" value="payucolombia"> PayU Colombia
+                <br>
+                <input type="radio" class=' PayU Mexico' name="provider" value="payumexico"> PayU Mexico
+                <br>
+                <input type="radio" class=' PayU Peru' name="provider" value="payuperu"> PayU Peru
+                <br>
+              </div>
+        </div>
+      </form>
+    </div>
+    <div id="banktransfer" class="tabcontent">
+      <form id="banktransfer">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="btrequestypebullets">
+            <label for="payment">
+              <input type="radio" name="requesttype" value="Payment" id="paymentbanktransfer" checked="checked"> Payment</label>
+            <label for="authorize">
+              <input type="radio" name="requesttype" value="Authorize" id="authorize"> Authorize</label> 
+            <label for="charge">
+              <input type="radio" name="requesttype" value="Charge" id="charge"> Charge</label>
+            <label for="refund">
+              <input type="radio" name="requesttype" value="Refund" id="refund"> Refund</label>
+          </div>
+        </div>
+      </form>
+      <form>
+        <div class="radiobuttons-providers-container">
+          <p class="selectproviders">
+            <b>Select providers</b>
+            <p>
+              <div class="providercolumns">
+                <input type="radio" id="payucitrusindia" class=' PayU Citrus (India)' name="provider" value="payucitrusindia"> PayU Citrus (India)
+                <br>
+                <input id="payucolombia" type="radio" class=' PayU Colombia' name="provider" value="payucolombia"> PayU Colombia
+                <br>
+                <input id="payurussia" type="radio" class=' PayU Russia' name="provider" value="payurussia"> PayU Russia
+                <br>
+                <input id="payusingleplatform" type="radio" class=' PayU Single Platform' name="provider" value="payusingleplatform"> PayU Single Platform
+                <br>
+                <input id="payuturkey" type="radio" class=' PayU Turkey' name="provider" value="payuturkey"> PayU Turkey
+                <br>
+              </div>
+        </div>
+        <div class="banktransferpaymentmethods" style="display:none">
+          <p>
+            <b>Select payment method</b>
+          </p>
+          <div id="banktrpayucitrusindia" class="providercolumns" style="display:none">
+            <input type="radio" name="banktrpaymentmethod" value="netbanking"> Netbanking
+            <br>
+            <input type="radio" name="banktrpaymentmethod" value="upi"> UPI
+            <br>
+          </div>
+
+          <div id="banktrpayuturkey" class="providercolumns" style="display:none">
+            <input type="radio" name="banktrpaymentmethod" value="bkm"> BKM
+            <br>
+            <input type="radio" name="banktrpaymentmethod" value="upt"> UPT
+            <br>
+            <input type="radio" name="banktrpaymentmethod" value="compay"> COMPAY
+            <br>
+            <input type="radio" name="banktrpaymentmethod" value="wire"> WIRE
+            <br>
+          </div>
+
+          <div id="banktrpayurussia" class="providercolumns" style="display:none">
+            <input type="radio" name="banktrpaymentmethod" value="qiwi"> QIWI
+            <br>
+          </div>
+
+          <div id="banktrpayusingleplatform" class="providercolumns" style="display:none">
+            <input type="radio" name="banktrpaymentmethod" value="PBL"> PBL
+            <br>
+            <input type="radio" name="banktrpaymentmethod" value="payment_wall"> payment_wall
+            <br>
+          </div>
+
+        </div>
+      </form>
+    </div>
+    <div id="ewallet" class="tabcontent">
+      <form id="ewallet">
+        <div>
+          <p>
+            <b>Select request type</b>
+          </p>
+          <div class="requestypebullets" id="ewalletrequestypebullets">
+            <label for="payment">
+              <input type="radio" name="requesttype" value="Payment" id="paymentewallet" checked="checked"> Payment</label>
+            <label for="authorize">
+              <input type="radio" name="requesttype" value="Authorize" id="authorize"> Authorize</label>
+            <label for="capture">
+              <input type="radio" name="requesttype" value="Capture" id="capture"> Capture</label>   
+            <label for="charge">
+              <input type="radio" name="requesttype" value="Charge" id="charge"> Charge</label>
+            <label for="void">
+                <input type="radio" name="requesttype" value="Void" id="void"> Void</label>  
+            <label for="refund">
+              <input type="radio" name="requesttype" value="Refund" id="refund"> Refund</label>
+          </div>
+        </div>
+      </form>
+      <form>
+        <div class="radiobuttons-providers-container">
+          <p>
+            <b>Select providers</b>
+            <p>
+              <div class="providercolumns">
+                <input type="radio" class=' PayPal' name="provider" value="paypal"> PayPal
+                <br>
+              </div>
+        </div>
+      </form>
+    </div>
+
+    <input type="checkbox" name="" value="" id="optionalscheckbox">
+    <label for="optionalscheckbox">Include optional fields in the output</label>
+
+  </div>
+  <p>
+    <button id="analyze">Generate POST Request Body</button>
+    <script>
+      $(document).ready(function () {
+
+        $("#analyze").click(function () {
+
+          if (sessionStorage.getItem("fileloadstatus") == "filesloadedok") {
+
+            var noOptionsSelected = (($("input:checked").val() == "") || (bodyBuilder.providers.length == 0))
+            var noBankTransferPaymentMethodSelected = ($('.banktransferpaymentmethods').is(":visible") && bodyBuilder.bankTransferPaymentMethod == null)
+
+            // there's already an output shown, clear it
+            bodyBuilder.checkBoxNames = [];
+            $('#outputsummarymessage').empty();
+            $('#custommessage').empty();
+            $('#ciResponseText').empty();
+            $(".fieldTables").empty();
+            $(".headerTables").empty();
+
+            // First check that request type is selected and at least one provider
+            if (noOptionsSelected || noBankTransferPaymentMethodSelected) {
+
+              var noselectionmessage = document.getElementById('ciResponseText');
+              
+              noselectionmessage.innerHTML = noProviderSelectedMessage
+
+              if (noBankTransferPaymentMethodSelected) {
+
+                noselectionmessage.innerHTML = noPaymentMethodSelectedMessage
+
+              }
+
+            }
+            else {
+
+              // Get the checkbox names so you can show them in the output message
+              $(".provider-container :checked").each(function (i) {
+                bodyBuilder.checkBoxNames.push($(this).attr('class'))
+              });
+
+              $(".radiobuttons-providers-container :checked").each(function (i) {
+                bodyBuilder.checkBoxNames.push($(this).attr('class'))
+              });
+
+              // Load the file with the complete request structure
+              // The completerequestbody is loaded when the user selects
+              // a request type from the requesttypelist
+              // Show spinner as we get to work
+              $('#headerExample').addClass('spinner');
+              $('#ciResponseText').addClass('spinner');
+
+              $.getJSON(bodyBuilder.completerequestbody, function (result) {
+                bodyBuilder.completerequestjson = JSON.stringify(result);
+
+                // Start iterating over the request body
+                IterateCompleteRequestBody(bodyBuilder.completerequestjson);
+
+                if (bodyBuilder.ruleFields.length > 0) {
+                  checkRules();
+                }
+
+                if (!bodyBuilder.keepOptionals) {
+                  bodyBuilder.toremove = bodyBuilder.toremove.concat(bodyBuilder.optionalFields)
+                }
+
+                // Completed iterating; remove non-mandatory fields
+                bodyBuilder.completeRequestJSONObject = JSON.parse(bodyBuilder.completerequestjson)
+                removefields();
+
+                showoutput(function () {
+
+                  $('#headerExample').removeClass('spinner');
+                  $('#ciResponseText').removeClass('spinner');
+
+
+                });
+
+
+              });
+            }
+          }
+
+          else {
+
+            var filesLoadError = document.getElementById('ciResponseText');
+            filesLoadError.innerHTML = "Oops! Something went wrong. Please try again."
+          }
+
+        });
+      });
+    </script>
+    <div id="outputsummarymessage"> </div>
+    <div id="custommessage">
+  </p>
+  <p>
+
+    <pre id="headerExample">Sample header will be displayed here</pre>
+    <p></p>
+    <pre id="ciResponseText">Output will de displayed here.</pre>
+
+    <script>
+
+      var $checkboxes = $(".provider-container :checkbox");
+      $checkboxes.on("change", function () {
+        bodyBuilder.providers = new Array();
+
+        $(".provider-container :checked").each(function (i) {
+          bodyBuilder.providers[i] = $(this).val();
+          bodyBuilder.checkBoxNames.push($(this).attr('class'))
+
+        });
+      });
+
+      var $radiobuttons = $(".radiobuttons-providers-container :radio");
+      $radiobuttons.on("change", function () {
+        bodyBuilder.providers = new Array();
+
+        $(".radiobuttons-providers-container :checked").each(function (i) {
+          bodyBuilder.providers[i] = $(this).val();
+          bodyBuilder.checkBoxNames.push($(this).attr('class'))
+
+          // for bank transfers show additional options
+          extendPaymentMethods(bodyBuilder.providers[i]);
+
+        });
+      });
+
+      // If bank transfer payment methods are shown, store the selected value
+      // First clear any bank transfer payment methods, when switching providers
+      $(".radiobuttons-providers-container input:radio").on("click", function () {
+        clearPaymentMethodsOnProviderChange();
+        }); 
+      var $radiobuttonsbanktrpaymentmethods = $(".banktransferpaymentmethods :radio");
+      $radiobuttonsbanktrpaymentmethods.on("change", function () {
+        $(".banktransferpaymentmethods :checked").each(function (i) {
+          bodyBuilder.bankTransferPaymentMethod = $(this).val();
+        });
+      });
+
+      // Handle selection of Cards request type
+      $("#cardsrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#ccards').val())
+         bodyBuilder.requesttype = $("input:checked", '#ccards').val()
+         clearSelectionOnRequestChange();
+         disableProviders();
+      });
+
+      // Handle selection of Debit Redirect request type
+      $("#dredirectrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#dredirect').val())
+        bodyBuilder.requesttype = $("input:checked", '#dredirect').val()
+        clearSelectionOnRequestChange();
+      });
+
+      // Handle selection of Cash request type
+      $("#cashrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#cash').val())
+        bodyBuilder.requesttype = $("input:checked", '#cash').val()
+        clearSelectionOnRequestChange();
+      });
+
+      // Handle selection of Bank Transfer request type
+      $("#btrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#banktransfer').val())
+        bodyBuilder.requesttype = $("input:checked", '#banktransfer').val()
+
+        extendPaymentMethods(bodyBuilder.providers[0]);
+        clearSelectionOnRequestChange();
+        disableProviders();
+      });
+
+       // Handle selection of eWallet request type
+       $("#ewalletrequestypebullets input:radio").on("click", function () {
+        loadInputFiles($("input:checked", '#ewallet').val())
+        bodyBuilder.requesttype = $("input:checked", '#ewallet').val()
+      });
+
+      // Check if include optional fields is checked
+      var $optionalscheckbox = $("#optionalscheckbox");
+      $optionalscheckbox.on("change", function () {
+        if ($('#optionalscheckbox').is(':checked')) { bodyBuilder.keepOptionals = true }
+        else { bodyBuilder.keepOptionals = false }
+      });
+    </script>
+
+    <script>
+      const noProviderSelectedMessage = "No providers selected. Select at least one provider."
+
+      const noPaymentMethodSelectedMessage = "No payment method selected. Select a payment method."
+ 
+    </script>
+
+    <script type="text/javascript">
+
+      document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
+
+</html>

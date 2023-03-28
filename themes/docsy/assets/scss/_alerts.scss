@@ -1,0 +1,29 @@
+// Style alert boxes.
+
+.alert {
+    font-weight: $font-weight-medium;
+    background: $white;
+    color: inherit;
+    border-radius: 0;
+
+    @each $color, $value in $theme-colors {
+        &-#{$color} {
+            & .alert-heading {
+                color: $value;
+                border-bottom: initial;
+                padding-bottom: initial !important;
+            }
+            
+            border-style: solid;
+            border-color: $value;
+            border-width: 2px 2px 2px 6px;
+            border-radius: 7px;
+            
+        }
+    }
+}
+
+.alert-text {
+    padding-left: 30px;
+    margin-bottom: initial !important;
+}

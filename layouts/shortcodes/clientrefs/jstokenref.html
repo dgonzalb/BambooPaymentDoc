@@ -1,0 +1,82 @@
+<h2>POS()</h2>
+The class on which you call the library&apos;s static methods.
+<h3 class="name" id=".setEnvironment">(static) setEnvironment(env)</h3>
+Sets the PaymentsOS environment (test or live) against which the CVV form will be initialized.
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+            <td class="name"><code>env</code></td>
+        <td class="type">
+string
+        </td>
+        <td class="description last">The PaymentsOS environment. Either <code>test</code> or <code>live</code>.</td>
+    </tr>
+</tbody>
+</table>
+<h3 class="name" id=".setPublicKey">(static) setPublicKey(key)</h3>
+Authenticates the library using your public key.
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+            <td class="name"><code>key</code></td>
+        <td class="type">
+string
+        </td>
+        <td class="description last">The public key belonging to your business unit in either your test or live environment.</td>
+    </tr>
+</tbody>
+</table>
+<h3 class="name" id=".tokenize">(static) tokenize(data, callback)</h3>
+Returns a token representation of the card information.
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+            <td class="name"><code>data</code></td>
+        <td class="type">
+object
+        </td>
+        <td class="description last">The attributes required by the <a href="https://developers.paymentsos.com/docs/apis/payments/1.3.0/#operation/create-a-token">Create Token API</a>.</td>
+    </tr>
+    <tr>
+            <td class="name"><code>callback</code></td>
+        <td class="type">
+function
+        </td>
+        <td class="description last">A callback function. The function must take a single parameter through which the token is returned.</td>
+    </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>POS.tokenize({
+    &quot;token_type&quot;: &quot;credit_card&quot;,
+    &quot;holder_name&quot;: &quot;MR C D HOLDER&quot;,
+    &quot;expiration_date&quot;: &quot;09-2019&quot;,
+    &quot;card_number&quot;: &quot;4111111111111111&quot;
+},
+function (result) {
+    // Grab the token here
+});</code></pre>

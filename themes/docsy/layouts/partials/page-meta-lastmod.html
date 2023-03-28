@@ -1,0 +1,11 @@
+
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>{{ T "post_last_mod"}}</b>
+{{ if eq "en" .Language.Lang }}
+{{ .Lastmod.Format .Site.Params.time_format_default }}
+{{ else }}
+{{ .Lastmod.Day }} de {{i18n .Lastmod.Month }} de {{ .Lastmod.Year }}
+{{ end }}
+{{ with .GitInfo }} <b>{{ .Subject }} ({{ .AbbreviatedHash }})</b>{{ end }}
+  
