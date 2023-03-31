@@ -42,20 +42,24 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 | Peru  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 
 ## Considerations
-Take into account the following considerations when using Payouts feature according to the payee's country.
+Take into account the following considerations when using Payouts feature according to the payee's country to avoid rejections.
 
 ### Argentina
+* The bank account **cannot** exceed 22 characters.
 
 ### Brazil
+* The bank account **cannot** exceed 15 characters. The especific size and format depend on the bank of the payee.
+* The branch of the bank account **cannot** exceed 5 characters.
+* For ***Pix***, you can set as account either the Document (CPF or CNPJ), the e-mail, or the phone.
 
 ### Chile
+* The bank account **cannot** exceed 16 characters.
 
 ### Colombia
+* The bank account **cannot** exceed 17 characters.
 
 ### Costa Rica
+* The bank account **cannot** exceed 22 characters.
 
 ### Uruguay
-
-### El Salvador
-
-### Peru
+* The bank account **cannot** exceed 14 characters.
