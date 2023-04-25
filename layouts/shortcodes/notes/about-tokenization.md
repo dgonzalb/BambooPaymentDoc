@@ -1,1 +1,0 @@
-There are a few details you should be aware of when it comes to tokenization. [What you should know about tokenization](collecting-card-information.html#what-you-should-know-about-tokenization).
