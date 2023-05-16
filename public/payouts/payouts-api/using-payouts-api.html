@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-03-31T08:42:55-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-05-16T13:39:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-03-31T08:42:55-05:00" />
+<meta itemprop="dateModified" content="2023-05-16T13:39:41-05:00" />
 <meta itemprop="wordCount" content="640">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.fb8850f760427a40711a1be955255e1e21ee42c9952119f81356903d8866c2d7fe51cc1ee1c27099955853aa66f9289c07ecd17ed18b782d08ca8d327c191008.json"
+  data-offline-search-index-json-src="../../offline-search-index.9bbc65b70195a422bbdd90b48d065a9a7c9efbc4a778cd5892cb87fc4d5f783a8f8cea716ec17f004d4b0794de1e63278fbf49e3f018a921ee56d7e1503e2953.json"
   data-offline-search-base-href="../../"
 >
 
@@ -382,7 +382,7 @@
 	       
 	<p>To learn more about Payouts, refer to this <a href="../../payouts/overview.html">article</a>.</p>
 <h2 id="configuring-the-authentication">Configuring the authentication</h2>
-<p>All methods used in Payous API requires an authentication header, which is configured using the following parameters.</p>
+<p>All methods used in Payouts API requires an authentication header, which is configured using the following parameters.</p>
 <table>
 <thead>
 <tr>
@@ -410,7 +410,7 @@
 </tbody>
 </table>
 <h3 id="signing-the-message">Signing the message</h3>
-<p>The hash to be sent is built using the parameters <code>country</code>, <code>amount</code>, <code>currency</code>, and <code>reference</code> of the Request. The <code>secret-key</code> and the <code>MerchantPrivateKey</code> is provied to you when sing the onboarding contract with Bamboo.</p>
+<p>The hash to be sent is built using the parameters <code>country</code>, <code>amount</code>, <code>currency</code>, and <code>reference</code> of the Request. The <code>secret-key</code> and the <code>MerchantPrivateKey</code> is provided to you when sing the onboarding contract with Bamboo.</p>
 <h4 id="signature-sample-code">Signature sample code</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">json</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">signdata</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">Country</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">country</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Amount</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">amount</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">currency</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Reference</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reference</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Type</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">type</span><span style="color:#000;font-weight:bold">};</span>
@@ -422,7 +422,7 @@
 <h3 id="get-bank-list">Get Bank list</h3>
 <p>This method allows you to get the list of available banks in a given country</p>
 <h4 id="request-url">Request URL</h4>
-<p>Use any to the follwoing URLS accoriding to your needs.</p>
+<p>Use any to the following URLS according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://payout-processing-engine.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
 <li><strong>Development</strong>: <code>https://payout-processing-engine.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
@@ -453,9 +453,9 @@
 </tr>
 <tr>
 <td><code>bankCode</code></td>
-<td style="text-align:center">Strting</td>
+<td style="text-align:center">String</td>
 <td style="text-align:center">4</td>
-<td>Internal code of the bank used in the paremeter <code>payee.bankaccount.codebank</code> when requesting a Payout.</td>
+<td>Internal code of the bank used in the parameter <code>payee.bankaccount.codebank</code> when requesting a Payout.</td>
 </tr>
 <tr>
 <td><code>bankName</code></td>
@@ -492,7 +492,7 @@
 </span></span></code></pre></div><h3 id="payout-request">Payout request</h3>
 <p>This method allows you to request one or more Payouts using the funds settled in your account.</p>
 <h4 id="request-url-1">Request URL</h4>
-<p>Use any to the follwoing URLS accoriding to your needs.</p>
+<p>Use any to the following URLS according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout</code></li>
 <li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout</code></li>
@@ -518,7 +518,7 @@
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td>Intenger</td>
+<td>Integer</td>
 <td style="text-align:center">Yes</td>
 <td>Amount of the payout, the format has two digits for decimals. Example 100 =&gt; USD 1,00</td>
 <td></td>
@@ -546,7 +546,7 @@
 </tr>
 <tr>
 <td><code>type</code></td>
-<td>Intenger</td>
+<td>Integer</td>
 <td style="text-align:center">Yes</td>
 <td>Payout type.<br>Set <code>1</code> for Cash, <code>2</code> for Bank Transfer, and <code>3</code> for Wallet</td>
 <td></td>
@@ -555,7 +555,7 @@
 <td><code>notification_Url</code></td>
 <td>String</td>
 <td style="text-align:center">No</td>
-<td>Callbak to notify the result of the payour</td>
+<td>Callback to notify the result of the payout</td>
 <td></td>
 </tr>
 <tr>
@@ -699,9 +699,9 @@ The validation of the message failed and the payout is <strong>Declined</strong>
 <br>
 <b>Last modified</b>
 
-March 31, 2023: 
+May 16, 2023: 
 
- <i>Payouts API description (a8ad433)</i>
+ <i>Spelling fixes (8601ca8)</i>
   </div>
 </div>
 

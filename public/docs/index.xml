@@ -114,9 +114,9 @@
       <description>
         
         
-        &lt;p&gt;To navigate to Payout reports, open you Merchant console and select &lt;em&gt;&lt;strong&gt;&amp;hellip;&lt;/strong&gt;&lt;/em&gt; then &lt;em&gt;&lt;strong&gt;&amp;hellip;&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+        &lt;p&gt;To navigate to Payout reports, open you Merchant console and select &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt; then &lt;em&gt;&lt;strong&gt;Payouts Report&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts5_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In this screen you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the fllowing attributes:&lt;/p&gt;
+&lt;p&gt;In this screen you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the following attributes:&lt;/p&gt;
 &lt;div id=&#34;columns&#34;&gt;
      &lt;li&gt;Payout Id&lt;/li&gt;
      &lt;li&gt;Reference&lt;/li&gt;
@@ -208,7 +208,7 @@
         
         &lt;p&gt;To learn more about Payouts, refer to this &lt;a href=&#34;../payouts/overview.html&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
-&lt;p&gt;All methods used in Payous API requires an authentication header, which is configured using the following parameters.&lt;/p&gt;
+&lt;p&gt;All methods used in Payouts API requires an authentication header, which is configured using the following parameters.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -236,7 +236,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;signing-the-message&#34;&gt;Signing the message&lt;/h3&gt;
-&lt;p&gt;The hash to be sent is built using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, and &lt;code&gt;reference&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and the &lt;code&gt;MerchantPrivateKey&lt;/code&gt; is provied to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
+&lt;p&gt;The hash to be sent is built using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, and &lt;code&gt;reference&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and the &lt;code&gt;MerchantPrivateKey&lt;/code&gt; is provided to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
 &lt;h4 id=&#34;signature-sample-code&#34;&gt;Signature sample code&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;JSON&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;request&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;signdata&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Country&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;country&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Amount&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;amount&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Currency&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;currency&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reference&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reference&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;};&lt;/span&gt;
@@ -248,7 +248,7 @@
 &lt;h3 id=&#34;get-bank-list&#34;&gt;Get Bank list&lt;/h3&gt;
 &lt;p&gt;This method allows you to get the list of available banks in a given country&lt;/p&gt;
 &lt;h4 id=&#34;request-url&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the follwoing URLS accoriding to your needs.&lt;/p&gt;
+&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-processing-engine.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Development&lt;/strong&gt;: &lt;code&gt;https://payout-processing-engine.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
@@ -279,9 +279,9 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;bankCode&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Strting&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
-&lt;td&gt;Internal code of the bank used in the paremeter &lt;code&gt;payee.bankaccount.codebank&lt;/code&gt; when requesting a Payout.&lt;/td&gt;
+&lt;td&gt;Internal code of the bank used in the parameter &lt;code&gt;payee.bankaccount.codebank&lt;/code&gt; when requesting a Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;bankName&lt;/code&gt;&lt;/td&gt;
@@ -318,7 +318,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payout-request&#34;&gt;Payout request&lt;/h3&gt;
 &lt;p&gt;This method allows you to request one or more Payouts using the funds settled in your account.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the follwoing URLS accoriding to your needs.&lt;/p&gt;
+&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.prod.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Development&lt;/strong&gt;: &lt;code&gt;https://payout-api.dev.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -344,7 +344,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;amount&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Intenger&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;td&gt;Amount of the payout, the format has two digits for decimals. Example 100 =&amp;gt; USD 1,00&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -372,7 +372,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Intenger&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;td&gt;Payout type.&lt;br&gt;Set &lt;code&gt;1&lt;/code&gt; for Cash, &lt;code&gt;2&lt;/code&gt; for Bank Transfer, and &lt;code&gt;3&lt;/code&gt; for Wallet&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -381,7 +381,7 @@
 &lt;td&gt;&lt;code&gt;notification_Url&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Callbak to notify the result of the payour&lt;/td&gt;
+&lt;td&gt;Callback to notify the result of the payout&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -771,11 +771,11 @@ The validation of the message failed and the payout is &lt;strong&gt;Declined&lt
 &lt;h3 id=&#34;banking-connections&#34;&gt;Banking Connections&lt;/h3&gt;
 &lt;p&gt;The &lt;em&gt;Banking Connection&lt;/em&gt; is the technology that allows us to send money to a payee regardless of the selected payment method.&lt;/p&gt;
 &lt;h3 id=&#34;fx-service&#34;&gt;FX Service&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt; or &lt;em&gt;FX&lt;/em&gt; refers to the current rate to convert one country&amp;rsquo;s currency to another. This value is updated accoriding to destination country regulations.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt; or &lt;em&gt;FX&lt;/em&gt; refers to the current rate to convert one country&amp;rsquo;s currency to another. This value is updated according to destination country regulations.&lt;/p&gt;
 &lt;h3 id=&#34;payee&#34;&gt;Payee&lt;/h3&gt;
-&lt;p&gt;A &lt;em&gt;Payee&lt;/em&gt; is a third party who will recieve the money result of your Payout request. The information requeried for a &lt;em&gt;Payee&lt;/em&gt; is their name, document, phone, e-mail address, and bank account.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;Payee&lt;/em&gt; is a third party who will receive the money result of your Payout request. The information required for a &lt;em&gt;Payee&lt;/em&gt; is their name, document, phone, e-mail address, and bank account.&lt;/p&gt;
 &lt;h3 id=&#34;payout&#34;&gt;Payout&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; refers to the concept of disburs funds to a third party using funds settled in your account.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; refers to the concept of disburse funds to a third party using funds settled in your account.&lt;/p&gt;
 &lt;h3 id=&#34;payout-fee&#34;&gt;Payout fee&lt;/h3&gt;
 &lt;p&gt;Refers to the processing cost of the Payout. This cost can be assumed by you (as Payer) or assumed by the Payee by setting a variable in the request.&lt;/p&gt;
 &lt;h3 id=&#34;sanction-screening&#34;&gt;Sanction screening&lt;/h3&gt;
@@ -802,7 +802,7 @@ The validation of the message failed and the payout is &lt;strong&gt;Declined&lt
 Furthermore, we validate that you have enough balance settled in your account before moving the next status. Otherwise, it will be declined.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: this status indicates that the payout has a valid srutcture and ypur account has enough funds to cover the Payout amout and the fee (in case it is assumed by you). During this status we define whether the Payout needs a manual review under two criteria. First, the limit of payments received by the payee and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: this status indicates that the payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case it is assumed by you). During this status we define whether the Payout needs a manual review under two criteria. First, the limit of payments received by the payee and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: this status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.&lt;/p&gt;
@@ -837,7 +837,7 @@ Furthermore, we validate that you have enough balance settled in your account be
         
         
         &lt;h2 id=&#34;id-types&#34;&gt;ID Types&lt;/h2&gt;
-&lt;p&gt;The following table shows the availabe document types you need to configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following table shows the available document types you need to configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;argentina&#34;&gt;Argentina&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1237,7 +1237,7 @@ Furthermore, we validate that you have enough balance settled in your account be
       <description>
         
         
-        &lt;p&gt;The balances available are updated according to the movements performed in your account such as funds deposit or disbursment.&lt;/p&gt;
+        &lt;p&gt;The balances available are updated according to the movements performed in your account such as funds deposit or disbursement.&lt;/p&gt;
 &lt;h2 id=&#34;balance-types&#34;&gt;Balance types&lt;/h2&gt;
 &lt;p&gt;You can see the following balances in the Payouts console:&lt;/p&gt;
 &lt;ul&gt;
@@ -1277,7 +1277,7 @@ In this case, you have two balances, one to deduct the net amounts from the Payo
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Payout amount requsted&lt;/td&gt;
+&lt;td&gt;Payout amount requested&lt;/td&gt;
 &lt;td&gt;10 USD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1309,7 +1309,7 @@ In this case, you have two balances, one to deduct the net amounts from the Payo
 &lt;td&gt;20 USD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;br&gt;&lt;em&gt;Payout amount requsted + fee&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Processing Balance&lt;br&gt;&lt;em&gt;Payout amount requested + fee&lt;/em&gt;&lt;/td&gt;
 &lt;td&gt;12 USD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
