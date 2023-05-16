@@ -133,7 +133,7 @@ Elements with the `disabled` attribute aren't interactive, meaning users cannot 
   <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Options

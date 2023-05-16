@@ -50,7 +50,7 @@ Place one add-on or button on either side of an input. You may also place one on
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Sizing
 
@@ -80,7 +80,7 @@ Add the relative form sizing classes to the `.input-group` itself and contents w
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Checkboxes and radios
 
@@ -105,7 +105,7 @@ Place any checkbox or radio option within an input group's addon instead of text
   <input type="text" class="form-control" aria-label="Text input with radio button">
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Multiple inputs
 
@@ -120,7 +120,7 @@ While multiple `<input>`s are supported visually, validation styles are only ava
   <input type="text" aria-label="Last name" class="form-control">
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Multiple addons
 
@@ -143,7 +143,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Button addons
 
@@ -178,7 +178,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Buttons with dropdowns
 
@@ -211,7 +211,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Segmented buttons
 
@@ -250,7 +250,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Custom forms
 
@@ -307,7 +307,7 @@ Input groups include support for custom selects and custom file inputs. Browser 
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Custom file input
 
@@ -352,7 +352,7 @@ Input groups include support for custom selects and custom file inputs. Browser 
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Accessibility
 

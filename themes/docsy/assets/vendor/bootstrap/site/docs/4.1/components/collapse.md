@@ -35,7 +35,7 @@ You can use a link with the `href` attribute, or a button with the `data-target`
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Multiple targets
 
@@ -65,7 +65,7 @@ Multiple `<button>` or `<a>` can show and hide an element if they each reference
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Accordion example
 
@@ -118,7 +118,7 @@ Using the [card]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/card
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Accessibility
 

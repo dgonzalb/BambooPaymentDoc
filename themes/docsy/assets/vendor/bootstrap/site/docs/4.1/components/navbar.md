@@ -69,7 +69,7 @@ Here's an example of all the sub-components included in a responsive light-theme
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 This example uses [color]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/) (`bg-light`) and [spacing]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) (`my-2`, `my-lg-0`, `mr-sm-0`, `my-sm-0`) utility classes.
 
@@ -88,7 +88,7 @@ The `.navbar-brand` can be applied to most elements, but an anchor works best as
   <span class="navbar-brand mb-0 h1">Navbar</span>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Adding images to the `.navbar-brand` will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
 
@@ -100,7 +100,7 @@ Adding images to the `.navbar-brand` will likely always require custom styles or
   </a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <!-- Image and text -->
@@ -111,7 +111,7 @@ Adding images to the `.navbar-brand` will likely always require custom styles or
   </a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Nav
 
@@ -143,7 +143,7 @@ Active states—with `.active`—to indicate the current page can be applied dir
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 And because we use classes for our navs, you can avoid the list-based approach entirely if you like.
 
@@ -163,7 +163,7 @@ And because we use classes for our navs, you can avoid the list-based approach e
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrapping element for positioning, so be sure to use separate and nested elements for `.nav-item` and `.nav-link` as shown below.
 
@@ -198,7 +198,7 @@ You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrap
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Forms
 
@@ -212,7 +212,7 @@ Place various form controls and components within a navbar with `.form-inline`.
   </form>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Immediate children elements in `.navbar` use flex layout and will default to `justify-content: between`. Use additional [flex utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/) as needed to adjust this behavior.
 
@@ -225,7 +225,7 @@ Immediate children elements in `.navbar` use flex layout and will default to `ju
   </form>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Input groups work, too:
 
@@ -241,7 +241,7 @@ Input groups work, too:
   </form>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Various buttons are supported as part of these navbar forms, too. This is also a great reminder that vertical alignment utilities can be used to align different sized elements.
 
@@ -253,7 +253,7 @@ Various buttons are supported as part of these navbar forms, too. This is also a
   </form>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Text
 
@@ -266,7 +266,7 @@ Navbars may contain bits of text with the help of `.navbar-text`. This class adj
   </span>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Mix and match with other components and utilities as needed.
 
@@ -294,7 +294,7 @@ Mix and match with other components and utilities as needed.
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Color schemes
 
@@ -411,7 +411,7 @@ Although it's not required, you can wrap a navbar in a `.container` to center it
   </nav>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 When the container is within your navbar, its horizontal padding is removed at breakpoints lower than your specified `.navbar-expand{-sm|-md|-lg|-xl}` class. This ensures we're not doubling up on padding unnecessarily on lower viewports when your navbar is collapsed.
 
@@ -422,7 +422,7 @@ When the container is within your navbar, its horizontal padding is removed at b
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Placement
 
@@ -435,28 +435,28 @@ Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully suppo
   <a class="navbar-brand" href="#">Default</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <nav class="navbar fixed-top navbar-light bg-light">
   <a class="navbar-brand" href="#">Fixed top</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <nav class="navbar fixed-bottom navbar-light bg-light">
   <a class="navbar-brand" href="#">Fixed bottom</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <nav class="navbar sticky-top navbar-light bg-light">
   <a class="navbar-brand" href="#">Sticky top</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Responsive behaviors
 
@@ -495,7 +495,7 @@ With no `.navbar-brand` shown in lowest breakpoint:
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 With a brand name shown on the left and toggler on the right:
 
@@ -525,7 +525,7 @@ With a brand name shown on the left and toggler on the right:
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 With a toggler on the left and brand name on the right:
 
@@ -555,7 +555,7 @@ With a toggler on the left and brand name on the right:
   </div>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### External content
 
@@ -576,4 +576,4 @@ Sometimes you want to use the collapse plugin to trigger hidden content elsewher
   </nav>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+

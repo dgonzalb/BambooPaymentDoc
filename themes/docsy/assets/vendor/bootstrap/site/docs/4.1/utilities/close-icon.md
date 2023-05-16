@@ -13,4 +13,4 @@ toc: true
   <span aria-hidden="true">&times;</span>
 </button>
 {% endcapture %}
-{% include example.html content=example %}
+

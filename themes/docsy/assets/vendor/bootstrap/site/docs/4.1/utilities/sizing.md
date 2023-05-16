@@ -15,7 +15,7 @@ Width and height utilities are generated from the `$sizes` Sass map in `_variabl
 <div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
 <div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
@@ -26,18 +26,18 @@ Width and height utilities are generated from the `$sizes` Sass map in `_variabl
   <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 You can also use `max-width: 100%;` and `max-height: 100%;` utilities as needed.
 
 {% capture example %}
 <img class="mw-100" data-src="holder.js/1000px100?text=Max-width%20%3D%20100%25" alt="Max-width 100%">
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
   <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,0.1);">Max-height 100%</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+

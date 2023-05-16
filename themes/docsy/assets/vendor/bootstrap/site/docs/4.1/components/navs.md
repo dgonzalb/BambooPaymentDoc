@@ -33,7 +33,7 @@ The base `.nav` component does not include any `.active` state. The following ex
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Classes are used throughout, so your markup can be super flexible. Use `<ul>`s like above, or roll your own with say a `<nav>` element. Because the `.nav` uses `display: flex`, the nav links behave the same as nav items would, but without the extra markup.
 
@@ -45,7 +45,7 @@ Classes are used throughout, so your markup can be super flexible. Use `<ul>`s l
   <a class="nav-link disabled" href="#">Disabled</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Available styles
 
@@ -73,7 +73,7 @@ Centered with `.justify-content-center`:
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Right-aligned with `.justify-content-end`:
 
@@ -93,7 +93,7 @@ Right-aligned with `.justify-content-end`:
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Vertical
 
@@ -115,7 +115,7 @@ Stack your navigation by changing the flex item direction with the `.flex-column
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 As always, vertical navigation is possible without `<ul>`s, too.
 
@@ -127,7 +127,7 @@ As always, vertical navigation is possible without `<ul>`s, too.
   <a class="nav-link disabled" href="#">Disabled</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Tabs
 
@@ -149,7 +149,7 @@ Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabb
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Pills
 
@@ -171,7 +171,7 @@ Take that same HTML, but use `.nav-pills` instead:
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Fill and justify
 
@@ -193,7 +193,7 @@ Force your `.nav`'s contents to extend the full available width one of two modif
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 When using a `<nav>`-based navigation, be sure to include `.nav-item` on the anchors.
 
@@ -205,7 +205,7 @@ When using a `<nav>`-based navigation, be sure to include `.nav-item` on the anc
   <a class="nav-item nav-link disabled" href="#">Disabled</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 For equal-width elements, use `.nav-justified`. All horizontal space will be occupied by nav links, but unlike the `.nav-fill` above, every nav item will be the same width.
 
@@ -217,7 +217,7 @@ For equal-width elements, use `.nav-justified`. All horizontal space will be occ
   <a class="nav-link disabled" href="#">Disabled</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Similar to the `.nav-fill` example using a `<nav>`-based navigation, be sure to include `.nav-item` on the anchors.
 
@@ -230,7 +230,7 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation, be sure to 
 </nav>
 
 {% endcapture %}
-{% include example.html content=example %}
+
 ## Working with flex utilities
 
 If you need responsive nav variations, consider using a series of [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
@@ -243,7 +243,7 @@ If you need responsive nav variations, consider using a series of [flexbox utili
   <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Regarding accessibility
 
@@ -280,7 +280,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Pills with dropdowns
 
@@ -307,7 +307,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## JavaScript behavior
 

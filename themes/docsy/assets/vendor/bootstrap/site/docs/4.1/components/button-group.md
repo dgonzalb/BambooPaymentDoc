@@ -17,7 +17,7 @@ Wrap a series of buttons with `.btn` in `.btn-group`. Add on optional JavaScript
   <button type="button" class="btn btn-secondary">Right</button>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture callout %}
 ##### Ensure correct `role` and provide a label
@@ -50,7 +50,7 @@ Combine sets of button groups into button toolbars for more complex components. 
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you'll likely need some utilities though to space things properly.
 
@@ -85,7 +85,7 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Sizing
 
@@ -137,7 +137,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Vertical variation
 

@@ -19,7 +19,7 @@ Toggle a float with a class:
 <div class="float-right">Float right on all viewport sizes</div><br>
 <div class="float-none">Don't float on all viewport sizes</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Mixins
 
@@ -47,7 +47,7 @@ Responsive variations also exist for each `float` value.
 <div class="float-lg-left">Float left on viewports sized LG (large) or wider</div><br>
 <div class="float-xl-left">Float left on viewports sized XL (extra-large) or wider</div><br>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Here are all the support classes;
 

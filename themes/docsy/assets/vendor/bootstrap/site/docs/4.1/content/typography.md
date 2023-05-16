@@ -88,7 +88,7 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h5">h5. Bootstrap heading</p>
 <p class="h6">h6. Bootstrap heading</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Customizing headings
 
@@ -147,7 +147,7 @@ Make a paragraph stand out by adding `.lead`.
   Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
 </p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Inline text elements
 
@@ -163,7 +163,7 @@ Styling for common inline HTML5 elements.
 <p><strong>This line rendered as bold text.</strong></p>
 <p><em>This line rendered as italicized text.</em></p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 `.mark` and `.small` classes are also available to apply the same styles as `<mark>` and `<small>` while avoiding any unwanted semantic implications that the tags would bring.
 
@@ -183,7 +183,7 @@ Add `.initialism` to an abbreviation for a slightly smaller font-size.
 <p><abbr title="attribute">attr</abbr></p>
 <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Blockquotes
 
@@ -194,7 +194,7 @@ For quoting blocks of content from another source within your document. Wrap `<b
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Naming a source
 
@@ -206,7 +206,7 @@ Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the 
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Alignment
 
@@ -218,7 +218,7 @@ Use text utilities as needed to change the alignment of your blockquote.
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <blockquote class="blockquote text-right">
@@ -226,7 +226,7 @@ Use text utilities as needed to change the alignment of your blockquote.
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Lists
 
@@ -253,7 +253,7 @@ Remove the default `list-style` and left margin on list items (immediate childre
   <li>Eget porttitor lorem</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Inline
 
@@ -266,7 +266,7 @@ Remove a list's bullets and apply some light `margin` with a combination of two 
   <li class="list-inline-item">Nulla volutpat</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Description list alignment
 
@@ -298,7 +298,7 @@ Align terms and descriptions horizontally by using our grid system's predefined 
   </dd>
 </dl>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Responsive typography
 

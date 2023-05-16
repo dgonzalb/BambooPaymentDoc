@@ -13,12 +13,12 @@ Apply `display` utilities to create a flexbox container and transform **direct c
 {% capture example %}
 <div class="d-flex p-2 bd-highlight">I'm a flexbox container!</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div class="d-inline-flex p-2 bd-highlight">I'm an inline flexbox container!</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
 
@@ -44,7 +44,7 @@ Use `.flex-row` to set a horizontal direction (the browser default), or `.flex-r
   <div class="p-2 bd-highlight">Flex item 3</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`  to start the vertical direction from the opposite side.
 
@@ -60,7 +60,7 @@ Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`  to st
   <div class="p-2 bd-highlight">Flex item 3</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Responsive variations also exist for `flex-direction`.
 
@@ -228,7 +228,7 @@ Use the `.flex-fill` class on a series of sibling elements to force them into eq
   <div class="p-2 flex-fill bd-highlight">Flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Responsive variations also exist for `flex-fill`.
 
@@ -246,7 +246,7 @@ Use `.flex-grow-*` utilities to toggle a flex item's ability to grow to fill ava
   <div class="p-2 bd-highlight">Third flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-1` is forced to wrap it's contents to a new line, "shrinking" to allow more space for the previous flex item with `.w-100`.
 
@@ -256,7 +256,7 @@ Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if nece
   <div class="p-2 flex-shrink-1 bd-highlight">Flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Responsive variations also exist for `flex-grow` and `flex-shrink`.
 
@@ -289,7 +289,7 @@ Flexbox can do some pretty awesome things when you mix flex alignments with auto
   <div class="ml-auto p-2 bd-highlight">Flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### With align-items
 
@@ -308,7 +308,7 @@ Vertically move one flex item to the top or bottom of a container by mixing `ali
   <div class="mt-auto p-2 bd-highlight">Flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Wrap
 
@@ -401,7 +401,7 @@ Change the _visual_ order of specific flex items with a handful of `order` utili
   <div class="order-1 p-2 bd-highlight">Third flex item</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Responsive variations also exist for `order`.
 

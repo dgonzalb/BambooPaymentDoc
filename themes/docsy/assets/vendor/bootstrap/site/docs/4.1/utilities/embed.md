@@ -21,7 +21,7 @@ Wrap any embed like an `<iframe>` in a parent element with `.embed-responsive` a
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Aspect ratios
 

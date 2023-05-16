@@ -34,7 +34,7 @@ Put that all together, and you have the following examples.
   <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Bootstrap provides a handful of [utilities for setting width]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/sizing/). Depending on your needs, these may help with quickly configuring progress.
 
@@ -43,7 +43,7 @@ Bootstrap provides a handful of [utilities for setting width]({{ site.baseurl }}
   <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Labels
 
@@ -54,7 +54,7 @@ Add labels to your progress bars by placing text within the `.progress-bar`.
   <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Height
 
@@ -68,7 +68,7 @@ We only set a `height` value on the `.progress`, so if you change that value the
   <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Backgrounds
 
@@ -88,7 +88,7 @@ Use background utility classes to change the appearance of individual progress b
   <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Multiple bars
 
@@ -101,7 +101,7 @@ Include multiple progress bars in a progress component if you need.
   <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Striped
 
@@ -124,7 +124,7 @@ Add `.progress-bar-striped` to any `.progress-bar` to apply a stripe via CSS gra
   <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Animated stripes
 

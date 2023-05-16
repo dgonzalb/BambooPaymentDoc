@@ -21,7 +21,7 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 <span class="border-bottom"></span>
 <span class="border-left"></span>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Subtractive
@@ -34,7 +34,7 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 <span class="border-bottom-0"></span>
 <span class="border-left-0"></span>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Border color
@@ -47,7 +47,7 @@ Change the border color using utilities built on our theme colors.
 <span class="border border-{{ color.name }}"></span>{% endfor %}
 <span class="border border-white"></span>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Border-radius

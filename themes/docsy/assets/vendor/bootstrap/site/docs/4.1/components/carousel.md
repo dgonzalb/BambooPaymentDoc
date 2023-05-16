@@ -41,7 +41,7 @@ Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### With controls
 
@@ -70,7 +70,7 @@ Adding in the previous and next controls:
   </a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### With indicators
 
@@ -104,7 +104,7 @@ You can also add the indicators to the carousel, alongside the controls, too.
   </a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### With captions
 
@@ -188,7 +188,7 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
   </a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 
 ## Usage

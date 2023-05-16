@@ -42,7 +42,7 @@ Any single `.btn` can be turned into a dropdown toggle with some markup changes.
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 And with `<a>` elements:
 
@@ -59,7 +59,7 @@ And with `<a>` elements:
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 The best part is you can do this with any button variant, too:
 
@@ -553,7 +553,7 @@ Historically dropdown menu contents *had* to be links, but that's no longer the 
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 You can also create non-interactive dropdown items with `.dropdown-item-text`. Feel free to style further with custom CSS or text utilities.
 
@@ -565,7 +565,7 @@ You can also create non-interactive dropdown items with `.dropdown-item-text`. F
   <a class="dropdown-item" href="#">Something else here</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Active
 
@@ -578,7 +578,7 @@ Add `.active` to items in the dropdown to **style them as active**.
   <a class="dropdown-item" href="#">Another link</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Disabled
 
@@ -591,7 +591,7 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
   <a class="dropdown-item" href="#">Another link</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Menu alignment
 
@@ -614,7 +614,7 @@ By default, a dropdown menu is automatically positioned 100% from the top and al
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Menu content
 
@@ -629,7 +629,7 @@ Add a header to label sections of actions in any dropdown menu.
   <a class="dropdown-item" href="#">Another action</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Dividers
 
@@ -644,7 +644,7 @@ Separate groups of related menu items with a divider.
   <a class="dropdown-item" href="#">Separated link</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Text
 
@@ -660,7 +660,7 @@ Place any freeform text within a dropdown menu with text and use [spacing utilit
   </p>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Forms
 
@@ -690,7 +690,7 @@ Put a form within a dropdown menu, or make it into a dropdown menu, and use [mar
   <a class="dropdown-item" href="#">Forgot password?</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <form class="dropdown-menu p-4">
@@ -711,7 +711,7 @@ Put a form within a dropdown menu, or make it into a dropdown menu, and use [mar
   <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Dropdown options
 
@@ -744,7 +744,7 @@ Use `data-offset` or `data-reference` to change the location of the dropdown.
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Usage
 

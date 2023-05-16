@@ -434,7 +434,7 @@ Below is a live demo followed by example HTML and JavaScript. For more informati
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% highlight js %}
 $('#exampleModal').on('show.bs.modal', function (event) {

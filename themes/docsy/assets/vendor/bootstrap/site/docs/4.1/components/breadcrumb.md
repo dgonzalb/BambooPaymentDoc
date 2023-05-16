@@ -29,7 +29,7 @@ group: components
   </ol>
 </nav>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Changing the separator
 

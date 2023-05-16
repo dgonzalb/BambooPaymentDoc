@@ -19,7 +19,7 @@ The most basic list group is an unordered list with list items and the proper cl
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Active items
 
@@ -34,7 +34,7 @@ Add `.active` to a `.list-group-item` to indicate the current active selection.
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Disabled items
 
@@ -49,7 +49,7 @@ Add `.disabled` to a `.list-group-item` to make it _appear_ disabled. Note that 
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Links and buttons
 
@@ -68,7 +68,7 @@ Be sure to **not use the standard `.btn` classes here**.
   <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 With `<button>`s, you can also make use of the `disabled` attribute instead of the `.disabled` class. Sadly, `<a>`s don't support the disabled attribute.
 
@@ -83,7 +83,7 @@ With `<button>`s, you can also make use of the `disabled` attribute instead of t
   <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Flush
 
@@ -98,7 +98,7 @@ Add `.list-group-flush` to remove some borders and rounded corners to render lis
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Contextual classes
 
@@ -112,7 +112,7 @@ Use contextual classes to style list items with a stateful background and color.
   <li class="list-group-item list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</li>{% endfor %}
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Contextual classes also work with `.list-group-item-action`. Note the addition of the hover styles here not present in the previous example. Also supported is the `.active` state; apply it to indicate an active selection on a contextual list group item.
 
@@ -124,7 +124,7 @@ Contextual classes also work with `.list-group-item-action`. Note the addition o
   <a href="#" class="list-group-item list-group-item-action list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</a>{% endfor %}
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% include callout-warning-color-assistive-technologies.md %}
 
@@ -148,7 +148,7 @@ Add badges to any list group item to show unread counts, activity, and more with
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Custom content
 
@@ -182,7 +182,7 @@ Add nearly any HTML within, even for linked list groups like the one below, with
   </a>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## JavaScript behavior
 

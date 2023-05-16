@@ -30,4 +30,4 @@ Use the `.text-hide` class to maintain the accessibility and SEO benefits of hea
 {% capture example %}
 <h1 class="text-hide" style="background-image: url('/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg'); width: 50px; height: 50px;">Bootstrap</h1>
 {% endcapture %}
-{% include example.html content=example %}
+

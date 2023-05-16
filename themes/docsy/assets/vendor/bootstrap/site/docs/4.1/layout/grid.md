@@ -28,7 +28,7 @@ Bootstrap's grid system uses a series of containers, rows, and columns to layout
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid classes. Those columns are centered in the page with the parent `.container`.
@@ -148,7 +148,7 @@ For example, here are two grid layouts that apply to every device and viewport, 
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 Equal-width columns can be broken into multiple lines, but there was a [Safari flexbox bug](https://github.com/philipwalton/flexbugs#flexbug-11) that prevented this from working without an explicit `flex-basis` or `border`. There are workarounds for older browser versions, but they shouldn't be necessary if you're up-to-date.
@@ -165,7 +165,7 @@ Equal-width columns can be broken into multiple lines, but there was a [Safari f
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Setting one column width
@@ -199,7 +199,7 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Variable width content
@@ -233,7 +233,7 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Equal-width multi-row
@@ -250,7 +250,7 @@ Create equal-width columns that span multiple rows by inserting a `.w-100` where
   <div class="col">col</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Responsive classes
@@ -274,7 +274,7 @@ For grids that are the same from the smallest of devices to the largest, use the
   <div class="col-4">col-4</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Stacked to horizontal
@@ -293,7 +293,7 @@ Using a single set of `.col-sm-*` classes, you can create a basic grid system th
   <div class="col-sm">col-sm</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Mix and match
@@ -321,7 +321,7 @@ Don't want your columns to simply stack in some grid tiers? Use a combination of
   <div class="col-6">.col-6</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Alignment
@@ -368,7 +368,7 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 <div class="bd-example-row bd-example-row-flex-cols">
@@ -387,7 +387,7 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Horizontal alignment
@@ -437,7 +437,7 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### No gutters
@@ -470,7 +470,7 @@ In practice, here's how it looks. Note you can continue to use this with all oth
   <div class="col-6 col-md-4">.col-6 .col-md-4</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Column wrapping
@@ -485,7 +485,7 @@ If more than 12 columns are placed within a single row, each group of extra colu
   <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Column breaks
@@ -505,7 +505,7 @@ Breaking columns to a new line in flexbox requires a small hack: add an element 
   <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 You may also apply this break at specific breakpoints with our [responsive display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/).
@@ -523,7 +523,7 @@ You may also apply this break at specific breakpoints with our [responsive displ
   <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Reordering
@@ -548,7 +548,7 @@ Use `.order-` classes for controlling the **visual order** of your content. Thes
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 There are also responsive `.order-first` and `.order-last` classes that change the `order` of an element by applying `order: -1` and `order: 13` (`order: $columns + 1`), respectively. These classes can also be intermixed with the numbered `.order-*` classes as needed.
@@ -569,7 +569,7 @@ There are also responsive `.order-first` and `.order-last` classes that change t
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ### Offsetting columns
@@ -594,7 +594,7 @@ Move columns to the right using `.offset-md-*` classes. These classes increase t
   <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 In addition to column clearing at responsive breakpoints, you may need to reset offsets. See this in action in [the grid example]({{ site.baseurl }}/docs/{{ site.docs_version }}/examples/grid/).
@@ -611,7 +611,7 @@ In addition to column clearing at responsive breakpoints, you may need to reset 
   <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 #### Margin utilities
@@ -633,7 +633,7 @@ With the move to flexbox in v4, you can use margin utilities like `.mr-auto` to 
   <div class="col-auto">.col-auto</div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Nesting
@@ -656,7 +656,7 @@ To nest your content with the default grid, add a new `.row` and set of `.col-sm
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 </div>
 
 ## Sass mixins
@@ -753,7 +753,7 @@ You can modify the variables to your own custom values, or just use the mixins w
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Customizing the grid
 

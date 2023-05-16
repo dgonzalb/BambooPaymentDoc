@@ -13,7 +13,7 @@ Easily realign text to components with text alignment classes.
 {% capture example %}
 <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 For left, right, and center alignment, responsive classes are available that use the same viewport width breakpoints as the grid system.
 
@@ -27,7 +27,7 @@ For left, right, and center alignment, responsive classes are available that use
 <p class="text-lg-left">Left aligned text on viewports sized LG (large) or wider.</p>
 <p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Text wrapping and overflow
 
@@ -38,7 +38,7 @@ Prevent text from wrapping with a `.text-nowrap` class.
   This text should overflow the parent.
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 For longer content, you can add a `.text-truncate` class to truncate the text with an ellipsis. **Requires `display: inline-block` or `display: block`.**
 
@@ -55,7 +55,7 @@ For longer content, you can add a `.text-truncate` class to truncate the text wi
   Praeterea iter est quasdam res quas ex communi.
 </span>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Text transform
 
@@ -66,7 +66,7 @@ Transform text in components with text capitalization classes.
 <p class="text-uppercase">Uppercased text.</p>
 <p class="text-capitalize">CapiTaliZed text.</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Note how `text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
 
@@ -80,7 +80,7 @@ Quickly change the weight (boldness) of text or italicize text.
 <p class="font-weight-light">Light weight text.</p>
 <p class="font-italic">Italic text.</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Monospace
 
@@ -89,4 +89,4 @@ Change a selection to our monospace font stack with `.text-monospace`.
 {% capture example %}
 <p class="text-monospace">This is in monospace</p>
 {% endcapture %}
-{% include example.html content=example %}
+

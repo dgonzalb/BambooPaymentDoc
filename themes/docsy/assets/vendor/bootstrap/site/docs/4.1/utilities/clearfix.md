@@ -36,4 +36,4 @@ The following example shows how the clearfix can be used. Without the clearfix t
   <button type="button" class="btn btn-secondary float-right">Example Button floated right</button>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+

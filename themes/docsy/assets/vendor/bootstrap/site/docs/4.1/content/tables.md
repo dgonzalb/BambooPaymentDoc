@@ -44,7 +44,7 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 You can also invert the colors—with light text on dark backgrounds—with `.table-dark`.
 
@@ -80,7 +80,7 @@ You can also invert the colors—with light text on dark backgrounds—with `.ta
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Table head options
 
@@ -149,7 +149,7 @@ Similar to tables and dark tables, use the modifier classes `.thead-light` or `.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Striped rows
 
@@ -187,7 +187,7 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <table class="table table-striped table-dark">
@@ -221,7 +221,7 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Bordered table
 
@@ -258,7 +258,7 @@ Add `.table-bordered` for borders on all sides of the table and cells.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <table class="table table-bordered table-dark">
@@ -291,7 +291,7 @@ Add `.table-bordered` for borders on all sides of the table and cells.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Borderless table
 
@@ -328,7 +328,7 @@ Add `.table-borderless` for a table without borders.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 `.table-borderless` can also be used on dark tables.
 
@@ -363,7 +363,7 @@ Add `.table-borderless` for a table without borders.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Hoverable rows
 
@@ -400,7 +400,7 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <table class="table table-hover table-dark">
@@ -433,7 +433,7 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Small table
 
@@ -470,7 +470,7 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <table class="table table-sm table-dark">
@@ -503,7 +503,7 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Contextual classes
 
@@ -676,7 +676,7 @@ A `<caption>` functions like a heading for a table. It helps users with screen r
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Responsive tables
 

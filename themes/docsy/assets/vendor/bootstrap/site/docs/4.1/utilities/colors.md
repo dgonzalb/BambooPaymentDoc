@@ -17,7 +17,7 @@ toc: true
 <p class="text-black-50">.text-black-50</p>
 <p class="text-white-50 bg-dark">.text-white-50</p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Contextual text classes also work well on anchors with the provided hover and focus states. **Note that the `.text-white` and `.text-muted` class has no additional link styling beyond underline.**
 
@@ -27,7 +27,7 @@ Contextual text classes also work well on anchors with the provided hover and fo
 <p><a href="#" class="text-muted">Muted link</a></p>
 <p><a href="#" class="text-white bg-dark">White link</a></p>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Background color
 
@@ -39,7 +39,7 @@ Similar to the contextual text color classes, easily set the background of an el
 <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Background gradient
 
@@ -49,7 +49,7 @@ When `$enable-gradients` is set to true, you'll be able to use `.bg-gradient-` u
 {% for color in site.data.theme-colors %}
 <div class="p-3 mb-2 bg-gradient-{{ color.name }} {% if color.name == "light" or color.name == "warning" %}text-dark{% else %}text-white{% endif %}">.bg-gradient-{{ color.name }}</div>{% endfor %}
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture callout %}
 #### Dealing with specificity

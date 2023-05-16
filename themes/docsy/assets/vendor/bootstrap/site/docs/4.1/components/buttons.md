@@ -17,7 +17,7 @@ Bootstrap includes several predefined button styles, each serving its own semant
 
 <button type="button" class="btn btn-link">Link</button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% include callout-warning-color-assistive-technologies.md %}
 
@@ -34,7 +34,7 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 <input class="btn btn-primary" type="submit" value="Submit">
 <input class="btn btn-primary" type="reset" value="Reset">
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Outline buttons
 
@@ -44,7 +44,7 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {% for color in site.data.theme-colors %}
 <button type="button" class="btn btn-outline-{{ color.name }}">{{ color.name | capitalize }}</button>{% endfor %}
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Sizes
 
@@ -54,13 +54,13 @@ Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
 <button type="button" class="btn btn-secondary btn-lg">Large button</button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <button type="button" class="btn btn-primary btn-sm">Small button</button>
 <button type="button" class="btn btn-secondary btn-sm">Small button</button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Create block level buttons—those that span the full width of a parent—by adding `.btn-block`.
 
@@ -68,7 +68,7 @@ Create block level buttons—those that span the full width of a parent—by add
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
 <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Active state
 
@@ -78,7 +78,7 @@ Buttons will appear pressed (with a darker background, darker border, and inset 
 <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
 <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Disabled state
 
@@ -88,7 +88,7 @@ Make buttons look inactive by adding the `disabled` boolean attribute to any `<b
 <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
 <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 Disabled buttons using the `<a>` element behave a bit different:
 
@@ -100,7 +100,7 @@ Disabled buttons using the `<a>` element behave a bit different:
 <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
 <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture callout %}
 ##### Link functionality caveat
@@ -122,7 +122,7 @@ Add `data-toggle="button"` to toggle a button's `active` state. If you're pre-to
   Single toggle
 </button>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Checkbox and radio buttons
 
@@ -139,7 +139,7 @@ Note that pre-checked buttons require you to manually add the `.active` class to
   </label>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -154,7 +154,7 @@ Note that pre-checked buttons require you to manually add the `.active` class to
   </label>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ### Methods
 

@@ -39,13 +39,13 @@ The media queries effect screen widths with the given breakpoint *or larger*. Fo
 <div class="d-inline p-2 bg-primary text-white">d-inline</div>
 <div class="d-inline p-2 bg-dark text-white">d-inline</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <span class="d-block p-2 bg-primary text-white">d-block</span>
 <span class="d-block p-2 bg-dark text-white">d-block</span>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Hiding elements
 
@@ -74,7 +74,7 @@ To show an element only on a given interval of screen sizes you can combine one 
 <div class="d-lg-none">hide on screens wider than lg</div>
 <div class="d-none d-lg-block">hide on screens smaller than lg</div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Display in print
 
@@ -97,4 +97,4 @@ The print and display classes can be combined.
 <div class="d-none d-print-block">Print Only (Hide on screen only)</div>
 <div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
 {% endcapture %}
-{% include example.html content=example %}
+

@@ -19,7 +19,7 @@ With inline elements:
 <span class="align-text-top">text-top</span>
 <span class="align-text-bottom">text-bottom</span>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 With table cells:
 
@@ -37,4 +37,4 @@ With table cells:
   </tbody>
 </table>
 {% endcapture %}
-{% include example.html content=example %}
+

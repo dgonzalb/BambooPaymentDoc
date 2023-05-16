@@ -21,7 +21,7 @@ Below is an example of a single media object. Only two classes are required—th
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture callout %}
 ##### Flexbug #12: Inline elements aren't treated as flex items
@@ -55,7 +55,7 @@ Media objects can be infinitely nested, though we suggest you stop at some point
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Alignment
 
@@ -71,7 +71,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div class="media">
@@ -83,7 +83,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 {% capture example %}
 <div class="media">
@@ -95,7 +95,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Order
 
@@ -110,7 +110,7 @@ Change the order of content in media objects by modifying the HTML itself, or by
   <img class="ml-3" data-src="holder.js/64x64" alt="Generic placeholder image">
 </div>
 {% endcapture %}
-{% include example.html content=example %}
+
 
 ## Media list
 
@@ -141,4 +141,4 @@ Because the media object has so few structural requirements, you can also use th
   </li>
 </ul>
 {% endcapture %}
-{% include example.html content=example %}
+
