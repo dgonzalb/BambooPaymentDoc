@@ -8,7 +8,7 @@ Description: >
 weight: 30
 ---
 
-The balances available are updated according to the movements performed in your account such as funds deposit or disbursment.
+The balances available are updated according to the movements performed in your account such as funds deposit or disbursement.
 
 ## Balance types
 You can see the following balances in the Payouts console:
@@ -42,7 +42,7 @@ Let's assume that you have the following information:
 
 | | |
 |---|---|
-| Payout amount requsted | 10 USD |
+| Payout amount requested | 10 USD |
 | Fee | 2 USD |
 | Initial balance | 20 USD |
 | Initial balance for fee | 5 USD |
@@ -53,7 +53,7 @@ Let's assume that you have the following information:
 |  |  |
 |---|---|
 | Total Balance | 20 USD |
-| Processing Balance<br>_Payout amount requsted + fee_ | 12 USD |
+| Processing Balance<br>_Payout amount requested + fee_ | 12 USD |
 | Available Balance | 8 USD |
 
 **Balance if the payout is paid**
