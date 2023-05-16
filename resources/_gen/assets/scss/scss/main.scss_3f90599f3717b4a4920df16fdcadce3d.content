@@ -8167,7 +8167,7 @@ a.text-dark:hover, a.text-dark:focus {
           position: sticky;
           top: 4rem;
           z-index: 10;
-          height: calc(100vh - 6rem); } } }
+          height: calc(100vh - 5rem); } } }
     @media (min-width: 1200px) {
       .td-sidebar__inner {
         flex: 0 1 320px; } }
@@ -8303,20 +8303,22 @@ a.text-dark:hover, a.text-dark:focus {
 .td-content {
   order: 1; }
   .td-content p, .td-content li, .td-content td {
-    font-weight: 400;
+    font-weight: lighter;
     color: black; }
   .td-content > h1 {
     font-weight: 700;
     margin-bottom: 1rem; }
   .td-content > h2 {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    font-weight: bold; }
   .td-content > h2:not(:first-child) {
     margin-top: 3rem; }
   .td-content > h2 + h3 {
     margin-top: 1rem; }
   .td-content > h3, .td-content > h4, .td-content > h5, .td-content > h6 {
     margin-bottom: 1rem;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    font-weight: normal; }
   .td-content > blockquote {
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
@@ -8331,7 +8333,8 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 2rem; }
   .td-content .lead {
     margin-bottom: 1.5rem;
-    color: black; }
+    color: black;
+    font-weight: lighter; }
 
 .td-title {
   margin-top: 1rem;
@@ -9606,7 +9609,7 @@ h2 {
   max-width: 907px; }
 
 .map-container img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   display: block;
   border: none; }
