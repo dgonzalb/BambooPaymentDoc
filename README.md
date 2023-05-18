@@ -1,2 +1,12 @@
-# Hugo
-<meta http-equiv="refresh" content="0; URL=/public/payouts.html" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; URL='https://nuevodominio.com'" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected, click the following link: <a href="https://docs.bamboopayment.com/public>https://docs.bamboopayment.com/public</a></p>
+  </body>
+</html>
