@@ -15,7 +15,7 @@ The current model has been a restriction for businesses that do not have local o
 Bamboo Payouts offers you a payment system to allow mass transfers to third parties, using API or dashboard, with updates on the status of transactions and notifications via e-mail to the you and your third parties.
 
 ## How does Bamboo Payouts work?
-Using Bamboo Payouts, you can easily disburs the funds settled your account to local beneficiay accounts. The following image explains briefly the process.
+Using Bamboo Payouts, you can easily disburse the funds settled your account to local beneficiary accounts. The following image explains briefly the process.
 
 ![Concepts](/assets/Payouts/Payouts1_en.png)
 
@@ -23,10 +23,10 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 
 ## Benefits
 * Our solution was created by industry experts.
-* ***Coverage*** - our servies is in 8 countries and counting!.
-* ***Flexibility*** -  Connect easy using our  API.
+* ***Coverage*** - our services is in 8 countries and counting!.
+* ***Flexibility*** -  Connect easy using our API.
 * We offer alternative Payouts transfers, as Nequi in Colombia.
-* Using the The payout fee can be assumed eithere by you or your payee.
+* Using the The payout fee can be assumed either by you or your payee.
 
 ## Coverage
 

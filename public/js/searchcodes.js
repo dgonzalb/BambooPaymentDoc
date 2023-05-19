@@ -44,6 +44,7 @@ function findTables() {
         }
         performSearch(table, sibling1, sibling2);
     }
+    // Ocultar/mostrar h2 vacíos
     var elements = document.querySelectorAll('h2:not([style*="display: none"])');
     //document.getElementById("ResultsDiv").innerHTML = "Number of visible h2: "+elements.length;
     for (e = 0; e < elements.length; e++) {
@@ -70,6 +71,31 @@ function findTables() {
         }
     }
 
+    // Ocultar/mostrar h3 vacíos
+    elements = document.querySelectorAll('h3:not([style*="display: none"])');
+    for (e = 0; e < elements.length; e++) {
+        var hideH3 = true;
+        let sib = elements[e].nextElementSibling;
+        while (sib) {
+            if (sib.tagName.toUpperCase() == "TABLE") {
+                if (sib.style.display != "none") {
+                    hideH3 = false;
+                    break;
+                }
+            } else if (sib.tagName.toUpperCase() == "H3") {
+                break;
+            }
+            sib = sib.nextElementSibling;
+        }
+
+        if (hideH3) {
+            elements[e].style.display = "none";
+            elements[e].nextElementSibling.style.display = "none";
+        } else {
+            elements[e].style.display = "";
+            elements[e].nextElementSibling.style.display = "";
+        }
+    }
 }
 
 function showMandatory(element) {

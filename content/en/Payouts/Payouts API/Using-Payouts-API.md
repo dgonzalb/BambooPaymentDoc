@@ -11,7 +11,7 @@ weight: 10
 To learn more about Payouts, refer to this [article](/payouts/overview.html).
 
 ## Configuring the authentication
-All methods used in Payous API requires an authentication header, which is configured using the following parameters.
+All methods used in Payouts API requires an authentication header, which is configured using the following parameters.
 
 | Key | Value | Coments |
 |---|---|---|
@@ -20,7 +20,7 @@ All methods used in Payous API requires an authentication header, which is confi
 | `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using _HmacSHA256_ algorithm |
 
 ### Signing the message
-The hash to be sent is built using the parameters `country`, `amount`, `currency`, and `reference` of the Request. The `secret-key` and the `MerchantPrivateKey` is provied to you when sing the onboarding contract with Bamboo.
+The hash to be sent is built using the parameters `country`, `amount`, `currency`, and `reference` of the Request. The `secret-key` and the `MerchantPrivateKey` is provided to you when sing the onboarding contract with Bamboo.
 
 #### Signature sample code
 ```javascript
@@ -38,7 +38,7 @@ Payouts API enable two main methods to be used during the request of Payouts.
 This method allows you to get the list of available banks in a given country
 
 #### Request URL
-Use any to the follwoing URLS accoriding to your needs.
+Use any to the following URLS according to your needs.
 
 * **Production**: `https://payout-processing-engine.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}`
 * **Development**: `https://payout-processing-engine.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}`
@@ -51,7 +51,7 @@ Where `{Country}}` is the ISO code of the country you want to consult in format 
 |---|:-:|:-:|---|
 | `id` | Integer |  | Internal identification of the bank. |
 | `countryIsoCode` | String | 2 | Country to which the bank belongs.  |
-| `bankCode` | Strting | 4 | Internal code of the bank used in the paremeter `payee.bankaccount.codebank` when requesting a Payout. |
+| `bankCode` | String | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
 | `bankName` | String |  | Name of the bank. |
 
 #### Response example
@@ -85,7 +85,7 @@ Where `{Country}}` is the ISO code of the country you want to consult in format 
 This method allows you to request one or more Payouts using the funds settled in your account.
 
 #### Request URL
-Use any to the follwoing URLS accoriding to your needs.
+Use any to the following URLS according to your needs.
 
 * **Production**: `https://payout-api.prod.bamboopayment.com/api/payout`
 * **Development**: `https://payout-api.dev.bamboopayment.com/api/payout`
@@ -94,12 +94,12 @@ Use any to the follwoing URLS accoriding to your needs.
 | Field | Type | Required | Description |
 |---|---|:-:|---|---|
 | `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`. |
-| `amount` | Intenger | Yes | Amount of the payout, the format has two digits for decimals. Example 100 => USD 1,00 |
+| `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals. Example 100 => USD 1,00 |
 | `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD available_ |
 | `reason` | String | No | Description of the payment. |
 | `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_ |
-| `type` | Intenger | Yes | Payout type.<br>Set `1` for Cash, `2` for Bank Transfer, and `3` for Wallet |
-| `notification_Url` | String | No | Callbak to notify the result of the payour |
+| `type` | Integer | Yes | Payout type.<br>Set `1` for Cash, `2` for Bank Transfer, and `3` for Wallet |
+| `notification_Url` | String | No | Callback to notify the result of the payout |
 | `payee.FirstName` | String | Yes | First Name of the Payee. | 
 | `payee.lastName `| String | Yes | Last Name of the Payee. | 
 | `payee.email` | String | No | Email address of the Payee. |  

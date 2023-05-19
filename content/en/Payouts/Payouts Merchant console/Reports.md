@@ -8,11 +8,11 @@ Description: >
 weight: 10
 ---
 
-To navigate to Payout reports, open you Merchant console and select ***...*** then ***...***.
+To navigate to Payout reports, open you Merchant console and select ***Payout*** then ***Payouts Report***.
 
 ![PrintScreen](/assets/Payouts/Payouts5_en.png)
 
-In this screen you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the fllowing attributes:
+In this screen you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the following attributes:
 
 <div id="columns">
      <li>Payout Id</li>
