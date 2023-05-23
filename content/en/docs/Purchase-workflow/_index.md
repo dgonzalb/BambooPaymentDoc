@@ -3,7 +3,7 @@ title: "Purchase workflow"
 date: 2023-03-02T08:28:16-05:00
 Description: >
   In Bamboo Payments, the purchase authorization workflow is driven by two factors. _Flow Type_ and _Customer Type_.
-weight: 20
+weight: 40
 ---
 
 ## Flow type
