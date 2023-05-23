@@ -74,7 +74,7 @@ Purchase errors always starts with `PR`.
 | `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | UserAgent parameter is empty. |  |
 | `PR016` | INVALID_CUSTOMER_IP_EMPTY | CustomerIP parameter is empty. |  |
 | `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | The field TaxableAmount cannot be greater than the purchase total amount. |  |
-| `PR018` | `PR_DATE_NEEDED | To filter by dates, you must enter value for From and To parameters. |  |
+| `PR018` | `PR_DATE_NEEDED | To filter by dates, you must enter valus for From and To parameters. |  |
 | `PR019` | EXCEED_DATE_RANGE | The search period cannot exceed the following number of days. |  |
 | `PR020` | INVALID_DOCUMENT_NUMBER | Invalid registered document |  |
 | `PR021` | NOT_ALLOW_PARTIAL_REFUND | Partial refunds are not allowed for the payment method used. |  |

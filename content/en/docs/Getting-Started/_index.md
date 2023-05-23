@@ -7,14 +7,14 @@ weight: 10
 ---
 
 ## Overview
-Using our platform, you can offer to your customers an improved payment experience, being able to request card details _as if it were_ on your own page or mobile application through our [**Checkout Form**]({{< ref "Checkout-Form.md" >}}).
+Using our platform, you can offer to your customers an improved payment experience, being able to request card details _as if it were_ on your own page or mobile application through our [**Checkout Form**]().
 
 You can also request the data only once and store a _**token**_ associated with the card that the customer entered securely on our platform.
 
 ### PCI-DSS
 Our platform is certified **PCI-DSS Level 1**, which allows us to process card numbers and other sensitive customer authentication data.
 
-The [Checkout Form]({{< ref "Checkout-Form.md" >}}) is specially designed to be embedded in your pages or mobile applications, you can now accept payments without receiving confidential information such as customer data, provide security to your customers, and ease of use.
+The [Checkout Form]() is specially designed to be embedded in your pages or mobile applications, you can now accept payments without receiving confidential information such as customer data, provide security to your customers, and ease of use.
 
 ## Getting started
 Follow this steps to start processing payments with Bamboo Payments:

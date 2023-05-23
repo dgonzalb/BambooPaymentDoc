@@ -10,6 +10,8 @@ menu:
     weight: 10     
 ---
 
+<meta http-equiv="refresh" content="0; URL=https://doc.bamboopayment.com/docs/documentation-stoplight-api-pci-doc-es/4a45e333e81d8-payinsƒ" />
+
 * International and local credit/debit cards
 * Bank transfers
 * Cash payments
