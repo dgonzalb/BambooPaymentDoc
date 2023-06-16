@@ -13,11 +13,11 @@ To learn more about Payouts, refer to this [article](/payouts/overview.html).
 ## Configuring the authentication
 All methods used in Payouts API requires an authentication header, which is configured using the following parameters.
 
-| Key | Value | Coments |
+| Key | Value | Comments |
 |---|---|---|
 | `Content-Type` | `application/json` | This parameter causes the request to be sent in _json_ format.  |
 | `Authorization` | `Basic {{MerchantPrivateKey}}` | Sent the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeLrs86_iTzSMLvDtuyQ-1zqIcsmFGcoSzncn_uFvQnj7bhB3rtZg__` |
-| `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using _HmacSHA256_ algorithm |
+| `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using _HmacSHA256_ algorithm. This header is only required for Payout creation. |
 
 ### Signing the message
 The hash to be sent is built using the parameters `country`, `amount`, `currency`, and `reference` of the Request. The `secret-key` and the `MerchantPrivateKey` is provided to you when sing the onboarding contract with Bamboo.
@@ -40,10 +40,10 @@ This method allows you to get the list of available banks in a given country
 #### Request URL
 Use any to the following URLS according to your needs.
 
-* **Production**: `https://payout-processing-engine.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}`
-* **Development**: `https://payout-processing-engine.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}`
+* **Production**: `https://payout-api.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}`
+* **Development**: `https://payout-api.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}`
 
-Where `{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`.
+Where `{{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`.
 
 #### Response parameters
 
@@ -98,7 +98,7 @@ Use any to the following URLS according to your needs.
 | `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD available_ |
 | `reason` | String | No | Description of the payment. |
 | `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_ |
-| `type` | Integer | Yes | Payout type.<br>Set `1` for Cash, `2` for Bank Transfer, and `3` for Wallet |
+| `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for PIX</li></ul>|
 | `notification_Url` | String | No | Callback to notify the result of the payout |
 | `payee.FirstName` | String | Yes | First Name of the Payee. | 
 | `payee.lastName `| String | Yes | Last Name of the Payee. | 
@@ -121,7 +121,7 @@ Use any to the following URLS according to your needs.
   "amount": 100,
   "currency": "USD",
   "reason": "string",
-  "reference": "PAB-34",
+  "reference": "PayOut34",
   "type": 1,
   "payee": {
     "firstName": "Juan",
@@ -148,13 +148,44 @@ Use any to the following URLS according to your needs.
 * `Ok`: HttpCode `200`.<br>
 Message received correctly, at this point the Payout starts to be processed
 
+**Response body**
+```json
+{
+    "payoutId": 145,
+    "status": 5,
+    "statusDescription": "Received",
+    "reference": "PayOut34",
+    "errors": [],
+    "statusCode": 200
+}
+```
+<br>
+Where:
+
+| Field | Description |
+|---|---|
+| `payoutId` | Internal identifier of the Payout. |
+| `status` | Internal code of the current status of the Payout. |
+| `statusDescription` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `reference` | Unique identifier of the Payout defined by you when the Payout was requested. |
+| `errors` | Errors that may appear  |
+| `statusCode` | HTTP code of the response. |
+
 * `Unauthorized`: HttpCode `401`.<br>
 Authorization error.
+
+**Response body**
+```json
+{
+    "statusCode": 401
+}
+```
+<br>
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
 The validation of the message failed and the payout is **Declined**.
 
-BadRequest Body:
+**Response body**
 ```json
 {
     "errors": [
@@ -165,5 +196,95 @@ BadRequest Body:
         }
     ],
     "statusCode": 400
+}
+```
+<br>
+
+* `Conflict` - `Declined`: HttpCode `HttpCode 409`.<br>
+The validation of the message was successful but the payout is **Declined** due to business rules.
+
+**Response body**
+```json
+{
+    "payoutId": 1,
+    "status": 8,
+    "statusDescription": "Declined",
+    "reference": "PayOut567",
+    "errors": [
+        {
+            "ErrorCode": "B101",
+            "PropertyName": "BankAccount",
+            "Message": "BankAccount invalid"
+        }
+    ],
+    "statusCode": 409
+}
+```
+
+### Obtaining a Payout
+This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or by using the reference that you provided when requesting the Payout.
+
+#### Request URL
+Use any to the following URLS according to your needs.
+
+* **Production**: `https://payout-api.prod.bamboopayment.com/api/payout`
+* **Development**: `https://payout-api.dev.bamboopayment.com/api/payout`
+
+To get the payout, include the following endpoints according to your needs.
+
+* **Using Payout ID**: `{{URL}}/api/Payout/{{PayoutId}}`
+* **Using Payout Reference**: `{{URL}}/api/Payout/reference/{{PayoutReference}}`
+
+#### Response parameters
+
+| Parameter | Format | Description |
+|---|:-:|---|
+| `payoutId` | Integer | Internal identification of the payout. |
+| `reference` | String | Unique identifier of the Payout defined by you when the Payout was requested. |
+| `isoCountry` | String | ISO code of the country in format `ISO 3166-2`. |
+| `created` | Date Time | Date when the Payout was requested. |
+| `lastUpdate` | Date Time | Date of the last update of the Payout was. |
+| `status` | Integer | Internal code of the current status of the Payout. |
+| `statusDescription` | String | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `errorCode` | String | Internal code of the error for the declined Payout. |
+| `errorDescription` | String | Error description for declined Payouts. |
+| `amount` | Object | Value and currency requested in the payout. |
+| `localAmount` | Object | Value and currency requested in the payout in local currency. |
+| `exchangeRate` | Numeric | Conversion value used in the Payout. |
+| `payee` | Object | Information of the recipient or beneficiary of the Payout.  |
+
+
+#### Response example
+```json
+{
+    "payoutId": 1100,
+    "reference": "QA-545",
+    "isoCountry": "CO",
+    "created": "2023-06-02T15:15:34.475614Z",
+    "lastUpdate": "2023-06-02T15:20:18.1507484Z",
+    "status": 1,
+    "statusDescription": "Paid",
+    "errorCode": null,
+    "errorDescription": null,
+    "amount": {
+        "value": 10.0,
+        "isoCurrency": "USD"
+    },
+    "localAmount": {
+        "value": 42843.0,
+        "isoCurrency": "COP"
+    },
+    "exchangeRate": 4394.23,
+    "payee": {
+        "firstName": "Paul",
+        "lastName": "Doe",
+        "email": "pauld@test.com",
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "number": "11111111",
+            "type": "CC"
+        }
+    }
 }
 ```
