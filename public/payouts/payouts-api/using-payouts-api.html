@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-05-16T13:39:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-06-16T15:27:07-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-05-16T13:39:41-05:00" />
-<meta itemprop="wordCount" content="640">
+<meta itemprop="dateModified" content="2023-06-16T15:27:07-05:00" />
+<meta itemprop="wordCount" content="1059">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.dd8ef4346b12bd7453aeb8d8b21f985410d01b6a03dd79a7c8769bfca11a6bfc.css" as="style">
-<link href="../../scss/main.min.dd8ef4346b12bd7453aeb8d8b21f985410d01b6a03dd79a7c8769bfca11a6bfc.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.74b2d8ef859ef4b2a887b318d30a07a8fb1e0b1821fb9d45a88d8ffb8ab946ab.css" as="style">
+<link href="../../scss/main.min.74b2d8ef859ef4b2a887b318d30a07a8fb1e0b1821fb9d45a88d8ffb8ab946ab.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.9bbc65b70195a422bbdd90b48d065a9a7c9efbc4a778cd5892cb87fc4d5f783a8f8cea716ec17f004d4b0794de1e63278fbf49e3f018a921ee56d7e1503e2953.json"
+  data-offline-search-index-json-src="../../offline-search-index.f4fac888afcd19f976441454a6b0857cb2849eb28d0a1e8ecdc7608554d76073cc6accb7814789f76888770daf665fd218d2fa613c43172f16d51c9dab740308.json"
   data-offline-search-base-href="../../"
 >
 
@@ -329,6 +329,7 @@
       <ul>
         <li><a href="#get-bank-list">Get Bank list</a></li>
         <li><a href="#payout-request">Payout request</a></li>
+        <li><a href="#obtaining-a-payout">Obtaining a Payout</a></li>
       </ul>
     </li>
   </ul>
@@ -388,7 +389,7 @@
 <tr>
 <th>Key</th>
 <th>Value</th>
-<th>Coments</th>
+<th>Comments</th>
 </tr>
 </thead>
 <tbody>
@@ -405,7 +406,7 @@
 <tr>
 <td><code>DigitalSignature</code></td>
 <td><code>{{DigitalSignature}}</code></td>
-<td>Signature to validate the transaction using <em>HmacSHA256</em> algorithm</td>
+<td>Signature to validate the transaction using <em>HmacSHA256</em> algorithm. This header is only required for Payout creation.</td>
 </tr>
 </tbody>
 </table>
@@ -424,10 +425,10 @@
 <h4 id="request-url">Request URL</h4>
 <p>Use any to the following URLS according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://payout-processing-engine.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
-<li><strong>Development</strong>: <code>https://payout-processing-engine.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
+<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
+<li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
 </ul>
-<p>Where <code>{Country}}</code> is the ISO code of the country you want to consult in format <code>ISO 3166-2</code>.</p>
+<p>Where <code>{{Country}}</code> is the ISO code of the country you want to consult in format <code>ISO 3166-2</code>.</p>
 <h4 id="response-parameters">Response parameters</h4>
 <table>
 <thead>
@@ -548,7 +549,7 @@
 <td><code>type</code></td>
 <td>Integer</td>
 <td style="text-align:center">Yes</td>
-<td>Payout type.<br>Set <code>1</code> for Cash, <code>2</code> for Bank Transfer, and <code>3</code> for Wallet</td>
+<td>Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li><code>1</code> for Cash</li><li><code>2</code> for Bank Transfer</li><li><code>3</code> for Wallet</li><li><code>4</code> for PIX</li></ul></td>
 <td></td>
 </tr>
 <tr>
@@ -644,7 +645,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PAB-34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Juan&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -667,20 +668,68 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h4 id="responses">Responses</h4>
 <ul>
-<li>
-<p><code>Ok</code>: HttpCode <code>200</code>.<br>
-Message received correctly, at this point the Payout starts to be processed</p>
-</li>
-<li>
-<p><code>Unauthorized</code>: HttpCode <code>401</code>.<br>
-Authorization error.</p>
-</li>
-<li>
-<p><code>BadRequest</code>: HttpCode <code>HttpCode 400</code>.<br>
-The validation of the message failed and the payout is <strong>Declined</strong>.</p>
-</li>
+<li><code>Ok</code>: HttpCode <code>200</code>.<br>
+Message received correctly, at this point the Payout starts to be processed</li>
 </ul>
-<p>BadRequest Body:</p>
+<p><strong>Response body</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">145</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Received&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">200</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+Where:
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>payoutId</code></td>
+<td>Internal identifier of the Payout.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Internal code of the current status of the Payout.</td>
+</tr>
+<tr>
+<td><code>statusDescription</code></td>
+<td>Current status of the Payout. Refer to <a href="../../payouts/overview/payout-status.html">this article</a> to learn more about Payout status.</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>Unique identifier of the Payout defined by you when the Payout was requested.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td>Errors that may appear</td>
+</tr>
+<tr>
+<td><code>statusCode</code></td>
+<td>HTTP code of the response.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>Unauthorized</code>: HttpCode <code>401</code>.<br>
+Authorization error.</li>
+</ul>
+<p><strong>Response body</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">401</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<ul>
+<li><code>BadRequest</code>: HttpCode <code>HttpCode 400</code>.<br>
+The validation of the message failed and the payout is <strong>Declined</strong>.</li>
+</ul>
+<p><strong>Response body</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
@@ -691,6 +740,148 @@ The validation of the message failed and the payout is <strong>Declined</strong>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">400</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<ul>
+<li><code>Conflict</code> - <code>Declined</code>: HttpCode <code>HttpCode 409</code>.<br>
+The validation of the message was successful but the payout is <strong>Declined</strong> due to business rules.</li>
+</ul>
+<p><strong>Response body</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Declined&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut567&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;B101&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PropertyName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankAccount&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Message&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankAccount invalid&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">409</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="obtaining-a-payout">Obtaining a Payout</h3>
+<p>This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or by using the reference that you provided when requesting the Payout.</p>
+<h4 id="request-url-2">Request URL</h4>
+<p>Use any to the following URLS according to your needs.</p>
+<ul>
+<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout</code></li>
+<li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout</code></li>
+</ul>
+<p>To get the payout, include the following endpoints according to your needs.</p>
+<ul>
+<li><strong>Using Payout ID</strong>: <code>{{URL}}/api/Payout/{{PayoutId}}</code></li>
+<li><strong>Using Payout Reference</strong>: <code>{{URL}}/api/Payout/reference/{{PayoutReference}}</code></li>
+</ul>
+<h4 id="response-parameters-1">Response parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>payoutId</code></td>
+<td style="text-align:center">Integer</td>
+<td>Internal identification of the payout.</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td style="text-align:center">String</td>
+<td>Unique identifier of the Payout defined by you when the Payout was requested.</td>
+</tr>
+<tr>
+<td><code>isoCountry</code></td>
+<td style="text-align:center">String</td>
+<td>ISO code of the country in format <code>ISO 3166-2</code>.</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td style="text-align:center">Date Time</td>
+<td>Date when the Payout was requested.</td>
+</tr>
+<tr>
+<td><code>lastUpdate</code></td>
+<td style="text-align:center">Date Time</td>
+<td>Date of the last update of the Payout was.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td style="text-align:center">Integer</td>
+<td>Internal code of the current status of the Payout.</td>
+</tr>
+<tr>
+<td><code>statusDescription</code></td>
+<td style="text-align:center">String</td>
+<td>Current status of the Payout. Refer to <a href="../../payouts/overview/payout-status.html">this article</a> to learn more about Payout status.</td>
+</tr>
+<tr>
+<td><code>errorCode</code></td>
+<td style="text-align:center">String</td>
+<td>Internal code of the error for the declined Payout.</td>
+</tr>
+<tr>
+<td><code>errorDescription</code></td>
+<td style="text-align:center">String</td>
+<td>Error description for declined Payouts.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td style="text-align:center">Object</td>
+<td>Value and currency requested in the payout.</td>
+</tr>
+<tr>
+<td><code>localAmount</code></td>
+<td style="text-align:center">Object</td>
+<td>Value and currency requested in the payout in local currency.</td>
+</tr>
+<tr>
+<td><code>exchangeRate</code></td>
+<td style="text-align:center">Numeric</td>
+<td>Conversion value used in the Payout.</td>
+</tr>
+<tr>
+<td><code>payee</code></td>
+<td style="text-align:center">Object</td>
+<td>Information of the recipient or beneficiary of the Payout.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-example-1">Response example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1100</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;QA-545&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;isoCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-06-02T15:15:34.475614Z&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-06-02T15:20:18.1507484Z&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Paid&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10.0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;isoCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;localAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">42843.0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;isoCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;exchangeRate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4394.23</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Paul&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pauld@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;address&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11111111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div>
 	
 	
@@ -699,9 +890,9 @@ The validation of the message failed and the payout is <strong>Declined</strong>
 <br>
 <b>Last modified</b>
 
-May 16, 2023: 
+June 16, 2023: 
 
- <i>Spelling fixes (8601ca8)</i>
+ <i>Changes in Payout API (3439913)</i>
   </div>
 </div>
 

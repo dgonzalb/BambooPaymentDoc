@@ -15,7 +15,7 @@ function createCopyButton(highlightDiv) {
   button.className = "far fa-copy";
   copyBtnDiv.appendChild(button);
 
-  button.addEventListener("click", () =>
+  copyBtnDiv.addEventListener("click", () =>
       copyCodeToClipboard(copyBtnText, highlightDiv)
   );
   addCopyButtonToDom(copyBtnDiv, highlightDiv);
@@ -74,6 +74,7 @@ function addCopyButtonToDom(button, highlightDiv) {
   highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
   wrapper.appendChild(highlightDiv);
 }
+
 
 document
   .querySelectorAll(".highlight")
