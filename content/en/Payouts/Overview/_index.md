@@ -36,10 +36,9 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 | Brazil | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
 | Chile  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Colombia  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Costa Rica  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
-| Uruguay  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
-| El Salvador  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
+| Mexico  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Peru  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| Uruguay  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
 ## Considerations
 Take into account the following considerations when using Payouts feature according to the payee's country to avoid rejections.
@@ -57,9 +56,6 @@ Take into account the following considerations when using Payouts feature accord
 
 ### Colombia
 * The bank account **cannot** exceed 17 characters.
-
-### Costa Rica
-* The bank account **cannot** exceed 22 characters.
 
 ### Uruguay
 * The bank account **cannot** exceed 14 characters.
