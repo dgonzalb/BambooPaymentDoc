@@ -79,7 +79,7 @@ Visa is not available for crossborder purchases.
 
 | | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment |API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment | API | |
 
 ## Ecuador
 
@@ -98,7 +98,7 @@ Visa is not available for crossborder purchases.
 
 |  | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Cash Payment |API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Cash Payment | API | |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/BankTransfer.png" width="52" style="" /> | Bank Transfer | Bank Transfer | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" width="52" style="" /> | Oxxo | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit and Debit Card | Redirect |
@@ -110,7 +110,7 @@ Visa is not available for crossborder purchases.
 
 | | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment |API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment | API | |
 
 ## Paraguay
 
@@ -131,3 +131,29 @@ Visa is not available for crossborder purchases.
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CashPayment.png"  width="52" style="" /> | Cash Payment | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/BankTransfer.png"  width="52" style="" /> | Bank Transfer | Bank Transfer | API |
+
+## Uruguay
+
+|  | Payment Method | Type | Flow |
+|-----|-----|-----|-----|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png" width="52" style="" /> | OCA | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png" width="52" style="" /> | Abitab | Cash Payment | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Débito | Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Prepago | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png" width="52" style="" />  | Creditel | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CreditosDirectos_CreditCard.png" width="52" style="" /> | Créditos Directos | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" width="52" style="" /> | RedPagos | Cash Payment | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Passcard_CreditCard.png" width="52" style="" /> | PassCard | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | MasterCard Prepago | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Lider_CreditCard.png" width="52" style="" /> | Líder | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/ClubDelEste_CreditCard.png" width="52" style="" /> | Club del Este | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Cabal_CreditCard.png" alt="master" width="52" style="" /> | Cabal | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Anda_CreditCard.png" alt="anda" width="52" style="" /> | Anda | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" alt="redpagos" width="52" style="" /> | Red Pagos Payfac | Cash Payment | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | E-Brou | Bank Transfer | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | Santander | Bank Transfer | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | Scotiabank | Bank Transfer | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | Itaú | Bank Transfer | Redirect |
