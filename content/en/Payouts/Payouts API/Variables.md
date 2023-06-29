@@ -40,7 +40,7 @@ The following table shows the available document types you need to configure in 
 | CE | Immigration ID | Individuals | Numeric | Between 6 and 10 |
 | NIT | Tax Identification Number | Companies | Numeric | Between 8 and 15 |
 
-### Costa Rica
+<!--### Costa Rica
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | 9 |
@@ -48,7 +48,7 @@ The following table shows the available document types you need to configure in 
 ### El Salvador
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| DUI | Unique identity document | Individuals |  | Between 6 and 18 |
+| DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
 
 ### Mexico
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -59,10 +59,10 @@ The following table shows the available document types you need to configure in 
 | PASSPORT | International Travel Document | Individuals |  | Between 8 and 18 |
 | RESIDENCIA | Document of foreigner residing in the country | Individuals |  | Between 8 and 18 |
 
-### Nicaragua
+<!--### Nicaragua
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| CI | Identity card | Individuals |  | Between 8 and 18 |
+| CI | Identity card | Individuals |  | Between 8 and 18 |-->
 
 ### Peru
 | Abbreviation | Document name | Individuals / Companies | Type | Length |

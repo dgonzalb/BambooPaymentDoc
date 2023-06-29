@@ -43,7 +43,7 @@ Use any to the following URLS according to your needs.
 * **Production**: `https://payout-api.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}`
 * **Development**: `https://payout-api.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}`
 
-Where `{{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`.
+Where `{{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`. [Countries available for Payouts](/payouts/overview.html#coverage).
 
 #### Response parameters
 
@@ -91,20 +91,22 @@ Use any to the following URLS according to your needs.
 * **Development**: `https://payout-api.dev.bamboopayment.com/api/payout`
 
 #### Request parameters
-| Field | Type | Required | Description |
+The following table shows the mandatory and optional parameters to create a Payout for all the countries.
+
+| Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`. |
-| `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals. Example 100 => USD 1,00 |
-| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD available_ |
+| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`.<br>[Countries available for Payouts](/payouts/overview.html#coverage). |
+| `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
+| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD available_. |
 | `reason` | String | No | Description of the payment. |
-| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_ |
+| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_. |
 | `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for PIX</li></ul>|
 | `notification_Url` | String | No | Callback to notify the result of the payout |
 | `payee.FirstName` | String | Yes | First Name of the Payee. | 
 | `payee.lastName `| String | Yes | Last Name of the Payee. | 
 | `payee.email` | String | No | Email address of the Payee. |  
 | `payee.phone` | String | No | Phone number of the Payee. | 
-| `payee.address` | String | No |   | 
+| `payee.address` | String | No | Address of the Payee. | 
 | `payee.document.type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |
 | `payee.document.number` | String | Yes | Document number of the Payee. | 
 | `payee.bankaccount.number` | String | Yes<sup>*</sup> | Bank account number of the Payee. |
@@ -112,7 +114,12 @@ Use any to the following URLS according to your needs.
 | `payee.bankaccount.codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
 | `payee.bankaccount.branch` | String | No | Branch code of the Payee's bank. | 
 
+
  <sup>*</sup> _Only for bank transfers; otherwise, the parameter is not required_.
+
+{{% alert title="Information" color="info"%}}
+For _PIX_, the object `payee.bankaccount` must not be present in the request.
+{{% /alert %}}
 
  #### Request example
 ```json
@@ -122,7 +129,7 @@ Use any to the following URLS according to your needs.
   "currency": "USD",
   "reason": "string",
   "reference": "PayOut34",
-  "type": 1,
+  "type": 2,
   "payee": {
     "firstName": "Juan",
     "lastName": "Perez",
@@ -138,6 +145,31 @@ Use any to the following URLS according to your needs.
       "type": 1,
       "codeBank": "1007",
       "branch": "1"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+##### Request example using PIX
+As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _PIX_ you need to send the request as follows:
+
+```json
+{
+  "country": "BR",
+  "amount": 100,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 4,
+  "payee": {
+    "firstName": "Tiago",
+    "lastName": "Costa",
+    "email": "tcosta@mail.com",
+    "phone": "92799322",
+    "address": "address",
+    "document": {
+      "type": "CPF",
+      "number": "54562271779"
     }
   },
   "notification_Url": "string"

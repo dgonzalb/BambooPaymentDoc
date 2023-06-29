@@ -30,15 +30,15 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 
 ## Coverage
 
-| Country | Currency | Local Bank Transfer | Cash | Instant Transfer | Wallet |
-|---|:-:|:-:|:-:|:-:|:-:|
-| Argentina  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
-| Brazil | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
-| Chile  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Colombia  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Mexico  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Peru  | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Uruguay  | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Country | ISO Code | Currency | Local Bank Transfer | Cash | Instant Transfer | Wallet |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| Argentina  | `AR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
+| Brazil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
+| Chile  | `CL` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| Colombia  | `CO` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Mexico  | `MX` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| Peru  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
 ## Considerations
 Take into account the following considerations when using Payouts feature according to the payee's country to avoid rejections.
@@ -47,8 +47,8 @@ Take into account the following considerations when using Payouts feature accord
 * The bank account **cannot** exceed 22 characters.
 
 ### Brazil
-* The bank account **cannot** exceed 15 characters. The especific size and format depend on the bank of the payee.
-* The branch of the bank account **cannot** exceed 5 characters.
+* The bank account **cannot** exceed 15 characters. The specific size and format depend on the bank of the payee.
+* The branch of the bank account **cannot** exceed 4 characters or 5 characters for _Banco do Brasil_ accounts.
 * For ***Pix***, you can set as account either the Document (CPF or CNPJ), the e-mail, or the phone.
 
 ### Chile
@@ -56,6 +56,12 @@ Take into account the following considerations when using Payouts feature accord
 
 ### Colombia
 * The bank account **cannot** exceed 17 characters.
+
+### Mexico
+* The CLABE number **cannot** exceed 18 characters and is also validated using a verification algorithm.
+
+### Peru
+* The bank account **cannot** exceed 20 characters.
 
 ### Uruguay
 * The bank account **cannot** exceed 14 characters.
