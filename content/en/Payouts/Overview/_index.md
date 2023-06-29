@@ -44,12 +44,12 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 Take into account the following considerations when using Payouts feature according to the payee's country to avoid rejections.
 
 ### Argentina
-* The bank account **cannot** exceed 22 characters.
+* The CBU/CVU **cannot** exceed 22 characters.
 
 ### Brazil
 * The bank account **cannot** exceed 15 characters. The specific size and format depend on the bank of the payee.
 * The branch of the bank account **cannot** exceed 4 characters or 5 characters for _Banco do Brasil_ accounts.
-* For ***Pix***, you can set as account either the Document (CPF or CNPJ), the e-mail, or the phone.
+* For ***Pix***, the account number is the Document number (CPF or CNPJ) of the payee.
 
 ### Chile
 * The bank account **cannot** exceed 16 characters.
