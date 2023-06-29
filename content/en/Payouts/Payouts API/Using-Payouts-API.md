@@ -115,11 +115,8 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee.bankaccount.branch` | String | No | Branch code of the Payee's bank. | 
 
 
- <sup>*</sup> _Only for bank transfers; otherwise, the parameter is not required_.
+<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
-{{% alert title="Information" color="info"%}}
-For _PIX_, the object `payee.bankaccount` must not be present in the request.
-{{% /alert %}}
 
  #### Request example
 ```json
