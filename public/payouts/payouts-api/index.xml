@@ -255,7 +255,7 @@
 &lt;td&gt;&lt;code&gt;payee.bankaccount.number&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Bank account number of the Payee.&lt;/td&gt;
+&lt;td&gt;Bank account number of the Payee.&lt;br&gt;Take into account the following considerations:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For Argentina, set the CBU/CVU.&lt;/li&gt;&lt;li&gt;For Mexico, set the CLABE number.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -276,7 +276,7 @@
 &lt;td&gt;&lt;code&gt;payee.bankaccount.branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank.&lt;/td&gt;
+&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
