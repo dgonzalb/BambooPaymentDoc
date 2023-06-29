@@ -110,7 +110,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee.document.type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |
 | `payee.document.number` | String | Yes | Document number of the Payee. | 
 | `payee.bankaccount.number` | String | Yes<sup>*</sup> | Bank account number of the Payee. |
-| `payee.bankaccount.type` | Intenger | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
+| `payee.bankaccount.type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
 | `payee.bankaccount.codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
 | `payee.bankaccount.branch` | String | No | Branch code of the Payee's bank. | 
 
