@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-06-29T09:16:52-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-06-29T09:44:55-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-06-29T09:16:52-05:00" />
-<meta itemprop="wordCount" content="1166">
+<meta itemprop="dateModified" content="2023-06-29T09:44:55-05:00" />
+<meta itemprop="wordCount" content="1169">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.a5e6d59de12bce4ca46a7c711df2280be2095116015ee30bad9fd932bb8157cf405b002e9434b6ac460389bcf42ff29be2cbc4111778c0fd6281e08ae2a3cba4.json"
+  data-offline-search-index-json-src="../../offline-search-index.f3146fdef9c9ade96cb4100240e2c84e4a77e1a4490d59247b1e3121bdce8013680ebb93b0ba206f20366c7ad60ea5fe98fc6501b54738dabbc2342fdd45794e.json"
   data-offline-search-base-href="../../"
 >
 
@@ -639,15 +639,7 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> <em>Only for bank transfers; otherwise, the parameter is not required</em>.</p>
-
-
-<div class="alert alert-info" role="alert">
-</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Information</h4>
-<p class="alert-text">For <em>PIX</em>, the object <code>payee.bankaccount</code> must not be present in the request.</p>
-</div>
-
+<p><sup>*</sup> <em>When using Bank transfer, these parameters are mandatory for</em> <em><strong>ALL</strong></em> <em>countries. For PIX, the object</em> <code>payee.bankaccount</code> <em>and its parameters must not be present in the request.</em></p>
 <h4 id="request-example">Request example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -923,7 +915,7 @@ The validation of the message was successful but the payout is <strong>Declined<
 
 June 29, 2023: 
 
- <i>Updates for PIX and MX (967f12e)</i>
+ <i>Updates for PIX and MX (2e8d0e9)</i>
   </div>
 </div>
 
