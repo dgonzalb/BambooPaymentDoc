@@ -122,7 +122,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 Refer to the corresponding tab according to the payee's country.
 
 
-{{< tabs tabTotal="7" tabID="1" tabName1="Argentina" tabName2="Brazil" tabName3="Chile" tabName4="Colombia" tabName5="Mexico" tabName6="Peru" tabName7="Uruguay" >}}
+{{< tabs tabTotal="7" tabID="countries" tabName1="Argentina" tabName2="Brazil" tabName3="Chile" tabName4="Colombia" tabName5="Mexico" tabName6="Peru" tabName7="Uruguay" >}}
 {{< tab tabNum="1" >}}
 <br>
 
