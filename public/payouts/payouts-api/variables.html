@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/variables.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-06-29T09:16:52-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-07-06T10:11:36-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Variables">
 <meta itemprop="description" content="Find the list of variables and codes available for Payouts integration.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-06-29T09:16:52-05:00" />
-<meta itemprop="wordCount" content="300">
+<meta itemprop="dateModified" content="2023-07-06T10:11:36-05:00" />
+<meta itemprop="wordCount" content="407">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Variables"/>
 <meta name="twitter:description" content="Find the list of variables and codes available for Payouts integration.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.8386be466ecb3daddcd559659463346f3e4cc6d662b9f8d49b66ec4a3d2be800684a3c81e332ba68e21edfe897020fbaacdb67cc0d0478ede20c77d67944096b.json"
+  data-offline-search-index-json-src="../../offline-search-index.0b25c62fa713bf8a037a53f65cea5bfb791e9d222dd9f3bd692124c7c8752bdc2452af0bec11157607ac48e99d6fd63f6be90f1622aa39ba6b0c4fc963f80821.json"
   data-offline-search-base-href="../../"
 >
 
@@ -337,7 +337,7 @@
         <li><a href="#uruguay">Uruguay</a></li>
       </ul>
     </li>
-    <li><a href="#codes">Codes</a></li>
+    <li><a href="#error-codes">Error Codes</a></li>
   </ul>
 </nav>
 
@@ -669,7 +669,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codes">Codes</h2>
+<h2 id="error-codes">Error Codes</h2>
 <table>
 <thead>
 <tr>
@@ -694,6 +694,78 @@
 <td><code>409</code></td>
 <td>Conflict</td>
 </tr>
+<tr>
+<td><code>812</code></td>
+<td>Declined by validation for document</td>
+</tr>
+<tr>
+<td><code>813</code></td>
+<td>Declined by validation for account</td>
+</tr>
+<tr>
+<td><code>814</code></td>
+<td>Declined by validation for country</td>
+</tr>
+<tr>
+<td><code>815</code></td>
+<td>Declined by Compliance</td>
+</tr>
+<tr>
+<td><code>816</code></td>
+<td>Reference ID already used.<br>This error is not be displayed in the <a href="../../payouts/payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
+</tr>
+<tr>
+<td><code>901</code></td>
+<td>Bank account is closed</td>
+</tr>
+<tr>
+<td><code>902</code></td>
+<td>Invalid bank account</td>
+</tr>
+<tr>
+<td><code>903</code></td>
+<td>Invalid bank account type</td>
+</tr>
+<tr>
+<td><code>904</code></td>
+<td>Invalid bank branch</td>
+</tr>
+<tr>
+<td><code>905</code></td>
+<td>Monthly limit exceeded for user</td>
+</tr>
+<tr>
+<td><code>906</code></td>
+<td>Rejected by merchant&rsquo;s request</td>
+</tr>
+<tr>
+<td><code>907</code></td>
+<td>The bank account is unable to receive transfers</td>
+</tr>
+<tr>
+<td><code>908</code></td>
+<td>Invalid beneficiary document</td>
+</tr>
+<tr>
+<td><code>909</code></td>
+<td>Beneficiary name doesn&rsquo;t match bank details</td>
+</tr>
+<tr>
+<td><code>910</code></td>
+<td>PIX key invalid</td>
+</tr>
+<tr>
+<td><code>911</code></td>
+<td>Invalid state change requested</td>
+</tr>
+<tr>
+<td><code>912</code></td>
+<td>Insufficient Balance</td>
+</tr>
+<tr>
+<td><code>999</code></td>
+<td>Error</td>
+</tr>
 </tbody>
 </table>
 
@@ -704,9 +776,9 @@
 <br>
 <b>Last modified</b>
 
-June 29, 2023: 
+July 6, 2023: 
 
- <i>Updates for PIX and MX (967f12e)</i>
+ <i>Error codes for Payouts updated (909adde)</i>
   </div>
 </div>
 
