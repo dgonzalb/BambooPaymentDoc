@@ -16,7 +16,7 @@ The following table shows the available document types you need to configure in 
 |:-:|---|---|:-:|:-:|
 | CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
-| ID | National Identity Document | Individuals | Numeric | 7-9 |
+| DNI | National Identity Document | Individuals | Numeric | 7-9 |
 
 ### Brazil
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -68,7 +68,7 @@ The following table shows the available document types you need to configure in 
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
-| ID | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
+| DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
 | PASSPORT | International Travel Document | Individuals | | Between 7 and 18 |
 | RUC | Single Taxpayer Registry | Individuals and Companies | | 11 |
 

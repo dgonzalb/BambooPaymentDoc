@@ -118,37 +118,49 @@ The following table shows the mandatory and optional parameters to create a Payo
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
- #### Request example
+#### Request example
+Refer to the corresponding tab according to the payee's country.
+
+
+{{< tabs tabTotal="7" tabID="1" tabName1="Argentina" tabName2="Brazil" tabName3="Chile" tabName4="Colombia" tabName5="Mexico" tabName6="Peru" tabName7="Uruguay" >}}
+{{< tab tabNum="1" >}}
+<br>
+
 ```json
 {
-  "country": "CO",
-  "amount": 100,
+  "country": "AR",
+  "amount": 1000,
   "currency": "USD",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
-    "firstName": "Juan",
-    "lastName": "Perez",
-    "email": "jperez@mail.com",
+    "firstName": "Sara",
+    "lastName": "Jáquez",
+    "email": "sarasouez@mail.com",
     "phone": "099999999",
-    "address": "address",
+    "address": "Francisco  51 Gral. Ximena, AR-H 0376",
     "document": {
-      "type": "CC",
-      "number": "11111111"
+      "type": "DNI",
+      "number": "123456789"
     },
     "bankAccount": {
-      "number": "2288",
+      "number": "0071234567890123456789",
       "type": 1,
-      "codeBank": "1007",
-      "branch": "1"
+      "codeBank": "7"
     }
   },
   "notification_Url": "string"
 }
 ```
-##### Request example using PIX
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
 As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _PIX_ you need to send the request as follows:
+
 
 ```json
 {
@@ -163,7 +175,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
     "lastName": "Costa",
     "email": "tcosta@mail.com",
     "phone": "92799322",
-    "address": "address",
+    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
     "document": {
       "type": "CPF",
       "number": "54562271779"
@@ -172,6 +184,208 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
   "notification_Url": "string"
 }
 ```
+<br>
+
+When using _Bank transfer_ you need to send the request as follows:
+
+```json
+{
+  "country": "BR",
+  "amount": 100,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Tiago",
+    "lastName": "Costa",
+    "email": "tcosta@mail.com",
+    "phone": "92799322",
+    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
+    "document": {
+      "type": "CPF",
+      "number": "54562271779"
+    },
+    "bankAccount": {
+      "number": "12345678901234-5",
+      "type": 1,
+      "codeBank": "104",
+      "branch": "1234"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+
+{{< /tab >}}
+
+
+{{< tab tabNum="3" >}}
+<br>
+
+```json
+{
+  "country": "CL",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Mercedes",
+    "lastName": "Garrido",
+    "email": "merceddo@mail.com",
+    "phone": "099999999",
+    "address": "Camino Franco, 13, Ático 4º, 93631, L' Garay",
+    "document": {
+      "type": "CI",
+      "number": "12345678"
+    },
+    "bankAccount": {
+      "number": "1234567890123450",
+      "type": 1,
+      "codeBank": "1"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="4" >}}
+<br>
+
+```json
+{
+  "country": "CO",
+  "amount": 100,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "email": "jperez@mail.com",
+    "phone": "099999999",
+    "address": "Cra 23 # 123-45 Apto 601",
+    "document": {
+      "type": "CC",
+      "number": "11111111"
+    },
+    "bankAccount": {
+      "number": "2288",
+      "type": 1,
+      "codeBank": "1007"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="5" >}}
+<br>
+
+```json
+{
+  "country": "MX",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Rubén",
+    "lastName": "Torres",
+    "email": "rubentres@mail.com",
+    "phone": "01 55 5601 7965",
+    "address": "Coyoacan 2000",
+    "document": {
+      "type": "CURP",
+      "number": "OEAF771012HMCRGR09"
+    },
+    "bankAccount": {
+      "number": "123456789012345678",
+      "type": 1,
+      "codeBank": "2"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="6" >}}
+<br>
+
+```json
+{
+  "country": "PE",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Ornela",
+    "lastName": "Olivera",
+    "email": "ornelera@mail.com",
+    "phone": "099999999",
+    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
+    "document": {
+      "type": "DNI",
+      "number": "12345678"
+    },
+    "bankAccount": {
+      "number": "11487349",
+      "type": 1,
+      "codeBank": "2"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="7" >}}
+<br>
+
+```json
+{
+  "country": "UY",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Daniel",
+    "lastName": "Lorenzo",
+    "email": "danielzo@mail.com",
+    "phone": "999999999",
+    "address": "12900 Montevideo",
+    "document": {
+      "type": "CI",
+      "number": "38067788"
+    },
+    "bankAccount": {
+      "number": "12345678912345",
+      "type": 2,
+      "codeBank": "999",
+      "branch": "1"
+    }
+  },
+  "notification_Url": "string"
+}
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 #### Responses
 * `Ok`: HttpCode `200`.<br>
