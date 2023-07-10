@@ -23,7 +23,7 @@ You can configure the Payout fee to be assumed by you or by the payee. For more 
 
 ## Benefits
 * Our solution was created by industry experts.
-* ***Coverage*** - our services is in 8 countries and counting!.
+* ***Coverage*** - our services is in 7 countries and counting!.
 * ***Flexibility*** -  Connect easy using our API.
 * We offer alternative Payouts transfers, as Nequi in Colombia.
 * Using the The payout fee can be assumed either by you or your payee.
