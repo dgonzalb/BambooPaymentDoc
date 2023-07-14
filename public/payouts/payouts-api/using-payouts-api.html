@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-07-06T15:25:12-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-07-14T13:23:20-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-07-06T15:25:12-05:00" />
+<meta itemprop="dateModified" content="2023-07-14T13:23:20-05:00" />
 <meta itemprop="wordCount" content="1542">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.b81d6696d70ee78bc9fc1c079483852d18ab7afc8a539ee69b9cfd559fe1ae89d20cb521bf9cc661a6a5f26aa062fe9092d3e7c8b7eb92a5dfa9265f1e00b789.json"
+  data-offline-search-index-json-src="../../offline-search-index.7be6271657f09fe1ce9fb1e597e6c7954d8f2ec0e5056b127544ba8f06034f7f8a2df2b71a176bfbfb8a5541d1bd1ef7d43db441498f12fe1013c7933f654715.json"
   data-offline-search-base-href="../../"
 >
 
@@ -431,8 +431,8 @@
 <h4 id="request-url">Request URL</h4>
 <p>Use any to the following URLS according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
-<li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}</code></li>
+<li><strong>Production</strong>: <code>https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}</code></li>
+<li><strong>Stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}</code></li>
 </ul>
 <p>Where <code>{{Country}}</code> is the ISO code of the country you want to consult in format <code>ISO 3166-2</code>. <a href="../../payouts/overview.html#coverage">Countries available for Payouts</a>.</p>
 <h4 id="response-parameters">Response parameters</h4>
@@ -501,8 +501,8 @@
 <h4 id="request-url-1">Request URL</h4>
 <p>Use any to the following URLS according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout</code></li>
-<li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout</code></li>
+<li><strong>Production</strong>: <code>https://payout-api.bamboopayment.com/api/payout</code></li>
+<li><strong>stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/payout</code></li>
 </ul>
 <h4 id="request-parameters">Request parameters</h4>
 <p>The following table shows the mandatory and optional parameters to create a Payout for all the countries.</p>
@@ -1159,8 +1159,8 @@ The validation of the message was successful but the payout is <strong>Declined<
 <h4 id="request-url-2">Request URL</h4>
 <p>Use any to the following URLS according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/payout</code></li>
-<li><strong>Development</strong>: <code>https://payout-api.dev.bamboopayment.com/api/payout</code></li>
+<li><strong>Production</strong>: <code>https://payout-api.bamboopayment.com/api/payout</code></li>
+<li><strong>Stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/payout</code></li>
 </ul>
 <p>To get the payout, include the following endpoints according to your needs.</p>
 <ul>
@@ -1284,9 +1284,9 @@ The validation of the message was successful but the payout is <strong>Declined<
 <br>
 <b>Last modified</b>
 
-July 6, 2023: 
+July 14, 2023: 
 
- <i>Added request example by country (b1087c2)</i>
+ <i>API Request URLs updated (f254384)</i>
   </div>
 </div>
 
