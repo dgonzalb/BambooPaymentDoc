@@ -40,8 +40,8 @@ This method allows you to get the list of available banks in a given country
 #### Request URL
 Use any to the following URLS according to your needs.
 
-* **Production**: `https://payout-api.prod.bamboopayment.com/api/payout/Bank/country/{{Country}}`
-* **Development**: `https://payout-api.dev.bamboopayment.com/api/payout/Bank/country/{{Country}}`
+* **Production**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
+* **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
 
 Where `{{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`. [Countries available for Payouts](/payouts/overview.html#coverage).
 
@@ -87,8 +87,8 @@ This method allows you to request one or more Payouts using the funds settled in
 #### Request URL
 Use any to the following URLS according to your needs.
 
-* **Production**: `https://payout-api.prod.bamboopayment.com/api/payout`
-* **Development**: `https://payout-api.dev.bamboopayment.com/api/payout`
+* **Production**: `https://payout-api.bamboopayment.com/api/payout`
+* **stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
 
 #### Request parameters
 The following table shows the mandatory and optional parameters to create a Payout for all the countries.
@@ -470,8 +470,8 @@ This method allows you to retrieve the information of a Payout. You can retrieve
 #### Request URL
 Use any to the following URLS according to your needs.
 
-* **Production**: `https://payout-api.prod.bamboopayment.com/api/payout`
-* **Development**: `https://payout-api.dev.bamboopayment.com/api/payout`
+* **Production**: `https://payout-api.bamboopayment.com/api/payout`
+* **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
 
 To get the payout, include the following endpoints according to your needs.
 
