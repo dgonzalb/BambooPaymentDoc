@@ -2,9 +2,12 @@
 title: "Purchase workflow"
 date: 2023-03-02T08:28:16-05:00
 Description: >
-  In Bamboo Payments, the purchase authorization workflow is driven by two factors. _Flow Type_ and _Customer Type_.
+  In Bamboo Payments, the purchase authorization workflow is driven by two factors. _Customer Type_ and _Flow Type_.
 weight: 40
 ---
+
+## Customer Type
+Regardless of the flow type, you can have either Anonymous o Registered customers. Anonymous customers are those who are not registered on the site and make a one-time purchase, and the registered customers are clients that are registered in the website, so can be identified and have extra functionalities such as recurrences.
 
 ## Flow type
 There are two different workflows that can be used to authorize a purchase:
@@ -12,22 +15,20 @@ There are two different workflows that can be used to authorize a purchase:
 * API
 * Redirect
 
-This depends on each payment method, it's specified in the payment methods table by country in the column _**FLOW**_.
+{{% alert title="Note" color="info"%}}
+Flow type depends on each payment method, it's specified in the [payment methods table by country](/docs/getting-started/payment-methods.html) in the column _**FLOW**_.
+{{% /alert %}}
 
-### API
-Show the flow
+### API flow
+![PrintScreen](/assets/APIFlow_en.png)
 
-### Redirect
-Show the flow
+For purchases using API, you can use any of the following options:
 
-## Customer Type
-There are two types of client:
+* [Basic purchase]({{< ref "Basic-Purchase.md" >}}), which can be local or CrossBorder.
+* [Direct purchase]({{< ref "Direct-Purchase.md" >}})
+* [Purchase preview]({{< ref "Purchase-Preview.md" >}})
 
-* Anonymous users
-* Registered users
+### Redirect flow
+![PrintScreen](/assets/RedirectionFlow_en.png)
 
-### Anonymous users
-An anonymous user is the one who is not registered in the site and makes a one-time purchase. In this case, you always must to ask for the card data to carry out the transaction.
-
-### Registered users
-Despite of the Anonymous users, this users are registered in the website, so can be identified and their card data can be associated to make other purchases without having to enter the data again.
+For Redirect purchase, refer to [Redirect flow payments]({{< ref "Redirect-Purchase.md" >}}).

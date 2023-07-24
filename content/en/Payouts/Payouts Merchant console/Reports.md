@@ -52,12 +52,11 @@ Second, you find the list of payouts requested. Where you have the following col
 | Country | Country of the payee. |
 | USD Amount | Amount of the Payout in US Dollars. |
 | Local Amount | Amount of the Payout in the currency of the payee. |
-| Account | Bank account of the payee. |
 
 To see the detail of a payout, just click it in the table. The following window appears.
 
 ![PrintScreen](/assets/Payouts/Payouts6_en.png)
 
-CLick the _**More details**_ button to see further details of the Payout and its status log.
+Click the _**More details**_ button to see further details of the Payout and its status log.
 
 ![PrintScreen](/assets/Payouts/Payouts7_en.png)

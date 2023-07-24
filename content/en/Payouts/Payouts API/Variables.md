@@ -16,7 +16,7 @@ The following table shows the available document types you need to configure in 
 |:-:|---|---|:-:|:-:|
 | CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
-| ID | National Identity Document | Individuals | Numeric | 7-9 |
+| DNI | National Identity Document | Individuals | Numeric | 7-9 |
 
 ### Brazil
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -40,7 +40,7 @@ The following table shows the available document types you need to configure in 
 | CE | Immigration ID | Individuals | Numeric | Between 6 and 10 |
 | NIT | Tax Identification Number | Companies | Numeric | Between 8 and 15 |
 
-### Costa Rica
+<!--### Costa Rica
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | 9 |
@@ -48,7 +48,7 @@ The following table shows the available document types you need to configure in 
 ### El Salvador
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| DUI | Unique identity document | Individuals |  | Between 6 and 18 |
+| DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
 
 ### Mexico
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -59,16 +59,16 @@ The following table shows the available document types you need to configure in 
 | PASSPORT | International Travel Document | Individuals |  | Between 8 and 18 |
 | RESIDENCIA | Document of foreigner residing in the country | Individuals |  | Between 8 and 18 |
 
-### Nicaragua
+<!--### Nicaragua
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| CI | Identity card | Individuals |  | Between 8 and 18 |
+| CI | Identity card | Individuals |  | Between 8 and 18 |-->
 
 ### Peru
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
-| ID | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
+| DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
 | PASSPORT | International Travel Document | Individuals | | Between 7 and 18 |
 | RUC | Single Taxpayer Registry | Individuals and Companies | | 11 |
 
@@ -78,12 +78,30 @@ The following table shows the available document types you need to configure in 
 | CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
 | DE | | Single | Numeric | |
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | |
-| RUT | Single Tax Role | Individuals | Numeric | 12 |ç
+| RUT | Single Tax Role | Individuals | Numeric | 12 |
 
-## Codes
+## Error Codes
 | Error code | Description |
 |---|---|
 | `200` | Success |
 | `400` | Bad Request |
 | `401` | Unauthorized |
 | `409` | Conflict |
+| `812` | Declined by validation for document |
+| `813` | Declined by validation for account |
+| `814` | Declined by validation for country |
+| `815` | Declined by Compliance |
+| `816` | Reference ID already used.<br>This error is not be displayed in the [Payouts console](/payouts/payouts-merchant-console.html) but it is returned via API. |
+| `901` | Bank account is closed |
+| `902` | Invalid bank account |
+| `903` | Invalid bank account type |
+| `904` | Invalid bank branch |
+| `905` | Monthly limit exceeded for user |
+| `906` | Rejected by merchant's request |
+| `907` | The bank account is unable to receive transfers |
+| `908` | Invalid beneficiary document |
+| `909` | Beneficiary name doesn't match bank details |
+| `910` | PIX key invalid |
+| `911` | Invalid state change requested |
+| `912` | Insufficient Balance |
+| `999` | Error |

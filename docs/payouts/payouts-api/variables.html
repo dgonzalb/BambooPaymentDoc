@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Find the list of variables and codes available for Payouts integration.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-05-16T13:39:41-05:00" />
-<meta itemprop="wordCount" content="352">
+<meta itemprop="wordCount" content="407">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Variables"/>
 <meta name="twitter:description" content="Find the list of variables and codes available for Payouts integration.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.74b2d8ef859ef4b2a887b318d30a07a8fb1e0b1821fb9d45a88d8ffb8ab946ab.css" as="style">
-<link href="../../scss/main.min.74b2d8ef859ef4b2a887b318d30a07a8fb1e0b1821fb9d45a88d8ffb8ab946ab.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
+<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.ce13a371aa094ec472eafa6aab3db9424390a59665a7ae37120988a484d9bdd134e9a33c096b9b1f9f04a0c2799cea85e82a457e85e8391c7bcbdc0c59111102.json"
+  data-offline-search-index-json-src="../../offline-search-index.e1de8941e1b07d908bf4140421af34743f625682b18ae1d98b17cb9f356724970b1de0df8e797a62a5e6bb494a9eba25b16ec83995105f48c0e5f45d7f57cff9.json"
   data-offline-search-base-href="../../"
 >
 
@@ -241,6 +241,12 @@
         <a id="/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-merchant-consolereportshtml" href="../../payouts/payouts-merchant-console/reports.html">Payout Reports</a>
       
       
+      
+      
+      
+        <a id="/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-merchant-consolebalanceshtml" href="../../payouts/payouts-merchant-console/balances.html">Payouts Balance movements</a>
+      
+      
     </li>
   </ul>
    </ul> 
@@ -326,15 +332,12 @@
         <li><a href="#brazil">Brazil</a></li>
         <li><a href="#chile">Chile</a></li>
         <li><a href="#colombia">Colombia</a></li>
-        <li><a href="#costa-rica">Costa Rica</a></li>
-        <li><a href="#el-salvador">El Salvador</a></li>
         <li><a href="#mexico">Mexico</a></li>
-        <li><a href="#nicaragua">Nicaragua</a></li>
         <li><a href="#peru">Peru</a></li>
         <li><a href="#uruguay">Uruguay</a></li>
       </ul>
     </li>
-    <li><a href="#codes">Codes</a></li>
+    <li><a href="#error-codes">Error Codes</a></li>
   </ul>
 </nav>
 
@@ -413,7 +416,7 @@
 <td style="text-align:center">11</td>
 </tr>
 <tr>
-<td style="text-align:center">ID</td>
+<td style="text-align:center">DNI</td>
 <td>National Identity Document</td>
 <td>Individuals</td>
 <td style="text-align:center">Numeric</td>
@@ -520,48 +523,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="costa-rica">Costa Rica</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CI</td>
-<td>Identity Card</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">9</td>
-</tr>
-</tbody>
-</table>
-<h3 id="el-salvador">El Salvador</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">DUI</td>
-<td>Unique identity document</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 6 and 18</td>
-</tr>
-</tbody>
-</table>
+<!--### Costa Rica
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CI | Identity Card | Individuals | Numeric | 9 |
+
+### El Salvador
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
 <h3 id="mexico">Mexico</h3>
 <table>
 <thead>
@@ -611,27 +581,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="nicaragua">Nicaragua</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CI</td>
-<td>Identity card</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-</tbody>
-</table>
+<!--### Nicaragua
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CI | Identity card | Individuals |  | Between 8 and 18 |-->
 <h3 id="peru">Peru</h3>
 <table>
 <thead>
@@ -652,7 +605,7 @@
 <td style="text-align:center">9</td>
 </tr>
 <tr>
-<td style="text-align:center">ID</td>
+<td style="text-align:center">DNI</td>
 <td>National Identity Document</td>
 <td>Individuals</td>
 <td style="text-align:center">Numeric<br><hr>Numeric or Alphanumeric</td>
@@ -716,7 +669,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codes">Codes</h2>
+<h2 id="error-codes">Error Codes</h2>
 <table>
 <thead>
 <tr>
@@ -740,6 +693,78 @@
 <tr>
 <td><code>409</code></td>
 <td>Conflict</td>
+</tr>
+<tr>
+<td><code>812</code></td>
+<td>Declined by validation for document</td>
+</tr>
+<tr>
+<td><code>813</code></td>
+<td>Declined by validation for account</td>
+</tr>
+<tr>
+<td><code>814</code></td>
+<td>Declined by validation for country</td>
+</tr>
+<tr>
+<td><code>815</code></td>
+<td>Declined by Compliance</td>
+</tr>
+<tr>
+<td><code>816</code></td>
+<td>Reference ID already used.<br>This error is not be displayed in the <a href="../../payouts/payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
+</tr>
+<tr>
+<td><code>901</code></td>
+<td>Bank account is closed</td>
+</tr>
+<tr>
+<td><code>902</code></td>
+<td>Invalid bank account</td>
+</tr>
+<tr>
+<td><code>903</code></td>
+<td>Invalid bank account type</td>
+</tr>
+<tr>
+<td><code>904</code></td>
+<td>Invalid bank branch</td>
+</tr>
+<tr>
+<td><code>905</code></td>
+<td>Monthly limit exceeded for user</td>
+</tr>
+<tr>
+<td><code>906</code></td>
+<td>Rejected by merchant&rsquo;s request</td>
+</tr>
+<tr>
+<td><code>907</code></td>
+<td>The bank account is unable to receive transfers</td>
+</tr>
+<tr>
+<td><code>908</code></td>
+<td>Invalid beneficiary document</td>
+</tr>
+<tr>
+<td><code>909</code></td>
+<td>Beneficiary name doesn&rsquo;t match bank details</td>
+</tr>
+<tr>
+<td><code>910</code></td>
+<td>PIX key invalid</td>
+</tr>
+<tr>
+<td><code>911</code></td>
+<td>Invalid state change requested</td>
+</tr>
+<tr>
+<td><code>912</code></td>
+<td>Insufficient Balance</td>
+</tr>
+<tr>
+<td><code>999</code></td>
+<td>Error</td>
 </tr>
 </tbody>
 </table>

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="0; URL='https://docs.bamboopayment.com/public'" />
-    <title>Redirecting...</title>
   </head>
   <body>
     <h1>Redirecting...</h1>
