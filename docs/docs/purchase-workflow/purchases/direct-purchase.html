@@ -21,33 +21,33 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
 <title>Direct purchases | Bamboo Payment</title><meta property="og:title" content="Direct purchases" />
-<meta property="og:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for tokenization unlike the [basic purchase]({{&lt; ref &#34;Basic-Purchase.md&#34; &gt;}}).
+<meta property="og:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/purchase-workflow/direct-purchase.html" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="/docs/purchase-workflow/purchases/direct-purchase.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-03-02T11:40:29-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-07-26T07:07:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Direct purchases">
-<meta itemprop="description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for tokenization unlike the [basic purchase]({{&lt; ref &#34;Basic-Purchase.md&#34; &gt;}}).
+<meta itemprop="description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-03-02T11:40:29-05:00" />
+<meta itemprop="dateModified" content="2023-07-26T07:07:39-05:00" />
 <meta itemprop="wordCount" content="345">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Direct purchases"/>
-<meta name="twitter:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for tokenization unlike the [basic purchase]({{&lt; ref &#34;Basic-Purchase.md&#34; &gt;}}).
+<meta name="twitter:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 
 
-<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
+<link href="../../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link href="../../css/custom.css" rel="stylesheet">
-<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -65,10 +65,10 @@
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="../../">
+        <a class="navbar-brand" href="../../../">
 			
 			
-			<span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -81,7 +81,7 @@
 				
 				
 				
-				<a class="nav-link active" href="../../docs.html" ><span class="active">Payins</span>
+				<a class="nav-link active" href="../../../docs.html" ><span class="active">Payins</span>
 					<div class="content-bar-menu2"></div>
 				</a>
 			</li>
@@ -93,7 +93,7 @@
 				
 				
 				
-				<a class="nav-link" href="../../payouts.html" ><span>Payouts</span>
+				<a class="nav-link" href="../../../payouts.html" ><span>Payouts</span>
 					<div class="content-bar-menu2"></div>
 				</a>
 			</li>
@@ -130,8 +130,8 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.e1de8941e1b07d908bf4140421af34743f625682b18ae1d98b17cb9f356724970b1de0df8e797a62a5e6bb494a9eba25b16ec83995105f48c0e5f45d7f57cff9.json"
-  data-offline-search-base-href="../../"
+  data-offline-search-index-json-src="../../../offline-search-index.7f8dd55b40a6c0fc96ed40ce96d10fae0ae252ccc8a9cc6cba4703c82dcb61b14965915d09a645a1aafd57341c0204ff04b8ed5d44638c37dfc0e3d7d5cbaa46.json"
+  data-offline-search-base-href="../../../"
 >
 
 <svg
@@ -149,7 +149,7 @@
 
 </div>
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
     </button>
   </form>
   
@@ -166,7 +166,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/docs.html" href="../../docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+    <a id="/docs.html" href="../../../docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
   </li>
   <ul class="side-main">
     <li class="" id="docshtml">
@@ -185,7 +185,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/docs/getting-started.html" href="../../docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+    <a id="/docs/getting-started.html" href="../../../docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
   </li>
   <ul class="side-main">
     <li class="" id="docsgetting-startedhtml">
@@ -195,31 +195,31 @@
       
       
       
-        <a id="/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedconceptshtml" href="../../docs/getting-started/concepts.html">Concepts</a>
+        <a id="/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedconceptshtml" href="../../../docs/getting-started/concepts.html">Concepts</a>
       
       
       
       
       
-        <a id="/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddata-typeshtml" href="../../docs/getting-started/data-types.html">Data Types</a>
+        <a id="/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddata-typeshtml" href="../../../docs/getting-started/data-types.html">Data Types</a>
       
       
       
       
       
-        <a id="/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedpayment-methodshtml" href="../../docs/getting-started/payment-methods.html">Payment methods</a>
+        <a id="/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedpayment-methodshtml" href="../../../docs/getting-started/payment-methods.html">Payment methods</a>
       
       
       
       
       
-        <a id="/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedtest-our-serviceshtml" href="../../docs/getting-started/test-our-services.html">Test our services</a>
+        <a id="/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedtest-our-serviceshtml" href="../../../docs/getting-started/test-our-services.html">Test our services</a>
       
       
       
       
       
-        <a id="/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startederror-codeshtml" href="../../docs/getting-started/error-codes.html">Error Codes</a>
+        <a id="/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startederror-codeshtml" href="../../../docs/getting-started/error-codes.html">Error Codes</a>
       
       
     </li>
@@ -240,7 +240,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/docs/purchase-workflow.html" href="../../docs/purchase-workflow.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Purchase workflow</a>
+    <a id="/docs/purchase-workflow.html" href="../../../docs/purchase-workflow.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspurchase-workflowhtml">
@@ -259,7 +259,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/purchase-workflow/customer-types.html" href="../../docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
+    <a id="/docs/purchase-workflow/customer-types.html" href="../../../docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspurchase-workflowcustomer-typeshtml">
@@ -269,13 +269,13 @@
       
       
       
-        <a id="/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesanonymous-usershtml" href="../../docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
+        <a id="/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
       
       
       
       
       
-        <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
+        <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
       
       
     </li>
@@ -286,26 +286,51 @@
       
       
       
-      
-        <a id="/docs/purchase-workflow/basic-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowbasic-purchasehtml" href="../../docs/purchase-workflow/basic-purchase.html">Basic purchases</a>
-      
-      
-      
-      
-      
-        <a id="/docs/purchase-workflow/redirect-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowredirect-purchasehtml" href="../../docs/purchase-workflow/redirect-purchase.html">Redirect purchases</a>
-      
-      
-      
-      
-      
-        <a id="/docs/purchase-workflow/direct-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docspurchase-workflowdirect-purchasehtml" href="../../docs/purchase-workflow/direct-purchase.html">Direct purchases</a>
-      
-      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/purchase-workflow/purchases.html" href="../../../docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Purchase operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowpurchaseshtml">
       
       
       
-        <a id="/docs/purchase-workflow/purchase-preview.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowpurchase-previewhtml" href="../../docs/purchase-workflow/purchase-preview.html">Purchase Preview</a>
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-operationshtml" href="../../../docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/redirect-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasesredirect-purchasehtml" href="../../../docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/direct-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-docspurchase-workflowpurchasesdirect-purchasehtml" href="../../../docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-preview.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-previewhtml" href="../../../docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
     </li>
@@ -326,7 +351,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/docs/forms.html" href="../../docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+    <a id="/docs/forms.html" href="../../../docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
   </li>
   <ul class="side-main">
     <li class="" id="docsformshtml">
@@ -336,13 +361,13 @@
       
       
       
-        <a id="/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformscheckout-formhtml" href="../../docs/forms/checkout-form.html">Checkout Form</a>
+        <a id="/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformscheckout-formhtml" href="../../../docs/forms/checkout-form.html">Checkout Form</a>
       
       
       
       
       
-        <a id="/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformsembedded-checkout-formhtml" href="../../docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+        <a id="/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformsembedded-checkout-formhtml" href="../../../docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
       
       
     </li>
@@ -363,7 +388,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/docs/payment-methods.html" href="../../docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+    <a id="/docs/payment-methods.html" href="../../../docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodshtml">
@@ -382,7 +407,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/argentina.html" href="../../docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+    <a id="/docs/payment-methods/argentina.html" href="../../../docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsargentinahtml">
@@ -392,13 +417,13 @@
       
       
       
-        <a id="/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-cardshtml" href="../../docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-cardshtml" href="../../../docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-apmhtml" href="../../docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-apmhtml" href="../../../docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -419,7 +444,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/brazil.html" href="../../docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+    <a id="/docs/payment-methods/brazil.html" href="../../../docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsbrazilhtml">
@@ -429,13 +454,13 @@
       
       
       
-        <a id="/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-cardshtml" href="../../docs/payment-methods/brazil/br-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-cardshtml" href="../../../docs/payment-methods/brazil/br-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-apmhtml" href="../../docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-apmhtml" href="../../../docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -456,7 +481,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/central-america.html" href="../../docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+    <a id="/docs/payment-methods/central-america.html" href="../../../docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodscentral-americahtml">
@@ -466,7 +491,7 @@
       
       
       
-        <a id="/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscentral-americacam-apmhtml" href="../../docs/payment-methods/central-america/cam-apm.html">Cash</a>
+        <a id="/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscentral-americacam-apmhtml" href="../../../docs/payment-methods/central-america/cam-apm.html">Cash</a>
       
       
     </li>
@@ -487,7 +512,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/chile.html" href="../../docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+    <a id="/docs/payment-methods/chile.html" href="../../../docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodschilehtml">
@@ -497,13 +522,13 @@
       
       
       
-        <a id="/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-cardshtml" href="../../docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-cardshtml" href="../../../docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-apmhtml" href="../../docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-apmhtml" href="../../../docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -524,7 +549,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/colombia.html" href="../../docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+    <a id="/docs/payment-methods/colombia.html" href="../../../docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodscolombiahtml">
@@ -534,13 +559,13 @@
       
       
       
-        <a id="/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-cardshtml" href="../../docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-cardshtml" href="../../../docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-apmhtml" href="../../docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-apmhtml" href="../../../docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -561,7 +586,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/ecuador.html" href="../../docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+    <a id="/docs/payment-methods/ecuador.html" href="../../../docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsecuadorhtml">
@@ -571,7 +596,7 @@
       
       
       
-        <a id="/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsecuadorec-apmhtml" href="../../docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsecuadorec-apmhtml" href="../../../docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -592,7 +617,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/mexico.html" href="../../docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+    <a id="/docs/payment-methods/mexico.html" href="../../../docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsmexicohtml">
@@ -602,13 +627,13 @@
       
       
       
-        <a id="/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-cardshtml" href="../../docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-cardshtml" href="../../../docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-apmhtml" href="../../docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-apmhtml" href="../../../docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -629,7 +654,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/paraguay.html" href="../../docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+    <a id="/docs/payment-methods/paraguay.html" href="../../../docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsparaguayhtml">
@@ -639,13 +664,13 @@
       
       
       
-        <a id="/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-cardshtml" href="../../docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-cardshtml" href="../../../docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-apmhtml" href="../../docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-apmhtml" href="../../../docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -666,7 +691,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/payment-methods/peru.html" href="../../docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+    <a id="/docs/payment-methods/peru.html" href="../../../docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
   </li>
   <ul class="side-main">
     <li class="" id="docspayment-methodsperuhtml">
@@ -676,13 +701,50 @@
       
       
       
-        <a id="/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-cardshtml" href="../../docs/payment-methods/peru/pe-cards.html">Credit and Debit cards</a>
+        <a id="/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-cardshtml" href="../../../docs/payment-methods/peru/pe-cards.html">Credit and Debit cards</a>
       
       
       
       
       
-        <a id="/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-apmhtml" href="../../docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+        <a id="/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-apmhtml" href="../../../docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/uruguay.html" href="../../../docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-cardshtml" href="../../../docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
       
       
     </li>
@@ -759,22 +821,32 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
-	<a href="../../docs.html">Payins Integration Guide</a>
+	<a href="../../../docs.html">Payins Integration Guide</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="../../docs/purchase-workflow.html">Purchase workflow</a>
+	<a href="../../../docs/purchase-workflow.html">Purchase API</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../docs/purchase-workflow/purchases.html">Purchase operations</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../docs/purchase-workflow/direct-purchase.html">Direct purchases</a>
+	<a href="../../../docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
 </li>
 
 	</ol>
@@ -783,7 +855,7 @@
             
 <div class="td-content">
 	<h1>Direct purchases</h1>
-    <div class="lead">This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for tokenization unlike the <a href="../../docs/purchase-workflow/basic-purchase.html">basic purchase</a>.</div>
+    <div class="lead">This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html">basic purchase</a>.</div>
 	       
 	<!--
 A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 
@@ -835,7 +907,7 @@ For example, if your business is in Uruguay and your buyer is in Colombia, their
 <p><strong>CardData</strong>: Must be used for transactions using non-tokenized cards.</p>
 </li>
 <li>
-<p><strong>PaymentMediaId</strong>: Identifier of alternative payment method (transference, cash and any flow needing a redirection of the client). This identifier can be found in the <a href="../../docs/payment-methods.html">Payment Methods by Country</a> section.</p>
+<p><strong>PaymentMediaId</strong>: Identifier of alternative payment method (transference, cash and any flow needing a redirection of the client). This identifier can be found in the <a href="../../../docs/payment-methods.html">Payment Methods by Country</a> section.</p>
 </li>
 <li>
 <p><strong>TrxToken</strong>: The merchant can generate a token and use it to generate transactions if necessary.</p>
@@ -944,9 +1016,9 @@ For example, if your business is in Uruguay and your buyer is in Colombia, their
 <br>
 <b>Last modified</b>
 
-March 2, 2023: 
+July 26, 2023: 
 
-
+ <i>Updating documentation site (e4cbae2)</i>
   </div>
 </div>
 
@@ -968,11 +1040,11 @@ March 2, 2023:
 
 
 
-<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
 
 
-<script src="../../js/scrollspy.js"></script>
-<script src="../../js/scrolltotoc.js"></script>
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
 
   </body>
 </html>
