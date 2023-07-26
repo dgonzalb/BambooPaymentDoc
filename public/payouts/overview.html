@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../scss/main.min.51aa61886c66e00abddb9acba10af7c6f279b399d6be86847dec8d636b96f735.css" as="style">
+<link href="../scss/main.min.51aa61886c66e00abddb9acba10af7c6f279b399d6be86847dec8d636b96f735.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.ab9976bec78a2d9eafb60f6f01b92b9b40abc24ee20c572ded536f0676a77b6cd4d0c6b8e3795427c2fdc4b926fbf82634ee4c025e2b02eb3ac5a4bc27ff34b5.json"
+  data-offline-search-index-json-src="../offline-search-index.eec75f935e64d340183dcb837de31b5e2f81ce38cffeefd2428d9025556eb49a305e75dfff24b63d16d008826f0429e16afe5f75d795c6c7a6170c2a4a91ce2b.json"
   data-offline-search-base-href="../"
 >
 
@@ -475,34 +475,269 @@
 <p>Take into account the following considerations when using Payouts feature according to the payee&rsquo;s country to avoid rejections.</p>
 <h3 id="argentina">Argentina</h3>
 <ul>
-<li>The CBU/CVU <strong>cannot</strong> exceed 22 characters.</li>
+<li>The CBU/CVU <strong>cannot</strong> exceed 22 characters.<br>Example: <code>0123456789012345678901</code>.</li>
 </ul>
 <h3 id="brazil">Brazil</h3>
 <ul>
-<li>The bank account <strong>cannot</strong> exceed 15 characters. The specific size and format depend on the bank of the payee.</li>
-<li>The branch of the bank account <strong>cannot</strong> exceed 4 characters or 5 characters for <em>Banco do Brasil</em> accounts.</li>
-<li>For <em><strong>Pix</strong></em>, the account number is the Document number (CPF or CNPJ) of the payee.</li>
+<li>The bank account <strong>cannot</strong> exceed 15 characters.</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Bank name</th>
+<th>Bank code</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banco do Brasil</td>
+<td><code>001</code></td>
+<td><code>DDDDDDDDD-X</code> or <code>DDDDDDDDDX</code> where <code>D</code> is a digit and <code>X</code> is a digit (number) or the letter <code>X</code>.<br>The number of digits may change, but it cannot exceed 10 digits</td>
+<td><code>1234567890</code><br><code>123456789-0</code><br><code>123456789-X</code><br><code>123456789X</code></td>
+</tr>
+<tr>
+<td>Santander</td>
+<td><code>033</code></td>
+<td><code>DDDDDDDD</code>, <code>DDDDDDDDD</code>, <code>DDDDDDDD-D</code>, where <code>D</code> is a digit.<br>The number of digits must be 8 or 9</td>
+<td><code>12345678</code><br><code>12345678-9</code></td>
+</tr>
+<tr>
+<td>Banrisul</td>
+<td><code>041</code></td>
+<td><code>DDDDDDDDD-D</code> or <code>DDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits must be 10</td>
+<td><code>1234567890</code><br><code>123456789-0</code></td>
+</tr>
+<tr>
+<td>Caixa</td>
+<td><code>104</code></td>
+<td><code>DDDDDDDDD-D</code> or <code>DDDDDDDDDDDDDD-D</code> where <code>D</code> is a digit.<br>The number of digits must be between 1 and 15</td>
+<td><code>1234567890</code><br><code>123456789-0</code><br><code>12345678901234-5</code></td>
+</tr>
+<tr>
+<td>Bradesco</td>
+<td><code>237</code></td>
+<td><code>DDDDDDD-D</code> or <code>DDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change, but cannot exceed 8 digits</td>
+<td><code>12345678</code><br><code>1234567-8</code></td>
+</tr>
+<tr>
+<td>Mercado Pago</td>
+<td><code>323</code></td>
+<td><code>DDDDDDDDDD-D</code> or <code>DDDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change, but cannot exceed 11 digits</td>
+<td><code>12345678910</code><br><code>1234567891-0</code></td>
+</tr>
+<tr>
+<td>Itaú</td>
+<td><code>341</code></td>
+<td><code>DDDDD-D</code> or <code>DDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change, but cannot exceed 6 digits</td>
+<td><code>123456</code><br><code>12345-6</code></td>
+</tr>
+<tr>
+<td>Pix Key Document</td>
+<td>-</td>
+<td><code>DDDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits for <strong>CPF</strong> must be 11 and for <strong>CNPJ</strong>, must be 14.</td>
+<td><strong>CPF</strong><br><code>12345678912</code><br><code>123.456.789-01</code><br><strong>CNPJ</strong><br><code>12345678901234</code><br><code>12.345.678/9012-34</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The bank branch <strong>cannot</strong> exceed 4 digits. Except for Banco do Brasil.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bank name</th>
+<th>Bank code</th>
+<th>Format</th>
+<th>Exceptions</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banco do Brasil</td>
+<td><code>001</code></td>
+<td><code>DDDD-X </code> or <code>DDDDX</code> where <code>D</code> is a digit and <code>X</code> is a digit (number) or the letter <code>X</code>.<br>The number of digits may change, but cannot exceed 5 digits</td>
+<td>Can&rsquo;t have 4 zeros and a digit.</td>
+<td><code>1234-1</code><br><code>1234-X</code><br><code>12341</code><br><code>1234X</code></td>
+</tr>
+<tr>
+<td>Santander</td>
+<td><code>033</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>033</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Banrisul</td>
+<td><code>041</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>-</td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Banco Inter</td>
+<td><code>077</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>077</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Caixa</td>
+<td><code>104</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>001</code> / <code>013</code> / <code>023</code> / <code>104</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Banco Original</td>
+<td><code>212</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>212</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Bradesco</td>
+<td><code>237</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>237</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Banco Nu Pagamento</td>
+<td><code>260</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>260</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>PagSeguro</td>
+<td><code>290</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>290</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Itau</td>
+<td><code>341</code></td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>Cannot be <code>341</code></td>
+<td><code>1234</code></td>
+</tr>
+<tr>
+<td>Others</td>
+<td>-</td>
+<td><code>DDDD</code> where <code>D</code> is a digit.</td>
+<td>-</td>
+<td><code>1234</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="chile">Chile</h3>
 <ul>
-<li>The bank account <strong>cannot</strong> exceed 16 characters.</li>
+<li>The bank account <strong>cannot</strong> exceed 16 characters. Format: <code>DDDDDDDDDDDDDDDD</code> where <code>D</code> is a digit.
+Example <code>1234567890123456</code>.</li>
 </ul>
 <h3 id="colombia">Colombia</h3>
 <ul>
-<li>The bank account <strong>cannot</strong> exceed 17 characters.</li>
+<li>The bank account <strong>cannot</strong> exceed 17 characters. Format: <code>DDDDDDDDDDDDDDDDD</code> where <code>D</code> is a digit.
+Example <code>12345678901234567</code>.</li>
 </ul>
 <h3 id="mexico">Mexico</h3>
 <ul>
-<li>The CLABE number <strong>cannot</strong> exceed 18 characters and is also validated using a verification algorithm.</li>
+<li>The CLABE number <strong>cannot</strong> exceed 18 characters and is also validated using a verification algorithm.
+Example <code>21790064060296600</code>.</li>
 </ul>
 <h3 id="peru">Peru</h3>
 <ul>
-<li>The bank account <strong>cannot</strong> exceed 20 characters.</li>
+<li>The bank account <strong>cannot</strong> exceed 20 characters. Format: <code>DDDDDDDDDDDDDDDDDDDD</code> where <code>D</code> is a digit.
+Example <code>12345678901234567890</code>.</li>
 </ul>
 <h3 id="uruguay">Uruguay</h3>
-<ul>
-<li>The bank account <strong>cannot</strong> exceed 14 characters.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Bank name</th>
+<th>Format</th>
+<th>Length</th>
+<th>Details</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BROU</td>
+<td><code>YYYYYYYYYWWWWW</code></td>
+<td>14</td>
+<td><ul style="margin-bottom: initial;"><li><code>Y</code> -&gt; Account number</li><li><code>W</code> -&gt; sub-account</li></ul></td>
+<td><code>12345678901234</code></td>
+</tr>
+<tr>
+<td>BHU</td>
+<td><code>XXXYYZZZZV</code></td>
+<td>10</td>
+<td><ul style="margin-bottom: initial;"><li><code>X</code> -&gt; Bank branch starts with 0</li><li><code>Y</code> -&gt; Product number</li><li><code>Z</code> -&gt; Account number filled with 0 on the left</li><li><code>V</code> -&gt; Verifying Digit</li></ul></td>
+<td><code>0123401234</code></td>
+</tr>
+<tr>
+<td>Citibank</td>
+<td><code>XXXXXXXXXX</code></td>
+<td>10</td>
+<td>Filling with 0 on the left<br>The account number starts with 0, 1 or 5</td>
+<td><code>0123456789</code></td>
+</tr>
+<tr>
+<td>Itau</td>
+<td><code>XXXXXXX</code></td>
+<td>7</td>
+<td>Filling with 0 on the left</td>
+<td><code>0123456</code></td>
+</tr>
+<tr>
+<td>Scotiabank</td>
+<td><code>CCCCCCCCII</code></td>
+<td>10</td>
+<td><ul style="margin-bottom: initial;"><li><code>C</code> -&gt; Client number filling with 0 on the left</li><li><code>I</code> -&gt; Account ID</li></ul></td>
+<td><code>0123456789</code></td>
+</tr>
+<tr>
+<td>Santander</td>
+<td><code>XXXXXXXXXXXX</code></td>
+<td>12</td>
+<td>The account number filled with 0 on the left</td>
+<td><code>012345678901</code></td>
+</tr>
+<tr>
+<td>Nación</td>
+<td><code>XXXXXXXXXXXX</code></td>
+<td>12</td>
+<td>The account number filled with 0 on the left</td>
+<td><code>012345678901</code></td>
+</tr>
+<tr>
+<td>BBVA</td>
+<td><code>XXXXXXXXX</code></td>
+<td>9</td>
+<td>Account number without filling with 0 on the left only numeric digits</td>
+<td><code>123456789</code></td>
+</tr>
+<tr>
+<td>HSBC</td>
+<td><code>XXXXXXXXXX</code></td>
+<td>10</td>
+<td>Filling with 0 to the left</td>
+<td><code>0123456789</code></td>
+</tr>
+<tr>
+<td>Heritage</td>
+<td><code>XXXXXXXYY</code></td>
+<td>9</td>
+<td><ul style="margin-bottom: initial;"><li><code>X</code> -&gt; Account number filling with 0 on the left</li><li><code>Y</code> -&gt; Sub Account number</li></ul></td>
+<td><code>012345678</code></td>
+</tr>
+</tbody>
+</table>
 
 		
 <div class="section-index">
@@ -567,9 +802,9 @@
 <br>
 <b>Last modified</b>
 
-July 10, 2023: 
+July 26, 2023: 
 
- <i>Status flow updated (576141c)</i>
+ <i>Added Account and Branch validation for Brazil and Uruguay (857f984)</i>
   </div>
 </div>
 
