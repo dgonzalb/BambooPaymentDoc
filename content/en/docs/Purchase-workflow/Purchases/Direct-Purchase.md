@@ -3,8 +3,9 @@ title: "Direct purchases"
 linkTitle: "Direct purchases"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for tokenization unlike the [basic purchase]({{< ref "Basic-Purchase.md" >}}).
-weight: 50
+  This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{< ref "Purchase-Operations.md" >}}).
+weight: 30
+tags: ["subtopic"]
 ---
 <!--
 A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 

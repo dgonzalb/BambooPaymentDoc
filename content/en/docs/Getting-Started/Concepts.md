@@ -94,7 +94,7 @@ In the _Gateway model_, the acquirer or payment method pays directly to the acco
 Refers to a _Payment Facilitator_ model, in which the merchant is represented as a Bamboo sub-merchant with whom they sign a commercial agreement. For settlement in this model, the acquirer or payment facilitator makes payment to Bamboo and Bamboo pays the merchant.
 
 ## Tenant
-A _Tenant_ refers to the processing channel in Bamboo which can be crossborder (operates in multiple countries and uses the conversion rate) or local.  
+A _Tenant_ refers to the processing channel in Bamboo which can be Crossborder (operates in multiple countries and uses the conversion rate) or local.  
 
 ## Tokenization
 When referring to data security, tokenization is the process of changing a sensitive element with its non-sensitive equivalent. This non-sensitive element, known as the _token_, is generated through the tokenization process. The _token_ itself is meaningless and worthless, except for the entity that created it. In the event of a security incident that allows the theft of these numbers, they will be of no value to the thief as they cannot be used for their own purposes.

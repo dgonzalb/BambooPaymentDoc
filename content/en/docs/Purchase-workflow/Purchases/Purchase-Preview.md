@@ -4,7 +4,8 @@ linkTitle: "Purchase Preview"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   This functionality allows merchants to show the values that may affect the final amount of a purchase transaction.
-weight: 60
+weight: 40
+tags: ["subtopic"]
 ---
 
 When a buyer performs a purchase, the amount of it can be modified for several reasons:

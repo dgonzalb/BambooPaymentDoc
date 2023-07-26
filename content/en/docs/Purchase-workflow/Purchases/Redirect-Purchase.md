@@ -4,7 +4,8 @@ linkTitle: "Redirect purchases"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   The _Redirect purchase_ is the flow used for merchants where the customer needs to be redirected to an external page to complete the payment.
-weight: 30
+weight: 20
+tags: ["subtopic"]
 ---
 
 ## Flow diagram
