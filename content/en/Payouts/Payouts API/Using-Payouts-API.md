@@ -26,8 +26,8 @@ The hash to be sent is built using the parameters `country`, `amount`, `currency
 ```javascript
 var json = JSON.parse(request.data);
 let signdata = {Country:json.country, Amount: json.amount,Currency:json.currency, Reference:json.reference, Type: json.type};
-var data = JSON.stringify(json);
-var hexHash = CryptoJS.HmacSHA256(data, apiSignature);
+var data = JSON.stringify(signdata);
+var hexHash = CryptoJS.HmacSHA256(data, secret-key);
 var hash = hexHash.toString(CryptoJS.enc.Hex);
 ```
 
@@ -107,7 +107,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee.email` | String | No | Email address of the Payee. |  
 | `payee.phone` | String | No | Phone number of the Payee. | 
 | `payee.address` | String | No | Address of the Payee. | 
-| `payee.document.type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |
+| `payee.document.type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
 | `payee.document.number` | String | Yes | Document number of the Payee. | 
 | `payee.bankaccount.number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee.bankaccount.type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
