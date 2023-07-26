@@ -9,26 +9,4 @@ menu:
     name: Payins
     weight: 10     
 ---
-<meta http-equiv="refresh" content="0; URL=payouts.html" />
-
-* International and local credit/debit cards
-* Bank transfers
-* Cash payments
-* E-wallets
-
-<img src="https://bamboopaymentsystems.com/wp-content/themes/Bamboo_Theme/images/pci-logo.png" alt="Bamboo PCI certified by GMsectec" style="width: 20%; height:auto;">
-
-
-## Available countries
-Maximize market coverage with local payment solutions in **MM** countries across Latin America.
-
-Global companies are taking advantage of exponential eCommerce growth in Latin America by connecting to Local Payment methods through Bamboo’s single API.
-
- {{< Countries/countriesMap_en >}}
-
- <script>
-  window.onload = function() {
-    var phtml = document.getElementById('available-countries').nextSibling.nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
-    document.getElementById('available-countries').nextSibling.nextSibling.innerHTML = phtml;
-  }
-</script>
+<meta http-equiv="refresh" content="0; URL=https://doc.bamboopayment.com/docs/documentation-stoplight-api-pci-doc-en/" />
