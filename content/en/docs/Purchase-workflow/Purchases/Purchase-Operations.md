@@ -52,6 +52,7 @@ You need to invoke a **POST** request to the following URLs according to your ne
 | `Capture` | `boolean` | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed and the purchase is pre-authorized pending final confirmation through the commit and rollback calls.</li><li>If `true`, the transaction is authorized and captured (committed).</li></ul> | No |
 | `Customer` | `object` | The Customer object is used to provide the data of the customer who performs the purchase. | Yes |
 | `Customer. CommerceCustomerId` | `string` | Customer identifier.<br>This value is generated and used internally by the merchant to identify the customer within the Bamboo Payment platform. | No |
+| 
 
 {{% alert title="Notes" color="info"%}}
 <sup>1</sup> The `PaymentMediaId` and `TrxToken` fields are not required. Nevertheless, it's mandatory to send one of them depending on the flow you want to use.<br>

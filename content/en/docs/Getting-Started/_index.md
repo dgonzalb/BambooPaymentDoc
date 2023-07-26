@@ -23,14 +23,14 @@ Follow this steps to start processing payments with Bamboo Payments:
 
 2. **Get Credentials**.<br>After your account has been activated, you receive the API Keys credentials to have access to the `STAGE` Environment.
 
-3. **Integrate the APIs**.<br>Follow the instructions over this documentation to integrate our payments APIs. In order to move your account from `STAGE` to `PRODUCTION`, you need to follow the homologation process.
+3. **Integrate the APIs**.<br>Follow the instructions over this documentation to integrate our payments APIs. In order to move your account from `STAGE` to `PRODUCTION`, you need to follow the homologate process.
 
-4. **Go Live**.<br>Once you have completed the tests required in step 3, request the _**Go Live**_ with our [support team](mailto:techsupport@bamboopayment.com).
+4. **Go Live**.<br>Once you have completed the tests required in step 3, request the _**Go Live**_ with our [support team](merchantsupport@bamboopayment.com).
 
 5. **Process payments**.<br>Once you have your production credentials, you can switch to the `PRODUCTION` environment and start processing your payments!
 
 {{% alert title="Don't get stuck!" color="info"%}}
-In case you have any technical doubts or require any further information, please feel free to [contact our support team](techsupport@bamboopayment.com) for assistance.
+In case you have any technical doubts or require any further information, please feel free to [contact our support team](merchantsupport@bamboopayment.com) for assistance.
 {{% /alert %}}
 
 <!--1 - Sign Up: Create your merchant account contacting our sales representatives sales@bamboopayment.com
