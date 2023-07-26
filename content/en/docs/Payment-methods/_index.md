@@ -5,3 +5,4 @@ Description: >
   This section shows all the information related to the payment methods for the different countries.
 weight: 60
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />

@@ -6,6 +6,7 @@ Description: >
   Understand the concepts behind any integration with Bamboo Payments.
 weight: 10
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 ## Acquirer
 An acquirer is a payment facilitator that allows you to perform digital payments. Furthermore, the acquirer is the responsible of the payments and manages the settlement to your banking account.

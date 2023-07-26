@@ -6,5 +6,6 @@ Description: >
   Amplified and responsive suitable for web and mobile applications.
 weight: 10
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 TODO

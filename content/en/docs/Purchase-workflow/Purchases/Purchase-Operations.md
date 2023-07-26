@@ -7,6 +7,7 @@ Description: >
 weight: 10
 tags: ["subtopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 ## Configuring the authentication
 All methods used in Purchase API requires an authentication header, which is configured using the following parameters.

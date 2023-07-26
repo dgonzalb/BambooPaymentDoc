@@ -7,6 +7,8 @@ Description: >
 weight: 30
 tags: ["subtopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
+
 <!--
 A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 
 

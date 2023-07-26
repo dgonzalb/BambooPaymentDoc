@@ -7,5 +7,6 @@ description: >
 weight: 30
 tags: ["parenttopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 This section shows the available payment methods, currencies, and related information to be taken into account when processing in _Costa Rica_, _El Salvador_, and _Nicaragua_.

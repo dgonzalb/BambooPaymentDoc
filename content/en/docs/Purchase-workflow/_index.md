@@ -5,6 +5,7 @@ Description: >
   You can create a purchase using our API. The purchase workflow is driven by two factors: _Customer Type_ and _Flow Type_.
 weight: 40
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 ## Customer Type
 Regardless of the flow type, you can have either Anonymous o Registered customers. Anonymous customers are those who are not registered on the site and make a one-time purchase, and the registered customers are clients that are registered in the website, so can be identified and have extra functionalities such as recurrences.

@@ -6,6 +6,7 @@ Description: >
   Rely on our payment methods according to your country and needs.
 weight: 30
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 <script src="/js/searchcodes.js"></script>
 

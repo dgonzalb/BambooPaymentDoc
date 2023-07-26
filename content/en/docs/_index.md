@@ -9,6 +9,7 @@ menu:
     name: Payins
     weight: 10     
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 * International and local credit/debit cards
 * Bank transfers

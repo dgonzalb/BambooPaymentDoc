@@ -5,6 +5,7 @@ Description: >
   This section exposes the Bamboo Payment API functionalities for secure integration with our platform. 
 weight: 10
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 ## Overview
 Using our platform, you can offer to your customers an improved payment experience, being able to request card details _as if it were_ on your own page or mobile application through our [**Checkout Form**]({{< ref "Checkout-Form.md" >}}).

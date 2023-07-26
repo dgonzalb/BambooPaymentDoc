@@ -6,6 +6,8 @@ Description: >
   This article provides the information about the error codes and provides information about the possible actions you can take.
 weight: 45
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
+
 <script src="/js/searchcodes.js"></script>
 
 <input type="text" id="searchBox" placeholder="Search by code or description..." onkeyup="findTables()" >

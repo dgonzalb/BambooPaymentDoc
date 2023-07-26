@@ -6,6 +6,7 @@ Description: >
   The Checkout form is a payment form that is embedded on its own page, simplifying and securing the capture of sensitive data for the processing of online payments.
 weight: 20
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 The difference between this form, and [Checkout Form]({{< ref Checkout-Form.md >}}) mentioned before, is that this must be invoked inside a custom page of the merchant.
 

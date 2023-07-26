@@ -7,6 +7,7 @@ Description: >
 weight: 40
 tags: ["subtopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 When a buyer performs a purchase, the amount of it can be modified for several reasons:
 

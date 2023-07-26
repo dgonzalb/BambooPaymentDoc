@@ -7,6 +7,7 @@ description: >
 weight: 80
 tags: ["parenttopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 This section shows the available payment methods, currencies, and related information to be taken into account when processing in _Paraguay_.
 

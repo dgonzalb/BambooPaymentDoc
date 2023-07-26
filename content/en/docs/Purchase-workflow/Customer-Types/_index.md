@@ -7,3 +7,4 @@ description: >
 weight: 10
 tags: ["parenttopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />

@@ -6,6 +6,7 @@ Description: >
   Review the Data types you need to use to integrate with Bamboo Payments.
 weight: 20
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 ## Basic
 Refer to this section to know some important aspects of the basic data types of the Bamboo Integration.

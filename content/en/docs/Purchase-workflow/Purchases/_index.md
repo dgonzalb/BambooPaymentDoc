@@ -7,6 +7,7 @@ Description: >
 weight: 20
 tags: ["parenttopic"]
 ---
+<meta http-equiv="refresh" content="0; URL=payouts.html" />
 
 Depending on the contract you have signed with _Bamboo Payment_ ([Gateway](/docs/getting-started/concepts.html#gateway-model) or [Payfac](concepts.html#payfac-model) model) and the countries where you process, you can create Local or CrossBorder purchases.
 
