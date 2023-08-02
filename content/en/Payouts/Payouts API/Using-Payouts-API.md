@@ -16,11 +16,11 @@ All methods used in Payouts API requires an authentication header, which is conf
 | Key | Value | Comments |
 |---|---|---|
 | `Content-Type` | `application/json` | This parameter causes the request to be sent in _json_ format.  |
-| `Authorization` | `Basic {{MerchantPrivateKey}}` | Sent the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeLrs86_iTzSMLvDtuyQ-1zqIcsmFGcoSzncn_uFvQnj7bhB3rtZg__` |
+| `Authorization` | `Basic {{MerchantPrivateKey}}` | Sent the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
 | `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using _HmacSHA256_ algorithm. This header is only required for Payout creation. |
 
 ### Signing the message
-The hash to be sent is built using the parameters `country`, `amount`, `currency`, and `reference` of the Request. The `secret-key` and the `MerchantPrivateKey` is provided to you when sing the onboarding contract with Bamboo.
+The hash to be sent is built using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. The `secret-key` and the `MerchantPrivateKey` is provided to you when sing the onboarding contract with Bamboo.
 
 #### Signature sample code
 ```javascript
@@ -102,17 +102,17 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_. |
 | `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for PIX</li></ul>|
 | `notification_Url` | String | No | Callback to notify the result of the payout |
-| `payee.FirstName` | String | Yes | First Name of the Payee. | 
-| `payee.lastName `| String | Yes | Last Name of the Payee. | 
-| `payee.email` | String | No | Email address of the Payee. |  
-| `payee.phone` | String | No | Phone number of the Payee. | 
-| `payee.address` | String | No | Address of the Payee. | 
-| `payee.document.type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
-| `payee.document.number` | String | Yes | Document number of the Payee. | 
-| `payee.bankaccount.number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
-| `payee.bankaccount.type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
-| `payee.bankaccount.codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
-| `payee.bankaccount.branch` | String | No | Branch code of the Payee's bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type. | 
+| `payee` → `FirstName` | String | Yes | First Name of the Payee. | 
+| `payee` → `lastName `| String | Yes | Last Name of the Payee. | 
+| `payee` → `email` | String | No | Email address of the Payee. |  
+| `payee` → `phone` | String | No | Phone number of the Payee. | 
+| `payee` → `address` | String | No | Address of the Payee. | 
+| `payee` → `document` → `type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
+| `payee` → `document` → `number` | String | Yes | Document number of the Payee. | 
+| `payee` → `bankaccount` → `number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
+| `payee` → `bankaccount` → `codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
+| `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type. | 
 
 
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
@@ -265,9 +265,9 @@ When using _Bank transfer_ you need to send the request as follows:
   "reference": "PayOut34",
   "type": 2,
   "payee": {
-    "firstName": "Juan",
-    "lastName": "Perez",
-    "email": "jperez@mail.com",
+    "firstName": "Diego",
+    "lastName": "Silva",
+    "email": "dsilva@mail.com",
     "phone": "099999999",
     "address": "Cra 23 # 123-45 Apto 601",
     "document": {
