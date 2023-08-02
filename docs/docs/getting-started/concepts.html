@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/getting-started/concepts.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-07-26T07:07:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-08-02T08:56:13-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Concepts">
 <meta itemprop="description" content="Understand the concepts behind any integration with Bamboo Payments.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-07-26T07:07:39-05:00" />
-<meta itemprop="wordCount" content="1002">
+<meta itemprop="dateModified" content="2023-08-02T08:56:13-05:00" />
+<meta itemprop="wordCount" content="1131">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concepts"/>
 <meta name="twitter:description" content="Understand the concepts behind any integration with Bamboo Payments.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.7f8dd55b40a6c0fc96ed40ce96d10fae0ae252ccc8a9cc6cba4703c82dcb61b14965915d09a645a1aafd57341c0204ff04b8ed5d44638c37dfc0e3d7d5cbaa46.json"
+  data-offline-search-index-json-src="../../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
   data-offline-search-base-href="../../"
 >
 
@@ -331,6 +331,24 @@
   </ul>
   
 
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowrefunds-and-voidshtml" href="../../docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowantifraudhtml" href="../../docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Notification Webhooks</a>
       
       
     </li>
@@ -823,6 +841,7 @@
     <li><a href="#payfac-model">Payfac model</a></li>
     <li><a href="#tenant">Tenant</a></li>
     <li><a href="#tokenization">Tokenization</a></li>
+    <li><a href="#UniqueID">Unique Identifier (UniqueID)</a></li>
   </ul>
 </nav>
 
@@ -955,7 +974,24 @@
 <h2 id="tokenization">Tokenization</h2>
 <p>When referring to data security, tokenization is the process of changing a sensitive element with its non-sensitive equivalent. This non-sensitive element, known as the <em>token</em>, is generated through the tokenization process. The <em>token</em> itself is meaningless and worthless, except for the entity that created it. In the event of a security incident that allows the theft of these numbers, they will be of no value to the thief as they cannot be used for their own purposes.</p>
 <p>Since the <em>token</em> is a reference or identifier assigned to a stored card by the system, it is unique for each pair of &ldquo;merchant/token&rdquo;. Therefore, when a customer registers their card with two different merchants, each merchant will receive a different <em>token</em>. This makes it impossible for a merchant to use the <em>tokens</em> from one customer for any other purpose.</p>
-
+<h2 id="UniqueID">Unique Identifier (UniqueID)</h2>
+<p>The Unique Identifier allows you to avoid duplicate transactions, such as purchase operations, when there is a failure while getting the response from Bamboo, and you retry the request.</p>
+<p>The goal of the Unique Identifier, is to identify the transaction and, in case of a connection failure and the transaction is approved in our system, our API responses the result of the previously processed purchase and avoid the creation of a new one.</p>
+<p>The <code>UniqueID</code> parameter is not required; nevertheless, it is strongly recommended to include it in each request. You can define any alphanumeric value as long as it&rsquo;s not used in other transactions.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__-3aFeJUpsjDWsYl26yvnj8k0SW703Cut4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;10000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6908304133336033404953&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -963,9 +999,9 @@
 <br>
 <b>Last modified</b>
 
-July 26, 2023: 
+August 2, 2023: 
 
- <i>Updating documentation site (e4cbae2)</i>
+ <i>Purchases information (6082f8b)</i>
   </div>
 </div>
 
