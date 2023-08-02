@@ -100,3 +100,27 @@ A _Tenant_ refers to the processing channel in Bamboo which can be Crossborder (
 When referring to data security, tokenization is the process of changing a sensitive element with its non-sensitive equivalent. This non-sensitive element, known as the _token_, is generated through the tokenization process. The _token_ itself is meaningless and worthless, except for the entity that created it. In the event of a security incident that allows the theft of these numbers, they will be of no value to the thief as they cannot be used for their own purposes.
 
 Since the _token_ is a reference or identifier assigned to a stored card by the system, it is unique for each pair of "merchant/token". Therefore, when a customer registers their card with two different merchants, each merchant will receive a different _token_. This makes it impossible for a merchant to use the _tokens_ from one customer for any other purpose.
+
+## Unique Identifier (UniqueID) {#UniqueID}
+The Unique Identifier allows you to avoid duplicate transactions, such as purchase operations, when there is a failure while getting the response from Bamboo, and you retry the request.
+
+The goal of the Unique Identifier, is to identify the transaction and, in case of a connection failure and the transaction is approved in our system, our API responses the result of the previously processed purchase and avoid the creation of a new one.
+
+The `UniqueID` parameter is not required; nevertheless, it is strongly recommended to include it in each request. You can define any alphanumeric value as long as it's not used in other transactions.
+
+Example:
+
+```json
+{
+  "TrxToken": "OT__-3aFeJUpsjDWsYl26yvnj8k0SW703Cut4jiYpVJ8SzQ_",
+  "Order": "12345678",
+  "Amount": "10000",
+  "Installments": 1,
+  "Customer": {
+    ...
+  },
+  "UniqueID": "6908304133336033404953",
+  "Currency": "UYU",
+  "Capture": false
+}
+```

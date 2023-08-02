@@ -128,8 +128,8 @@ The parameters in the response are the following:
 | `Data.Date` | Date and time | Date the process was executed. |
 | `Data.Currency` | String | ISO code of the merchant's currency. That is, the destination currency in the conversion. |
 | `Data.ExchangeRate.value` | Number | Amount that the origin currency is equivalent to in the destination currency. |
-| `Data.ExchangeRate.FromCurrencyIsoCode` | Strng | ISO code of the origin currency. |
-| `Data.ExchangeRate.ToCurrencyIsoCode` | Strng | ISO code of the destination currency. |
+| `Data.ExchangeRate.FromCurrencyIsoCode` | String | ISO code of the origin currency. |
+| `Data.ExchangeRate.ToCurrencyIsoCode` | String | ISO code of the destination currency. |
 | `Data.ExchangeRate.TypeCode` | String | Not used. |
 | `Data.ExchangeRate.Date` | Date and time | Date of the last update of the conversion rate. |
 | `Data.TotalAmount` | Number | Total final amount of the purchase in local currency after applying the values that affect it (taxes, conversions, etc.). |

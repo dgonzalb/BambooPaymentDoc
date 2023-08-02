@@ -265,9 +265,9 @@ When using _Bank transfer_ you need to send the request as follows:
   "reference": "PayOut34",
   "type": 2,
   "payee": {
-    "firstName": "Juan",
-    "lastName": "Perez",
-    "email": "jperez@mail.com",
+    "firstName": "David",
+    "lastName": "Silva",
+    "email": "dsilva@mail.com",
     "phone": "099999999",
     "address": "Cra 23 # 123-45 Apto 601",
     "document": {
