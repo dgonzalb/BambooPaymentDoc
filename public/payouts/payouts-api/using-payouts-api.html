@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-07-26T11:28:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-08-02T09:12:33-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-07-26T11:28:39-05:00" />
-<meta itemprop="wordCount" content="1542">
+<meta itemprop="dateModified" content="2023-08-02T09:12:33-05:00" />
+<meta itemprop="wordCount" content="1577">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.eec75f935e64d340183dcb837de31b5e2f81ce38cffeefd2428d9025556eb49a305e75dfff24b63d16d008826f0429e16afe5f75d795c6c7a6170c2a4a91ce2b.json"
+  data-offline-search-index-json-src="../../offline-search-index.47975153746be743e510936b870b335c84c26ae55650727e798b324309db342e63849754bd162b5c1777dc928fb9ce4ad6ab90a791a31cc660d8ee85704776f4.json"
   data-offline-search-base-href="../../"
 >
 
@@ -407,7 +407,7 @@
 <tr>
 <td><code>Authorization</code></td>
 <td><code>Basic {{MerchantPrivateKey}}</code></td>
-<td>Sent the <code>{{MerchantPrivateKey}}</code> (your merchant identifier) and the word <code>Basic</code>.<br>Example: <code>Basic RVkeLrs86_iTzSMLvDtuyQ-1zqIcsmFGcoSzncn_uFvQnj7bhB3rtZg__</code></td>
+<td>Sent the <code>{{MerchantPrivateKey}}</code> (your merchant identifier) and the word <code>Basic</code>.<br>Example: <code>Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__</code></td>
 </tr>
 <tr>
 <td><code>DigitalSignature</code></td>
@@ -417,7 +417,7 @@
 </tbody>
 </table>
 <h3 id="signing-the-message">Signing the message</h3>
-<p>The hash to be sent is built using the parameters <code>country</code>, <code>amount</code>, <code>currency</code>, and <code>reference</code> of the Request. The <code>secret-key</code> and the <code>MerchantPrivateKey</code> is provided to you when sing the onboarding contract with Bamboo.</p>
+<p>The hash to be sent is built using the parameters <code>country</code>, <code>amount</code>, <code>currency</code>, <code>reference</code>, and <code>type</code> of the Request. The <code>secret-key</code> and the <code>MerchantPrivateKey</code> is provided to you when sing the onboarding contract with Bamboo.</p>
 <h4 id="signature-sample-code">Signature sample code</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">json</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">signdata</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">Country</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">country</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Amount</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">amount</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">currency</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Reference</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reference</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Type</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">type</span><span style="color:#000;font-weight:bold">};</span>
@@ -567,77 +567,77 @@
 <td></td>
 </tr>
 <tr>
-<td><code>payee.FirstName</code></td>
+<td><code>payee</code> → <code>FirstName</code></td>
 <td>String</td>
 <td style="text-align:center">Yes</td>
 <td>First Name of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.lastName </code></td>
+<td><code>payee</code> → <code>lastName </code></td>
 <td>String</td>
 <td style="text-align:center">Yes</td>
 <td>Last Name of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.email</code></td>
+<td><code>payee</code> → <code>email</code></td>
 <td>String</td>
 <td style="text-align:center">No</td>
 <td>Email address of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.phone</code></td>
+<td><code>payee</code> → <code>phone</code></td>
 <td>String</td>
 <td style="text-align:center">No</td>
 <td>Phone number of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.address</code></td>
+<td><code>payee</code> → <code>address</code></td>
 <td>String</td>
 <td style="text-align:center">No</td>
 <td>Address of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.document.type</code></td>
+<td><code>payee</code> → <code>document</code> → <code>type</code></td>
 <td>String</td>
 <td style="text-align:center">Yes</td>
 <td>Document type of the Payee.<br><a href="../../payouts/payouts-api/variables.html#id-types">Find the document list here</a>.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.document.number</code></td>
+<td><code>payee</code> → <code>document</code> → <code>number</code></td>
 <td>String</td>
 <td style="text-align:center">Yes</td>
 <td>Document number of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.bankaccount.number</code></td>
+<td><code>payee</code> → <code>bankaccount</code> → <code>number</code></td>
 <td>String</td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul></td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.bankaccount.type</code></td>
+<td><code>payee</code> → <code>bankaccount</code> → <code>type</code></td>
 <td>Integer</td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Account type of the Payee. Set <code>1</code> for Checking, and <code>2</code> for Savings.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.bankaccount.codebank</code></td>
+<td><code>payee</code> → <code>bankaccount</code> → <code>codebank</code></td>
 <td>String</td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Bank code of the Payee.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>payee.bankaccount.branch</code></td>
+<td><code>payee</code> → <code>bankaccount</code> → <code>branch</code></td>
 <td>String</td>
 <td style="text-align:center">No</td>
 <td>Branch code of the Payee&rsquo;s bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type.</td>
@@ -909,9 +909,9 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Juan&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Perez&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jperez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Diego&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;dsilva@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 23 # 123-45 Apto 601&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
@@ -1284,9 +1284,9 @@ The validation of the message was successful but the payout is <strong>Declined<
 <br>
 <b>Last modified</b>
 
-July 26, 2023: 
+August 2, 2023: 
 
- <i>Added Account and Branch validation for Brazil and Uruguay (857f984)</i>
+ <i>Request example for Colombia updated (0a7dd1a)</i>
   </div>
 </div>
 
