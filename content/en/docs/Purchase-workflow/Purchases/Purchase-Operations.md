@@ -19,6 +19,8 @@ All methods used in Purchase API requires an authentication header, which is con
 ## Setting the language of the response codes
 You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
 
+<div id="shortTable"></div>
+
 | Code | Language |
 |:-:|---|
 | `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
@@ -29,6 +31,7 @@ You can receive the error description by relying on localization features. To do
 The operations exposed by the _**Purchase API**_ allows you to performs several actions over Purchases. Ypu have available the following methods.
 
 * [Create a purchase](#create-a-purchase)
+* [Confirm a purchase](#confirm-a-purchase)
 * [Get purchases](#get-purchases)
 
 ### Create a purchase
@@ -50,7 +53,7 @@ You need to invoke a **POST** request to the following URLs according to your ne
 | `Amount` | `number` | Yes | Amount of the purchase. This value must be greater than zero.<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`. |
 | `Currency` | `string` | Yes | Currency of the purchase, according to ISO-4217. The possible values are found in the [Currencies](#) table. |
 | `Installments` | `integer` | No | Number of payments in which is divided a credit card purchase. |
-| `Capture` | `boolean` | No | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed and the purchase is pre-authorized pending final confirmation through the commit and rollback calls.</li><li>If `true`, the transaction is authorized and captured (committed).</li></ul><br> |
+| `Capture` | `boolean` | No | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed and the purchase is pre-authorized pending final confirmation through the commit and rollback calls.</li><li>If `true`, the transaction is authorized and captured (committed).</li></ul><br>Pre-authorization feature may not be supported by all [payment methods and countries](/docs/payment-methods.html). |
 | `CrossBorderData` | `object` | No <sup>3</sup> | This object has the information related to _CrossBorder purchases_. |
 | `CrossBorderData` → `TargetCountryISO` | `string` | Yes | This parameter indicates the country where the payment will be processed.<br>The country must be sent using `ISO-3166-1` format |
 | `MetadataIn` | `object` | No | Additional fields required by each payment method or acquirer. |
@@ -92,7 +95,7 @@ You need to invoke a **POST** request to the following URLs according to your ne
 * <sup>4</sup> If you create the purchase using a [_CommerceToken_](#), This object is not required.
 * <sup>5</sup> This parameter is mandatory for _Uruguay_ using cards.
 * <sup>6</sup> This parameter is mandatory when `DataUY.IsFinalConsumer` is `true`.
-* Keep in mind that for the correct functioning of the Antifraud system, it is suggested to send additional data which is described in the [Antifraud](#) section.
+* Keep in mind that for the correct functioning of the Antifraud system, it is suggested to send additional data which is described in the [Antifraud]({{< ref "Antifraud.md" >}}) section.
 {{% /alert %}}
 
 ##### Request example
@@ -129,8 +132,73 @@ You need to invoke a **POST** request to the following URLs according to your ne
 }
 ```
 
-#### Response parameters
-The following table describes the parameters that are relevant for the purchase, its possible next steps in the flow, and the errors that may have occurred.
+### Confirm a purchase
+This method allows you to confirm a pre-authorized purchase.
+
+{{% alert title="Note" color="info"%}}
+Pre-authorization feature may not be supported by all payment methods and it's available for the following countries.
+
+<div style="text-align: center;">
+
+<a href="/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+
+</div>
+
+{{% /alert %}}
+
+#### Request URL
+You need to invoke a **POST** request to the following URLs according to your needs.
+
+* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
+
+#### Request parameters
+Request body is not required to confirm a purchase. If you don't send any request the pre-authorized purchase will be confirmed with its original amount. 
+
+The amount of the purchase may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
+
+##### Request example
+To confirm a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
+
+```json
+{
+  "Amount": 50
+}
+``` 
+
+### Get Purchases
+This method allows you to get the information of one or more purchases given the search criteria sent in the body.
+
+#### Request URL
+You need to invoke a **GET** request to the following URLs according to your needs.
+
+* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase`
+
+To get a specific purchase, include in the URL `/{{PurchaseID}}`. Example: `https://secure-api.bamboopayment.com/v1/api/purchase/481561`.
+
+#### Request parameters
+The following parameters are only required when you want to get a list of purchases. When requesting a specific purchase just add the _PurchaseID_ to the Request URL.
+
+{{% alert title="Note" color="info"%}}
+All the parameters are optional. If you don't send any parameter, all the purchases performed today will be listed.
+{{% /alert %}}
+
+| Parameter | Type | Description |
+|---|---|---|---|
+| `Authorized` | `boolean` | If the value is `true`, it returns only purchases that have completed successfully. |
+| `From` | `date` | Filter start date.<br>Format: `yyyyMMdd`. |
+| `OrderNumber` | `string` | Merchant order number. |
+| `PaymentMediaId` | `integer` | Identifier of the Payment Method used in the purchase. |
+| `To` | `date` | Filter end date.<br>Format: `yyyyMMdd`. |
+
+
+## Response parameters
+Regardless of the method you invoke, you will get the same `Response` object. Only when you query purchases and the result has multiple results, the `Response` returned will be an array.
+
+The following table describes the parameters in `Response` object that are relevant for the purchase, its possible next steps in the flow, and the errors that may have occurred.
 
 | Parameter | Type | Description |
 |---|---|---|
@@ -145,9 +213,15 @@ The following table describes the parameters that are relevant for the purchase,
 | `Response` → `Transaction` → `ErrorCode` | `string` | Error code (if applies) returned by the payment method. |
 | `Response` → `Transaction` → `Description` | `string` | Description of the outcome of the transaction. |
 | `Response` → `Transaction` → `ApprovalCode` | `string` | Approval code returned by the payment method. |
+| `Response` → `RefundList` | `object` | This object has the information of the refunds (partials or total) of the purchase. |
+| `Response` → `RefundList` → `PurchaseRefundId` | `integer` | Identifier associated with the refund. |
+| `Response` → `RefundList` → `Created` | `date` | Date and time when the refund was made. |
+| `Response` → `RefundList` → `UniqueID` | `string` | Unique identifier of the transaction.<br>This value allows you to identify a refund in the list of all possible refunds made. |
+| `Response` → `RefundList` → `Amount` | `integer` | Total amount of the refund. |
+| `Response` → `RefundList` → `Currency` | `string` | Currency of the purchase, according to ISO-4217 (alphanumeric codes). |
+| `Response` → `RefundList` → `Status` | `string` | Current status of the refund. |
 | `Response` → `CommerceAction` | `object` | This object is used to inform you of the different actions that you or your customer must carry out to complete the current purchase process. |
 | `Response` → `MetadataOut` | `object` | Additional fields returned by each payment method or acquirer to perform the next steps.<br>For example, this object can have the URL to where you need to redirect the customer or the QR image that has to be scanned by your customer. |
-| `Response` → `URL` | `string` | URL where you can access the information of the Purchase.<br>Ej: `{api_environment}/v1/api/purchase/{purchase-id})`. |
 | `Response` → `CrossBorderDataResponse` | `object` | This object has the information about the processed Amounts in local currency of the selected Country. |
 | `Response` → `CrossBorderDataResponse` → `TargetCountryISO` | `string` | Same country sent in the request. |
 | `Response` → `CrossBorderDataResponse` → `TargetCurrencyISO` | `string` | Local currency determined for the selected country. |
@@ -158,8 +232,7 @@ The following table describes the parameters that are relevant for the purchase,
 | `Errors` → `Message` | `string` | Descriptive text of the error. |
 | `Errors` → `Detail` | `string` | Error detail. |
 
-##### Response example
-
+### Response example
 
 ```json
 {
@@ -300,33 +373,3 @@ The following table describes the parameters that are relevant for the purchase,
     "Errors": []
 }
 ```
-
-### Get Purchases
-This method allows you to get the information of one or more purchases given the search criteria sent in the body.
-
-#### Request URL
-You need to invoke a **GET** request to the following URLs according to your needs.
-
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase`
-
-To get a specific purchase, include in the URL `/{{PurchaseID}}`. Example: `https://secure-api.bamboopayment.com/v1/api/purchase/481561`.
-
-#### Request parameters
-The following parameters are only required when you want to get a list of purchases. When requesting a specific purchase just add the _PurchaseID_ to the Request URL.
-
-{{% alert title="Note" color="info"%}}
-All the parameters are optional. If you don't send any parameter, all the purchases performed today will be listed.
-{{% /alert %}}
-
-| Parameter | Type | Description |
-|---|---|---|---|
-| `Authorized` | `boolean` | If the value is `true`, it returns only purchases that have completed successfully. |
-| `From` | `date` | Filter start date.<br>Format: `yyyyMMdd`. |
-| `OrderNumber` | `string` | Merchant order number. |
-| `PaymentMediaId` | `integer` | Identifier of the Payment Method used in the purchase. |
-| `To` | `date` | Filter end date.<br>Format: `yyyyMMdd`. |
-
-#### Response parameters
-The response returned by this method is the same explained in [Create a purchase method](#response-parameters). If the number of purchase that meet your criteria is greater than one, the `Response` object is an array.
-

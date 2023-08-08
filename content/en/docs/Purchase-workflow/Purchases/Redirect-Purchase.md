@@ -72,7 +72,7 @@ The _**PaymentMediaId**_ and _**TrxToken**_ fields are optional but it is mandat
 ### Redirect response content
 The redirection callback response contains the `PurchaseID` and `Status`, as `FORM` data (input data).
 
-```http
+```html
 <form method="post" action="https://dummystore.com/checkout/approved">
   <input type="hidden" id="PurchaseId" name="PurchaseId" value="198742" />
   <input type="hidden" id="Status" name="Status" value="approved" />
