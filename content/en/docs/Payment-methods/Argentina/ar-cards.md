@@ -7,3 +7,6 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
+
+## Purchases without CVV
+Allows tokenization and recurrence. In the case of tokenization, the API generates a charge for a minimum of **ARS 3**, which is refunded to validate the cardholder data. With this token, it is possible to make purchases without CVV.

@@ -3,7 +3,7 @@ title: "Payins"
 linkTitle: "Payins Integration Guide"
 date: 2023-03-02
 description: >
-  Bamboo Payment lets the merchants accept payments by supporting all the payment methods available in each country.
+  Bamboo Payment lets merchants accept payments by supporting all the payment methods available in each country.
 menu:
   main:
     name: Payins
@@ -21,7 +21,7 @@ menu:
 ## Available countries
 Maximize market coverage with local payment solutions in **MM** countries across Latin America.
 
-Global companies are taking advantage of exponential eCommerce growth in Latin America by connecting to Local Payment methods through Bamboo’s single API.
+Global companies are leveraging exponential eCommerce growth in Latin America by connecting to Local Payment methods through Bamboo’s single API.
 
  {{< Countries/countriesMap_en >}}
 

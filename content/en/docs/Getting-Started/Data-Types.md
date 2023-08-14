@@ -8,19 +8,19 @@ weight: 20
 ---
 
 ## Basic
-Refer to this section to know some important aspects of the basic data types of the Bamboo Integration.
+Refer to this section to learn some important aspects of the basic data types of Bamboo Integration.
 
 ### String
-It's a set of characters that can contain any Unicode character. You can define a maximum length for this data type using square brackets, for example `string[30]` means that the string can contain a maximum of 30 characters. If a string has more characters than the maximum defined, it will be truncated, and processing will continue.
+It's a set of characters that can contain any Unicode character. You can define a maximum length for this data type using square brackets; for example, `string[30]` means that the string can contain a maximum of 30 characters. If a string has more characters than the maximum defined, it will be truncated, and processing will continue.
 
 ### Numeric
-Refers to an integer value. You can define a maximum length for this data type using square brackets, for example `Numeric[3]` means that the number can have a maximum of 3 digits. If the data has a value greater than the specification, an error will be returned.
+Refers to an integer value. You can define a maximum length for this data type using square brackets; for example, `Numeric[3]` means that the number can have a maximum of 3 digits. If the data has a value greater than the specification, an error will be returned.
 
 ### Amount
 Refers to a `Numeric` field that includes decimals to express the value of a transaction. 
-These fields are always expressed with the integer part plus 2 decimals without punctuation marks between them. 
+These fields are always expressed with the integer part plus two decimals without punctuation marks between them. 
 
-The following table shows the values must be codified.
+The following table shows how values should be codified:
 
 <div id="shortTable"></div>
 
@@ -32,7 +32,7 @@ The following table shows the values must be codified.
 | 0,01 | 1 |
 
 ### TimeStamp
-This data type shows a date / time value that must be expressed in the following format:
+This data type shows a date/time value that must be expressed in the following format:
 
 `"YYYY-MM-DDTHH:mm:ss.ttt"`
 
@@ -58,7 +58,7 @@ Below are examples of how values should be codified:
 | _2016/11/28 22:59:59.970_ | `2016-11-28T22:59:59.970` |
 
 ### Date
-This Data type contains an exact date. Unlike the [TimeStamp](#TimeStamp) data type, it does not include hours, and is in the following format:
+This Data type contains an exact date. Unlike the [TimeStamp](#TimeStamp) data type, it does not include hours and is in the following format:
 
 `yyyyMMdd`
 
@@ -82,7 +82,7 @@ Possible values:
 | 6 | Cancelled |
 
 ### ActionType
-Indicates the type of action to be performed by the merchant. This data type is useful when processing purchase using the _Redirect flow_.
+Indicates the type of action to be performed by the merchant. This data type is useful when processing purchases using the _Redirect flow_.
 
 Possible values:
 
