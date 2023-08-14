@@ -25,7 +25,7 @@
         
         &lt;p&gt;To learn more about Payouts, refer to this &lt;a href=&#34;../../payouts/overview.html&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
-&lt;p&gt;All methods used in Payouts API requires an authentication header, which is configured using the following parameters.&lt;/p&gt;
+&lt;p&gt;All methods used in Payouts API require an authentication header configured using the following parameters.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -38,22 +38,22 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;This parameter causes the request to be sent in &lt;em&gt;json&lt;/em&gt; format.&lt;/td&gt;
+&lt;td&gt;This parameter triggers the sending of the Request in &lt;em&gt;JSON&lt;/em&gt; format.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Basic {{MerchantPrivateKey}}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Sent the &lt;code&gt;{{MerchantPrivateKey}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Send the &lt;code&gt;{{MerchantPrivateKey}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;DigitalSignature&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;{{DigitalSignature}}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Signature to validate the transaction using &lt;em&gt;HmacSHA256&lt;/em&gt; algorithm. This header is only required for Payout creation.&lt;/td&gt;
+&lt;td&gt;Signature to validate the transaction using the &lt;em&gt;HmacSHA256&lt;/em&gt; algorithm. This header is mandatory only for Payout creation.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;signing-the-message&#34;&gt;Signing the message&lt;/h3&gt;
-&lt;p&gt;The hash to be sent is built using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, &lt;code&gt;reference&lt;/code&gt;, and &lt;code&gt;type&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and the &lt;code&gt;MerchantPrivateKey&lt;/code&gt; is provided to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
+&lt;p&gt;Build the hash using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, &lt;code&gt;reference&lt;/code&gt;, and &lt;code&gt;type&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and &lt;code&gt;MerchantPrivateKey&lt;/code&gt; are provided to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
 &lt;h4 id=&#34;signature-sample-code&#34;&gt;Signature sample code&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;JSON&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;request&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;signdata&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Country&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;country&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Amount&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;amount&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Currency&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;currency&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reference&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reference&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;};&lt;/span&gt;
@@ -61,16 +61,21 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HmacSHA256&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;secret&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hash&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;enc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Hex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;api-methods&#34;&gt;API methods&lt;/h2&gt;
-&lt;p&gt;Payouts API enable two main methods to be used during the request of Payouts.&lt;/p&gt;
+&lt;p&gt;The Payouts API offers three primary methods that you can use when requesting Payouts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#get-bank-list&#34;&gt;Get Bank list&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#payout-request&#34;&gt;Payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#obtaining-a-payout&#34;&gt;Obtaining a Payout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;get-bank-list&#34;&gt;Get Bank list&lt;/h3&gt;
-&lt;p&gt;This method allows you to get the list of available banks in a given country&lt;/p&gt;
+&lt;p&gt;This method lets you get the list of available banks in a country.&lt;/p&gt;
 &lt;h4 id=&#34;request-url&#34;&gt;Request URL&lt;/h4&gt;
 &lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Where &lt;code&gt;{{Country}}&lt;/code&gt; is the ISO code of the country you want to consult in format &lt;code&gt;ISO 3166-2&lt;/code&gt;. &lt;a href=&#34;../../payouts/overview.html#coverage&#34;&gt;Countries available for Payouts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;{{Country}}&lt;/code&gt; represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. &lt;a href=&#34;../../payouts/overview.html#coverage&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -135,7 +140,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payout-request&#34;&gt;Payout request&lt;/h3&gt;
 &lt;p&gt;This method allows you to request one or more Payouts using the funds settled in your account.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
+&lt;p&gt;Use any of the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -157,7 +162,7 @@
 &lt;td&gt;&lt;code&gt;country&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String(2)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;ISO code of the country in format &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../../payouts/overview.html#coverage&#34;&gt;Countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the country in format &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../../payouts/overview.html#coverage&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -171,7 +176,7 @@
 &lt;td&gt;&lt;code&gt;currency&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String(3)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;ISO code of the currency.&lt;br&gt;&lt;em&gt;Only USD available&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency.&lt;br&gt;&lt;em&gt;Only USD is available&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -185,7 +190,7 @@
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you.&lt;br&gt;&lt;em&gt;Must be unique&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout defined by you.&lt;br&gt;&lt;em&gt;It must be unique&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -262,7 +267,7 @@
 &lt;td&gt;&lt;code&gt;payee&lt;/code&gt; → &lt;code&gt;bankaccount&lt;/code&gt; → &lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Integer&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Account type of the Payee. Set &lt;code&gt;1&lt;/code&gt; for Checking, and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
+&lt;td&gt;Account type of the Payee. Set &lt;code&gt;1&lt;/code&gt; for Checking and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -276,7 +281,7 @@
 &lt;td&gt;&lt;code&gt;payee&lt;/code&gt; → &lt;code&gt;bankaccount&lt;/code&gt; → &lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type.&lt;/td&gt;
+&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -734,7 +739,7 @@ Where:
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you when the Payout was requested.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout you defined when you requested the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errors&lt;/code&gt;&lt;/td&gt;
@@ -757,7 +762,7 @@ Authorization error.&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;BadRequest&lt;/code&gt;: HttpCode &lt;code&gt;HttpCode 400&lt;/code&gt;.&lt;br&gt;
-The validation of the message failed and the payout is &lt;strong&gt;Declined&lt;/strong&gt;.&lt;/li&gt;
+The validation of the message failed, and the payout is &lt;strong&gt;Declined&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Response body&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -773,7 +778,7 @@ The validation of the message failed and the payout is &lt;strong&gt;Declined&lt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Conflict&lt;/code&gt; - &lt;code&gt;Declined&lt;/code&gt;: HttpCode &lt;code&gt;HttpCode 409&lt;/code&gt;.&lt;br&gt;
-The validation of the message was successful but the payout is &lt;strong&gt;Declined&lt;/strong&gt; due to business rules.&lt;/li&gt;
+The validation of the message was successful, but the payout is &lt;strong&gt;Declined&lt;/strong&gt; due to business rules.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Response body&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -791,9 +796,9 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;statusCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;409&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;obtaining-a-payout&#34;&gt;Obtaining a Payout&lt;/h3&gt;
-&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or by using the reference that you provided when requesting the Payout.&lt;/p&gt;
+&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or the reference you provided when requesting the Payout.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-2&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
+&lt;p&gt;Use any of the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -821,7 +826,7 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;String&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you when the Payout was requested.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout you defined when you requested the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;isoCountry&lt;/code&gt;&lt;/td&gt;
@@ -926,7 +931,7 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
         
         
         &lt;h2 id=&#34;id-types&#34;&gt;ID Types&lt;/h2&gt;
-&lt;p&gt;The following table shows the available document types you need to configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following table shows the document types you must configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;argentina&#34;&gt;Argentina&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;

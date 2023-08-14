@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>Payouts: Payout Reports</title>
+      <title>Payouts: Payout Report</title>
       <link>/payouts/payouts-merchant-console/reports.html</link>
       <pubDate>Wed, 22 Mar 2023 15:30:03 -0500</pubDate>
       
@@ -23,9 +23,9 @@
       <description>
         
         
-        &lt;p&gt;To navigate to Payout reports, open you Merchant console and select &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt; then &lt;em&gt;&lt;strong&gt;Payouts Report&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+        &lt;p&gt;To navigate the Payout report, open your Merchant console and select &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt;, then &lt;em&gt;&lt;strong&gt;Payouts Report&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts5_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In this screen you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the following attributes:&lt;/p&gt;
+&lt;p&gt;On this screen, you have two sections. First, you have the search criteria where you can combine one or more attributes to search a given Payout. You have available the following parameters:&lt;/p&gt;
 &lt;div id=&#34;columns&#34;&gt;
      &lt;li&gt;Payout Id&lt;/li&gt;
      &lt;li&gt;Reference&lt;/li&gt;
@@ -70,15 +70,15 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Creation Date&lt;/td&gt;
-&lt;td&gt;Date when the Payout was created in the system.&lt;/td&gt;
+&lt;td&gt;The date when the system created the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Status&lt;/td&gt;
-&lt;td&gt;Latest status of the payout. For more information, refer to &lt;a href=&#34;../payouts/overview/payout-status.html&#34;&gt;Payout status&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;The most recent status of the Payout. For more information, refer to &lt;a href=&#34;../payouts/overview/payout-status.html&#34;&gt;Payout status&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Payee&lt;/td&gt;
-&lt;td&gt;Name of the third party benefit of the Payout.&lt;/td&gt;
+&lt;td&gt;Name of the third-party benefit of the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Country&lt;/td&gt;
@@ -94,9 +94,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;To see the detail of a payout, just click it in the table. The following window appears.&lt;/p&gt;
+&lt;p&gt;To see the detail of a payout, click it in the table. The following window appears.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts6_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Click the &lt;em&gt;&lt;strong&gt;More details&lt;/strong&gt;&lt;/em&gt; button to see further details of the Payout and its status log.&lt;/p&gt;
+&lt;p&gt;Click the &lt;em&gt;&lt;strong&gt;More details&lt;/strong&gt;&lt;/em&gt; button for further details of the Payout and its status log.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts7_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
@@ -113,7 +113,7 @@
         
         &lt;p&gt;To learn more about Payouts, refer to this &lt;a href=&#34;../payouts/overview.html&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
-&lt;p&gt;All methods used in Payouts API requires an authentication header, which is configured using the following parameters.&lt;/p&gt;
+&lt;p&gt;All methods used in Payouts API require an authentication header configured using the following parameters.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -126,22 +126,22 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;This parameter causes the request to be sent in &lt;em&gt;json&lt;/em&gt; format.&lt;/td&gt;
+&lt;td&gt;This parameter triggers the sending of the Request in &lt;em&gt;JSON&lt;/em&gt; format.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;Basic {{MerchantPrivateKey}}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Sent the &lt;code&gt;{{MerchantPrivateKey}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Send the &lt;code&gt;{{MerchantPrivateKey}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;DigitalSignature&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;{{DigitalSignature}}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Signature to validate the transaction using &lt;em&gt;HmacSHA256&lt;/em&gt; algorithm. This header is only required for Payout creation.&lt;/td&gt;
+&lt;td&gt;Signature to validate the transaction using the &lt;em&gt;HmacSHA256&lt;/em&gt; algorithm. This header is mandatory only for Payout creation.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;signing-the-message&#34;&gt;Signing the message&lt;/h3&gt;
-&lt;p&gt;The hash to be sent is built using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, &lt;code&gt;reference&lt;/code&gt;, and &lt;code&gt;type&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and the &lt;code&gt;MerchantPrivateKey&lt;/code&gt; is provided to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
+&lt;p&gt;Build the hash using the parameters &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;amount&lt;/code&gt;, &lt;code&gt;currency&lt;/code&gt;, &lt;code&gt;reference&lt;/code&gt;, and &lt;code&gt;type&lt;/code&gt; of the Request. The &lt;code&gt;secret-key&lt;/code&gt; and &lt;code&gt;MerchantPrivateKey&lt;/code&gt; are provided to you when sing the onboarding contract with Bamboo.&lt;/p&gt;
 &lt;h4 id=&#34;signature-sample-code&#34;&gt;Signature sample code&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;JSON&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;request&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;signdata&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Country&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;country&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Amount&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;amount&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Currency&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;currency&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Reference&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reference&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;};&lt;/span&gt;
@@ -149,16 +149,21 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HmacSHA256&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;secret&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hash&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;enc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Hex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;api-methods&#34;&gt;API methods&lt;/h2&gt;
-&lt;p&gt;Payouts API enable two main methods to be used during the request of Payouts.&lt;/p&gt;
+&lt;p&gt;The Payouts API offers three primary methods that you can use when requesting Payouts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#get-bank-list&#34;&gt;Get Bank list&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#payout-request&#34;&gt;Payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#obtaining-a-payout&#34;&gt;Obtaining a Payout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;get-bank-list&#34;&gt;Get Bank list&lt;/h3&gt;
-&lt;p&gt;This method allows you to get the list of available banks in a given country&lt;/p&gt;
+&lt;p&gt;This method lets you get the list of available banks in a country.&lt;/p&gt;
 &lt;h4 id=&#34;request-url&#34;&gt;Request URL&lt;/h4&gt;
 &lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Where &lt;code&gt;{{Country}}&lt;/code&gt; is the ISO code of the country you want to consult in format &lt;code&gt;ISO 3166-2&lt;/code&gt;. &lt;a href=&#34;../payouts/overview.html#coverage&#34;&gt;Countries available for Payouts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;{{Country}}&lt;/code&gt; represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. &lt;a href=&#34;../payouts/overview.html#coverage&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -223,7 +228,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payout-request&#34;&gt;Payout request&lt;/h3&gt;
 &lt;p&gt;This method allows you to request one or more Payouts using the funds settled in your account.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
+&lt;p&gt;Use any of the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -245,7 +250,7 @@
 &lt;td&gt;&lt;code&gt;country&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String(2)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;ISO code of the country in format &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../payouts/overview.html#coverage&#34;&gt;Countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the country in format &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../payouts/overview.html#coverage&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -259,7 +264,7 @@
 &lt;td&gt;&lt;code&gt;currency&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String(3)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;ISO code of the currency.&lt;br&gt;&lt;em&gt;Only USD available&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency.&lt;br&gt;&lt;em&gt;Only USD is available&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -273,7 +278,7 @@
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you.&lt;br&gt;&lt;em&gt;Must be unique&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout defined by you.&lt;br&gt;&lt;em&gt;It must be unique&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -350,7 +355,7 @@
 &lt;td&gt;&lt;code&gt;payee&lt;/code&gt; → &lt;code&gt;bankaccount&lt;/code&gt; → &lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Integer&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Account type of the Payee. Set &lt;code&gt;1&lt;/code&gt; for Checking, and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
+&lt;td&gt;Account type of the Payee. Set &lt;code&gt;1&lt;/code&gt; for Checking and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -364,7 +369,7 @@
 &lt;td&gt;&lt;code&gt;payee&lt;/code&gt; → &lt;code&gt;bankaccount&lt;/code&gt; → &lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type.&lt;/td&gt;
+&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -822,7 +827,7 @@ Where:
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you when the Payout was requested.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout you defined when you requested the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errors&lt;/code&gt;&lt;/td&gt;
@@ -845,7 +850,7 @@ Authorization error.&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;BadRequest&lt;/code&gt;: HttpCode &lt;code&gt;HttpCode 400&lt;/code&gt;.&lt;br&gt;
-The validation of the message failed and the payout is &lt;strong&gt;Declined&lt;/strong&gt;.&lt;/li&gt;
+The validation of the message failed, and the payout is &lt;strong&gt;Declined&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Response body&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -861,7 +866,7 @@ The validation of the message failed and the payout is &lt;strong&gt;Declined&lt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Conflict&lt;/code&gt; - &lt;code&gt;Declined&lt;/code&gt;: HttpCode &lt;code&gt;HttpCode 409&lt;/code&gt;.&lt;br&gt;
-The validation of the message was successful but the payout is &lt;strong&gt;Declined&lt;/strong&gt; due to business rules.&lt;/li&gt;
+The validation of the message was successful, but the payout is &lt;strong&gt;Declined&lt;/strong&gt; due to business rules.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Response body&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -879,9 +884,9 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;statusCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;409&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;obtaining-a-payout&#34;&gt;Obtaining a Payout&lt;/h3&gt;
-&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or by using the reference that you provided when requesting the Payout.&lt;/p&gt;
+&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or the reference you provided when requesting the Payout.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-2&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;Use any to the following URLS according to your needs.&lt;/p&gt;
+&lt;p&gt;Use any of the following URLS according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -909,7 +914,7 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;reference&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;String&lt;/td&gt;
-&lt;td&gt;Unique identifier of the Payout defined by you when the Payout was requested.&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout you defined when you requested the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;isoCountry&lt;/code&gt;&lt;/td&gt;
@@ -1013,12 +1018,12 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
       <description>
         
         
-        &lt;p&gt;To navigate to the Payout Balance report, open you Merchant console and expand &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt; then &lt;em&gt;&lt;strong&gt;Payouts Balance&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+        &lt;p&gt;To navigate the Payout Balance report, open your Merchant console and expand &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt;, then &lt;em&gt;&lt;strong&gt;Payouts Balance&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts9_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In this screen you have two sections. The first section, shows the Balance types of your account.&lt;/p&gt;
+&lt;p&gt;On this screen, you have two sections. The first section shows the Balance types of your account.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts10_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;For more information, refer to &lt;a href=&#34;../payouts/overview/payout-balances.html#balance-types&#34;&gt;Payout Balances&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The second section, show the movements of your balance. Where you have the following columns:&lt;/p&gt;
+&lt;p&gt;The second section shows the movements of your balance. Where you have the following columns:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1041,7 +1046,7 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;USD Amount&lt;/td&gt;
-&lt;td&gt;Amount of the movement, credit (such as cash outs, fees, etc.) movements are displayed in red and debit movements (such as deposits) are displayed in green.&lt;/td&gt;
+&lt;td&gt;Amount of the movement.&lt;br&gt;The report shows the credit movements (such as cash outs, fees, etc.) in red and the debit movements (such as deposits) in green.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Total Balance&lt;/td&gt;
@@ -1049,7 +1054,7 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You can include filters by clicking the &lt;em&gt;&lt;strong&gt;Filters&lt;/strong&gt;&lt;/em&gt; button, where you can filter by date range of the movement or any of its parameters.&lt;/p&gt;
+&lt;p&gt;You can include filters by clicking the &lt;em&gt;&lt;strong&gt;Filters&lt;/strong&gt;&lt;/em&gt; button, where you can filter by the date range of the movement or any of its parameters.&lt;/p&gt;
 
       </description>
     </item>
@@ -1063,21 +1068,21 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
       <description>
         
         
-        &lt;h3 id=&#34;balance&#34;&gt;Balance&lt;/h3&gt;
-&lt;p&gt;The &lt;em&gt;Balance&lt;/em&gt; is the amount of money settled in your account. For &lt;em&gt;Payouts&lt;/em&gt;, we have three different types of balances which can be consulted &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;banking-connections&#34;&gt;Banking Connections&lt;/h3&gt;
-&lt;p&gt;The &lt;em&gt;Banking Connection&lt;/em&gt; is the technology that allows us to send money to a payee regardless of the selected payment method.&lt;/p&gt;
-&lt;h3 id=&#34;fx-service&#34;&gt;FX Service&lt;/h3&gt;
+        &lt;h2 id=&#34;balance&#34;&gt;Balance&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Balance&lt;/em&gt; is the amount of money settled in your account. We have three different balances for Payouts; consult those types &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;banking-connections&#34;&gt;Banking Connections&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Banking Connection&lt;/em&gt; technology allows us to send money to a payee regardless of the selected payment method.&lt;/p&gt;
+&lt;h2 id=&#34;fx-service&#34;&gt;FX Service&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt; or &lt;em&gt;FX&lt;/em&gt; refers to the current rate to convert one country&amp;rsquo;s currency to another. This value is updated according to destination country regulations.&lt;/p&gt;
-&lt;h3 id=&#34;payee&#34;&gt;Payee&lt;/h3&gt;
+&lt;h2 id=&#34;payee&#34;&gt;Payee&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;Payee&lt;/em&gt; is a third party who will receive the money result of your Payout request. The information required for a &lt;em&gt;Payee&lt;/em&gt; is their name, document, phone, e-mail address, and bank account.&lt;/p&gt;
-&lt;h3 id=&#34;payout&#34;&gt;Payout&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; refers to the concept of disburse funds to a third party using funds settled in your account.&lt;/p&gt;
-&lt;h3 id=&#34;payout-fee&#34;&gt;Payout fee&lt;/h3&gt;
-&lt;p&gt;Refers to the processing cost of the Payout. This cost can be assumed by you (as Payer) or assumed by the Payee by setting a variable in the request.&lt;/p&gt;
-&lt;h3 id=&#34;sanction-screening&#34;&gt;Sanction screening&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Sanction screening&lt;/em&gt; is the process to let us know if the merchant is making payouts to legally sanctioned persons. This process is important as an Anti-Money Laundering (AML) and Payout limits control.&lt;/p&gt;
-&lt;p&gt;The output of this process determines whether the &lt;em&gt;Payout&lt;/em&gt; has to be sent to a manual validation.&lt;/p&gt;
+&lt;h2 id=&#34;payout&#34;&gt;Payout&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; refers to disbursing funds to a third party using funds settled in your account.&lt;/p&gt;
+&lt;h2 id=&#34;payout-fee&#34;&gt;Payout fee&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Payout fee&lt;/em&gt; refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee by setting a variable in the request.&lt;/p&gt;
+&lt;h2 id=&#34;sanction-screening&#34;&gt;Sanction screening&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Sanction screening&lt;/em&gt; ets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.&lt;/p&gt;
+&lt;p&gt;The output of this process determines whether the &lt;em&gt;Payout&lt;/em&gt; requires manual validation.&lt;/p&gt;
 
       </description>
     </item>
@@ -1091,33 +1096,33 @@ The validation of the message was successful but the payout is &lt;strong&gt;Dec
       <description>
         
         
-        &lt;p&gt;The following diagram represents the statuses of a payout:&lt;/p&gt;
+        &lt;p&gt;The following diagram represents the status of a payout:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts2_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Received&lt;/strong&gt;: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to &lt;a href=&#34;../payouts-api.html&#34;&gt;Payouts API&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Received&lt;/strong&gt;: this is the initial status after the  Once you request a payout, we validate the structure of the payout (for Payouts requested through API) and create it in our system. For more information about the structure, refer to &lt;a href=&#34;../payouts-api.html&#34;&gt;Payouts API&lt;/a&gt;.
-Furthermore, we validate that you have enough balance settled in your account before moving the next status. Otherwise, it will be declined.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: this status indicates that the payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case it is assumed by you). During this status we define whether the Payout needs a manual review under two criteria. First, the limit of payments received by the payee and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: this status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;: This status indicates that the payout and the payee have met all the validations required and it is about to be sent to the &lt;em&gt;Banking Connections&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;: this status indicates that the payout and the payee have meet all the validations required and it is about to be sent to the &lt;em&gt;Banking Connections&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processing&lt;/strong&gt;: The &lt;em&gt;Banking Connection&lt;/em&gt; has received the payout; the time before moving to &lt;em&gt;&lt;strong&gt;Paid&lt;/strong&gt;&lt;/em&gt; status depends on the country and selected payment method. &lt;a href=&#34;../overview.html#considerations&#34;&gt;Click here to learn more&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Processing&lt;/strong&gt;: the payout has been received by the &lt;em&gt;Banking Connection&lt;/em&gt;, the time before moving to &lt;em&gt;&lt;strong&gt;Paid&lt;/strong&gt;&lt;/em&gt; status depends on the country and the payment method selected. &lt;a href=&#34;../overview.html#considerations&#34;&gt;Click here to learn more&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paid&lt;/strong&gt;: The &lt;em&gt;Banking Connection&lt;/em&gt; has processed the Payout and is approved. In this status, we update your &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;balance&lt;/a&gt; with the transaction values.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Paid&lt;/strong&gt;: The payout has been processed by the &lt;em&gt;Banking Connection&lt;/em&gt; and it has been approved. In this status, your &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;balance&lt;/a&gt; has been updated with the transaction values.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rejected&lt;/strong&gt;: The &lt;em&gt;Banking Connection&lt;/em&gt; has processed the Payout and is not approved. In this status, we update your &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;balance&lt;/a&gt; with the transaction values.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Rejected&lt;/strong&gt;: The payout has been processed by the &lt;em&gt;Banking Connection&lt;/em&gt; and it has been rejected. In this status, your &lt;a href=&#34;../payouts/overview/payout-balances.html&#34;&gt;balance&lt;/a&gt; has been updated with the transaction values.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Declined&lt;/strong&gt;: The payout has been rejected due to structure validation or internal reasons.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Declined&lt;/strong&gt;: The payout was rejected due to structure validation or internal reasons.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1134,7 +1139,7 @@ Furthermore, we validate that you have enough balance settled in your account be
         
         
         &lt;h2 id=&#34;id-types&#34;&gt;ID Types&lt;/h2&gt;
-&lt;p&gt;The following table shows the available document types you need to configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following table shows the document types you must configure in the parameter &lt;code&gt;payee.document.type&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;argentina&#34;&gt;Argentina&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1527,12 +1532,12 @@ Furthermore, we validate that you have enough balance settled in your account be
       <description>
         
         
-        &lt;p&gt;The balances available are updated according to the movements performed in your account such as funds deposit or disbursement.&lt;/p&gt;
+        &lt;p&gt;We update the balances available according to the movements performed in your account, such as funds deposit or disbursement.&lt;/p&gt;
 &lt;h2 id=&#34;balance-types&#34;&gt;Balance types&lt;/h2&gt;
 &lt;p&gt;You can see the following balances in the Payouts console:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;: corresponds to the total amount of money you have in your account.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;: corresponds to the amount requested to be disbursed in all your payout. The fee amount of the payouts may be included depending on who will assume the fee (you or your payee) and the &lt;a href=&#34;#balance-models&#34;&gt;model&lt;/a&gt; selected. When all the Payouts have reached a terminal  (Paid or rejected), the value displayed here is 0.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;: This amount corresponds to your account&amp;rsquo;s total amount of money.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee) and the chosen &lt;a href=&#34;#balance-models&#34;&gt;model&lt;/a&gt;. Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Available Balance&lt;/strong&gt;: correspond to the amount of money yo have to process more Payouts and ir is the difference between the &lt;em&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;&lt;/em&gt; and the &lt;em&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1540,23 +1545,23 @@ Furthermore, we validate that you have enough balance settled in your account be
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;If the fee is assumed by the payee, this will not be reflected in any balance type.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;balance-models&#34;&gt;Balance models&lt;/h2&gt;
-&lt;p&gt;Bamboo payouts offers you the possibility to see the three balance types in two models:&lt;/p&gt;
+&lt;p&gt;The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Simplified Model&lt;/strong&gt;: a single balance for Payouts.&lt;br&gt;
-In this case, both the payout amount and the fee charged are deducted from your global balance.&lt;/li&gt;
+In this case, the payout amount and the fee charged are deducted from your global balance.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts3_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Detailed Model&lt;/strong&gt;: one balance for Payouts and one for fees.&lt;br&gt;
-In this case, you have two balances, one to deduct the net amounts from the Payout and another to exclusively deduct the fees charged.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Detailed Model&lt;/strong&gt;: one Balance for Payouts and one for fees.&lt;br&gt;
+In this case, you have two Balances, one to remove the net amounts from the Payout and another to deduct the fees charged exclusively.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Payouts/Payouts4_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;To let you understand the concepts of type and model behind the Payout balances, lets make an example.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make an example to let you understand the concepts of type and model behind the Payout balances.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s assume that you have the following information:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1579,7 +1584,7 @@ In this case, you have two balances, one to deduct the net amounts from the Payo
 &lt;td&gt;20 USD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Initial balance for fee&lt;/td&gt;
+&lt;td&gt;Initial balance for the fee&lt;/td&gt;
 &lt;td&gt;5 USD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1654,7 +1659,7 @@ In this case, you have two balances, one to deduct the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;em&gt;If the payout is rejected, the process fee is not refunded.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If the payout is rejected, the processing fee is not refunded.&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;simplified-model---fee-assumed-by-the-payee&#34;&gt;Simplified Model - fee assumed by the payee&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
@@ -1861,7 +1866,7 @@ In this case, you have two balances, one to deduct the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;em&gt;If the payout is rejected, the process fee is not refunded.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If the payout is rejected, the processing fee is not refunded.&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;detailed-model---fee-assumed-by-the-payee&#34;&gt;Detailed Model - fee assumed by the payee&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
