@@ -11,16 +11,16 @@ weight: 10
 To learn more about Payouts, refer to this [article](/payouts/overview.html).
 
 ## Configuring the authentication
-All methods used in Payouts API requires an authentication header, which is configured using the following parameters.
+All methods used in Payouts API require an authentication header configured using the following parameters.
 
 | Key | Value | Comments |
 |---|---|---|
-| `Content-Type` | `application/json` | This parameter causes the request to be sent in _json_ format.  |
-| `Authorization` | `Basic {{MerchantPrivateKey}}` | Sent the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
-| `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using _HmacSHA256_ algorithm. This header is only required for Payout creation. |
+| `Content-Type` | `application/json` | This parameter triggers the sending of the Request in _JSON_ format.  |
+| `Authorization` | `Basic {{MerchantPrivateKey}}` | Send the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
+| `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using the _HmacSHA256_ algorithm. This header is mandatory only for Payout creation. |
 
 ### Signing the message
-The hash to be sent is built using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. The `secret-key` and the `MerchantPrivateKey` is provided to you when sing the onboarding contract with Bamboo.
+Build the hash using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. The `secret-key` and `MerchantPrivateKey` are provided to you when sing the onboarding contract with Bamboo.
 
 #### Signature sample code
 ```javascript
@@ -32,10 +32,14 @@ var hash = hexHash.toString(CryptoJS.enc.Hex);
 ```
 
 ## API methods
-Payouts API enable two main methods to be used during the request of Payouts.
+The Payouts API offers three primary methods that you can use when requesting Payouts.
+
+* [Get Bank list](#get-bank-list)
+* [Payout request](#payout-request)
+* [Obtaining a Payout](#obtaining-a-payout)
 
 ### Get Bank list
-This method allows you to get the list of available banks in a given country
+This method lets you get the list of available banks in a country.
 
 #### Request URL
 Use any to the following URLS according to your needs.
@@ -43,7 +47,7 @@ Use any to the following URLS according to your needs.
 * **Production**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
 
-Where `{{Country}}` is the ISO code of the country you want to consult in format `ISO 3166-2`. [Countries available for Payouts](/payouts/overview.html#coverage).
+Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](/payouts/overview.html#coverage).
 
 #### Response parameters
 
@@ -85,7 +89,7 @@ Where `{{Country}}` is the ISO code of the country you want to consult in format
 This method allows you to request one or more Payouts using the funds settled in your account.
 
 #### Request URL
-Use any to the following URLS according to your needs.
+Use any of the following URLS according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
@@ -95,11 +99,11 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`.<br>[Countries available for Payouts](/payouts/overview.html#coverage). |
+| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
 | `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
-| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD available_. |
+| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD is available_. |
 | `reason` | String | No | Description of the payment. |
-| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_Must be unique_. |
+| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for PIX</li></ul>|
 | `notification_Url` | String | No | Callback to notify the result of the payout |
 | `payee` → `FirstName` | String | Yes | First Name of the Payee. | 
@@ -110,9 +114,9 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `document` → `type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
 | `payee` → `document` → `number` | String | Yes | Document number of the Payee. | 
 | `payee` → `bankaccount` → `number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
-| `payee` → `bankaccount` → `type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking, and `2` for Savings. |
+| `payee` → `bankaccount` → `type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
 | `payee` → `bankaccount` → `codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
-| `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only for Brazil and is mandatory when using Bank transfer as Payout type. | 
+| `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
@@ -410,7 +414,7 @@ Where:
 | `payoutId` | Internal identifier of the Payout. |
 | `status` | Internal code of the current status of the Payout. |
 | `statusDescription` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
-| `reference` | Unique identifier of the Payout defined by you when the Payout was requested. |
+| `reference` | Unique identifier of the Payout you defined when you requested the Payout. |
 | `errors` | Errors that may appear  |
 | `statusCode` | HTTP code of the response. |
 
@@ -426,7 +430,7 @@ Authorization error.
 <br>
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-The validation of the message failed and the payout is **Declined**.
+The validation of the message failed, and the payout is **Declined**.
 
 **Response body**
 ```json
@@ -444,7 +448,7 @@ The validation of the message failed and the payout is **Declined**.
 <br>
 
 * `Conflict` - `Declined`: HttpCode `HttpCode 409`.<br>
-The validation of the message was successful but the payout is **Declined** due to business rules.
+The validation of the message was successful, but the payout is **Declined** due to business rules.
 
 **Response body**
 ```json
@@ -465,10 +469,10 @@ The validation of the message was successful but the payout is **Declined** due 
 ```
 
 ### Obtaining a Payout
-This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or by using the reference that you provided when requesting the Payout.
+This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or the reference you provided when requesting the Payout.
 
 #### Request URL
-Use any to the following URLS according to your needs.
+Use any of the following URLS according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
@@ -483,7 +487,7 @@ To get the payout, include the following endpoints according to your needs.
 | Parameter | Format | Description |
 |---|:-:|---|
 | `payoutId` | Integer | Internal identification of the payout. |
-| `reference` | String | Unique identifier of the Payout defined by you when the Payout was requested. |
+| `reference` | String | Unique identifier of the Payout you defined when you requested the Payout. |
 | `isoCountry` | String | ISO code of the country in format `ISO 3166-2`. |
 | `created` | Date Time | Date when the Payout was requested. |
 | `lastUpdate` | Date Time | Date of the last update of the Payout was. |
