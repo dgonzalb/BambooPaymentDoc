@@ -9,7 +9,7 @@ weight: 20
 ---
 
 ## ID Types
-The following table shows the available document types you need to configure in the parameter `payee.document.type`.
+The following table shows the document types you must configure in the parameter `payee.document.type`.
 
 ### Argentina
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
