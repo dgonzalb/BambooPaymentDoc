@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
+  data-offline-search-index-json-src="../../offline-search-index.8f932dde249e22f88026476a3a9c588b9a98b022853f00223b0c2a96459422934ef94f3062324b5c386ed887267234fb97b0249ce94608e91baa94239770386d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -274,6 +274,12 @@
         <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
       
       
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
     </li>
   </ul>
   
@@ -344,7 +350,7 @@
       
       
       
-        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Notification Webhooks</a>
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
       
       
     </li>
@@ -758,6 +764,12 @@
       
       
       
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
         <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
       
       
@@ -807,6 +819,16 @@
 <p> </p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#payment-methods">Payment methods</a></li>
+    <li><a href="#currencies">Currencies</a></li>
+    <li><a href="#amount-limits">Amount limits</a></li>
+    <li><a href="#document-types">Document types</a></li>
+    <li><a href="#argentina-provinces">Argentina provinces</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -853,7 +875,325 @@
 	<h1>Argentina</h1>
         <div class="lead">Tech savvy population with a high GDP per capita, <em><strong>Argentina</strong></em> offers an immense opportunity for global merchants despite regulatory restrictions.</div>
 	
-	<p>This section shows the available payment methods, currencies, and related information to be taken into account when processing in <em>Argentina</em>.</p>
+	<p>This section shows the available payment methods, currencies, and related information you must consider when processing in <em>Argentina</em>.</p>
+<h2 id="payment-methods">Payment methods</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Payment MediaId</th>
+<th>Payment Media</th>
+<th style="text-align:center">Purchase</th>
+<th style="text-align:center">Pre-authorization</th>
+<th style="text-align:center">Full refund</th>
+<th style="text-align:center">Partial Refund</th>
+<th>Type</th>
+<th>Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">1</td>
+<td>VISA</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">2</td>
+<td>MasterCard</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">3</td>
+<td>American Express</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">6</td>
+<td>Visa Débito</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Debit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">7</td>
+<td>Visa Prepago</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Prepaid Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/11_passcard_3.png" alt="visa" style="" /></td>
+<td style="text-align:center">11</td>
+<td>PassCard</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="" /></td>
+<td style="text-align:center">14</td>
+<td>MasterCard Prepago</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Prepaid Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/17_cabal.png" alt="Cabal" style="" /></td>
+<td style="text-align:center">17</td>
+<td>Cabal</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" alt="Naranja" style="" /></td>
+<td style="text-align:center">24</td>
+<td>Tarjeta Naranja</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" alt="PagoFacil" style="" /></td>
+<td style="text-align:center">61</td>
+<td>Pago Fácil</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Cash</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" alt="Transferencias30" style="" /></td>
+<td style="text-align:center">72</td>
+<td>Transferencias 3.0</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Wallet</td>
+<td>API</td>
+</tr>
+</tbody>
+</table>
+<h2 id="currencies">Currencies</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USD</td>
+<td>US Dollar</td>
+<td>CrossBorder</td>
+</tr>
+<tr>
+<td>ARS</td>
+<td>Argentine Peso</td>
+<td>Domestic and CrossBorder</td>
+</tr>
+</tbody>
+</table>
+<h2 id="amount-limits">Amount limits</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Cards</th>
+<th style="text-align:center">Cash</th>
+<th style="text-align:center">Wallet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimum</strong></td>
+<td style="text-align:center">ARS 1</td>
+<td style="text-align:center">ARS 1</td>
+<td style="text-align:center">ARS 1</td>
+</tr>
+<tr>
+<td><strong>Maximum</strong></td>
+<td style="text-align:center">ARS 99.999.999.999.999.999</td>
+<td style="text-align:center">ARS 1.000.000,00</td>
+<td style="text-align:center">ARS 3.345.000,00<hr>USD 12.500,00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="document-types">Document types</h2>
+<p>The following table describes the valid document types for Argentina:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Code</th>
+<th>Document name</th>
+<th>Abbreviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">4</td>
+<td>Documento Nacional de Identidad</td>
+<td>DNI</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>Código único de Identificación Laboral</td>
+<td>CUIL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="argentina-provinces">Argentina provinces</h2>
+<p>When creating the Purchase in Argentina, and you want to include the province in the field <code>customer.state</code>, configure any of the following values:</p>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Province</th>
+<th style="text-align:center">Code for <strong>customer.state</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciudad Autónoma de Buenos Aires</td>
+<td style="text-align:center"><code>C</code></td>
+</tr>
+<tr>
+<td>Buenos Aires</td>
+<td style="text-align:center"><code>B</code></td>
+</tr>
+<tr>
+<td>Catamarca</td>
+<td style="text-align:center"><code>K</code></td>
+</tr>
+<tr>
+<td>Chaco</td>
+<td style="text-align:center"><code>H</code></td>
+</tr>
+<tr>
+<td>Chubut</td>
+<td style="text-align:center"><code>U</code></td>
+</tr>
+<tr>
+<td>Córdoba</td>
+<td style="text-align:center"><code>X</code></td>
+</tr>
+<tr>
+<td>Corrientes</td>
+<td style="text-align:center"><code>W</code></td>
+</tr>
+<tr>
+<td>Entre Ríos</td>
+<td style="text-align:center"><code>E</code></td>
+</tr>
+<tr>
+<td>Formosa</td>
+<td style="text-align:center"><code>P</code></td>
+</tr>
+<tr>
+<td>Jujuy</td>
+<td style="text-align:center"><code>Y</code></td>
+</tr>
+<tr>
+<td>La Pampa</td>
+<td style="text-align:center"><code>L</code></td>
+</tr>
+<tr>
+<td>La Rioja</td>
+<td style="text-align:center"><code>F</code></td>
+</tr>
+<tr>
+<td>Mendoza</td>
+<td style="text-align:center"><code>M</code></td>
+</tr>
+<tr>
+<td>Misiones</td>
+<td style="text-align:center"><code>N</code></td>
+</tr>
+<tr>
+<td>Neuquén</td>
+<td style="text-align:center"><code>Q</code></td>
+</tr>
+<tr>
+<td>Río Negro</td>
+<td style="text-align:center"><code>R</code></td>
+</tr>
+<tr>
+<td>Salta</td>
+<td style="text-align:center"><code>A</code></td>
+</tr>
+<tr>
+<td>San Juan</td>
+<td style="text-align:center"><code>J</code></td>
+</tr>
+<tr>
+<td>San Luis</td>
+<td style="text-align:center"><code>D</code></td>
+</tr>
+<tr>
+<td>Santa Cruz</td>
+<td style="text-align:center"><code>Z</code></td>
+</tr>
+<tr>
+<td>Santa Fe</td>
+<td style="text-align:center"><code>S</code></td>
+</tr>
+<tr>
+<td>Santiago del Estero</td>
+<td style="text-align:center"><code>G</code></td>
+</tr>
+<tr>
+<td>Tierra del Fuego</td>
+<td style="text-align:center"><code>V</code></td>
+</tr>
+<tr>
+<td>Tucumán</td>
+<td style="text-align:center"><code>T</code></td>
+</tr>
+</tbody>
+</table>
 
 		
 <div class="section-index">
@@ -980,6 +1320,10 @@
         
             
         
+            
+        
+            
+        
     
 </div>
 
@@ -991,9 +1335,9 @@
 <br>
 <b>Last modified</b>
 
-May 16, 2023: 
+August 22, 2023: 
 
- <i>Ajustes documentación (e6966b7)</i>
+ <i>Migration of the new documentation (1933efc)</i>
   </div>
 </div>
 

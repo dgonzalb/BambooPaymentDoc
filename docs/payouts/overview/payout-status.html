@@ -21,28 +21,28 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
 <title>Payout status | Bamboo Payment</title><meta property="og:title" content="Payout status" />
-<meta property="og:description" content="From the moment you request a payout to the moment when your payee receives the money, the payout follows a set of statuses. In this section, we give a brief explanation about these statuses.
+<meta property="og:description" content="From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/overview/payout-status.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-05-16T13:39:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-08-15T07:37:51-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Payout status">
-<meta itemprop="description" content="From the moment you request a payout to the moment when your payee receives the money, the payout follows a set of statuses. In this section, we give a brief explanation about these statuses.
+<meta itemprop="description" content="From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-05-16T13:39:41-05:00" />
-<meta itemprop="wordCount" content="292">
+<meta itemprop="dateModified" content="2023-08-15T07:37:51-05:00" />
+<meta itemprop="wordCount" content="274">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payout status"/>
-<meta name="twitter:description" content="From the moment you request a payout to the moment when your payee receives the money, the payout follows a set of statuses. In this section, we give a brief explanation about these statuses.
+<meta name="twitter:description" content="From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 
 
-<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
+  data-offline-search-index-json-src="../../offline-search-index.8f932dde249e22f88026476a3a9c588b9a98b022853f00223b0c2a96459422934ef94f3062324b5c386ed887267234fb97b0249ce94608e91baa94239770386d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -238,7 +238,7 @@
       
       
       
-        <a id="/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-merchant-consolereportshtml" href="../../payouts/payouts-merchant-console/reports.html">Payout Reports</a>
+        <a id="/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-merchant-consolereportshtml" href="../../payouts/payouts-merchant-console/reports.html">Payout Report</a>
       
       
       
@@ -368,35 +368,35 @@
             
 <div class="td-content">
 	<h1>Payout status</h1>
-    <div class="lead">From the moment you request a payout to the moment when your payee receives the money, the payout follows a set of statuses. In this section, we give a brief explanation about these statuses.</div>
+    <div class="lead">From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.</div>
 	       
-	<p>The following diagram represents the statuses of a payout:</p>
+	<p>The following diagram represents the status of a payout:</p>
 <p><img src="../../assets/Payouts/Payouts2_en.png" alt=""></p>
 <ul>
+<li><strong>Received</strong>: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to <a href="../payouts-api.html">Payouts API</a>.</li>
+</ul>
+<p>Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.</p>
+<ul>
 <li>
-<p><strong>Received</strong>: this is the initial status after the  Once you request a payout, we validate the structure of the payout (for Payouts requested through API) and create it in our system. For more information about the structure, refer to <a href="../payouts-api.html">Payouts API</a>.
-Furthermore, we validate that you have enough balance settled in your account before moving the next status. Otherwise, it will be declined.</p>
+<p><strong>Validated</strong>: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the <a href="../overview/payout-concepts.html#sanction-screening">sanction screening</a> process.</p>
 </li>
 <li>
-<p><strong>Validated</strong>: this status indicates that the payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case it is assumed by you). During this status we define whether the Payout needs a manual review under two criteria. First, the limit of payments received by the payee and second, the <a href="../overview/payout-concepts.html#sanction-screening">sanction screening</a> process.</p>
+<p><strong>Held</strong>: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.</p>
 </li>
 <li>
-<p><strong>Held</strong>: this status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.</p>
+<p><strong>Pending</strong>: This status indicates that the payout and the payee have met all the validations required and it is about to be sent to the <em>Banking Connections</em>.</p>
 </li>
 <li>
-<p><strong>Pending</strong>: this status indicates that the payout and the payee have meet all the validations required and it is about to be sent to the <em>Banking Connections</em>.</p>
+<p><strong>Processing</strong>: The <em>Banking Connection</em> has received the payout; the time before moving to <em><strong>Paid</strong></em> status depends on the country and selected payment method. <a href="../overview.html#considerations">Click here to learn more</a>.</p>
 </li>
 <li>
-<p><strong>Processing</strong>: the payout has been received by the <em>Banking Connection</em>, the time before moving to <em><strong>Paid</strong></em> status depends on the country and the payment method selected. <a href="../overview.html#considerations">Click here to learn more</a>.</p>
+<p><strong>Paid</strong>: The <em>Banking Connection</em> has processed the Payout and is approved. In this status, we update your <a href="../../payouts/overview/payout-balances.html">balance</a> with the transaction values.</p>
 </li>
 <li>
-<p><strong>Paid</strong>: The payout has been processed by the <em>Banking Connection</em> and it has been approved. In this status, your <a href="../../payouts/overview/payout-balances.html">balance</a> has been updated with the transaction values.</p>
+<p><strong>Rejected</strong>: The <em>Banking Connection</em> has processed the Payout and is not approved. In this status, we update your <a href="../../payouts/overview/payout-balances.html">balance</a> with the transaction values.</p>
 </li>
 <li>
-<p><strong>Rejected</strong>: The payout has been processed by the <em>Banking Connection</em> and it has been rejected. In this status, your <a href="../../payouts/overview/payout-balances.html">balance</a> has been updated with the transaction values.</p>
-</li>
-<li>
-<p><strong>Declined</strong>: The payout has been rejected due to structure validation or internal reasons.</p>
+<p><strong>Declined</strong>: The payout was rejected due to structure validation or internal reasons.</p>
 </li>
 </ul>
 
@@ -407,9 +407,9 @@ Furthermore, we validate that you have enough balance settled in your account be
 <br>
 <b>Last modified</b>
 
-May 16, 2023: 
+August 15, 2023: 
 
- <i>Spelling fixes (8601ca8)</i>
+ <i>Grammar updates (2da86fc)</i>
   </div>
 </div>
 

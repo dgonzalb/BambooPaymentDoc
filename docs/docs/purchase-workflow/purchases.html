@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
+  data-offline-search-index-json-src="../../offline-search-index.8f932dde249e22f88026476a3a9c588b9a98b022853f00223b0c2a96459422934ef94f3062324b5c386ed887267234fb97b0249ce94608e91baa94239770386d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -274,6 +274,12 @@
         <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
       
       
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
     </li>
   </ul>
   
@@ -344,7 +350,7 @@
       
       
       
-        <a id="/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Notification Webhooks</a>
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
       
       
     </li>
@@ -758,6 +764,12 @@
       
       
       
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
         <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
       
       
@@ -855,10 +867,10 @@
 	
 	<p>Depending on the contract you have signed with <em>Bamboo Payment</em> (<a href="../../docs/getting-started/concepts.html#gateway-model">Gateway</a> or <a href="concepts.html#payfac-model">Payfac</a> model) and the countries where you process, you can create Local or CrossBorder purchases.</p>
 <ul>
-<li>A <em>Local purchase</em> refers to all purchases in which the currency of the payer and the currency of your store are equal. For example, when your store and your buyer are both located in Uruguay, the purchase is performed in <strong>UYU</strong>, and you receive the amount also in <strong>UYU</strong>.</li>
-<li>A <em>CrossBorder purchase</em> refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. For example, if your store is in Uruguay, and your buyer is in Colombia, the purchase will be in <strong>COP</strong>, but you receive the amount in <strong>UYU</strong>.</li>
+<li>A <em>Local purchase</em> refers to those in which the currency of the payer and the currency of your store are equal. When your store and the buyer are in Uruguay, the currency for the purchase and the amount you receive will be in <strong>UYU</strong>.</li>
+<li>A <em>CrossBorder purchase</em> refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. For example, if your store is in Uruguay, and the buyer is in Colombia, the purchase will be in <strong>COP</strong>, but you receive the amount in <strong>UYU</strong>.</li>
 </ul>
-<p>Refer to the next topics to learn the operations you can perform using the Purchase API.</p>
+<p>Refer to the following topics to learn the operations you can perform using the Purchase API.</p>
 
 		
 <div class="section-index">
@@ -900,7 +912,7 @@
                     <h5>
                         <a href="../../docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
                     </h5>
-                    <p>Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchase.</p>
+                    <p>Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.</p>
                 </div>
             
         
@@ -943,6 +955,10 @@
                     </h5>
                     <p>The <em>Redirect purchase</em> is the flow used for merchants where the customer needs to be redirected to an external page to complete the payment.</p>
                 </div>
+            
+        
+            
+        
             
         
             
@@ -1010,9 +1026,9 @@
 <br>
 <b>Last modified</b>
 
-July 26, 2023: 
+August 22, 2023: 
 
- <i>Updating documentation site (e4cbae2)</i>
+ <i>Migration of the new documentation (1933efc)</i>
   </div>
 </div>
 

@@ -22,23 +22,23 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
 <title>Getting started | Bamboo Payment</title><meta property="og:title" content="Getting started" />
-<meta property="og:description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform. 
+<meta property="og:description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform.
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/getting-started.html" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Getting started">
-<meta itemprop="description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform. 
+<meta itemprop="description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform.
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting started"/>
-<meta name="twitter:description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform. 
+<meta name="twitter:description" content="This section exposes the Bamboo Payment API functionalities for secure integration with our platform.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 
 
-<link rel="preload" href="../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
+  data-offline-search-index-json-src="../offline-search-index.8f932dde249e22f88026476a3a9c588b9a98b022853f00223b0c2a96459422934ef94f3062324b5c386ed887267234fb97b0249ce94608e91baa94239770386d.json"
   data-offline-search-base-href="../"
 >
 
@@ -274,6 +274,12 @@
         <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
       
       
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
     </li>
   </ul>
   
@@ -344,7 +350,7 @@
       
       
       
-        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../docs/purchase-workflow/notification-webhooks.html">Notification Webhooks</a>
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
       
       
     </li>
@@ -758,6 +764,12 @@
       
       
       
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
         <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
       
       
@@ -814,7 +826,7 @@
         <li><a href="#pci-dss">PCI-DSS</a></li>
       </ul>
     </li>
-    <li><a href="#getting-started">Getting started</a></li>
+    <li><a href="#start-processing-with-bamboo">Start processing with Bamboo.</a></li>
   </ul>
 </nav>
 
@@ -855,22 +867,22 @@
         <div class="lead">This section exposes the Bamboo Payment API functionalities for secure integration with our platform.</div>
 	
 	<h2 id="overview">Overview</h2>
-<p>Using our platform, you can offer to your customers an improved payment experience, being able to request card details <em>as if it were</em> on your own page or mobile application through our <a href="../docs/forms/checkout-form.html"><strong>Checkout Form</strong></a>.</p>
-<p>You can also request the data only once and store a <em><strong>token</strong></em> associated with the card that the customer entered securely on our platform.</p>
+<p>Using our platform, you can offer your customers an improved payment experience, being able to request card details as if they were on your page or mobile application through our <a href="../docs/forms/checkout-form.html"><strong>Checkout Form</strong></a>.</p>
+<p>You can also request the data only once and store a <em><strong>token</strong></em> associated with the card the customer entered securely on our platform.</p>
 <h3 id="pci-dss">PCI-DSS</h3>
-<p>Our platform is certified <strong>PCI-DSS Level 1</strong>, which allows us to process card numbers and other sensitive customer authentication data.</p>
-<p>The <a href="../docs/forms/checkout-form.html">Checkout Form</a> is specially designed to be embedded in your pages or mobile applications, you can now accept payments without receiving confidential information such as customer data, provide security to your customers, and ease of use.</p>
-<h2 id="getting-started">Getting started</h2>
-<p>Follow this steps to start processing payments with Bamboo Payments:</p>
+<p>Our certified <strong>PCI-DSS Level 1</strong> platform allows us to process card numbers and other sensitive customer authentication data.</p>
+<p>You can embed the <a href="../docs/forms/checkout-form.html">Checkout Form</a> in your pages or mobile applications; you can now accept payments without receiving confidential information such as customer data, provide security to your customers, and ease of use.</p>
+<h2 id="start-processing-with-bamboo">Start processing with Bamboo.</h2>
+<p>Follow these steps to start processing payments with Bamboo Payments:</p>
 <ol>
 <li>
-<p><strong>Sign Up</strong>.<br>Create your merchant account <a href="mailto:sales@bamboopayment.com">contacting our sales representatives</a>.</p>
+<p><strong>Sign Up</strong>.<br>Create your merchant account by <a href="mailto:sales@bamboopayment.com">contacting our sales representatives</a>.</p>
 </li>
 <li>
-<p><strong>Get Credentials</strong>.<br>After your account has been activated, you receive the API Keys credentials to have access to the <code>STAGE</code> Environment.</p>
+<p><strong>Get Credentials</strong>.<br>After we activate your account, you will receive the API Keys credentials to access the <code>STAGE</code> Environment.</p>
 </li>
 <li>
-<p><strong>Integrate the APIs</strong>.<br>Follow the instructions over this documentation to integrate our payments APIs. In order to move your account from <code>STAGE</code> to <code>PRODUCTION</code>, you need to follow the homologation process.</p>
+<p><strong>Integrate the APIs</strong>.<br>Follow the instructions in this documentation to integrate our payment APIs. You must follow the homologation process to move your account from <code>STAGE</code> to <code>PRODUCTION</code>.</p>
 </li>
 <li>
 <p><strong>Go Live</strong>.<br>Once you have completed the tests required in step 3, request the <em><strong>Go Live</strong></em> with our <a href="mailto:techsupport@bamboopayment.com">support team</a>.</p>
@@ -884,7 +896,7 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Don't get stuck!</h4>
-<p class="alert-text">In case you have any technical doubts or require any further information, please feel free to <a href="techsupport@bamboopayment.com">contact our support team</a> for assistance.</p>
+<p class="alert-text">If you have any technical doubts or require further information, please feel free to <a href="techsupport@bamboopayment.com">contact our support team</a> for assistance.</p>
 </div>
 
 <!--1 - Sign Up: Create your merchant account contacting our sales representatives sales@bamboopayment.com
@@ -1007,6 +1019,10 @@
             
         
             
+        
+            
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="../docs/getting-started/payment-methods.html">Payment methods</a>
@@ -1026,7 +1042,7 @@
                     <h5>
                         <a href="../docs/getting-started/test-our-services.html">Test our services</a>
                     </h5>
-                    <p>Before you move on to a production environment, you can give our services a try and see how you can enable them to meet your business requirements.</p>
+                    <p>Before you move on to a production environment, try our services and see how you can enable them to meet your business requirements.</p>
                 </div>
             
         
@@ -1035,9 +1051,9 @@
             
                 <div class="entry">
                     <h5>
-                        <a href="../docs/getting-started/error-codes.html">Error Codes</a>
+                        <a href="../docs/getting-started/error-codes.html">Error Codes and descriptions</a>
                     </h5>
-                    <p>This article provides the information about the error codes and provides information about the possible actions you can take.</p>
+                    <p>This article provides information about the error codes and the possible actions you can take.</p>
                 </div>
             
         
@@ -1072,9 +1088,9 @@
 <br>
 <b>Last modified</b>
 
-May 23, 2023: 
+August 14, 2023: 
 
- <i>New Documentation Site (19c2b33)</i>
+ <i>New documentation (7c31e47)</i>
   </div>
 </div>
 

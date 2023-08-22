@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/getting-started/concepts.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-08-02T08:56:13-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-08-14T13:10:52-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Concepts">
 <meta itemprop="description" content="Understand the concepts behind any integration with Bamboo Payments.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-08-02T08:56:13-05:00" />
-<meta itemprop="wordCount" content="1131">
+<meta itemprop="dateModified" content="2023-08-14T13:10:52-05:00" />
+<meta itemprop="wordCount" content="1085">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concepts"/>
 <meta name="twitter:description" content="Understand the concepts behind any integration with Bamboo Payments.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" as="style">
-<link href="../../scss/main.min.1ca568cc825dafe38644e6bc107e1fb2050618cf42a3549eeb7a179725e1c48a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1a24b3a4007d41acf699085884695247d9e5e3de596a362f9457e3206141eef87e94d902cc00750676812301629aba4e8127ad92229a3755d976d0812af56f60.json"
+  data-offline-search-index-json-src="../../offline-search-index.8f932dde249e22f88026476a3a9c588b9a98b022853f00223b0c2a96459422934ef94f3062324b5c386ed887267234fb97b0249ce94608e91baa94239770386d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -278,6 +278,12 @@
         <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
       
       
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
     </li>
   </ul>
   
@@ -348,7 +354,7 @@
       
       
       
-        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Notification Webhooks</a>
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
       
       
     </li>
@@ -762,6 +768,12 @@
       
       
       
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
         <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
       
       
@@ -892,38 +904,39 @@
     <div class="lead">Understand the concepts behind any integration with Bamboo Payments.</div>
 	       
 	<h2 id="acquirer">Acquirer</h2>
-<p>An acquirer is a payment facilitator that allows you to perform digital payments. Furthermore, the acquirer is the responsible of the payments and manages the settlement to your banking account.</p>
+<p>An acquirer is a payment facilitator that allows you to perform digital payments. Furthermore, the acquirer is responsible for the transactions and manages the settlement to your banking account.</p>
 <h2 id="api">API</h2>
-<p>An API (from the acronym <strong>A</strong>pplication <strong>P</strong>rogramming <strong>I</strong>nterface) is a set of methods and definitions that allows you to interact with a system through some input data. In our case, the API is defined to allow you process the information of a transaction to receive the response related to it.</p>
+<p>An API (from the acronym <strong>A</strong>pplication <strong>P</strong>rogramming <strong>I</strong>nterface) is a set of methods and definitions that allows you to interact with a system through some input data. In our case, we developed an API to enable you to process a transaction&rsquo;s information to receive the related response.</p>
 <h2 id="authentication">Authentication</h2>
-<p>Authentication is the procedure to validate the identity of a merchant. All merchants integrated with our platform receive a pair of keys for each associated account <em>Private Account Key</em> and <em>Public Account Key</em>.</p>
-<p>Each one of these keys identifies the merchant account in our system in each transaction performed to determine whether the merchant is authorized to operate and what are the conditions of the integration (For example, what payment methods are enabled for the merchant).</p>
+<p>Authentication is the procedure to validate the identity of a merchant. All merchants integrated with our platform receive keys for each associated account, <em>Private Account Key</em>, and <em>Public Account Key</em>.</p>
+<p>Each of these keys identifies the merchant account in our system in each transaction performed to determine whether the merchant is authorized to operate and the integration conditions (For example, what payment methods the merchant has enabled).</p>
 <h3 id="private-account-key">Private Account Key</h3>
-<p>The Private Account Key is a unique identifier that must be attached to each private request (server to server) where critical operations are available, such as initiating or confirming a transaction, accessing merchant transaction information, creating or deleting subscription plans, etc.</p>
+<p>The Private Account Key is a unique identifier attached to each private request (server to server) where critical operations are available, such as initiating or confirming a transaction, accessing merchant transaction information, creating or deleting subscription plans, etc.</p>
 
 
 <div class="alert alert-warning" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Important</h4>
-<p class="alert-text">The <em>Private Account Key</em> must not be shared or publicly exposed at any time, to not compromise the security of the integration. <strong>It is the merchant’s responsibility to keep it safe</strong>.</p>
+<p class="alert-text">You must not share the <em>Private Account Key</em> or publicly expose it at any time to avoid compromising the security of the integration. <strong>It is your responsibility to keep it safe</strong>.</p>
 </div>
 
 <h3 id="public-account-key">Public Account Key</h3>
-<p>The Public Account key is unique identifier that must be attached to each public request (made from the web interface) for query operations or for data capture request.</p>
-<p>Furthermore, this key is also used when invoking the <code>PWCheckout</code> Javascript library.</p>
+<p>The Public Account key is a unique identifier that must be attached to each public request (made from the web interface) for query operations or data capture requests.</p>
+<p>Furthermore, you also use this key when you invoke the <code>PWCheckout</code> Javascript library.</p>
 <h2 id="checkout">Checkout</h2>
-<p>The checkout is the form where your customers select the payment method they want to use to complete the payment. According to the payment method, this form allows you to collect its information and send it to process the transaction.</p>
+<p>The checkout is the form where customers select the payment method they want to use to complete the payment. According to the payment method, this form allows you to collect its information and send it to process the transaction.</p>
 <h2 id="cvv">CVV</h2>
-<p>CVV stands for <em><strong>C</strong>ard <strong>V</strong>erification <strong>V</strong>alue</em>. It is a three- or four-digit security code of the credit or debit cards. The CVV is an additional security measure to verify that the person making an online or over-the-phone transaction has physical possession of the card.</p>
+<p>CVV stands for <em><strong>C</strong>ard <strong>V</strong>erification <strong>V</strong>alue</em>. It is a three- or four-digit security code for credit or debit cards. The CVV is an additional security measure to verify that the person making an online or over-the-phone transaction has physical possession of the card.</p>
 <h2 id="environment">Environment</h2>
-<p>The Environment is the set of software and resources that allows you to process the transactions. Depending on its type, the environment has real or test data and information. Our platform has two separate environments: <code>Stage</code> and <code>Production</code>.</p>
+<p>The Environment is the set of software and resources that allows you to process the transactions. The environment has real or test data and information depending on its type.</p>
+<p>Our platform has two separate environments: <code>Stage</code> and <code>Production</code>.</p>
 <h3 id="stage">Stage</h3>
 <p>This environment allows you to perform testing tasks. Here, the transactions never reach the real systems of the payment method providers. It&rsquo;s a safe way to try out tasks and flows.</p>
 <ul>
 <li>Base URL: <code>https://api.stage.bamboopayment.com</code>.</li>
 </ul>
 <h3 id="production">Production</h3>
-<p>This environment allows you to perform <strong>real</strong> transactions and they are processed by the actual system of the payment methods you have. Before starting to process transactions in this environment, it&rsquo;s strongly recommended to test in <code>Stage</code>.</p>
+<p>This environment enables you to carry out <strong>real</strong> transactions, which the actual system of your payment methods processes. Before you begin processing transactions in this environment, we highly recommend testing in <code>Stage</code>.</p>
 <ul>
 <li>Base URL: <code>https://api.bamboopayment.com</code>.</li>
 </ul>
@@ -932,15 +945,15 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Note</h4>
-<p class="alert-text">Throughout our documentation, we refer to the URLs where the services are exposed as <code>{environment_api}</code>, this must be replaced by the URL corresponding to the environment where you are working.</p>
+<p class="alert-text">Our documentation uses <code>{environment_api}</code> to denote the URLs where the services are exposed. You should substitute this with the URL that corresponds to your operational environment.</p>
 </div>
 
 <h2 id="form">Form</h2>
 <p>A <em>Form</em> is a web component that allows you to embed a set of fields to tokenize a card or perform a purchase using a payment method. For more information, refer to <a href="../forms.html">Forms</a>.</p>
 <h2 id="fx-service">FX Service</h2>
-<p><em>Foreign Exchange</em> or <em>FX</em> refers to the current rate to convert one country&rsquo;s currency to another. This value is updated according to destination country regulations.</p>
+<p><em>Foreign Exchange</em>, often abbreviated as <em>FX</em>, represents the prevailing rate for converting one country&rsquo;s currency into another. Our platform updates this rate regularly under the regulations of the destination country.</p>
 <h2 id="merchant-and-accounts">Merchant and accounts</h2>
-<p>A <em>Merchant</em> is the business who hires Bamboo Payment to receive electronical payments using any of the models available.</p>
+<p>A <em>Merchant</em> is a business that hires Bamboo Payment to receive electronic payments using any of the models available.</p>
 <p>An <em>Account</em> is the segmentation of the merchant&rsquo;s business. For example:</p>
 <ul>
 <li>Processing countries</li>
@@ -950,34 +963,34 @@
 <li>Merchant codes provided by card processors</li>
 <li>Business</li>
 </ul>
-<p>By default, a merchant who hires Bamboo System receives a <em><strong>Merchant Identificator</strong></em> and an <em><strong>Account</strong></em> that allows them to process transactions. Then, the merchants are free to create as many accounts as they need to meet business requirements.</p>
+<p>By default, a merchant who hires Bamboo System receives a <em><strong>Merchant Identificator</strong></em> and an <em><strong>Account</strong></em> that allows them to process transactions. Then, you can create as many accounts as needed to meet business requirements.</p>
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Note</h4>
-<p class="alert-text">For settlement and billing purposes, Bamboo Payment will consider the total of the transactions made by all the accounts of a merchant.</p>
+<p class="alert-text">For settlement and billing purposes, Bamboo Payment will consider the total of the transactions made by a merchant&rsquo;s accounts.</p>
 </div>
 
 <h3 id="crossboder-merchant">Crossboder merchant</h3>
-<p>A <em>Crossboder merchant</em> is a business that is not located in the processing country. For example, a business who is legally constituted in United States but it has operations in Uruguay, Argentina, and Brazil.</p>
+<p>A <em>Crossboder merchant</em> is a business situated outside the processing country. For instance, a company that is legally established in the United States but conducts its operations in Uruguay, Argentina, and Brazil.</p>
 <p>These merchants process under the <a href="#payfac-model">Payfac model</a> and can process in <strong>USD</strong> or local currency.</p>
 <h3 id="local-merchant">Local merchant</h3>
-<p>A <em>Local merchant</em> is a business that is located in the same country where they process.</p>
-<p>These merchants can process under the <a href="#payfac-model">Payfac model</a> or <a href="#gateway-model">Gateway model</a> using local currency.</p>
+<p>A <em>Local merchant</em> is a business situated in the processing country.</p>
+<p>These merchants can process under the <a href="#payfac-model">Payfac</a> or <a href="#gateway-model">Gateway models</a> using local currency.</p>
 <h2 id="gateway-model">Gateway model</h2>
-<p>In the <em>Gateway model</em>, the acquirer or payment method pays directly to the accounts of the merchant. In this model, merchant and acquirer (or payment method) implements their own settlement process.</p>
+<p>In the <em>Gateway model</em>, the acquirer or payment method pays directly to the merchant&rsquo;s accounts. The merchant and acquirer (or payment method) implement their settlement process in this model.</p>
 <h2 id="payfac-model">Payfac model</h2>
-<p>Refers to a <em>Payment Facilitator</em> model, in which the merchant is represented as a Bamboo sub-merchant with whom they sign a commercial agreement. For settlement in this model, the acquirer or payment facilitator makes payment to Bamboo and Bamboo pays the merchant.</p>
+<p>Refers to a <em>Payment Facilitator</em> model, in which the merchant is a Bamboo sub-merchant with whom they sign a commercial agreement. For settlement in this model, the acquirer or payment facilitator makes payment to Bamboo, and Bamboo pays the merchant.</p>
 <h2 id="tenant">Tenant</h2>
-<p>A <em>Tenant</em> refers to the processing channel in Bamboo which can be Crossborder (operates in multiple countries and uses the conversion rate) or local.</p>
+<p>A <em>Tenant</em> refers to the processing channel in Bamboo, which can be Crossborder (operates in multiple countries and uses the conversion rate) or local.</p>
 <h2 id="tokenization">Tokenization</h2>
-<p>When referring to data security, tokenization is the process of changing a sensitive element with its non-sensitive equivalent. This non-sensitive element, known as the <em>token</em>, is generated through the tokenization process. The <em>token</em> itself is meaningless and worthless, except for the entity that created it. In the event of a security incident that allows the theft of these numbers, they will be of no value to the thief as they cannot be used for their own purposes.</p>
-<p>Since the <em>token</em> is a reference or identifier assigned to a stored card by the system, it is unique for each pair of &ldquo;merchant/token&rdquo;. Therefore, when a customer registers their card with two different merchants, each merchant will receive a different <em>token</em>. This makes it impossible for a merchant to use the <em>tokens</em> from one customer for any other purpose.</p>
+<p>Regarding data security, tokenization involves substituting a sensitive element with its non-sensitive counterpart. This non-sensitive element, the token, is produced through tokenization. This token holds no inherent value and lacks significance except for the entity responsible for its creation. In the unfortunate event of a security breach leading to the theft of these numbers, they hold no utility for the unauthorized party, as they cannot be exploited for their purposes.</p>
+<p>Since the <em>token</em> is a reference or identifier assigned to a stored card by the system, it is unique for each pair of &ldquo;merchant/token&rdquo;; when a customer registers their card with two different merchants, each merchant will receive an additional <em>token</em>. This makes it impossible for a merchant to use the <em>tokens</em> from one customer for any other purpose.</p>
 <h2 id="UniqueID">Unique Identifier (UniqueID)</h2>
-<p>The Unique Identifier allows you to avoid duplicate transactions, such as purchase operations, when there is a failure while getting the response from Bamboo, and you retry the request.</p>
-<p>The goal of the Unique Identifier, is to identify the transaction and, in case of a connection failure and the transaction is approved in our system, our API responses the result of the previously processed purchase and avoid the creation of a new one.</p>
-<p>The <code>UniqueID</code> parameter is not required; nevertheless, it is strongly recommended to include it in each request. You can define any alphanumeric value as long as it&rsquo;s not used in other transactions.</p>
+<p>The Unique Identifier allows you to avoid duplicate transactions, such as purchase operations, when there is a failure while getting the response from Bamboo and you retry the request.</p>
+<p>The goal of the Unique Identifier is to identify the transaction, and in case of a connection failure and the transaction is approved in our system, our API responds with the result of the previously processed purchase. It avoids the creation of a new one.</p>
+<p>The <code>UniqueID</code> parameter is not required; nevertheless, it is strongly recommended to include it in each request. You can define any alphanumeric value as long as you don&rsquo;t use it in other transactions.</p>
 <p>Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__-3aFeJUpsjDWsYl26yvnj8k0SW703Cut4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -999,9 +1012,9 @@
 <br>
 <b>Last modified</b>
 
-August 2, 2023: 
+August 14, 2023: 
 
- <i>Purchases information (6082f8b)</i>
+ <i>New documentation (7c31e47)</i>
   </div>
 </div>
 
