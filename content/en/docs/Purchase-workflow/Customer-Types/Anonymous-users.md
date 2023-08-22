@@ -20,10 +20,10 @@ If you use the Alternative payment method identifier, you don't require this ste
 {{% /alert %}}
 
 ### Invoking the Checkout Form
-The Javascript **PWCheckout** library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the _token associated with the customer's card. 
+The Javascript **PWCheckout** library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the _token_ associated with the customer's card. 
 
 ### Using Direct tokenization
-Since the user is not registered in your commerce, you must invoke the method too [create the token for unregistered users]({{< ref "Direct-Tokenization.md" >}}#OTT).
+Since the user is not registered in your commerce, you must invoke the method to [create the token for unregistered users]({{< ref "Direct-Tokenization.md" >}}#OTT).
 
 {{% alert title="Info" color="info"%}}
 The token generated using any method above is a _**One Time Token**_ (OTT) valid only once and for 10 minutes.
@@ -32,11 +32,11 @@ The token generated using any method above is a _**One Time Token**_ (OTT) valid
 ## Create a Basic Purchase
 The token just obtained must be sent from the browser or the mobile app to the application server to create the purchase transaction.
 
-From the server, invoke the [Create a purchase]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), including the `Purchase` object with the token and other transaction data.
+From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), including the `Purchase` object with the token and other transaction data.
 
 ```json
 {
-   "TrxToken": "OT_01_kYv0qTHckRiZ4wjCz5NguZRuwFLSIrQc4jiYpVJ8SzQ_",
+  "TrxToken": "OT_01_kYv0qTHckRiZ4wjCz5NguZRuwFLSIrQc4jiYpVJ8SzQ_",
   "Order": "17030613595101621fb",
   "Amount": 123456,
   "Currency": "USD",

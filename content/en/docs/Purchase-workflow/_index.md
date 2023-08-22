@@ -35,4 +35,4 @@ When you invoke the API to initiate a purchase, you obtain a _CommerceAction_. T
 
 ![PrintScreen](/assets/RedirectionFlow_en.png)
 
-For Redirect purchase, refer to [Redirect flow payments]({{< ref "Redirect-Purchase.md" >}}).
+For Redirect purchases, refer to [Redirect flow payments]({{< ref "Redirect-Purchase.md" >}}).

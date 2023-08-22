@@ -8,11 +8,11 @@ weight: 10
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to be taken into account when processing in _Argentina_.
+This section shows the available payment methods, currencies, and related information you must consider when processing in _Argentina_.
 
 ## Payment methods
 
-| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow
+| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /> | 1 | VISA | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="" /> | 2 | MasterCard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit Card | API |
@@ -47,3 +47,35 @@ The following table describes the valid document types for Argentina:
 |:----:|----------------------------------------|--------------|
 | 4    | Documento Nacional de Identidad        | DNI          |
 | 5    | Código único de Identificación Laboral | CUIL         |
+
+## Argentina provinces
+When creating the Purchase in Argentina, and you want to include the province in the field `customer.state`, configure any of the following values:
+
+<div id="shortTable"></div>
+
+| Province | Code for **customer.state** |
+|---|:-:|
+| Ciudad Autónoma de Buenos Aires | `C` |
+| Buenos Aires | `B` |
+| Catamarca | `K` |
+| Chaco | `H` |
+| Chubut | `U` |
+| Córdoba | `X` |
+| Corrientes | `W` |
+| Entre Ríos | `E` |
+| Formosa | `P` |
+| Jujuy | `Y` |
+| La Pampa | `L` |
+| La Rioja | `F` |
+| Mendoza | `M` |
+| Misiones | `N` |
+| Neuquén | `Q` |
+| Río Negro | `R` |
+| Salta | `A` |
+| San Juan | `J` |
+| San Luis | `D` |
+| Santa Cruz | `Z` |
+| Santa Fe | `S` |
+| Santiago del Estero | `G` |
+| Tierra del Fuego | `V` |
+| Tucumán | `T` |

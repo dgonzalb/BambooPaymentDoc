@@ -23,6 +23,7 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 <a href="/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
 <a href="/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
 <a href="/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
@@ -44,7 +45,7 @@ You can receive the error description by relying on localization features. To do
 | `pt` | Portuguese. |
 
 ### Request URL
-You need to invoke a **POST** request to the following URLs according to your needs.
+You must invoke a**POST** request to the following URLs according to your needs.
 
 * **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
@@ -73,7 +74,7 @@ The _**refunds**_ operations is only available for purchases with state _Approve
 _To be defined_
 
 ### Request URL
-You need to invoke a **POST** request to the following URLs according to your needs.
+You must invoke a**POST** request to the following URLs according to your needs.
 
 * **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`

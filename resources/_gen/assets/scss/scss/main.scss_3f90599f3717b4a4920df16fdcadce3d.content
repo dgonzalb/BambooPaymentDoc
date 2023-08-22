@@ -1052,6 +1052,7 @@ pre {
   .offset-xl-11 {
     margin-left: 91.66666667%; } }
 
+.tab-pane > table,
 details > table,
 .table,
 .td-content > table,
@@ -1059,6 +1060,10 @@ details > table,
   width: 100%;
   margin-bottom: 1rem;
   background-color: transparent; }
+  .tab-pane > table details > th,
+  .tab-pane > table details > td,
+  .tab-pane > table th,
+  .tab-pane > table td,
   details > table details > th,
   details > table details > td,
   details > table th,
@@ -1074,18 +1079,24 @@ details > table,
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dae0eb; }
+  .tab-pane > table thead th,
   details > table thead th,
   .table thead th,
   .td-content > table thead th,
   .td-box .row.section > table thead th {
     vertical-align: center;
     border-bottom: 2px solid #dae0eb; }
+  .tab-pane > table tbody + tbody,
   details > table tbody + tbody,
   .table tbody + tbody,
   .td-content > table tbody + tbody,
   .td-box .row.section > table tbody + tbody {
     border-top: 2px solid #dae0eb; }
-  details > table .table, details > table .td-content > table, details > table .td-box .row.section > table, .td-box details > table .row.section > table,
+  .tab-pane > table .table, .tab-pane > table .td-content > table, .tab-pane > table .td-box .row.section > table, .td-box .tab-pane > table .row.section > table,
+  details > table .table,
+  details > table .td-content > table,
+  details > table .td-box .row.section > table,
+  .td-box details > table .row.section > table,
   .table .table,
   .td-content > table .table,
   .table .td-content > table,
@@ -8451,6 +8462,7 @@ details > table,
 .table-borderless tbody + tbody {
   border: 0; }
 
+.tab-pane table tbody tr:nth-of-type(even),
 details > table tbody tr:nth-of-type(even),
 .table-striped tbody tr:nth-of-type(even),
 .td-box .row.section > table tbody tr:nth-of-type(even),
@@ -8667,35 +8679,45 @@ details > table,
   .td-content > table > .table-bordered {
     border: 0; }
 
+.tab-pane table,
 .td-content > table {
   border-collapse: separate;
   border-spacing: 0; }
 
+.tab-pane > table thead th,
 .td-content > table thead th {
-  border: 0px !important; }
+  border: 0px !important;
+  vertical-align: bottom; }
 
+.tab-pane > table tr:first-child td:first-child,
 .td-content > table tr:first-child td:first-child {
   border-radius: 10px 0 0 0;
   border-left: 1px solid #dae0eb; }
 
+.tab-pane > table tr:first-child td:last-child,
 .td-content > table tr:first-child td:last-child {
   border-radius: 0 10px 0 0;
   border-right: 1px solid #dae0eb; }
 
+.tab-pane > table tr:last-child td:first-child,
 .td-content > table tr:last-child td:first-child {
   border-radius: 0 0 0 10px;
   border-left: 1px solid #dae0eb; }
 
+.tab-pane > table tr:last-child td:last-child,
 .td-content > table tr:last-child td:last-child {
   border-radius: 0 0 10px 0;
   border-right: 1px solid #dae0eb; }
 
+.tab-pane > table td:first-child,
 .td-content > table td:first-child {
   border-left: 1px solid #dae0eb; }
 
+.tab-pane > table td:last-child,
 .td-content > table td:last-child {
   border-right: 1px solid #dae0eb; }
 
+.tab-pane > table tr:last-child td,
 .td-content > table tr:last-child td {
   border-bottom: 1px solid #dae0eb; }
 

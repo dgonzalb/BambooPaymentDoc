@@ -54,7 +54,7 @@ Where:
 | `baseAmount` | Amount to be paid before taxes | Integer | Yes |
 | `currency` | Currency of the amount defined in `baseAmount` | Yes |
 | `countryIso` | Country in ISO 3166-2 format | String | Yes |
-| `paymentMediaId` | Alternative Payment Method identifier. This identifier can be obtained by consulting the [Payment Metods](Medios-de-Pago.md) by country section in the documentation. | String | No |
+| `paymentMediaId` | Alternative Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](Medios-de-Pago.md) by country section in the documentation. | String | No |
 | `customer` | Payer Information | Object | No* <br> <sup>*</sup>_Required for Argentina_ |
 | `customer.documentTypeId` | Payer Document Type | String | No |
 | `customer.docNumber` | Payer document number | String | No |

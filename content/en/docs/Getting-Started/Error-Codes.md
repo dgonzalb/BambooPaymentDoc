@@ -27,7 +27,7 @@ weight: 45
 ## Error Codes
 
 ### Multilanguage for errors
-You can receive the error description by relying on localization features. You must send the lang header in your integration using any of the following languages in  **ISO 639-1** format.
+You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
 
 <div id="shortTable"></div>
 
