@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-08-14T15:03:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-08-24T08:18:14-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-08-14T15:03:41-05:00" />
+<meta itemprop="dateModified" content="2023-08-24T08:18:14-05:00" />
 <meta itemprop="wordCount" content="1581">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.51aa61886c66e00abddb9acba10af7c6f279b399d6be86847dec8d636b96f735.css" as="style">
-<link href="../../scss/main.min.51aa61886c66e00abddb9acba10af7c6f279b399d6be86847dec8d636b96f735.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.87fdfdf9f11b9cb0da52e9062a066eb228fe0892247f3cbeb2cc83594b1d1a67633c03ec5cb7fa0f9bd8767a4b8b0aae897a4998e84d92d28e862ba4dc004b8e.json"
+  data-offline-search-index-json-src="../../offline-search-index.0dd1489c45630d8103ed9248a57eef30abd196430498f931dfc15cb30a69cfd81d47f93181ea239eb9655f194708b031bd457eb4c52ca9ad9a10c24d9394da0d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -402,7 +402,7 @@
 <tr>
 <td><code>Content-Type</code></td>
 <td><code>application/json</code></td>
-<td>This parameter triggers the sending of the Request in <em>JSON</em> format.</td>
+<td>With this header, the request will be transmitted in <em>JSON</em> format.</td>
 </tr>
 <tr>
 <td><code>Authorization</code></td>
@@ -772,8 +772,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Francisco  51 Gral. Ximena, AR-H 0376&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DNI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CUIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0071234567890123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1289,9 +1289,9 @@ The validation of the message was successful, but the payout is <strong>Declined
 <br>
 <b>Last modified</b>
 
-August 14, 2023: 
+August 24, 2023: 
 
- <i>Grammar improvements (516e4dc)</i>
+ <i>Document types updated for Argentina (419b66a)</i>
   </div>
 </div>
 
