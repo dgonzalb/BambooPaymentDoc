@@ -16,7 +16,6 @@ The following table shows the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
-| DNI | National Identity Document | Individuals | Numeric | 7-9 |
 
 ### Brazil
 | Abbreviation | Document name | Individuals / Companies | Type | Length |

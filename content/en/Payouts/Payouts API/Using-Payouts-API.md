@@ -15,7 +15,7 @@ All methods used in Payouts API require an authentication header configured usin
 
 | Key | Value | Comments |
 |---|---|---|
-| `Content-Type` | `application/json` | This parameter triggers the sending of the Request in _JSON_ format.  |
+| `Content-Type` | `application/json` | With this header, the request will be transmitted in _JSON_ format. |
 | `Authorization` | `Basic {{MerchantPrivateKey}}` | Send the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
 | `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using the _HmacSHA256_ algorithm. This header is mandatory only for Payout creation. |
 
@@ -145,8 +145,8 @@ Refer to the corresponding tab according to the payee's country.
     "phone": "099999999",
     "address": "Francisco  51 Gral. Ximena, AR-H 0376",
     "document": {
-      "type": "DNI",
-      "number": "123456789"
+      "type": "CUIL",
+      "number": "12345678901"
     },
     "bankAccount": {
       "number": "0071234567890123456789",

@@ -1052,7 +1052,7 @@ pre {
   .offset-xl-11 {
     margin-left: 91.66666667%; } }
 
-.tab-pane table,
+.tab-pane > table,
 details > table,
 .table,
 .td-content > table,
@@ -1060,10 +1060,10 @@ details > table,
   width: 100%;
   margin-bottom: 1rem;
   background-color: transparent; }
-  .tab-pane table details > th,
-  .tab-pane table details > td,
-  .tab-pane table th,
-  .tab-pane table td,
+  .tab-pane > table details > th,
+  .tab-pane > table details > td,
+  .tab-pane > table th,
+  .tab-pane > table td,
   details > table details > th,
   details > table details > td,
   details > table th,
@@ -1079,20 +1079,20 @@ details > table,
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dae0eb; }
-  .tab-pane table thead th,
+  .tab-pane > table thead th,
   details > table thead th,
   .table thead th,
   .td-content > table thead th,
   .td-box .row.section > table thead th {
     vertical-align: center;
     border-bottom: 2px solid #dae0eb; }
-  .tab-pane table tbody + tbody,
+  .tab-pane > table tbody + tbody,
   details > table tbody + tbody,
   .table tbody + tbody,
   .td-content > table tbody + tbody,
   .td-box .row.section > table tbody + tbody {
     border-top: 2px solid #dae0eb; }
-  .tab-pane table .table, .tab-pane table .td-content > table, .tab-pane table .td-box .row.section > table, .td-box .tab-pane table .row.section > table,
+  .tab-pane > table .table, .tab-pane > table .td-content > table, .tab-pane > table .td-box .row.section > table, .td-box .tab-pane > table .row.section > table,
   details > table .table,
   details > table .td-content > table,
   details > table .td-box .row.section > table,
@@ -8686,7 +8686,8 @@ details > table,
 
 .tab-pane > table thead th,
 .td-content > table thead th {
-  border: 0px !important; }
+  border: 0px !important;
+  vertical-align: bottom; }
 
 .tab-pane > table tr:first-child td:first-child,
 .td-content > table tr:first-child td:first-child {
@@ -9621,7 +9622,9 @@ h2 {
 @media only screen and (max-width: 400px) {
   .map-point {
     width: 13px;
-    height: 13px; } }
+    height: 13px; }
+  #shortTable + table {
+    width: 100% !important; } }
 
 .map-container {
   position: relative;
@@ -9662,7 +9665,11 @@ h2 {
   opacity: 1; }
 
 #shortTable + table {
-  width: 60% !important; }
+  width: 60%; }
+
+#cutMessage + table tr td:nth-child(2) {
+  word-break: break-all;
+  width: 30% !important; }
 
 /* Argentina */
 a[href="#tabcountries1"]::before {

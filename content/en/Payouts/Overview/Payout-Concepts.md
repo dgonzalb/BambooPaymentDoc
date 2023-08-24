@@ -27,7 +27,7 @@ _Payout_ refers to disbursing funds to a third party using funds settled in your
 The _Payout fee_ refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee by setting a variable in the request.
 
 ## Sanction screening
-_Sanction screening_ ets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.
+_Sanction screening_ lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.
 
 The output of this process determines whether the _Payout_ requires manual validation.
 

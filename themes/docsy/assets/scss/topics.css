@@ -258,6 +258,10 @@ h2 {
         width: 13px;
         height: 13px;
     }
+
+    #shortTable + table {
+        width: 100% !important;
+    }
   }
 
   .map-container {
@@ -303,7 +307,12 @@ h2 {
 }
 
 #shortTable + table {
-    width: 60% !important;
+    width: 60%;
+}
+
+#cutMessage + table tr td:nth-child(2) {
+    word-break: break-all;
+    width: 30% !important;
 }
 
 /* Argentina */
