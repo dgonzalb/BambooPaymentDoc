@@ -219,6 +219,7 @@ For more information on the response parameters, please refer to the [Response p
 ```
 
 ## Klap Efectivo
+With _Klap efectivo_, your customers can generate a coupon and complete the payment in a physical payment office.
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
