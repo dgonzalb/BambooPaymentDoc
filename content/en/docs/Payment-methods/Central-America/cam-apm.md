@@ -16,7 +16,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**61**_. |
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**28**_. |
 | `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
@@ -54,7 +54,7 @@ You need to include specific fields for this payment method to work correctly. C
 ```
 
 ### Response parameters
-In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a `PuntoXpress` agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity dat in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
+In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a `PuntoXpress` agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity date in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
 
 #### Response example
 
