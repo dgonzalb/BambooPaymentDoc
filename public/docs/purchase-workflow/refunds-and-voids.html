@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Refunds and voids | Bamboo Payment</title><meta property="og:title" content="Refunds and voids" />
+<meta property="og:description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/purchase-workflow/refunds-and-voids.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-08-02T08:46:32-05:00" />
+<meta property="article:modified_time" content="2023-08-31T08:42:54-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Refunds and voids">
+<meta itemprop="description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
+"><meta itemprop="datePublished" content="2023-08-02T08:46:32-05:00" />
+<meta itemprop="dateModified" content="2023-08-31T08:42:54-05:00" />
+<meta itemprop="wordCount" content="362">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Refunds and voids"/>
+<meta name="twitter:description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../">
+			
+			
+			<span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../offline-search-index.1db57d877bd70d6d176f8e4c9fca0fd94a2a1c1b16da4c2efe7e2ba733675e9fc567fbb801c6e48e31a68604d8d47ee80b2b0aafd18b5b5e3c5395ef02d340c3.json"
+  data-offline-search-base-href="../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs.html" href="../../docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/getting-started.html" href="../../docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedconceptshtml" href="../../docs/getting-started/concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddata-typeshtml" href="../../docs/getting-started/data-types.html">Data Types</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedpayment-methodshtml" href="../../docs/getting-started/payment-methods.html">Payment methods</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedtest-our-serviceshtml" href="../../docs/getting-started/test-our-services.html">Test our services</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startederror-codeshtml" href="../../docs/getting-started/error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/purchase-workflow.html" href="../../docs/purchase-workflow.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/purchase-workflow/customer-types.html" href="../../docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesanonymous-usershtml" href="../../docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/purchase-workflow/purchases.html" href="../../docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-operationshtml" href="../../docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasesredirect-purchasehtml" href="../../docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasesdirect-purchasehtml" href="../../docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-previewhtml" href="../../docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/refunds-and-voids.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docspurchase-workflowrefunds-and-voidshtml" href="../../docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/antifraud.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowantifraudhtml" href="../../docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/forms.html" href="../../docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformscheckout-formhtml" href="../../docs/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformsembedded-checkout-formhtml" href="../../docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/merchant-balances.html" href="../../docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Account Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsmerchant-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/payment-methods.html" href="../../docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/argentina.html" href="../../docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-cardshtml" href="../../docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-apmhtml" href="../../docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/brazil.html" href="../../docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-cardshtml" href="../../docs/payment-methods/brazil/br-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-apmhtml" href="../../docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/central-america.html" href="../../docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscentral-americacam-apmhtml" href="../../docs/payment-methods/central-america/cam-apm.html">Cash</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/chile.html" href="../../docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-cardshtml" href="../../docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-apmhtml" href="../../docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/colombia.html" href="../../docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-cardshtml" href="../../docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-apmhtml" href="../../docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/ecuador.html" href="../../docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsecuadorec-apmhtml" href="../../docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/mexico.html" href="../../docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-cardshtml" href="../../docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-apmhtml" href="../../docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/paraguay.html" href="../../docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-cardshtml" href="../../docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-apmhtml" href="../../docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/peru.html" href="../../docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-cardshtml" href="../../docs/payment-methods/peru/pe-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-apmhtml" href="../../docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/uruguay.html" href="../../docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-cardshtml" href="../../docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#rollback-a-purchase">Rollback a purchase</a>
+      <ul>
+        <li><a href="#setting-the-language-of-the-response-codes">Setting the language of the response codes</a></li>
+        <li><a href="#request-url">Request URL</a></li>
+        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#response-parameters">Response parameters</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../docs.html">Payins Integration Guide</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../docs/purchase-workflow.html">Purchase API</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Refunds and voids</h1>
+    <div class="lead">Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.</div>
+	       
+	<p>Before we start, let&rsquo;s review some concepts.</p>
+<ul>
+<li>
+<p><strong>Voids</strong>: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&rsquo;s payment method is not charged for the voided transaction.</p>
+</li>
+<li>
+<p><strong>Refund</strong>: A refund, on the other hand, is a transaction that occurs when a customer returns a purchased item or cancels a service, and the merchant reimburses the customer for the amount paid. The refunded amount is usually returned to the original payment method used by the customer. Unlike voids, the refund occurs after the transaction has been settled.</p>
+</li>
+</ul>
+<h2 id="rollback-a-purchase">Rollback a purchase</h2>
+<p>The <em><strong>rollback</strong></em> operations is only available for purchases previously <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase">authorized</a> with state <em>PreAuthorized</em>.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
+<div style="text-align: center;">
+<p><a href="../../docs/payment-methods/brazil.html"><img src="../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../docs/payment-methods/chile.html"><img src="../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../docs/payment-methods/colombia.html"><img src="../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../docs/payment-methods/uruguay.html"><img src="../../assets/Flags/FlagUY.png" width="30" /></a></p>
+</div>
+</p>
+</div>
+
+<h3 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h3>
+<p>You can receive the error description by relying on localization features. To do this, you need to send the <code>lang</code> header in your integration, using any of the following languages in <strong>ISO 639-1</strong> format.</p>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Code</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>en</code></td>
+<td>English.<br><em>This is the default language. If you don&rsquo;t send this header or set a non-existent language, you will receive errors in this language.</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>es</code></td>
+<td>Spanish.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>pt</code></td>
+<td>Portuguese.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-url">Request URL</h3>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<p><strong>Void</strong></p>
+<ul>
+<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
+<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
+</ul>
+<p><strong>Refund</strong></p>
+<ul>
+<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
+<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
+</ul>
+<h3 id="request-parameters">Request parameters</h3>
+<p>Request body is not required to rollback a purchase. If you don&rsquo;t send any request the pre-authorized purchase will be voided or refunded with its original amount.</p>
+<p>The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
+<h4 id="request-example">Request example</h4>
+<p>To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
+<p>When you perform the rollback, you will get the same <code>Response</code> object <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
+<!--
+## Refund a purchase
+The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
+
+### Considerations
+_To be defined_
+
+### Request URL
+You must invoke a**POST** request to the following URLs according to your needs.
+
+* **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+
+### Request parameters
+Consider the following parameters when invoking a refund request.
+
+| Parameter | Type | Mandatory | Description |
+|---|---|---|---|---|
+| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
+| `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
+
+#### Request example 
+
+```json
+{
+  "Amount":"25000",
+  "MetadataIn": {
+    "Description": "Refund description"
+  },
+}
+```
+
+### Response parameters
+
+| Parameter | Type | Description |
+|---|---|---|
+| `Response` → `PurchaseRefundId` | `number` | Internal identifier of the refund. |
+| `Response` → `Created` | `date` | Date and time when the refund was created.<br>Date format _**ISO-8601**_. |
+| `Response` → `Amount` | `number` | Refund amount as sent in the request. |
+| `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
+| `Response` → `StatusId` | `number` | Identifier of the refund status. |
+| `Response` → `Status` | `string` | Description of the refund status. |
+| `Response` → `AuthorizationCode` | `string` | Response code returned by the acquirer of the transaction. |
+| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction if the refund is rejected. |
+| `Response` → `Description` | `string` | Error description returned by the acquirer of the transaction if the refund is rejected. |
+| `Response` → `MetadataOut` | `object` | Additional information returned by the acquirer. |
+| `Errors` → `ErrorCode` | `string` | Error code returned. |
+| `Errors` → `Created` | `string` | Date and time when the error was generated. |
+| `Errors` → `Message` | `string` | Descriptive text of the error. |
+| `Errors` → `Detail` | `string` | Error detail. |
+
+#### Response example
+
+```json
+{
+  "Response": {
+    "PurchaseRefundId": 194441,
+    "Created": "2023-07-04T16:26:33.850",
+    "Amount": 50000,
+    "Currency": "UYU",
+    "StatusId": 111,
+    "Status": "Approved",
+    "AuthorizationCode": "876961",
+    "Code": "",
+    "Description": "",
+    "MetadataOut": {}
+  },
+  "Errors": []
+}
+```
+-->
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+August 31, 2023: 
+
+ <i>Update Refunds-and-voids.md (68b0c62)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../js/scrollspy.js"></script>
+<script src="../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

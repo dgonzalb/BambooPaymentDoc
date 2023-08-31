@@ -1,0 +1,2086 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Credit and Debit cards | Bamboo Payment</title><meta property="og:title" content="Credit and Debit cards" />
+<meta property="og:description" content="Learn how to integrate your solution to process credit or debit card payments.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/payment-methods/uruguay/uy-cards.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
+<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Credit and Debit cards">
+<meta itemprop="description" content="Learn how to integrate your solution to process credit or debit card payments.
+"><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
+<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
+<meta itemprop="wordCount" content="2116">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Credit and Debit cards"/>
+<meta name="twitter:description" content="Learn how to integrate your solution to process credit or debit card payments.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
+<link href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.1db57d877bd70d6d176f8e4c9fca0fd94a2a1c1b16da4c2efe7e2ba733675e9fc567fbb801c6e48e31a68604d8d47ee80b2b0aafd18b5b5e3c5395ef02d340c3.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs.html" href="../../../docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/getting-started.html" href="../../../docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedconceptshtml" href="../../../docs/getting-started/concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddata-typeshtml" href="../../../docs/getting-started/data-types.html">Data Types</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedpayment-methodshtml" href="../../../docs/getting-started/payment-methods.html">Payment methods</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startedtest-our-serviceshtml" href="../../../docs/getting-started/test-our-services.html">Test our services</a>
+      
+      
+      
+      
+      
+        <a id="/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-startederror-codeshtml" href="../../../docs/getting-started/error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/purchase-workflow.html" href="../../../docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/purchase-workflow/customer-types.html" href="../../../docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesregistered-usershtml" href="../../../docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/purchase-workflow/purchases.html" href="../../../docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-operationshtml" href="../../../docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasesredirect-purchasehtml" href="../../../docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasesdirect-purchasehtml" href="../../../docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspurchase-workflowpurchasespurchase-previewhtml" href="../../../docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowrefunds-and-voidshtml" href="../../../docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflowantifraudhtml" href="../../../docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docspurchase-workflownotification-webhookshtml" href="../../../docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/forms.html" href="../../../docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformscheckout-formhtml" href="../../../docs/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsformsembedded-checkout-formhtml" href="../../../docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/merchant-balances.html" href="../../../docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Account Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsmerchant-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/docs/payment-methods.html" href="../../../docs/payment-methods.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/argentina.html" href="../../../docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-cardshtml" href="../../../docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsargentinaar-apmhtml" href="../../../docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/brazil.html" href="../../../docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-cardshtml" href="../../../docs/payment-methods/brazil/br-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsbrazilbr-apmhtml" href="../../../docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/central-america.html" href="../../../docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscentral-americacam-apmhtml" href="../../../docs/payment-methods/central-america/cam-apm.html">Cash</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/chile.html" href="../../../docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-cardshtml" href="../../../docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodschilecl-apmhtml" href="../../../docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/colombia.html" href="../../../docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-cardshtml" href="../../../docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodscolombiaco-apmhtml" href="../../../docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/ecuador.html" href="../../../docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsecuadorec-apmhtml" href="../../../docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/mexico.html" href="../../../docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-cardshtml" href="../../../docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsmexicomx-apmhtml" href="../../../docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/paraguay.html" href="../../../docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-cardshtml" href="../../../docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsparaguaypy-apmhtml" href="../../../docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/peru.html" href="../../../docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-cardshtml" href="../../../docs/payment-methods/peru/pe-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsperupe-apmhtml" href="../../../docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/payment-methods/uruguay.html" href="../../../docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-cards.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-docspayment-methodsuruguayuy-cardshtml" href="../../../docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-loyaltyplans.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
+        <a id="/docs/payment-methods/uruguay/uy-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docspayment-methodsuruguayuy-apmhtml" href="../../../docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#request-parameters">Request parameters</a>
+      <ul>
+        <li><a href="#request-example">Request example</a></li>
+        <li><a href="#considerations">Considerations</a></li>
+      </ul>
+    </li>
+    <li><a href="#response-parameters">Response parameters</a>
+      <ul>
+        <li><a href="#response-example">Response example</a></li>
+        <li><a href="#response-for-amex">Response for AMEX</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-cards">Testing cards</a>
+      <ul>
+        <li><a href="#determination-of-bin">Determination of BIN</a></li>
+        <li><a href="#configured-behaviors">Configured Behaviors</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../docs.html">Payins Integration Guide</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../docs/payment-methods.html">Countries and payment methods</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../docs/payment-methods/uruguay.html">Uruguay</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Credit and Debit cards</h1>
+    <div class="lead">Learn how to integrate your solution to process credit or debit card payments.</div>
+	       
+	<h2 id="request-parameters">Request parameters</h2>
+<p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Request parameters</a> section for details on basic purchase parameters such as amount and currency.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TrxToken</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">Yes</td>
+<td>The token that identifies the customer’s card.<br>For more information about how to create the token, refer to <a href="../../../docs/purchase-workflow/customer-types.html">Customers</a>.</td>
+</tr>
+<tr>
+<td><code>CrossBorderData</code> → <code>TargetCountryISO</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No<sup>*</sup></td>
+<td>Indicate the destination currency.<br><sup>*</sup><em>This field is required for CrossBorder purchases</em>.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>Email</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s email.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>FirstName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s first name.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>LastName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s last name.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocumentTypeId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../docs/payment-methods/uruguay.html#document-types">Document types table</a> to see the possible values.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Document Number.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>PhoneNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s phone number.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s Country.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s State.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s City.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s Address Detail.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Postal Code.<br>Postal code is mandatory for the United States abd Canada.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>ShippingAddress</code> → <code>Country</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Country of the Shipping Address.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>ShippingAddress</code> → <code>State</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>State of the Shipping Address.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>ShippingAddress</code> → <code>City</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>City of the Shipping Address.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>ShippingAddress</code> → <code>AddressDetail</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Address Detail of the Shipping Address.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>ShippingAddress</code> → <code>PostalCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Postal Code of the Shipping Address.</td>
+</tr>
+<tr>
+<td><code>CustomerIP</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>IP of the customer that uses the service.</td>
+</tr>
+<tr>
+<td><code>DataUY</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td style="text-align:center">Yes</td>
+<td>Specific data for <em>Uruguay</em>.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law <strong>19,210</strong> (Financial inclusion law) and <strong>17,934</strong> for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage.</td>
+</tr>
+<tr>
+<td><code>DataUY</code> → <code>IsFinalConsumer</code></td>
+<td style="text-align:center"><code>boolean</code></td>
+<td style="text-align:center">Yes</td>
+<td>Indicates if the sale is performed to a final consumer.</td>
+</tr>
+<tr>
+<td><code>DataUY</code> → <code>Invoice</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No <sup>*</sup></td>
+<td>Invoice number associated with the sale.</td>
+</tr>
+<tr>
+<td><code>DataUY</code> → <code>TaxableAmount</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td style="text-align:center">No <sup>*</sup></td>
+<td>Amount taxed by VAT.</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text"><ul>
+<li><sup>*</sup> This parameter is mandatory when <code>DataUY.IsFinalConsumer</code> is <code>true</code>.</li>
+<li>Remember that for the Anti-fraud system&rsquo;s correct functioning, we suggest sending additional data described in the section <a href="../../../docs/purchase-workflow/antifraud.html">Anti-fraud</a>.</li>
+</ul>
+</p>
+</div>
+
+<h3 id="request-example">Request example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099927564&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;150000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle falsa 4567/Depto/Provincia&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;150000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle falsa 4567/Depto/Provincia&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;31130749&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;093000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rserrano@mail.com&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;false&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">900</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="considerations">Considerations</h3>
+<ul>
+<li>You can make purchases in installments as long as the Issuing Bank has it enabled.</li>
+<li>You can make purchases with Debit Cards as long as the Issuing Bank has it enabled</li>
+<li><strong>Visanet</strong> requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the <em>Commerce Token</em>, it is not necessary to request the CVV in future transactions.</li>
+<li><strong>FirstData</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. You need to execute   <a href="#">Verification Code Request Flow</a>.<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with <strong>FirstData</strong> and notify us.</li>
+<li><strong>Creditel</strong> and <strong>PassCard</strong> require that the purchase message include the cardholder&rsquo;s document and type of document (fields <code>Customer.DocumentTypeId</code> and <code>Customer.DocNumber</code>).</li>
+<li><strong>PassCard</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. Therefore, you need to execute <a href="#">Verification Code Request Flow</a>.</li>
+<li>When using <strong>OCAOneClick2</strong> (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the <code>CustomerIP</code> parameter in the request.</li>
+</ul>
+<h4 id="purchases-using-mastercards-through-oca">Purchases using MasterCards through OCA</h4>
+<p>When using <strong>MasterCard</strong>, sending the device FingerPrint using the <code>SetDeviceFingerPrint</code> method is recommended.</p>
+<p>Add this function to the script used for the checkout form (<code>PWCheckOut</code>) to generate and return the value used in the purchases.</p>
+<p>In this example, we show how to invoke and obtain the result.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetDeviceFingerprint</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
+<p>Then, include the token in the purchase creation according to the following scenarios.</p>
+<ul>
+<li>For <em><strong>OneTimeToken</strong></em>, send the device FingerPrint you generate and the <strong>OT token</strong>.</li>
+<li>For <em><strong>CommerceToken</strong></em>, there are two cases:
+<ul>
+<li>For Recurring purchases (Without CVV), send the device FingerPrint you generate and the <strong>CT token</strong>. You can use an existing <strong>CT token</strong> or generate one.</li>
+<li>For Purchases with CVV, generating a <code>DeviceFingerPrint</code> is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the <em>Pending</em> state, and you need to redirect the customer to the URL returned in the <code>actionUrl</code> parameter where they enter the CVV.</li>
+</ul>
+</li>
+</ul>
+<h2 id="response-parameters">Response parameters</h2>
+<p>For more information on the response parameters, please refer to the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
+<h3 id="response-example">Response example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1130954</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:36.873&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099927564&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;TransactionID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1148827</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:36.873&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:37.443&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0 00&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;622810&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;FirstData Authorization with CVV&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:37.433&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Authorization OK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;00&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;622810&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{ &#39;PrimaryResponseCode&#39; : &#39;0&#39;, &#39;SecondaryResponseCode&#39; : &#39;0&#39;, &#39;ISO8583Code&#39; : &#39;00&#39; }&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;OriginalAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">248693</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:27.413&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Anonymous&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jmartinezq@bamboopayment.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle falsa 4567/Depto/Provincia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;150000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">372731</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle falsa 4567/Depto/Provincia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;150000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PaymentProfiles&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">253353</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T19:42:27.413&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;550799&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;202605&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0001&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Customer/248693&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;31130749&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;093000000&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/1130954&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">900</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Acquirer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;AcquirerID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;FirstData&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PurchasePaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">253353</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IsFirstRecurrentPurchase&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AntifraudData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PurchaseType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-for-amex">Response for AMEX</h3>
+<p>When using AMEX, the response includes the object <code>AcquirerResponseDetail</code> inside the <code>Response.Transaction.Steps</code> object with the following information.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ResponseCode</code></td>
+<td>Response code.</td>
+</tr>
+<tr>
+<td><code>ResultDescription</code></td>
+<td>Description.</td>
+</tr>
+<tr>
+<td><code>Indi</code></td>
+<td>Tax refund application indicator (1=apply, 2=not apply).</td>
+</tr>
+<tr>
+<td><code>Monto_dev</code></td>
+<td>This amount corresponds to the tax refund.</td>
+</tr>
+<tr>
+<td><code>SerialTraceAuditNumber</code></td>
+<td>Acquirer reference Id.</td>
+</tr>
+<tr>
+<td><code>RetrievalReferenceNumber</code></td>
+<td>RRN, Acquirer reference Id.</td>
+</tr>
+<tr>
+<td><code>PurchaseIdSended</code></td>
+<td>Identifier of the purchase sent to the acquirer.</td>
+</tr>
+<tr>
+<td><code>BatchId</code></td>
+<td>Identifier of the batch to which the purchase made belongs.</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{ &#39;ResponseCode&#39; : &#39;00&#39;, &#39;ResultDescription&#39;: &#39;Aprobado&#39;, &#39;Indi&#39; : &#39;1&#39;, &#39;Monto_dev&#39;: &#39;10&#39;, &#39;SerialTraceAuditNumber&#39;: &#39;931819&#39;,  &#39;RetrievalReferenceNumber&#39;: &#39;564149&#39;, &#39;PurchaseIdSended&#39;: &#39;4973a588-7665-4f26-b6ed-011b7f528bea&#39;, &#39;BatchId&#39;: &#39;467162&#39; }\r\n&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="testing-cards">Testing cards</h2>
+<p>When generating valid card data for testing, you must first establish which acquirer you want to test and what type of test you want to perform.</p>
+<h3 id="determination-of-bin">Determination of BIN</h3>
+<p>When setting up an acquirer, the card&rsquo;s BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with the FirstData acquirer (which is a local MasterCard acquirer in Uruguay), the BIN of the generated card should adhere to the following format: <code>^ 5 \ [1-5] \ [0-9]*</code></p>
+<p>This format means it must start with the number <strong>5</strong>; the second number must be between 1 and 5, then any other number is accepted. For example, the BIN to test can be <code>510000</code>. The valid Bines in the system and their related acquirer are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>BIN (format)</th>
+<th>Brand</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^4\[0-9]*</code></td>
+<td>VISA</td>
+<td>Any card that starts with <code>4</code>.</td>
+</tr>
+<tr>
+<td><code>^5\[1-5]\[0-9]*</code></td>
+<td>MasterCard</td>
+<td>Any card that starts with <code>51</code> through <code>5</code>.</td>
+</tr>
+<tr>
+<td><code>^589892|^542991</code></td>
+<td>OCA</td>
+<td>Any card that starts with <code>589892</code> or <code>542991</code>.</td>
+</tr>
+<tr>
+<td><code>^601933|^608700</code></td>
+<td>Creditel</td>
+<td>Any card that starts with <code>601933</code> or <code>608700</code>.</td>
+</tr>
+<tr>
+<td><code>^601828</code></td>
+<td>Créditos Directos</td>
+<td>Any card that starts with <code>601828</code></td>
+</tr>
+<tr>
+<td><code>^3\[47\]\[0-9\]*</code></td>
+<td>American Express</td>
+<td>Any card that starts with <code>3</code> followed by <code>4</code> or <code>7</code>.</td>
+</tr>
+<tr>
+<td><code>^628026</code></td>
+<td>Passcard</td>
+<td>Any card that starts with <code>628026</code>.</td>
+</tr>
+<tr>
+<td><code>^504736</code></td>
+<td>Club del Este</td>
+<td>Any card that starts with <code>504736</code>.</td>
+</tr>
+<tr>
+<td><code>^589657|^603522|^6042\[0-9\]\[1-9\]\*|^604400\*|^6043\[0-9\]\*|^600178|^604230</code></td>
+<td>Cabal</td>
+<td>Any card that starts with <code>589657</code>, <code>603522</code>, <code>604400</code>, <code>600178</code>, <code>604230</code>, <code>6042</code> followed by <code>0</code> to <code>9</code> in the fifth position, and <code>1</code> to <code>9</code> in the sixth position.</td>
+</tr>
+<tr>
+<td><code>^637483</code></td>
+<td>Edenred</td>
+<td>Any card that starts with <code>637483</code>.</td>
+</tr>
+<tr>
+<td><code>^86\[0-9\]*</code></td>
+<td>Bancard Check</td>
+<td>Any card that starts with <code>86</code>.</td>
+</tr>
+<tr>
+<td><code>^280991</code></td>
+<td>Credifielco</td>
+<td>Any card that starts with <code>280991</code>.</td>
+</tr>
+<tr>
+<td><code>^600692</code></td>
+<td>Infonet</td>
+<td>Any card that starts with <code>600692</code>.</td>
+</tr>
+<tr>
+<td><code>^589562</code></td>
+<td>Tarjeta Naranja</td>
+<td>Any card that starts with <code>589562</code>.</td>
+</tr>
+<tr>
+<td><code>^603199</code></td>
+<td>Anda</td>
+<td>Any card that starts with <code>603199</code>.</td>
+</tr>
+<tr>
+<td><code>^606211</code></td>
+<td>Hipercard</td>
+<td>Any card that starts with <code>606211</code>.</td>
+</tr>
+<tr>
+<td><code>^636297</code></td>
+<td>Elo</td>
+<td>Any card that starts with <code>636297</code>.</td>
+</tr>
+<tr>
+<td><code>^507860</code></td>
+<td>Aura</td>
+<td>Any card that starts with <code>507860</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configured-behaviors">Configured Behaviors</h3>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-acquirers" data-toggle="tab" href="#tabacquirers1" role="tab"
+		   aria-controls="nav-home" aria-selected="true">OCA</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers2" role="tab"
+		   aria-controls="nav-home" aria-selected="false">VISA</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers3" role="tab"
+		   aria-controls="nav-home" aria-selected="false">Creditel</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers4" role="tab"
+		   aria-controls="nav-home" aria-selected="false">Anda</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers5" role="tab"
+		   aria-controls="nav-home" aria-selected="false">Créditos Directos</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers6" role="tab"
+		   aria-controls="nav-home" aria-selected="false">Mastercard</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers7" role="tab"
+		   aria-controls="nav-home" aria-selected="false">AMEX (UY)</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="acquirers">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tabacquirers1" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0010</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: Rejected <br> Error: TR011 <br> Lost or blocked card.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date).</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: Rejected <br> Error: TR010 <br> Invalid identity document.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0004</code></td>
+<td>Result: Rejected <br> Error: TR011 <br> Lost or blocked card.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td style="text-align:center"><code>0005</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: Cancel OK.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0010</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Cancellation not made.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers2" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0014</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date).</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: Rejected <br> Error: TR005 <br> Sender offline.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0004</code></td>
+<td>Result: Rejected <br> Error: TR014 <br> The Acquirer denied the transaction due to possible fraud.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0005</code></td>
+<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
+</tr>
+<tr>
+<td>Pre-authorization (Purchase)</td>
+<td style="text-align:center"><code>0006</code></td>
+<td>Result: Rejected <br> Error: TR011 <br> Lost or blocked card.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Capture (Commit)</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Capture (Commit)</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Capture (Commit)</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>Result: Rejected <br> Error: TR005 <br> Sender offline.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Capture (Commit)</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Capture (Commit)</td>
+<td style="text-align:center"><code>0014</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer.</td>
+</tr>
+<tr>
+<td>Cancellation of Pre-Authorization (Rollback)</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Canceled.</td>
+</tr>
+<tr>
+<td>Cancellation of Pre-Authorization (Rollback)</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: Rejected <br> Error: TR005 <br> Sender offline.</td>
+</tr>
+<tr>
+<td>Cancellation of Pre-Authorization (Rollback)</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>result: Rejected <br> Error: TR003 <br> Problems with the merchant&rsquo;s account in Acquirer.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Cancellation (Rollback)</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor.</td>
+</tr>
+<tr>
+<td>Pre-Authorization Cancellation (Rollback)</td>
+<td style="text-align:center"><code>0014</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Error: TR013 <br> Returned.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: Rejected <br> Error: TR005 <br> Sender offline.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>Result: Rejected <br> Error: TR003 <br> Problems with the merchant&rsquo;s account in Acquirer.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0014</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer.</td>
+</tr>
+</tbody>
+</table>
+<p>Example of BIN (first 6 digits) for testing specific card types:</p>
+<ul>
+<li><code>468562</code> – Prepaid Visa Card</li>
+<li><code>430307</code> – Visa Debit Card</li>
+<li><code>463308</code> – Visa Debit Card</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers3" role="tabpanel" aria-labelledby="nav-tabName3">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0004</code></td>
+<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0005</code></td>
+<td>Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Canceled.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0010</code></td>
+<td>Result: Rejected <br> Error: TR001 <br> Buyer communication error.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers4" role="tabpanel" aria-labelledby="nav-tabName4">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br>Approved.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: OK <br>Approved.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: OK <br>Approved.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK.</td>
+</tr>
+<tr>
+<td>Refund</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: OK.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers5" role="tabpanel" aria-labelledby="nav-tabName5">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0004</code></td>
+<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0005</code></td>
+<td>Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Canceled.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0010</code></td>
+<td>Result: Rejected <br> Error: TR001 <br> Buyer communication error.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers6" role="tabpanel" aria-labelledby="nav-tabName6">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR005 <br> Issuer offline or problem related to Acquirer.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0003</code></td>
+<td>Result: Rejected <br> Error: TR009 <br> Unknown Buyer Error.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0004</code></td>
+<td>Result: Rejected <br> Error: TR013 <br> The Acquirer denied the transaction.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0005</code></td>
+<td>Result: Rejected <br> Error: TR004 <br> Communication error when sending transaction to Acquirer.</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Canceled.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tabacquirers7" role="tabpanel" aria-labelledby="nav-tabName7">
+
+	<br>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0001</code> to <code>0010</code></td>
+<td>Result: OK <br>Approved.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0011</code></td>
+<td>Result: Rejected <br>Error: PR003<br>Invalid Amount.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0012</code></td>
+<td>Result: Rejected <br>Error: TR007<br>Invalid Card.</td>
+</tr>
+<tr>
+<td>Buy</td>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br>Error: TR019<br>Dennied.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+August 31, 2023: 
+
+ <i>New documentation site (6e86607)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>
