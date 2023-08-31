@@ -30,9 +30,6 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 {{% /alert %}}
 
-### Considerations
-_To be defined_
-
 ### Setting the language of the response codes
 You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
 
@@ -45,15 +42,22 @@ You can receive the error description by relying on localization features. To do
 | `pt` | Portuguese. |
 
 ### Request URL
-You must invoke a**POST** request to the following URLs according to your needs.
+You must invoke a **POST** request to the following URLs according to your needs.
+
+**Void**
 
 * **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
 
-### Request parameters
-Request body is not required to rollback a purchase. If you don't send any request the pre-authorized purchase will be voided with its original amount. 
+**Refund**
 
-The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
+* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+
+### Request parameters
+Request body is not required to rollback a purchase. If you don't send any request the pre-authorized purchase will be voided or refunded with its original amount. 
+
+The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
 
 #### Request example
 To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
@@ -66,7 +70,7 @@ To perform the rollback of a purchase with a lower amount than the original, you
 
 ### Response parameters
 When you perform the rollback, you will get the same `Response` object [returned]({{< ref "purchase-operations.md" >}}#response-parameters).
-
+<!--
 ## Refund a purchase
 The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
 
@@ -136,3 +140,4 @@ Consider the following parameters when invoking a refund request.
   "Errors": []
 }
 ```
+-->
