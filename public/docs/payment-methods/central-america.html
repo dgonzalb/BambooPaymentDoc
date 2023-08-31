@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.28da9e724af8735cf69a9e5c3dbeefa004e3eab9c551a379c470770c40fd0d5df64e56112c36812a930d3d58ac107e9e5af837a1a134d90069fce274066e1572.json"
+  data-offline-search-index-json-src="../../offline-search-index.d79f57115616c3ac211ff4ef174484387f37e2816d7693ac3204730352328c267415e5f75c3cfe048e071d6a8130df40b13cdd0129361ad0565f6705b7cfcef4.json"
   data-offline-search-base-href="../../"
 >
 
@@ -844,6 +844,14 @@
 <p> </p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#payment-methods">Payment methods</a></li>
+    <li><a href="#currencies">Currencies</a></li>
+    <li><a href="#document-types">Document types</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -891,6 +899,137 @@
         <div class="lead">Recieve payments in <em><strong>Costa Rica</strong></em>, <em><strong>El Salvador</strong></em>, and <em><strong>Nicaragua</strong></em> using <em>PuntoXpress</em>, the biggest cash collection network with regional coverage in Central America.</div>
 	
 	<p>This section shows the available payment methods, currencies, and related information to be taken into account when processing in <em>Costa Rica</em>, <em>El Salvador</em>, and <em>Nicaragua</em>.</p>
+<h2 id="payment-methods">Payment methods</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Payment MediaId</th>
+<th>Payment Media</th>
+<th style="text-align:center">Purchase</th>
+<th style="text-align:center">Pre-authorization</th>
+<th style="text-align:center">Full refund</th>
+<th style="text-align:center">Partial Refund</th>
+<th>Type</th>
+<th>Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="" /></td>
+<td style="text-align:center">28</td>
+<td>PuntoXpress</td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../assets/x_mark_64.png" width="15px"/></td>
+<td>Cash</td>
+<td>API</td>
+</tr>
+</tbody>
+</table>
+<h2 id="currencies">Currencies</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USD</td>
+<td>US Dollar</td>
+<td>Domestic<sup>*</sup> and CrossBorder</td>
+</tr>
+<tr>
+<td>CRC</td>
+<td>Costa Rican colón</td>
+<td>Domestic and CrossBorder</td>
+</tr>
+<tr>
+<td>NIO</td>
+<td>Nicaraguan córdoba</td>
+<td>Domestic and CrossBorder</td>
+</tr>
+</tbody>
+</table>
+<p><sup>*</sup><em><strong>USD</strong> for domestic purchases is only available for El Salvador.</em></p>
+<h2 id="document-types">Document types</h2>
+<p>The following table describes the valid document types for Central America.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Code</th>
+<th>Document name</th>
+<th>Abbreviation</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">30</td>
+<td>Cédula de identidad</td>
+<td>CI</td>
+<td>Costa Rica</td>
+</tr>
+<tr>
+<td style="text-align:center">31</td>
+<td>Documento de Identidad Migratoria para Extranjeros</td>
+<td>DIMEX</td>
+<td>Costa Rica</td>
+</tr>
+<tr>
+<td style="text-align:center">32</td>
+<td>Pasaporte</td>
+<td>PA</td>
+<td>Costa Rica</td>
+</tr>
+<tr>
+<td style="text-align:center">33</td>
+<td>Cédula de identidad</td>
+<td>CI</td>
+<td>Nicaragua</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td>Pasaporte</td>
+<td>PA</td>
+<td>Nicaragua</td>
+</tr>
+<tr>
+<td style="text-align:center">35</td>
+<td>Registro Único de Contribuyente</td>
+<td>RUC</td>
+<td>Nicaragua</td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td>Documento único de identidad</td>
+<td>DUI</td>
+<td>El Salvador</td>
+</tr>
+<tr>
+<td style="text-align:center">43</td>
+<td>Pasaporte</td>
+<td>PA</td>
+<td>El Salvador</td>
+</tr>
+<tr>
+<td style="text-align:center">44</td>
+<td>Número de identificación tributaria</td>
+<td>NIT</td>
+<td>El Salvador</td>
+</tr>
+<tr>
+<td style="text-align:center">45</td>
+<td>Número de Registro de Contribuyente</td>
+<td>NRC</td>
+<td>El Salvador</td>
+</tr>
+</tbody>
+</table>
 
 		
 <div class="section-index">
@@ -1029,7 +1168,7 @@
 
 August 31, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>Information for PuntoXpress in Central America (09c0019)</i>
   </div>
 </div>
 
