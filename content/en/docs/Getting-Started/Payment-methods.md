@@ -72,7 +72,7 @@ Visa is not available for crossborder purchases.
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" style="" /> | SuRed | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/NequiQr_BankTransfer.png" width="52" style="" /> | Nequi QR | Bank Transfer | API |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/NequiPush_BankTransfer.png" width="52" style="" /> | Nequi Push | Bank Transfer | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Fasttrack_BankTransfer.png" width="52" style="" /> | PSE | Bank Transfer | Redirect |
+<!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Fasttrack_BankTransfer.png" width="52" style="" /> | PSE | Bank Transfer | Redirect |-->
 
 ## Costa Rica
 
