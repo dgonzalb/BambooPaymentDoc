@@ -304,18 +304,18 @@ You need to include specific fields for this payment method to work correctly. C
         "DocumentTypeId": 24,
         "BillingAddress": {
           "AddressType": 1,
-          "Country": "Uruguay",
-          "State": "MO",
-          "City": "Montevideo",
-          "AddressDetail": "Av. Sarmiento 2260",
+          "Country": "Brasil",
+          "State": "ES",
+          "City": "Vitoria",
+          "AddressDetail": "Avenida Anisio Fernandes Coelho 661",
           "PostalCode":"11100"
         },
     },
     "MetadataIn" : {
       "PaymentExpirationInMinutes" :"1440",
-      "AddressStreet": "Av. Sarmiento",
-      "AddressNumber": "2260",
-      "AddressDistrict": "MO"
+      "AddressStreet": "Avenida Anisio Fernandes Coelho",
+      "AddressNumber": "661",
+      "AddressDistrict": "ES"
     }
 }
 ```
@@ -474,8 +474,8 @@ In the response, you will find the following parameters:
         "DeviceFingerprintId": null,
         "MetadataIn": {
             "PaymentExpirationInMinutes": "1440",
-            "AddressStreet": "Av. Sarmiento",
-            "AddressNumber": "2260",
+            "AddressStreet": "Avenida Anisio Fernandes Coelho",
+            "AddressNumber": "661",
             "AddressDistrict": "MO"
         },
         "MetadataOut": {
