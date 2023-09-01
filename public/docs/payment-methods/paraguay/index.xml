@@ -23,7 +23,66 @@
       <description>
         
         
-        
+        &lt;!--
+## Request parameters
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation](/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.&lt;br&gt;For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
+| `CrossBorderData` → `TargetCountryISO` | `string` | No&lt;sup&gt;*&lt;/sup&gt; | Indicate the destination currency.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;_This field is required for CrossBorder purchases_. |
+| `Customer` → `Email` | `string` | Yes | Customer&#39;s email. |
+| `Customer` → `FirstName` | `string` | Yes | Customer&#39;s first name. |
+| `Customer` → `LastName` | `string` | Yes | Customer&#39;s last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer&#39;s document type.&lt;br&gt;Refer to the [Document types table](/docs/payment-methods/paraguay.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No | Customer&#39;s Document Number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer&#39;s phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer&#39;s Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No&lt;sup&gt;*&lt;/sup&gt; | Customer&#39;s State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer&#39;s City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer&#39;s Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer&#39;s Postal Code. |
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Remember that for the Anti-fraud system&amp;rsquo;s correct functioning, we suggest sending additional data described in the section &lt;a href=&#34;../../../docs/purchase-workflow/antifraud.html&#34;&gt;Anti-fraud&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+
+### Request example
+```json
+
+```
+
+## Response parameters
+For more information on the response parameters, please refer to the [Response parameters section](/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters) of the Purchase creation.
+
+### Response example
+
+```json
+
+```
+
+## Testing cards
+Use the following cards to simulate the different status of the purchase.
+
+### For approved purchases
+
+| Brand | PAN | CVV | Expiration Date | Details |
+|---|---|---|---|---|
+| Mastercard | `5299910010000015` | `123` | `08/30` | No amount limit. |
+| Visa (credit or Debit) | `4507990000004905` | `123` | `08/30` | No amount limit. |
+| Amex | `373953192351004` | `1234` | `08/30` | Amounts: $1 or $10 |
+
+### For rejected purchases
+
+| PAN | CVV | Expiration Date | Document Type | Document |
+|---|---|---|---|---|
+| `4304968001555104` | `617` | `12/18` | `4` - DNI | `38499826` |
+--&gt;
       </description>
     </item>
     
