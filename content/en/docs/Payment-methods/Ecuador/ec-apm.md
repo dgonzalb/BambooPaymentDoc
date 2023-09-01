@@ -27,7 +27,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/ecuador.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+51\|971516229`. |
+| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+593\|971516229`. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
@@ -49,7 +49,7 @@ You need to include specific fields for this payment method to work correctly. C
         "Email": "lvargas@mail.com",
         "FirstName": "Luis",
         "LastName": "Vargas",
-        "PhoneNumber": "+51|971516229",
+        "PhoneNumber": "+593|971516229",
         "DocNumber": "12345672",
         "DocumentTypeId": 10
     },
@@ -163,7 +163,7 @@ In the response, you will find the following parameters:
             "LastName": "Vargas",
             "DocNumber": "12345672",
             "DocumentTypeId": 10,
-            "PhoneNumber": "+51|971516229",
+            "PhoneNumber": "+593|971516229",
             "ExternalValue": null
         },
         "RefundList": null,
