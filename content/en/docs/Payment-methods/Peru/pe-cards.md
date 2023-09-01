@@ -6,4 +6,5 @@ description: >
   Learn how to integrate your solution to process credit or debit card payments.
 weight: 10
 tags: ["subtopic"]
+draft: true
 ---

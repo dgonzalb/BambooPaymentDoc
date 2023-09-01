@@ -9,3 +9,36 @@ tags: ["parenttopic"]
 ---
 
 This section shows the available payment methods, currencies, and related information to consider when processing in _Peru_.
+
+## Payment methods
+
+| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+|-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="" /> | 26 | PagoEfectivo Perú  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
+
+## Currencies
+
+| Code | Description  | Mode                     |
+|------|--------------|--------------------------|
+| USD  | US Dollar    | Domestic and CrossBorder |
+| PEN  | Peruvian Sol | Domestic and CrossBorder |
+
+## Amount limits
+
+<div id="shortTable"></div>
+
+|  | Cash |
+|---|:---:|
+| **Minimum** | PEN 1 | 
+| **Maximum** | PEN 5.000 |
+
+## Document types
+The following table describes the valid document types for Argentina:
+
+| Code | Document name                   | Abbreviation |
+|:----:|---------------------------------|--------------|
+| 6    | Documento Nacional de Identidad | DNI          |
+| 7    | Partida                         | PAR          |
+| 8    | Pasaporte                       | PAS          |
+| 9    | Libreta militar                 | LMI          |
+| 10   | Otro                            | NAN          |
