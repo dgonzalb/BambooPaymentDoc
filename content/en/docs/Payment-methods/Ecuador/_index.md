@@ -20,7 +20,7 @@ This section shows the available payment methods, currencies, and related inform
 
 | Code | Description    | Mode                     |
 |------|----------------|--------------------------|
-| USD  | US Dollar      | CrossBorder              |
+| USD  | US Dollar      | Domestic and CrossBorder |
 
 ## Amount limits
 
