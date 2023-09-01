@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 When using cards, the payer must be redirected to the card capture page to complete the payment.
 
-The status for purchases with cards using redirection will remain _Pending_ until the customer completes payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
+The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
 
 ## Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.

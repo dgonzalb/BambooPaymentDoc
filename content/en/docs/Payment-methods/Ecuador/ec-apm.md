@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment.
+The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes the payment.
 {{% /alert %}}
 
 ## PagoEfectivo Ecuador
