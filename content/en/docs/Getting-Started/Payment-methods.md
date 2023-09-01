@@ -84,8 +84,7 @@ Visa is not available for crossborder purchases.
 
 |  | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CashPayment.png"  width="52" style="" /> | Cash Payment | Cash Payment | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/BankTransfer.png"  width="52" style="" /> | Bank Transfer | Bank Transfer | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Ecuador | Cash Payment | API |
 
 ## El Salvador
 
