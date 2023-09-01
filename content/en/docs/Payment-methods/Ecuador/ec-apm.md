@@ -69,6 +69,8 @@ In the response, you will find the following parameters:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the CIP will expire.<br>Format _ISO 8601_. |
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the HTML document of the CIP. |
 
+![PrintScreen](/assets/PagoEfectivoEC.png)
+
 #### Response example
 
 ```json
