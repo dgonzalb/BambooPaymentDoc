@@ -8,4 +8,4 @@ weight: 90
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to be taken into account when processing in _Peru_.
+This section shows the available payment methods, currencies, and related information to consider when processing in _Peru_.

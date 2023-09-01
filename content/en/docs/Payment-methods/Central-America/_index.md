@@ -8,7 +8,7 @@ weight: 30
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to be taken into account when processing in _Costa Rica_, _El Salvador_, and _Nicaragua_.
+This section shows the available payment methods, currencies, and related information to consider when processing in _Costa Rica_, _El Salvador_, and _Nicaragua_.
 
 ## Payment methods
 
