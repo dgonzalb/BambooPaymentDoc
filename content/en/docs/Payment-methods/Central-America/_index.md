@@ -3,7 +3,7 @@ title: "Central America"
 linkTitle: "Central America"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Recieve payments in _**Costa Rica**_, _**El Salvador**_, and _**Nicaragua**_ using _PuntoXpress_, the biggest cash collection network with regional coverage in Central America.
+  Receive payments in _**Costa Rica**_, _**El Salvador**_, and _**Nicaragua**_ using _PuntoXpress_, Central America's most extensive cash collection network with regional coverage.
 weight: 30
 tags: ["parenttopic"]
 ---

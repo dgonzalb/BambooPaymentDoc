@@ -3,7 +3,7 @@ title: "Brazil"
 linkTitle: "Brazil"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _Brazil_ is the largest economy of Latin America. Digital technology adoption has ballooned in recent years especially focused on online commerce, payments and banking.
+  _Brazil_ is the largest economy in Latin America. Digital technology adoption has ballooned in recent years, primarily focused on online commerce, payments, and banking.
 weight: 20
 tags: ["parenttopic"]
 ---
