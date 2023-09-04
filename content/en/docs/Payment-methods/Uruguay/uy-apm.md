@@ -117,7 +117,7 @@ For more information on the response parameters, please refer to the [Response p
             "CustomerId": 248794,
             "Created": "2023-08-16T20:39:35.000",
             "Owner": "Anonymous",
-            "Email": "fsum@bamboopayment.com",
+            "Email": "fsum@mail.com",
             "Enabled": true,
             "PaymentProfiles": [
                 {

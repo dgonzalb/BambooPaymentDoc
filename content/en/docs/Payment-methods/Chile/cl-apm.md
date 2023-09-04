@@ -316,7 +316,7 @@ For more information on the response parameters, please refer to the [Response p
             "Created": "2022-12-08T08:30:35.933",
             "CommerceCustomerId": null,
             "Owner": "Commerce",
-            "Email": "John@bamboopayment.com",
+            "Email": "John@mail.com",
             "Enabled": true,
             "ShippingAddress": null,
             "BillingAddress": {

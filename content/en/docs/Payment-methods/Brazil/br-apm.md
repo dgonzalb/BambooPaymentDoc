@@ -48,7 +48,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Currency": "BRL",
     "TargetCountryISO": "BR",
     "Customer": {
-        "Email": "john@bamboopayment.com",
+        "Email": "john@mail.com",
         "BillingAddress": {
             "AddressDetail": "Avenida Anisio Fernandes Coelho, 661 ",
             "PostalCode": "29060670",
@@ -131,7 +131,7 @@ In the response, you will find the following parameters:
             "Created": "2022-12-08T11:30:35.933",
             "CommerceCustomerId": null,
             "Owner": "Commerce",
-            "Email": "John@bamboopayment.com",
+            "Email": "John@mail.com",
             "Enabled": true,
             "ShippingAddress": null,
             "BillingAddress": {
@@ -293,7 +293,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Currency":"BRL",
     "TargetCountryIso" : "BR",
     "Customer": {
-        "Email": "john@bamboopayment.com",
+        "Email": "john@mail.com",
         "FirstName" : "John",
         "LastName": "Doe",
         "DocNumber" : "13394559358",
@@ -375,7 +375,7 @@ In the response, you will find the following parameters:
             "Created": "2022-12-08T11:30:35.933",
             "CommerceCustomerId": null,
             "Owner": "Commerce",
-            "Email": "John@bamboopayment.com",
+            "Email": "John@mail.com",
             "Enabled": true,
             "ShippingAddress": null,
             "BillingAddress": {

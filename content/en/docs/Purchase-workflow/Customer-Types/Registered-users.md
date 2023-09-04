@@ -245,7 +245,7 @@ Response example that includes a **PaymentProfile**:
     "Created": "2021-04-06T16:08:43.767",
     "CommerceCustomerId": null,
     "Owner": "Commerce",
-    "Email": "Email222222@bamboopayment.com",
+    "Email": "Email222222@mail.com",
     "Enabled": true,
     "ShippingAddress": null,
     "BillingAddress": {

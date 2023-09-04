@@ -105,7 +105,7 @@ You must invoke a **POST** request to the following URLs according to your needs
   "TargetCountryISO": "UY",
   "Installments": 1,
   "Customer": {
-    "Email": "john@bamboopayment.com",
+    "Email": "john@mail.com",
     "FirstName": "John",
     "LastName": "Smith",
     "DocNumber": "12345672",
@@ -285,7 +285,7 @@ The following table describes the parameters in the `Response` object relevant t
             "Created": "2023-08-01T20:53:16.073",
             "CommerceCustomerId": null,
             "Owner": "Anonymous",
-            "Email": "john@bamboopayment.com",
+            "Email": "john@mail.com",
             "Enabled": true,
             "ShippingAddress": {
                 "AddressId": 0,

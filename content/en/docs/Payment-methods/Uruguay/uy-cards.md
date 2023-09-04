@@ -156,7 +156,7 @@ For more information on the response parameters, please refer to the [Response p
       "CustomerId": 248693,
       "Created": "2023-08-15T19:42:27.413",
       "Owner": "Anonymous",
-      "Email": "jmartinezq@bamboopayment.com",
+      "Email": "jmartinezq@mail.com",
       "Enabled": true,
       "ShippingAddress": {
         "AddressId": 0,

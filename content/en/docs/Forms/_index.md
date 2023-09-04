@@ -37,7 +37,7 @@ This example generates a token for RedPagos.
 ```javascript
 var tokenRequest = {
       PaymentMediaId: 5, 
-      Email: "john@bamboopayment.com", 
+      Email: "john@mail.com", 
       DocumentNumber: "12345672", 
       DocumentType: 2
     };

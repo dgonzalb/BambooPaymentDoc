@@ -40,7 +40,7 @@ You need to include specific fields for this payment method to work correctly. C
     "TargetCountryISO": "CR",
     "Capture": true,
     "Customer": {
-        "Email": "john@bamboopayment.com",
+        "Email": "john@mail.com",
         "FirstName": "John",
         "LastName": "Doe",
         "PhoneNumber": "12345672",
@@ -110,7 +110,7 @@ In the response, you find the parameter `MetadataOut.PaymentCode` with the refer
             "Created": "2022-12-08T11:30:35.933",
             "CommerceCustomerId": null,
             "Owner": "Commerce",
-            "Email": "John@bamboopayment.com",
+            "Email": "John@mail.com",
             "Enabled": true,
             "ShippingAddress": null,
             "BillingAddress": {

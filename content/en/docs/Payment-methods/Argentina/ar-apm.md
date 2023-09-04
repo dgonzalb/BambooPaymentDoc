@@ -116,7 +116,7 @@ You must redirect your customer to the URL displayed in the parameter `Response.
             "CustomerId": 88230,
             "Created": "2022-12-08T11:30:35.933",
             "Owner": "Commerce",
-            "Email": "John@bamboopayment.com",
+            "Email": "John@mail.com",
             "Enabled": true,
             "BillingAddress": {
                 "AddressId": 88894,
