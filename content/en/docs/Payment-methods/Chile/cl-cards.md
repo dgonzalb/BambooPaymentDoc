@@ -244,7 +244,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Installments": 1,
     "TargetCountryISO": "CL",
     "Customer": {
-        "Email": "john@bamboopayment.com"
+        "Email": "john@mail.com"
     },
     "Redirection": {
         "Url_Approved": "https://dummystore.com/checkout/approved",

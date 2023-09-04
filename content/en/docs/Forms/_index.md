@@ -55,7 +55,7 @@ This example opens the capture form only for MasterCard cards
 ```javascript
 var tokenRequest = {
       PaymentMediaId: 2, 
-      Email: "john@bamboopayment.com"
+      Email: "john@mail.com"
     };
     
 PWCheckout.Iframe.GetToken(tokenRequest);
@@ -71,7 +71,7 @@ This example opens the capture form only for MasterCard cards emitted by Santand
 var tokenRequest = {
       PaymentMediaId: 2, 
       IssuerBank: 1, 
-      Email: "john@bamboopayment.com"
+      Email: "john@mail.com"
     };
     
 PWCheckout.Iframe.GetToken(tokenRequest);
@@ -87,7 +87,7 @@ This example opens the capture form only for Visa Debit cards
 var tokenRequest = {
       PaymentMediaId: 1, 
       PaymentMediaType: 2, 
-      Email: "john@bamboopayment.com"
+      Email: "john@mail.com"
     };
     
 PWCheckout.Iframe.GetToken(tokenRequest);
@@ -102,7 +102,7 @@ This example generates an OneTimeToken for Khipu payments
 ```javascript
 var tokenRequest = {
       PaymentMediaId: 110, 
-      Email: "john@bamboopayment.com"
+      Email: "john@mail.com"
     };
     
 PWCheckout.Iframe.GetToken(tokenRequest);
