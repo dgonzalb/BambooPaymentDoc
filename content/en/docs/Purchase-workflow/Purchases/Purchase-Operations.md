@@ -40,8 +40,8 @@ Create a basic purchase in Bamboo Payment.
 #### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase`
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase`
 
 #### Request parameters
 
@@ -54,8 +54,7 @@ You must invoke a **POST** request to the following URLs according to your needs
 | `Currency` | `string` | Yes | Currency of the purchase, according to ISO-4217. Find the possible values the [Currencies](#) table. |
 | `Installments` | `integer` | No | This parameter refers to the number of payments that a credit card purchase is divided into. |
 | `Capture` | `boolean` | No | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the commit and rollback calls.</li><li>If `true`, the transaction is authorized and captured (committed).</li></ul><br>All [payment methods and countries](/docs/payment-methods.html) may not support the pre-authorization feature. |
-| `CrossBorderData` | `object` | No <sup>3</sup> | This object has information related to _CrossBorder purchases_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | Yes | This parameter indicates the country where the payment will be processed.<br>Send the country using `ISO-3166-1` format |
+| `TargetCountryISO` | `string` | Yes | This parameter indicates the country where the payment will be processed.<br>Send the country using `ISO-3166-1` format. |
 | `MetadataIn` | `object` | No | The Additional fields required by each payment method or acquirer. |
 | `Customer` | `object` | Yes <sup>4</sup> | The Customer object provides the data of the customer who performs the purchase. |
 | `Customer` → `CommerceCustomerId` | `string` | No | Customer identifier.<br>The merchant generates and uses this value internally to identify the customer within the Bamboo Payment platform. |
@@ -103,6 +102,7 @@ You must invoke a **POST** request to the following URLs according to your needs
   "Capture": true,
   "Amount": "10000",
   "Currency": "UYU",
+  "TargetCountryISO": "UY",
   "Installments": 1,
   "Customer": {
     "Email": "john@bamboopayment.com",
@@ -148,8 +148,8 @@ All payment methods may not support the pre-authorization feature, and it’s av
 #### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
 
 #### Request parameters
 The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.
@@ -171,10 +171,10 @@ This method allows you to get the information of one or more purchases given the
 #### Request URL
 You must invoke a**GET** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase`
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase`
 
-To get a specific purchase, include in the URL `/{{PurchaseID}}`. Example: `https://secure-api.bamboopayment.com/v1/api/purchase/481561`.
+To get a specific purchase, include in the URL `/{{PurchaseID}}`. Example: `https://api.bamboopayment.com/v1/api/purchase/481561`.
 
 #### Request parameters
 The following parameters are only required when you want to get a list of purchases. Add the _PurchaseID_ to the Request URL when requesting a specific purchase.

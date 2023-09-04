@@ -46,13 +46,13 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 **Void**
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
 **Refund**
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 
 ### Request parameters
 Request body is not required to rollback a purchase. If you don't send any request the pre-authorized purchase will be voided or refunded with its original amount. 
@@ -80,8 +80,8 @@ _To be defined_
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Production**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 
 ### Request parameters
 Consider the following parameters when invoking a refund request.

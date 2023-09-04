@@ -13,8 +13,8 @@ The customer will receive a _CommerceToken_ after registering their card, which 
 ## Create a Customer
 The first step is to create the customer in Bamboo Payment. To do so, you must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 ### Request parameters
 
@@ -105,8 +105,8 @@ You can get a customer's information using their Id or email address.
 
 To do so, you must invoke a **GET** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 <div id="shortTable"></div>
 
@@ -158,8 +158,8 @@ In response, you will get a list with the same object returned when [creating a 
 #### Update a customer
 To update the information of a customer, you must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
 
 Where `{{customer-id}}` is the id generated when you created the user. Include in the body, the [parameters](#request-parameters) you want to update for the user.
 

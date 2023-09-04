@@ -15,8 +15,8 @@ Contact your sales representative to enable this feature.
 ## Request URL
 Regardless of the token you want to create, You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
+* **Production**: `https://directtoken.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
+* **Stage**: `https://directtoken.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
 
 Where `{{Merchant Private Key}}` is your merchant identifier.
 
