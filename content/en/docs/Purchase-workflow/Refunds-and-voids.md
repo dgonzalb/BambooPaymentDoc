@@ -46,8 +46,8 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 **Void**
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
+* **Production**: `https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
 **Refund**
 
@@ -78,7 +78,7 @@ The _**refunds**_ operations is only available for purchases with state _Approve
 _To be defined_
 
 ### Request URL
-You must invoke a**POST** request to the following URLs according to your needs.
+You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
