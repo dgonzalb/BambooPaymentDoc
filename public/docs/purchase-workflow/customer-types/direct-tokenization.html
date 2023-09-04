@@ -21,20 +21,20 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
 <title>Direct Tokenization | Bamboo Payment</title><meta property="og:title" content="Direct Tokenization" />
-<meta property="og:description" content="If you&#39;re commerce is **PCI compliance**, this functionality allows you create the tokens for the cards to be used in your Web through API, so you don&#39;t require to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
+<meta property="og:description" content="If your commerce is **PCI-compliant**,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don&#39;t need to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/customer-types/direct-tokenization.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-07-17T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-04T11:11:44-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Direct Tokenization">
-<meta itemprop="description" content="If you&#39;re commerce is **PCI compliance**, this functionality allows you create the tokens for the cards to be used in your Web through API, so you don&#39;t require to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
+<meta itemprop="description" content="If your commerce is **PCI-compliant**,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don&#39;t need to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
 "><meta itemprop="datePublished" content="2023-07-17T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="dateModified" content="2023-09-04T11:11:44-05:00" />
+<meta itemprop="wordCount" content="583">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Direct Tokenization"/>
-<meta name="twitter:description" content="If you&#39;re commerce is **PCI compliance**, this functionality allows you create the tokens for the cards to be used in your Web through API, so you don&#39;t require to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
+<meta name="twitter:description" content="If your commerce is **PCI-compliant**,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don&#39;t need to invoke the [Checkout Form]({{&lt; ref &#34;Checkout-Form.md&#34; &gt;}}). 
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.86164a3f9dac70d8a11a1bfd95bdbaea342e6a75dae0fccf949b27a88c8c92b35aef532fe53f07cf00f3ecf512c373161ee1501566b4c52f65e0c8e10d2264d1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2429d1fe36455c7d7ecc027ccb28f05a6dd9b9f1ff4fcd6a0381b165ff10d021d55602502fc954c3c591e22dab4a8b9d784acc3b27219347c278b61b1bfb7a1e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -846,14 +846,10 @@
   <ul>
     <li><a href="#request-url">Request URL</a></li>
     <li><a href="#setting-the-language-of-the-response-codes">Setting the language of the response codes</a></li>
-    <li><a href="#OTT">Create a One Time Token (OTT)</a>
+    <li><a href="#request-parameters">Request parameters</a>
       <ul>
-        <li><a href="#request-parameters">Request parameters</a></li>
-      </ul>
-    </li>
-    <li><a href="#CT">Create a Commerce Token (CT)</a>
-      <ul>
-        <li><a href="#request-parameters-1">Request parameters</a></li>
+        <li><a href="#OTT">Create a One Time Token (OTT)</a></li>
+        <li><a href="#CT">Create a Commerce Token (CT)</a></li>
       </ul>
     </li>
     <li><a href="#response-parameters">Response parameters</a>
@@ -918,17 +914,25 @@
             
 <div class="td-content">
 	<h1>Direct Tokenization</h1>
-    <div class="lead">If you&rsquo;re commerce is <strong>PCI compliance</strong>, this functionality allows you create the tokens for the cards to be used in your Web through API, so you don&rsquo;t require to invoke the <a href="../../../docs/forms/checkout-form.html">Checkout Form</a>.</div>
+    <div class="lead">If your commerce is <strong>PCI-compliant</strong>,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don&rsquo;t need to invoke the <a href="../../../docs/forms/checkout-form.html">Checkout Form</a>.</div>
 	       
-	<h2 id="request-url">Request URL</h2>
-<p>Regardless of the token you want to create, You must invoke a<strong>POST</strong> request to the following URLs according to your needs.</p>
+	
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text">Contact your sales representative to enable this feature.</p>
+</div>
+
+<h2 id="request-url">Request URL</h2>
+<p>Regardless of the token you want to create, You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://secure.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}</code></li>
 <li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}</code></li>
 </ul>
 <p>Where <code>{{Merchant Private Key}}</code> is your merchant identifier.</p>
 <h2 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h2>
-<p>You can receive the error description by relying on localization features. To do this, you need to send the <code>lang</code> header in your integration, using any of the following languages in <strong>ISO 639-1</strong> format.</p>
+<p>You can receive the error description by relying on localization features. You must send the <code>lang</code> header in your integration using any of the following languages in <strong>ISO 639-1</strong> format to do this.</p>
 <div id="shortTable"></div>
 <table>
 <thead>
@@ -952,16 +956,221 @@
 </tr>
 </tbody>
 </table>
-<h2 id="OTT">Create a One Time Token (OTT)</h2>
-<p>This token allows you to store the card data for unique usage and valid for 10 minutes.</p>
-<h3 id="request-parameters">Request parameters</h3>
-<h2 id="CT">Create a Commerce Token (CT)</h2>
-<p>This token allows you to store the card data and it can process in any account you have.</p>
-<h3 id="request-parameters-1">Request parameters</h3>
-<h2 id="response-parameters">Response parameters</h2>
+<h2 id="request-parameters">Request parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email address of the cardholder.</td>
+</tr>
+<tr>
+<td><code>Pan</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Card number.</td>
+</tr>
+<tr>
+<td><code>CVV</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The security code of the card.</td>
+</tr>
+<tr>
+<td><code>Expiration</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Expiration date printed on the card.</td>
+</tr>
+<tr>
+<td><code>Titular</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the cardholder.</td>
+</tr>
+<tr>
+<td><code>CrossBorderData</code> → <code>TargetCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicates the country of the cardholder. For <em>CrossBorder</em> tokenization, this parameter is mandatory.<br>You can find the list of countries available <a href="../../../docs/payment-methods.html#countries-table-iso-3166-1">here</a>.</td>
+</tr>
+<tr>
+<td><code>CustomerId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Identifier of the customer. If sent, the API generates a payment within the customer with a <em>Commerce Token</em> (CT) for future use.<br>Refer to <a href="../../../docs/purchase-workflow/customer-types/registered-users.html#create-a-customer">create a customer</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="OTT">Create a One Time Token (OTT)</h3>
+<p>This token allows you to store the card data for unique usage and is valid for 10 minutes.</p>
+<h4 id="request-example">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rserrano@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Pan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5275412766556942&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CVV&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;172&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;07/26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Titular&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="CT">Create a Commerce Token (CT)</h3>
+<p>This token allows you to store the card data, which can be processed in any account.</p>
+<h4 id="request-example-1">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rserrano@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Pan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5275412766556942&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CVV&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;172&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;07/26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Titular&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">251179</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="response-parameters">Response parameters</h2>
 <p>Regardless of the token you create, you receive the following parameters in the response.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TokenId</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Represents the registered payment method without exposing its sensitive data.<br>Use this data to carry out payment transactions through the registered card.</td>
+</tr>
+<tr>
+<td><code>IdCommerceToken</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td>Id of the token created. For OT, the id is <code>0</code> as we store it for 10 minutes at maximum.</td>
+</tr>
+<tr>
+<td><code>Created</code></td>
+<td style="text-align:center"><code>date</code></td>
+<td>Date and time of the card tokenization.</td>
+</tr>
+<tr>
+<td><code>Type</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Token type created. It can be <code>OneTime</code> for OT or <code>Commerce</code> for CT.</td>
+</tr>
+<tr>
+<td><code>Brand</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Name associated with the brand of the payment card, for example, <code>VISA</code>.</td>
+</tr>
+<tr>
+<td><code>Owner</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Name of the cardholder.</td>
+</tr>
+<tr>
+<td><code>Last4</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>The last four digits of the card.</td>
+</tr>
+<tr>
+<td><code>Bin</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>The first six digits of the card number. This number identifies the issuing bank.</td>
+</tr>
+<tr>
+<td><code>CardExpMonth</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td>Month of the expiration date.</td>
+</tr>
+<tr>
+<td><code>CardExpYear</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td>Year of the expiration date.</td>
+</tr>
+<tr>
+<td><code>IssuerBank</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Name of the Issuing Bank.</td>
+</tr>
+<tr>
+<td><code>CardType</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Type of the card.</td>
+</tr>
+<tr>
+<td><code>PaymentMediaId</code></td>
+<td style="text-align:center"><code>int</code></td>
+<td>Identifier of the payment method.</td>
+</tr>
+<tr>
+<td><code>AffinityGroup</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Affinity program of the card.</td>
+</tr>
+<tr>
+<td><code>Error</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td>Error that the system can launch during the tokenization process.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="response-example">Response example</h3>
-
+<p><strong>For One Time Token</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TokenId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__OnZr7uB0WcBIxTZDYgelObTuqbROpSxJ4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T12:29:56.0351102&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OneTime&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0015&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardExpMonth&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardExpYear&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CommerceAction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AffinityGroup&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p><strong>For Commerce Token</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TokenId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CT__i10IcFjy3amyaNLK0D4isUI5PXmTO5ytnM5Xdz7VMRE_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">42909</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T12:29:10.4160761&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Commerce&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0015&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;529991&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardExpMonth&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardExpYear&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CommerceAction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AffinityGroup&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -969,9 +1178,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 4, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>Examples for Direct tokenization request and response (aa2bd03)</i>
   </div>
 </div>
 

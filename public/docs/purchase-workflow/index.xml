@@ -110,8 +110,8 @@
 &lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Void&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Refund&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -136,7 +136,7 @@ The _**refunds**_ operations is only available for purchases with state _Approve
 _To be defined_
 
 ### Request URL
-You must invoke a**POST** request to the following URLs according to your needs.
+You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
