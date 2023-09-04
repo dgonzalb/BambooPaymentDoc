@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/purchases/purchase-operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-04T15:40:35-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Operations">
 <meta itemprop="description" content="Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
-<meta itemprop="wordCount" content="2029">
+<meta itemprop="dateModified" content="2023-09-04T15:40:35-05:00" />
+<meta itemprop="wordCount" content="2017">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Operations"/>
 <meta name="twitter:description" content="Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2429d1fe36455c7d7ecc027ccb28f05a6dd9b9f1ff4fcd6a0381b165ff10d021d55602502fc954c3c591e22dab4a8b9d784acc3b27219347c278b61b1bfb7a1e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.18c2fc91043bc06e4253356afa81e5ec4d300bd92c4e17b1fd63dc789efd99c4ecf97a7b4980714d263d2f007ab767b95f2a99d17aa13298ec0b9f53346e88bd.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -977,8 +977,8 @@
 <h4 id="request-url">Request URL</h4>
 <p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/purchase</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/purchase</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase</code></li>
 </ul>
 <h4 id="request-parameters">Request parameters</h4>
 <table>
@@ -1034,16 +1034,10 @@
 <td>Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If <code>false</code>, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the commit and rollback calls.</li><li>If <code>true</code>, the transaction is authorized and captured (committed).</li></ul><br>All <a href="../../../docs/payment-methods.html">payment methods and countries</a> may not support the pre-authorization feature.</td>
 </tr>
 <tr>
-<td><code>CrossBorderData</code></td>
-<td><code>object</code></td>
-<td>No <sup>3</sup></td>
-<td>This object has information related to <em>CrossBorder purchases</em>.</td>
-</tr>
-<tr>
-<td><code>CrossBorderData</code> → <code>TargetCountryISO</code></td>
+<td><code>TargetCountryISO</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>This parameter indicates the country where the payment will be processed.<br>Send the country using <code>ISO-3166-1</code> format</td>
+<td>This parameter indicates the country where the payment will be processed.<br>Send the country using <code>ISO-3166-1</code> format.</td>
 </tr>
 <tr>
 <td><code>MetadataIn</code></td>
@@ -1227,6 +1221,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;10000&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;john@bamboopayment.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1270,8 +1265,8 @@
 <h4 id="request-url-1">Request URL</h4>
 <p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
 </ul>
 <h4 id="request-parameters-1">Request parameters</h4>
 <p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
@@ -1286,10 +1281,10 @@
 <h4 id="request-url-2">Request URL</h4>
 <p>You must invoke a<strong>GET</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/purchase</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/purchase</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase</code></li>
 </ul>
-<p>To get a specific purchase, include in the URL <code>/{{PurchaseID}}</code>. Example: <code>https://secure-api.bamboopayment.com/v1/api/purchase/481561</code>.</p>
+<p>To get a specific purchase, include in the URL <code>/{{PurchaseID}}</code>. Example: <code>https://api.bamboopayment.com/v1/api/purchase/481561</code>.</p>
 <h4 id="request-parameters-2">Request parameters</h4>
 <p>The following parameters are only required when you want to get a list of purchases. Add the <em>PurchaseID</em> to the Request URL when requesting a specific purchase.</p>
 
@@ -1647,9 +1642,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 4, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>Endpoint URL updated (8bfb44a)</i>
   </div>
 </div>
 

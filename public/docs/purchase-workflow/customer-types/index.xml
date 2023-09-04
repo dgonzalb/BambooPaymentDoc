@@ -94,8 +94,8 @@
 &lt;h2 id=&#34;create-a-customer&#34;&gt;Create a Customer&lt;/h2&gt;
 &lt;p&gt;The first step is to create the customer in Bamboo Payment. To do so, you must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
 &lt;table&gt;
@@ -253,8 +253,8 @@
 &lt;p&gt;You can get a customer&amp;rsquo;s information using their Id or email address.&lt;/p&gt;
 &lt;p&gt;To do so, you must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/customer&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -317,8 +317,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;update-a-customer&#34;&gt;Update a customer&lt;/h4&gt;
 &lt;p&gt;To update the information of a customer, you must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Where &lt;code&gt;{{customer-id}}&lt;/code&gt; is the id generated when you created the user. Include in the body, the &lt;a href=&#34;#request-parameters&#34;&gt;parameters&lt;/a&gt; you want to update for the user.&lt;/p&gt;
 &lt;p&gt;As response, you will get the same object returned when &lt;a href=&#34;#response-example&#34;&gt;creating a customer&lt;/a&gt;.&lt;/p&gt;
@@ -594,8 +594,8 @@
 &lt;h2 id=&#34;request-url&#34;&gt;Request URL&lt;/h2&gt;
 &lt;p&gt;Regardless of the token you want to create, You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://directtoken.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://directtoken.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Where &lt;code&gt;{{Merchant Private Key}}&lt;/code&gt; is your merchant identifier.&lt;/p&gt;
 &lt;h2 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Setting the language of the response codes&lt;/h2&gt;

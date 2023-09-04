@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/payment-methods/brazil/br-cards.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-08-31T16:34:55-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-04T15:40:12-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Credit and Debit cards">
 <meta itemprop="description" content="Learn how to integrate your solution to process credit or debit card payments.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T16:34:55-05:00" />
-<meta itemprop="wordCount" content="630">
+<meta itemprop="dateModified" content="2023-09-04T15:40:12-05:00" />
+<meta itemprop="wordCount" content="617">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Credit and Debit cards"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process credit or debit card payments.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2429d1fe36455c7d7ecc027ccb28f05a6dd9b9f1ff4fcd6a0381b165ff10d021d55602502fc954c3c591e22dab4a8b9d784acc3b27219347c278b61b1bfb7a1e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.18c2fc91043bc06e4253356afa81e5ec4d300bd92c4e17b1fd63dc789efd99c4ecf97a7b4980714d263d2f007ab767b95f2a99d17aa13298ec0b9f53346e88bd.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -933,10 +933,10 @@
 <td>The token that identifies the customer’s card.<br>For more information about how to create the token, refer to <a href="../../../docs/purchase-workflow/customer-types.html">Customers</a>.</td>
 </tr>
 <tr>
-<td><code>CrossBorderData</code> → <code>TargetCountryISO</code></td>
+<td><code>TargetCountryISO</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No<sup>*</sup></td>
-<td>Indicate the destination currency.<br><sup>*</sup><em>This field is required for CrossBorder purchases</em>.</td>
+<td style="text-align:center">Yes</td>
+<td>Indicate the destination currency.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Email</code></td>
@@ -1022,9 +1022,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;breno@mail.com.br&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Breno&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1249,9 +1247,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 4, 2023: 
 
- <i>Payment methods update (7c801c5)</i>
+ <i>Request examples updated (9be5c7d)</i>
   </div>
 </div>
 

@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/customer-types/registered-users.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-07-17T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-04T15:40:35-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Registered users">
 <meta itemprop="description" content="Despite the [Anonymous users]({{&lt; ref Anonymous-users.md&gt;}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again.
 "><meta itemprop="datePublished" content="2023-07-17T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
+<meta itemprop="dateModified" content="2023-09-04T15:40:35-05:00" />
 <meta itemprop="wordCount" content="2142">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Registered users"/>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2429d1fe36455c7d7ecc027ccb28f05a6dd9b9f1ff4fcd6a0381b165ff10d021d55602502fc954c3c591e22dab4a8b9d784acc3b27219347c278b61b1bfb7a1e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.18c2fc91043bc06e4253356afa81e5ec4d300bd92c4e17b1fd63dc789efd99c4ecf97a7b4980714d263d2f007ab767b95f2a99d17aa13298ec0b9f53346e88bd.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -924,8 +924,8 @@
 <h2 id="create-a-customer">Create a Customer</h2>
 <p>The first step is to create the customer in Bamboo Payment. To do so, you must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/customer</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/customer</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/customer</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/customer</code></li>
 </ul>
 <h3 id="request-parameters">Request parameters</h3>
 <table>
@@ -1083,8 +1083,8 @@
 <p>You can get a customer&rsquo;s information using their Id or email address.</p>
 <p>To do so, you must invoke a <strong>GET</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/customer</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/customer</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/customer</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/customer</code></li>
 </ul>
 <div id="shortTable"></div>
 <table>
@@ -1147,8 +1147,8 @@
 </span></span></code></pre></div><h4 id="update-a-customer">Update a customer</h4>
 <p>To update the information of a customer, you must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update</code></li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update</code></li>
 </ul>
 <p>Where <code>{{customer-id}}</code> is the id generated when you created the user. Include in the body, the <a href="#request-parameters">parameters</a> you want to update for the user.</p>
 <p>As response, you will get the same object returned when <a href="#response-example">creating a customer</a>.</p>
@@ -1408,9 +1408,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 4, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>Endpoint URL updated (8bfb44a)</i>
   </div>
 </div>
 
