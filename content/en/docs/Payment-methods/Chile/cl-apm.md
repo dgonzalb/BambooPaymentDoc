@@ -22,7 +22,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**106**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -53,9 +53,7 @@ The `Redirection` object and its parameter are not required; nevertheless, you m
     "PaymentMediaId": 106,
     "Amount": 100000,
     "Currency": "CLP",
-    "CrossBorderData": {
-        "TargetCountryISO": "CL"
-    },
+    "TargetCountryISO": "CL",
     "Customer": {
         "Email": "john@mail.com",
         "FirstName": "John"
@@ -227,7 +225,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**107**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -251,9 +249,7 @@ You need to include specific fields for this payment method to work correctly. C
     "PaymentMediaId": 107,
     "Amount":500000,
     "Currency":"CLP",
-    "CrossBorderData" : {
-        "TargetCountryISO" : "CL"
-    },
+    "TargetCountryISO" : "CL",
     "Customer": {
         "Email": "john@bamboopayment.com"
     },

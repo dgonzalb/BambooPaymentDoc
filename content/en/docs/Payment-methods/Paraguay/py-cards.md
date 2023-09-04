@@ -14,7 +14,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |

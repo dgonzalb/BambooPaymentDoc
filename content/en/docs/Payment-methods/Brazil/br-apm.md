@@ -21,7 +21,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**31**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -46,9 +46,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Capture": "true",
     "Amount": 2000,
     "Currency": "BRL",
-    "CrossBorderData": {
-        "TargetCountryISO": "BR"
-    },
+    "TargetCountryISO": "BR",
     "Customer": {
         "Email": "john@bamboopayment.com",
         "BillingAddress": {
@@ -70,7 +68,7 @@ You need to include specific fields for this payment method to work correctly. C
         "AddressNumber": "661",
         "AddressDistrict": "PR"
     },
-    "description": "Pagameto do Brazil, campeon do mondo"
+    "description": "Pagameto do Brazil"
 }
 ```
 
@@ -93,12 +91,12 @@ In the response, you will find the following parameters:
 ```json
 {
     "Response": {
-        "PurchaseId": 1133664,
+        "PurchaseId": 1167187,
         "Created": "2023-08-31T15:44:31.104",
         "TrxToken": null,
         "Order": null,
         "Transaction": {
-            "TransactionID": 1152560,
+            "TransactionID": 1186084,
             "Created": "2023-08-31T15:44:31.104",
             "AuthorizationDate": "",
             "TransactionStatusId": 2,
@@ -127,7 +125,7 @@ In the response, you will find the following parameters:
         "Tip": 0,
         "Installments": 1,
         "Currency": "BRL",
-        "Description": "Pagameto do Brazil, campeon do mondo",
+        "Description": "Pagameto do Brazil",
         "Customer": {
             "CustomerId": 88230,
             "Created": "2022-12-08T11:30:35.933",
@@ -207,7 +205,7 @@ In the response, you will find the following parameters:
         "AdditionalData": null,
         "CustomerUserAgent": null,
         "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1133664",
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1167187",
         "DataUY": {
             "IsFinalConsumer": false,
             "Invoice": null,
@@ -268,7 +266,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**66**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -293,9 +291,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Capture":"true",
     "Amount":2000,
     "Currency":"BRL",
-    "CrossBorderData" : {
-      "TargetCountryIso" : "BR"
-    },
+    "TargetCountryIso" : "BR",
     "Customer": {
         "Email": "john@bamboopayment.com",
         "FirstName" : "John",

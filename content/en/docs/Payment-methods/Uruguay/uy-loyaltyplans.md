@@ -81,8 +81,8 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 ### Consulting the number of points
 To get the number of points available for a user, create a `POST` request to the following URL
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
+* **Production**: `https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 
 Where `{{LoyaltyPlan-ID}}` is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in [Purchase operations]({{< ref Purchase-Operations.md >}}).
 

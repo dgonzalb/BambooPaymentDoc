@@ -25,7 +25,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -52,14 +52,12 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
     "Amount": 100,
     "Order": "ORD1233",
     "Currency": "CLP",
+    "TargetCountryISO": "CL",
     "Installments": 1,
     "Customer": {
         "Email": "jgonzalez@mail.com",
         "FirstName": "Jaime",
         "LastName": "Gonzalez"
-    },
-    "CrossBorderData": {
-        "TargetCountryISO": "CL"
     },
     "Description": "Prueba transaccion API"
 }
@@ -211,7 +209,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**112**_.<br>_Redirection payment is only available for Visa and MasterCard cards_ |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -244,9 +242,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Amount": 2000,
     "Currency": "CLP",
     "Installments": 1,
-    "CrossBorderData": {
-        "TargetCountryISO": "CL"
-    },
+    "TargetCountryISO": "CL",
     "Customer": {
         "Email": "john@bamboopayment.com"
     },

@@ -31,7 +31,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -52,9 +52,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Order": "ORD1",
     "Amount": 2000,
     "Description":"Test transaction",
-    "CrossBorderData": {
-        "TargetCountryISO": "UY"
-    },
+    "TargetCountryISO": "UY",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
@@ -196,7 +194,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -221,9 +219,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Amount":35,
     "Installments":1,
     "Currency":"USD",
-    "CrossBorderData" : {
-        "TargetCountryISO" : "UY"
-    },
+    "TargetCountryISO" : "UY",
     "Description" : "Test Purchase",
     "Customer": {
         "Email": "testuser@mail.com",

@@ -21,7 +21,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**35**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -39,9 +39,7 @@ You need to include specific fields for this payment method to work correctly. C
 {
     "PaymentMediaId": 35,
     "Amount": 5000,
-    "CrossBorderData": {
-        "TargetCountryISO": "MX"
-    },
+    "TargetCountryISO": "MX",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
@@ -228,7 +226,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**30**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -247,9 +245,7 @@ You need to include specific fields for this payment method to work correctly. C
     "PaymentMediaId": 30,
     "Order": "test1005",
     "Amount": 1030,
-    "CrossBorderData": {
-        "TargetCountryISO": "MX"
-    },
+    "TargetCountryISO": "MX",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
@@ -425,7 +421,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**32**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -444,9 +440,7 @@ You need to include specific fields for this payment method to work correctly. C
     "PaymentMediaId": 32,
     "Order": "ORD1001",
     "Amount": 1000000,
-    "CrossBorderData": {
-        "TargetCountryISO": "MX"
-    },
+    "TargetCountryISO": "MX",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },

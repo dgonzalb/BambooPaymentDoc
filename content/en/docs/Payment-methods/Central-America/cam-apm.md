@@ -17,7 +17,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**28**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -37,6 +37,7 @@ You need to include specific fields for this payment method to work correctly. C
     "PaymentMediaId": 28,
     "Amount": 10000,
     "Currency": "CRC",
+    "TargetCountryISO": "CR",
     "Capture": true,
     "Customer": {
         "Email": "john@bamboopayment.com",
@@ -45,9 +46,6 @@ You need to include specific fields for this payment method to work correctly. C
         "PhoneNumber": "12345672",
         "DocNumber": "139899768",
         "DocumentTypeId": 30
-    },
-    "CrossBorderData": {
-        "TargetCountryISO": "CR"
     },
     "Description": "Prueba PuntoXpress"
 }

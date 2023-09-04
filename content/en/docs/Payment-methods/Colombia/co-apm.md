@@ -37,7 +37,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -61,9 +61,7 @@ You need to include specific fields for this payment method to work correctly. C
 {
     "PaymentMediaId": 38,
     "Currency": "COP",
-    "CrossBorderData" : {
-      "TargetCountryIso" : "CO"
-    },
+    "TargetCountryIso" : "CO",
     "MetadataIn" : {
         "PaymentExpirationInMinutes": "7200"
     },
@@ -98,7 +96,6 @@ In the response, you will find the following parameters:
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference returned by the acquirer to identify the order generated. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
-
 
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
 
@@ -258,7 +255,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**67**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -279,9 +276,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Order": "15e04d37-89b7-46de-8cfa-02e4f5607b4f-331331213321",
     "Amount": 1000,
     "Description":"This is a nequi test transaction",
-    "CrossBorderData": {
-        "TargetCountryISO": "CO"
-    },
+    "TargetCountryISO": "CO",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
@@ -480,7 +475,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**67**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -501,9 +496,7 @@ You need to include specific fields for this payment method to work correctly. C
     "Order": "15e04d37-89b7-46de-8cfa-02e4f5607b4f-331331213321",
     "Amount": 1000,
     "Description":"This is a nequi test transaction",
-    "CrossBorderData": {
-        "TargetCountryISO": "CO"
-    },
+    "TargetCountryISO": "CO",
     "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },

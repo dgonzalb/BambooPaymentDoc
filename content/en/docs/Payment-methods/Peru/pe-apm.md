@@ -21,7 +21,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**26**_. |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -44,6 +44,7 @@ You need to include specific fields for this payment method to work correctly. C
         "PaymentExpirationInMinutes": "1440"
     },
     "Currency": "PEN",
+    "TargetCountryISO": "PE",
     "Capture": true,
     "Customer": {
         "Email": "rguerrero@mail.com",
@@ -52,9 +53,6 @@ You need to include specific fields for this payment method to work correctly. C
         "PhoneNumber": "+51|971516229",
         "DocNumber": "46701208",
         "DocumentTypeId": 6
-    },
-    "CrossBorderData": {
-        "TargetCountryISO": "PE"
     },
     "Description": "Prueba Peru efectivo"
 }
