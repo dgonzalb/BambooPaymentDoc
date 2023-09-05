@@ -37,7 +37,7 @@ You don't need to configure a request to invoke this API.
 }
 ```
 <br>
-Where
+Where:
 
 | Parameter | Description |
 |---|---|
