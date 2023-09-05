@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/getting-started/error-codes.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-05T15:51:18-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Error Codes and descriptions">
 <meta itemprop="description" content="This article provides information about the error codes and the possible actions you can take.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
+<meta itemprop="dateModified" content="2023-09-05T15:51:18-05:00" />
 <meta itemprop="wordCount" content="2245">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Error Codes and descriptions"/>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.3d3426965bc841265410d9de6f2a0c673e5c7aef90f78725f3827dd888b9b6f21135c06856f925c89d1bb97167a768c92117cd440753cbccf014bbf1c30af344.json"
+  data-offline-search-index-json-src="../../offline-search-index.687d9e6832742f88dadc8412654d1f618081a1f09c6d953e937c74c090b5b5b416984b64503097156f540452b6936539c26bdd32f596d9d281bb19945ba454d3.json"
   data-offline-search-base-href="../../"
 >
 
@@ -1033,7 +1033,7 @@
 <td><code>TK004</code></td>
 <td>INVALID_SESSION_IDENTIFIER</td>
 <td>An invalid session ID was sent in a token request.</td>
-<td><a href="../../docs/purchase-workflow/customer-types.html">Regenerate the token</a> and retry the token request.</td>
+<td><a href="../../docs/purchase-workflow/customer-types.html">Regenerate the token</a> and retry the transaction.</td>
 </tr>
 <tr>
 <td><code>TK005</code></td>
@@ -1045,13 +1045,13 @@
 <td><code>TK006</code></td>
 <td>EXPIRED_TOKEN</td>
 <td>The token (One-Time type) has already been used or is expired.</td>
-<td><a href="../../docs/purchase-workflow/customer-types/anonymous-users.html#capture-the-card-data">Regenerate the token (OTT)</a> and retry the token request.</td>
+<td><a href="../../docs/purchase-workflow/customer-types/anonymous-users.html#capture-the-card-data">Regenerate the token (OTT)</a> and retry the transaction.</td>
 </tr>
 <tr>
 <td><code>TK007</code></td>
 <td>INVALID_PAYMENT_MEDIA</td>
 <td>Error with the information of the payment method.</td>
-<td>The <code>PaymentMediaId</code> Check the payment method&rsquo;s value in the respective <a href="../../docs/payment-methods.html">country&rsquo;s list</a>.</td>
+<td>The <code>PaymentMediaId</code> is not correct. Check the payment method&rsquo;s value in the respective <a href="../../docs/payment-methods.html">country&rsquo;s list</a>.</td>
 </tr>
 <tr>
 <td><code>TK008</code></td>
@@ -1069,7 +1069,7 @@
 <td><code>TK010</code></td>
 <td>INVALID_COMMERCE_TOKEN</td>
 <td>Commerce Token is invalid.</td>
-<td><a href="../../docs/purchase-workflow/customer-types/registered-users.html">Regenerate the token (CT)</a> and retry the token request.</td>
+<td><a href="../../docs/purchase-workflow/customer-types/registered-users.html">Regenerate the token (CT)</a> and retry the transaction.</td>
 </tr>
 <tr>
 <td><code>TK011</code></td>
@@ -1768,9 +1768,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 5, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>Minor fixes in the error messages (18b4b7e)</i>
   </div>
 </div>
 
