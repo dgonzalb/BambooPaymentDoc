@@ -29,7 +29,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -213,7 +213,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -470,7 +470,7 @@ Use the following cards to simulate the different status of the purchase. These 
 | Redcompra | `4511346660037060` | `123` | `10/29` | Debit |
 
 {{% alert title="Info note" color="info"%}}
-If the RUT and password are requested, please use a valid RUT (for example **11.111.111-1**) and password **123**.
+If the RUT and password are requested, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
 {{% /alert %}}
 
 ### For rejected purchases

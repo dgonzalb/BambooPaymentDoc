@@ -36,7 +36,7 @@ This section shows the available payment methods, currencies, and related inform
 | **Minimum** | MXN 1 | MXN 1 | MXN 0,01 |
 | **Maximum** | MXN 10.000 | MXN 29.999,99 | - |
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The maximum amount for Cash payment depends on the cash payment office.
 * For _7Eleven_, and _Farmacias del Ahorro_ is MXN 5.000,00.
 * For _Farmacias Benavides_, _Walmart Express_, _Circle K_, and _OXXO_ is MXN 10.000,00.

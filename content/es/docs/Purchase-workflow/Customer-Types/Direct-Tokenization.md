@@ -8,7 +8,7 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Contact your sales representative to enable this feature.
 {{% /alert %}}
 
@@ -88,7 +88,7 @@ Regardless of the token you create, you receive the following parameters in the 
 | `IdCommerceToken` | `int` | Id of the token created. For OT, the id is `0` as we store it for 10 minutes at maximum. |
 | `Created`| `date` | Date and time of the card tokenization.  |
 | `Type` | `string` | Token type created. It can be `OneTime` for OT or `Commerce` for CT. |
-| `Brand` | `string` | Name associated with the brand of the payment card, for example, `VISA`. | 
+| `Brand` | `string` | Name associated with the brand of the payment card, por ejemplo, `VISA`. | 
 | `Owner` | `string` | Name of the cardholder. | 
 | `Last4` | `string` | The last four digits of the card. | 
 | `Bin` | `string` | The first six digits of the card number. This number identifies the issuing bank. | 

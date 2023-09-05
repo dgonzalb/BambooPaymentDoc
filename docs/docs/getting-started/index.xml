@@ -29,7 +29,7 @@
 &lt;p&gt;An API (from the acronym &lt;strong&gt;A&lt;/strong&gt;pplication &lt;strong&gt;P&lt;/strong&gt;rogramming &lt;strong&gt;I&lt;/strong&gt;nterface) is a set of methods and definitions that allows you to interact with a system through some input data. In our case, we developed an API to enable you to process a transaction&amp;rsquo;s information to receive the related response.&lt;/p&gt;
 &lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
 &lt;p&gt;Authentication is the procedure to validate the identity of a merchant. All merchants integrated with our platform receive keys for each associated account, &lt;em&gt;Private Account Key&lt;/em&gt;, and &lt;em&gt;Public Account Key&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Each of these keys identifies the merchant account in our system in each transaction performed to determine whether the merchant is authorized to operate and the integration conditions (For example, what payment methods the merchant has enabled).&lt;/p&gt;
+&lt;p&gt;Each of these keys identifies the merchant account in our system in each transaction performed to determine whether the merchant is authorized to operate and the integration conditions (Por ejemplo, what payment methods the merchant has enabled).&lt;/p&gt;
 &lt;h3 id=&#34;private-account-key&#34;&gt;Private Account Key&lt;/h3&gt;
 &lt;p&gt;The Private Account Key is a unique identifier attached to each private request (server to server) where critical operations are available, such as initiating or confirming a transaction, accessing merchant transaction information, creating or deleting subscription plans, etc.&lt;/p&gt;
 
@@ -74,7 +74,7 @@
 &lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt;, often abbreviated as &lt;em&gt;FX&lt;/em&gt;, represents the prevailing rate for converting one country&amp;rsquo;s currency into another. Our platform updates this rate regularly under the regulations of the destination country.&lt;/p&gt;
 &lt;h2 id=&#34;merchant-and-accounts&#34;&gt;Merchant and accounts&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;Merchant&lt;/em&gt; is a business that hires Bamboo Payment to receive electronic payments using any of the models available.&lt;/p&gt;
-&lt;p&gt;An &lt;em&gt;Account&lt;/em&gt; is the segmentation of the merchant&amp;rsquo;s business. For example:&lt;/p&gt;
+&lt;p&gt;An &lt;em&gt;Account&lt;/em&gt; is the segmentation of the merchant&amp;rsquo;s business. Por ejemplo:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Processing countries&lt;/li&gt;
 &lt;li&gt;Branches&lt;/li&gt;
@@ -140,9 +140,9 @@
         &lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
 &lt;p&gt;Refer to this section to learn some important aspects of the basic data types of Bamboo Integration.&lt;/p&gt;
 &lt;h3 id=&#34;string&#34;&gt;String&lt;/h3&gt;
-&lt;p&gt;It&amp;rsquo;s a set of characters that can contain any Unicode character. You can define a maximum length for this data type using square brackets; for example, &lt;code&gt;string[30]&lt;/code&gt; means that the string can contain a maximum of 30 characters. If a string has more characters than the maximum defined, it will be truncated, and processing will continue.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s a set of characters that can contain any Unicode character. You can define a maximum length for this data type using square brackets; por ejemplo, &lt;code&gt;string[30]&lt;/code&gt; means that the string can contain a maximum of 30 characters. If a string has more characters than the maximum defined, it will be truncated, and processing will continue.&lt;/p&gt;
 &lt;h3 id=&#34;numeric&#34;&gt;Numeric&lt;/h3&gt;
-&lt;p&gt;Refers to an integer value. You can define a maximum length for this data type using square brackets; for example, &lt;code&gt;Numeric[3]&lt;/code&gt; means that the number can have a maximum of 3 digits. If the data has a value greater than the specification, an error will be returned.&lt;/p&gt;
+&lt;p&gt;Refers to an integer value. You can define a maximum length for this data type using square brackets; por ejemplo, &lt;code&gt;Numeric[3]&lt;/code&gt; means that the number can have a maximum of 3 digits. If the data has a value greater than the specification, an error will be returned.&lt;/p&gt;
 &lt;h3 id=&#34;amount&#34;&gt;Amount&lt;/h3&gt;
 &lt;p&gt;Refers to a &lt;code&gt;Numeric&lt;/code&gt; field that includes decimals to express the value of a transaction.
 These fields are always expressed with the integer part plus two decimals without punctuation marks between them.&lt;/p&gt;
@@ -219,7 +219,7 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;p&gt;This data type is a logical value (&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;).&lt;/p&gt;
 &lt;h3 id=&#34;transactionstatus&#34;&gt;TransactionStatus&lt;/h3&gt;
 &lt;p&gt;Indicates the final status of a transaction.&lt;/p&gt;
-&lt;p&gt;Possible values:&lt;/p&gt;
+&lt;p&gt;Posibles valores:&lt;/p&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -257,7 +257,7 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;/table&gt;
 &lt;h3 id=&#34;actiontype&#34;&gt;ActionType&lt;/h3&gt;
 &lt;p&gt;Indicates the type of action to be performed by the merchant. This data type is useful when processing purchases using the &lt;em&gt;Redirect flow&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Possible values:&lt;/p&gt;
+&lt;p&gt;Posibles valores:&lt;/p&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1379,7 +1379,7 @@ data-postman-collection-url=&#34;entityId=25667318-ec85f9ca-5d5d-4eaa-8538-94f17
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TR002&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;INVALID_TRANSACTION_STATE&lt;/td&gt;
-&lt;td&gt;The transaction associated with the purchase is in a state that does not allow the execution of the current operation. This error occurs, for example, when you want to perform a &lt;em&gt;Commit&lt;/em&gt; operation on a Purchase that is already authorized or rejected.&lt;/td&gt;
+&lt;td&gt;The transaction associated with the purchase is in a state that does not allow the execution of the current operation. This error occurs, por ejemplo, when you want to perform a &lt;em&gt;Commit&lt;/em&gt; operation on a Purchase that is already authorized or rejected.&lt;/td&gt;
 &lt;td&gt;Contact &lt;a href=&#34;mailto:merchantsupport@bamboopayment.com&#34;&gt;Bamboo support&lt;/a&gt; for more information.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1457,7 +1457,7 @@ data-postman-collection-url=&#34;entityId=25667318-ec85f9ca-5d5d-4eaa-8538-94f17
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TR015&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;ACQUIRER_REVIEW_NEEDED&lt;/td&gt;
-&lt;td&gt;The Acquirer suggests the manual review of the transaction. For example, on suspicion of fraud.&lt;/td&gt;
+&lt;td&gt;The Acquirer suggests the manual review of the transaction. Por ejemplo, on suspicion of fraud.&lt;/td&gt;
 &lt;td&gt;Contact &lt;a href=&#34;mailto:merchantsupport@bamboopayment.com&#34;&gt;Bamboo support&lt;/a&gt; for more information.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;

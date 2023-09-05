@@ -26,7 +26,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/chile.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -73,7 +73,7 @@ The `Redirection` object and its parameter are not required; nevertheless, you m
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the _**Khipu**_ app.
 
 {{% alert title="Info" color="info"%}}
-If the RUT and password are requested during testing, please use a valid RUT (for example **11.111.111-1**) and password **123**.
+If the RUT and password are requested during testing, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
 {{% /alert %}}
 
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
@@ -229,7 +229,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/Chile.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/Chile.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |

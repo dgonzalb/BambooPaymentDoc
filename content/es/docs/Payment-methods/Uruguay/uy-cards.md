@@ -18,7 +18,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/uruguay.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | Yes | Customer's Country. |
@@ -253,7 +253,7 @@ When generating valid card data for testing, you must first establish which acqu
 ### Determination of BIN
 When setting up an acquirer, the card's BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with the FirstData acquirer (which is a local MasterCard acquirer in Uruguay), the BIN of the generated card should adhere to the following format: `^ 5 \ [1-5] \ [0-9]*`
 
-This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. For example, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
+This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. Por ejemplo, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
 
 | BIN (format) | Brand | Notes |
 |--------------|-------|-------|

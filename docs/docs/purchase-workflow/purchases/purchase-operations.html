@@ -1000,7 +1000,7 @@
 <td><code>Currency</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>Currency of the purchase, according to ISO-4217. Find the possible values the <a href="#">Currencies</a> table.</td>
+<td>Currency of the purchase, according to ISO-4217. Find the posibles valores the <a href="#">Currencies</a> table.</td>
 </tr>
 <tr>
 <td><code>Installments</code></td>
@@ -1144,7 +1144,7 @@
 <td><code>Customer</code> → <code>DocumentTypeId</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td>Customer document type. Find the possible values in the <a href="#">Document types</a> table.</td>
+<td>Customer document type. Find the posibles valores in the <a href="#">Document types</a> table.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocNumber</code></td>
@@ -1174,7 +1174,7 @@
 <td><code>AdditionalData</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td>You can add additional information to the transaction (For example a <code>Key:Value</code> data list).<br>We return this information processing the purchase each time you consult the purchase.</td>
+<td>You can add additional information to the transaction (Por ejemplo a <code>Key:Value</code> data list).<br>We return this information processing the purchase each time you consult the purchase.</td>
 </tr>
 <tr>
 <td><code>CustomerUserAgent</code></td>
@@ -1258,7 +1258,7 @@
 <p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
 <p>The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.</p>
 <h5 id="request-example-1">Request example</h5>
-<p>You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:</p>
+<p>You must include the new amount in the request to confirm a purchase with a lower amount than the original. Por ejemplo:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
@@ -1433,7 +1433,7 @@
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code></td>
 <td><code>object</code></td>
-<td>Additional fields returned by each payment method or acquirer to perform the following steps.<br>For example, this object can have the URL to where you need to redirect the customer or the QR image that has to be scanned by your customer.</td>
+<td>Additional fields returned by each payment method or acquirer to perform the following steps.<br>Por ejemplo, this object can have the URL to where you need to redirect the customer or the QR image that has to be scanned by your customer.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>CrossBorderDataResponse</code></td>

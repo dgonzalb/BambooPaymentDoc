@@ -23,9 +23,9 @@ The first step is to create the customer in Bamboo Payment. To do so, you must i
 | `Email` | `string` | Yes | Customer email address. |
 | `FirstName` | `string` | Yes | Customer name. |
 | `LastName` | `string` | Yes | Customer last name. |
-| `DocumentTypeId` | `string` | Yes | Customer document type. Find the possible values in the [Document types](#) table. |
+| `DocumentTypeId` | `string` | Yes | Customer document type. Find the posibles valores in the [Document types](#) table. |
 | `DocNumber` | `string` | Yes | Customer document Number. |
-| `Owner` | `string` | No | It determines whether the merchant is anonymous or if the user, or us, registered it.<br>The possible values are:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value</li><li>_Anonymous_</li></ul>|
+| `Owner` | `string` | No | It determines whether the merchant is anonymous or if the user, or us, registered it.<br>The posibles valores are:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value</li><li>_Anonymous_</li></ul>|
 | `PhoneNumber` | `string` | Yes | Customer contact telephone number. |
 | `BillingAddress` | `object` | Yes | This parameter is the customer's billing address. |
 | `BillingAddress`→`AddressID` | `integer` | Yes | Address Identifier. |
@@ -294,7 +294,7 @@ Response example that includes a **PaymentProfile**:
 Since the user is not registered in your commerce, you must invoke the method to [create the token for registered users]({{< ref "Direct-Tokenization.md" >}}#CT).
 
 
-{{% alert title="Note" color="warning"%}}
+{{% alert title="Nota" color="warning"%}}
 You should keep the information of the _CommerceToken_ private because it represents a captured card that anyone can use for multiple transactions.
 {{% /alert %}}
 
@@ -412,7 +412,7 @@ Example of the function for handling notifications:
 ```
 <br>
 
-The `ProcessStatus` field of the received notification will determine the final state of the process. The possible values are:
+The `ProcessStatus` field of the received notification will determine the final state of the process. The posibles valores are:
 
 * **OK** (value 1) – The process finished successfully.
 * **Pending** (value 2) – The process is still pending.

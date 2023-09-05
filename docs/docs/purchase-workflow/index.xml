@@ -39,7 +39,7 @@
         &lt;p&gt;Depending on the contract you have signed with &lt;em&gt;Bamboo Payment&lt;/em&gt; (&lt;a href=&#34;../../docs/getting-started/concepts.html#gateway-model&#34;&gt;Gateway&lt;/a&gt; or &lt;a href=&#34;concepts.html#payfac-model&#34;&gt;Payfac&lt;/a&gt; model) and the countries where you process, you can create Local or CrossBorder purchases.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;em&gt;Local purchase&lt;/em&gt; refers to those in which the currency of the payer and the currency of your store are equal. When your store and the buyer are in Uruguay, the currency for the purchase and the amount you receive will be in &lt;strong&gt;UYU&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;A &lt;em&gt;CrossBorder purchase&lt;/em&gt; refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. For example, if your store is in Uruguay, and the buyer is in Colombia, the purchase will be in &lt;strong&gt;COP&lt;/strong&gt;, but you receive the amount in &lt;strong&gt;UYU&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;A &lt;em&gt;CrossBorder purchase&lt;/em&gt; refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. Por ejemplo, if your store is in Uruguay, and the buyer is in Colombia, the purchase will be in &lt;strong&gt;COP&lt;/strong&gt;, but you receive the amount in &lt;strong&gt;UYU&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Refer to the following topics to learn the operations you can perform using the Purchase API.&lt;/p&gt;
 
@@ -118,7 +118,7 @@
 &lt;p&gt;Request body is not required to rollback a purchase. If you don&amp;rsquo;t send any request the pre-authorized purchase will be voided with its original amount.&lt;/p&gt;
 &lt;p&gt;The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.&lt;/p&gt;
 &lt;h4 id=&#34;request-example&#34;&gt;Request example&lt;/h4&gt;
-&lt;p&gt;To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:&lt;/p&gt;
+&lt;p&gt;To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. Por ejemplo:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;

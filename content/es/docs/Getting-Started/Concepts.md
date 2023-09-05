@@ -1,116 +1,71 @@
 ---
-title: "Concepts"
-linkTitle: "Concepts"
+title: "Conceptos"
+linkTitle: "Conceptos"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Understand the concepts behind any integration with Bamboo Payments.
+  Entienda los conceptos detrás de cualquier integración con Bamboo Payments.
 weight: 10
 ---
 
-## Acquirer
-An acquirer is a payment facilitator that allows you to perform digital payments. Furthermore, the acquirer is responsible for the transactions and manages the settlement to your banking account.
+## Adquirente {#acquirer}
+Un adquirente es un facilitador de pagos que le permite realizar pagos electrónicos. Además, el adquirente es responsable de las transacciones y maneja la liquidación a su cuenta bancaria.
 
 ## API
-An API (from the acronym **A**pplication **P**rogramming **I**nterface) is a set of methods and definitions that allows you to interact with a system through some input data. In our case, we developed an API to enable you to process a transaction's information to receive the related response.
+Una API (del acrónimo en inglés **A**pplication **P**rogramming **I**nterface, Interfaz de programación de aplicaciones) es un conjunto de métodos y definiciones que permite interactuar con un sistema a través de unos datos de entrada. En nuestro caso, desarrollamos una API para permitirle procesar la información de una transacción para recibir la respuesta relacionada.
 
-## Authentication
-Authentication is the procedure to validate the identity of a merchant. All merchants integrated with our platform receive keys for each associated account, _Private Account Key_, and _Public Account Key_.
+## Ambiente {#environment}
+El ambiente es un conjunto de software y recursos que le permite procesar las transacciones. El ambiente contiene información real o de prueba dependiendo de su tipo.
 
-Each of these keys identifies the merchant account in our system in each transaction performed to determine whether the merchant is authorized to operate and the integration conditions (For example, what payment methods the merchant has enabled).
+Nuestra plataforma tiene dos ambientes separados: `Stage` y `Production`.
+
+### Stage
+Este ambiente le permite realizar transacciones de prueba. Aquí, las transacciones nunca llegan a los sistemas reales de los proveedores de métodos de pago. Es una forma segura de probar tareas y flujos.
+
+* URL base: `https://api.stage.bamboopayment.com`.
+
+### Production
+Este ambiente le permite realizar transacciones **reales**, las cuales son procesadas por los sistemas de medios de pago reales. Antes de empezar a procesar transacciones en este ambiente, recomendamos probar en `Stage`.
+
+* URL base: `https://api.bamboopayment.com`.
+
+{{% alert title="Nota" color="info"%}}
+Nuestra documentación usa `{environment_api}` para referirse a las URLs donde están expuestos los servicios. Debe sustituir la URL correspondiente en su ambiente operativo.
+{{% /alert %}}
+
+## Autenticación {#authentication}
+La autenticación es el procedimiento para validar la identidad de un comercio. Todos los comercios integrados con nuestra plataforma reciben llaves por cada cuenta asociada: la _Private Account Key_ y la _Public Account Key_.
+
+Cada una de estas llaves identifica la cuenta de comercio en nuestro sistema en cada transacción realizada para determinar si el comercio está autorizado para operar y sus condiciones de integración (Por ejemplo, qué medios de pago tiene activos).
 
 ### Private Account Key
-The Private Account Key is a unique identifier attached to each private request (server to server) where critical operations are available, such as initiating or confirming a transaction, accessing merchant transaction information, creating or deleting subscription plans, etc.
+La llave privada del comercio (Private Account Key) es un identificador único adjuntado a cada request privado (server to server) donde están disponibles las operaciones críticas, como iniciar o confirmar una transacción, acceder a la información de las transacciones del comercio, crear o eliminar planes de suscripción, etc.
 
-{{% alert title="Important" color="warning"%}}
-You must not share the _Private Account Key_ or publicly expose it at any time to avoid compromising the security of the integration. **It is your responsibility to keep it safe**.
+{{% alert title="Importante" color="warning"%}}
+No debe compartir esta _Private Account Key_ o exponerla públicamente en ningún momento para evitar comprometer la seguridad de la integración. **Es su responsabilidad mantenerla segura**.
 {{% /alert %}}
 
 ### Public Account Key
-The Public Account key is a unique identifier that must be attached to each public request (made from the web interface) for query operations or data capture requests.
+La llave  pública de comercio (Public Account key) es un identificador único que debe adjuntarse a cada request público (lanzado desde una interfaz web) para operaciones de consulta o solicitud de captura de datos.
 
-Furthermore, you also use this key when you invoke the `PWCheckout` Javascript library.
+Además, puede utilizarse para invocar la librería de Javascript `PWCheckout`.
 
 ## Checkout
-The checkout is the form where customers select the payment method they want to use to complete the payment. According to the payment method, this form allows you to collect its information and send it to process the transaction.
+El checkout es el formulario donde sus clientes seleccionan el medio de pago que quieren utilizar para completar el pago. De acuerdo con el método seleccionado, este formulario le permite capturar su información y enviarla para procesar la transacción.
 
 ## CVV
-CVV stands for _**C**ard **V**erification **V**alue_. It is a three- or four-digit security code for credit or debit cards. The CVV is an additional security measure to verify that the person making an online or over-the-phone transaction has physical possession of the card.
+CVV significa _**C**ard **V**erification **V**alue_ (Código Valor de Validación o Verificación). Es un código de seguridad de tres o cuatro dígitos de las tarjetas crédito o débito. El CVV es una medida de seguridad adicional para verificar que la persona que está haciendo la transacción en línea tiene la posesión física de la tarjeta.
 
-## Environment
-The Environment is the set of software and resources that allows you to process the transactions. The environment has real or test data and information depending on its type. 
+## Formulario
+Un _Formulario_ es un componente web que le permite adjuntar un conjunto de campos para tokenizar una tarjeta o realizar compras con un método de pago. Para más información, consulte [Formularios](../forms.html).
 
-Our platform has two separate environments: `Stage` and `Production`.
+## Identificador Único (UniqueID) {#UniqueID}
+El Identificador Único le permite evitar transacciones duplicadas, como las operaciones de compra, cuando se produce un fallo al obtener la respuesta de Bamboo y se vuelve a intentar el request.
 
-### Stage
-This environment allows you to perform testing tasks. Here, the transactions never reach the real systems of the payment method providers. It's a safe way to try out tasks and flows.
+El objetivo del Identificador Único es identificar la transacción, y en caso de que se produzca un fallo en la conexión y la transacción sea aprobada en nuestro sistema, nuestra API responde con el resultado de la compra procesada anteriormente, evitando la creación de una nueva.
 
-* Base URL: `https://api.stage.bamboopayment.com`.
+El parámetro `UniqueID` no es obligatorio; no obstante, se recomienda incluirlo en cada request. Puede definir cualquier valor alfanumérico siempre que no lo utilice en otras transacciones.
 
-### Production
-This environment enables you to carry out **real** transactions, which the actual system of your payment methods processes. Before you begin processing transactions in this environment, we highly recommend testing in `Stage`.
-
-* Base URL: `https://api.bamboopayment.com`.
-
-{{% alert title="Note" color="info"%}}
-Our documentation uses `{environment_api}` to denote the URLs where the services are exposed. You should substitute this with the URL that corresponds to your operational environment.
-{{% /alert %}}
-
-## Form
-A _Form_ is a web component that allows you to embed a set of fields to tokenize a card or perform a purchase using a payment method. For more information, refer to [Forms](../forms.html).
-
-## FX Service
-_Foreign Exchange_, often abbreviated as _FX_, represents the prevailing rate for converting one country's currency into another. Our platform updates this rate regularly under the regulations of the destination country.
-
-## Merchant and accounts
-A _Merchant_ is a business that hires Bamboo Payment to receive electronic payments using any of the models available.
-
-An _Account_ is the segmentation of the merchant's business. For example:
-
-* Processing countries
-* Branches
-* Business Lines
-* Payment methods
-* Merchant codes provided by card processors
-* Business 
-
-By default, a merchant who hires Bamboo System receives a _**Merchant Identificator**_ and an _**Account**_ that allows them to process transactions. Then, you can create as many accounts as needed to meet business requirements.
-
-{{% alert title="Note" color="info"%}}
-For settlement and billing purposes, Bamboo Payment will consider the total of the transactions made by a merchant's accounts.
-{{% /alert %}}
-
-### Crossboder merchant
-A _Crossboder merchant_ is a business situated outside the processing country. For instance, a company that is legally established in the United States but conducts its operations in Uruguay, Argentina, and Brazil.
-
-These merchants process under the [Payfac model](#payfac-model) and can process in **USD** or local currency.
-
-### Local merchant
-A _Local merchant_ is a business situated in the processing country.
-
-These merchants can process under the [Payfac](#payfac-model) or [Gateway models](#gateway-model) using local currency.
-
-## Gateway model
-In the _Gateway model_, the acquirer or payment method pays directly to the merchant's accounts. The merchant and acquirer (or payment method) implement their settlement process in this model.
-
-## Payfac model
-Refers to a _Payment Facilitator_ model, in which the merchant is a Bamboo sub-merchant with whom they sign a commercial agreement. For settlement in this model, the acquirer or payment facilitator makes payment to Bamboo, and Bamboo pays the merchant.
-
-## Tenant
-A _Tenant_ refers to the processing channel in Bamboo, which can be Crossborder (operates in multiple countries and uses the conversion rate) or local.
-
-## Tokenization
-Regarding data security, tokenization involves substituting a sensitive element with its non-sensitive counterpart. This non-sensitive element, the token, is produced through tokenization. This token holds no inherent value and lacks significance except for the entity responsible for its creation. In the unfortunate event of a security breach leading to the theft of these numbers, they hold no utility for the unauthorized party, as they cannot be exploited for their purposes.
-
-Since the _token_ is a reference or identifier assigned to a stored card by the system, it is unique for each pair of "merchant/token"; when a customer registers their card with two different merchants, each merchant will receive an additional _token_. This makes it impossible for a merchant to use the _tokens_ from one customer for any other purpose.
-
-## Unique Identifier (UniqueID) {#UniqueID}
-The Unique Identifier allows you to avoid duplicate transactions, such as purchase operations, when there is a failure while getting the response from Bamboo and you retry the request.
-
-The goal of the Unique Identifier is to identify the transaction, and in case of a connection failure and the transaction is approved in our system, our API responds with the result of the previously processed purchase. It avoids the creation of a new one.
-
-The `UniqueID` parameter is not required; nevertheless, it is strongly recommended to include it in each request. You can define any alphanumeric value as long as you don't use it in other transactions.
-
-Example:
+Ejemplo:
 
 ```json
 {
@@ -126,3 +81,20 @@ Example:
   "Capture": false
 }
 ```
+
+## Modelo Gateway {#gateway-model}
+En el _Modelo Gateway_, el adquirente o medio de pago paga directamente a las cuentas del comercio. En este modelo, el comercio y el adquirente (o medio de pago) implementan su proceso de liquidación.
+
+## Modelo Payfac {#payfac-model}
+Se refiere al modelo de _Facilitador de Pagos_, en el cual, el comercio es un subcomercio de Bamboo con el que firma un acuerdo comercial. Para la liquidación, el adquirente o el medio de pago paga a Bamboo y Bamboo le paga al comercio.
+
+## Servicio de FX {#fx-service}
+El cambio de divisas, a menudo abreviado como _FX_ (Foreign Exchange), representa el tipo de cambio vigente para convertir la moneda de un país en otra. Nuestra plataforma actualiza periódicamente este tipo de cambio según la normativa del país de destino.
+
+## Tenant
+Un _Tenant_ se refiere al canal de procesamiento de Bamboo, el cual puede ser Crossborder (opera en múltiples países y usa la tasa de conversión) o local.
+
+## Tokenización {#tokenization}
+En cuanto a la seguridad de los datos, la tokenización consiste en sustituir un elemento sensible por su homólogo no sensible. Este elemento no sensible, el token, se produce mediante la tokenización. Este token no tiene ningún valor inherente y carece de significado excepto para la entidad responsable de su creación. En el caso de una brecha de seguridad que conduzca al robo de estos números, no tienen ninguna utilidad para la parte no autorizada, ya que no pueden ser explotados para sus fines.
+
+Dado que el _token_ es una referencia o identificador que el sistema asigna a una tarjeta almacenada, es único para cada par de "comercio/token"; cuando un cliente registra su tarjeta en dos comercios diferentes, cada comercio recibirá un _token_ adicional. Esto hace imposible que un comercio utilice los _tokens_ de un cliente para otro fin.

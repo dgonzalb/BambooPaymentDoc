@@ -948,7 +948,7 @@
 <td><code>Customer</code> → <code>DocumentTypeId</code></td>
 <td style="text-align:center"><code>numeric</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../docs/payment-methods/uruguay.html#document-types">Document types table</a> to see the possible values.</td>
+<td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../docs/payment-methods/uruguay.html#document-types">Document types table</a> to see the posibles valores.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocNumber</code></td>
@@ -1290,7 +1290,7 @@
 <p>When generating valid card data for testing, you must first establish which acquirer you want to test and what type of test you want to perform.</p>
 <h3 id="determination-of-bin">Determination of BIN</h3>
 <p>When setting up an acquirer, the card&rsquo;s BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with the FirstData acquirer (which is a local MasterCard acquirer in Uruguay), the BIN of the generated card should adhere to the following format: <code>^ 5 \ [1-5] \ [0-9]*</code></p>
-<p>This format means it must start with the number <strong>5</strong>; the second number must be between 1 and 5, then any other number is accepted. For example, the BIN to test can be <code>510000</code>. The valid Bines in the system and their related acquirer are listed below.</p>
+<p>This format means it must start with the number <strong>5</strong>; the second number must be between 1 and 5, then any other number is accepted. Por ejemplo, the BIN to test can be <code>510000</code>. The valid Bines in the system and their related acquirer are listed below.</p>
 <table>
 <thead>
 <tr>

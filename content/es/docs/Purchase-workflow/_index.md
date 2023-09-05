@@ -15,7 +15,7 @@ You can use two different workflows to authorize a purchase:
 * API
 * Redirect
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Flow type depends on each payment method. It’s specified in the [payment methods table by country](/docs/getting-started/payment-methods.html) in the column _**FLOW**_.
 {{% /alert %}}
 

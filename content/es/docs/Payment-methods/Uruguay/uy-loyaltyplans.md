@@ -37,7 +37,7 @@ Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{
 | `TrxToken` | `string` | Yes | Token generated as explained in [Token request](#token-request). |
 | `Order` | `string` | Yes | Order number of the purchase. |
 | `Amount` | `number` | No | Amount of the purchase. Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it.<br>If you must include decimals in the amount, concatenate the decimal places without de decimal point. Example  `12,25` > `1225`. |
-| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the possible values in the [Currencies](/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
+| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the posibles valores in the [Currencies](/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
 | `Capture` | `boolean` | Yes | Send `true` in this parameter as the Loyalty plan purchases don't support Pre-authorization. |
 | `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan. |
 | `LoyaltyPlan` → `Amount` | `numeric` | Yes | Total of points to redeem. |

@@ -15,7 +15,7 @@ When a buyer performs a purchase, the amount of it can be modified for several r
 * Taxes
 * etc.
 
-For example, in Argentina there are different taxes that affect the final amount and, as a consequence, the merchant cannot show the real amount that will be charged until the purchase is completed.
+Por ejemplo, in Argentina there are different taxes that affect the final amount and, as a consequence, the merchant cannot show the real amount that will be charged until the purchase is completed.
 
 As a solution, we created a tool that allows the merchant to preview the amount that the customer will be charged so that they can inform it prior to executing the purchase.
 
@@ -147,7 +147,7 @@ Next, we explain the sub-parameters of the `TaxDetails` object
 | `TaxPercentage` | Percentage | Percentage corresponding to the tax. |
 | `ResponsibleType` | String | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 In the example of the request, two taxes are specified for Argentina: **VAT** corresponding to the VAT of Digital Services and **II.BB** corresponding to the Gross Income tax.
 {{% /alert %}}
 

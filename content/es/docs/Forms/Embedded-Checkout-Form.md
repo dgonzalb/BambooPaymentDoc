@@ -20,7 +20,7 @@ Find the functionalities of the Embedded Checkout form in a Javascript library, 
  <script src="{api_environment}/v1/Scripts/PWCheckoutNoModal.js?key={PublicAccountKey}" type="text/javascript"></script>
 ```
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 You must import the library through the public URL provided by Bamboo Payment. It must not be downloaded and used locally from a merchant’s server or from a URL of a third party not authorized by Bamboo Payment.
 
 This is important for security reasons and to keep updated with the latest modifications and corrections.

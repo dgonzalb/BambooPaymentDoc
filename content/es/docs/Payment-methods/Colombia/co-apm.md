@@ -41,7 +41,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -259,7 +259,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -446,7 +446,7 @@ The following example shows the response to the request.
 ```
 <br>
 
-In the field `MetadataOut` inside the purchase `Response` object, the QR code is returned as a _base64_ image (Parameter `Base64Qr`); add this image inside an image HTML tag. For example:
+In the field `MetadataOut` inside the purchase `Response` object, the QR code is returned as a _base64_ image (Parameter `Base64Qr`); add this image inside an image HTML tag. Por ejemplo:
 
 ```html
 <img src="data:image/png;base64,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" id="qr-code-display" style="max-width: 400px;">
@@ -479,7 +479,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number.  |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |

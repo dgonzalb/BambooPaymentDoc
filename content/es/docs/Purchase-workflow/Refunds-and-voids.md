@@ -16,7 +16,7 @@ Before we start, let's review some concepts.
 ## Rollback a purchase
 The _**rollback**_ operations is only available for purchases previously [authorized]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) with state _PreAuthorized_.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Pre-authorization feature may not be supported by all payment methods and it's available for the following countries.
 
 <div style="text-align: center;">
@@ -60,7 +60,7 @@ Request body is not required to rollback a purchase. If you don't send any reque
 The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
 
 #### Request example
-To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
+To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. Por ejemplo:
 
 ```json
 {

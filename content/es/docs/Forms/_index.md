@@ -119,10 +119,10 @@ This method is available only to these payment method types.
 
 | Property | Description | Mandatory |
 |-------------|-----------|:-----:|
-| **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Yes |
+| **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Yes |
 | **email** <br> *string* | Customer’s email address | Yes |
 | **documentNumber** <br> *string* | Customer’s document number. | Yes |
-| **documentType** <br> *numeric* | Customer’s document type. <br>If it's not sent, the method considers the national document type (_Cédula de Identidad_ in Uruguay).<br>Possible values:<ul style="margin-bottom: initial;"><li>**1** – RUT</li><li>**2** – Cédula de identidad</li><li>**3** – Extranjero</li></ul> | No |
+| **documentType** <br> *numeric* | Customer’s document type. <br>If it's not sent, the method considers the national document type (_Cédula de Identidad_ in Uruguay).<br>Posibles valores:<ul style="margin-bottom: initial;"><li>**1** – RUT</li><li>**2** – Cédula de identidad</li><li>**3** – Extranjero</li></ul> | No |
 
 Example:
 
@@ -130,7 +130,7 @@ Example:
  PWCheckout.GetCustomToken(5, "email@domain.com", "12345672");
  ```
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
 {{% /alert %}}
 
@@ -140,7 +140,7 @@ This method is used to get a **Token** for Redirect flow payments.
 
 | Property | Description | Mandatory |
 |-------------|-------------|:--------:|
-| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Yes |
+| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Yes |
 | **email** <br> *string* | Customer's email address. | Yes |
 
 Example:
@@ -149,7 +149,7 @@ Example:
  PWCheckout.GetCustomRedirectToken(106, "email@domain.com");
  ```
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
 {{% /alert %}}
 
@@ -169,12 +169,12 @@ The `TokenInfo` object is returned in the `tokenCreated` event triggered by the 
 | ------------- |-----------|
 | TokenId <br> *String* | Token identifier. |
 | Created <br> *TimeStamp* | Token creation date and time. |
-| Type <br> *string* | Token type, possible values: <br><ul style="margin-bottom: initial;"><li>`OneTime`</li><li>`Commerce`</li></ul> |
+| Type <br> *string* | Token type, posibles valores: <br><ul style="margin-bottom: initial;"><li>`OneTime`</li><li>`Commerce`</li></ul> |
 | Brand <br> *string* | Brand of the card or payment method used |
 | IssuerBank <br> *string* | Card issuer bank. |
 | Owner <br> *string* | Cardholder name. |
 | Last4 <br> Numeric[4] | The cards last four digits. |
-| CardType <br> *string* | Payment method (or card) type, possible values:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
+| CardType <br> *string* | Payment method (or card) type, posibles valores:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
 | CardExpMonth <br> *Numeric[2]* | Card expiration month. |
 | CardExpYear <br> *Numeric[2]*| Card expiration year. |
 
@@ -184,5 +184,5 @@ The **NotificationInfo** object is returned in the `notificationReceived` event,
 
 | Field <br> *Type* | Description | 
 | ------------- |-----------|
-|ProcessType <br>*string* | Defines the process type of the notification is being issued.<br>Possible values are:<br><ul style="margin-bottom: initial;"><li>`PURCHASE_PENDING` – process to authorize a pending purchase.</li></ul> |
+|ProcessType <br>*string* | Defines the process type of the notification is being issued.<br>Posibles valores are:<br><ul style="margin-bottom: initial;"><li>`PURCHASE_PENDING` – process to authorize a pending purchase.</li></ul> |
 |ProcessStatus <br> *Numeric[1]*| Possible statuses of a process are:<br><ul style="margin-bottom: initial;"><li>**1** – OK (the process completed successfully)</li><li>**2** – PENDING (the process is still pending)</li><li>**3** – ERROR (the process completed with error)</li></ul> |

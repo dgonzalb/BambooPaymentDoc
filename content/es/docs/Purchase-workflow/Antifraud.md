@@ -58,7 +58,7 @@ In the call to said library, the public key of the trading account (PublicAccoun
 <script src="{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}" type="text/javascript"></script> 
 ```
 
-{{% alert title="Note" color="warning"%}}
+{{% alert title="Nota" color="warning"%}}
 You must import the library through the public URL provided by Bamboo Payment. It should not be downloaded and used locally from a merchant's own server or from a URL of a third party not authorized by Bamboo Payment.
 
 This is important for security reasons and to always keep up-to-date with the latest modifications and corrections made to it.

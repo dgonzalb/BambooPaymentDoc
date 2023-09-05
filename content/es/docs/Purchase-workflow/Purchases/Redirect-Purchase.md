@@ -79,6 +79,6 @@ The redirection callback response contains the `PurchaseID` and `Status` as `FOR
 </form>
 ```
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 There is no validation system, so we don't recommend taking the response as final. Instead, take the `PurchaseId` and perform a **GET** request (server to server) to `/v1/api//api/Purchase/{ID}` to get the complete Purchase Object and its final status.
 {{% /alert %}}
