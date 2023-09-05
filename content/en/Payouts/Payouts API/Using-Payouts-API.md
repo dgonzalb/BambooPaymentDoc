@@ -145,8 +145,8 @@ Refer to the corresponding tab according to the payee's country.
     "phone": "099999999",
     "address": "Francisco  51 Gral. Ximena, AR-H 0376",
     "document": {
-      "type": "DNI",
-      "number": "123456789"
+      "type": "CUIL",
+      "number": "12345678901"
     },
     "bankAccount": {
       "number": "0071234567890123456789",

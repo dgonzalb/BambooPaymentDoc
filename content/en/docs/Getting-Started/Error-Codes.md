@@ -24,9 +24,7 @@ weight: 45
 | `500` | Internal Server Error | An error occurred in the service. |
 | `503` | Service Unavailable | The service is undergoing maintenance or experiencing access issues. |
 
-## Error Codes
-
-### Multilanguage for errors
+## Multilanguage for errors
 You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
 
 <div id="shortTable"></div>
@@ -36,6 +34,12 @@ You can receive the error description by relying on localization features. To do
 | `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
 | `es` | Spanish. |
 | `pt` | Portuguese. |
+
+## Error Codes
+
+{{% alert title="Info" color="info"%}}
+The error code for unknown or undetermined errors is `ERR999`. In this case, contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information.
+{{% /alert %}}
 
 ### Tokenization service errors
 Tokenization errors always starts with `TK`.
@@ -47,51 +51,22 @@ Tokenization errors always starts with `TK`.
 | `TK001` | INVALID_CARD_PAN | The card number entered is incorrect. | Ask your customer to check the card number and retry the transaction. |
 | `TK002` | INVALID_CVV | The CVV number entered is incorrect. | Ask your customer to check the validation code and retry the transaction. |
 | `TK003` | INVALID_EXPIRATION_DATE | The card expiration date is incorrect. | Ask your customer to check the expiration date and retry the transaction. |
-| `TK004` | INVALID_SESSION_IDENTIFIER | An invalid session ID was sent in a token request. | [Regenerate the token](#) and retry the token request. |
+| `TK004` | INVALID_SESSION_IDENTIFIER | An invalid session ID was sent in a token request. | [Regenerate the token](/docs/purchase-workflow/customer-types.html) and retry the token request. |
 | `TK005` | INVALID_EMAIL | An email with incorrect format was entered. | Ask your customer to check the email address and retry the transaction.|
 | `TK006` | EXPIRED_TOKEN | The token (One-Time type) has already been used or is expired. | [Regenerate the token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) and retry the token request. |
 | `TK007` | INVALID_PAYMENT_MEDIA | Error with the information of the payment method. | The `PaymentMediaId` Check the payment method's value in the respective [country's list](/docs/payment-methods.html). |
 | `TK008` | ISSUER_BANK_NOT_MATCH | Issuer bank does not match the expected. | Validate the issuer bank of your customer's card |
-| `TK009` | INVALID_ACTIVATION_CODE | Token activation code is invalid. |  |
-| `TK010` | INVALID_COMMERCE_TOKEN | Commerce Token is invalid. | [Regenerate the token (CT)](#) and retry the token request. |
+| `TK009` | INVALID_ACTIVATION_CODE | Token activation code is invalid. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
+| `TK010` | INVALID_COMMERCE_TOKEN | Commerce Token is invalid. | [Regenerate the token (CT)]({{< ref Registered-users.md >}}) and retry the token request. |
 | `TK011` | CUSTOMER_NOT_FOUND | The specified customer is not valid. | Your customer used to create the token was not found or is invalid. |
-| `TK012` | TOKEN_ACTIVATION_ERROR | Error while activating token. |  |
-| `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error in registration process. |  |
-| `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Means of payment disabled. |  |
-| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | Means of payment not available for the Commerce |  |
-| `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | An error occurred in the process of registering the means of payment. |  |
-| `TK017` | INVALID_DOCUMENT_NUMBER | Invalid document. |  |
-| `TK018` | INVALID_DOCUMENT_TYPE | Invalid document type |  |
+| `TK012` | TOKEN_ACTIVATION_ERROR | Error while activating token. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
+| `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error in registration process. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
+| `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Payment method disabled. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
+| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | The payment method is not available for the Commerce | Verify that you have enabled the payment method selected. |
+| `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | An error occurred in the process of registering the payment method. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
+| `TK017` | INVALID_DOCUMENT_NUMBER | Invalid document. | The document provided is not valid according to the country rules. |
+| `TK018` | INVALID_DOCUMENT_TYPE | Invalid document type | The document type sent is not valid or does not belong to the country. |
 | `TK999` | UNKNOWN_ERROR | Unknown error. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
-
-### Purchase service errors
-Purchase errors always starts with `PR`.
-
-<div id="cutMessage"></div>
-
-| Code | Message | Description | Possible solution |
-|---|---|---|---|
-| `PR001` | INVALID_TOKEN | The informed token is invalid, expired or does not correspond to the commerce. | [Regenerate the token](#) and retry the token request. |
-| `PR002` | INVALID_ORDER | The order number is invalid. |  |
-| `PR003` | INVALID_AMOUNT | The reported amount is invalid. |  |
-| `PR004` | INVALID_CURRENCY | The reported currency is invalid. |  |
-| `PR005` | INVALID_INVOICE | The invoice number is invalid (it must be numeric). |  |
-| `PR006` | INVALID_PURCHASE_IDENTIFIER | The Purchase identifier is invalid. |  |
-| `PR007` | INVALID_TRANSACTION_IDENTIFIER | Invalid TransactionID |  |
-| `PR008` | PURCHASE_NOT_FOUND | The requested purchase cannot be found. |  |
-| `PR009` | INVALID_PURCHASE_STATE | The current purchase state does not allow the requested operation. |  |
-| `PR010` | TAXABLE_AMOUNT_REQUIRED | The TaxableAmount field is required. |  |
-| `PR011` | INVOICE_REQUIRED | The Invoice filed is required. |  |
-| `PR012` | INVALID_CAPTURED_CVV_REQUIRED | Capture of the card verification code is required. |  |
-| `PR013` | INVALID_INSTALLMENTS | Selected installments for the purchase are invalid for the card entered. |  |
-| `PR014` | INVALID_DESCRIPTION_LENGTH | Invalid parameter length description. |  |
-| `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | UserAgent parameter is empty. |  |
-| `PR016` | INVALID_CUSTOMER_IP_EMPTY | CustomerIP parameter is empty. |  |
-| `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | The field TaxableAmount cannot be greater than the purchase total amount. |  |
-| `PR018` | PR_DATE_NEEDED | To filter by dates, you must enter value for From and To parameters. |  |
-| `PR019` | EXCEED_DATE_RANGE | The search period cannot exceed the following number of days. |  |
-| `PR020` | INVALID_DOCUMENT_NUMBER | Invalid registered document |  |
-| `PR021` | NOT_ALLOW_PARTIAL_REFUND | Partial refunds are not allowed for the payment method used. |  |
 
 ### Transactions service errors
 Transaction errors always starts with `TR`.
@@ -136,3 +111,108 @@ Transaction errors always starts with `TR`.
 | `TR997` | TRANSACTION_STEP_ERROR | An error occurred while executing the current process. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR999` | UNKNOWN | Undetermined error when executing the transaction. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 
+### Purchase service errors
+Purchase errors always starts with `PR`.
+
+<div id="cutMessage"></div>
+
+| Code | Message | Description |
+|---|---|---|
+| `PR001` | INVALID_TOKEN | The informed token is invalid, expired or does not correspond to the commerce. | 
+| `PR002` | INVALID_ORDER | The order number is invalid. |
+| `PR003` | INVALID_AMOUNT | The reported amount is invalid. |
+| `PR004` | INVALID_CURRENCY | The reported currency is invalid. |
+| `PR005` | INVALID_INVOICE | The invoice number is invalid (it must be numeric). |
+| `PR006` | INVALID_PURCHASE_IDENTIFIER | The Purchase identifier is invalid. |
+| `PR007` | INVALID_TRANSACTION_IDENTIFIER | Invalid `TransactionID`. |
+| `PR008` | PURCHASE_NOT_FOUND | The requested purchase cannot be found. |
+| `PR009` | INVALID_PURCHASE_STATE | The current purchase state does not allow the requested operation. |
+| `PR010` | TAXABLE_AMOUNT_REQUIRED | The `TaxableAmount` field is required. |
+| `PR011` | INVOICE_REQUIRED | The `Invoice` filed is required. |
+| `PR012` | INVALID_CAPTURED_CVV_REQUIRED | Capture of the card verification code is required. |
+| `PR013` | INVALID_INSTALLMENTS | The selected installments for the purchase are invalid for the card. |
+| `PR014` | INVALID_DESCRIPTION_LENGTH | Invalid parameter length description. |
+| `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | `UserAgent` parameter is empty. |
+| `PR016` | INVALID_CUSTOMER_IP_EMPTY | `CustomerIP` parameter is empty. |
+| `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | The field `TaxableAmount` cannot be greater than the purchase total amount. |
+| `PR018` | PR_DATE_NEEDED | To filter by dates, you must enter value for `From` and `To` parameters. |
+| `PR019` | EXCEED_DATE_RANGE | The search period exceeds the maximum number of days. |
+| `PR020` | INVALID_DOCUMENT_NUMBER | Invalid registered document |
+| `PR021` | NOT_ALLOW_PARTIAL_REFUND | Partial refunds are not allowed for the payment method used. |
+
+### Customers service errors
+Customer always starts with `CS`.
+
+<div id="cutMessage"></div>
+
+| Code | Message | Description |
+|---|---|---|
+| `CS001` | INVALID_EMAIL | Invalid e-mail address. |
+| `CS002` | INVALID_ADDRESS_TYPE | Invalid address type. |
+| `CS003` | INVALID_CUSTOMER_IDENTIFIER | Invalid customer identifier. |
+| `CS004` | TOKEN_CREATION_FAILED | An error occurred in the token creation. |
+| `CS005` | EMAIL_ALREADY_EXISTS | E-mail already registered. |
+| `CS006` | INVALID_ADDITIONAL_DATA | The parameter `AdditionalData` was not send correctly, it must be `key:value` separated by semicolon. |
+| `CS007` | INVALID_CUSTOMER_DOCUMENT | Invalid customer document number. |
+| `CS008` | INVALID_CUSTOMER_DOCUMENT_TYPE | Invalid customer document type. |
+| `CS009` | TOKEN_ALREADY_EXISTS | There was already a `CommerceToken` for the card. |
+| `CS010` | INVALID_PAYMENT_PROFILE | Invalid Payment Profile. |
+| `CS011` | INVALID_PAYMENT_PROFILE_IDENTIFIER | Invalid Payment Profile Identifier. |
+
+### Loyalty Plan service errors
+Loyalty plan errors always starts with `LP`.
+
+| Code | Description |
+|---|---|
+| `LP004` | The program does not exist. |
+| `LP005` | The redemption center does not exist. |
+| `LP006` | The branch does not exist. |
+| `LP007` | The program is not active. |
+| `LP008` | The redemption center is not enabled. |
+| `LP009` | The redemption center does not belong to the program. |
+| `LP010` | The redemption center is not active for the program. |
+| `LP011` | The branch does not belong to the redemption center. |
+| `LP012` | The user does not exist. |
+| `LP013` | The user does not belong to the program. |
+| `LP014` | The currency does not exist. |
+| `LP015` | The quotation does not exist. |
+| `LP016` | The document type does not exist. |
+| `LP017` | The customer does not exist. |
+| `LP018` | The balance does not exist. |
+| `LP019` | Token not found. |
+| `LP020` | Card not found. |
+| `LP021` | Card expired. |
+| `LP022` | Syntax error in the Program. |
+| `LP023` | Syntax error in the Redemption Center. |
+| `LP024` | Syntax error in the Branch. |
+| `LP025` | Syntax error in the Currency. |
+| `LP026` | Syntax error in the Import. |
+| `LP027` | Syntax error in the user identification (`LoyaltyPlanUserIdentification`). |
+| `LP028` | Syntax error in the masked card. |
+| `LP029` | Syntax error in the Transaction Id. |
+| `LP030` | Syntax error in the gateway Transaction Id. |
+| `LP031` | Syntax error in the number of points. |
+| `LP032` | Syntax error in the number of installments. |
+| `LP033` | Syntax error in the token (Authorization). |
+| `LP034` | The request has an invalid syntax. It is too big or it has an invalid format message. |
+| `LP035` | Invalid credentials. |
+| `LP036` | The logged user is not allowed to see the customer data. |
+| `LP037` | The resource requested cannot be found. |
+| `LP038` | The loyalty plan is mandatory. |
+| `LP039` | The Customer Id of the loyalty plan is mandatory. |
+| `LP040` | Input data error. |
+| `LP041` | The customer is not authorized. |
+| `LP042` | Insufficient balance. |
+| `LP043` | The token has expired. |
+| `LP044` | The movement is canceled. |
+| `LP045` | The movement does not exist. |
+| `LP046` | The number of points sent does not match the points in the movement. |
+| `LP047` | The movement has already been refunded. |
+| `LP048` | The movement is a refund. |
+| `LP049` | The gateway does not exist. |
+| `LP050` | `CustomerId` with the wrong format. |
+| `LP051` | The point does not exist. |
+| `LP052` | The amount sent does not match the amount in the movement. |
+| `LP053` | The currency sent does not match the currency in the movement. |
+| `LP054` | The customer does not exist or is not active. |
+| `LP055` | Customer blocked. |

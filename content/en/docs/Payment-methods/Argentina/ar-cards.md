@@ -17,8 +17,8 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `numeric` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `CrossBorderData` → `TargetCountryISO` | `string` | No<sup>*</sup> | Indicate the destination currency.<br><sup>*</sup>_This field is required for CrossBorder purchases_. |
+| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -44,9 +44,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
     "Capture":"true",
     "Amount":200000,
     "Currency":"ARS",
-    "CrossBorderData" : {
-        "TargetCountryISO" : "AR"
-    },
+    "TargetCountryISO" : "AR",
     "Installments":1,
     "Order":"ORD12345",
     "Customer": {
@@ -77,42 +75,51 @@ For more information on the response parameters, please refer to the [Response p
 ```json
 {
     "Response": {
-        "PurchaseId": 1130926,
-        "Created": "2023-08-15T15:57:35.096",
+        "PurchaseId": 1167186,
+        "Created": "2023-09-04T20:12:54.822",
+        "TrxToken": null,
         "Order": "ORD12345",
         "Transaction": {
-            "TransactionID": 1148794,
-            "Created": "2023-08-15T15:57:35.096",
+            "TransactionID": 1186083,
+            "Created": "2023-09-04T20:12:54.822",
             "AuthorizationDate": "",
             "TransactionStatusId": 1,
             "Status": "Approved",
+            "ErrorCode": null,
             "Description": " ",
+            "ApprovalCode": null,
             "Steps": [
                 {
                     "Step": "Generic External",
                     "Created": "",
+                    "Status": null,
                     "ResponseCode": "approved",
                     "ResponseMessage": "approved",
-                    "AuthorizationCode": "125748"
+                    "Error": null,
+                    "AuthorizationCode": "171259",
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
                 }
             ]
         },
         "Capture": true,
-        "Amount": 240000,
-        "OriginalAmount": 240000,
+        "Amount": 200000,
+        "OriginalAmount": 200000,
         "TaxableAmount": 0,
         "Tip": 0,
         "Installments": 1,
         "Currency": "ARS",
         "Description": "Compra de prueba",
         "Customer": {
-            "CustomerId": 248674,
-            "Created": "2023-08-15T15:56:53.730",
+            "CustomerId": 251239,
+            "Created": "2023-09-04T20:11:50.973",
+            "CommerceCustomerId": null,
             "Owner": "Anonymous",
             "Email": "eluna@mail.com",
             "Enabled": true,
+            "ShippingAddress": null,
             "BillingAddress": {
-                "AddressId": 372710,
+                "AddressId": 374731,
                 "AddressType": 2,
                 "Country": "AR",
                 "State": "C",
@@ -120,48 +127,84 @@ For more information on the response parameters, please refer to the [Response p
                 "PostalCode": "C1054AAU",
                 "City": "BsAs"
             },
+            "Plans": null,
+            "AdditionalData": null,
             "PaymentProfiles": [
                 {
-                    "PaymentProfileId": 253333,
-                    "PaymentMediaId": 2,
-                    "Created": "2023-08-15T15:56:53.730",
-                    "Brand": "MasterCard",
+                    "PaymentProfileId": 256001,
+                    "PaymentMediaId": 1,
+                    "Created": "2023-09-04T20:11:50.973",
+                    "LastUpdate": null,
+                    "Brand": "VISA",
                     "CardOwner": "Erik Luna",
-                    "Bin": "529991",
+                    "Bin": "450799",
+                    "IssuerBank": "Santander",
+                    "Installments": "1;2;3;4;5;6;7;8;9;10;11;12",
                     "Type": "CreditCard",
                     "IdCommerceToken": 0,
-                    "Expiration": "203008",
-                    "Last4": "0015"
+                    "Token": null,
+                    "Expiration": "202910",
+                    "Last4": "4905",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
                 }
             ],
-            "URL": "https://api.stage.bamboopayment.com/Customer/248674",
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/251239",
             "FirstName": "Erik",
             "LastName": "Luna",
             "DocNumber": "12345672",
             "DocumentTypeId": 17,
-            "PhoneNumber": "24022330"
+            "PhoneNumber": "24022330",
+            "ExternalValue": null
         },
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1130926",
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1167186",
         "DataUY": {
             "IsFinalConsumer": false,
+            "Invoice": null,
             "TaxableAmount": 0
         },
         "DataDO": {
+            "Invoice": null,
             "Tax": 0
         },
         "Acquirer": {
             "AcquirerID": 25,
-            "Name": "DECIDIR"
+            "Name": "DECIDIR",
+            "CommerceNumber": null
         },
-        "PurchasePaymentProfileId": 253333,
+        "CommerceAction": null,
+        "PurchasePaymentProfileId": 256001,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": null,
+        "MetadataOut": null,
+        "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "AR",
             "TargetCurrencyISO": "ARS",
             "TargetAmount": 2000
         },
+        "Redirection": null,
         "IsFirstRecurrentPurchase": false,
-        "AntifraudData": {},
-        "PurchaseType": 1
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
     },
     "Errors": []
 }
