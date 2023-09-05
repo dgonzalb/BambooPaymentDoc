@@ -13,8 +13,8 @@ The customer will receive a _CommerceToken_ after registering their card, which 
 ## Create a Customer
 The first step is to create the customer in Bamboo Payment. To do so, you must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 ### Request parameters
 
@@ -105,8 +105,8 @@ You can get a customer's information using their Id or email address.
 
 To do so, you must invoke a **GET** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 <div id="shortTable"></div>
 
@@ -158,8 +158,8 @@ In response, you will get a list with the same object returned when [creating a 
 #### Update a customer
 To update the information of a customer, you must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://secure-api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
 
 Where `{{customer-id}}` is the id generated when you created the user. Include in the body, the [parameters](#request-parameters) you want to update for the user.
 
@@ -175,8 +175,120 @@ If you use the Alternative payment method identifier, you don't require this ste
 ### Invoking the Card Enrollment
 The following sequence diagram explains the Card Enrollment flow.
 
+![PrintScreen](/assets/CardEnrollmentFlow_en.png)
 
+**API calls during flow:**
 
+* **3**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
+* **11**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
+
+With the information obtained in the [previous step](#create-a-customer), you can invoke the **OpenIframeCustom** or **OpenIframeCustomWithPaymentMediaOptions** methods (see details below) from the JavaScript library `PWCheckout`, which will manage the card data capture.
+
+#### OpenIframeCustom
+The **OpenIframeCustom** method receives two parameters:
+
+* **URL:** The URL specifies the iFrame window address where customers enter Card data.<br>The URL is created by concatenating the received data as follows: `{CaptureURL}?key={publicKey}&session_id={UniqueID}`
+* **UniqueID:** an identifier to distinguish the data capture session.
+
+```javascript
+<script type="text/javascript">
+        PWCheckout.OpenIframeCustom(url, UniqueID);
+</script>
+```
+
+#### OpenIframeCustomWithPaymentMediaOptions
+The **OpenIframeCustomWithPaymentMediaOptions** method receives four parameters:
+
+* **URL:** The same as OpenIframeCustom.
+* **UniqueID:** The same as OpenIframeCustom.
+* **PaymentMediaid:** Identifier of the Payment method. If set, the Card Capture Form will only accept cards of this Payment Media. _This parameter applies only to Uruguay_.
+* **BankId:** [Bank identifier](/docs/payment-methods/uruguay.html#issuer-banks-table). _This parameter applies only to Uruguay_.
+
+The Card Capture Form will only accept cards of the specified Payment Method and Bank if you set both parameters, but they are optional.
+
+Call examples of the **OpenIframeCustomWithPaymentMediaOptions** method:
+
+1. Call with `PaymentMediaId` and `BankId` set:
+
+```javascript
+<script type="text/javascript">
+      PWCheckout.Iframe.OpenIframeCustomWithPaymentMediaOptions(url, UniqueID, paymentMediaId,bankId);
+</script>
+```
+<br>
+
+2. Call with `BankId` set and `PaymentMediaId` in null.
+
+```javascript
+<script type="text/javascript">
+      PWCheckout.Iframe.OpenIframeCustomWithPaymentMediaOptions(url, UniqueID, null, null);
+</script>
+```
+<br>
+
+The customer enters the card data and after confirming, the **PWCheckout** library receives the notification that the card was captured correctly.
+
+The merchant page can subscribe to the _tokenCreated_ event that will be triggered upon receiving notification that the card data was captured.
+
+The page can also set the property `form_id` (using the SetProperties method) to indicate the identifier of a form on the page that will be controlled by the **PWCheckout** library. The library will submit the form once the card information has been captured.
+
+In response to the notification received (by the JavaScript event or by the form submit), the merchant page must re-request the updated Customer information by making the following `HTTP/GET` call (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
+
+The returned **Customer** object contains the _PaymentProfiles_ of the customer. These objects have information on the payment methods associated with the client, where in the _Token_ field, _CommerceToken_ generated represents the payment card.
+
+Response example that includes a **PaymentProfile**:
+
+```json
+{
+  "Response": {
+    "CustomerId": 53479,
+    "Created": "2021-04-06T16:08:43.767",
+    "CommerceCustomerId": null,
+    "Owner": "Commerce",
+    "Email": "Email222222@mail.com",
+    "Enabled": true,
+    "ShippingAddress": null,
+    "BillingAddress": {
+      "AddressId": 51615,
+      "AddressType": 1,
+      "Country": "UY",
+      "State": "Montevideo",
+      "AddressDetail": "10000",
+      "PostalCode": null,
+      "City": "MONTEVIDEO"
+    },
+    "Plans": null,
+    "AdditionalData": null,
+    "PaymentProfiles": [
+      {
+        "PaymentProfileId": 55591,
+        "PaymentMediaId": 2,
+        "Created": "2021-04-19T11:26:17.693",
+        "LastUpdate": null,
+        "Brand": "MasterCard",
+        "CardOwner": "John Simpson",
+        "Bin": null,
+        "IssuerBank": "Santander",
+        "Installments": "1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24",
+        "Type": "CreditCard",
+        "Token": "OT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8SzQ_",
+        "Expiration": "202211",
+        "Last4": "0001",
+        "Enabled": true
+      }
+    ],
+    "CaptureURL": "https://testapi.BambooPayment.com/v1/Capture/",
+    "UniqueID": "UI_263b2dde-b151-4f09-b8bf-c65883d2cb3b",
+    "URL": "https://testapi.BambooPayment.com/v1/api/Customer/53479",
+    "FirstName": "FistName 2222",
+    "LastName": "LastName 2222",
+    "DocNumber": "12345672",
+    "DocumentTypeId": 2,
+    "PhoneNumber": "24022330"
+  },
+  "Errors": []
+}
+```
 
 ### Using Direct tokenization
 Since the user is not registered in your commerce, you must invoke the method to [create the token for registered users]({{< ref "Direct-Tokenization.md" >}}#CT).

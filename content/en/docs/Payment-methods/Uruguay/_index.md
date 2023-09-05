@@ -58,3 +58,21 @@ The following table describes the valid document types for Uruguay:
 | 1    | RUT                 | RUT          |
 | 2    | Cédula de Identidad | CI           |
 | 3    | Extrajero           | EXT          |
+
+## Issuer Banks Table
+The following table lists the configured Issuer Banks.
+
+| IssuerBankId | Issuer Bank |
+|---------|----------|
+| 1 | Santander |
+| 2 | BBVA |
+| 3 | Itaú |
+| 4 | HSBC |
+| 5 | Scotiabank |
+| 6 | OCA |
+| 7 | VISA |
+| 8 | MasterCard |
+| 9 | BROU |
+| 10 | Prex |
+| 11 | Pronto |
+| 12 | Midinero |
