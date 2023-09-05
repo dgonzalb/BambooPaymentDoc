@@ -30,7 +30,7 @@ Follow these steps to start processing payments with Bamboo Payments:
 5. **Process payments**.<br>Once you have your production credentials, you can switch to the `PRODUCTION` environment and start processing your payments!
 
 {{% alert title="Don't get stuck!" color="info"%}}
-If you have any technical doubts or require further information, please feel free to [contact our support team](techsupport@bamboopayment.com) for assistance.
+If you have any technical doubts or require further information, please feel free to [contact our support team](mailto:techsupport@bamboopayment.com) for assistance.
 {{% /alert %}}
 
 <!--1 - Sign Up: Create your merchant account contacting our sales representatives sales@bamboopayment.com
