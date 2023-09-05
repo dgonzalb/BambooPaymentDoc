@@ -62,7 +62,7 @@ Los errores de tokenización siempre empiezan por `TK`.
 | `TK012` | TOKEN_ACTIVATION_ERROR | Error al activar el código.  | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
 | `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error en el proceso de registro. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
 | `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Método de pago deshabilitado. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
-| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | El método de pago no está disponible para el comercio. | Comprueba que haya habilitado el método de pago seleccionado. |
+| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | El método de pago no está disponible para el comercio. | Compruebe que haya habilitado el método de pago seleccionado. |
 | `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del método de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
 | `TK017` | INVALID_DOCUMENT_NUMBER | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
 | `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
