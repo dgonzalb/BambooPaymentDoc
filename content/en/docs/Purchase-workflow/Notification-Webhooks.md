@@ -102,4 +102,15 @@ async function calculateHMAC(key, data) {
 	const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
 	return hashHex;
 }
-````
+```
+
+## Retry management for errors.
+The webhook uses a configuration with five retries for failures spaced out over time.
+
+* The first retry is attempted after 15 minutes.
+* The second retry is attempted after 30 minutes.
+* The third retry is attempted after one hour.
+* The fourth retry is attempted after three hours.
+* The fifth retry is attempted after six hours.
+
+For further retries, please get in touch with our support team.
