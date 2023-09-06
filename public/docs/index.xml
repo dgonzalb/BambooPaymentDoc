@@ -3672,7 +3672,7 @@ Use the following cards to simulate the different status of the purchase.
 &lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Integer&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Payout type. Set any of the following values:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;&lt;code&gt;1&lt;/code&gt; for Cash&lt;/li&gt;&lt;li&gt;&lt;code&gt;2&lt;/code&gt; for Bank Transfer&lt;/li&gt;&lt;li&gt;&lt;code&gt;3&lt;/code&gt; for Wallet&lt;/li&gt;&lt;li&gt;&lt;code&gt;4&lt;/code&gt; for PIX&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;Payout type. Set any of the following values:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;&lt;code&gt;1&lt;/code&gt; for Cash&lt;/li&gt;&lt;li&gt;&lt;code&gt;2&lt;/code&gt; for Bank Transfer&lt;/li&gt;&lt;li&gt;&lt;code&gt;3&lt;/code&gt; for Wallet&lt;/li&gt;&lt;li&gt;&lt;code&gt;4&lt;/code&gt; for Instant Bank Transfer in Brazil&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3761,7 +3761,7 @@ Use the following cards to simulate the different status of the purchase.
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;When using Bank transfer, these parameters are mandatory for&lt;/em&gt; &lt;em&gt;&lt;strong&gt;ALL&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;countries. For PIX, the object&lt;/em&gt; &lt;code&gt;payee.bankaccount&lt;/code&gt; &lt;em&gt;and its parameters must not be present in the request.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;When using Bank transfer, these parameters are mandatory for&lt;/em&gt; &lt;em&gt;&lt;strong&gt;ALL&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;countries. For Instant Bank Transfer in Brazil, the object&lt;/em&gt; &lt;code&gt;payee.bankaccount&lt;/code&gt; &lt;em&gt;and its parameters must not be present in the request.&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;request-example&#34;&gt;Request example&lt;/h4&gt;
 &lt;p&gt;Refer to the corresponding tab according to the payee&amp;rsquo;s country.&lt;/p&gt;
 &lt;nav&gt;
@@ -3910,7 +3910,7 @@ Use the following cards to simulate the different status of the purchase.
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tabcountries2&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
-&lt;p&gt;As mentioned before, the object &lt;code&gt;payee.bankaccount&lt;/code&gt; must not be present in the request. Therefore, when using &lt;em&gt;PIX&lt;/em&gt; you need to send the request as follows:&lt;/p&gt;
+&lt;p&gt;As mentioned before, the object &lt;code&gt;payee.bankaccount&lt;/code&gt; must not be present in the request. Therefore, when using &lt;em&gt;Instant Bank Transfer&lt;/em&gt; you need to send the request as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BR&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
