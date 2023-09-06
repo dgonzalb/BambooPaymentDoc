@@ -34,7 +34,7 @@ To use the Docsy theme for your own site:
   - Add Docsy to your existing Hugo site repo's `themes` directory. You can either add Docsy as a Git submodule, or 
     clone the Docsy theme into your project.
 
-See the [Docsy Getting Started Guide](https://docsy.dev/es/docs/getting-started/) for 
+See the [Docsy Getting Started Guide](https://docsy.dev/docs/getting-started/) for 
 details about the various usage options.
 
 ## Documentation
