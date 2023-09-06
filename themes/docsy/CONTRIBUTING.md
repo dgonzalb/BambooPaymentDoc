@@ -30,5 +30,5 @@ This project follows
 ## How to contribute
 
 See the [contribution
-guidelines](https://www.docsy.dev/docs/contribution-guidelines/)
+guidelines](https://www.docsy.dev/es/docs/contribution-guidelines/)
 in the Docsy user guide.

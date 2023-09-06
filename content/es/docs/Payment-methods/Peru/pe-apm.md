@@ -20,14 +20,14 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**26**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
-| `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/peru.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+51\|971516229`. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**26**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
+| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/peru.html#document-types) to see the posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+51\|971516229`. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |

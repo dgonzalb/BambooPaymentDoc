@@ -1,38 +1,38 @@
 ---
-title: "Anonymous users"
-linkTitle: "Anonymous users"
+title: "Usuarios Anónimos"
+linkTitle: "Usuarios Anónimos"
 date: 2023-07-17T07:28:16-05:00
 description: >
-  An anonymous user is not registered on the site and makes a one-time purchase. In this case, you must always ask for the card data to complete the transaction.
+  Un usuario anónimo no está registrado en el sitio web y hace una compra por única vez. En este caso, siempre debe pedir los datos de la tarjeta para poder completar la transacción..
 weight: 10
 tags: ["subtopic"]
 ---
 
-Next, we describe the steps to create a purchase with an anonymous user.
+A continuación, describimos los pasos de cómo crear una compra con un usuario anónimo.
 
-## Capture the Card Data
-The first step is to get the token of the customer's card. To do so, you can invoke the [Checkout Form]({{< ref "Checkout-Form.md" >}}) in the last stage of the shopping cart. Recall that you must gather the _**Checkout Form**_ through the Bamboo Payment JavaScript library. Alternatively, you can use [Direct tokenization]({{< ref "Direct-Tokenization.md" >}}) if your commerce is PCI-compliant.
+## Capturar la información de la tarjeta {#capture-the-card-data}
+El primer paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el [Formulario de Checkout]({{< ref "Checkout-Form.md" >}}) en el último paso del carrito de compras. Recuerde que tiene que obtener el _**Formulario de Checkout**_ a través de la librería JavaScript de Bamboo Payment. De forma alternativa, peude utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple la normativa PCI.
 
-This form is displayed within an iframe of your page and requests the Card data.
-
-{{% alert title="Info" color="info"%}}
-If you use the Alternative payment method identifier, you don't require this step and must include the **PaymentMediaId**.
-{{% /alert %}}
-
-### Invoking the Checkout Form
-The Javascript **PWCheckout** library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the _token_ associated with the customer's card. 
-
-### Using Direct tokenization
-Since the user is not registered in your commerce, you must invoke the method to [create the token for unregistered users]({{< ref "Direct-Tokenization.md" >}}#OTT).
+Este formulario se muestra dentro de un iframe en su página y solicita los datos de la tarjeta.
 
 {{% alert title="Info" color="info"%}}
-The token generated using any method above is a _**One Time Token**_ (OTT) valid only once and for 10 minutes.
+Si utiliza el identificador del Medio alternativo, no requiere realizar este paso y debe incluir el  **PaymentMediaId**.
 {{% /alert %}}
 
-## Create a Basic Purchase
-The token just obtained must be sent from the browser or the mobile app to the application server to create the purchase transaction.
+### Invocando el formulario de Checkout Form {#invoking-the-checkout-form}
+La librería de Javascript **PWCheckout** tiene las propiedades para personalizar su apariencia de acuerdo a los requerimientos del comercio. Una vez invoque el formulario de Checkout y el cliente ingrese los datos, puede obtener el _token_ asociado con la tarjeta. 
 
-From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), including the `Purchase` object with the token and other transaction data.
+### Utilizando la Tokenización Directa {#using-direct-tokenization}
+Debido a que el usuario no está registrado en su comercio, debe invocar el método para [crear el token para usuarios no registrados]({{< ref "Direct-Tokenization.md" >}}#OTT).
+
+{{% alert title="Info" color="info"%}}
+El token generado utilizando cualquiera de los métodos mencionados previamente corresponde a un _**One Time Token**_ (OTT) válido por una única vez y duración de 10 minutos.
+{{% /alert %}}
+
+## Crear una Compra Básica {#using-direct-tokenization}
+Debe enviar el token recién obtenido desde el navegador o la aplicación móvil al servidor de aplicaciones para crear la transacción de compra.
+
+Desde el servidor, invoque el método [Crear una Compra]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), incluyendo el objeto `Purchase` con el token y los datos de la transacción adicionales.
 
 ```json
 {
@@ -47,18 +47,18 @@ From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md"
 ```
 <br>
 
-The **PaymentMediaId** and **TrxToken** fields are optional, but sending one is mandatory, depending on the flow you want to use.
+Los campos **PaymentMediaId** y **TrxToken**  son opcionales, pero es obligatorio enviar uno dependiendo del flujo que quiere utilizar.
 
-* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/docs/payment-methods.html) section.
+* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificado consultado la sección [Métodos de pago por país](/es/docs/payment-methods.html).
 
-* **TrxToken**: You can generate the token and transact by sending it in this field.
+* **TrxToken**: Puede generar el tokn y transaccionar enviándolo en este campo.
 
-## Payment Workflow Sequence Diagram
-The following sequence diagram lists the steps in the payment process.
+## Diagrama de secuencia del flujo de pago {#payment-workflow-sequence-diagram}
+El siguiente diagrama de secuencia lista los pasos en el proceso de pago.
 
-![PrintScreen](/assets/AnonymousUserFlow_en.png)
+![PrintScreen](/assets/AnonymousUserFlow_es.png)
 
-In the above flow, the following calls are made:
+En el flujo anterior, se hacen las siguientes llamadas:
 
 * **10** - `HTTP/POST` (server to server): `{EnvironmentAPI}/v1/api/purchase`
 * **12** - `HTTP/GET `(server to server): `{EnvironmentAPI}/v1/api/customer/{{customer-id}}`

@@ -18,11 +18,11 @@ This method receives an object with the specific parameters for the desired paym
 |-------------|--------------------|:-----------:|:------:|:------:|
 | | | Physical Network | Cards | Redirect |
 | **PaymentMediaId** <br> *numeric* | Payment media identifier. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
-| **IssuerBank** <br> *numeric* | Bank identifier (see [table](/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
+| **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/es/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
+| **IssuerBank** <br> *numeric* | Bank identifier (see [table](/es/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
 | **Email** <br> *string* | Email address of the Customer. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| **DocumentNumber** <br> *string* | Customer document number. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
-| **DocumentType** <br> *numeric* | Customer document type. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
+| **DocumentNumber** <br> *string* | Número de documento del cliente. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
+| **DocumentType** <br> *numeric* | Tipo de documento del cliente. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
 | **LoyaltyPlanId** <br> *numeric* | Loyalty Plan identifier. | | | |
 | **LoyaltyPlanUserIdentification** <br> *string*| Loyalty Plan user identifier. | | | |
 
@@ -119,9 +119,9 @@ This method is available only to these payment method types.
 
 | Property | Description | Mandatory |
 |-------------|-----------|:-----:|
-| **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Yes |
-| **email** <br> *string* | Customer’s email address | Yes |
-| **documentNumber** <br> *string* | Customer’s document number. | Yes |
+| **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Sí |
+| **email** <br> *string* | Customer’s email address | Sí |
+| **documentNumber** <br> *string* | Customer’s document number. | Sí |
 | **documentType** <br> *numeric* | Customer’s document type. <br>If it's not sent, the method considers the national document type (_Cédula de Identidad_ in Uruguay).<br>Posibles valores:<ul style="margin-bottom: initial;"><li>**1** – RUT</li><li>**2** – Cédula de identidad</li><li>**3** – Extranjero</li></ul> | No |
 
 Example:
@@ -140,8 +140,8 @@ This method is used to get a **Token** for Redirect flow payments.
 
 | Property | Description | Mandatory |
 |-------------|-------------|:--------:|
-| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Yes |
-| **email** <br> *string* | Customer's email address. | Yes |
+| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Sí |
+| **email** <br> *string* | Customer's email address. | Sí |
 
 Example:
 

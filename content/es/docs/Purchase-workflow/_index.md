@@ -1,38 +1,38 @@
 ---
-title: "Purchase API"
+title: "API de compras"
 date: 2023-03-02T08:28:16-05:00
 Description: >
-  You can create a purchase using our API. _Customer Type_ and _Flow Type_ drive the purchase workflow.
+  Es posible generar una compra utilizando nuestra API. El _tipo de cliente_ y el _tipo de flujo_ dirigen el flujo de trabajo de la compra.
 weight: 40
 ---
 
-## Customer Type
-You can have either Anonymous or Registered customers regardless of the flow type. Anonymous customers are not registered on the site and make a one-time purchase. The registered customers are shoppers registered on the website, so they can be identified and have extra functionalities such as recurrences.
+## Tipo de cliente {#customer-type}
+Sin importar el tipo de flujo, puede tener clientes anónimos o registrados. Los clientes anónimos no están registrados en el sitio web y hacen una compra por única vez. Los clientes registrados son compradores registrados en el sitio web, de tal manera que pueden ser identificados y tener funcionalidades adicionales como recurrencias.
 
-## Flow type
-You can use two different workflows to authorize a purchase:
+## Tipo de flujo {#flow-type}
+Se puede utilizar dos tipos diferentes de flujos para autorizar una compra:
 
 * API
 * Redirect
 
 {{% alert title="Nota" color="info"%}}
-Flow type depends on each payment method. It’s specified in the [payment methods table by country](/docs/getting-started/payment-methods.html) in the column _**FLOW**_.
+El tipo de flujo depende de cada medio de pago. Se especifica en la [tabla de medios de pago por país](/es/docs/getting-started/payment-methods.html) en la columna _**FLOW**_.
 {{% /alert %}}
 
-### API flow
-Upon invoking the API to initiate a purchase, the invocation response will directly provide a status, which could be either final or partial.
+### Flujo API {#api-flow}
+Al invocar la API para iniciar una compra, la respuesta de la invocación proporcionará directamente un estado, que podrá ser final o parcial.
 
-![PrintScreen](/assets/APIFlow_en.png)
+![PrintScreen](/assets/APIFlow_es.png)
 
-For purchases using API, you can use any of the following options:
+Para las compras utilizando API, puede usar cualquiera de la siguientes opciones:
 
-* [Purchase creation]({{< ref "Purchase-Operations.md" >}}), which can be local or CrossBorder.
-* [Direct purchase]({{< ref "Direct-Purchase.md" >}})
-* [Purchase preview]({{< ref "Purchase-Preview.md" >}})
+* [Creación de la compra]({{< ref "Purchase-Operations.md" >}}), que puede ser local o CrossBorder.
+* [Compra Directa]({{< ref "Direct-Purchase.md" >}})
+* [Preview de la compra]({{< ref "Purchase-Preview.md" >}})
 
-### Redirect flow
-When you invoke the API to initiate a purchase, you obtain a _CommerceAction_. This _CommerceAction_ signals that the Merchant needs to take necessary steps to advance the payment process. In such instances, the API returns a URL linked to the _CommerceAction_ to direct the customer to this URL for further payment continuation.
+### Flujo Redirect {#redirect-flow}
+Al invocar la API para iniciar una compra, se obtendrá un _CommerceAction_. Este _CommerceAction_ indica que el comercio necesita realizar los pasos necesarios para avanzar en el proceso de compra. En este caso, el API retorna una URL asociada al _CommerceAction_ para redirigir al cliente para continuar con el pago.
 
-![PrintScreen](/assets/RedirectionFlow_en.png)
+![PrintScreen](/assets/RedirectionFlow_es.png)
 
-For Redirect purchases, refer to [Redirect flow payments]({{< ref "Redirect-Purchase.md" >}}).
+Para la Compra Redirect, consulte [flujo de pagos por Redirect]({{< ref "Redirect-Purchase.md" >}}).

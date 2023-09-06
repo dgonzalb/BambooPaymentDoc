@@ -1,41 +1,41 @@
 ---
-title: "Registered users"
-linkTitle: "Registered users"
+title: "Usuarios Registrados"
+linkTitle: "Usuarios Registrados"
 date: 2023-07-17T07:28:16-05:00
 description: >
-  Despite the [Anonymous users]({{< ref Anonymous-users.md>}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again.
+  A diferencia de los [Usuarios Anónimos]({{< ref Anonymous-users.md>}}), estos usuarios están registrados en el sitio web por lo que peude indentificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.
 weight: 20
 tags: ["subtopic"]
 ---
 
-The customer will receive a _CommerceToken_ after registering their card, which they can use for future transactions. Below are the steps to purchase as a registered user on the website.
+El cliente recibe un _CommerceToken_ despues de registrar su tarjeta, la cual peude se rutilizada para futuras transacciones. A continuación, se encuentran los pasos para comprar como un usuario registrado en el sitio web.
 
-## Create a Customer
-The first step is to create the customer in Bamboo Payment. To do so, you must invoke a **POST** request to the following URLs according to your needs.
+## Crear un Cliente {#create-a-customer}
+El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Producción**: `https://api.bamboopayment.com/v1/api/customer`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
-### Request parameters
+### Parámetros del Request {#request-parameters}
 
-| Parameter | Type | Mandatory? | Description |
-|---|---|---|---|
-| `Email` | `string` | Yes | Customer email address. |
-| `FirstName` | `string` | Yes | Customer name. |
-| `LastName` | `string` | Yes | Customer last name. |
-| `DocumentTypeId` | `string` | Yes | Customer document type. Find the posibles valores in the [Document types](#) table. |
-| `DocNumber` | `string` | Yes | Customer document Number. |
-| `Owner` | `string` | No | It determines whether the merchant is anonymous or if the user, or us, registered it.<br>The posibles valores are:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value</li><li>_Anonymous_</li></ul>|
-| `PhoneNumber` | `string` | Yes | Customer contact telephone number. |
-| `BillingAddress` | `object` | Yes | This parameter is the customer's billing address. |
-| `BillingAddress`→`AddressID` | `integer` | Yes | Address Identifier. |
-| `BillingAddress`→`AddressType` | `string` | Yes | Type of address. |
-| `BillingAddress`→`Country` | `string` | Yes | Country of the address. |
-| `BillingAddress`→`State` | `string` | Yes | State of the address. |
-| `BillingAddress`→`City` | `string` | Yes | City of the address. |
-| `BillingAddress`→`AddressDetail` | `string` | Yes | This parameter corresponds to the Additional information of the address, such as street, number, etc. |
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|---|---|:-:|---|
+| `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
+| `FirstName` | `string` | Sí | Nombre del cliente. |
+| `LastName` | `string` | Sí | Apellido del cliente. |
+| `DocumentTypeId` | `string` | Sí | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de Docuemnto de acuerdo con el [país](/es/docs/payment-methods.html). |
+| `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Owner` | `string` | No | Determina si el usuario es anónimo o si el comercio, o nosotros, lo regirstró.<br>Los posibles valores son:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. Este es el valor por defecto.</li><li>_Anonymous_</li></ul>|
+| `PhoneNumber` | `string` | Sí | Número de teléfono de contacto del cliente. |
+| `BillingAddress` | `object` | Sí | Este parámetro es la dirección de facturación del cliente. |
+| `BillingAddress`→`AddressID` | `integer` | Sí | Identificador de la dirección. |
+| `BillingAddress`→`AddressType` | `string` | Sí | Tipo de dirección. |
+| `BillingAddress`→`Country` | `string` | Sí | País de la dirección. |
+| `BillingAddress`→`State` | `string` | Sí | Estado de la dirección. |
+| `BillingAddress`→`City` | `string` | Sí | Ciudad de la dirección. |
+| `BillingAddress`→`AddressDetail` | `string` | Sí |Este parámetro corresponde a la información adicional de la dirección, como calle, número, etc. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 
 ```json
 {
@@ -56,10 +56,10 @@ The first step is to create the customer in Bamboo Payment. To do so, you must i
 }
 ```
 
-### Response parameters
-The response object returns the recently created customer's information or the error that may have occurred. In the `Response.CustomerId`, you can find the customer id generated by the API to allow you to consult, delete or update a customer.
+### Parámetros del Response {#response-parameters}
+El objeto de respuesta retorna la información del cliente recién creado o el error que se haya podido producir. En el parámetro `Response.CustomerId` se encuentra el identificador de cliente generado por la API para poder consultarlo o actualizarlo.
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -97,25 +97,25 @@ The response object returns the recently created customer's information or the e
 }
 ```
 
-### Customer operations
-Once you have created a user, you can perform operations to get or update a customer's information.
+### Operaciones sobre los clientes {#customer-operations}
+Una vez haya creado un usuario, puede realizar operaciones para obtener o actualizar su información.
 
-#### Get a customer
-You can get a customer's information using their Id or email address.
+#### Obtener un cliente {#get-a-customer}
+Se puede obtener la información de cliente usando su Id o su dirección de correo electrónico.
 
-To do so, you must invoke a **GET** request to the following URLs according to your needs.
+Para esto, debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Producción**: `https://api.bamboopayment.com/v1/api/customer`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 <div id="shortTable"></div>
 
 | | Endpoint |
 |---|---|---|
-| Get by _Customer Id_ | `/{{customer-id}}` |
-| Get by _Customer email_ | `/GetCustomerByEmail?email={{EmailAddress}}` |
+| Obtener por el _Identificador del cliente_ | `/{{customer-id}}` |
+| Obtener por el _correo electrónico del cliente_ | `/GetCustomerByEmail?email={{EmailAddress}}` |
 
-In response, you will get a list with the same object returned when [creating a customer](#response-example). Example:
+En la respuesta, se obtiene una lista con el mismo objeto retornado en la [creación del cliente](#response-example). Ejemplo:
 
 ```json
 {
@@ -155,40 +155,40 @@ In response, you will get a list with the same object returned when [creating a 
 }
 ```
 
-#### Update a customer
-To update the information of a customer, you must invoke a **POST** request to the following URLs according to your needs.
+#### Actualizar un cliente {#update-a-customer}
+Para actualizar la información de un cliente, debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Production**: `https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
+* **Producción**: `https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
 
-Where `{{customer-id}}` is the id generated when you created the user. Include in the body, the [parameters](#request-parameters) you want to update for the user.
+Donde `{{customer-id}}` es el id generado cuando creó el usuario. In elñ cuerpo del request los [parámetros](#request-parameters) que quiera actualizar.
 
-As response, you will get the same object returned when [creating a customer](#response-example).
+En la respuesta, se obtiene  el mismo objeto retornado en la [creación del cliente](#response-example).
 
-## Capture the Card Data
-The next step is to get the token of the customer’s card. To do so, you can invoke the Card Enrollment or use [Direct tokenization]({{< ref "Direct-Tokenization.md" >}}) if your commerce is PCI-compliant.
+## Capturar la información de la tarjeta {#capture-the-card-data}
+El siguiente paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el formulario de inscripción de tarjeta o utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple la normativa PCI.
 
 {{% alert title="Info" color="info"%}}
-If you use the Alternative payment method identifier, you don't require this step and must include the **PaymentMediaId**.
+Si utiliza el identificador del Medio alternativo, no requiere realizar este paso y debe incluir el **PaymentMediaId**.
 {{% /alert %}}
 
-### Invoking the Card Enrollment
-The following sequence diagram explains the Card Enrollment flow.
+### Invocando el formulario de inscripción de tarjeta {#invoking-the-card-enrollment}
+El siguiente diagrama de secuencia explica el flujo de inscripción de tarjetas.
 
 ![PrintScreen](/assets/CardEnrollmentFlow_en.png)
 
-**API calls during flow:**
+**Llamadas API durante el flujo:**
 
 * **3**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
 * **11**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
 
-With the information obtained in the [previous step](#create-a-customer), you can invoke the **OpenIframeCustom** or **OpenIframeCustomWithPaymentMediaOptions** methods (see details below) from the JavaScript library `PWCheckout`, which will manage the card data capture.
+Con la información obtenida en el [paso anterior](#create-a-customer), puede invocar los métodos **OpenIframeCustom** o **OpenIframeCustomWithPaymentMediaOptions** (ver detalles más abajo) de la librería JavaScript `PWCheckout`, que gestionarán la captura de datos de la tarjeta.
 
 #### OpenIframeCustom
-The **OpenIframeCustom** method receives two parameters:
+El método **OpenIframeCustom** recibe dos parámetros:
 
-* **URL:** The URL specifies the iFrame window address where customers enter Card data.<br>The URL is created by concatenating the received data as follows: `{CaptureURL}?key={publicKey}&session_id={UniqueID}`
-* **UniqueID:** an identifier to distinguish the data capture session.
+* **URL:** La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.<br>La URL se crea concatenando los datos recibidos de la siguiente manera: `{CaptureURL}?key={publicKey}&session_id={UniqueID}``
+* **UniqueID:** un identificador para distinguir la sesión de captura de datos.
 
 ```javascript
 <script type="text/javascript">
@@ -197,18 +197,18 @@ The **OpenIframeCustom** method receives two parameters:
 ```
 
 #### OpenIframeCustomWithPaymentMediaOptions
-The **OpenIframeCustomWithPaymentMediaOptions** method receives four parameters:
+El método  **OpenIframeCustomWithPaymentMediaOptions** recibe cuatro parámetros:
 
-* **URL:** The same as OpenIframeCustom.
-* **UniqueID:** The same as OpenIframeCustom.
-* **PaymentMediaid:** Identifier of the Payment method. If set, the Card Capture Form will only accept cards of this Payment Media. _This parameter applies only to Uruguay_.
-* **BankId:** [Bank identifier](/docs/payment-methods/uruguay.html#issuer-banks-table). _This parameter applies only to Uruguay_.
+* **URL:** Igual que en OpenIframeCustom.
+* **UniqueID:** Igual que en OpenIframeCustom.
+* **PaymentMediaid:** Identificador del Medio de Pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. _Este parámetro sólo aplica para Uruguay_.
+* **BankId:** [Identificador del banco](/es/docs/payment-methods/uruguay.html#issuer-banks-table). _Este parámetro sólo aplica para Uruguay_.
 
-The Card Capture Form will only accept cards of the specified Payment Method and Bank if you set both parameters, but they are optional.
+Si se envían ambos parámetros, el Formulario de Captura de Tarjeta sólo aceptará tarjetas del Medio de Pago y Banco especificados, pero son opcionales.
 
-Call examples of the **OpenIframeCustomWithPaymentMediaOptions** method:
+Ejemplos de llamadas al método **OpenIframeCustomWithPaymentMediaOptions**:
 
-1. Call with `PaymentMediaId` and `BankId` set:
+1. Llamada con `PaymentMediaId` y `BankId` enviados:
 
 ```javascript
 <script type="text/javascript">
@@ -217,7 +217,7 @@ Call examples of the **OpenIframeCustomWithPaymentMediaOptions** method:
 ```
 <br>
 
-2. Call with `BankId` set and `PaymentMediaId` in null.
+2. Llamada con `PaymentMediaId` y `BankId` vacíos:
 
 ```javascript
 <script type="text/javascript">
@@ -226,17 +226,17 @@ Call examples of the **OpenIframeCustomWithPaymentMediaOptions** method:
 ```
 <br>
 
-The customer enters the card data and after confirming, the **PWCheckout** library receives the notification that the card was captured correctly.
+El cliente ingresa los datos de la tarjeta y, tras confirmar, la librería **PWCheckout** recibe la notificación de que la tarjeta se ha capturado correctamente.
 
-The merchant page can subscribe to the _tokenCreated_ event that will be triggered upon receiving notification that the card data was captured.
+La página del vendedor puede suscribirse al evento _tokenCreated_ que se disparará al recibir la notificación de que los datos de la tarjeta fueron capturados.
 
-The page can also set the property `form_id` (using the SetProperties method) to indicate the identifier of a form on the page that will be controlled by the **PWCheckout** library. The library will submit the form once the card information has been captured.
+La página también puede configurar la propiedad `form_id` (utilizando el método `SetProperties`) para enviar el identificador del formulario en la página que será controlada por la librería **PWCheckout**. La librería enviará el formulario una vez capturada la información de la tarjeta.
 
-In response to the notification received (by the JavaScript event or by the form submit), the merchant page must re-request the updated Customer information by making the following `HTTP/GET` call (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
+En respuesta a la notificación recibida (por el evento JavaScript o por el envío del formulario), la página del vendedor debe volver a solicitar la información actualizada del cliente realizando la siguiente llamada `HTTP/GET` (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
 
-The returned **Customer** object contains the _PaymentProfiles_ of the customer. These objects have information on the payment methods associated with the client, where in the _Token_ field, _CommerceToken_ generated represents the payment card.
+El objeto **Customer** retornado contiene los _PaymentProfiles_ del cliente. Estos objetos tienen información sobre los métodos de pago asociados al cliente, donde en los campoc _Token_ y _CommerceToken_ representan la tarjeta de pago.
 
-Response example that includes a **PaymentProfile**:
+Ejemplo de respuesta que incluye un **PaymentProfile**:
 
 ```json
 {
@@ -291,17 +291,16 @@ Response example that includes a **PaymentProfile**:
 ```
 
 ### Using Direct tokenization
-Since the user is not registered in your commerce, you must invoke the method to [create the token for registered users]({{< ref "Direct-Tokenization.md" >}}#CT).
-
+Since the user is not registered in your commerce, you must invoke the method to [create the token for usuarios registrados]({{< ref "Direct-Tokenization.md" >}}#CT).
 
 {{% alert title="Nota" color="warning"%}}
 You should keep the information of the _CommerceToken_ private because it represents a captured card that anyone can use for multiple transactions.
 {{% /alert %}}
 
-## Create a Basic Purchase
-The token just obtained must be sent from the browser or the mobile app to the application server to create the purchase transaction.
+## Crear una Compra Básica {#using-direct-tokenization}
+Debe enviar el token recién obtenido desde el navegador o la aplicación móvil al servidor de aplicaciones para crear la transacción de compra.
 
-From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), including the `Purchase` object with the token and other transaction data.
+Desde el servidor, invoque el método [Crear una Compra]({{< ref "Purchase-Operations.md" >}}#create-a-purchase), incluyendo el objeto `Purchase` con el token y los datos de la transacción adicionales.
 
 ```json
 {
@@ -316,11 +315,11 @@ From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md"
 ```
 <br>
 
-The **PaymentMediaId** and **TrxToken** fields are optional, but sending one is mandatory, depending on the flow you want to use.
+Los campos **PaymentMediaId** y **TrxToken**  son opcionales, pero es obligatorio enviar uno dependiendo del flujo que quiere utilizar.
 
-* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/docs/payment-methods.html) section.
+* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificado consultado la sección [Métodos de pago por país](/es/docs/payment-methods.html).
 
-* **TrxToken**: You can generate the token and transact by sending it in this field.
+* **TrxToken**: Puede generar el tokn y transaccionar enviándolo en este campo.
 
 ## Recurring Purchases in One Click
 After customers register correctly, some cards allow certain transactions without needing a Verification Code (CVV), which allows a more agile user experience (payments in one click). In these cases, purchases can be sent directly without requesting more information from the customer, as explained in the previous point, [Basic purchase](#create-a-basic-purchase).

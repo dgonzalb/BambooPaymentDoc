@@ -16,10 +16,10 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**111**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**111**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
@@ -33,8 +33,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | Yes | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
-| `CustomerIP` | `string` | Yes | IP of to the customer connected to the commerce website. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | Sí | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
+| `CustomerIP` | `string` | Sí | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 

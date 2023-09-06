@@ -21,17 +21,17 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 <div style="text-align: center;">
 
-<a href="/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
-<a href="/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
-<a href="/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
-<a href="/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+<a href="/es/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="/es/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/es/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
+<a href="/es/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
 
 {{% /alert %}}
 
 ### Setting the language of the response codes
-You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
+Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado `lang` en su integración, utilizando cualquiera de los siguientes idiomas en formato **ISO 639-1**.
 
 <div id="shortTable"></div>
 
@@ -42,16 +42,16 @@ You can receive the error description by relying on localization features. To do
 | `pt` | Portuguese. |
 
 ### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 **Void**
 
-* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
+* **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
 **Refund**
 
-* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 
 ### Request parameters
@@ -78,9 +78,9 @@ The _**refunds**_ operations is only available for purchases with state _Approve
 _To be defined_
 
 ### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Production**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Producción**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 
 ### Request parameters

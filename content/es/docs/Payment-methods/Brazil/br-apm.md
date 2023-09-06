@@ -20,13 +20,13 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**31**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
-| `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**31**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
+| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
@@ -34,9 +34,9 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
-| `MetadataIn.` → `AddressStreet` | `string` | Yes | Customer address street. |
-| `MetadataIn` → `AddressNumber` | `string` | Yes | Customer address number, floor, apartment. |
-| `MetadataIn` → `AddressDistrict` | `string` | Yes | Customer address district. |
+| `MetadataIn.` → `AddressStreet` | `string` | Sí | Customer address street. |
+| `MetadataIn` → `AddressNumber` | `string` | Sí | Customer address number, floor, apartment. |
+| `MetadataIn` → `AddressDistrict` | `string` | Sí | Customer address district. |
 
 
 #### Request example
@@ -265,23 +265,23 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**66**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
-| `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**66**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
+| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Yes | Customer's Postal Code. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
-| `MetadataIn.` → `AddressStreet` | `string` | Yes | Customer address street. |
-| `MetadataIn` → `AddressNumber` | `string` | Yes | Customer address number, floor, apartment. |
-| `MetadataIn` → `AddressDistrict` | `string` | Yes | Customer address district. 
+| `MetadataIn.` → `AddressStreet` | `string` | Sí | Customer address street. |
+| `MetadataIn` → `AddressNumber` | `string` | Sí | Customer address number, floor, apartment. |
+| `MetadataIn` → `AddressDistrict` | `string` | Sí | Customer address district. 
 
 
 #### Request example

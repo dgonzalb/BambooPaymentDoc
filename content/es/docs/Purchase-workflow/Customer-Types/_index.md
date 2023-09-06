@@ -1,9 +1,9 @@
 ---
-title: "Customers"
-linkTitle: "Customers"
+title: "Clientes"
+linkTitle: "Clientes"
 date: 2023-07-17T07:28:16-05:00
 description: >
-  During the purchase flow, there are two types of customers, _Anonymous users_, and _Registered users_. This section explains both types and how to include them in a purchase.
+  Durante el flujo de compra, existen dos tipos de clientes, _Usuarios Anónimos_ y _Usuarios Registrados_. Esta sección explica ambos tipos y cómo incluirlos en una compra.
 weight: 10
 tags: ["parenttopic"]
 ---

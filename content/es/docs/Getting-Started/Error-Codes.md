@@ -31,7 +31,7 @@ Puede recibir la descripción del error basándose en las funciones de localizac
 
 | Código | Idioma |
 |:-:|---|
-| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportadoes, recibirá los errores en este idioma._ |
+| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma._ |
 | `es` | Español. |
 | `pt` | Portugués. |
 
@@ -41,8 +41,8 @@ Puede recibir la descripción del error basándose en las funciones de localizac
 El código de error para errores desconocidos o indeterminados es `ERR999`. En este caso, contacte a [Soporte de Bamboo](mailto:soportecomercios@bamboopayment.com) para obtener más información.
 {{% /alert %}}
 
-### Errores del servicio de tokenización {#tokenization-service-errors}
-Los errores de tokenización siempre empiezan por `TK`.
+### Errores del servicio Tokenization {#tokenization-service-errors}
+Los errores del servicio Tokenization empiezan por `TK`.
 
 <div id="cutMessage"></div>
 
@@ -51,10 +51,10 @@ Los errores de tokenización siempre empiezan por `TK`.
 | `TK001` | INVALID_CARD_PAN | El número de tarjeta introducido es incorrecto. | Pida a su cliente que compruebe el número de tarjeta y vuelva a intentar la transacción. |
 | `TK002` | INVALID_CVV | El número CVV introducido es incorrecto. | Pida a su cliente que compruebe el código de validación y vuelva a intentar la transacción. |
 | `TK003` | INVALID_EXPIRATION_DATE | La fecha de expiración de la tarjeta es incorrecta. | Pida a su cliente que compruebe la fecha de expiración y vuelva a intentar la transacción. |
-| `TK004` | INVALID_SESSION_IDENTIFIER | Se ha enviado un identificador de sesión no válido en una solicitud de token. | [Regenere el token](/es/docs/purchase-workflow/customer-types.html) y vuelva a intentar la transacción. |
+| `TK004` | INVALID_SESSION_IDENTIFIER | Se ha enviado un identificador de sesión no válido en una solicitud de token. | [Regenere el token](/es/es/docs/purchase-workflow/customer-types.html) y vuelva a intentar la transacción. |
 | `TK005` | INVALID_EMAIL | Se ha introducido un correo electrónico con formato incorrecto. | Pida a su cliente que compruebe la dirección de correo electrónico y vuelva a intentar la transacción.|
 | `TK006` | EXPIRED_TOKEN | El token (de tipo One-Time) ya se ha utilizado o ha caducado. | [Regenere el token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) y vuelva a intentar la transacción. |
-| `TK007` | INVALID_PAYMENT_MEDIA | Error con la información del método de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del método de pago en la [lista de países](/es/docs/payment-methods.html) correspondiente. |
+| `TK007` | INVALID_PAYMENT_MEDIA | Error con la información del método de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del método de pago en la [lista de países](/es/es/docs/payment-methods.html) correspondiente. |
 | `TK008` | ISSUER_BANK_NOT_MATCH |  El banco emisor no coincide con el esperado. | Valide el banco emisor de la tarjeta de su cliente. |
 | `TK009` | INVALID_ACTIVATION_CODE | El código de activación del token no es válido.| Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
 | `TK010` | INVALID_COMMERCE_TOKEN | El token de comercio no es válido. | [Regenere el token (CT)]({{< ref Registered-users.md >}}) y vuelva a intentar la transacción. |
@@ -66,153 +66,156 @@ Los errores de tokenización siempre empiezan por `TK`.
 | `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del método de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
 | `TK017` | INVALID_DOCUMENT_NUMBER | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
 | `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
-| `TK999` | UNKNOWN_ERROR | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
+| `TK999` | UNKNOWN_ERROR | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
 
-### Transactions service errors
-Transaction errors always starts with `TR`.
+### Errores del servicio Transactions {#transactions-service-errors}
+Los errores del servicio Transactions empiezan por `TR`.
 
 <div id="cutMessage"></div>
 
 | Código | Mensaje | Descripción | Posible solución |
 |---|---|---|---|
-| `TR001` | COMMUNICATION_ERROR | Communication error with the acquiring service. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR002` | INVALID_TRANSACTION_STATE | The transaction associated with the purchase is in a state that does not allow the execution of the current operation. This error occurs, por ejemplo, when you want to perform a _Commit_ operation on a Purchase that is already authorized or rejected. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR003` | ACQUIRER_ACCOUNT_PROBLEM | Problems with the merchant account at the Acquirer. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR004` | ACQUIRER_PROXY_ERROR | Error sending transaction to the Acquirer via Proxy. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR005` | ACQUIRER_PROBLEM | Acquirer’s internal error. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR006` | ACQUIRER_DUPLICATED_ORDER | Duplicate order number at the Acquirer. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR007` | INVALID_PAYMENT_MEDIA | Payment data errors (card number, verification code, or expiration date). | Ask your customer to verify the card information and retry the transaction. |
-| `TR008` | COMMIT_AMOUNT_GREATER_THAN_AUTHORIZED | The amount you intend to confirm is higher than previously authorized. | The [commit operation]({{< ref purchase-operations.md>}}#confirm-a-purchase) was requested for a higher amount than authorized. Send an equal or lower value than the original authorization. |
-| `TR009` | ACQUIRER_UNKNOWN_ERROR | Unknown Acquirer error. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR010` | ACQUIRER_INVALID_DOCUMENT | Invalid customer’s document number in the acquirer. | Your customer must check the document type and number provided and retry the transaction. Otherwise, they must contact their card issuer bank. |
-| `TR011` | BLOCKED_OR_LOST_CARD | Blocked or lost card. | Your customer must check the card used or contact the card issuer bank to unblock it before retry the transaction.  |
-| `TR012` | ACQUIRER_LIMIT_EXCEEDED | Credit limit exceeded. | Your customer must try to make the purchase using a different card, raise the card limit, or free up available funds. |
-| `TR013` | ACQUIRER_DENIED_TRANSACTION | Acquirer or issuer denied the transaction. | The acquirer or the card issuer bank has rejected the transaction.<br>This rejection may have multiple causes depending on the acquisition contracted and configured by you.<br>Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR014` | ACQUIRER_POSSIBLE_FRAUD | The Acquirer denied the transaction for possible fraud. | The Acquirer has rejected the transaction based on their anti-fraud system.<br>The Anti-fraud rules of the Acquirer are associated with the merchant's business type (line, category, products) and the contract signed for the online shopping terminal requested.<br>You (as commerce) must contact the acquirer to determine whether it's required to make an adjustment of the anti-fraud rules. |
-| `TR015` | ACQUIRER_REVIEW_NEEDED | The Acquirer suggests the manual review of the transaction. Por ejemplo, on suspicion of fraud. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR016` | ACQUIRER_INVALID_PARAMETER | Error in the parameters reported to the acquirer. |Some of the data the customer provides when making the purchase is incorrect or incomplete.<br>Your customer must verify if they provided the address (along with city and country), name and last name, and document.<br>Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) if you cannot verify. |
-| `TR017` | INVALID_TRANSACTION_TYPE | Invalid transaction type. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR018` | REGISTRATION_DENIED | The Acquirer denied the card registration. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR019` | ACQUIRER_TRANSACTION_REJECTED | The acquirer or processor rejected the transaction. | The acquirer or the card issuer bank has rejected the transaction.<br>This rejection may have multiple causes depending on the acquisition contracted and configured by you.<br>Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR020` | ISSUER_DECLINE_CALL | The issuer denied the transaction; however, the issuer can verbally provide authorization. | The bank has rejected the online purchase. Your customer must contact the card issuer bank to authorize the purchase.<br>Related error `TR023` |
-| `TR021` | ISSUER_EXPIRED_CARD | The expired date or expired card does not match. | The acquirer indicates that the card is expired or the expiration date provided by the customer is incorrect.<br>Your customer must validate this information in the card before retrying the purchase. |
-| `TR022` | ISSUER_INVALID_CVV | The issuer indicates that CVV is invalid. | The Acquirer indicates that the card's validation code (CVV) is incorrect.<br>Your customer must validate this information on the card before retrying the purchase. |
-| `TR023` | ISSUER_RESTRICTED_CARD | The card is inactive, or you are not authorized to do this transaction. | The card used by the customer is not enabled to perform online purchases.<br>Your customer must contact the card issuer bank and enable the online purchases.<br>If the card is authorized for online purchases, verify its authorization for usage within the geographical region of the shop. |
-| `TR024` | ACQUIRER_FRECUENCY_EXCEEDED | The frequency of use or the maximum amount has been exceeded. | The customer's card has surpassed the allowable usage count or exceeded the specified amount limit within a certain period.<br>The customer should contact their card issuer bank to determine the appropriate waiting period before attempting the purchase again. |
-| `TR025` | ACQUIRER_INVALID_ADDRESS | Address data cannot validate or is incorrect. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR026` | INSUFFICIENT_AMOUNT | Insufficient Funds | Your customer must try to make the purchase using a different card, raise the card limit, or free up available funds.  |
-| `TR027` | ACQUIRER_DENIED_TRANSACTION_AUTHENTICATION_REQUIRED | The acquirer denied the transaction and must request authorization. | The bank has rejected the online purchase. Your customer must contact the card issuer bank to authorize the purchase.<br>Related error `TR023` |
-| `TR075` | PAYER_AUTHENTICATION_REQUIRED | 3DSecure response indicates that it must require customer validation. | Acquirer response indicating that customer validation (**Verified by Visa** or HighProtection being _Santander_) is required. |
-| `TR076` | PAYER_AUTHENTICATION_FAILED | Payer authentication fails. | The acquirer indicates that the additional verification (or two-step verification) has failed (HighProtection for _Santander_ or **Verified By Visa** for other banks).<br>Your customer must contact the card issuer bank or the bank's home banking to check whether the service is enabled.<br>If it is enabled, verify what configuration it has (verification by email, SMS, token, etc) and then retry the purchase. |
-| `TR100` | ACQUIRER_OTHER_REASONS | The acquirer rejects for many reasons. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR101` | ACQUIRER_REFUND_ERROR | The acquirer cannot process the refund. Contact the acquirer. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR301` | Antifraud_Reject | Rejected by anti-fraud system | Bamboo's Anti-fraud system.<br>Validate with [Bamboo support](mailto:soportecomercios@bamboopayment.com) what rule was affected before your customer retries the purchase. |
-| `TR302` | Antifraud_Invalid_Parameter | Invalid parameters for anti-fraud system | Bamboo's Anti-fraud system.<br>Validate with [Bamboo support](mailto:soportecomercios@bamboopayment.com) what rule was affected before your customer retries the purchase. |
-| `TR997` | TRANSACTION_STEP_ERROR | An error occurred while executing the current process. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
-| `TR999` | UNKNOWN | Undetermined error when executing the transaction. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para mas información. |
+| `TR001` | COMMUNICATION_ERROR | Error de comunicación con el servicio de adquisición. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR002` | INVALID_TRANSACTION_STATE | La transacción asociada a la compra se encuentra en un estado que no permite la ejecución de la operación actual. Este error se produce, por ejemplo, cuando se quiere realizar una operación _Commit_ sobre una Compra que ya está autorizada o rechazada. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR003` | ACQUIRER_ACCOUNT_PROBLEM | Problemas con la cuenta de comercio en el Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR004` | ACQUIRER_PROXY_ERROR | Error al enviar la transacción a la entidad adquirente a través del proxy. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR005` | ACQUIRER_PROBLEM | Error interno del Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR006` | ACQUIRER_DUPLICATED_ORDER | Número de orden duplicado en la Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR007` | INVALID_PAYMENT_MEDIA | Errores en los datos de pago (número de tarjeta, código de verificación o fecha de expiración). | Pida a su cliente que verifique la información de la tarjeta y vuelva a intentar la transacción. |
+| `TR008` | COMMIT_AMOUNT_GREATER_THAN_AUTHORIZED | El importe que pretende confirmar es superior al autorizado previamente. | La [operación de confirmación]({{< ref purchase-operations.md>}}#confirm-a-purchase) se solicitó por un monto superior al autorizado. Envíe un valor igual o inferior al de la autorización original. |
+| `TR009` | ACQUIRER_UNKNOWN_ERROR | Error de Adquirente Desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR010` | ACQUIRER_INVALID_DOCUMENT | Número de documento del cliente no válido en la entidad adquirente. | El cliente debe comprobar el tipo y número de documento facilitado y volver a intentar la transacción. En caso contrario, deberá ponerse en contacto con el banco emisor de su tarjeta. |
+| `TR011` | BLOCKED_OR_LOST_CARD | Tarjeta bloqueada o extraviada. | Su cliente debe comprobar la tarjeta utilizada o ponerse en contacto con el banco emisor de la tarjeta para desbloquearla antes de reintentar la transacción. |
+| `TR012` | ACQUIRER_LIMIT_EXCEEDED | Se ha superado el límite de crédito. | Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
+| `TR013` | ACQUIRER_DENIED_TRANSACTION | La entidad adquirente o el emisor han denegado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción. Este rechazo puede tener múltiples causas dependiendo de la entidad adquirente contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR014` | ACQUIRER_POSSIBLE_FRAUD | La Entidad Adquirente ha rechazado la operación por posible fraude. | La Adquirente ha rechazado la transacción basándose en su sistema antifraude.<br>Las normas antifraude de la Adquirente están asociadas al tipo de negocio del comercio (línea, categoría, productos) y al contrato firmado para el terminal de compra online solicitado.<br>Usted (como comercio) debe ponerse en contacto con la entidad adquirente para determinar si es necesario realizar un ajuste de las normas antifraude. |
+| `TR015` | ACQUIRER_REVIEW_NEEDED | El Adquirente sugiere la revisión manual de la transacción. Por ejemplo, en caso de sospecha de fraude. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR016` | ACQUIRER_INVALID_PARAMETER | Error en los parámetros comunicados a la entidad adquirente. | Algunos de los datos que proporciona el cliente al realizar la compra son incorrectos o incompletos.<br>El cliente debe verificar si ha facilitado la dirección (junto con ciudad y país), nombre y apellidos, y documento. Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) si no puede verificarlo. |
+| `TR017` | INVALID_TRANSACTION_TYPE | Tipo de transacción no válida. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR018` | REGISTRATION_DENIED | La entidad adquirente ha denegado el registro de la tarjeta. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR019` | ACQUIRER_TRANSACTION_REJECTED | La entidad adquirente o el procesador han rechazado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción.<br>Este rechazo puede tener múltiples causas dependiendo de la adquirencia contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR020` | ISSUER_DECLINE_CALL | El emisor ha rechazado la transacción, sin embargo, el emisor puede autorizarla verbalmente. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
+| `TR021` | ISSUER_EXPIRED_CARD | La fecha de expiración no coincide o tarjeta expirada. | La entidad adquirente indica que la tarjeta está caducada o que la fecha de caducidad facilitada por el cliente es incorrecta.<br>El cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
+| `TR022` | ISSUER_INVALID_CVV | El emisor indica que el CVV no es válido. | La entidad adquirente indica que el código de validación de la tarjeta (CVV) es incorrecto.<br>Su cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
+| `TR023` | ISSUER_RESTRICTED_CARD | La tarjeta está inactiva, o usted no está autorizado a realizar esta transacción. | La tarjeta utilizada por el cliente no está habilitada para realizar compras online.<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta y habilitar las compras en línea.<br>Si la tarjeta está autorizada para realizar compras en línea, verifique su autorización de uso dentro de la región geográfica de la tienda. |
+| `TR024` | ACQUIRER_FRECUENCY_EXCEEDED | Se ha superado la frecuencia de uso o el importe máximo. | La tarjeta del cliente ha sobrepasado la frecuencia de uso permitida o ha superado el límite de importe especificado en un periodo determinado.<br>El cliente debe ponerse en contacto con el banco emisor de su tarjeta para determinar el periodo de espera adecuado antes de volver a intentar la compra. |
+| `TR025` | ACQUIRER_INVALID_ADDRESS | Los datos de dirección no se pueden validar o son incorrectos. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR026` | INSUFFICIENT_AMOUNT | Fondos insuficientes | Tu cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
+| `TR027` | ACQUIRER_DENIED_TRANSACTION_AUTHENTICATION_REQUIRED | La entidad adquirente ha rechazado la transacción y debe solicitar autorización. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
+| `TR075` | PAYER_AUTHENTICATION_REQUIRED | La respuesta de 3DSecure indica que debe solicitar la validación del cliente. | Respuesta de la entidad adquirente indicando que se requiere la validación del cliente (**Verified by Visa** o HighProtection siendo _Santander_). |
+| `TR076` | PAYER_AUTHENTICATION_FAILED | La autenticación del pagador falla. | La entidad adquirente indica que ha fallado la verificación adicional (o verificación en dos pasos) (HighProtection para _Santander_ o **Verified By Visa** para otros bancos).<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta o con el home banking del banco para comprobar si el servicio está habilitado.<br>Si está habilitado, verifique qué configuración tiene (verificación por email, SMS, token, etc) y vuelva a intentar la compra. |
+| `TR100` | ACQUIRER_OTHER_REASONS | La entidad adquirente rechaza por muchos motivos. | Contacta a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR101` | ACQUIRER_REFUND_ERROR | La entidad adquirente no puede procesar el reembolso. Póngase en contacto con la entidad adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR301` | Antifraud_Reject | Rechazado por el sistema antifraude | Sistema antifraude de Bamboo.<br>Valide con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
+| `TR302` | Antifraud_Invalid_Parameter | Parámetros no válidos para el sistema antifraude de Bamboo.<br>Valide con [Soporte de Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
+| `TR997` | TRANSACTION_STEP_ERROR | Se ha producido un error al ejecutar el proceso actual. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR999` | UNKNOWN | Error indeterminado al ejecutar la transacción. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
 
-### Purchase service errors
-Purchase errors always starts with `PR`.
-
-<div id="cutMessage"></div>
-
-| Código | Mensaje | Descripción |
-|---|---|---|
-| `PR001` | INVALID_TOKEN | The informed token is invalid, expired or does not correspond to the commerce. | 
-| `PR002` | INVALID_ORDER | The order number is invalid. |
-| `PR003` | INVALID_AMOUNT | The reported amount is invalid. |
-| `PR004` | INVALID_CURRENCY | The reported currency is invalid. |
-| `PR005` | INVALID_INVOICE | The invoice number is invalid (it must be numeric). |
-| `PR006` | INVALID_PURCHASE_IDENTIFIER | The Purchase identifier is invalid. |
-| `PR007` | INVALID_TRANSACTION_IDENTIFIER | Invalid `TransactionID`. |
-| `PR008` | PURCHASE_NOT_FOUND | The requested purchase cannot be found. |
-| `PR009` | INVALID_PURCHASE_STATE | The current purchase state does not allow the requested operation. |
-| `PR010` | TAXABLE_AMOUNT_REQUIRED | The `TaxableAmount` field is required. |
-| `PR011` | INVOICE_REQUIRED | The `Invoice` filed is required. |
-| `PR012` | INVALID_CAPTURED_CVV_REQUIRED | Capture of the card verification code is required. |
-| `PR013` | INVALID_INSTALLMENTS | The selected installments for the purchase are invalid for the card. |
-| `PR014` | INVALID_DESCRIPTION_LENGTH | Invalid parameter length description. |
-| `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | `UserAgent` parameter is empty. |
-| `PR016` | INVALID_CUSTOMER_IP_EMPTY | `CustomerIP` parameter is empty. |
-| `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | The field `TaxableAmount` cannot be greater than the purchase total amount. |
-| `PR018` | PR_DATE_NEEDED | To filter by dates, you must enter value for `From` and `To` parameters. |
-| `PR019` | EXCEED_DATE_RANGE | The search period exceeds the maximum number of days. |
-| `PR020` | INVALID_DOCUMENT_NUMBER | Invalid registered document |
-| `PR021` | NOT_ALLOW_PARTIAL_REFUND | Partial refunds are not allowed for the payment method used. |
-
-### Customers service errors
-Customer always starts with `CS`.
+### Errores del servicio Purchase {#purchase-service-errors}
+Los errores del servicio Purchase empiezan por `PR`.
 
 <div id="cutMessage"></div>
 
 | Código | Mensaje | Descripción |
 |---|---|---|
-| `CS001` | INVALID_EMAIL | Invalid e-mail address. |
-| `CS002` | INVALID_ADDRESS_TYPE | Invalid address type. |
-| `CS003` | INVALID_CUSTOMER_IDENTIFIER | Invalid customer identifier. |
-| `CS004` | TOKEN_CREATION_FAILED | An error occurred in the token creation. |
-| `CS005` | EMAIL_ALREADY_EXISTS | E-mail already registered. |
-| `CS006` | INVALID_ADDITIONAL_DATA | The parameter `AdditionalData` was not send correctly, it must be `key:value` separated by semicolon. |
-| `CS007` | INVALID_CUSTOMER_DOCUMENT | Invalid customer document number. |
-| `CS008` | INVALID_CUSTOMER_DOCUMENT_TYPE | Invalid customer document type. |
-| `CS009` | TOKEN_ALREADY_EXISTS | There was already a `CommerceToken` for the card. |
-| `CS010` | INVALID_PAYMENT_PROFILE | Invalid Payment Profile. |
-| `CS011` | INVALID_PAYMENT_PROFILE_IDENTIFIER | Invalid Payment Profile Identifier. |
+| `PR001` | INVALID_TOKEN | El token informado no es válido, ha caducado o no corresponde al comercio. |
+| `PR002` | INVALID_ORDER | El número de orden no es válido. |
+| `PR003` | INVALID_AMOUNT | El importe informado no es válido. |
+| `PR004` | INVALID_CURRENCY | La moneda registrada no es válida. |
+| `PR005` | INVALID_INVOICE | El número de factura no es válido (debe ser numérico). |
+| `PR006` | INVALID_PURCHASE_IDENTIFIER | El identificador de la compra no es válido. |
+| `PR007` | INVALID_TRANSACTION_IDENTIFIER | El identificador de transacción no es válido. |
+| `PR008` | PURCHASE_NOT_FOUND | No se encuentra la compra solicitada. |
+| `PR009` | INVALID_PURCHASE_STATE | El estado actual de la compra no permite la operación solicitada. |
+| `PR010` | TAXABLE_AMOUNT_REQUIRED | El campo `TaxableAmount` es obligatorio. |
+| `PR011` | INVOICE_REQUIRED | El campo `Invoice` es obligatorio. |
+| `PR012` | INVALID_CAPTURED_CVV_REQUIRED | Se requiere la captura del código de verificación de la tarjeta. |
+| `PR013` | INVALID_INSTALLMENTS | Los plazos seleccionados para la compra no son válidos para la tarjeta. |
+| `PR014` | INVALID_DESCRIPTION_LENGTH | Descripción de longitud de parámetro no válida. |
+| `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | El parámetro `UserAgent` está vacío. |
+| `PR016` | INVALID_CUSTOMER_IP_EMPTY | El parámetro `CustomerIP` está vacío. |
+| `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | El campo `TaxableAmount` no puede ser mayor que el importe total de la compra. |
+| `PR018` | PR_DATE_NEEDED | Para filtrar por fechas, debe introducir el valor de los parámetros `From` y `To`. |
+| `PR019` | EXCEED_DATE_RANGE | El periodo de búsqueda excede el número máximo de días. |
+| `PR020` | INVALID_DOCUMENT_NUMBER | Documento registrado inválido.
+| `PR021` | NOT_ALLOW_PARTIAL_REFUND | No se permiten devoluciones parciales para el método de pago utilizado. |
 
-### Loyalty Plan service errors
-Loyalty plan errors always starts with `LP`.
+### Errores del servicio Customers {#customers-service-errors}
+Los errores del servicio Customer empiezan por `CS`.
+
+<div id="cutMessage"></div>
+
+| Código | Mensaje | Descripción |
+|---|---|---|
+| `CS001` | INVALID_EMAIL | Dirección de correo electrónico no válida. |
+| `CS002` | INVALID_ADDRESS_TYPE | Tipo de dirección no válida. |
+| `CS003` | INVALID_CUSTOMER_IDENTIFIER | Identificador de cliente no válido. |
+| `CS004` | TOKEN_CREATION_FAILED | Se ha producido un error en la creación del token. |
+| `CS005` | EMAIL_ALREADY_EXISTS | E-mail ya registrado. |
+| `CS006` | INVALID_ADDITIONAL_DATA | El parámetro `AdditionalData` no fue enviado correctamente, debe ser `key:value` separado por punto y coma. |
+| `CS007` | INVALID_CUSTOMER_DOCUMENT | Número de documento de cliente no válido. |
+| `CS008` | INVALID_CUSTOMER_DOCUMENT_TYPE | Tipo de documento de cliente inválido. |
+| `CS009` | TOKEN_ALREADY_EXISTS | Ya existía un `CommerceToken` para la tarjeta. |
+| `CS010` | INVALID_PAYMENT_PROFILE | Perfil de pago no válido. |
+| `CS011` | INVALID_PAYMENT_PROFILE_IDENTIFIER | Identificador de perfil de pago no válido. |
+
+### Errores del servicio Planes de fidelización {#loyalty-plan-service-errors}
+Los errores de Planes de fidelización empiezan por `LP`.
 
 | Código | Descripción |
 |---|---|
-| `LP004` | The program does not exist. |
-| `LP005` | The redemption center does not exist. |
-| `LP006` | The branch does not exist. |
-| `LP007` | The program is not active. |
-| `LP008` | The redemption center is not enabled. |
-| `LP009` | The redemption center does not belong to the program. |
-| `LP010` | The redemption center is not active for the program. |
-| `LP011` | The branch does not belong to the redemption center. |
-| `LP012` | The user does not exist. |
-| `LP013` | The user does not belong to the program. |
-| `LP014` | The currency does not exist. |
-| `LP015` | The quotation does not exist. |
-| `LP016` | The document type does not exist. |
-| `LP017` | The customer does not exist. |
-| `LP018` | The balance does not exist. |
-| `LP019` | Token not found. |
-| `LP020` | Card not found. |
-| `LP021` | Card expired. |
-| `LP022` | Syntax error in the Program. |
-| `LP023` | Syntax error in the Redemption Center. |
-| `LP024` | Syntax error in the Branch. |
-| `LP025` | Syntax error in the Currency. |
-| `LP026` | Syntax error in the Import. |
-| `LP027` | Syntax error in the user identification (`LoyaltyPlanUserIdentification`). |
-| `LP028` | Syntax error in the masked card. |
-| `LP029` | Syntax error in the Transaction Id. |
-| `LP030` | Syntax error in the gateway Transaction Id. |
-| `LP031` | Syntax error in the number of points. |
-| `LP032` | Syntax error in the number of installments. |
-| `LP033` | Syntax error in the token (Authorization). |
-| `LP034` | The request has an invalid syntax. It is too big or it has an invalid format message. |
-| `LP035` | Invalid credentials. |
-| `LP036` | The logged user is not allowed to see the customer data. |
-| `LP037` | The resource requested cannot be found. |
-| `LP038` | The loyalty plan is mandatory. |
-| `LP039` | The Customer Id of the loyalty plan is mandatory. |
-| `LP040` | Input data error. |
-| `LP041` | The customer is not authorized. |
-| `LP042` | Insufficient balance. |
-| `LP043` | The token has expired. |
-| `LP044` | The movement is canceled. |
-| `LP045` | The movement does not exist. |
-| `LP046` | The number of points sent does not match the points in the movement. |
-| `LP047` | The movement has already been refunded. |
-| `LP048` | The movement is a refund. |
-| `LP049` | The gateway does not exist. |
-| `LP050` | `CustomerId` with the wrong format. |
-| `LP051` | The point does not exist. |
-| `LP052` | The amount sent does not match the amount in the movement. |
-| `LP053` | The currency sent does not match the currency in the movement. |
-| `LP054` | The customer does not exist or is not active. |
-| `LP055` | Customer blocked. |
+| `LP0001` | El token es requerido. |
+| `LP0002` | Plan de fidelización inválido. |
+| `LP0003` | Error al consultar saldo de puntos. |
+| `LP0004` | El programa no existe. |
+| `LP0005` | El centro de Canje no existe. |
+| `LP0006` | La sucursal no existe. |
+| `LP0007` | El programa no está activo. |
+| `LP0008` | El centro de Canje no está habilitado. |
+| `LP0009` | El centro de Canje no pertenece al programa. |
+| `LP0010` | El centro de Canje no activo para el programa. |
+| `LP0011` | Sucursal no pertenece al Centro de Canje. |
+| `LP0012` | El usuario no existe. |
+| `LP0013` | El usuario no pertenece al Programa. |
+| `LP0014` | La moneda no existe. |
+| `LP0015` | La cotización no existe. |
+| `LP0016` | El tipo de documento no existe. |
+| `LP0017` | El cliente no existe. |
+| `LP0018` | El saldo no existe. |
+| `LP0019` | Token no encontrado. |
+| `LP0020` | Tarjeta no encontrada. |
+| `LP0021` | Tarjeta vencida. |
+| `LP0022` | Error de sintaxis en el Programa. |
+| `LP0023` | Error de sintaxis en el Centro de Canje. |
+| `LP0024` | Error de sintaxis en la Sucursal. |
+| `LP0025` | Error de sintaxis en la Moneda. |
+| `LP0026` | Error de sintaxis en el Importe. |
+| `LP0027` | Error de sintaxis en la Identificación de usuario (`LoyaltyPlanUserIdentification`). |
+| `LP0028` | Error de sintaxis en la Tarjeta enmascarada. |
+| `LP0029` | Error de sintaxis en el Id de la Transacción. |
+| `LP0030` | Error de sintaxis en el Id de la Transacción de la Pasarela. |
+| `LP0031` | Error de sintaxis en la cantidad de puntos. |
+| `LP0032` | Error de sintaxis en la cantidad de cuotas. |
+| `LP0033` | Error en el token (Authorization). |
+| `LP0034` | La solicitud tiene una sintaxis incorrecta, es demasiado grande o tiene un formato de mensaje no válido. |
+| `LP0035` | Credenciales inválidas. |
+| `LP0036` | El usuario que inició sesión no tiene permiso para ver los datos del cliente. |
+| `LP0037` | No se puede encontrar el recurso solicitado. |
+| `LP0038` | El plan de fidelización es requerido. |
+| `LP0039` | El identificador del cliente dentro del plan de fidelización es requerido. |
+| `LP0040` | Error en los datos de ingreso. |
+| `LP0041` | Cliente no autorizado. |
+| `LP0042` | Saldo insuficiente. |
+| `LP0043` | El token ha expirado. |
+| `LP0044` | El movimiento está cancelado. |
+| `LP0045` | El movimiento no existe. |
+| `LP0046` | No coincide cantidad de puntos enviada con puntos del movimiento. |
+| `LP0047` | El movimiento ya fue devuelto. |
+| `LP0048` | El movimiento es una devolución. |
+| `LP0049` | La pasarela de pagos no existe. |
+| `LP0050` | `CustomerId` con formato incorrecto. |
+| `LP0051` | No existe el punto. |
+| `LP0052` | No coincide monto enviado con monto del movimiento. |
+| `LP0053` | No coincide moneda enviada con moneda del movimiento. |
+| `LP0054` | El cliente no existe o está inactivo. |
+| `LP0055` | Cliente está bloqueado. |

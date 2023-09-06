@@ -13,9 +13,9 @@ Contact your sales representative to enable this feature.
 {{% /alert %}}
 
 ## Request URL
-Regardless of the token you want to create, You must invoke a **POST** request to the following URLs according to your needs.
+Regardless of the token you want to create, Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Production**: `https://directtoken.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
+* **Producción**: `https://directtoken.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
 * **Stage**: `https://directtoken.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
 
 Where `{{Merchant Private Key}}` is your merchant identifier.
@@ -33,14 +33,14 @@ You can receive the error description by relying on localization features. You m
 
 ## Request parameters
 
-| Parameter | Type | Mandatory? | Description |
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
 |---|---|---|---|
-| `Email` | `string` | Yes | Email address of the cardholder. |
-| `Pan` | `string` | Yes | Card number. |
-| `CVV` | `string` | Yes | The security code of the card. |
-| `Expiration` | `string` | Yes | Expiration date printed on the card. |
-| `Titular` | `string` | Yes | Name of the cardholder. | 
-| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indicates the country of the cardholder. For _CrossBorder_ tokenization, this parameter is mandatory.<br>You can find the list of countries available [here](/docs/payment-methods.html#countries-table-iso-3166-1). |
+| `Email` | `string` | Sí | Email address of the cardholder. |
+| `Pan` | `string` | Sí | Card number. |
+| `CVV` | `string` | Sí | The security code of the card. |
+| `Expiration` | `string` | Sí | Expiration date printed on the card. |
+| `Titular` | `string` | Sí | Name of the cardholder. | 
+| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indicates the country of the cardholder. For _CrossBorder_ tokenization, this parameter is mandatory.<br>You can find the list of countries available [here](/es/docs/payment-methods.html#countries-table-iso-3166-1). |
 | `CustomerId` | `string` | No | Identifier of the customer. If sent, the API generates a payment within the customer with a _Commerce Token_ (CT) for future use.<br>Refer to [create a customer]({{< ref Registered-users.md >}}#create-a-customer) for more information. | 
 
 ### Create a One Time Token (OTT) {#OTT}

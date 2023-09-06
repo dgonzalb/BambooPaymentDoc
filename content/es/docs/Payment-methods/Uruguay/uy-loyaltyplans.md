@@ -12,13 +12,13 @@ tags: ["subtopic"]
 _SoySantander_ allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.
 
 ### Token request
-The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout.` library PWCheckout.
+The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/es/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout.` library PWCheckout.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `loyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan |
-| `LoyaltyPlanUserIdentification` | `string` | Yes | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
-| `email` | `string` | Yes | E-mail address of the customer. |
+| `loyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan |
+| `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
+| `email` | `string` | Sí | E-mail address of the customer. |
 
 <br>
 Example:
@@ -34,14 +34,14 @@ Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Yes | Token generated as explained in [Token request](#token-request). |
-| `Order` | `string` | Yes | Order number of the purchase. |
+| `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
+| `Order` | `string` | Sí | Order number of the purchase. |
 | `Amount` | `number` | No | Amount of the purchase. Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it.<br>If you must include decimals in the amount, concatenate the decimal places without de decimal point. Example  `12,25` > `1225`. |
-| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the posibles valores in the [Currencies](/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
-| `Capture` | `boolean` | Yes | Send `true` in this parameter as the Loyalty plan purchases don't support Pre-authorization. |
-| `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan. |
-| `LoyaltyPlan` → `Amount` | `numeric` | Yes | Total of points to redeem. |
-| `LoyaltyPlan` → `LoyaltyPlanUserIdentification` | `string` | Yes | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
+| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the posibles valores in the [Currencies](/es/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
+| `Capture` | `boolean` | Sí | Send `true` in this parameter as the Loyalty plan purchases don't support Pre-authorization. |
+| `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan. |
+| `LoyaltyPlan` → `Amount` | `numeric` | Sí | Total of points to redeem. |
+| `LoyaltyPlan` → `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
 
 {{% alert title="Info" color="info"%}}
 The outcome of a mixed purchase depends on processing points and cards. If the acquirer rejects either of these processes, the entire purchase will also be rejected.
@@ -81,7 +81,7 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 ### Consulting the number of points
 To get the number of points available for a user, create a `POST` request to the following URL
 
-* **Production**: `https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
+* **Producción**: `https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 
 Where `{{LoyaltyPlan-ID}}` is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in [Purchase operations]({{< ref Purchase-Operations.md >}}).
@@ -91,9 +91,9 @@ Include the following parameters in the request.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `LoyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan. |
-| `LoyaltyPlanUserIdentification` | `string` | Yes | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
-| `TrxToken` | `string` | Yes | Token generated as explained in [Token request](#token-request). |
+| `LoyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan. |
+| `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
+| `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
 
 #### Request example 
 ```json

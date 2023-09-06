@@ -13,19 +13,19 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
-| `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
+| `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
+| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State.<br>Refer to [states of residence](/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
-| `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Yes | Customer's Postal Code. Do not include hyphens. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Customer's State.<br>Refer to [states of residence](/es/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Customer's Postal Code. Do not include hyphens. |
 
 {{% alert title="Info" color="info"%}}
 

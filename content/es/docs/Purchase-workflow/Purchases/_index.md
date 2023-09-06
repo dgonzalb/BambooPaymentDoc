@@ -8,7 +8,7 @@ weight: 20
 tags: ["parenttopic"]
 ---
 
-Depending on the contract you have signed with _Bamboo Payment_ ([Gateway](/docs/getting-started/concepts.html#gateway-model) or [Payfac](concepts.html#payfac-model) model) and the countries where you process, you can create Local or CrossBorder purchases.
+Depending on the contract you have signed with _Bamboo Payment_ ([Gateway](/es/docs/getting-started/concepts.html#gateway-model) or [Payfac](concepts.html#payfac-model) model) and the countries where you process, you can create Local or CrossBorder purchases.
 
 * A _Local purchase_ refers to those in which the currency of the payer and the currency of your store are equal. When your store and the buyer are in Uruguay, the currency for the purchase and the amount you receive will be in **UYU**.
 * A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. Por ejemplo, if your store is in Uruguay, and the buyer is in Colombia, the purchase will be in **COP**, but you receive the amount in **UYU**.

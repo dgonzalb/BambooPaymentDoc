@@ -30,14 +30,14 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
@@ -193,14 +193,14 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |

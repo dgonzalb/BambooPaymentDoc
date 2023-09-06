@@ -1,7 +1,7 @@
 # Hugo Dynamic Tabs
 This shortcodes allows you to easily add tabs to your markdown files. There is no hardcoded limit to the number of tab groups you can have or the amount of tabs in a tab group. 
 
-Please note, both shortcodes use [Bootstrap Tabs](https://getbootstrap.com/docs/4.1/components/navs/#tabs) but can be changed to fit your needs.
+Please note, both shortcodes use [Bootstrap Tabs](https://getbootstrap.com/es/docs/4.1/components/navs/#tabs) but can be changed to fit your needs.
 
 ## How to Install
 

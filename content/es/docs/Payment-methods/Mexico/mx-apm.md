@@ -20,9 +20,9 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**35**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**35**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
@@ -225,10 +225,10 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**30**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**30**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
@@ -420,10 +420,10 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**32**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
+| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**32**_. |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |

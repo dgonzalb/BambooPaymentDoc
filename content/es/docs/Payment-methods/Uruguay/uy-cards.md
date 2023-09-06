@@ -13,18 +13,18 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Yes | Customer's email. |
-| `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
-| `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
+| `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
+| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
+| `Customer` → `Email` | `string` | Sí | Customer's email. |
+| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
+| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | Yes | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | Sí | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States abd Canada. |
 | `Customer` → `ShippingAddress` → `Country` | `string` | No | Country of the Shipping Address. |
 | `Customer` → `ShippingAddress` → `State` | `string` | No | State of the Shipping Address. | 
@@ -32,8 +32,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Address Detail of the Shipping Address. | 
 | `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Postal Code of the Shipping Address. |
 | `CustomerIP` | `string` | No | IP of the customer that uses the service. |
-| `DataUY` | `object` | Yes | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage. |
-| `DataUY` → `IsFinalConsumer` | `boolean` | Yes | Indicates if the sale is performed to a final consumer. |
+| `DataUY` | `object` | Sí | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage. |
+| `DataUY` → `IsFinalConsumer` | `boolean` | Sí | Indicates if the sale is performed to a final consumer. |
 | `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Invoice number associated with the sale. |
 | `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Amount taxed by VAT. |
 
