@@ -60,7 +60,7 @@ Consider the following considerations when using the Payouts feature according t
 | Bradesco | `237` | `DDDDDDD-D` or `DDDDDDDD` where `D` is a digit.<br>The number of digits may change, but cannot exceed 8 digits. | `12345678`<br>`1234567-8` |
 | Mercado Pago | `323` | `DDDDDDDDDD-D` or `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits may change, but cannot exceed 11 digits. | `12345678910`<br>`1234567891-0` |
 | Itaú | `341` | `DDDDD-D` or `DDDDDD` where `D` is a digit.<br>The number of digits may change, but cannot exceed 6 digits. | `123456`<br>`12345-6` |
-| Pix Key Document | - | `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits for **CPF** must be 11, and **CNPJ** must be 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
+| Instant Bank Transfer (Pix Key) Document | - | `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits for **CPF** must be 11, and **CNPJ** must be 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
 
 * The bank branch **cannot** exceed 4 digits. Except for Banco do Brasil.
 

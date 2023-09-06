@@ -104,7 +104,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD is available_. |
 | `reason` | String | No | Description of the payment. |
 | `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
-| `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for PIX</li></ul>|
+| `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
 | `notification_Url` | String | No | Callback to notify the result of the payout |
 | `payee` → `FirstName` | String | Yes | First Name of the Payee. | 
 | `payee` → `lastName `| String | Yes | Last Name of the Payee. | 
@@ -119,7 +119,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
-<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
+<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
 #### Request example
@@ -163,7 +163,7 @@ Refer to the corresponding tab according to the payee's country.
 {{< tab tabNum="2" >}}
 <br>
 
-As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _PIX_ you need to send the request as follows:
+As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _Instant Bank Transfer_ you need to send the request as follows:
 
 
 ```json
