@@ -1,7 +1,7 @@
 # Hugo Dynamic Tabs
 This shortcodes allows you to easily add tabs to your markdown files. There is no hardcoded limit to the number of tab groups you can have or the amount of tabs in a tab group. 
 
-Please note, both shortcodes use [Bootstrap Tabs](https://getbootstrap.com/es/docs/4.1/components/navs/#tabs) but can be changed to fit your needs.
+Please note, both shortcodes use [Bootstrap Tabs](https://getbootstrap.com/docs/4.1/components/navs/#tabs) but can be changed to fit your needs.
 
 ## How to Install
 
@@ -71,7 +71,7 @@ Hugo Dynamic Tabs uses two shortcodes each with their own user-defined variables
 
 This is the parent shortcodes that wraps around all nested tab shortcodes in the tab group and generates the tab navigation. 
 
-| Variable  | Descripción |
+| Variable  | Description |
 | --------- | ----------- |
 | tabTotal | This variable is used to generate the tab navigation. Simply set it to the amount of tab shortcodes you have. In the above example, since there are **three** nested tab shortcodes, you would set **tabTotal** to **three**.
 | tabID     | This variable is used to assign a unique number to the tab group allowing you to have multiple tab groups with the same values for **tabNameX**. Please note, each tab group must have its own unique number. 
@@ -82,7 +82,7 @@ This is the parent shortcodes that wraps around all nested tab shortcodes in the
 This is a child shortcode that is nested in the tabs shortcodes. Each tab shortcode equals one tab so add as many as you need. Please note, make sure **tabTotal** in the tabs shortcode is equal to the amount of tab shortcodes you use. 
 
 
-| Variable  | Descripción |
+| Variable  | Description |
 | --------- | ----------- |
 | tabNum    |  This variable relates directly to the tab's number and should always start at **one**. In the above example, there are three nested tab shortcodes with **tabNum** starting at **one** and ending at **three** |
 
