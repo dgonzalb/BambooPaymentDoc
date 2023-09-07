@@ -3,7 +3,7 @@ title: "Medios de pago"
 linkTitle: "Medios de pago"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Recurra a nuestros métodos de pago en función de su país y sus necesidades.
+  Recurra a nuestros medios de pago en función de su país y sus necesidades.
 weight: 30
 ---
 

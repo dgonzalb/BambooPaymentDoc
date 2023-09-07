@@ -11,7 +11,7 @@ weight: 10
 To learn more about Payouts, refer to this [article](/payouts/overview.html).
 
 ## Configuring the authentication
-All methods used in Payouts API require an authentication header configured using the following parameters.
+All methods used in Payouts API require the following authentication headers.
 
 | Key | Value | Comments |
 |---|---|---|

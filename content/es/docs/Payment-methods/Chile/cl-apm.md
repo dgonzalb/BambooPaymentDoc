@@ -19,7 +19,7 @@ tags: ["subtopic"]
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**106**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -34,11 +34,11 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
-| `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
-| `Redirection` → `Url_Rejected` | `string` | No | Callback URL when the purchase status is `Rejected`. |
-| `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
-| `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
-| `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
+| `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
+| `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
+| `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
+| `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
+| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Info" color="info"%}}
@@ -222,7 +222,7 @@ With **Klap efectivo**, your customers can generate a coupon and complete the pa
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**107**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -237,11 +237,11 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
-| `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
-| `Redirection` → `Url_Rejected` | `string` | No | Callback URL when the purchase status is `Rejected`. |
-| `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
-| `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
-| `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
+| `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
+| `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
+| `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
+| `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
+| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte. |
 
 #### Request example
 ```json

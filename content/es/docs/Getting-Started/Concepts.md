@@ -19,7 +19,7 @@ El ambiente es un conjunto de software y recursos que le permite procesar las tr
 Nuestra plataforma tiene dos ambientes separados: `Stage` y `Production`.
 
 ### Stage
-Este ambiente le permite realizar transacciones de prueba. Aquí, las transacciones nunca llegan a los sistemas reales de los proveedores de métodos de pago. Es una forma segura de probar tareas y flujos.
+Este ambiente le permite realizar transacciones de prueba. Aquí, las transacciones nunca llegan a los sistemas reales de los proveedores de medios de pago. Es una forma segura de probar tareas y flujos.
 
 * URL base: `https://api.stage.bamboopayment.com`.
 
@@ -56,7 +56,7 @@ El checkout es el formulario donde sus clientes seleccionan el medio de pago que
 CVV significa _**C**ard **V**erification **V**alue_ (Código Valor de Validación o Verificación). Es un código de seguridad de tres o cuatro dígitos de las tarjetas crédito o débito. El CVV es una medida de seguridad adicional para verificar que la persona que está haciendo la transacción en línea tiene la posesión física de la tarjeta.
 
 ## Formulario
-Un _Formulario_ es un componente web que le permite adjuntar un conjunto de campos para tokenizar una tarjeta o realizar compras con un método de pago. Para más información, consulte [Formularios](../forms.html).
+Un _Formulario_ es un componente web que le permite adjuntar un conjunto de campos para tokenizar una tarjeta o realizar compras con un medio de pago. Para más información, consulte [Formularios](../forms.html).
 
 ## Identificador Único (UniqueID) {#UniqueID}
 El Identificador Único le permite evitar transacciones duplicadas, como las operaciones de compra, cuando se produce un fallo al obtener la respuesta de Bamboo y se vuelve a intentar el request.

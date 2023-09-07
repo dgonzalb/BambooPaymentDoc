@@ -1,52 +1,52 @@
 ---
-title: "Direct Tokenization"
-linkTitle: "Direct Tokenization"
+title: "Tokenización Directa"
+linkTitle: "Tokenización Directa"
 date: 2023-07-17T07:28:16-05:00
 description: >
-  If your commerce is **PCI-compliant**,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don't need to invoke the [Checkout Form]({{< ref "Checkout-Form.md" >}}). 
+  Si su comercio **cumple con la normativa PC**, esta funcionalidad le permite crear los tokens para las tarjetas utilizadas en su Web vía API, de tal forma que no necesite invocar el [Formulario de Checkout]({{< ref "Checkout-Form.md" >}}). 
 weight: 30
 tags: ["subtopic"]
 ---
 
 {{% alert title="Nota" color="info"%}}
-Contact your sales representative to enable this feature.
+Contacte a su representante de ventas para activar esta funcionalidad.
 {{% /alert %}}
 
-## Request URL
-Regardless of the token you want to create, Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
+## URL del Request {#request-url}
+Independiente del token que quiera crear, debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://directtoken.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
 * **Stage**: `https://directtoken.stage.bamboopayment.com/api/Token?commerceKey={{Merchant Private Key}}`
 
-Where `{{Merchant Private Key}}` is your merchant identifier.
+Donde `{{Merchant Private Key}}` es su identificador de comercio.
 
-## Setting the language of the response codes
-You can receive the error description by relying on localization features. You must send the `lang` header in your integration using any of the following languages in **ISO 639-1** format to do this.
+## Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
+Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado `lang` en su integración, utilizando cualquiera de los siguientes idiomas en formato **ISO 639-1**.
 
 <div id="shortTable"></div>
 
-| Code | Language |
+| Código | Idioma |
 |:-:|---|
-| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
-| `es` | Spanish. |
-| `pt` | Portuguese. |
+| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma._ |
+| `es` | Español. |
+| `pt` | Portugués. |
 
-## Request parameters
+## Parámetros del Request {#request-parameters}
 
 | Parámetro | Tipo | ¿Obligatorio? | Descripción |
 |---|---|---|---|
-| `Email` | `string` | Sí | Email address of the cardholder. |
-| `Pan` | `string` | Sí | Card number. |
-| `CVV` | `string` | Sí | The security code of the card. |
-| `Expiration` | `string` | Sí | Expiration date printed on the card. |
-| `Titular` | `string` | Sí | Name of the cardholder. | 
-| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indicates the country of the cardholder. For _CrossBorder_ tokenization, this parameter is mandatory.<br>You can find the list of countries available [here](/es/docs/payment-methods.html#countries-table-iso-3166-1). |
-| `CustomerId` | `string` | No | Identifier of the customer. If sent, the API generates a payment within the customer with a _Commerce Token_ (CT) for future use.<br>Refer to [create a customer]({{< ref Registered-users.md >}}#create-a-customer) for more information. | 
+| `Email` | `string` | Sí | Dirección de correo electrónico del titular de la tarjeta. |
+| `Pan` | `string` | Sí | Número de tarjeta. |
+| `CVV` | `string` | Sí | Código de seguridad de la tarjeta. |
+| `Expiration` | `string` | Sí | Fecha de caducidad impresa en la tarjeta. |
+| `Titular` | `string` | Sí | Nombre del titular de la tarjeta. | 
+| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indica el país del titular de la tarjeta. Este parámetro es para la tokenización _CrossBorder_.<br>Puede encontrar la lista de países disponibles [aquí](/es/docs/payment-methods.html#countries-table-iso-3166-1). |
+| `CustomerId` | `string` | No | Identificador del cliente. Si se envía, la API genera un pago dentro del cliente con un _Commerce Token_ (CT) para su uso futuro.<br>Consulte [crear un cliente]({{< ref Registered-users.md >}}#create-a-customer) para más información. | 
 
-### Create a One Time Token (OTT) {#OTT}
-This token allows you to store the card data for unique usage and is valid for 10 minutes. 
+### Crear un One Time Token (OTT) {#OTT}
+Este token permite almacenar los datos de la tarjeta para un único uso y es válido durante 10 minutos.
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "Email": "rserrano@mail.com",
@@ -60,11 +60,10 @@ This token allows you to store the card data for unique usage and is valid for 1
 }
 ```
 
+### Crear un Commerce Token (CT) {#CT}
+Este token permite almacenar los datos de la tarjeta, que pueden procesarse en cualquier cuenta.
 
-### Create a Commerce Token (CT) {#CT}
-This token allows you to store the card data, which can be processed in any account.
-
-#### Request example
+#### Ejemplo del Request {#request-example-1}
 ```json
 {
     "Email": "rserrano@mail.com",
@@ -79,30 +78,30 @@ This token allows you to store the card data, which can be processed in any acco
 }
 ```
 
-## Response parameters
-Regardless of the token you create, you receive the following parameters in the response.
+## Parámetros del Response {#response-parameters}
+Independientemente del token que cree, recibirá los siguientes parámetros en la respuesta.
 
-| Property | Type | Description |
+| Property | Type | Descripción |
 |---|:-:|---|
-| `TokenId` | `string` | Represents the registered payment method without exposing its sensitive data.<br>Use this data to carry out payment transactions through the registered card. |
-| `IdCommerceToken` | `int` | Id of the token created. For OT, the id is `0` as we store it for 10 minutes at maximum. |
-| `Created`| `date` | Date and time of the card tokenization.  |
-| `Type` | `string` | Token type created. It can be `OneTime` for OT or `Commerce` for CT. |
-| `Brand` | `string` | Name associated with the brand of the payment card, por ejemplo, `VISA`. | 
-| `Owner` | `string` | Name of the cardholder. | 
-| `Last4` | `string` | The last four digits of the card. | 
-| `Bin` | `string` | The first six digits of the card number. This number identifies the issuing bank. | 
-| `CardExpMonth` | `int` | Month of the expiration date. |
-| `CardExpYear` | `int` | Year of the expiration date. |
-| `IssuerBank` | `string` | Name of the Issuing Bank. |
-| `CardType` | `string` | Type of the card. |
-| `PaymentMediaId` | `int` | Identifier of the payment method. |
-| `AffinityGroup` | `string` | Affinity program of the card. |
-| `Error` | `object` | Error that the system can launch during the tokenization process. |
+| `TokenId` | `string` | Representa el medio de pago registrado sin exponer sus datos sensibles.<br>Utilice estos datos para realizar transacciones de pago a través de la tarjeta registrada. |
+| `IdCommerceToken` | `int` | Id del token creado. Para OT, el id es `0` ya que lo almacenamos durante 10 minutos como máximo. |
+| `Created`| `date` | Fecha y hora de creación del token de la tarjeta.  |
+| `Type` | `string` | Tipo de token creado. Puede ser `OneTime` para OT o `Commerce` para CT. |
+| `Brand` | `string` | Nombre asociado a la marca de la tarjeta de pago, por ejemplo, `VISA`. | 
+| `Owner` | `string` | Nombre del titular de la tarjeta. | 
+| `Last4` | `string` | Los cuatro últimos dígitos de la tarjeta. | 
+| `Bin` | `string` | Los seis primeros dígitos del número de la tarjeta. Este número identifica al banco emisor. | 
+| `CardExpMonth` | `int` | Mes de la fecha de caducidad. |
+| `CardExpYear` | `int` | Año de la fecha de caducidad. |
+| `IssuerBank` | `string` | Nombre del banco emisor. |
+| `CardType` | `string` | Tipo de tarjeta. |
+| `PaymentMediaId` | `int` | Identificador del medio de pago. |
+| `AffinityGroup` | `string` | Programa de afinidad de la tarjeta. |
+| `Error` | `object` | Error que puede lanzar el sistema durante el proceso de tokenización. |
 
-### Response example
+### Ejemplo del Response {#response-example}
 
-**For One Time Token**
+**Para One Time Token**
 
 ```json
 {
@@ -128,7 +127,7 @@ Regardless of the token you create, you receive the following parameters in the 
 ```
 <br>
 
-**For Commerce Token**
+**Para Commerce Token**
 
 ```json
 {

@@ -21,7 +21,7 @@ menu:
 ## Países disponibles {#available-countries}
 Maximice la cobertura de mercado con soluciones de pago locales en **MM** países de América Latina.
 
-Las compañías globales están aprovechando el crecimiento exponencial del comercio electrónico en América Latin conectándose a métodos de pago locales a través de una única API de Bamboo.
+Las compañías globales están aprovechando el crecimiento exponencial del comercio electrónico en América Latina conectándose a medios de pago locales a través de una única API de Bamboo.
 
  {{< Countries/countriesMap_es >}}
 

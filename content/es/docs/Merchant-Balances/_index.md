@@ -39,7 +39,7 @@ You don't need to configure a request to invoke this API.
 <br>
 Where:
 
-| Parameter | Description |
+| Parameter | Descripción |
 |---|---|
 | `Response` → `Date` | Date and time when you send the request. |
 | `Response` → `CurrencyCode` | ISO code of the currency configured for the merchant. |

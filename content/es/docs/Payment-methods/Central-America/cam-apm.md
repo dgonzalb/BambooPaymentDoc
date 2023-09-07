@@ -14,7 +14,7 @@ _PuntoXpress_ is a cash collection network with regional coverage in Central Ame
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**28**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |

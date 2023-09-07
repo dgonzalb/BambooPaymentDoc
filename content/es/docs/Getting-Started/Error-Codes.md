@@ -54,16 +54,16 @@ Los errores del servicio Tokenization empiezan por `TK`.
 | `TK004` | INVALID_SESSION_IDENTIFIER | Se ha enviado un identificador de sesión no válido en una solicitud de token. | [Regenere el token](/es/es/docs/purchase-workflow/customer-types.html) y vuelva a intentar la transacción. |
 | `TK005` | INVALID_EMAIL | Se ha introducido un correo electrónico con formato incorrecto. | Pida a su cliente que compruebe la dirección de correo electrónico y vuelva a intentar la transacción.|
 | `TK006` | EXPIRED_TOKEN | El token (de tipo One-Time) ya se ha utilizado o ha caducado. | [Regenere el token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) y vuelva a intentar la transacción. |
-| `TK007` | INVALID_PAYMENT_MEDIA | Error con la información del método de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del método de pago en la [lista de países](/es/es/docs/payment-methods.html) correspondiente. |
+| `TK007` | INVALID_PAYMENT_MEDIA | Error con la información del medio de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del medio de pago en la [lista de países](/es/es/docs/payment-methods.html) correspondiente. |
 | `TK008` | ISSUER_BANK_NOT_MATCH |  El banco emisor no coincide con el esperado. | Valide el banco emisor de la tarjeta de su cliente. |
-| `TK009` | INVALID_ACTIVATION_CODE | El código de activación del token no es válido.| Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
+| `TK009` | INVALID_ACTIVATION_CODE | El código de activación del token no es válido.| Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
 | `TK010` | INVALID_COMMERCE_TOKEN | El token de comercio no es válido. | [Regenere el token (CT)]({{< ref Registered-users.md >}}) y vuelva a intentar la transacción. |
 | `TK011` | CUSTOMER_NOT_FOUND | El cliente especificado no es válido. | El cliente utilizado para crear el token no se ha encontrado o no es válido. |
-| `TK012` | TOKEN_ACTIVATION_ERROR | Error al activar el código.  | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
-| `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error en el proceso de registro. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
-| `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Método de pago deshabilitado. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
-| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | El método de pago no está disponible para el comercio. | Compruebe que haya habilitado el método de pago seleccionado. |
-| `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del método de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el método de pago. |
+| `TK012` | TOKEN_ACTIVATION_ERROR | Error al activar el código.  | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error en el proceso de registro. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Medio de pago deshabilitado. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | El medio de pago no está disponible para el comercio. | Compruebe que haya habilitado el medio de pago seleccionado. |
+| `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del medio de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
 | `TK017` | INVALID_DOCUMENT_NUMBER | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
 | `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
 | `TK999` | UNKNOWN_ERROR | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
@@ -138,7 +138,7 @@ Los errores del servicio Purchase empiezan por `PR`.
 | `PR018` | PR_DATE_NEEDED | Para filtrar por fechas, debe introducir el valor de los parámetros `From` y `To`. |
 | `PR019` | EXCEED_DATE_RANGE | El periodo de búsqueda excede el número máximo de días. |
 | `PR020` | INVALID_DOCUMENT_NUMBER | Documento registrado inválido.
-| `PR021` | NOT_ALLOW_PARTIAL_REFUND | No se permiten devoluciones parciales para el método de pago utilizado. |
+| `PR021` | NOT_ALLOW_PARTIAL_REFUND | No se permiten devoluciones parciales para el medio de pago utilizado. |
 
 ### Errores del servicio Customers {#customers-service-errors}
 Los errores del servicio Customer empiezan por `CS`.

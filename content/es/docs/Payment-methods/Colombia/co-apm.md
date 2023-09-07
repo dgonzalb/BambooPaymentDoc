@@ -20,7 +20,7 @@ You can offer your customer the possibility to pay using cash in the following n
 
 <div id="shortTable"></div>
 
-| | Payment MediaId| Description |
+| | Payment MediaId| Descripción |
 |-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | 36 | Apostar |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | 37 | Bancolombia |
@@ -34,7 +34,7 @@ You can offer your customer the possibility to pay using cash in the following n
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -90,7 +90,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 In the response, you will find the following parameters:
 
-| Property | Type | Description |
+| Property | Type | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the coupon to be presented by your customer in the physical network. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference returned by the acquirer to identify the order generated. |
@@ -252,7 +252,7 @@ The flow of this payment method is _**Redirect**_, so you must direct your custo
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -472,7 +472,7 @@ Using this payment method, your customer will receive a notification to open the
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |

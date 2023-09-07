@@ -11,7 +11,7 @@ tags: ["subtopic"]
 A continuación, describimos los pasos de cómo crear una compra con un usuario anónimo.
 
 ## Capturar la información de la tarjeta {#capture-the-card-data}
-El primer paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el [Formulario de Checkout]({{< ref "Checkout-Form.md" >}}) en el último paso del carrito de compras. Recuerde que tiene que obtener el _**Formulario de Checkout**_ a través de la librería JavaScript de Bamboo Payment. De forma alternativa, peude utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple la normativa PCI.
+El primer paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el [Formulario de Checkout]({{< ref "Checkout-Form.md" >}}) en el último paso del carrito de compras. Recuerde que tiene que obtener el _**Formulario de Checkout**_ a través de la librería JavaScript de Bamboo Payment. De forma alternativa, peude utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple la con normativa PCI.
 
 Este formulario se muestra dentro de un iframe en su página y solicita los datos de la tarjeta.
 
@@ -49,9 +49,9 @@ Desde el servidor, invoque el método [Crear una Compra]({{< ref "Purchase-Opera
 
 Los campos **PaymentMediaId** y **TrxToken**  son opcionales, pero es obligatorio enviar uno dependiendo del flujo que quiere utilizar.
 
-* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificador consultando la sección [Métodos de pago por país](/es/docs/payment-methods.html).
+* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificador consultando la sección [Medios de pago por país](/es/docs/payment-methods.html).
 
-* **TrxToken**: Puede generar el tokn y transaccionar enviándolo en este campo.
+* **TrxToken**: Puede generar el token y transaccionar enviándolo en este campo.
 
 ## Diagrama de secuencia del flujo de pago {#payment-workflow-sequence-diagram}
 El siguiente diagrama de secuencia lista los pasos en el proceso de pago.

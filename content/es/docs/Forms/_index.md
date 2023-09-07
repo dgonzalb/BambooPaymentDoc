@@ -14,7 +14,7 @@ This method receives an object with the specific parameters for the desired paym
 
 #### Object tokenRequest:
 
-| Property | Description | | Mandatory? | |
+| Property | Descripción | | ¿Obligatorio? | |
 |-------------|--------------------|:-----------:|:------:|:------:|
 | | | Physical Network | Cards | Redirect |
 | **PaymentMediaId** <br> *numeric* | Payment media identifier. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
@@ -117,7 +117,7 @@ Use this method to get a **Token** without showing the capture form to the custo
 
 This method is available only to these payment method types.
 
-| Property | Description | Mandatory |
+| Property | Descripción | Mandatory |
 |-------------|-----------|:-----:|
 | **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Sí |
 | **email** <br> *string* | Customer’s email address | Sí |
@@ -138,7 +138,7 @@ The method delivers the payment **token** in the same way as the other methods; 
 
 This method is used to get a **Token** for Redirect flow payments.
 
-| Property | Description | Mandatory |
+| Property | Descripción | Mandatory |
 |-------------|-------------|:--------:|
 | **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Sí |
 | **email** <br> *string* | Customer's email address. | Sí |
@@ -158,14 +158,14 @@ The method delivers the payment **token** in the same way as the other methods; 
 ### CloseInfo
 The `CloseInfo` object is returned in the `closed` event, triggered when the user closes the card data capture form.
 
-| Field | Description | 
+| Field | Descripción | 
 | ------------- |-----------|
 | Reason <br> *string* | Description of the reason why the window was closed. The possible causes are the following: <br><ul style="margin-bottom: initial;"><li>**ESCAPE**: The user pressed the _**Esc**_ button.</li><li>**CLOSE_BUTTON**: The user pressed the closing button of the window.<li>**TIMEOUT**: The user has exceeded the maximum waiting time to enter the data.</li><li>**COMMERCE_ACTION**: The commerce needs to take an action.</li><li>**ERROR**: An error occurred.</li><li>**TOKEN_RECEIVED**: The generated token was received from the data entered by the user.</li><li>**NOTIFICATION_RECEIVED**: A notification has been received.</li><li>**PAGE_CLICK**: The user clicked the page outside the capture form, and the property `close_onclick` is `true`.</li></ul> | 
 
 ### TokenInfo
 The `TokenInfo` object is returned in the `tokenCreated` event triggered by the card data capture form after processing the user's data.
 
-| Field <br> *type* | Description | 
+| Field <br> *type* | Descripción | 
 | ------------- |-----------|
 | TokenId <br> *String* | Token identifier. |
 | Created <br> *TimeStamp* | Token creation date and time. |
@@ -182,7 +182,7 @@ The `TokenInfo` object is returned in the `tokenCreated` event triggered by the 
 
 The **NotificationInfo** object is returned in the `notificationReceived` event, which is triggered when the Verification Code Request Flow finishes.
 
-| Field <br> *Type* | Description | 
+| Field <br> *Type* | Descripción | 
 | ------------- |-----------|
 |ProcessType <br>*string* | Defines the process type of the notification is being issued.<br>Posibles valores are:<br><ul style="margin-bottom: initial;"><li>`PURCHASE_PENDING` – process to authorize a pending purchase.</li></ul> |
 |ProcessStatus <br> *Numeric[1]*| Possible statuses of a process are:<br><ul style="margin-bottom: initial;"><li>**1** – OK (the process completed successfully)</li><li>**2** – PENDING (the process is still pending)</li><li>**3** – ERROR (the process completed with error)</li></ul> |

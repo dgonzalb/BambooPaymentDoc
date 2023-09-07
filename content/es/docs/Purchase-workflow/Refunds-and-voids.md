@@ -30,16 +30,16 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 {{% /alert %}}
 
-### Setting the language of the response codes
+### Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
 Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado `lang` en su integración, utilizando cualquiera de los siguientes idiomas en formato **ISO 639-1**.
 
 <div id="shortTable"></div>
 
-| Code | Language |
+| Código | Idioma |
 |:-:|---|
-| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
-| `es` | Spanish. |
-| `pt` | Portuguese. |
+| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma._ |
+| `es` | Español. |
+| `pt` | Portugués. |
 
 ### Request URL
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
@@ -86,7 +86,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 ### Request parameters
 Consider the following parameters when invoking a refund request.
 
-| Parameter | Type | Mandatory | Description |
+| Parameter | Type | Mandatory | Descripción |
 |---|---|---|---|---|
 | `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
 | `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
@@ -104,10 +104,10 @@ Consider the following parameters when invoking a refund request.
 
 ### Response parameters
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|---|---|
 | `Response` → `PurchaseRefundId` | `number` | Internal identifier of the refund. |
-| `Response` → `Created` | `date` | Date and time when the refund was created.<br>Date format _**ISO-8601**_. |
+| `Response` → `Created` | `date` | Date and time when the refund was created.<br>Formato de la fecha _**ISO-8601**_. |
 | `Response` → `Amount` | `number` | Refund amount as sent in the request. |
 | `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
 | `Response` → `StatusId` | `number` | Identifier of the refund status. |

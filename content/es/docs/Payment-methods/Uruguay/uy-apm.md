@@ -28,7 +28,7 @@ The Cash payment method allows your customers to generate a coupon and complete 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -191,7 +191,7 @@ You can offer to your customers the possibility to pay using bank transfers if t
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |

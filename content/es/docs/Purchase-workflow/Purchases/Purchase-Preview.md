@@ -49,7 +49,7 @@ In the header, the Authorization parameter must be configured by concatenating t
 <br>
 Where:
 
-| Parameter | Description | Type | Required |
+| Parameter | Descripción | Type | Required |
 |---|---|---|---|
 | `baseAmount` | Amount to be paid before taxes | Integer | Sí |
 | `currency` | Currency of the amount defined in `baseAmount` | Sí |
@@ -122,7 +122,7 @@ Next, we show an example of the response to the request shown previously
 
 The parameters in the response are the following:
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|:---:|---|
 | `Success` | Boolean | Determines if the result of the operation was successful. |
 | `Data.Date` | Date and time | Date the process was executed. |
@@ -139,7 +139,7 @@ The parameters in the response are the following:
 ### Object _TaxDetails_
 Next, we explain the sub-parameters of the `TaxDetails` object
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|:---:|---|
 | `TaxCode` | String | Tax code defined by Bamboo Payment. |
 | `TaxName` | String | Name of the tax that is applied. |
@@ -154,7 +154,7 @@ In the example of the request, two taxes are specified for Argentina: **VAT** co
 ### Object _AmountDetails_
 Next, we explain the sub-parameters of the `AmountDetails` object
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|:---:|---|
 | `CurrencyCode` | String | ISO code of the currency of the amount. |
 | `AmountCategoryCode` | String | Amount category. |

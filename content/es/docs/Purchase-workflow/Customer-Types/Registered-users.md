@@ -3,12 +3,12 @@ title: "Usuarios Registrados"
 linkTitle: "Usuarios Registrados"
 date: 2023-07-17T07:28:16-05:00
 description: >
-  A diferencia de los [Usuarios Anónimos]({{< ref Anonymous-users.md>}}), estos usuarios están registrados en el sitio web por lo que peude indentificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.
+  A diferencia de los [Usuarios Anónimos]({{< ref Anonymous-users.md>}}), estos usuarios están registrados en el sitio web por lo que puede identificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.
 weight: 20
 tags: ["subtopic"]
 ---
 
-El cliente recibe un _CommerceToken_ despues de registrar su tarjeta, la cual peude se rutilizada para futuras transacciones. A continuación, se encuentran los pasos para comprar como un usuario registrado en el sitio web.
+El cliente recibe un _CommerceToken_ después de registrar su tarjeta, la cual puede ser utilizada para futuras transacciones. A continuación, se encuentran los pasos para comprar como un usuario registrado en el sitio web.
 
 ## Crear un Cliente {#create-a-customer}
 El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
@@ -23,9 +23,9 @@ El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un
 | `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 | `FirstName` | `string` | Sí | Nombre del cliente. |
 | `LastName` | `string` | Sí | Apellido del cliente. |
-| `DocumentTypeId` | `string` | Sí | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de Docuemnto de acuerdo con el [país](/es/docs/payment-methods.html). |
+| `DocumentTypeId` | `string` | Sí | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de Documento de acuerdo con el [país](/es/docs/payment-methods.html). |
 | `DocNumber` | `string` | Sí | Número de documento del cliente. |
-| `Owner` | `string` | No | Determina si el usuario es anónimo o si el comercio, o nosotros, lo regirstró.<br>Los posibles valores son:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. Este es el valor por defecto.</li><li>_Anonymous_</li></ul>|
+| `Owner` | `string` | No | Determina si el usuario es anónimo o si el comercio, o nosotros, lo registró.<br>Los posibles valores son:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. Este es el valor por defecto.</li><li>_Anonymous_</li></ul>|
 | `PhoneNumber` | `string` | Sí | Número de teléfono de contacto del cliente. |
 | `BillingAddress` | `object` | Sí | Este parámetro es la dirección de facturación del cliente. |
 | `BillingAddress`→`AddressID` | `integer` | Sí | Identificador de la dirección. |
@@ -101,7 +101,7 @@ El objeto de respuesta retorna la información del cliente recién creado o el e
 Una vez haya creado un usuario, puede realizar operaciones para obtener o actualizar su información.
 
 #### Obtener un cliente {#get-a-customer}
-Se puede obtener la información de cliente usando su Id o su dirección de correo electrónico.
+Se puede obtener la información del cliente usando su ID o su dirección de correo electrónico.
 
 Para esto, debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
@@ -161,12 +161,12 @@ Para actualizar la información de un cliente, debe invocar un request **POST** 
 * **Producción**: `https://api.bamboopayment.com/v1/api/customer/{{{{customer-id}}}}/update`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer/{{customer-id}}/update`
 
-Donde `{{customer-id}}` es el id generado cuando creó el usuario. In elñ cuerpo del request los [parámetros](#request-parameters) que quiera actualizar.
+Donde `{{customer-id}}` es el id generado cuando se creó el usuario. En el cuerpo del request los [parámetros](#request-parameters) que quiera actualizar.
 
-En la respuesta, se obtiene  el mismo objeto retornado en la [creación del cliente](#response-example).
+En la respuesta, se obtiene el mismo objeto retornado en la [creación del cliente](#response-example).
 
 ## Capturar la información de la tarjeta {#capture-the-card-data}
-El siguiente paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el formulario de inscripción de tarjeta o utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple la normativa PCI.
+El siguiente paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el formulario de inscripción de tarjeta o utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple con la normativa PCI.
 
 {{% alert title="Info" color="info"%}}
 Si utiliza el identificador del Medio alternativo, no requiere realizar este paso y debe incluir el **PaymentMediaId**.
@@ -175,14 +175,14 @@ Si utiliza el identificador del Medio alternativo, no requiere realizar este pas
 ### Invocando el formulario de inscripción de tarjeta {#invoking-the-card-enrollment}
 El siguiente diagrama de secuencia explica el flujo de inscripción de tarjetas.
 
-![PrintScreen](/assets/CardEnrollmentFlow_en.png)
+![PrintScreen](/assets/CardEnrollmentFlow_es.png)
 
 **Llamadas API durante el flujo:**
 
 * **3**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
 * **11**  HTTP/GET (server to server): `{environment_api}/v1/api/customer/{customer-id}`
 
-Con la información obtenida en el [paso anterior](#create-a-customer), puede invocar los métodos **OpenIframeCustom** o **OpenIframeCustomWithPaymentMediaOptions** (ver detalles más abajo) de la librería JavaScript `PWCheckout`, que gestionarán la captura de datos de la tarjeta.
+Con la información obtenida en el [paso anterior](#create-a-customer), puede invocar los métodos **OpenIframeCustom** o **OpenIframeCustomWithPaymentMediaOptions** (ver detalles más abajo) de la librería JavaScript `PWCheckout`, que gestionan la captura de datos de la tarjeta.
 
 #### OpenIframeCustom
 El método **OpenIframeCustom** recibe dos parámetros:
@@ -201,10 +201,10 @@ El método  **OpenIframeCustomWithPaymentMediaOptions** recibe cuatro parámetro
 
 * **URL:** Igual que en OpenIframeCustom.
 * **UniqueID:** Igual que en OpenIframeCustom.
-* **PaymentMediaid:** Identificador del Medio de Pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. _Este parámetro sólo aplica para Uruguay_.
+* **PaymentMediaid:** Identificador del Medio de pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. _Este parámetro sólo aplica para Uruguay_.
 * **BankId:** [Identificador del banco](/es/docs/payment-methods/uruguay.html#issuer-banks-table). _Este parámetro sólo aplica para Uruguay_.
 
-Si se envían ambos parámetros, el Formulario de Captura de Tarjeta sólo aceptará tarjetas del Medio de Pago y Banco especificados, pero son opcionales.
+Si se envían ambos parámetros, el Formulario de Captura de Tarjeta sólo aceptará tarjetas del Medio de pago y Banco especificados, pero son opcionales.
 
 Ejemplos de llamadas al método **OpenIframeCustomWithPaymentMediaOptions**:
 
@@ -234,7 +234,7 @@ La página también puede configurar la propiedad `form_id` (utilizando el méto
 
 En respuesta a la notificación recibida (por el evento JavaScript o por el envío del formulario), la página del comercio debe volver a solicitar la información actualizada del cliente realizando la siguiente llamada `HTTP/GET` (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
 
-El objeto **Customer** retornado contiene los _PaymentProfiles_ del cliente. Estos objetos tienen información sobre los métodos de pago asociados al cliente, donde en los campoc _Token_ y _CommerceToken_ representan la tarjeta de pago.
+El objeto **Customer** retornado contiene los _PaymentProfiles_ del cliente. Estos objetos tienen información sobre los medios de pago asociados al cliente, donde en los campos _Token_ y _CommerceToken_ representan la tarjeta de pago.
 
 Ejemplo de respuesta que incluye un **PaymentProfile**:
 
@@ -317,9 +317,9 @@ Desde el servidor, invoque el método [Crear una Compra]({{< ref "Purchase-Opera
 
 Los campos **PaymentMediaId** y **TrxToken**  son opcionales, pero es obligatorio enviar uno dependiendo del flujo que quiere utilizar.
 
-* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificado consultado la sección [Métodos de pago por país](/es/docs/payment-methods.html).
+* **PaymentMediaId**: Identificador de medio de pago alternativo (transferencia, efectivo y procesamiento que requiere redirección del cliente). Puede obtener este identificador consultando la sección [Medios de pago por país](/es/docs/payment-methods.html).
 
-* **TrxToken**: Puede generar el tokn y transaccionar enviándolo en este campo.
+* **TrxToken**: Puede generar el token y transaccionar enviándolo en este campo.
 
 ## Compras recurrentes en un clic {#recurring-purchases-in-one-click}
 Después de que los clientes se registren correctamente, algunas tarjetas permiten ciertas transacciones sin necesidad de un Código de Verificación (CVV), lo que permite una experiencia de usuario más ágil (pagos en un solo clic). En estos casos, las compras se pueden enviar directamente sin solicitar más información al cliente, como se explica en el punto anterior, [Compra básica](#create-a-basic-purchase).
@@ -329,15 +329,15 @@ Debe solicitar el Código de Verificación cada vez que realice transacciones en
 ## Flujo de Solicitud de Código de Verificación {#verification-code-request-flow}
 Para las Tarjetas que requieren ingresar del Código de Verificación en todas las transacciones, hemos diseñado el siguiente flujo de trabajo:
 
-![PrintScreen](/assets/VerificationCodeRequestFlow_en.png)
+![PrintScreen](/assets/VerificationCodeRequestFlow_es.png)
 
 1. El cliente, identificado correctamente en la web de Comercio, inicia el proceso de pago de una compra utilizando una tarjeta previamente registrada y asociada a su cuenta.
 
 2. La página del Comercio envía los datos al web server para preparar la información enviada a Bamboo Payment.
 
-3. El Web Server del comercio envía la compra a través de la API de Bamboo Payment, identificando el _CommerceToken_ como el método de pago que el cliente seleccionó.
+3. El Web Server del comercio envía la compra a través de la API de Bamboo Payment, identificando el _CommerceToken_ como el medio de pago que el cliente seleccionó.
 
-4. Realizamos una serie de validaciones; en este caso, verificamos si el método de pago elegido permite la ejecución de transacciones sin el Código de Verificación. El Método de Pago seleccionado no permite esta funcionalidad en este flujo, por lo que la transacción sólo podrá completarse una vez haya obtenido el Código de Verificación de la tarjeta.
+4. Realizamos una serie de validaciones; en este caso, verificamos si el medio de pago elegido permite la ejecución de transacciones sin el Código de Verificación. El Medio de pago seleccionado no permite esta funcionalidad en este flujo, por lo que la transacción sólo podrá completarse una vez haya obtenido el Código de Verificación de la tarjeta.
 
 5. Retornamos el objeto `Purchase` en estado _Pending_ (pendiente) como respuesta, indicando que es necesaria alguna acción para completar el proceso. El objeto `Purchase` devuelto también contiene el objeto `CommerceAction` que describe los pasos necesarios que debe realizar el comercio.
 
@@ -377,7 +377,7 @@ Donde el valor del parámetro `url` corresponde al campo `ActionURL` del objeto 
 ## Alternativa de Notificación {#notification-alternative}
 Además de la opción de recibir una notificación desde Bamboo Payment al finalizar el proceso de compra (paso 12 del flujo normal), se puede ejecutar un flujo alternativo para consultar explícitamente el resultado de la compra una vez detectado que el proceso pendiente ha finalizado (tras el paso 5).
 
-![PrintScreen](/assets/VerificationCodeRequestFlow2_en.png)
+![PrintScreen](/assets/VerificationCodeRequestFlow2_es.png)
 
 Este flujo utiliza las funcionalidades implementadas en la librería JavaScript **PWCheckout** para informar de la finalización del proceso de compra pendiente.
 

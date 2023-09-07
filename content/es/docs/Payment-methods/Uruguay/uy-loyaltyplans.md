@@ -14,7 +14,7 @@ _SoySantander_ allows customers to use points to pay the total or partial purcha
 ### Token request
 The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/es/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout.` library PWCheckout.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `loyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan |
 | `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
@@ -32,7 +32,7 @@ Example:
 ### Purchases with _SoySantander_ points
 Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{< ref uy-cards.md >}}) using it. Furthermore, include the `LoyaltyPlan` object with the number of points to redeem and the user identifier of the Loyalty Plan.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
 | `Order` | `string` | Sí | Order number of the purchase. |
@@ -89,7 +89,7 @@ Where `{{LoyaltyPlan-ID}}` is the identifier of the Loyalty plan you want to con
 #### Request parameters
 Include the following parameters in the request.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `LoyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan. |
 | `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |

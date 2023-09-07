@@ -11,7 +11,7 @@ tags: ["subtopic"]
 ## Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Request parameters]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
 
-| Property | Type | Mandatory? | Description |
+| Property | Type | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -219,7 +219,7 @@ For more information on the response parameters, please refer to the [Response p
 ### Response for AMEX
 When using AMEX, the response includes the object `AcquirerResponseDetail` inside the `Response.Transaction.Steps` object with the following information.
 
-| Property | Description |
+| Property | Descripción |
 |---|---|
 | `ResponseCode` | Response code. |
 | `ResultDescription` | Description. |
@@ -255,7 +255,7 @@ When setting up an acquirer, the card's BIN (Bank Identification Number) is also
 
 This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. Por ejemplo, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
 
-| BIN (format) | Brand | Notes |
+| BIN (format) | Brand | Notas |
 |--------------|-------|-------|
 | `^4\[0-9]*` | VISA | Any card that starts with `4`. |
 | `^5\[1-5]\[0-9]*`| MasterCard | Any card that starts with `51` through `5`. |
