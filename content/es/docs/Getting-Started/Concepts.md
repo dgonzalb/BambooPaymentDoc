@@ -47,7 +47,7 @@ No debe compartir esta _Private Account Key_ o exponerla públicamente en ningú
 ### Public Account Key
 La llave  pública de comercio (Public Account key) es un identificador único que debe adjuntarse a cada request público (lanzado desde una interfaz web) para operaciones de consulta o solicitud de captura de datos.
 
-Además, puede utilizarse para invocar la librería de Javascript `PWCheckout`.
+Además, puede utilizarse para invocar la librería JavaScript `PWCheckout`.
 
 ## Checkout
 El checkout es el formulario donde sus clientes seleccionan el medio de pago que quieren utilizar para completar el pago. De acuerdo con el método seleccionado, este formulario le permite capturar su información y enviarla para procesar la transacción.

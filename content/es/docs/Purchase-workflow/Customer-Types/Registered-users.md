@@ -228,11 +228,11 @@ Ejemplos de llamadas al método **OpenIframeCustomWithPaymentMediaOptions**:
 
 El cliente ingresa los datos de la tarjeta y, tras confirmar, la librería **PWCheckout** recibe la notificación de que la tarjeta se ha capturado correctamente.
 
-La página del vendedor puede suscribirse al evento _tokenCreated_ que se disparará al recibir la notificación de que los datos de la tarjeta fueron capturados.
+La página del comercio puede suscribirse al evento _tokenCreated_ que se disparará al recibir la notificación de que los datos de la tarjeta fueron capturados.
 
 La página también puede configurar la propiedad `form_id` (utilizando el método `SetProperties`) para enviar el identificador del formulario en la página que será controlada por la librería **PWCheckout**. La librería enviará el formulario una vez capturada la información de la tarjeta.
 
-En respuesta a la notificación recibida (por el evento JavaScript o por el envío del formulario), la página del vendedor debe volver a solicitar la información actualizada del cliente realizando la siguiente llamada `HTTP/GET` (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
+En respuesta a la notificación recibida (por el evento JavaScript o por el envío del formulario), la página del comercio debe volver a solicitar la información actualizada del cliente realizando la siguiente llamada `HTTP/GET` (server to server): `{environment_api}/v1/api/customer/{customer-id}`. 
 
 El objeto **Customer** retornado contiene los _PaymentProfiles_ del cliente. Estos objetos tienen información sobre los métodos de pago asociados al cliente, donde en los campoc _Token_ y _CommerceToken_ representan la tarjeta de pago.
 
@@ -290,11 +290,11 @@ Ejemplo de respuesta que incluye un **PaymentProfile**:
 }
 ```
 
-### Using Direct tokenization
-Since the user is not registered in your commerce, you must invoke the method to [create the token for usuarios registrados]({{< ref "Direct-Tokenization.md" >}}#CT).
+### Utilizando la Tokenización Directa {#using-direct-tokenization}
+Como el usuario está registrado en su comercio, debe invocar el método para [crear el token para usuarios registrados]({{< ref "Direct-Tokenization.md" >}}#CT).
 
 {{% alert title="Nota" color="warning"%}}
-You should keep the information of the _CommerceToken_ private because it represents a captured card that anyone can use for multiple transactions.
+Debe mantener la información del _CommerceToken_ privada porque representa una tarjeta capturada que cualquiera puede usar para múltiples transacciones.
 {{% /alert %}}
 
 ## Crear una Compra Básica {#using-direct-tokenization}
@@ -321,35 +321,35 @@ Los campos **PaymentMediaId** y **TrxToken**  son opcionales, pero es obligatori
 
 * **TrxToken**: Puede generar el tokn y transaccionar enviándolo en este campo.
 
-## Recurring Purchases in One Click
-After customers register correctly, some cards allow certain transactions without needing a Verification Code (CVV), which allows a more agile user experience (payments in one click). In these cases, purchases can be sent directly without requesting more information from the customer, as explained in the previous point, [Basic purchase](#create-a-basic-purchase).
+## Compras recurrentes en un clic {#recurring-purchases-in-one-click}
+Después de que los clientes se registren correctamente, algunas tarjetas permiten ciertas transacciones sin necesidad de un Código de Verificación (CVV), lo que permite una experiencia de usuario más ágil (pagos en un solo clic). En estos casos, las compras se pueden enviar directamente sin solicitar más información al cliente, como se explica en el punto anterior, [Compra básica](#create-a-basic-purchase).
 
-You must request the Verification Code every time for transactions where the card does not support this feature, as we cannot store it on our servers.
+Debe solicitar el Código de Verificación cada vez que realice transacciones en las que la tarjeta no permita esta función, ya que no podemos almacenarlo en nuestros servidores.
 
-## Verification Code Request Flow
-For the Payment Cards that require the entry of the Verification Code in all transactions, we designed the following workflow:
+## Flujo de Solicitud de Código de Verificación {#verification-code-request-flow}
+Para las Tarjetas que requieren ingresar del Código de Verificación en todas las transacciones, hemos diseñado el siguiente flujo de trabajo:
 
 ![PrintScreen](/assets/VerificationCodeRequestFlow_en.png)
 
-1. The customer, identified correctly on the Commerce website, initiates the payment process of a purchase using a card previously registered and associated with their account.
+1. El cliente, identificado correctamente en la web de Comercio, inicia el proceso de pago de una compra utilizando una tarjeta previamente registrada y asociada a su cuenta.
 
-2. The merchant page submits the data to the web server to prepare the information sent to Bamboo Payment.
+2. La página del Comercio envía los datos al web server para preparar la información enviada a Bamboo Payment.
 
-3. The merchant’s Web Server sends the purchase through the BambooPayment API, identifying the _CommerceToken_ as the Payment Method the customer selects.
+3. El Web Server del comercio envía la compra a través de la API de Bamboo Payment, identificando el _CommerceToken_ como el método de pago que el cliente seleccionó.
 
-4. We carry out a series of validations; in this case, we verify if the payment method chosen allows the execution of transactions without the Verification Code. The selected Payment method does not support this functionality in this flow, so the transaction can only be completed once the Card Verification Code has been obtained.
+4. Realizamos una serie de validaciones; en este caso, verificamos si el método de pago elegido permite la ejecución de transacciones sin el Código de Verificación. El Método de Pago seleccionado no permite esta funcionalidad en este flujo, por lo que la transacción sólo podrá completarse una vez haya obtenido el Código de Verificación de la tarjeta.
 
-5. We return the Purchase object in _Pending_ status as a response, indicating that some action is needed to complete the process. The `Purchase` object returned will also contain the `CommerceAction` object that describes the necessary steps to be performed by the merchant.
+5. Retornamos el objeto `Purchase` en estado _Pending_ (pendiente) como respuesta, indicando que es necesaria alguna acción para completar el proceso. El objeto `Purchase` devuelto también contiene el objeto `CommerceAction` que describe los pasos necesarios que debe realizar el comercio.
 
 ![PrintScreen](/assets/CVVRequestFlow.png)
 
-The merchant must store the pending purchase information (at least the `PurchaseId` for future validations) and process the CommerceAction information to determine the required action. Take into consideration the following properties in this scenario:
+El comercio debe almacenar la información de la compra pendiente (al menos el `PurchaseId` para futuras validaciones) y procesar la información del `CommerceAction` para determinar la acción requerida. Tenga en cuenta las siguientes propiedades en este escenario:
 
-* **ActionReason**: Will have the value `VERIFICATION_CODE_NEEDED` because the purchase requires this Verification Code.
-* **ActionType**: This field will have the value **2** corresponding to the action `PWCapture`, a function of the javascript component `PWCheckout` that allows to process this type of actions.
-* **ActionURL**: This field specifies the URL that you must send as parameter to the `PWCapture` method of the `PWCheckout` component.
+**ActionReason**: Tiene el valor `VERIFICATION_CODE_NEED` ya que la compra requiere este Código de Verificación.
+* **ActionType**: Este campo tiene el valor **2** correspondiente a la acción `PWCapture`, que es una función del componente javascript `PWCheckout` que permite procesar este tipo de acciones.
+* **ActionURL**: Este campo especifica la URL que debe enviar como parámetro al método `PWCapture` del componente `PWCheckout`.
 
-6. The merchant’s web page must show the Verification Code request form to the client using the `PWCapture` method as shown here:
+6. La página web del comercio debe mostrar el formulario de solicitud de Código de Verificación al cliente utilizando el método `PWCapture` de la siguiente forma:
 
 ```html
 <script type="text/javascript">
@@ -358,34 +358,34 @@ The merchant must store the pending purchase information (at least the `Purchase
 ```
 <br>
 
-Where the value of the `url` parameter corresponds to the `ActionURL` field of the received `Capture` object. 
+Donde el valor del parámetro `url` corresponde al campo `ActionURL` del objeto `CommerceAction` recibido. 
 
-7. The customer will see the iframe with the Capture Form, which in this case will be presented showing the masked card number (only the last four digits) and a text field for the entry of the Verification Code.
+7. El cliente ve el iframe con el Formulario de Captura, que en este caso se presenta mostrando el número de tarjeta enmascarado (sólo los cuatro últimos dígitos) y un campo de texto para ingresar el Código de Verificación.
 
 ![PrintScreen](/assets/CVVCaptureForm.png)
 
-8. The customer enters the Verification Code of the card used to create the purchase.
+8. El cliente ingresa el Código de Verificación de la tarjeta utilizada para realizar la compra.
 
-9. The verification code the customer enters is sent directly to the Bamboo Payment servers, where it's used to create the authorization message.
+9. El código de verificación que ingresa el cliente se envía directamente a los servidores de Bamboo Payment, donde se utiliza para crear el mensaje de autorización.
 
-10. Bamboo Payment sends the authorization message to the corresponding acquirer with the complete data. 
+10. Bamboo Payment envía el mensaje de autorización a la entidad adquirente correspondiente con los datos completos. 
 
-11. Bamboo Payment processes the acquirer’s response and updates the purchase status according to this response.
+11. Bamboo Payment procesa la respuesta del adquirente y actualiza el estado de la compra de acuerdo con dicha respuesta.
 
-12. Bamboo Payment generates a notification to the merchant, informing the **Purchase** object and its final status determined by the authorization process. The **Purchase** sent is the same previously answered in step 5, the merchant should validate the information received (at least the `PurchaseId` matches the expected one). This notification is sent to the **WebHook** service the merchant must implement to obtain the different notifications generated by Bamboo Payment. 
+12. Bamboo Payment genera una notificación al comercio, informando el objeto **Purchase** y de su estado final determinado por el proceso de autorización. La **Purchase** enviada es la misma previamente respondida en el paso 5, el comercio debe validar la información recibida (al menos que el `PurchaseId` coincide con el esperado). Esta notificación se envía al [servicio de **WebHook**]({{< ref Notification-Webhooks.md >}}) que el comercio debe implementar para obtener las diferentes notificaciones generadas por Bamboo Payment.
 
-## Notification Alternative
-In addition to the option to receive a notification from Bamboo Payment at the end of the purchase process (step 12 of the normal flow), an alternative flow can be executed to explicitly query the result of the purchase once it is detected that the pending process has finished (after step 5).
+## Alternativa de Notificación {#notification-alternative}
+Además de la opción de recibir una notificación desde Bamboo Payment al finalizar el proceso de compra (paso 12 del flujo normal), se puede ejecutar un flujo alternativo para consultar explícitamente el resultado de la compra una vez detectado que el proceso pendiente ha finalizado (tras el paso 5).
 
 ![PrintScreen](/assets/VerificationCodeRequestFlow2_en.png)
 
-This flow uses the functionalities implemented in the **PWCheckout** JavaScript library to inform the completion of the pending purchase process.
+Este flujo utiliza las funcionalidades implementadas en la librería JavaScript **PWCheckout** para informar de la finalización del proceso de compra pendiente.
 
-The steps related to this flow are listed below and explained; the initial stages before 12 are the same as those previously described.
+A continuación se enumeran y se explican los pasos relacionados con este flujo; las etapas iniciales antes del paso 12 son las mismas que las descritas anteriormente.
 
-12. Once the pending process has finished, the **PWCheckout** library receives a notification of the status of the process. 
+12. Una vez finalizado el proceso pendiente, la librería **PWCheckout** recibe una notificación del estado del proceso. 
 
-13. The **PWCheckout** library triggers the `notificationReceived` event. The merchant must subscribe previously to the event through the **Bind** method in the following way:
+13. La librería **PWCheckout** lanza el evento `notificationReceived` event. El comercio debe suscribirse previamente al evento a través del método **Bind** de la siguiente manera:
 
 ```html
 <script type="text/javascript"> 
@@ -394,39 +394,39 @@ The steps related to this flow are listed below and explained; the initial stage
 ```
 <br>
 
-The merchant must implement the **NotificationHandler** function (the name is just an example), which will receive information about the final state of the process.
+El comercio debe implementar la función **NotificationHandler** (el nombre es sólo un ejemplo), que recibirá la información sobre el estado final del proceso.
 
-Example of the function for handling notifications:
+Ejemplo de la función para el manejo de notificaciones:
 
 ```html
 <script type="text/javascript">
     function NotificationHandler(notification) {
         if (notification.ProcessStatus == 1) {
-            //Process OK
+            //Proceso OK
         } else {
-            //Process with errors
+            //Proceso con errores
         }
     }
 </script>
 ```
 <br>
 
-The `ProcessStatus` field of the received notification will determine the final state of the process. The posibles valores are:
+El campo `ProcessStatus` de la notificación recibida determina el estado final del proceso. Los posibles valores son:
 
-* **OK** (value 1) – The process finished successfully.
-* **Pending** (value 2) – The process is still pending.
-* **Error** (value 3) – The process ended in error.
+**OK** (valor 1) - El proceso ha finalizado correctamente.
+* **Pending** (valor 2) - El proceso sigue pendiente.
+* **Error** (valor 3) - El proceso finalizó con error.
 
-14. After the web page receives the `notificationReceived` event, it may continue with the flow. 
+14. Después de que la página web reciba el evento `notificationReceived`, puede continuar con el flujo. 
 
-15. The merchant must invoke a GET call from the web server to the BambooPayment Purchase API, querying the `PurchaseId` previously stored in step 5.
+15. El comercio debe invocar una llamada GET desde el servidor web a la API de Compras de Bamboo Payment, consultando el `PurchaseId` almacenado previamente en el paso 5.
 
-For this, the call is made: HTTP/GET (server to server):
+Para esto, se realiza la llamada: HTTP/GET (server to server):
 
 `{environment_api}/v1/api/purchase/{purchase-id} `
 
-16. The Bamboo Payment response will contain the `Purchase` object with a status other than _Pending_ (depending on the result of the transaction), so it can be processed as a regular purchase response.
+16. La respuesta de Bamboo Payment contiene el objeto `Purchase` con un estado distinto de _Pending_ (dependiendo del resultado de la transacción), por lo que puede procesarse como una respuesta de compra normal.
 
-For this, the call is made: HTTP/POST (server to server):
+Para esto, se realiza la llamada: HTTP/POST (server to server):
 
 `{environment_api}/v1/api/purchase`

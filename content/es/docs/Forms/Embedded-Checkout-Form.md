@@ -11,10 +11,10 @@ The difference between this form, and [Checkout Form]({{< ref Checkout-Form.md >
 
 Integrating this form into your site or _app_ provides users with a simplified and responsive payment experience suitable for web and mobile applications.
 
-## Import of the Javascript Library 
-Find the functionalities of the Embedded Checkout form in a Javascript library, which must be imported into the client’s website directly from a public URL of our platform.
+## Import of the JavaScript Library 
+Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
 
-Find the functionalities of the Embedded Checkout form in a Javascript library, which must be imported into the client’s website directly from a public URL of our platform.
+Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
 
 ```javascript
  <script src="{api_environment}/v1/Scripts/PWCheckoutNoModal.js?key={PublicAccountKey}" type="text/javascript"></script>
