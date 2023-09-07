@@ -47,8 +47,8 @@ All the parameters in Column A and at least one in Column B.
 
 ## Device Fingerprint
 
-### Javascript Library Import
-The invocation of the fingerprint service is found in a Javascript library, which must be imported into the client's web page directly from a public URL on our platform.
+### JavaScript Library Import
+The invocation of the fingerprint service is found in a JavaScript library, which must be imported into the client's web page directly from a public URL on our platform.
 
 The JavaScript snippet records user interactions with your website and collects device information. <br>
 

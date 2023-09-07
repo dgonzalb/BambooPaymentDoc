@@ -153,7 +153,7 @@ Example:
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
 {{% /alert %}}
 
-## Javascript Objects
+## JavaScript Objects
 
 ### CloseInfo
 The `CloseInfo` object is returned in the `closed` event, triggered when the user closes the card data capture form.

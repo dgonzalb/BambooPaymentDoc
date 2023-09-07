@@ -20,7 +20,7 @@ If you use the Alternative payment method identifier, you don't require this ste
 {{% /alert %}}
 
 ### Invoking the Checkout Form
-The Javascript **PWCheckout** library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the _token_ associated with the customer's card. 
+The JavaScript **PWCheckout** library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the _token_ associated with the customer's card. 
 
 ### Using Direct tokenization
 Since the user is not registered in your commerce, you must invoke the method to [create the token for unregistered users]({{< ref "Direct-Tokenization.md" >}}#OTT).
