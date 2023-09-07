@@ -28,7 +28,7 @@ You must not share the _Private Account Key_ or publicly expose it at any time t
 ### Public Account Key
 The Public Account key is a unique identifier that must be attached to each public request (made from the web interface) for query operations or data capture requests.
 
-Furthermore, you also use this key when you invoke the `PWCheckout` Javascript library.
+Furthermore, you also use this key when you invoke the `PWCheckout` JavaScript library.
 
 ## Checkout
 The checkout is the form where customers select the payment method they want to use to complete the payment. According to the payment method, this form allows you to collect its information and send it to process the transaction.
