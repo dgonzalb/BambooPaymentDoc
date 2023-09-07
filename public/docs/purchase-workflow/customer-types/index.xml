@@ -36,7 +36,7 @@
 &lt;/div&gt;
 
 &lt;h3 id=&#34;invoking-the-checkout-form&#34;&gt;Invoking the Checkout Form&lt;/h3&gt;
-&lt;p&gt;The Javascript &lt;strong&gt;PWCheckout&lt;/strong&gt; library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the &lt;em&gt;token&lt;/em&gt; associated with the customer&amp;rsquo;s card.&lt;/p&gt;
+&lt;p&gt;The JavaScript &lt;strong&gt;PWCheckout&lt;/strong&gt; library has properties to customize its appearance according to merchant requirements. Once you invoke the Checkout form and the customer fills in the data, the merchant can obtain the &lt;em&gt;token&lt;/em&gt; associated with the customer&amp;rsquo;s card.&lt;/p&gt;
 &lt;h3 id=&#34;using-direct-tokenization&#34;&gt;Using Direct tokenization&lt;/h3&gt;
 &lt;p&gt;Since the user is not registered in your commerce, you must invoke the method to &lt;a href=&#34;../../../docs/purchase-workflow/customer-types/direct-tokenization.html#OTT&#34;&gt;create the token for unregistered users&lt;/a&gt;.&lt;/p&gt;
 
@@ -481,11 +481,11 @@
 &lt;p&gt;We carry out a series of validations; in this case, we verify if the payment method chosen allows the execution of transactions without the Verification Code. The selected Payment method does not support this functionality in this flow, so the transaction can only be completed once the Card Verification Code has been obtained.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;We return the Purchase object in &lt;em&gt;Pending&lt;/em&gt; status as a response, indicating that some action is needed to complete the process. The &lt;code&gt;Purchase&lt;/code&gt; object returned will also contain the &lt;code&gt;CommerceAction&lt;/code&gt; object that describes the necessary steps to be performed by the merchant.&lt;/p&gt;
+&lt;p&gt;We return the &lt;code&gt;Purchase&lt;/code&gt; object in &lt;em&gt;Pending&lt;/em&gt; status as a response, indicating that some action is needed to complete the process. The &lt;code&gt;Purchase&lt;/code&gt; object returned will also contain the &lt;code&gt;CommerceAction&lt;/code&gt; object that describes the necessary steps to be performed by the merchant.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/CVVRequestFlow.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The merchant must store the pending purchase information (at least the &lt;code&gt;PurchaseId&lt;/code&gt; for future validations) and process the CommerceAction information to determine the required action. Take into consideration the following properties in this scenario:&lt;/p&gt;
+&lt;p&gt;The merchant must store the pending purchase information (at least the &lt;code&gt;PurchaseId&lt;/code&gt; for future validations) and process the &lt;code&gt;CommerceAction&lt;/code&gt; information to determine the required action. Take into consideration the following properties in this scenario:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;ActionReason&lt;/strong&gt;: Will have the value &lt;code&gt;VERIFICATION_CODE_NEEDED&lt;/code&gt; because the purchase requires this Verification Code.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;ActionType&lt;/strong&gt;: This field will have the value &lt;strong&gt;2&lt;/strong&gt; corresponding to the action &lt;code&gt;PWCapture&lt;/code&gt;, a function of the javascript component &lt;code&gt;PWCheckout&lt;/code&gt; that allows to process this type of actions.&lt;/li&gt;
@@ -498,7 +498,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000&#34;&gt;PWCheckout&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PWCapture&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where the value of the &lt;code&gt;url&lt;/code&gt; parameter corresponds to the &lt;code&gt;ActionURL&lt;/code&gt; field of the received &lt;code&gt;Capture&lt;/code&gt; object.&lt;/p&gt;
+&lt;p&gt;Where the value of the &lt;code&gt;url&lt;/code&gt; parameter corresponds to the &lt;code&gt;ActionURL&lt;/code&gt; field of the received &lt;code&gt;CommerceAction&lt;/code&gt; object.&lt;/p&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;The customer will see the iframe with the Capture Form, which in this case will be presented showing the masked card number (only the last four digits) and a text field for the entry of the Verification Code.&lt;/li&gt;
 &lt;/ol&gt;
@@ -517,7 +517,7 @@
 &lt;p&gt;Bamboo Payment processes the acquirer’s response and updates the purchase status according to this response.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Bamboo Payment generates a notification to the merchant, informing the &lt;strong&gt;Purchase&lt;/strong&gt; object and its final status determined by the authorization process. The &lt;strong&gt;Purchase&lt;/strong&gt; sent is the same previously answered in step 5, the merchant should validate the information received (at least the &lt;code&gt;PurchaseId&lt;/code&gt; matches the expected one). This notification is sent to the &lt;strong&gt;WebHook&lt;/strong&gt; service the merchant must implement to obtain the different notifications generated by Bamboo Payment.&lt;/p&gt;
+&lt;p&gt;Bamboo Payment generates a notification to the merchant, informing the &lt;strong&gt;Purchase&lt;/strong&gt; object and its final status determined by the authorization process. The &lt;strong&gt;Purchase&lt;/strong&gt; sent is the same previously answered in step 5, the merchant should validate the information received (at least the &lt;code&gt;PurchaseId&lt;/code&gt; matches the expected one). This notification is sent to the &lt;a href=&#34;../../../docs/purchase-workflow/notification-webhooks.html&#34;&gt;&lt;strong&gt;WebHook&lt;/strong&gt; service&lt;/a&gt; the merchant must implement to obtain the different notifications generated by Bamboo Payment.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;notification-alternative&#34;&gt;Notification Alternative&lt;/h2&gt;

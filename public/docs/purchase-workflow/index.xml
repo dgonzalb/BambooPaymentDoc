@@ -254,8 +254,8 @@ Consider the following parameters when invoking a refund request.
 &lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt; is a data dictionary to be defined, to adjust the anti-fraud system to the particular needs of each business.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;device-fingerprint&#34;&gt;Device Fingerprint&lt;/h2&gt;
-&lt;h3 id=&#34;javascript-library-import&#34;&gt;Javascript Library Import&lt;/h3&gt;
-&lt;p&gt;The invocation of the fingerprint service is found in a Javascript library, which must be imported into the client&amp;rsquo;s web page directly from a public URL on our platform.&lt;/p&gt;
+&lt;h3 id=&#34;javascript-library-import&#34;&gt;JavaScript Library Import&lt;/h3&gt;
+&lt;p&gt;The invocation of the fingerprint service is found in a JavaScript library, which must be imported into the client&amp;rsquo;s web page directly from a public URL on our platform.&lt;/p&gt;
 &lt;p&gt;The JavaScript snippet records user interactions with your website and collects device information. &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;In the call to said library, the public key of the trading account (PublicAccountKey) must be included (as a parameter), which will be used for calls to the REST API from this library.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;src=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; 
