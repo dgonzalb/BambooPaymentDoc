@@ -3,7 +3,7 @@ title: "Operaciones"
 linkTitle: "Operaciones"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Cree una compra utlizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
+  Cree una compra utilizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
 weight: 10
 tags: ["subtopic"]
 ---
@@ -50,19 +50,19 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 | `PaymentMediaId` | `integer` | No <sup>1</sup> | Corresponde al ID del medio de pago que quiere utilizar. Este parámetro es solo para Métodos Alternativos de Pagos (transferencia, efectivo y procesamiento que requieren redirección del cliente). |
 | `TrxToken` | `string` | No <sup>1</sup> | Este parámetro se refiere al token utilizado para identificar la tarjeta del cliente. |
 | `Order` | `string` | Sí | Número de orden generado por el comercio. |
-| `Amount` | `number` | Sí | Monto de la compra. Este valor debe ser mayor a cero.<br>Si debe incluir decimales, concate los dígitos decimales sin el punto decimal. Ejemplo `12,25` > `1225`. |
+| `Amount` | `number` | Sí | Monto de la compra. Este valor debe ser mayor a cero.<br>Si debe incluir decimales, concatene los dígitos decimales sin el punto decimal. Ejemplo `12,25` > `1225`. |
 | `Currency` | `string` | Sí | Moneda de la compra de acuerdo con el formato ISO-4217. Encuentre los posibles valores en la tabla de Monedas de [cada país](/es/docs/payment-methods.html). |
 | `Installments` | `integer` | No | Este parámetro hace referencia al número de pagos en el que se divide una compra con tarjeta de crédito. |
-| `Capture` | `boolean` | No | Define si la compra debe ser realizada en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización y la copra queda preautorizada hasta que se realice la confirmación final a través de los métodos confirmar o anular.</li><li>Si es `true`, la transacción es autorizada y capturada (confirmada).</li></ul><br>No todos los [medios de pago y países](/es/docs/payment-methods.html) soportan la funcioanlidad de preautorización. |
+| `Capture` | `boolean` | No | Define si la compra debe ser realizada en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización y la compra queda preautorizada hasta que se realice la confirmación final a través de los métodos confirmar o anular.</li><li>Si es `true`, la transacción es autorizada y capturada (confirmada).</li></ul><br>No todos los [medios de pago y países](/es/docs/payment-methods.html) soportan la funcionalidad de preautorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesa la compra.<br>Envíe el país usando el formato `ISO-3166-1`. |
 | `MetadataIn` | `object` | No | Corresponde a los campos adicionales requeridos por cada medio de pago o adquirente. |
-| `Customer` | `object` | Yes <sup>3</sup> | El objeto `Customer` contiene la infomración de la persona que realiza la compra. |
+| `Customer` | `object` | Yes <sup>3</sup> | El objeto `Customer` contiene la información de la persona que realiza la compra. |
 | `Customer` → `CommerceCustomerId` | `string` | No | Identificador del cliente.<br>El comercio genera y utiliza este valor internamente para identificar al cliente dentro de la plataforma de Bamboo Payment. |
 | `Customer` → `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono de contacto del cliente. |
-| `Customer` → `Enabled` | `boolean` | No | Indica si el usuario está activo apra operar. El valor predeterminado es `true`. |
+| `Customer` → `Enabled` | `boolean` | No | Indica si el usuario está activo para operar. El valor predeterminado es `true`. |
 | `Customer` → `BillingAddress` | `object` | No | Este parámetro es la dirección de facturación del cliente. |
 | `Customer` → `BillingAddress`→`AddressID` | `integer` | No | Identificador de la dirección. |
 | `Customer` → `BillingAddress`→`AddressType` | `string` | No | Tipo de dirección. |
@@ -72,22 +72,22 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 | `Customer` → `BillingAddress`→`AddressDetail` | `string` | No | Este parámetro corresponde a la información adicional de la dirección, como calle, número, etc. |
 | `Customer` → `BillingAddress`→`PostalCode` | `string` | No | Código postal de la dirección. |
 | `Customer` → `ShippingAddress` | `object` | No | Dirección de envío del cliente. Esta direccion es la que el cliente indica para recibir el producto adquirido. Este objeto tiene los mismos parámetros que el objeto `Customer.BillingAddress`. |
-| `Customer` → `AdditionalData` | `string` | No | List of type `key:value` to store extra information. |
-| `Customer` → `CaptureURL` | `string` | No | Card data capture URL.<br>This parameter contains the URL that should be loaded in an iframe to initiate the secure data capture process.<br>This only applies to Customers of type _Commerce_. |
+| `Customer` → `AdditionalData` | `string` | No | Lista de tipo `clave:valor` para almacenar información adicional. |
+| `Customer` → `CaptureURL` | `string` | No | URL de captura de datos de la tarjeta.<br>Este parámetro contiene la URL que debe cargarse en un iframe para iniciar el proceso seguro de captura de datos.<br>Esto sólo se aplica a Clientes de tipo _Commerce_. |
 | `Customer` → `DocumentTypeId` | `string` | No | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de documento de [cada país](/es/docs/payment-methods.html). |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
 | `Tip` | `number` | No | Propina adicional de la compra si es necesaria. |
 | `Description` | `string` | No | Descripción de la compra. |
 | `UniqueID` | `string` | No | Identificador único de la compra.<br>Este valor es opcional y le permite identificar una compra de forma única y evitar duplicación de transacciones en caso de errores de comunicación. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
-| `AdditionalData` | `string` | No | Puede agregar información adicional a la transacción (Por ejemplo una lista de datosa `Clave:Valor`).<br>Esta información se retorna cada vez que consulte la compra. |
+| `AdditionalData` | `string` | No | Puede agregar información adicional a la transacción (Por ejemplo una lista de datos `Clave:Valor`).<br>Esta información se retorna cada vez que se consulta la compra. |
 | `CustomerUserAgent` | `string` | No | User Agent del cliente que utiliza el servicio; para dispositivos de escritorio, debe ser el `UserAgent` informado por el navegador, y para móviles, la información sobre el dispositivo, S.O. utilizado y nombre de la App. |
 
 
 {{% alert title="Notas" color="info"%}}
-* <sup>1</sup> Los parámetros `PaymentMediaId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar de uno de ellos dependiendo del flujo que desee utilizar.
+* <sup>1</sup> Los parámetros `PaymentMediaId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos dependiendo del flujo que desee utilizar.
 * <sup>2</sup> No todos los medios de pago soportan la funcionalidad de preautorización. Revise la sección de [Países y medios de pago](/es/docs/payment-methods.html) para verificar la disponibilidad.
-* <sup>3</sup> No se requerre este objeto cuando cree una compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
-* Tenga encuenta que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref "Antifraud.md" >}}).
+* <sup>3</sup> No se requiere este objeto cuando cree una compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
+* Tenga en cuenta que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref "Antifraud.md" >}}).
 {{% /alert %}}
 
 ##### Ejemplo del Request {#request-example}
@@ -163,7 +163,7 @@ Debe incluir el nuevo monto en la solicitud para confirmar una compra con un mon
 ``` 
 
 ### Obtener compras {#get-purchases}
-Este método le permite obtener la información se una o más compras según el criterio de búsqueda enviado en el cuerpo del mismo.
+Este método le permite obtener la información de una o más compras según el criterio de búsqueda enviado en el cuerpo del mismo.
 
 #### URL de Request {#request-url-2}
 Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
@@ -182,7 +182,7 @@ Todos los parámetros son opcionales. Si no envía ningún parámetro, se mostra
 
 | Parámetro | Tipo | Descripción |
 |---|---|---|---|
-| `Authorized` | `boolean` | Si el valor es `true`, retorna solo las comrpas que se hayan completado satisfactoriamente. |
+| `Authorized` | `boolean` | Si el valor es `true`, retorna solo las compras que se hayan completado satisfactoriamente. |
 | `From` | `date` | Fecha de inicio del filtro.<br>Formato: `yyyyMMdd`. |
 | `OrderNumber` | `string` | Número de orden del comercio. |
 | `PaymentMediaId` | `integer` | Identificador del medio de pago usado en la compra. |
@@ -199,29 +199,29 @@ La siguiente tabla describe los parámetros del objeto `Response` relevantes par
 | `Response` | `object` | Parámetros retornados como resultado del procesamiento de una compra. |
 | `Response` → `PurchaseId` | `integer` | Identificador de la compra. |
 | `Response` → `Created` | `date` | Fecha y hora en la que se creó la compra.<br>Formato de la fecha _**ISO-8601**_. | 
-| `Response` → `Transaction` | `object` | Este objeto está asociado con la compra y contiene la infomración del request enviado y el response obtenido desde el medio de pago correspondiente. |
+| `Response` → `Transaction` | `object` | Este objeto está asociado con la compra y contiene la información del request enviado y el response obtenido desde el medio de pago correspondiente. |
 | `Response` → `Transaction` → `TransactionID` | `integer` | Identificador de la transacción. |
 | `Response` → `Transaction` → `Created` | `date` | Fecha y hora en la que se creó la transacción.<br>Formato de la fecha _**ISO-8601**_. | 
 | `Response` → `Transaction` → `TransactionStatusId` | `integer` | Identificador interno del estado de la transacción. |
 | `Response` → `Transaction` → `Status` | `string` | Estado actual de la transacción. |
-| `Response` → `Transaction` → `ErrorCode` | `string` | Código de error (si aplica) retornado por em medio de pago. |
+| `Response` → `Transaction` → `ErrorCode` | `string` | Código de error (si aplica) retornado por el medio de pago. |
 | `Response` → `Transaction` → `Description` | `string` | Descripción del resultado de la transacción. |
 | `Response` → `Transaction` → `ApprovalCode` | `string` | Código de aprobación retornado por el medio de pago. |
 | `Response` → `RefundList` | `object` | Este objeto contiene información sobre los reembolsos de la compra (parciales o totales). |
 | `Response` → `RefundList` → `PurchaseRefundId` | `integer` | Identificador asociado con el reembolso. |
 | `Response` → `RefundList` → `Created` | `date` | Fecha y hora en la que se creó el reembolso. |
-| `Response` → `RefundList` → `UniqueID` | `string` | Identificador único de la transacción.<br>Este valor permite identificar un reembolso en la lista de todos los posibles reembolso realizadas. |
+| `Response` → `RefundList` → `UniqueID` | `string` | Identificador único de la transacción.<br>Este valor permite identificar un reembolso en la lista de todos los posibles reembolsos realizados. |
 | `Response` → `RefundList` → `Amount` | `integer` | Monto total del reembolso. |
 | `Response` → `RefundList` → `Currency` | `string` | Moneda de la compra de acuerdo al formato ISO-4217 (códigos alfanuméricos). |
 | `Response` → `RefundList` → `Status` | `string` | Estado actual del reembolso. |
-| `Response` → `CommerceAction` | `object` | Este objeto infomra al comercio o al cliente la acción que debe llevar a cabo para completar el proceso de compra actual. |
+| `Response` → `CommerceAction` | `object` | Este objeto informa al comercio o al cliente la acción que debe llevar a cabo para completar el proceso de compra actual. |
 | `Response` → `MetadataOut` | `object` | Campos adicionales retornados por cada medio de pago o adquirente para realizar los siguientes pasos.<br>Por ejemplo, este objeto puede contener la URL a la que debe redirigir al cliente o la imagen QR que el cliente debe escanear. |
 | `Response` → `CrossBorderDataResponse` | `object` | Este objeto contiene información sobre los montos procesados en la moneda local del país seleccionado. |
-| `Response` → `CrossBorderDataResponse` → `TargetCountryISO` | `string` | Mismo país enviado en la solicitud. |
+| `Response` → `CrossBorderDataResponse` → `TargetCountryISO` | `string` | Mismo país enviado en el request. |
 | `Response` → `CrossBorderDataResponse` → `TargetCurrencyISO` | `string` | Moneda local determinada para el país seleccionado. |
 | `Response` → `CrossBorderDataResponse` → `TargetAmount` | `number` | Monto de compra convertido a la moneda local. |
 | `Errors` | `list` | Lista de errores que el sistema puede lanzar durante el proceso de compra. |
-| `Errors` → `ErrorCode` | `string` | Error code returned. |
+| `Errors` → `ErrorCode` | `string` | Código de error retornado. |
 | `Errors` → `Created` | `string` |  Fecha y hora en la que se generó el error. |
 | `Errors` → `Message` | `string` | Texto descriptivo del error. |
 | `Errors` → `Detail` | `string` | Detalle del error. |
