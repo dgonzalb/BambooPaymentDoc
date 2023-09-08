@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
-<link href="../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
+<link href="../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -126,7 +126,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.b59729dfa56bbd9b4a9f710e35a45ad6a9b15433814fb5257a934947d0e7a3675e49889d99b7fb808020b6ef36d42fee5635f39283c8f078ceafd63177824b41.json"
+  data-offline-search-index-json-src="../offline-search-index.ab95f4ff58808fcbde1f30ce85b3f135474ede96bbf7d911482a5dc15fd5f82f20243424a3017ae2267362028033a01fce209396544e79a5ec9425d1e039174a.json"
   data-offline-search-base-href="../"
 >
 
@@ -844,7 +844,6 @@
       <ul>
         <li><a href="#gettoken">GetToken</a></li>
         <li><a href="#getcustomtoken">GetCustomToken</a></li>
-        <li><a href="#getcustomredirecttoken">GetCustomRedirectToken</a></li>
       </ul>
     </li>
     <li><a href="#javascript-objects">JavaScript Objects</a>
@@ -1208,32 +1207,23 @@ This example generates a token for _RedPagos_.<br>
 <p class="alert-text">The method delivers the payment <strong>token</strong> in the same way as the other methods; it is included in the hidden text field <code>PWToken</code> and triggers the <code>tokenCreated</code> event like the other methods.</p>
 </div>
 
-<h3 id="getcustomredirecttoken">GetCustomRedirectToken</h3>
-<p>This method is used to get a <strong>Token</strong> for Redirect flow payments.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th style="text-align:center">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>paymentMediaId</strong> <br> <em>numeric</em></td>
-<td>Identifier of the payment methods for which they require the <strong>token</strong>.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul></td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td><strong>email</strong> <br> <em>string</em></td>
-<td>Customer&rsquo;s email address.</td>
-<td style="text-align:center">Yes</td>
-</tr>
-</tbody>
-</table>
-<p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">GetCustomRedirectToken</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">106</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;email@domain.com&#34;</span><span style="color:#000;font-weight:bold">);</span>
-</span></span></code></pre></div>
+<!--
+### GetCustomRedirectToken
+
+This method is used to get a **Token** for Redirect flow payments.
+
+| Property | Description | Mandatory |
+|-------------|-------------|:--------:|
+| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Yes |
+| **email** <br> *string* | Customer's email address. | Yes |
+
+Example:
+
+```javascript
+ PWCheckout.GetCustomRedirectToken(106, "email@domain.com");
+ ```
+
+
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
@@ -1241,6 +1231,7 @@ This example generates a token for _RedPagos_.<br>
 <p class="alert-text">The method delivers the payment <strong>token</strong> in the same way as the other methods; it is included in the hidden text field <code>PWToken</code> and triggers the <code>tokenCreated</code> event like the other methods.</p>
 </div>
 
+-->
 <h2 id="javascript-objects">JavaScript Objects</h2>
 <h3 id="closeinfo">CloseInfo</h3>
 <p>The <code>CloseInfo</code> object is returned in the <code>closed</code> event, triggered when the user closes the card data capture form.</p>
@@ -1471,9 +1462,9 @@ This example generates a token for _RedPagos_.<br>
 <br>
 <b>Last modified</b>
 
-September 7, 2023: 
+September 8, 2023: 
 
- <i>Adjustments in requests and responses and minor grammar adjustments (7753fec)</i>
+ <i>Adjustments in requests and responses and minor grammar adjustments (0031c03)</i>
   </div>
 </div>
 

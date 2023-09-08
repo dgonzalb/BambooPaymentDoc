@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/refunds-and-voids.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-08-02T08:46:32-05:00" />
-<meta property="article:modified_time" content="2023-09-04T15:40:35-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-08T15:53:40-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Refunds and voids">
 <meta itemprop="description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
 "><meta itemprop="datePublished" content="2023-08-02T08:46:32-05:00" />
-<meta itemprop="dateModified" content="2023-09-04T15:40:35-05:00" />
-<meta itemprop="wordCount" content="362">
+<meta itemprop="dateModified" content="2023-09-08T15:53:40-05:00" />
+<meta itemprop="wordCount" content="403">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Refunds and voids"/>
 <meta name="twitter:description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
-<link href="../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
+<link href="../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.b59729dfa56bbd9b4a9f710e35a45ad6a9b15433814fb5257a934947d0e7a3675e49889d99b7fb808020b6ef36d42fee5635f39283c8f078ceafd63177824b41.json"
+  data-offline-search-index-json-src="../../offline-search-index.ab95f4ff58808fcbde1f30ce85b3f135474ede96bbf7d911482a5dc15fd5f82f20243424a3017ae2267362028033a01fce209396544e79a5ec9425d1e039174a.json"
   data-offline-search-base-href="../../"
 >
 
@@ -844,14 +844,23 @@
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#setting-the-language-of-the-response-codes">Setting the language of the response codes</a></li>
     <li><a href="#rollback-a-purchase">Rollback a purchase</a>
       <ul>
-        <li><a href="#setting-the-language-of-the-response-codes">Setting the language of the response codes</a></li>
         <li><a href="#request-url">Request URL</a></li>
-        <li><a href="#request-parameters">Request parameters</a></li>
-        <li><a href="#response-parameters">Response parameters</a></li>
       </ul>
     </li>
+    <li><a href="#refund-a-purchase">Refund a purchase</a>
+      <ul>
+        <li><a href="#request-url-1">Request URL</a></li>
+      </ul>
+    </li>
+    <li><a href="#request-parameters">Request parameters</a>
+      <ul>
+        <li><a href="#request-example">Request example</a></li>
+      </ul>
+    </li>
+    <li><a href="#response-parameters">Response parameters</a></li>
   </ul>
 </nav>
 
@@ -904,30 +913,13 @@
 	<p>Before we start, let&rsquo;s review some concepts.</p>
 <ul>
 <li>
-<p><strong>Voids</strong>: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&rsquo;s payment method is not charged for the voided transaction.</p>
+<p><strong>Void</strong>: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&rsquo;s payment method is not charged for the voided transaction.</p>
 </li>
 <li>
 <p><strong>Refund</strong>: A refund, on the other hand, is a transaction that occurs when a customer returns a purchased item or cancels a service, and the merchant reimburses the customer for the amount paid. The refunded amount is usually returned to the original payment method used by the customer. Unlike voids, the refund occurs after the transaction has been settled.</p>
 </li>
 </ul>
-<h2 id="rollback-a-purchase">Rollback a purchase</h2>
-<p>The <em><strong>rollback</strong></em> operations is only available for purchases previously <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase">authorized</a> with state <em>PreAuthorized</em>.</p>
-
-
-<div class="alert alert-info" role="alert">
-</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Note</h4>
-<p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
-<div style="text-align: center;">
-<p><a href="../../docs/payment-methods/brazil.html"><img src="../../assets/Flags/FlagBR.png" width="30" /></a>
-<a href="../../docs/payment-methods/chile.html"><img src="../../assets/Flags/FlagCL.png" width="30" /></a>
-<a href="../../docs/payment-methods/colombia.html"><img src="../../assets/Flags/FlagCO.png" width="30" /></a>
-<a href="../../docs/payment-methods/uruguay.html"><img src="../../assets/Flags/FlagUY.png" width="30" /></a></p>
-</div>
-</p>
-</div>
-
-<h3 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h3>
+<h2 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h2>
 <p>You can receive the error description by relying on localization features. To do this, you need to send the <code>lang</code> header in your integration, using any of the following languages in <strong>ISO 639-1</strong> format.</p>
 <div id="shortTable"></div>
 <table>
@@ -952,31 +944,50 @@
 </tr>
 </tbody>
 </table>
+<h2 id="rollback-a-purchase">Rollback a purchase</h2>
+<p>The <em><strong>rollback</strong></em> operation is only available for purchases previously <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase">authorized</a> with state <em>PreAuthorized</em>.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
+<div style="text-align: center;">
+<p><a href="../../docs/payment-methods/brazil.html"><img src="../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../docs/payment-methods/chile.html"><img src="../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../docs/payment-methods/colombia.html"><img src="../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../docs/payment-methods/uruguay.html"><img src="../../assets/Flags/FlagUY.png" width="30" /></a></p>
+</div>
+</p>
+</div>
+
 <h3 id="request-url">Request URL</h3>
 <p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
-<p><strong>Void</strong></p>
 <ul>
 <li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback</code></li>
 </ul>
-<p><strong>Refund</strong></p>
+<h2 id="refund-a-purchase">Refund a purchase</h2>
+<p>The <em><strong>refund</strong></em> operation is only available for purchases with state <em>Approved</em>. Refunds can be total or partial.</p>
+<h3 id="request-url-1">Request URL</h3>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
 </ul>
-<h3 id="request-parameters">Request parameters</h3>
-<p>Request body is not required to rollback a purchase. If you don&rsquo;t send any request the pre-authorized purchase will be voided or refunded with its original amount.</p>
+<h2 id="request-parameters">Request parameters</h2>
+<p>Request body is not required to rollback or refund a purchase. If you don&rsquo;t send any request the purchase will be voided or refunded with its original amount.</p>
 <p>The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
-<h4 id="request-example">Request example</h4>
-<p>To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
+<h3 id="request-example">Request example</h3>
+<p>To perform the rollback or a refund of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
-<p>When you perform the rollback, you will get the same <code>Response</code> object <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
+</span></span></code></pre></div><h2 id="response-parameters">Response parameters</h2>
+<p>When you perform the rollback or a refund, you will get the same <code>Response</code> object <a href="../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
 <!--
 ## Refund a purchase
-The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
+The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial
 
 ### Considerations
 _To be defined_
@@ -1052,9 +1063,9 @@ Consider the following parameters when invoking a refund request.
 <br>
 <b>Last modified</b>
 
-September 4, 2023: 
+September 8, 2023: 
 
- <i>Endpoint URL updated (8bfb44a)</i>
+ <i>Endpoint URL updated (f8a9c2e)</i>
   </div>
 </div>
 

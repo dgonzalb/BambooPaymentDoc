@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/purchases/redirect-purchase.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-08T15:53:21-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Redirect purchases">
 <meta itemprop="description" content="The _Redirect purchase_ is the flow used for merchants where the customer needs to be redirected to an external page to complete the payment.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
-<meta itemprop="wordCount" content="499">
+<meta itemprop="dateModified" content="2023-09-08T15:53:21-05:00" />
+<meta itemprop="wordCount" content="490">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redirect purchases"/>
 <meta name="twitter:description" content="The _Redirect purchase_ is the flow used for merchants where the customer needs to be redirected to an external page to complete the payment.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
-<link href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
+<link href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b59729dfa56bbd9b4a9f710e35a45ad6a9b15433814fb5257a934947d0e7a3675e49889d99b7fb808020b6ef36d42fee5635f39283c8f078ceafd63177824b41.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ab95f4ff58808fcbde1f30ce85b3f135474ede96bbf7d911482a5dc15fd5f82f20243424a3017ae2267362028033a01fce209396544e79a5ec9425d1e039174a.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -928,41 +928,36 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>The Merchant requests the <code>OneTimeToken</code> for redirect flow payment</td>
-<td><code>/token/GetRedirectToken</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td>The Merchant sends the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html#create-a-purchase">purchase request</a> as with any other means of payment</td>
+<td>The Merchant sends the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html#create-a-purchase">purchase request</a> with the <code>PaymentMediaId</code> of the corresponding payment method.</td>
 <td><code>/purchase</code></td>
 </tr>
 <tr>
-<td>3</td>
-<td>Bamboo returns Purchase, with status <em>Pending for Redirection</em>, and a CommerceAction object containing an external service URL. <code>ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE</code></td>
+<td>2</td>
+<td>Bamboo returns the Purchase, with status <em>Pending for Redirection</em>, and a <code>CommerceAction</code> object containing an external service URL. <code>ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE</code></td>
 <td><code>/purchase response</code></td>
 </tr>
 <tr>
-<td>4</td>
+<td>3</td>
 <td>The merchant must redirect the customer to the external service URL provided in the <code>CommerceAction</code> object.</td>
 <td><code>Commerce Site/Client browser</code></td>
 </tr>
 <tr>
-<td>5</td>
+<td>4</td>
 <td>Bamboo automatically redirects customers to an external payment processor to complete payment.</td>
 <td><code>Bamboo Site/Customer browser</code></td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td>The customer follows the steps shown by the acquirer&rsquo;s site to complete the payment.</td>
 <td><code>External Payment Site/Client</code></td>
 </tr>
 <tr>
-<td>7</td>
+<td>6</td>
 <td>Bamboo receives the response is received and processes and updates the transaction status. Then, Bamboo redirects back to the merchant&rsquo;s response page (According to transaction status).</td>
 <td><code>/paymentCallback</code></td>
 </tr>
 <tr>
-<td>8</td>
+<td>7</td>
 <td>Bamboo receives an async push notification from acquire and notify back to the merchant&rsquo;s notification webhook (the purchase status is updated).</td>
 <td><code> /webhook (Merchant)</code></td>
 </tr>
@@ -1049,9 +1044,9 @@
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 8, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>New documentation site (83c46a0)</i>
   </div>
 </div>
 

@@ -58,30 +58,13 @@
         &lt;p&gt;Before we start, let&amp;rsquo;s review some concepts.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Voids&lt;/strong&gt;: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&amp;rsquo;s payment method is not charged for the voided transaction.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Void&lt;/strong&gt;: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&amp;rsquo;s payment method is not charged for the voided transaction.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Refund&lt;/strong&gt;: A refund, on the other hand, is a transaction that occurs when a customer returns a purchased item or cancels a service, and the merchant reimburses the customer for the amount paid. The refunded amount is usually returned to the original payment method used by the customer. Unlike voids, the refund occurs after the transaction has been settled.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;rollback-a-purchase&#34;&gt;Rollback a purchase&lt;/h2&gt;
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;rollback&lt;/strong&gt;&lt;/em&gt; operations is only available for purchases previously &lt;a href=&#34;../../docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase&#34;&gt;authorized&lt;/a&gt; with state &lt;em&gt;PreAuthorized&lt;/em&gt;.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Note&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Pre-authorization feature may not be supported by all payment methods and it&amp;rsquo;s available for the following countries.&lt;/p&gt;
-&lt;div style=&#34;text-align: center;&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;../../docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Setting the language of the response codes&lt;/h3&gt;
+&lt;h2 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Setting the language of the response codes&lt;/h2&gt;
 &lt;p&gt;You can receive the error description by relying on localization features. To do this, you need to send the &lt;code&gt;lang&lt;/code&gt; header in your integration, using any of the following languages in &lt;strong&gt;ISO 639-1&lt;/strong&gt; format.&lt;/p&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -106,31 +89,50 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h2 id=&#34;rollback-a-purchase&#34;&gt;Rollback a purchase&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;rollback&lt;/strong&gt;&lt;/em&gt; operation is only available for purchases previously &lt;a href=&#34;../../docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase&#34;&gt;authorized&lt;/a&gt; with state &lt;em&gt;PreAuthorized&lt;/em&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Note&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Pre-authorization feature may not be supported by all payment methods and it&amp;rsquo;s available for the following countries.&lt;/p&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;../../docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&#34;request-url&#34;&gt;Request URL&lt;/h3&gt;
 &lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Void&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Refund&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;refund-a-purchase&#34;&gt;Refund a purchase&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;refund&lt;/strong&gt;&lt;/em&gt; operation is only available for purchases with state &lt;em&gt;Approved&lt;/em&gt;. Refunds can be total or partial.&lt;/p&gt;
+&lt;h3 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h3&gt;
+&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;Request body is not required to rollback a purchase. If you don&amp;rsquo;t send any request the pre-authorized purchase will be voided or refunded with its original amount.&lt;/p&gt;
+&lt;h2 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h2&gt;
+&lt;p&gt;Request body is not required to rollback or refund a purchase. If you don&amp;rsquo;t send any request the purchase will be voided or refunded with its original amount.&lt;/p&gt;
 &lt;p&gt;The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.&lt;/p&gt;
-&lt;h4 id=&#34;request-example&#34;&gt;Request example&lt;/h4&gt;
-&lt;p&gt;To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:&lt;/p&gt;
+&lt;h3 id=&#34;request-example&#34;&gt;Request example&lt;/h3&gt;
+&lt;p&gt;To perform the rollback or a refund of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
-&lt;p&gt;When you perform the rollback, you will get the same &lt;code&gt;Response&lt;/code&gt; object &lt;a href=&#34;../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;returned&lt;/a&gt;.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h2&gt;
+&lt;p&gt;When you perform the rollback or a refund, you will get the same &lt;code&gt;Response&lt;/code&gt; object &lt;a href=&#34;../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;returned&lt;/a&gt;.&lt;/p&gt;
 &lt;!--
 ## Refund a purchase
-The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
+The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial
 
 ### Considerations
 _To be defined_
@@ -258,7 +260,7 @@ Consider the following parameters when invoking a refund request.
 &lt;p&gt;The invocation of the fingerprint service is found in a JavaScript library, which must be imported into the client&amp;rsquo;s web page directly from a public URL on our platform.&lt;/p&gt;
 &lt;p&gt;The JavaScript snippet records user interactions with your website and collects device information. &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;In the call to said library, the public key of the trading account (PublicAccountKey) must be included (as a parameter), which will be used for calls to the REST API from this library.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;lt;script&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;src=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
@@ -271,7 +273,7 @@ Consider the following parameters when invoking a refund request.
 
 &lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;
 &lt;h3 id=&#34;getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/h3&gt;
-&lt;p&gt;This method returns the &lt;code&gt;SessionId&lt;/code&gt; of the fingerprint (string). The &lt;code&gt;SessionId&lt;/code&gt; is the data that must be passed in the API invocation at the time of purchase in the &lt;code&gt;AntifraudFingerprintId&lt;/code&gt; parameter&lt;/p&gt;
+&lt;p&gt;This method returns the &lt;code&gt;SessionId&lt;/code&gt; of the fingerprint (string). The &lt;code&gt;SessionId&lt;/code&gt; is the data that must be passed in the API invocation at the time of purchase in the &lt;code&gt;AntifraudFingerprintId&lt;/code&gt; parameter.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/getSessionAntifraudFlow_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
@@ -345,8 +347,8 @@ Consider the following parameters when invoking a refund request.
 &lt;li&gt;You need to implement a validation method of the signature in the webhook.&lt;/li&gt;
 &lt;li&gt;It must respond only an HTTP code, where:
 &lt;ul&gt;
-&lt;li&gt;if code &lt;code&gt;200&lt;/code&gt; (OK) is answered, BambooPayment will assume the notification processing was successful.&lt;/li&gt;
-&lt;li&gt;If any code other than &lt;code&gt;200&lt;/code&gt; is answered, BambooPayment will assume that the processing was unsuccessful, so the notification will be retried.&lt;/li&gt;
+&lt;li&gt;if code &lt;code&gt;200&lt;/code&gt; (OK) is answered, Bamboo Payment will assume the notification processing was successful.&lt;/li&gt;
+&lt;li&gt;If any code other than &lt;code&gt;200&lt;/code&gt; is answered, Bamboo Payment will assume that the processing was unsuccessful, so the notification will be retried.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

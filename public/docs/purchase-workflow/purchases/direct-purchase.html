@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/purchase-workflow/purchases/direct-purchase.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-08-31T08:39:24-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-08T15:53:21-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Direct purchases">
 <meta itemprop="description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-08-31T08:39:24-05:00" />
-<meta itemprop="wordCount" content="345">
+<meta itemprop="dateModified" content="2023-09-08T15:53:21-05:00" />
+<meta itemprop="wordCount" content="347">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Direct purchases"/>
 <meta name="twitter:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" as="style">
-<link href="../../../scss/main.min.bf9409f933f2bd0b295243f8ded44a57da04188ad2ebec4dfc61961bd25dc7de.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
+<link href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b59729dfa56bbd9b4a9f710e35a45ad6a9b15433814fb5257a934947d0e7a3675e49889d99b7fb808020b6ef36d42fee5635f39283c8f078ceafd63177824b41.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ab95f4ff58808fcbde1f30ce85b3f135474ede96bbf7d911482a5dc15fd5f82f20243424a3017ae2267362028033a01fce209396544e79a5ec9425d1e039174a.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -844,7 +844,7 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#endpoint">Endpoint</a></li>
+    <li><a href="#request-url">Request URL</a></li>
     <li><a href="#request-example">Request example</a></li>
     <li><a href="#response-example">Response Example</a></li>
   </ul>
@@ -906,16 +906,11 @@
 	<h1>Direct purchases</h1>
     <div class="lead">This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html">basic purchase</a>.</div>
 	       
-	<!--
-A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 
-
-For example, if your business is in Uruguay and your buyer is in Colombia, their purchase will be in COP but your destination currency is UYU.
--->
-<h2 id="endpoint">Endpoint</h2>
-<p>Point your request to any of the following URL according to your needs.</p>
+	<h2 id="request-url">Request URL</h2>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li>STAGE: <code>https://secure-api.stage.bamboopayment.com/v2/api/purchase</code></li>
-<li>PROD: <code>https://secure-api.bamboopayment.com/v2/api/purchase</code></li>
+<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v2/api/purchase</code></li>
+<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v2/api/purchase</code></li>
 </ul>
 <h2 id="request-example">Request example</h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
@@ -1065,9 +1060,9 @@ For example, if your business is in Uruguay and your buyer is in Colombia, their
 <br>
 <b>Last modified</b>
 
-August 31, 2023: 
+September 8, 2023: 
 
- <i>New documentation site (6e86607)</i>
+ <i>New documentation site (83c46a0)</i>
   </div>
 </div>
 
