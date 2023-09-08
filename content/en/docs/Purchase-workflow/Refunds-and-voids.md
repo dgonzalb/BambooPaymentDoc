@@ -9,12 +9,23 @@ weight: 30
 
 Before we start, let's review some concepts.
 
-* **Voids**: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer's payment method is not charged for the voided transaction.
+* **Void**: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer's payment method is not charged for the voided transaction.
 
 * **Refund**: A refund, on the other hand, is a transaction that occurs when a customer returns a purchased item or cancels a service, and the merchant reimburses the customer for the amount paid. The refunded amount is usually returned to the original payment method used by the customer. Unlike voids, the refund occurs after the transaction has been settled.
 
+## Setting the language of the response codes
+You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
+
+<div id="shortTable"></div>
+
+| Code | Language |
+|:-:|---|
+| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
+| `es` | Spanish. |
+| `pt` | Portuguese. |
+
 ## Rollback a purchase
-The _**rollback**_ operations is only available for purchases previously [authorized]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) with state _PreAuthorized_.
+The _**rollback**_ operation is only available for purchases previously [authorized]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) with state _PreAuthorized_.
 
 {{% alert title="Note" color="info"%}}
 Pre-authorization feature may not be supported by all payment methods and it's available for the following countries.
@@ -30,37 +41,28 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 {{% /alert %}}
 
-### Setting the language of the response codes
-You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
-
-<div id="shortTable"></div>
-
-| Code | Language |
-|:-:|---|
-| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
-| `es` | Spanish. |
-| `pt` | Portuguese. |
-
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
-
-**Void**
 
 * **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
-**Refund**
+## Refund a purchase
+The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial.
+
+### Request URL
+You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 
-### Request parameters
-Request body is not required to rollback a purchase. If you don't send any request the pre-authorized purchase will be voided or refunded with its original amount. 
+## Request parameters
+Request body is not required to rollback or refund a purchase. If you don't send any request the purchase will be voided or refunded with its original amount. 
 
 The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
 
-#### Request example
-To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
+### Request example
+To perform the rollback or a refund of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
 
 ```json
 {
@@ -68,11 +70,11 @@ To perform the rollback of a purchase with a lower amount than the original, you
 }
 ```
 
-### Response parameters
-When you perform the rollback, you will get the same `Response` object [returned]({{< ref "purchase-operations.md" >}}#response-parameters).
+## Response parameters
+When you perform the rollback or a refund, you will get the same `Response` object [returned]({{< ref "purchase-operations.md" >}}#response-parameters).
 <!--
 ## Refund a purchase
-The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
+The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial
 
 ### Considerations
 _To be defined_
