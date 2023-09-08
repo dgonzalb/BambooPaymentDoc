@@ -36,7 +36,8 @@
 //
 // Basic Bootstrap table
 //
-
+.tab-pane table,
+.alert table,
 details > table,
 .table {
   width: 100%;
@@ -112,6 +113,7 @@ details > table,
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .tab-pane table,
+.alert table,
 details > table,
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
@@ -150,6 +152,8 @@ details > table,
 // Same table markup, but inverted color scheme: dark background and light text.
 
 // stylelint-disable-next-line no-duplicate-selectors
+.tab-pane table,
+.alert table,
 details > table,
 .table {
   .thead-dark {
@@ -203,6 +207,8 @@ details > table,
 //
 // Generate series of `.table-responsive-*` classes for configuring the screen
 // size of where your table will overflow.
+.tab-pane table,
+.alert table,
 details > table,
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {
@@ -230,52 +236,61 @@ details > table,
 }
 
 .tab-pane table,
+.alert table,
 .td-content > table {
   border-collapse: separate;
   border-spacing: 0;
 }
 
 .tab-pane > table thead th,
+.alert > table thead th,
 .td-content > table thead th {
   border: 0px !important;
   vertical-align: bottom;
 }
 
 .tab-pane > table tr:first-child td:first-child,
+.alert > table tr:first-child td:first-child,
 .td-content > table tr:first-child td:first-child{
   border-radius: 10px 0 0 0;
   border-left: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table tr:first-child td:last-child,
+.alert > table tr:first-child td:last-child,
 .td-content > table tr:first-child td:last-child{
   border-radius: 0 10px 0 0;
   border-right: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table tr:last-child td:first-child,
+.alert > table tr:last-child td:first-child,
 .td-content > table tr:last-child td:first-child{
   border-radius: 0 0 0 10px;
   border-left: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table tr:last-child td:last-child,
+.alert > table tr:last-child td:last-child,
 .td-content > table tr:last-child td:last-child{
   border-radius: 0 0 10px 0;
   border-right: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table td:first-child,
+.alert > table td:first-child,
 .td-content > table td:first-child{
   border-left: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table td:last-child,
+.alert > table td:last-child,
 .td-content > table td:last-child{
   border-right: $table-border-width solid $table-border-color;
 }
 
 .tab-pane > table tr:last-child td,
+.alert > table tr:last-child td,
 .td-content > table tr:last-child td{
   border-bottom: $table-border-width solid $table-border-color;
 }
