@@ -15,14 +15,13 @@ tags: ["subtopic"]
 
 | N° | Description | /EndPoint or Actor |
 |---|---|---|
-| 1 | The Merchant requests the `OneTimeToken` for redirect flow payment | `/token/GetRedirectToken` |
-| 2 | The Merchant sends the [purchase request]({{< ref "Purchase-Operations" >}}#create-a-purchase) as with any other means of payment | `/purchase` |
-| 3 | Bamboo returns Purchase, with status _Pending for Redirection_, and a CommerceAction object containing an external service URL. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
-| 4 | The merchant must redirect the customer to the external service URL provided in the `CommerceAction` object. | `Commerce Site/Client browser` |
-| 5 | Bamboo automatically redirects customers to an external payment processor to complete payment. | `Bamboo Site/Customer browser` |
-| 6 | The customer follows the steps shown by the acquirer's site to complete the payment. | `External Payment Site/Client` |
-| 7 | Bamboo receives the response is received and processes and updates the transaction status. Then, Bamboo redirects back to the merchant's response page (According to transaction status). | `/paymentCallback` |
-| 8 | Bamboo receives an async push notification from acquire and notify back to the merchant's notification webhook (the purchase status is updated). |` /webhook (Merchant)` |
+| 1 | The Merchant sends the [purchase request]({{< ref "Purchase-Operations" >}}#create-a-purchase) with the `PaymentMediaId` of the corresponding payment method.  | `/purchase` |
+| 2 | Bamboo returns the Purchase, with status _Pending for Redirection_, and a `CommerceAction` object containing an external service URL. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
+| 3 | The merchant must redirect the customer to the external service URL provided in the `CommerceAction` object. | `Commerce Site/Client browser` |
+| 4 | Bamboo automatically redirects customers to an external payment processor to complete payment. | `Bamboo Site/Customer browser` |
+| 5 | The customer follows the steps shown by the acquirer's site to complete the payment. | `External Payment Site/Client` |
+| 6 | Bamboo receives the response is received and processes and updates the transaction status. Then, Bamboo redirects back to the merchant's response page (According to transaction status). | `/paymentCallback` |
+| 7 | Bamboo receives an async push notification from acquire and notify back to the merchant's notification webhook (the purchase status is updated). |` /webhook (Merchant)` |
 
 ## Response URLS
 As the result of the transaction, it can be in any of the following statuses.

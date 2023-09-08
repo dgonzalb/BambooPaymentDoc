@@ -28,7 +28,7 @@ To use the purchase preview, you must point to the following endpoint:
 
 `GET https://api.stage.bamboopayment.com/v1/api/purchase/preview`
 
-In the header, the Authorization parameter must be configured by concatenating the word Basic, a space and the Private Key of the merchant.
+In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the **Private Key** of the merchant.
 
 ### Example of the request
 
@@ -49,20 +49,20 @@ In the header, the Authorization parameter must be configured by concatenating t
 <br>
 Where:
 
-| Parameter | Description | Type | Required |
+| Parameter | Type | Mandatory? | Description |
 |---|---|---|---|
-| `baseAmount` | Amount to be paid before taxes | Integer | Yes |
-| `currency` | Currency of the amount defined in `baseAmount` | Yes |
-| `countryIso` | Country in ISO 3166-2 format | String | Yes |
-| `paymentMediaId` | Alternative Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](Medios-de-Pago.md) by country section in the documentation. | String | No |
-| `customer` | Payer Information | Object | No* <br> <sup>*</sup>_Required for Argentina_ |
-| `customer.documentTypeId` | Payer Document Type | String | No |
-| `customer.docNumber` | Payer document number | String | No |
-| `customer.state` | Payer state | String | No* <br> <sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in the next section._ |
-| `customer.postalCode` | Payer Zip Code | String | No |
+| `baseAmount` | `integer` | Yes | Amount to be paid before taxes. |
+| `currency` | `string` | Yes | Currency of the amount defined in `baseAmount`. |
+| `countryIso` | `string` | Yes | Country in ISO 3166-2 format. |
+| `paymentMediaId` | `string` | No | Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](/docs/payment-methods.html) by country section in the documentation. |
+| `customer` | `Object` | No<sup>*</sup> | Payer Information.<br><sup>*</sup>_Required for Argentina_. |
+| `customer.documentTypeId` | `string` | No | Payer Document Type. |
+| `customer.docNumber` | `string` | No | Payer document number. |
+| `customer.state` | `string` | No<sup>*</sup> | Payer state.<br><sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in [this section](/docs/payment-methods/argentina.html#argentina-provinces)_. |
+| `customer.postalCode` | `string` | No | Payer Zip Code. |
 
 ## Response
-Next, we show an example of the response to the request shown previously
+Next, we show an example of the response to the request shown previously.
 
 ### Example response
 ```json
@@ -124,40 +124,40 @@ The parameters in the response are the following:
 
 | Parameter | Type | Description |
 |---|:---:|---|
-| `Success` | Boolean | Determines if the result of the operation was successful. |
-| `Data.Date` | Date and time | Date the process was executed. |
-| `Data.Currency` | String | ISO code of the merchant's currency. That is, the destination currency in the conversion. |
-| `Data.ExchangeRate.value` | Number | Amount that the origin currency is equivalent to in the destination currency. |
-| `Data.ExchangeRate.FromCurrencyIsoCode` | String | ISO code of the origin currency. |
-| `Data.ExchangeRate.ToCurrencyIsoCode` | String | ISO code of the destination currency. |
-| `Data.ExchangeRate.TypeCode` | String | Not used. |
-| `Data.ExchangeRate.Date` | Date and time | Date of the last update of the conversion rate. |
-| `Data.TotalAmount` | Number | Total final amount of the purchase in local currency after applying the values that affect it (taxes, conversions, etc.). |
-| `Data.TaxDetails` | Object | Contains the detail of the taxes that apply to the transaction. |
-| `Data.AmountDetails` | Object | Contains the detail of the transaction subtotals. |
+| `Success` | `boolean` | Determines if the result of the operation was successful. |
+| `Data.Date` | `date` | Date the process was executed. |
+| `Data.Currency` | `string` | ISO code of the merchant's currency. That is, the destination currency in the conversion. |
+| `Data.ExchangeRate.value` | `number` | Amount that the origin currency is equivalent to in the destination currency. |
+| `Data.ExchangeRate.FromCurrencyIsoCode` | `string` | ISO code of the origin currency. |
+| `Data.ExchangeRate.ToCurrencyIsoCode` | `string` | ISO code of the destination currency. |
+| `Data.ExchangeRate.TypeCode` | `string` | Not used. |
+| `Data.ExchangeRate.Date` | `date` | Date of the last update of the conversion rate. |
+| `Data.TotalAmount` | `number` | Total final amount of the purchase in local currency after applying the values that affect it (taxes, conversions, etc.). |
+| `Data.TaxDetails` | `object` | Contains the detail of the taxes that apply to the transaction. |
+| `Data.AmountDetails` | `object` | Contains the detail of the transaction subtotals. |
 
 ### Object _TaxDetails_
-Next, we explain the sub-parameters of the `TaxDetails` object
+Next, we explain the sub-parameters of the `TaxDetails` object.
 
 | Parameter | Type | Description |
 |---|:---:|---|
-| `TaxCode` | String | Tax code defined by Bamboo Payment. |
-| `TaxName` | String | Name of the tax that is applied. |
-| `TaxAmount` | Number | Total value of the tax. |
-| `TaxPercentage` | Percentage | Percentage corresponding to the tax. |
-| `ResponsibleType` | String | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
+| `TaxCode` | `string` | Tax code defined by Bamboo Payment. |
+| `TaxName` | `string` | Name of the tax that is applied. |
+| `TaxAmount` | `number` | Total value of the tax. |
+| `TaxPercentage` | `number` | Percentage corresponding to the tax. |
+| `ResponsibleType` | `string` | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
 
 {{% alert title="Note" color="info"%}}
 In the example of the request, two taxes are specified for Argentina: **VAT** corresponding to the VAT of Digital Services and **II.BB** corresponding to the Gross Income tax.
 {{% /alert %}}
 
 ### Object _AmountDetails_
-Next, we explain the sub-parameters of the `AmountDetails` object
+Next, we explain the sub-parameters of the `AmountDetails` object.
 
 | Parameter | Type | Description |
 |---|:---:|---|
-| `CurrencyCode` | String | ISO code of the currency of the amount. |
-| `AmountCategoryCode` | String | Amount category. |
-| `Amount` | Number | Value of the amount. |
-| `Sign` | String | Indicates if the amount is a debit or credit movement. |
-| `ResponsibleType` | String | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
+| `CurrencyCode` | `string` | ISO code of the currency of the amount. |
+| `AmountCategoryCode` | `string` | Amount category. |
+| `Amount` | `number` | Value of the amount. |
+| `Sign` | `string` | Indicates if the amount is a debit or credit movement. |
+| `ResponsibleType` | `string` | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |

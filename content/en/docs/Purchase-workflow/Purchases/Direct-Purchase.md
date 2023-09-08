@@ -7,16 +7,12 @@ Description: >
 weight: 30
 tags: ["subtopic"]
 ---
-<!--
-A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 
 
-For example, if your business is in Uruguay and your buyer is in Colombia, their purchase will be in COP but your destination currency is UYU.
--->
-## Endpoint
-Point your request to any of the following URL according to your needs.
+## Request URL
+You must invoke a **POST** request to the following URLs according to your needs.
 
-* STAGE: `https://secure-api.stage.bamboopayment.com/v2/api/purchase`
-* PROD: `https://secure-api.bamboopayment.com/v2/api/purchase`
+* **Production**: `https://secure-api.bamboopayment.com/v2/api/purchase`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase`
 
 ## Request example 
 ```json
