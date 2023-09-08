@@ -1,24 +1,20 @@
 ---
-title: "Direct purchases"
-linkTitle: "Direct purchases"
+title: "Compra Directa"
+linkTitle: "Compra Directa"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{< ref "Purchase-Operations.md" >}}).
+  Esta funcionalidad permite a los comercios certificados PCI realizar la autorización enviando los datos de la tarjeta en un solo paso sin la necesidad de la creación del token como en una [compra básica]({{< ref "Purchase-Operations.md" >}}).
 weight: 30
 tags: ["subtopic"]
 ---
-<!--
-A _CrossBorder purchase_ refers to all purchases in which the currency of the payer is different from the currency that you have configured in your store. 
 
-Por ejemplo, if your business is in Uruguay and your buyer is in Colombia, their purchase will be in COP but your destination currency is UYU.
--->
-## Endpoint
-Point your request to any of the following URL according to your needs.
+## URL del Request {#request-url-1}
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* STAGE: `https://secure-api.stage.bamboopayment.com/v2/api/purchase`
-* PROD: `https://secure-api.bamboopayment.com/v2/api/purchase`
+* **Producción**: `https://secure-api.bamboopayment.com/v2/api/purchase`
+* **Stage**: `https://secure-api.stage.bamboopayment.com/v2/api/purchase`
 
-## Request example 
+## Ejemplo del Request {#request-example}
 ```json
 {
     "CardData": {
@@ -54,15 +50,15 @@ Point your request to any of the following URL according to your needs.
 ```
 <br>
 
-The fields **CardData**, **PaymentMediaId** and **TrxToken** are not required; Nevertheless, one of them must be send depending of which flow to use.
+Los campos **CardData**, **PaymentMediaId** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos de acuerdo con el flujo que utilice.
 
-* **CardData**: Must be used for transactions using non-tokenized cards.
+* **CardData**: Se debe utilizar para transacciones con tarjeta no tokenizada.
 
-* **PaymentMediaId**: Identifier of alternative payment method (transference, cash and any flow needing a redirection of the client). This identifier can be found in the [Payment Methods by Country](/es/docs/payment-methods.html) section.
+* **PaymentMediaId**: Identificador del medio de pago alternativo (transferencia, efectivo y cualquier flujo que necesite una redirección del cliente). Este identificador se puede obtener consultando la sección [Medios de pago por país](/es/docs/payment-methods.html).
 
-* **TrxToken**: The merchant can generate a token and use it to generate transactions if necessary.
+* **TrxToken**: El comercio puede generar un token y enviarlo en este campo para generar transacciones si es necesario.
 
-## Response Example
+## Ejemplo del Response {#response-example}
 ```json
 {
     "Response": {

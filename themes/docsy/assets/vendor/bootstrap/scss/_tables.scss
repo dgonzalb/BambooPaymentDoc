@@ -3,6 +3,7 @@
 //
 
 .tab-pane > table,
+.alert > table,
 details > table,
 .table {
   width: 100%;
@@ -77,6 +78,8 @@ details > table,
 // Zebra-striping
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.tab-pane > table,
+.alert > table,
 details > table,
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
@@ -115,6 +118,8 @@ details > table,
 // Same table markup, but inverted color scheme: dark background and light text.
 
 // stylelint-disable-next-line no-duplicate-selectors
+.tab-pane > table,
+.alert > table,
 details > table,
 .table {
   .thead-dark {
@@ -168,6 +173,8 @@ details > table,
 //
 // Generate series of `.table-responsive-*` classes for configuring the screen
 // size of where your table will overflow.
+.tab-pane > table,
+.alert > table,
 details > table,
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {

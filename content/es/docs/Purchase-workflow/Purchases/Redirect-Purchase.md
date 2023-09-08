@@ -15,24 +15,23 @@ tags: ["subtopic"]
 
 | N° | Descripción | /EndPoint o Actor |
 |---|---|---|
-| 1 | The Merchant requests the `OneTimeToken` for redirect flow payment | `/token/GetRedirectToken` |
-| 2 | The Merchant sends the [purchase request]({{< ref "Purchase-Operations" >}}#create-a-purchase) as with any other means of payment | `/purchase` |
-| 3 | Bamboo returns Purchase, with status _Pending for Redirection_, and a CommerceAction object containing an external service URL. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
-| 4 | The merchant must redirect the customer to the external service URL provided in the `CommerceAction` object. | `Commerce Site/Client browser` |
-| 5 | Bamboo automatically redirects customers to an external payment processor to complete payment. | `Bamboo Site/Customer browser` |
-| 6 | The customer follows the steps shown by the acquirer's site to complete the payment. | `External Payment Site/Client` |
-| 7 | Bamboo receives the response is received and processes and updates the transaction status. Then, Bamboo redirects back to the merchant's response page (According to transaction status). | `/paymentCallback` |
-| 8 | Bamboo receives an async push notification from acquire and notify back to the merchant's notification webhook (the purchase status is updated). |` /webhook (Merchant)` |
+| 1 | El comercio envía el [request de la compra]({{< ref "Purchase-Operations" >}}#create-a-purchase) con el `PaymentMediaId` del medio de pago correspondiente.  | `/purchase` |
+| 2 | Bamboo retorna la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con una URL externa. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
+| 3 | El comercio debe redirigir al cliente a la URL externa que se encuentra en el objeto `CommerceAction`. | `Commerce Site/Client browser` |
+| 4 | Bamboo redirige automáticamente al cliente al procesador de pagos externo para completar el pago. | `Bamboo Site/Customer browser` |
+| 5 | El cliente sigue los pasos mostrados en el sitio web del adquirente para finalizar el pago. | `External Payment Site/Client` |
+| 6 | Bamboo recibe la respuesta, luego procesa y actualiza el estado de la transacción (según el estado recibido). | `/paymentCallback` |
+| 7 | Bamboo recibe una notificación asíncrona de parte del adquirente y notifica al webhook del comercio (se actualiza el estado de la compra). |` /webhook (Merchant)` |
 
 ## URLS del response {#response-urls}
-COmo resultado de la transacción, esta puede estar en cualquiera de los siguiente estados.
+Como resultado de la transacción, esta puede estar en cualquiera de los siguientes estados.
 
 | Estado | Descripción |
 |---|---|
-| Approved | Purchase approved. No verification is needed. |
-| Rejected | Purchase rejected. |
-| Canceled | The customer or an automatic process has canceled the purchase. |
-| Pending | The purchase is pending to be paid in a Cash Payment network, or to be confirmed by the payment method processor. |
+| Approved | Compra aprobada. No se requiere verificación. |
+| Rejected | Compra rechazada. |
+| Canceled | La compra fue cancelada por el cliente o un proceso automático. |
+| Pending | La compra se encuentra pendiente para ser pagada en una red de pago en efectivo o debe ser confirmada por el procesador del medio de pago. |
 
 Por lo tanto, se definen las siguientes URL que se enviarán en la compra cuando se cree el mismo host-to-host antes de la redirección:
 
@@ -40,7 +39,7 @@ Por lo tanto, se definen las siguientes URL que se enviarán en la compra cuando
 * `Url_Rejected` → se notifica a esta URL cuando el estado de la compra es `Rejected` 
 * `Url_Canceled` → se notifica a esta URL cuando el estado de la compra es `Canceled` 
 * `Url_Pending`  → se notifica a esta URL cuando el estado de la compra es `Pending` 
-* `Url_Notify`   → uRL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte.
+* `Url_Notify`   → URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser estática y configurada por el equipo de soporte.
 
 ### Ejemplo de compra con flujo Redirect {#redirect-flow-purchase-example}
 

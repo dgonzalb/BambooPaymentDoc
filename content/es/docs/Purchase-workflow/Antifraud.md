@@ -1,72 +1,71 @@
 ---
-title: "Anti-fraud system information"
-linkTitle: "Anti-fraud"
+title: "Sistema de información de antifraude"
+linkTitle: "Antifraude"
 date: 2023-08-02T08:43:44-05:00
 Description: >
-  All the purchases received through API or Redirection flow for merchants in the [Payments Facilitator]({{< ref "Concepts.md">}}#payfac-model) model, are evaluated by the anti-fraud system.
+  Todas las compras recibidas a través del flujo API o Redirect de comercios en el modelo de [Facilitador de Pagos]({{< ref "Concepts.md">}}#payfac-model) son analizadas por el sistema antifraude.
 weight: 40
 ---
 
+## Parámetros a enviar al realizar una compra {#parameters-to-send-when-making-a-purchase}
+A continuación se listan los parámetros requeridos y sugeridos (opcionales) que deben ser enviados al momento de generar una compra en función del flujo de autorización.
 
+### Flujo de autorización por API {#authorization-flow-by-api}
 
-## Parameters to send when making a purchase
-Below, you can find the required and suggested (optional) parameters to be sent when generating a purchase according to the authorization flow.
+**Parámetros Obligatorios:**
 
-### Authorization flow by API
+* `{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}`<br>Nombre, apellido y correo electrónico correspondientes al cliente conectado al sitio web del comercio.
+* `{"AntifraudData":{"AntifraudFingerprintId":""}}`<br>SessionId (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud](#getsessionantifraud).
+* `"CustomerIP":""`<br>IP correspondiente al cliente conectado al sitio web del comercio.
 
-**Mandatory parameters:**
+**Parámetros sugeridos:**
 
-* `{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}`<br>Name, last name and email corresponding to the customer of the commerce website.
-* `{"AntifraudData":{"AntifraudFingerprintId":""}}`<br>Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud).
-* `"CustomerIP":""`<br>IP of to the customer connected to the commerce website
+* `{“Customer”:{“ShippingAddress”:{}}}`<br>Dirección de envío proporcionada por el cliente. Si envía este parámetro, todas sus propiedades son obligatorias.
+* `{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}`<br>Documento del cliente.
+* `{"AntifraudData":{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}`<br>`AntifraudMetadataIn` que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.
 
-**Suggested parameters:**
+### Flujo de autorización por Redirección {#authorization-flow-by-redirection}
+Para el caso del flujo de autorización por redirección, los parámetros requeridos y sug
 
-* `{“Customer”:{“ShippingAddress”:{}}}`<br>Shipping address provided by the customer. If you send this parameter, all its properties are mandatory.
-* `{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}`<br>Document of the customer.
-* `{"AntifraudData":{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}`<br>`AntifraudMetadataIn` is a data dictionary to be defined, to adjust the anti-fraud system to the particular needs of each business.
+**Parámetros Obligatorios:**
 
-### Authorization flow by Redirection
+Todos los de la columna A y al menos uno de la columna B
 
-In the case of the redirection authorization flow, the required and suggested parameters are governed by the following table:
-
-**Mandatory parameters:**
-
-All the parameters in Column A and at least one in Column B.
-
-
-| Column A - Mandatory | Column B - At least one is mandatory |
+| Columna A - Obligatorios | Columna B - Al menos un dato es obligatorio |
 |---------|----------|
 | `AntifraudData` → `AntifraudFingerprintId` | `Email` |
 | `CustomerIp` | `FirstName` - `LastName`<br>`DocumentTypeId` - `DocNumber` |
 
-**Suggested parameters:**
+**Parámetros sugeridos:**
+
+* `{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}`<br>Teléfono y dirección de envío proporcionada por el cliente.
+* `{"AntifraudData":{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}`<br>`AntifraudMetadataIn`, diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.
 
 * `{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}`<br>Phone, and Shipping address provided by the customer.
-* `{"AntifraudData":{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}`<br>`AntifraudMetadataIn` is a data dictionary to be defined, to adjust the anti-fraud system to the particular needs of each business.
+* `{"AntifraudData":{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}`<br>`AntifraudMetadataIn`  que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.
 
 ## Device Fingerprint
 
-### JavaScript Library Import
-The invocation of the fingerprint service is found in a JavaScript library, which must be imported into the client's web page directly from a public URL on our platform.
+### Importación de la Librería JavaScript {#javascript-library-import}
+La invocación al servicio de fingerprint se encuentra en una librería JavaScript, que debe ser importada en la página web del cliente directamente desde una URL pública de nuestra plataforma.
 
-The JavaScript snippet records user interactions with your website and collects device information. <br>
+El fragmento de JavaScript registra las interacciones del usuario con su sitio web y recopila información del dispositivo.
 
-In the call to said library, the public key of the trading account (PublicAccountKey) must be included (as a parameter), which will be used for calls to the REST API from this library.
+En la llamada a dicha librería se debe incluir (como parámetro) la clave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia el API REST desde esta librería.
 
-```json
+```html
 <script src="{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}" type="text/javascript"></script> 
 ```
 
 {{% alert title="Nota" color="warning"%}}
-You must import the library through the public URL provided by Bamboo Payment. It should not be downloaded and used locally from a merchant's own server or from a URL of a third party not authorized by Bamboo Payment.
+Usted debe importar la librería a través de la URL pública dispuesta por Bamboo Payment. No debe ser descargada y usada localmente desde un servidor propio del comercio o desde una URL de un tercero no autorizado por Bamboo Payment.
 
-This is important for security reasons and to always keep up-to-date with the latest modifications and corrections made to it.
+Esto es importante por motivos de seguridad y para mantenerse siempre actualizados con las últimas modificaciones y correcciones realizadas sobre la misma.
 {{% /alert %}}
 
-## Methods
+## Métodos {#methods}
 
 ### getSessionAntifraud
-This method returns the `SessionId` of the fingerprint (string). The `SessionId` is the data that must be passed in the API invocation at the time of purchase in the `AntifraudFingerprintId` parameter
+Este método retorna el `SessionId` del fingerprint (string). El `SessionId` es el dato que se debe enviar en la invocación de la API al momento de la compra en el parámetro `AntifraudFingerprintId`.
 
-![PrintScreen](/assets/getSessionAntifraudFlow_en.png)
+![PrintScreen](/assets/getSessionAntifraudFlow_es.png)

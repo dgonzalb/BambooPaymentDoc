@@ -54,7 +54,7 @@ The JavaScript snippet records user interactions with your website and collects 
 
 In the call to said library, the public key of the trading account (PublicAccountKey) must be included (as a parameter), which will be used for calls to the REST API from this library.
 
-```json
+```html
 <script src="{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}" type="text/javascript"></script> 
 ```
 
@@ -67,6 +67,6 @@ This is important for security reasons and to always keep up-to-date with the la
 ## Methods
 
 ### getSessionAntifraud
-This method returns the `SessionId` of the fingerprint (string). The `SessionId` is the data that must be passed in the API invocation at the time of purchase in the `AntifraudFingerprintId` parameter
+This method returns the `SessionId` of the fingerprint (string). The `SessionId` is the data that must be passed in the API invocation at the time of purchase in the `AntifraudFingerprintId` parameter.
 
 ![PrintScreen](/assets/getSessionAntifraudFlow_en.png)

@@ -1,36 +1,36 @@
 ---
-title: "Purchase Preview"
-linkTitle: "Purchase Preview"
+title: "Preview de la compra"
+linkTitle: "Preview de la compra"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  This functionality allows merchants to show the values that may affect the final amount of a purchase transaction.
+  Esta funcionalidad le permite a los comercios mostrar los valores que pueden afectar el monto final de una transacción de compra.
 weight: 40
 tags: ["subtopic"]
 ---
 
-When a buyer performs a purchase, the amount of it can be modified for several reasons:
+Cuando un comercio realiza una compra, los montos de ésta pueden ser modificados por varios motivos:
 
-* Currency conversion (USD to local currency of the destination country)
-* Commissions to be paid by the customer
-* Taxes
+* Conversión de moneda (USD a Moneda local del país destino)
+* Comisiones que debe pagar el cliente
+* Impuestos
 * etc.
 
-Por ejemplo, in Argentina there are different taxes that affect the final amount and, as a consequence, the merchant cannot show the real amount that will be charged until the purchase is completed.
+Por ejemplo, en Argentina existen distintos impuestos que afectan el monto final y, como consecuencia, el comercio no puede mostrarle al cliente el monto real que le estará cobrando hasta no finalizar la compra.
 
-As a solution, we created a tool that allows the merchant to preview the amount that the customer will be charged so that they can inform it prior to executing the purchase.
+Como solución, creamos un que le permite al comercio realizar una vista previa del monto que se le cobrará al cliente para que pueda informar previo a la ejecución de la compra.
 
-The following example shows the way suggested to the merchants to display the preview in Argentina.
+En el siguiente ejemplo, se muestra la forma en que se sugiere que los comercios muestran el preview en Argentina.
 
-![PrintScreen](/assets/PurchasePreview_en_1.png)
+![PrintScreen](/assets/PurchasePreview_es_1.png)
 
 ## Request
-To use the purchase preview, you must point to the following endpoint:
+Para hacer uso del preview de la compra, se debe apuntar al siguiente endpoint:
 
 `GET https://api.stage.bamboopayment.com/v1/api/purchase/preview`
 
-In the header, the Authorization parameter must be configured by concatenating the word Basic, a space and the Private Key of the merchant.
+En el encabezado, se debe configurar el parámetro `Authorization` concatenando la palabra `Basic`, un espacio y la ***Private Key*** del comercio.
 
-### Example of the request
+### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -47,24 +47,24 @@ In the header, the Authorization parameter must be configured by concatenating t
 }
 ```
 <br>
-Where:
+Donde:
 
-| Parameter | Descripción | Type | Required |
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
 |---|---|---|---|
-| `baseAmount` | Amount to be paid before taxes | Integer | Sí |
-| `currency` | Currency of the amount defined in `baseAmount` | Sí |
-| `countryIso` | Country in ISO 3166-2 format | String | Sí |
-| `paymentMediaId` | Alternative Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](Medios-de-Pago.md) by country section in the documentation. | String | No |
-| `customer` | Payer Information | Object | No* <br> <sup>*</sup>_Required for Argentina_ |
-| `customer.documentTypeId` | Payer Document Type | String | No |
-| `customer.docNumber` | Payer document number | String | No |
-| `customer.state` | Payer state | String | No* <br> <sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in the next section._ |
-| `customer.postalCode` | Payer Zip Code | String | No |
+| `baseAmount` | `integer` | Sí | Monto a pagar antes de impuestos. |
+| `currency` | `string` | Sí | Moneda del monto definido en `baseAmount`. |
+| `countryIso` | `string` | Sí | País en formato ISO 3166-2. |
+| `paymentMediaId` | `string` | No | Identificador del medio de pago. Este identificador lo puede obtener consultando la sección [Medios de Pago](/es/docs/payment-methods.html) por país en la documentación. |
+| `customer` | `object` | No<sup>*</sup> | Información del pagado.<br><sup>*</sup>_Requerido para Argentina_. |
+| `customer.documentTypeId` | `string` | No | Tipo de documento del pagador. |
+| `customer.docNumber` | `string` | No | Número de documento del pagador. |
+| `customer.state` | `string` | No<sup>*</sup> | Estado o Provincia del pagador.<br><sup>*</sup>_Para Argentina, este campo es obligatorio y debe incluir su valor correspondiente utilizando la tabla mostrada en [esta sección](/es/docs/payment-methods/argentina.html#argentina-provinces)_. |
+| `customer.postalCode` | `string` | No | Código Postal del pagador. |
 
 ## Response
-Next, we show an example of the response to the request shown previously
+A continuación, mostramos un ejemplo de la respuesta a la petición mostrada previamente
 
-### Example response
+### Ejemplo del Response {#response-example}
 ```json
 {
     "Response": {
@@ -120,44 +120,44 @@ Next, we show an example of the response to the request shown previously
 
 <br>
 
-The parameters in the response are the following:
+Los parámetros en el response son los siguientes:
 
 | Parámetro | Tipo | Descripción |
 |---|:---:|---|
-| `Success` | Boolean | Determines if the result of the operation was successful. |
-| `Data.Date` | Date and time | Date the process was executed. |
-| `Data.Currency` | String | ISO code of the merchant's currency. That is, the destination currency in the conversion. |
-| `Data.ExchangeRate.value` | Number | Amount that the origin currency is equivalent to in the destination currency. |
-| `Data.ExchangeRate.FromCurrencyIsoCode` | String | ISO code of the origin currency. |
-| `Data.ExchangeRate.ToCurrencyIsoCode` | String | ISO code of the destination currency. |
-| `Data.ExchangeRate.TypeCode` | String | Not used. |
-| `Data.ExchangeRate.Date` | Date and time | Date of the last update of the conversion rate. |
-| `Data.TotalAmount` | Number | Total final amount of the purchase in local currency after applying the values that affect it (taxes, conversions, etc.). |
-| `Data.TaxDetails` | Object | Contains the detail of the taxes that apply to the transaction. |
-| `Data.AmountDetails` | Object | Contains the detail of the transaction subtotals. |
+| `Success` | `boolean` | Determina si el resultado de la operación fue exitoso. |
+| `Data.Date` | `date` | Fecha en la que se ejecutó el proceso. |
+| `Data.Currency` | `string` | Código ISO de la moneda del merchant. Es decir, la moneda destino en la conversión. |
+| `Data.ExchangeRate.value` | `number` | Monto de al que equivale la moneda origen en la moneda destino. |
+| `Data.ExchangeRate.FromCurrencyIsoCode` | `string` | Código ISO de la moneda origen. |
+| `Data.ExchangeRate.ToCurrencyIsoCode` | `string` | Código ISO de la moneda destino. |
+| `Data.ExchangeRate.TypeCode` | `string` |  |
+| `Data.ExchangeRate.Date` | `date` | Fecha de la última actualización de la tasa de conversión. |
+| `Data.TotalAmount` | `number` | Monto total final de la compra en moneda local luego de aplicar los valores que la afecten (Impuestos, conversiones, etc.). |
+| `Data.TaxDetails` | `object` | Contiene el detalle de los impuestos que aplican a la transacción. |
+| `Data.AmountDetails` | `object` | Contiene el detalle de los subtotales de la transacción. |
 
-### Object _TaxDetails_
-Next, we explain the sub-parameters of the `TaxDetails` object
+### Objeto _TaxDetails_ {#object-_taxdetails_}
+A continuación, explicamos los subparámetros del objeto `TaxDetails`.
 
 | Parámetro | Tipo | Descripción |
 |---|:---:|---|
-| `TaxCode` | String | Tax code defined by Bamboo Payment. |
-| `TaxName` | String | Name of the tax that is applied. |
-| `TaxAmount` | Number | Total value of the tax. |
-| `TaxPercentage` | Percentage | Percentage corresponding to the tax. |
-| `ResponsibleType` | String | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
+| `TaxCode` | `string` | Código del impuesto definido por Bamboo Payment. |
+| `TaxName` | `string` | Nombre del impuesto que se aplica. |
+| `TaxAmount` | `number` |  Valor total del impuesto. |
+| `TaxPercentage` | `number` | Porcentaje que corresponde al impuesto. |
+| `ResponsibleType` | `string` | Indica si el responsable del impuesto es el comercio (Merchant) o el pagador (Buyer). |
 
 {{% alert title="Nota" color="info"%}}
-In the example of the request, two taxes are specified for Argentina: **VAT** corresponding to the VAT of Digital Services and **II.BB** corresponding to the Gross Income tax.
+En el ejemplo del request, se especifican dos impuestos para Argentina: **VAT** correspondiente al IVA de Servicios DIgital e **II.BB** correspondiente al impuesto de Ingresos Brutos.
 {{% /alert %}}
 
-### Object _AmountDetails_
-Next, we explain the sub-parameters of the `AmountDetails` object
+### Objeto _AmountDetails_ {#object-_amountdetails_}
+A continuación, explicamos los subparámetros del objeto `AmountDetails`.
 
 | Parámetro | Tipo | Descripción |
 |---|:---:|---|
-| `CurrencyCode` | String | ISO code of the currency of the amount. |
-| `AmountCategoryCode` | String | Amount category. |
-| `Amount` | Number | Value of the amount. |
-| `Sign` | String | Indicates if the amount is a debit or credit movement. |
-| `ResponsibleType` | String | Indicates whether the party responsible for the tax is the merchant (Merchant) or the payer (Buyer). |
+| `CurrencyCode` | `string` | Código ISO de la moneda del monto. |
+| `AmountCategoryCode` | `string` | Categoría del monto. |
+| `Amount` | `number` |  Valor del monto. |
+| `Sign` | `string` | Indica si el monto es un movimiento débito o crédito. |
+| `ResponsibleType` | `string` | Indica si el responsable del impuesto es el comercio (Merchant) o el pagador (Buyer). |

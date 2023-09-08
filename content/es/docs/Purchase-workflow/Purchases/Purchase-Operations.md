@@ -188,7 +188,6 @@ Todos los parámetros son opcionales. Si no envía ningún parámetro, se mostra
 | `PaymentMediaId` | `integer` | Identificador del medio de pago usado en la compra. |
 | `To` | `date` | Fecha de fin del filtro.<br>Formato: `yyyyMMdd`. |
 
-
 ## Parámetros del Response {#response-parameters}
 Obtendrá el mismo objeto `Response` independientemente del método que invoque. Sólo cuando consulte compras y el resultado tenga múltiples resultados el `Response` retornado será un array.
 

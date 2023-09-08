@@ -15,9 +15,8 @@ tags: ["subtopic"]
 
 | N° | Description | /EndPoint or Actor |
 |---|---|---|
-| 1 | The Merchant requests the `OneTimeToken` for redirect flow payment | `/token/GetRedirectToken` |
-| 2 | The Merchant sends the [purchase request]({{< ref "Purchase-Operations" >}}#create-a-purchase) as with any other means of payment | `/purchase` |
-| 3 | Bamboo returns Purchase, with status _Pending for Redirection_, and a CommerceAction object containing an external service URL. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
+| 1 | The Merchant sends the [purchase request]({{< ref "Purchase-Operations" >}}#create-a-purchase) with the `PaymentMediaId` of the corresponding payment method.  | `/purchase` |
+| 3 | Bamboo returns the Purchase, with status _Pending for Redirection_, and a `CommerceAction` object containing an external service URL. `ActionReason = REDIRECTION_NEEDED_EXTERNAL_SERVICE` | `/purchase response` |
 | 4 | The merchant must redirect the customer to the external service URL provided in the `CommerceAction` object. | `Commerce Site/Client browser` |
 | 5 | Bamboo automatically redirects customers to an external payment processor to complete payment. | `Bamboo Site/Customer browser` |
 | 6 | The customer follows the steps shown by the acquirer's site to complete the payment. | `External Payment Site/Client` |

@@ -3,7 +3,7 @@ title: "Webhooks"
 linkTitle: "Webhooks"
 date: 2023-08-02T08:41:05-05:00
 description: >
-  You can implement a service to receive and process notifications sent from the BambooPayment systems.
+  You can implement a service to receive and process notifications sent from the Bamboo Payment systems.
 weight: 50
 ---
 
@@ -53,8 +53,8 @@ The only technical requirements are:
 - It must accept messages in JSON format (application/json)
 - You need to implement a validation method of the signature in the webhook.
 - It must respond only an HTTP code, where:
-    * if code `200` (OK) is answered, BambooPayment will assume the notification processing was successful.
-    * If any code other than `200` is answered, BambooPayment will assume that the processing was unsuccessful, so the notification will be retried.
+    * if code `200` (OK) is answered, Bamboo Payment will assume the notification processing was successful.
+    * If any code other than `200` is answered, Bamboo Payment will assume that the processing was unsuccessful, so the notification will be retried.
 
 
 ## Signature validation
@@ -114,3 +114,4 @@ The webhook uses a configuration with five retries for failures spaced out over 
 * The fifth retry is attempted after six hours.
 
 For further retries, please get in touch with our support team.
+

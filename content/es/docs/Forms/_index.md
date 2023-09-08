@@ -134,7 +134,7 @@ Example:
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
 {{% /alert %}}
 
-### GetCustomRedirectToken
+<!--### GetCustomRedirectToken
 
 This method is used to get a **Token** for Redirect flow payments.
 
@@ -151,7 +151,7 @@ Example:
 
 {{% alert title="Nota" color="info"%}}
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
-{{% /alert %}}
+{{% /alert %}}-->
 
 ## JavaScript Objects
 

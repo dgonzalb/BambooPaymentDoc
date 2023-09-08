@@ -1,23 +1,34 @@
 ---
-title: "Refunds and voids"
-linkTitle: "Refunds and voids"
+title: "Reembolsos y anulaciones"
+linkTitle: "Reembolsos y anulaciones"
 date: 2023-08-02T08:46:32-05:00
 Description: >
-  Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
+  Las operaciones de reembolso y anulación están relacionadas al proceso de reversar una compra ya confirmada o a cancelar una compra preautorizada.
 weight: 30
 ---
 
-Before we start, let's review some concepts.
+Antes de empezar, revisemos algunos conceptos.
 
-* **Voids**: A void is the act of canceling a pre-authorized transaction (rollback) before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer's payment method is not charged for the voided transaction.
+* **Anulación**: Una anulación es el acto de cancelar una transacción preautorizada (rollback) antes de que finalice o se liquide. Cuando se anula una transacción, es como si la compra nunca se hubiera producido, y no se transfiere dinero. Las anulaciones suelen producirse antes de que el pago se haya procesado por completo, por lo que no se cobra al método de pago por la transacción anulada.
 
-* **Refund**: A refund, on the other hand, is a transaction that occurs when a customer returns a purchased item or cancels a service, and the merchant reimburses the customer for the amount paid. The refunded amount is usually returned to the original payment method used by the customer. Unlike voids, the refund occurs after the transaction has been settled.
+* **Reembolso**: Un reembolso, por otro lado, es una transacción que se produce cuando un cliente devuelve un artículo comprado o cancela un servicio, y el comercio reembolsa al cliente el monto pagado. El monto reembolsado suele devolverse al medio de pago original utilizado por el cliente. A diferencia de las anulaciones, el reembolso se produce después de que se haya liquidado la transacción.
 
-## Rollback a purchase
-The _**rollback**_ operations is only available for purchases previously [authorized]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) with state _PreAuthorized_.
+## Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
+Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado `lang` en su integración, utilizando cualquiera de los siguientes idiomas en formato **ISO 639-1**.
+
+<div id="shortTable"></div>
+
+| Código | Idioma |
+|:-:|---|
+| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma._ |
+| `es` | Español. |
+| `pt` | Portugués. |
+
+## Anular una compra {#rollback-a-purchase}
+La operación de _**rollback**_ está disponible para compras previamente [autorizadas]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) con estado _PreAuthorized_.
 
 {{% alert title="Nota" color="info"%}}
-Pre-authorization feature may not be supported by all payment methods and it's available for the following countries.
+La funcionalidad de preautorización puede no estar soportada por todos lo medios de pago y está disponible en los siguientes países.
 
 <div style="text-align: center;">
 
@@ -30,37 +41,28 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 {{% /alert %}}
 
-### Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
-Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado `lang` en su integración, utilizando cualquiera de los siguientes idiomas en formato **ISO 639-1**.
-
-<div id="shortTable"></div>
-
-| Código | Idioma |
-|:-:|---|
-| `en` | Inglés.<br>_Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma._ |
-| `es` | Español. |
-| `pt` | Portugués. |
-
-### Request URL
+### URL del Request {#request-url}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
-
-**Void**
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
-**Refund**
+## Reembolsar una compra {#refund-a-purchase}
+La operación de _**refund**_ está disponible para compras con estado _Approved_. Los reembolsos pueden ser totales o parciales.
+
+### URL del Request {#request-url-1}
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 
-### Request parameters
-Request body is not required to rollback a purchase. If you don't send any request the pre-authorized purchase will be voided or refunded with its original amount. 
+## Parámetros del Request {#request-parameters}
+No es necesario enviar el cuerpo del request para anular o reembolsar una compra. Si no envía el request, la compra será anulada o reembolsada con su monto original. 
 
-The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
+El monto a anular o reembolsar puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.
 
-#### Request example
-To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. Por ejemplo:
+### Ejemplo del Request {#request-example}
+Para realizar la devolución o reembolso de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:
 
 ```json
 {
@@ -68,8 +70,8 @@ To perform the rollback of a purchase with a lower amount than the original, you
 }
 ```
 
-### Response parameters
-When you perform the rollback, you will get the same `Response` object [returned]({{< ref "purchase-operations.md" >}}#response-parameters).
+## Parámetros del Response {#response-parameters}
+Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto `Response` [retornado]({{< ref "purchase-operations.md" >}}#response-parameters).
 <!--
 ## Refund a purchase
 The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
@@ -77,7 +79,7 @@ The _**refunds**_ operations is only available for purchases with state _Approve
 ### Considerations
 _To be defined_
 
-### Request URL
+### URL del Request {#request-url-1}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`

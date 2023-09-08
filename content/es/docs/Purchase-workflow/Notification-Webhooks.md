@@ -1,30 +1,30 @@
 ---
-title: "Webhooks"
-linkTitle: "Webhooks"
+title: "Webhook"
+linkTitle: "Webhook"
 date: 2023-08-02T08:41:05-05:00
 description: >
-  You can implement a service to receive and process notifications sent from the BambooPayment systems.
+  Usted puede implementar un servicio para recibir y procesar notificaciones enviadas desde los sistemas de Bamboo Payment.
 weight: 50
 ---
 
-This service is necessary in some of the transaction flows where the process cannot be completed synchronously, so the final status of the transaction will be informed asynchronously once it has been obtained.
+Este servicio es necesario en algunos flujos de transacción donde el proceso no puede completarse de forma sincrónica, por lo que el estado final de la transacción se informará de forma asíncrona una vez que se haya obtenido.
 
-The merchant must publish an HTTP/REST service to which the notifications generated will be sent.
+El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.
 
-## WebHook Service specifications
-The WebHook service is a REST Service that must process a request with the following characteristics:
+## Especificaciones del servicio WebHook {#webhook-service-specifications}
+El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:
 
 <div id="shortTable"></div>
 
 |        |          | 
 |:-------|:---------|
-|**URL:** | *\<Determined by the merchant\>* |
-|**API Type:** | Public |
+|**URL:** | *\<Determinado por el comercio>* |
+|**API Type:** | Pública |
 |**Method:** | POST |
-|**Authentication:** | Signature in the header. |
-|**Response:** | HTTP Code |
+|**Authentication:** | Firma en el encabezado. |
+|**Response:** | Código HTTP. |
 
-### Notification example
+### Ejemplo de notificación {#notification-example}
 
 ```json
 {
@@ -44,8 +44,17 @@ The WebHook service is a REST Service that must process a request with the follo
 }
 ```
 
+## Requisitos técnicos {#technical-requirements}
+La implementación de este servicio depende de la plataforma y el lenguaje elegido por el comercio.
 
-## Technical requirements
+Los únicos requisitos técnicos son:
+
+- Debe aceptar mensajes en formato JSON (application/json).
+- Debe implementar un método de validación de la firma en el webhook.
+- Debe responder solo con un código HTTP, donde:
+  * Si se responde con el código `200` (OK), Bamboo Payment asumirá que el procesamiento de la notificación fue exitoso.
+  * Si se responde con cualquier otro código distinto a `200`, Bamboo Payment asumirá que el procesamiento fue fallido y se volverá a intentar la notificación.
+
 The implementation of this service depends on the platform and language chosen by the merchant.
 
 The only technical requirements are:
@@ -114,3 +123,13 @@ The webhook uses a configuration with five retries for failures spaced out over 
 * The fifth retry is attempted after six hours.
 
 For further retries, please get in touch with our support team.
+
+{{% alert title="Info note" color="info"%}}
+|        |          | 
+|:-------|:---------|
+|**URL:** | *\<Determinado por el comercio>* |
+|**API Type:** | Pública |
+|**Method:** | POST |
+|**Authentication:** | Firma en el encabezado. |
+|**Response:** | Código HTTP. |
+{{% /alert %}}
