@@ -21,20 +21,20 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
 <title>Embedded Checkout Form | Bamboo Payment</title><meta property="og:title" content="Embedded Checkout Form" />
-<meta property="og:description" content="The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
+<meta property="og:description" content="Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/forms/embedded-checkout-form.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-09-07T16:25:53-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-11T15:32:56-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Embedded Checkout Form">
-<meta itemprop="description" content="The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
+<meta itemprop="description" content="Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-09-07T16:25:53-05:00" />
-<meta itemprop="wordCount" content="273">
+<meta itemprop="dateModified" content="2023-09-11T15:32:56-05:00" />
+<meta itemprop="wordCount" content="245">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Embedded Checkout Form"/>
-<meta name="twitter:description" content="The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
+<meta name="twitter:description" content="Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.ab95f4ff58808fcbde1f30ce85b3f135474ede96bbf7d911482a5dc15fd5f82f20243424a3017ae2267362028033a01fce209396544e79a5ec9425d1e039174a.json"
+  data-offline-search-index-json-src="../../offline-search-index.f305df79679b3744b190193344076aa243fca7fe3dae3c3a86d4dd93f9ba56a4cdadfd594676035a503849cbef366827cbaa328ffe15466fa7617bb595398539.json"
   data-offline-search-base-href="../../"
 >
 
@@ -886,12 +886,11 @@
             
 <div class="td-content">
 	<h1>Embedded Checkout Form</h1>
-    <div class="lead">The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.</div>
+    <div class="lead">Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.</div>
 	       
 	<p>The difference between this form, and <a href="../../docs/forms/checkout-form.html">Checkout Form</a> mentioned before is that you must invoke this form inside a custom page.</p>
 <p>Integrating this form into your site or <em>app</em> provides users with a simplified and responsive payment experience suitable for web and mobile applications.</p>
 <h2 id="import-of-the-javascript-library">Import of the JavaScript Library</h2>
-<p>Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.</p>
 <p>Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> <span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{api_environment}/v1/Scripts/PWCheckoutNoModal.js?key={PublicAccountKey}&#34;</span> <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;&lt;</span><span style="color:#a40000">/script&gt;</span>
 </span></span></code></pre></div>
@@ -904,11 +903,11 @@
 </p>
 </div>
 
-<p>Next, like the following example, you must define an Iframe inside a custom commerce web on which the capture form renders.</p>
+<p>Next, like the following example, you must define an iframe inside a custom commerce web on which the capture form renders.</p>
 <p>Create a <code>div</code> to insert the iframe:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">div</span> <span style="color:#c4a000">id</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;iframeDiv&#34;</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;height: 410px; width: 300px; margin: auto;&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">div</span><span style="color:#000;font-weight:bold">&gt;</span>
 </span></span></code></pre></div><br>
-<p>Create the iframe by javascript:</p>
+<p>Create the iframe by JavaScript:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">main_iframe</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">document</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createElement</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;iframe&#34;</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">iframeDiv</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">$</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;#iframeDiv&#34;</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">main_iframe</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;custom_iframe&#34;</span><span style="color:#000;font-weight:bold">;</span>
@@ -926,7 +925,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">);</span>
 </span></span></code></pre></div><br>
-<p>Finally, we must invoke <code>LoadIframe()</code> method, which get and renders the capture form in the custom iframe generated:</p>
+<p>Finally, you must invoke <code>LoadIframe()</code> method, which get and renders the capture form in the custom iframe generated:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">LoadIframe</span><span style="color:#000;font-weight:bold">();</span>
 </span></span></code></pre></div><br>
 <!--In the last section of this document, we bring you an example of an HTML page with a sample of Embedded capture form invoke.-->
@@ -937,9 +936,9 @@
 <br>
 <b>Last modified</b>
 
-September 7, 2023: 
+September 11, 2023: 
 
- <i>Adjustments in requests and responses and minor grammar adjustments (7753fec)</i>
+ <i>Adjustments in requests and responses and minor grammar adjustments (5172a4f)</i>
   </div>
 </div>
 
