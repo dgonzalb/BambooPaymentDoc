@@ -7,11 +7,11 @@ weight: 60
 notopicssection: true
 ---
 
-## Endpoint
-Point your request to any of the following URLs according to your needs.
+## Request URL
+You must invoke a **GET** request to the following URLs according to your needs.
 
-* STAGE: `https://api.stage.bamboopayment.com/v1/api/merchant/account/balance`
-* PROD: `https://api.bamboopayment.com/v1/api/merchant/account/balance`
+* **Production**: `https://api.bamboopayment.com/v1/api/merchant/account/balance`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/merchant/account/balance`
 
 ## Authorization
 In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the _**Private Key**_ of the merchant.
