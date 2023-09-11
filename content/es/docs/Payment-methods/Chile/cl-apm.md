@@ -19,7 +19,7 @@ tags: ["subtopic"]
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**106**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -222,7 +222,7 @@ With **Klap efectivo**, your customers can generate a coupon and complete the pa
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**107**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |

@@ -45,7 +45,7 @@ Consider the following considerations when using the Payouts feature according t
 
 ### Argentina
 
-* The CBU/CVU **cannot** exceed 22 characters.<br>Example: `0123456789012345678901`.
+* The CBU/CVU **cannot** exceed 22 characters.<br>Ejemplo: `0123456789012345678901`.
 
 ### Brazil
 
@@ -81,7 +81,7 @@ Consider the following considerations when using the Payouts feature according t
 ### Chile
 
 * The bank account **cannot** exceed 16 characters. Format: `DDDDDDDDDDDDDDDD` where `D` is a digit.
-Example: `1234567890123456`.
+Ejemplo: `1234567890123456`.
 
 ### Colombia
 
@@ -91,12 +91,12 @@ Example `12345678901234567`.
 ### Mexico
 
 * The CLABE number **cannot** exceed 18 characters and is also validated using a verification algorithm.
-Example: `21790064060296600`.
+Ejemplo: `21790064060296600`.
 
 ### Peru
 
 * The bank account **cannot** exceed 20 characters. Format: `DDDDDDDDDDDDDDDDDDDD` where `D` is a digit.
-Example: `12345678901234567890`.
+Ejemplo: `12345678901234567890`.
 
 ### Uruguay
 

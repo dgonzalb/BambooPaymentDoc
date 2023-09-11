@@ -16,7 +16,7 @@ This method receives an object with the specific parameters for the desired paym
 
 | Property | Description | | Mandatory? | |
 |-------------|--------------------|:-----------:|:------:|:------:|
-| | | Physical Network | Cards | Redirect |
+| | | **Physical Network** | **Cards** | **Redirect** |
 | **PaymentMediaId** <br> *numeric* | Payment media identifier. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
 | **IssuerBank** <br> *numeric* | Bank identifier (see [table](/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
@@ -111,11 +111,9 @@ PWCheckout.Iframe.GetToken(tokenRequest);
 {{< /tab >}}
 {{< /tabs >}}
 
-
+<!--
 ### GetCustomToken
 Use this method to get a **Token** without showing the capture form to the customer. This method is proper when you submit the Purchase transaction through a Cash Payment network.
-
-This method is available only to these payment method types.
 
 | Property | Description | Mandatory |
 |-------------|-----------|:-----:|
@@ -134,7 +132,7 @@ Example:
 The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
 {{% /alert %}}
 
-<!--
+
 ### GetCustomRedirectToken
 
 This method is used to get a **Token** for Redirect flow payments.
@@ -167,24 +165,24 @@ The `CloseInfo` object is returned in the `closed` event, triggered when the use
 ### TokenInfo
 The `TokenInfo` object is returned in the `tokenCreated` event triggered by the card data capture form after processing the user's data.
 
-| Field <br> *type* | Description | 
+| Field <br> *Type* | Description | 
 | ------------- |-----------|
-| TokenId <br> *String* | Token identifier. |
-| Created <br> *TimeStamp* | Token creation date and time. |
+| TokenId <br> *string* | Token identifier. |
+| Created <br> *timestamp* | Token creation date and time. |
 | Type <br> *string* | Token type, possible values: <br><ul style="margin-bottom: initial;"><li>`OneTime`</li><li>`Commerce`</li></ul> |
-| Brand <br> *string* | Brand of the card or payment method used |
+| Brand <br> *string* | Brand of the card or payment method used. |
 | IssuerBank <br> *string* | Card issuer bank. |
 | Owner <br> *string* | Cardholder name. |
-| Last4 <br> Numeric[4] | The cards last four digits. |
+| Last4 <br> *numeric[4]* | The cards last four digits. |
 | CardType <br> *string* | Payment method (or card) type, possible values:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
-| CardExpMonth <br> *Numeric[2]* | Card expiration month. |
-| CardExpYear <br> *Numeric[2]*| Card expiration year. |
+| CardExpMonth <br> *numeric[2]* | Card expiration month. |
+| CardExpYear <br> *numeric[2]*| Card expiration year. |
 
 ### NotificationInfo
 
-The **NotificationInfo** object is returned in the `notificationReceived` event, which is triggered when the Verification Code Request Flow finishes.
+The `NotificationInfo` object is returned in the `notificationReceived` event, which is triggered when the Verification Code Request Flow finishes.
 
 | Field <br> *Type* | Description | 
 | ------------- |-----------|
 |ProcessType <br>*string* | Defines the process type of the notification is being issued.<br>Possible values are:<br><ul style="margin-bottom: initial;"><li>`PURCHASE_PENDING` – process to authorize a pending purchase.</li></ul> |
-|ProcessStatus <br> *Numeric[1]*| Possible statuses of a process are:<br><ul style="margin-bottom: initial;"><li>**1** – OK (the process completed successfully)</li><li>**2** – PENDING (the process is still pending)</li><li>**3** – ERROR (the process completed with error)</li></ul> |
+|ProcessStatus <br> *numeric[1]*| Possible statuses of a process are:<br><ul style="margin-bottom: initial;"><li>**1** – OK (the process completed successfully)</li><li>**2** – PENDING (the process is still pending)</li><li>**3** – ERROR (the process completed with error)</li></ul> |

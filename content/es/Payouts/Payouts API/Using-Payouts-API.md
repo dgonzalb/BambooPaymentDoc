@@ -408,7 +408,7 @@ Message received correctly, at this point the Payout starts to be processed
 <br>
 Where:
 
-| Field | Descripción |
+| Campo | Descripción |
 |---|---|
 | `payoutId` | Internal identifier of the Payout. |
 | `status` | Internal code of the current status of the Payout. |

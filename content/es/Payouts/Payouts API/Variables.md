@@ -12,13 +12,13 @@ weight: 20
 The following table shows the document types you must configure in the parameter `payee.document.type`.
 
 ### Argentina
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
 
 ### Brazil
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CPF | Individuals Registration | Individuals | Numeric | 11<sup>*</sup> |
 | CNPJ | National Registry of Legal Entities | Company | Numeric | 14<sup>*</sup> |
@@ -26,31 +26,31 @@ The following table shows the document types you must configure in the parameter
 <sup>*</sup> _Validate verifier-digits_
 
 ### Chile
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | 8 or 9 |
 | RUN | Unique National Role | Individuals | Numeric | 8 or 9 |
 | RUT | Individuals Tax Role | Individuals | Numeric | 8 or 9 |
 
 ### Colombia
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CC | Citizenship ID | Individuals | Numeric | Between 6 and 10 |
 | CE | Immigration ID | Individuals | Numeric | Between 6 and 10 |
 | NIT | Tax Identification Number | Companies | Numeric | Between 8 and 15 |
 
 <!--### Costa Rica
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | 9 |
 
 ### El Salvador
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
 
 ### Mexico
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CURP | Unique Population Registry Key | Individuals | | Between 8 and 18 |
 | RFC | Federal Taxpayer Registry | Individuals and Companies | | Between 8 and 18 |
@@ -59,12 +59,12 @@ The following table shows the document types you must configure in the parameter
 | RESIDENCIA | Document of foreigner residing in the country | Individuals |  | Between 8 and 18 |
 
 <!--### Nicaragua
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity card | Individuals |  | Between 8 and 18 |-->
 
 ### Peru
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
 | DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
@@ -72,7 +72,7 @@ The following table shows the document types you must configure in the parameter
 | RUC | Single Taxpayer Registry | Individuals and Companies | | 11 |
 
 ### Uruguay
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abbreviation | Document name | Individuals / Companies | Tipo | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
 | DE | | Single | Numeric | |

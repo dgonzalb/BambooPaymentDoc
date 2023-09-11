@@ -14,7 +14,7 @@ The status for purchases with cards using redirection will remain _Pending_ unti
 ## Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**111**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |

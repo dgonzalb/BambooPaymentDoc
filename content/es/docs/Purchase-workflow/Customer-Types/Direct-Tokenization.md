@@ -81,7 +81,7 @@ Este token permite almacenar los datos de la tarjeta, que pueden procesarse en c
 ## Parámetros del Response {#response-parameters}
 Independientemente del token que cree, recibirá los siguientes parámetros en la respuesta.
 
-| Property | Type | Descripción |
+| Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `TokenId` | `string` | Representa el medio de pago registrado sin exponer sus datos sensibles.<br>Utilice estos datos para realizar transacciones de pago a través de la tarjeta registrada. |
 | `IdCommerceToken` | `int` | Id del token creado. Para OT, el id es `0` ya que lo almacenamos durante 10 minutos como máximo. |

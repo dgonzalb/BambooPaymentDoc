@@ -3,7 +3,7 @@ title: "Embedded Checkout Form"
 linkTitle: "Embedded Checkout Form"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
+  Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
 weight: 20
 ---
 
@@ -12,8 +12,6 @@ The difference between this form, and [Checkout Form]({{< ref Checkout-Form.md >
 Integrating this form into your site or _app_ provides users with a simplified and responsive payment experience suitable for web and mobile applications.
 
 ## Import of the JavaScript Library 
-Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
-
 Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
 
 ```javascript
@@ -26,8 +24,7 @@ You must import the library through the public URL provided by Bamboo Payment. I
 This is important for security reasons and to keep updated with the latest modifications and corrections.
 {{% /alert %}}
 
-
-Next, like the following example, you must define an Iframe inside a custom commerce web on which the capture form renders.
+Next, like the following example, you must define an iframe inside a custom commerce web on which the capture form renders.
 
 Create a `div` to insert the iframe:
 
@@ -36,7 +33,7 @@ Create a `div` to insert the iframe:
 ```
 <br>
 
-Create the iframe by javascript:
+Create the iframe by JavaScript:
 
 ```javascript
 var main_iframe = document.createElement("iframe");
@@ -66,7 +63,7 @@ Next, you must set the `IframeId` for the method `SetProperties`, like the follo
 ```
 <br>
 
-Finally, we must invoke `LoadIframe()` method, which get and renders the capture form in the custom iframe generated:
+Finally, you must invoke `LoadIframe()` method, which get and renders the capture form in the custom iframe generated:
 
 ```javascript
     PWCheckout.LoadIframe();

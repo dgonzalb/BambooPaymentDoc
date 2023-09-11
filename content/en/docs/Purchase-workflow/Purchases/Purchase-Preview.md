@@ -40,7 +40,7 @@ In the header, the `Authorization` parameter must be configured by concatenating
    "paymentMediaId": 1,
    "customer": {
      "documentTypeId": 5,
-     "doc`number`": "20222222223",
+     "docNumber": "20222222223",
      "state": "Buenos Aires",
      "postalCode": "8512"
    }
@@ -54,12 +54,12 @@ Where:
 | `baseAmount` | `integer` | Yes | Amount to be paid before taxes. |
 | `currency` | `string` | Yes | Currency of the amount defined in `baseAmount`. |
 | `countryIso` | `string` | Yes | Country in ISO 3166-2 format. |
-| `paymentMediaId` | ``string`` | No | Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](/docs/payment-methods.html) by country section in the documentation. |
+| `paymentMediaId` | `string` | No | Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](/docs/payment-methods.html) by country section in the documentation. |
 | `customer` | `Object` | No<sup>*</sup> | Payer Information.<br><sup>*</sup>_Required for Argentina_. |
-| `customer.documentTypeId` | ``string`` | No | Payer Document Type. |
-| `customer.doc`number`` | ``string`` | No | Payer document number. |
-| `customer.state` | ``string`` | No<sup>*</sup> | Payer state.<br><sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in [this section](/docs/payment-methods/argentina.html#argentina-provinces)_. |
-| `customer.postalCode` | ``string`` | No | Payer Zip Code. |
+| `customer.documentTypeId` | `string` | No | Payer Document Type. |
+| `customer.docNumber` | `string` | No | Payer document number. |
+| `customer.state` | `string` | No<sup>*</sup> | Payer state.<br><sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in [this section](/docs/payment-methods/argentina.html#argentina-provinces)_. |
+| `customer.postalCode` | `string` | No | Payer Zip Code. |
 
 ## Response
 Next, we show an example of the response to the request shown previously.

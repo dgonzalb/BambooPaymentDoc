@@ -11,7 +11,7 @@ tags: ["subtopic"]
 ## Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Request parameters]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -219,7 +219,7 @@ For more information on the response parameters, please refer to the [Response p
 ### Response for AMEX
 When using AMEX, the response includes the object `AcquirerResponseDetail` inside the `Response.Transaction.Steps` object with the following information.
 
-| Property | Descripción |
+| Propiedad | Descripción |
 |---|---|
 | `ResponseCode` | Response code. |
 | `ResultDescription` | Description. |
@@ -230,7 +230,7 @@ When using AMEX, the response includes the object `AcquirerResponseDetail` insid
 | `PurchaseIdSended` | Identifier of the purchase sent to the acquirer. |
 | `BatchId` | Identifier of the batch to which the purchase made belongs. |
 
-Example:
+Ejemplo:
 
 ```json
 {

@@ -22,7 +22,7 @@ Using this flow, you can offer the possibility to receive payments using cards w
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -206,7 +206,7 @@ The status for purchases with cards using redirection will remain _Pending_ unti
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**112**_.<br>_Redirection payment is only available for Visa and MasterCard cards_ |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -461,7 +461,7 @@ Use the following cards to simulate the different status of the purchase. These 
 
 ### For approved purchases
 
-| Brand | PAN | CVV | Expiration Date | Type |
+| Brand | PAN | CVV | Expiration Date | Tipo |
 |---|---|---|---|---|
 | Amex | `370000000002032` | `1234` | `10/29` | Credit |
 | Visa | `4051885600446623` | `123` | `10/29` | Credit |
@@ -475,7 +475,7 @@ If the RUT and password are requested, please use a valid RUT (por ejemplo **11.
 
 ### For rejected purchases
 
-| Brand | PAN | CVV | Expiration Date | Type |
+| Brand | PAN | CVV | Expiration Date | Tipo |
 |---|---|---|---|---|
 | MasterCard | `5186059559590568` | `123` | `10/29` | Credit |
 | Redcompra | `5186008541233829` | `123` | `10/29` | Debit |

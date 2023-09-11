@@ -1,42 +1,40 @@
 ---
-title: "Embedded Checkout Form"
-linkTitle: "Embedded Checkout Form"
+title: "Formulario del Checkout embebido"
+linkTitle: "Formulario del Checkout embebido"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  The Checkout form is a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
+  Corresponde a un formulario de Checkout incrustado en su página, simplificando y asegurando la captura de datos sensibles para el procesamiento de pagos en línea.
 weight: 20
 ---
 
-The difference between this form, and [Checkout Form]({{< ref Checkout-Form.md >}}) mentioned before is that you must invoke this form inside a custom page.
+La diferencia entre este formulario, y [el formulario de Checkout]({{< ref Checkout-Form.md >}}) mencionado anteriormente es que debes invocar este formulario dentro de una página personalizada.
 
-Integrating this form into your site or _app_ provides users with a simplified and responsive payment experience suitable for web and mobile applications.
+La integración de este formulario en su sitio o _app_ proporciona a los usuarios una experiencia de pago simplificada y receptiva adecuada para aplicaciones web y móviles.
 
-## Import of the JavaScript Library 
-Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
 
-Find the functionalities of the Embedded Checkout form in a JavaScript library, which must be imported into the client’s website directly from a public URL of our platform.
+## Importación de la Librería JavaScript {#import-of-the-javascript-library} 
+Encuentre las funcionalidades del formulario de Checkout embebido en una librería JavaScript, que debe ser importada en el sitio web del cliente directamente desde una URL pública de nuestra plataforma.
 
 ```javascript
  <script src="{api_environment}/v1/Scripts/PWCheckoutNoModal.js?key={PublicAccountKey}" type="text/javascript"></script>
 ```
 
 {{% alert title="Nota" color="info"%}}
-You must import the library through the public URL provided by Bamboo Payment. It must not be downloaded and used locally from a merchant’s server or from a URL of a third party not authorized by Bamboo Payment.
+Se debe importar la librería a través de la URL pública entregada por Bamboo Payment. No debe descargarse y utilizarse localmente desde el servidor de un comercio o desde una URL de un tercero no autorizado por Bamboo Payment.
 
-This is important for security reasons and to keep updated with the latest modifications and corrections.
+Esto es importante por razones de seguridad y para mantenerse actualizado con las últimas modificaciones y correcciones.
 {{% /alert %}}
 
+Luego, como en el siguiente ejemplo, debe definir un iframe dentro de una web del comercio personalizada sobre el que se renderiza el formulario de captura.
 
-Next, like the following example, you must define an Iframe inside a custom commerce web on which the capture form renders.
-
-Create a `div` to insert the iframe:
+Cree un `div` para insertar el iframe:
 
 ```html
 <div id="iframeDiv" style="height: 410px; width: 300px; margin: auto;"></div>
 ```
 <br>
 
-Create the iframe by javascript:
+Cree el iframe por JavaScript:
 
 ```javascript
 var main_iframe = document.createElement("iframe");
@@ -48,14 +46,14 @@ iframeDiv.append(main_iframe);
 ```
 <br>
 
-Or create the iframe directly on `HTML`:
+O cree el iframe directamente en `HTML`:
 
 ```html
 <iframe id="custom_iframe" style="height: 410px; width: 300px;"></iframe>
 ```
 <br>
 
-Next, you must set the `IframeId` for the method `SetProperties`, like the following example:
+A continuación, debe establecer el `IframeId` para el método `SetProperties`, como en el siguiente ejemplo:
 
 ```javascript
  PWCheckout.SetProperties(
@@ -66,7 +64,7 @@ Next, you must set the `IframeId` for the method `SetProperties`, like the follo
 ```
 <br>
 
-Finally, we must invoke `LoadIframe()` method, which get and renders the capture form in the custom iframe generated:
+Por último, se debe invocar el método `LoadIframe()`, que obtiene y renderiza el formulario de captura en el iframe personalizado generado:
 
 ```javascript
     PWCheckout.LoadIframe();

@@ -8,7 +8,7 @@ weight: 70
 
 ## Payment method types
 
-| PaymentMediaTypeId | Type | Description
+| PaymentMediaTypeId | Tipo | Description
 |:-:|---------|----------
 | 1 | CreditCard | Credit Card
 | 2 | DebitCard | Debit Card

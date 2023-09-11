@@ -34,7 +34,7 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 
 ![](/assets/Payouts/Payouts4_en.png)
 
-## Examples
+## Ejemplos
 Let's make an example to let you understand the concepts of type and model behind the Payout balances.
 
 Let's assume that you have the following information:

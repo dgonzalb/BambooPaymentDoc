@@ -34,7 +34,7 @@ You can offer your customer the possibility to pay using cash in the following n
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -90,7 +90,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 In the response, you will find the following parameters:
 
-| Property | Type | Descripción |
+| Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the coupon to be presented by your customer in the physical network. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference returned by the acquirer to identify the order generated. |
@@ -252,7 +252,7 @@ The flow of this payment method is _**Redirect**_, so you must direct your custo
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -472,7 +472,7 @@ Using this payment method, your customer will receive a notification to open the
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
-| Property | Type | ¿Obligatorio? | Descripción |
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
@@ -480,7 +480,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. The format number must be 10 digits long and must not have prefixes. Ejemplo: _3188255555_. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number.  |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |

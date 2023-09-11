@@ -1,25 +1,25 @@
 ---
-title: "API for Account Balances"
+title: "API para saldos de cuentas"
 date: 2023-05-08T07:28:16-05:00
 Description: >
-  The API for Account Balances allows merchants to check their account balances without using Bamboo's merchant console.
+  El API para saldos de cuenta permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
 weight: 60
 notopicssection: true
 ---
 
-## Endpoint
-Point your request to any of the following URLs according to your needs.
+## URL del Request {#request-url}
+Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
-* STAGE: `https://api.stage.bamboopayment.com/v1/api/merchant/account/balance`
-* PROD: `https://api.bamboopayment.com/v1/api/merchant/account/balance`
+* **Producción**: `https://api.bamboopayment.com/v1/api/merchant/account/balance`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/merchant/account/balance`
 
-## Authorization
-In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the _**Private Key**_ of the merchant.
+## Autorización {#authorization}
+En el header se debe configurar el parámetro `Authorization` concatenando la palabra `Basic`, un espacio y la _**Llave Privada**_ del comercio.
 
-## Response example
+## Ejemplo del Response {#response-example}
 
 {{% alert title="Info" color="info"%}}
-You don't need to configure a request to invoke this API.
+No es necesario configurar un request para invocar el API.
 {{% /alert %}}
 
 
@@ -37,14 +37,14 @@ You don't need to configure a request to invoke this API.
 }
 ```
 <br>
-Where:
+Donde:
 
-| Parameter | Descripción |
+| Parámetro | Descripción |
 |---|---|
-| `Response` → `Date` | Date and time when you send the request. |
-| `Response` → `CurrencyCode` | ISO code of the currency configured for the merchant. |
-| `Response` → `FinalAccountingBalance` | Total balance. |
-| `Response` → `FinalAvailableBalance` | Total balance available for withdraw. |
-| `Response` → `FinalFeeBalance` | Balance available for fees. |
-| `Response` → `FinalProcessingBalance` | Balance in processing. This balance will be available when the processing finishes successfully; otherwise, it is canceled. |
-| `Errors` | Errors that may appear during the execution of the API method. |
+| `Response` → `Date` | Fecha y hora en que se envió la solicitud. |
+| `Response` → `CurrencyCode` | Código ISO de la moneda configurada para el comercio. |
+| `Response` → `FinalAccountingBalance` | Saldo total. |
+| `Response` → `FinalAvailableBalance` | Saldo total disponible para retirar. |
+| `Response` → `FinalFeeBalance` | Saldo disponible para fees. |
+| `Response` → `FinalProcessingBalance` | Saldo en procesamiento. Este saldo estará disponible cuando el procesamiento finalice con éxito; en caso contrario, se cancelará. |
+| `Errors` | Errores que pueden aparecer durante la ejecución del método API. |

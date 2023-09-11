@@ -8,7 +8,7 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-## URL del Request {#request-url-1}
+## URL del Request {#request-url}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://secure-api.bamboopayment.com/v2/api/purchase`

@@ -55,24 +55,13 @@ Los únicos requisitos técnicos son:
   * Si se responde con el código `200` (OK), Bamboo Payment asumirá que el procesamiento de la notificación fue exitoso.
   * Si se responde con cualquier otro código distinto a `200`, Bamboo Payment asumirá que el procesamiento fue fallido y se volverá a intentar la notificación.
 
-The implementation of this service depends on the platform and language chosen by the merchant.
 
-The only technical requirements are:
+## Validación de la firma {#signature-validation}
+Para mitigar el riesgo de transacciones fraudulentas, es crucial que los comercios validen la firma digital. Al verificar la autenticidad e integridad de los datos recibidos, las empresas pueden protegerse eficazmente contra posibles intentos de fraude y garantizar transacciones seguras y confiables.
 
-- It must accept messages in JSON format (application/json)
-- You need to implement a validation method of the signature in the webhook.
-- It must respond only an HTTP code, where:
-    * if code `200` (OK) is answered, BambooPayment will assume the notification processing was successful.
-    * If any code other than `200` is answered, BambooPayment will assume that the processing was unsuccessful, so the notification will be retried.
+El comercio puede validar la firma digital del comercio de la siguiente forma. La firma recibida en el webhook debe coincidir con la firma generada con el hash.
 
-
-## Signature validation
-To mitigate the risk of fraudulent transactions, it is crucial for merchants to validate the digital signature. By verifying the authenticity and integrity of the received data, businesses can effectively safeguard against potential fraud attempts and ensure secure and reliable transactions.
-
-The merchant can validate the digital signature of the commerce as follows.
-The received signature in the webhook must match the signature generated with the hash.
-
-#### Pseudocode
+#### Pseudocódigo {#pseudocode}
 
 ```javascript
 //private key
@@ -92,7 +81,7 @@ else
     console.log("signature is not valid");
  ```
 
-#### HmacSha256 Code Example
+#### Ejemplo de código HmacSha256 {#hmacsha256-code-example}
 
 ```javascript
 async function calculateHMAC(key, data) {
@@ -113,23 +102,13 @@ async function calculateHMAC(key, data) {
 }
 ```
 
-## Retry management for errors.
-The webhook uses a configuration with five retries for failures spaced out over time.
+## Manejo de reintentos ante errores {#retry-management-for-errors}
+El webhook utiliza una configuración de cinco reintentos para fallos espaciados en el tiempo.
 
-* The first retry is attempted after 15 minutes.
-* The second retry is attempted after 30 minutes.
-* The third retry is attempted after one hour.
-* The fourth retry is attempted after three hours.
-* The fifth retry is attempted after six hours.
+* El primer reintento se realiza después de 15 minutos.
+* El segundo reintento se realiza después de 30 minutos.
+* El tercer reintento se realiza después de una hora.
+* El cuarto reintento se realiza después de tres horas.
+* El quinto reintento se realiza después de seis horas.
 
-For further retries, please get in touch with our support team.
-
-{{% alert title="Info note" color="info"%}}
-|        |          | 
-|:-------|:---------|
-|**URL:** | *\<Determinado por el comercio>* |
-|**API Type:** | Pública |
-|**Method:** | POST |
-|**Authentication:** | Firma en el encabezado. |
-|**Response:** | Código HTTP. |
-{{% /alert %}}
+Para reintentos adicionales, póngase en contacto con nuestro equipo de asistencia.

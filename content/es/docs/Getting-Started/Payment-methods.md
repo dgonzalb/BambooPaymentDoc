@@ -111,7 +111,7 @@ weight: 30
 
 ## Paraguay
 
-| | Payment Method | Type | Flow
+| | Payment Method | Tipo | Flow
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa |  Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard |  Tarjeta de crédito y débito | API |
