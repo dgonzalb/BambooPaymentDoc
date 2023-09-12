@@ -26,9 +26,9 @@ Build the hash using the parameters `country`, `amount`, `currency`, `reference`
 ```javascript
 var json = JSON.parse(request.data);
 let signdata = {Country:json.country, Amount: json.amount,Currency:json.currency, Reference:json.reference, Type: json.type};
-var data = JSON.stringify(signdata);
+var data = JSON.`stringify(signdata);
 var hexHash = CryptoJS.HmacSHA256(data, secret-key);
-var hash = hexHash.toString(CryptoJS.enc.Hex);
+var hash = hexHash.to`string(CryptoJS.enc.Hex);
 ```
 
 ## API methods
@@ -53,10 +53,10 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 
 | Parameter | Format | Size | Description |
 |---|:-:|:-:|---|
-| `id` | Integer |  | Internal identification of the bank. |
-| `countryIsoCode` | String | 2 | Country to which the bank belongs.  |
-| `bankCode` | String | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
-| `bankName` | String |  | Name of the bank. |
+| `id` | `integer` | - | Internal identification of the bank. |
+| `countryIsoCode` | `string` | 2 | Country to which the bank belongs.  |
+| `bankCode` | `string` | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
+| `bankName` | `string` | - | Name of the bank. |
 
 #### Response example
 ```json
@@ -99,24 +99,24 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
-| `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
-| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD is available_. |
-| `reason` | String | No | Description of the payment. |
-| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
-| `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
-| `notification_Url` | String | No | Callback to notify the result of the payout |
-| `payee` → `FirstName` | String | Yes | First Name of the Payee. | 
-| `payee` → `lastName `| String | Yes | Last Name of the Payee. | 
-| `payee` → `email` | String | No | Email address of the Payee. |  
-| `payee` → `phone` | String | No | Phone number of the Payee. | 
-| `payee` → `address` | String | No | Address of the Payee. | 
-| `payee` → `document` → `type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
-| `payee` → `document` → `number` | String | Yes | Document number of the Payee. | 
-| `payee` → `bankaccount` → `number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
-| `payee` → `bankaccount` → `type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
-| `payee` → `bankaccount` → `codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
-| `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
+| `country` | `string(2)` | Yes | ISO code of the country in format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
+| `amount` | `integer` | Yes | Amount of the payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
+| `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
+| `reason` | `string` | No | Description of the payment. |
+| `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
+| `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
+| `notification_Url` | `string` | No | Callback to notify the result of the payout |
+| `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
+| `payee` → `lastName `| `string` | Yes | Last Name of the Payee. | 
+| `payee` → `email` | `string` | No | Email address of the Payee. |  
+| `payee` → `phone` | `string` | No | Phone number of the Payee. | 
+| `payee` → `address` | `string` | No | Address of the Payee. | 
+| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
+| `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
+| `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
+| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee. | 
+| `payee` → `bankaccount` → `branch` | `string` | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
@@ -486,19 +486,19 @@ To get the payout, include the following endpoints according to your needs.
 
 | Parameter | Format | Description |
 |---|:-:|---|
-| `payoutId` | Integer | Internal identification of the payout. |
-| `reference` | String | Unique identifier of the Payout you defined when you requested the Payout. |
-| `isoCountry` | String | ISO code of the country in format `ISO 3166-2`. |
-| `created` | Date Time | Date when the Payout was requested. |
-| `lastUpdate` | Date Time | Date of the last update of the Payout was. |
-| `status` | Integer | Internal code of the current status of the Payout. |
-| `statusDescription` | String | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
-| `errorCode` | String | Internal code of the error for the declined Payout. |
-| `errorDescription` | String | Error description for declined Payouts. |
-| `amount` | Object | Value and currency requested in the payout. |
-| `localAmount` | Object | Value and currency requested in the payout in local currency. |
-| `exchangeRate` | Numeric | Conversion value used in the Payout. |
-| `payee` | Object | Information of the recipient or beneficiary of the Payout.  |
+| `payoutId` | `integer` | Internal identification of the payout. |
+| `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
+| `isoCountry` | `string` | ISO code of the country in format `ISO 3166-2`. |
+| `created` | `date` | Date and time when the Payout was requested. |
+| `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
+| `status` | `integer` | Internal code of the current status of the Payout. |
+| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `errorCode` | `string` | Internal code of the error for the declined Payout. |
+| `errorDescription` | `string` | Error description for declined Payouts. |
+| `amount` | `object` | Value and currency requested in the payout. |
+| `localAmount` | `object` | Value and currency requested in the payout in local currency. |
+| `exchangeRate` | `numeric` | Conversion value used in the Payout. |
+| `payee` | `object` | Information of the recipient or beneficiary of the Payout.  |
 
 
 #### Response example

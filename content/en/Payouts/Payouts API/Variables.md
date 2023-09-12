@@ -8,8 +8,8 @@ Description: >
 weight: 20
 ---
 
-## ID Types
-The following table shows the document types you must configure in the parameter `payee.document.type`.
+## Document Types
+The following tables show the document types you must configure in the parameter `payee.document.type` according to the country.
 
 ### Argentina
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -79,28 +79,14 @@ The following table shows the document types you must configure in the parameter
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | |
 | RUT | Single Tax Role | Individuals | Numeric | 12 |
 
-## Error Codes
-| Error code | Description |
-|---|---|
-| `200` | Success |
-| `400` | Bad Request |
-| `401` | Unauthorized |
-| `409` | Conflict |
-| `812` | Declined by validation for document |
-| `813` | Declined by validation for account |
-| `814` | Declined by validation for country |
-| `815` | Declined by Compliance |
-| `816` | Reference ID already used.<br>This error is not be displayed in the [Payouts console](/payouts/payouts-merchant-console.html) but it is returned via API. |
-| `901` | Bank account is closed |
-| `902` | Invalid bank account |
-| `903` | Invalid bank account type |
-| `904` | Invalid bank branch |
-| `905` | Monthly limit exceeded for user |
-| `906` | Rejected by merchant's request |
-| `907` | The bank account is unable to receive transfers |
-| `908` | Invalid beneficiary document |
-| `909` | Beneficiary name doesn't match bank details |
-| `910` | PIX key invalid |
-| `911` | Invalid state change requested |
-| `912` | Insufficient Balance |
-| `999` | Error |
+## Payout types
+The following tables show the Payout types you must configure in the parameter `type`.
+
+<div id="shortTable"></div>
+
+| Type | Description |
+|:-:|---|
+| `1` | Cash |
+| `2` | Bank Transfer |
+| `3` | Wallet |
+| `4` | Instant Bank Transfer (Only for 🇧🇷) |
