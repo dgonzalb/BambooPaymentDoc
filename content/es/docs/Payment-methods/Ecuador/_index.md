@@ -10,30 +10,30 @@ tags: ["parenttopic"]
 
 This section shows the available payment methods, currencies, and related information to consider when processing in _Ecuador_.
 
-## Payment methods
+## Medios de pago {#payment-methods}
 
-| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Tipo | Flujo |
+| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API |
 
-## Currencies
+## Monedas {#currencies}
 
-| Code | Description    | Mode                     |
+| Código | Descripción    | Modo                     |
 |------|----------------|--------------------------|
-| USD  | US Dollar      | Domestic and CrossBorder |
+| USD  | Dólar estadounidense      | Doméstico y CrossBorder |
 
-## Amount limits
+## Límites de montos {#amount-limits}
 
 <div id="shortTable"></div>
 
-|  | Cash | 
+|  | Efectivo | 
 |---|:---:|
-| **Minimum** | USD 0,50 |
-| **Maximum** | USD 1.000 | 
+| **Mínimo**  | USD 0,50 |
+| **Máximo** | USD 1.000 | 
 
-## Document types
-The following table describes the valid document types for Argentina:
+## Tipos de documentos {#document-types}
+La siguiente tabla describe los tipos de documentos válidos para Argentina:
 
-| Code | Document name | Abbreviation |
+| Código | Nombre del documento | Abreviación |
 |:----:|---------------|--------------|
 | 10   | Other         | NAN          |

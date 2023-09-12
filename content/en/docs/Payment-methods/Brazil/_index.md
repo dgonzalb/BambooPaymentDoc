@@ -12,7 +12,7 @@ This section shows the available payment methods, currencies, and related inform
 
 ## Payment methods
 
-| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /> | 1 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Debit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="master" style="" /> | 2 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Debit Card | API |
@@ -39,7 +39,7 @@ This section shows the available payment methods, currencies, and related inform
 | **Maximum** | BRL 99.999,99 | BRL 99.999,99 | BRL 99.999,99 |
 
 ## Document types
-The following table describes the valid document types for Argentina:
+The following table describes the valid document types for Brazil:
 
 | Code | Document name                          | Abbreviation |
 |:----:|----------------------------------------|--------------|

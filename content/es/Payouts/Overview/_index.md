@@ -30,7 +30,7 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 
 ## Coverage
 
-| Country | ISO Code | Currency | Local Bank Transfer | Cash | Instant Transfer | Wallet |
+| Country | ISO Code | Currency | Local Bank Transfer | Efectivo | Instant Transfer | Wallet |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
 | Argentina  | `AR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
 | Brazil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |

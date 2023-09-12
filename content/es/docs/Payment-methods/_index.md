@@ -1,35 +1,37 @@
 ---
-title: "Countries and payment methods"
+title: "Países y medios de pago"
 date: 2023-05-08T07:28:16-05:00
 Description: >
   This section shows all the information related to the payment methods for the different countries.
 weight: 70
 ---
 
-## Payment method types
+## Tipos de medio de pago {#payment-method-types}
 
-| PaymentMediaTypeId | Tipo | Description
-|:-:|---------|----------
-| 1 | CreditCard | Credit Card
-| 2 | DebitCard | Debit Card
-| 3 | PhysicalNetwork | Cash payment |
-| 4 | PrePaid | Prepaid card |
-| 5 | Loyalty | Loyalty points (Only for 🇺🇾) |
-| 7 | BankTransfer | Bank transfer |
+| PaymentMediaTypeId | Tipo | Descripción |
+|:-:|---------|----------|
+| 1 | CreditCard | Tarjeta de crédito |
+| 2 | DebitCard | Tarjeta débito |
+| 3 | PhysicalNetwork | Pago en efectivo |
+| 4 | PrePaid | Tarjeta prepago |
+| 5 | Loyalty | Puntos de fidelización (Solo para 🇺🇾) |
+| 7 | BankTransfer | Trasnferencia bancaria |
 
-## Countries Table (ISO-3166-1)
+## Tabla de paises (ISO-3166-1) {#countries-table-iso-3166-1}
 
-| Code | Country |
+<div id="shortTable"></div>
+
+| Código | País |
 |:--:|----------|
 | AR | Argentina |
-| BR | Brazil |
+| BR | Brasil |
 | CL | Chile |
 | CR | Costa Rica |
 | CO | Colombia |
 | SV | El Salvador |
 | EC | Ecuador |
-| MX | Mexico |
+| MX | México |
 | NI | Nicaragua |
-| PE | Peru |
+| PE | Perú |
 | PY | Paraguay |
 | UY | Uruguay |

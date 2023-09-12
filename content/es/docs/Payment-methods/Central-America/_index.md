@@ -10,27 +10,27 @@ tags: ["parenttopic"]
 
 This section shows the available payment methods, currencies, and related information to consider when processing in _Costa Rica_, _El Salvador_, and _Nicaragua_.
 
-## Payment methods
+## Medios de pago {#payment-methods}
 
-| |Payment MediaId | Payment Media | Purchase | Pre-authorization | Full refund | Partial Refund | Tipo | Flujo |
+| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API | 
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API | 
 
-## Currencies
+## Monedas {#currencies}
 
-| Code | Description        | Mode                                  |
+| Código | Description        | Mode                                  |
 |------|--------------------|---------------------------------------|
-| USD  | US Dollar          | Domestic<sup>*</sup> and CrossBorder  |
-| CRC  | Costa Rican colón  | Domestic and CrossBorder              |
-| NIO  | Nicaraguan córdoba | Domestic and CrossBorder              |
+| USD  | Dólar estadounidense          | Domestic<sup>*</sup> and CrossBorder  |
+| CRC  | Costa Rican colón  | Doméstico y CrossBorder              |
+| NIO  | Nicaraguan córdoba | Doméstico y CrossBorder              |
 
 <sup>*</sup>_**USD** for domestic purchases is only available for El Salvador._
 
-## Document types
-The following table describes the valid document types for Central America.
+## Tipos de documentos {#document-types}
+La siguiente tabla describe los tipos de documentos válidos para Central America.
 
 
-| Code | Document name                                      | Abbreviation | Country     |
+| Código | Nombre del documento                                      | Abreviación | Country     |
 |:----:|----------------------------------------------------|--------------|-------------|
 | 30   | Cédula de identidad                                | CI           | Costa Rica  |
 | 31   | Documento de Identidad Migratoria para Extranjeros | DIMEX        | Costa Rica  |

@@ -19,6 +19,8 @@ weight: 70
 
 ## Countries Table (ISO-3166-1)
 
+<div id="shortTable"></div>
+
 | Code | Country |
 |:--:|----------|
 | AR | Argentina |
