@@ -53,7 +53,7 @@ Second, you find the list of payouts requested. Where you have the following col
 | USD Amount | Amount of the Payout in US Dollars. |
 | Local Amount | Amount of the Payout in the currency of the payee. |
 
-To see the detail of a payout, click it in the table. The following window appears.
+To see the details of a payout, click it in the table. The following window appears.
 
 ![PrintScreen](/assets/Payouts/Payouts6_en.png)
 

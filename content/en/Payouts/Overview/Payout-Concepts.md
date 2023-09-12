@@ -4,7 +4,7 @@ linkTitle: "Concepts"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  Please look at the concepts behind the ***Payouts*** feature, so you can start using it easily!
+  Please look at the concepts behind the ***Payouts*** feature so you can start using it easily!
 weight: 20
 ---
 
@@ -15,7 +15,7 @@ The _Balance_ is the amount of money settled in your account. We have three diff
 The _Banking Connection_ technology allows us to send money to a payee regardless of the selected payment method.
 
 ## FX Service
-_Foreign Exchange_ or _FX_ refers to the current rate to convert one country's currency to another. This value is updated according to destination country regulations.  
+_Foreign Exchange_ or _FX_ refers to the current rate to convert one country's currency to another. We update this value according to destination country regulations.
 
 ## Payee
 A _Payee_ is a third party who will receive the money result of your Payout request. The information required for a _Payee_ is their name, document, phone, e-mail address, and bank account.

@@ -20,7 +20,7 @@ Furthermore, we validate that your account has enough balance before moving to t
 
 * **Held**: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.
 
-* **Pending**: This status indicates that the payout and the payee have met all the validations required and it is about to be sent to the _Banking Connections_.
+* **Pending**: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the _Banking Connections_.
 
 * **Processing**: The _Banking Connection_ has received the payout; the time before moving to ***Paid*** status depends on the country and selected payment method. [Click here to learn more](../overview.html#considerations).
 

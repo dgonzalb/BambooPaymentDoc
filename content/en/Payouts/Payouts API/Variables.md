@@ -5,7 +5,7 @@ date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   Find the list of variables and codes available for Payouts integration.
-weight: 20
+weight: 30
 ---
 
 ## Document Types
