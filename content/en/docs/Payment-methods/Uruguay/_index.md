@@ -62,6 +62,8 @@ The following table describes the valid document types for Uruguay:
 ## Issuer Banks Table
 The following table lists the configured Issuer Banks.
 
+<div id="shortTable"></div>
+
 | IssuerBankId | Issuer Bank |
 |---------|----------|
 | 1 | Santander |
