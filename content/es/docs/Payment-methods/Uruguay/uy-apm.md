@@ -1,15 +1,15 @@
 ---
-title: "Alternative Payment Methods"
-linkTitle: "Alternative Payment Methods"
+title: "Medios alternativos de pago"
+linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with cash and Bank transfers.
+  Aprenda a integrar su solución para procesar pagos con cash and Bank transfers.
 weight: 30
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in their bank app or at a physical payment office.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in their bank app or at a physical payment office.
 {{% /alert %}}
 
 ## Cash
@@ -25,27 +25,27 @@ The Cash payment method allows your customers to generate a coupon and complete 
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 10 | RedPagos<br>_If you are in Gateway model._ |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 65 | RedPagos Payfac<br>_If you are in PayFac model._ |
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Sí | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 10,
@@ -76,12 +76,12 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 The response returns the coupon in _PDF_ format that the client must present in the agency in order to pay the generated debt, in the `MetadataOut.PaymentBarcodeUrl` parameter:
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example 
+#### Ejemplo del Response {#response-example} 
 ```json
 {
     "Response": {
@@ -174,7 +174,7 @@ For more information on the response parameters, please refer to the [Response p
 ```
 
 ## Bank transfers
-The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
+The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Parámetros del Response {#response-parameters} sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
 ### Supported banks
 You can offer to your customers the possibility to pay using bank transfers if the customer's account is in the following banks:
@@ -188,29 +188,29 @@ You can offer to your customers the possibility to pay using bank transfers if t
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" alt="Diners" width="52" style="" /> | 104 | Scotiabank |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" alt="CASH" width="52" style="" /> | 105 | Itau |
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `sourceReference` | `string` | No | This field is used to configure a Bank reference for the customer. |
 | `MetaDataIn` → `destinationReference` | `string` | No | This field is used to configure a bank reference for the merchant. The API applies a default value if you don't provide this information. |
 | `MetaDataIn` → `externalReference` | `string` | No | This field is used to configure a external reference of the system who invokes the API. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 105,
@@ -244,12 +244,12 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 ```json
 {
     "Response": {

@@ -3,7 +3,7 @@ title: "Argentina"
 linkTitle: "Argentina"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  With a tech-savvy population with a high GDP per capita, _**Argentina**_ offers an immense opportunity for global merchants despite regulatory restrictions.
+  Con una población conocedora de la tecnología y un elevado PIB per cápita, _**Argentina**_ ofrece una inmensa oportunidad a los comercios de todo el mundo a pesar de las restricciones normativas.
 weight: 10
 tags: ["parenttopic"]
 ---

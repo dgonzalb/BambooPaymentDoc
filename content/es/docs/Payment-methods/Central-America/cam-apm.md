@@ -3,7 +3,7 @@ title: "Cash"
 linkTitle: "Cash"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Cash.
+  Aprenda a integrar su solución para procesar pagos con Cash.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -11,27 +11,27 @@ tags: ["subtopic"]
 ## PuntoXpress
 _PuntoXpress_ is a cash collection network with regional coverage in Central America. When the customers of e-commerce platforms make purchases on the e-commerce websites, the e-commerce platform requests us to generate a debt. Subsequently, the customer goes to a PuntoXpress collection point, checks the debt associated with a reference, makes the payment, notifies us, and we notify the merchant.
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**28**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/central-america.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/central-america.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the validity of the generated debt using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 28,
@@ -51,10 +51,10 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a `PuntoXpress` agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity date in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {

@@ -1,45 +1,45 @@
 ---
-title: "Alternative Payment Methods"
-linkTitle: "Alternative Payment Methods"
+title: "Medios alternativos de pago"
+linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Alternative Payment Methods such as **PIX** and **Boleto Bancario**.
+  Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago such as **PIX** and **Boleto Bancario**.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in PIX or at a _Boleto Bancario_ office.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in PIX or at a _Boleto Bancario_ office.
 {{% /alert %}}
 
 ## PIX
 _PIX_ is an official Brazilian payment method launched by the local Central Bank. It allows for immediate payment confirmation and is available 24/7. To complete a payment, the payer can use any Home Banking or Wallet App by copying and pasting a Transaction ID or scanning a QR code.
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**31**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 | `MetadataIn.` → `AddressStreet` | `string` | Sí | Customer address street. |
 | `MetadataIn` → `AddressNumber` | `string` | Sí | Customer address number, floor, apartment. |
 | `MetadataIn` → `AddressDistrict` | `string` | Sí | Customer address district. |
 
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": "31",
@@ -72,7 +72,7 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 In the response, you will find the following parameters:
 
 | Propiedad | Tipo | Descripción |
@@ -86,7 +86,7 @@ In the response, you will find the following parameters:
 
 ![PrintScreen](/assets/PIX.png)
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -260,31 +260,31 @@ In the response, you will find the following parameters:
 ## Boleto Bancario
 _Boleto Bancário_ is a popular payment method in Brazil that allows for paying bills and online purchases without a credit card. It generates a unique barcode that can be printed or accessed through a digital platform and paid at any bank or authorized payment center.
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**66**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/brazil.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Sí | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | Sí | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 | `MetadataIn.` → `AddressStreet` | `string` | Sí | Customer address street. |
 | `MetadataIn` → `AddressNumber` | `string` | Sí | Customer address number, floor, apartment. |
 | `MetadataIn` → `AddressDistrict` | `string` | Sí | Customer address district. 
 
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": "66",
@@ -316,7 +316,7 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 In the response, you will find the following parameters:
 
 | Propiedad | Tipo | Descripción |
@@ -330,7 +330,7 @@ In the response, you will find the following parameters:
 
 ![PrintScreen](/assets/Boleto.png)
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {

@@ -1,39 +1,39 @@
 ---
-title: "Alternative Payment Methods"
-linkTitle: "Alternative Payment Methods"
+title: "Medios alternativos de pago"
+linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Bank transfer and Cash methods.
+  Aprenda a integrar su solución para procesar pagos con Bank transfer and Cash methods.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-* The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in their _Khipu_ app or at a physical payment office.
+* El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in their _Khipu_ app or at a physical payment office.
 * Chile does not support decimal amounts, so all received amount values will be rounded.
 {{% /alert %}}
 
 ## Khipu
 **Khipu** allows payers to pay using transfers from their bank accounts using the _Khipu_ app. The payer can pay using bank accounts or through the **Khipu** app where the payment experience is better.
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**106**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/chile.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/chile.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
@@ -47,7 +47,7 @@ The `Redirection` object and its parameter are not required; nevertheless, you m
 
 {{% /alert %}}
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 106,
@@ -69,16 +69,16 @@ The `Redirection` object and its parameter are not required; nevertheless, you m
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the _**Khipu**_ app.
 
 {{% alert title="Info" color="info"%}}
 If the RUT and password are requested during testing, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
 {{% /alert %}}
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -219,31 +219,31 @@ For more information on the response parameters, please refer to the [Response p
 ## Klap Efectivo
 With **Klap efectivo**, your customers can generate a coupon and complete the payment in a physical payment office.
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**107**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/Chile.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/Chile.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 107,
@@ -264,14 +264,14 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to let the customer generate the coupon and complete the payment in a _**Klap**_ office.
 
 ![PrintScreen](/assets/Klap.png)
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {

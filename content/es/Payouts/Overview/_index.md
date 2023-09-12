@@ -100,7 +100,7 @@ Ejemplo: `12345678901234567890`.
 
 ### Uruguay
 
-| Bank name | Format | Length | Details | Example |
+| Bank name | Format | Length | Detalles | Example |
 |---|---|---|---|---|
 | BROU | `YYYYYYYYYWWWWW` | 14 | <ul style="margin-bottom: initial;"><li>`Y` -> Account number.</li><li>`W` -> sub-account.</li></ul> | `12345678901234` |
 | BHU | `XXXYYZZZZV` | 10 | <ul style="margin-bottom: initial;"><li>`X` -> Bank branch starts with 0.</li><li>`Y` -> Product number.</li><li>`Z` -> Account number filled with 0 on the left.</li><li>`V` -> Verifying Digit.</li></ul> | `0123401234` |

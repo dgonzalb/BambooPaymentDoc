@@ -48,7 +48,7 @@ Use any to the following URLS according to your needs.
 
 Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](/payouts/overview.html#coverage).
 
-#### Response parameters
+#### Parámetros del Response {#response-parameters}
 
 | Parámetro | Formato | Tamaño | Descripción |
 |---|:-:|:-:|---|
@@ -57,7 +57,7 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 | `bankCode` | String | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
 | `bankName` | String |  | Name of the bank. |
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 ```json
 [
   {
@@ -93,7 +93,7 @@ Use any of the following URLS according to your needs.
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
 
-#### Request parameters
+#### Parámetros del Request {#request-parameters}
 The following table shows the mandatory and optional parameters to create a Payout for all the countries.
 
 | Campo | Tipo | ¿Obligatorio? | Descripción |
@@ -121,7 +121,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For PIX, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 Refer to the corresponding tab according to the payee's country.
 
 
@@ -481,7 +481,7 @@ To get the payout, include the following endpoints according to your needs.
 * **Using Payout ID**: `{{URL}}/api/Payout/{{PayoutId}}`
 * **Using Payout Reference**: `{{URL}}/api/Payout/reference/{{PayoutReference}}`
 
-#### Response parameters
+#### Parámetros del Response {#response-parameters}
 
 | Parameter | Format | Descripción |
 |---|:-:|---|
@@ -500,7 +500,7 @@ To get the payout, include the following endpoints according to your needs.
 | `payee` | Object | Information of the recipient or beneficiary of the Payout.  |
 
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 ```json
 {
     "payoutId": 1100,

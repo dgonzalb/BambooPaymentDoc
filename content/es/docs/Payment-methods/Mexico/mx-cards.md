@@ -11,23 +11,23 @@ When using cards, the payer must be redirected to the card capture page to compl
 
 The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
 
-## Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+## Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**111**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
@@ -42,7 +42,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 {{% /alert %}}
 
-### Request example
+### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 111,
@@ -71,14 +71,14 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-## Response parameters
+## Parámetros del Response {#response-parameters}
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the card capture.
 
 ![PrintScreen](/assets/OpenPayCards.png)
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-### Response example
+### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -218,10 +218,10 @@ For more information on the response parameters, please refer to the [Response p
 }
 ```
 
-## Testing cards
-Use the following cards to simulate the different status of the purchase. These cards apply for both API and redirection flow.
+## Tarjetas de prueba {#testing-cards}
+Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra. These cards apply for both API and redirection flow.
 
-| Brand | PAN | CVV | Expiration Date |
+| Marca | PAN | CVV | Fecha de Expiración |
 |---|---|---|---|
 | Visa | `4111111111111111` | `123` | `10/29` |
 | Visa | `4242424242424242` | `123` | `10/29` |

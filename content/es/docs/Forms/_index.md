@@ -141,7 +141,7 @@ This method is used to get a **Token** for Redirect flow payments.
 | Propiedad | Descripción | ¿Obligatorio? |
 |-------------|-------------|:--------:|
 | **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Posibles valores:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Sí |
-| **email** <br> *string* | Customer's email address. | Sí |
+| **email** <br> *string* | Correo electrónico del cliente address. | Sí |
 
 Ejemplo:
 

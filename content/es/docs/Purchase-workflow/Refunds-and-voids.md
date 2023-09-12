@@ -85,7 +85,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 * **Producción**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 
-### Request parameters
+### Parámetros del Request {#request-parameters}
 Consider the following parameters when invoking a refund request.
 
 | Parameter | Tipo | Mandatory | Descripción |
@@ -93,7 +93,7 @@ Consider the following parameters when invoking a refund request.
 | `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
 | `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
 
-#### Request example 
+#### Ejemplo del Request {#request-example} 
 
 ```json
 {
@@ -104,7 +104,7 @@ Consider the following parameters when invoking a refund request.
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 
 | Parámetro | Tipo | Descripción |
 |---|---|---|
@@ -123,7 +123,7 @@ Consider the following parameters when invoking a refund request.
 | `Errors` → `Message` | `string` | Descriptive text of the error. |
 | `Errors` → `Detail` | `string` | Error detail. |
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {

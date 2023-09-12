@@ -1,15 +1,15 @@
 ---
-title: "Alternative Payment Methods"
-linkTitle: "Alternative Payment Methods"
+title: "Medios alternativos de pago"
+linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Cash and Nequi.
+  Aprenda a integrar su solución para procesar pagos con Cash and Nequi.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in Nequi or at a physical payment office.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in Nequi or at a physical payment office.
 {{% /alert %}}
 
 ## Cash
@@ -31,24 +31,24 @@ You can offer your customer the possibility to pay using cash in the following n
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> | 43 | SuRed |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | 44 | SuSuerte |
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | Sí | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Considerations" color="info"%}}
@@ -56,7 +56,7 @@ You need to include specific fields for this payment method to work correctly. C
 * The `amount` value needs to include two zeros as decimal places. Example `COP 5.000` > `500000`.
 {{% /alert %}}
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 38,
@@ -87,7 +87,7 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 In the response, you will find the following parameters:
 
 | Propiedad | Tipo | Descripción |
@@ -97,9 +97,9 @@ In the response, you will find the following parameters:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example 
+#### Ejemplo del Response {#response-example} 
 ```json
 {
     "Response": {
@@ -247,29 +247,29 @@ For more information on the response parameters, please refer to the [Response p
 ## Nequi QR
 Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo's Payments API generates the QR code in the response to the payment request.
 
-The flow of this payment method is _**Redirect**_, so you must direct your customer to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1), you can find the parameter of the redirection URL. For more information, refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
+The flow of this payment method is _**Redirect**_, so you must direct your customer to another page where they will complete the payment. In the [Parámetros del Response {#response-parameters} sections](#response-parameters-1), you can find the parameter of the redirection URL. For more information, refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 67,
@@ -300,7 +300,7 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 The following example shows the response to the request.
 
 ```json
@@ -469,27 +469,27 @@ Using this payment method, your customer will receive a notification to open the
 
 <img src="/assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
 
-### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/colombia.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. The format number must be 10 digits long and must not have prefixes. Ejemplo: _3188255555_. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number.  |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. The format number must be 10 digits long and must not have prefixes. Ejemplo: _3188255555_. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente.  |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-#### Request example
+#### Ejemplo del Request {#request-example}
 ```json
 {
     "PaymentMediaId": 68,
@@ -520,12 +520,12 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Response parameters
+### Parámetros del Response {#response-parameters}
 _Nequi_ generates the payment order and sends a push notification to the payer; then, the payer needs to log in Nequi app to accept or reject the payment.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 
 ```json
 {

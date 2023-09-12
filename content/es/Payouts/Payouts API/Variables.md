@@ -99,7 +99,7 @@ The following table shows the document types you must configure in the parameter
 | `906` | Rejected by merchant's request |
 | `907` | The bank account is unable to receive transfers |
 | `908` | Invalid beneficiary document |
-| `909` | Beneficiary name doesn't match bank details |
+| `909` | Beneficiary name doesn't match bank Detalles |
 | `910` | PIX key invalid |
 | `911` | Invalid state change requested |
 | `912` | Insufficient Balance |

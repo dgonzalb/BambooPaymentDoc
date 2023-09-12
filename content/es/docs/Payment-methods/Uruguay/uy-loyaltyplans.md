@@ -47,7 +47,7 @@ Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{
 The outcome of a mixed purchase depends on processing points and cards. If the acquirer rejects either of these processes, the entire purchase will also be rejected.
 {{% /alert %}}
 
-#### Request example 
+#### Ejemplo del Request {#request-example} 
 ```json
 {
     "TrxToken":"OT_02_kYv0qTHckRiZ4wjCz5NguZRuwFLSIrQc4jiYpVJ8SzQ_", 
@@ -61,7 +61,7 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 }
 ```
 
-#### Request example for mixed purchases
+#### Ejemplo del Request {#request-example} for mixed purchases
 
 ```json
 {
@@ -86,7 +86,7 @@ To get the number of points available for a user, create a `POST` request to the
 
 Where `{{LoyaltyPlan-ID}}` is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in [Purchase operations]({{< ref Purchase-Operations.md >}}).
 
-#### Request parameters
+#### Parámetros del Request {#request-parameters}
 Include the following parameters in the request.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -95,7 +95,7 @@ Include the following parameters in the request.
 | `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
 | `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
 
-#### Request example 
+#### Ejemplo del Request {#request-example} 
 ```json
 {
   "LoyaltyPlanId": 1,
@@ -104,7 +104,7 @@ Include the following parameters in the request.
 }
 ```
 
-#### Response example
+#### Ejemplo del Response {#response-example}
 The `Balance` parameter in the response contains the points available to the user.
 
 ```json

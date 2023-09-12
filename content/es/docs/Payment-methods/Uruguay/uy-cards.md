@@ -8,24 +8,24 @@ weight: 10
 tags: ["subtopic"]
 ---
 
-## Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Request parameters]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
+## Parámetros del Request {#request-parameters}
+You need to include specific fields for this payment method to work correctly. Check the [Parámetros del Request {#request-parameters}]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/es/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Sí | Indicate the destination currency. |
-| `Customer` → `Email` | `string` | Sí | Customer's email. |
-| `Customer` → `FirstName` | `string` | Sí | Customer's first name. |
-| `Customer` → `LastName` | `string` | Sí | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/es/docs/payment-methods/uruguay.html#document-types) to see the posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | Sí | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Sí | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | Sí | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States abd Canada. |
+| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | Sí | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente.<br>Postal code is mandatory for the United States abd Canada. |
 | `Customer` → `ShippingAddress` → `Country` | `string` | No | Country of the Shipping Address. |
 | `Customer` → `ShippingAddress` → `State` | `string` | No | State of the Shipping Address. | 
 | `Customer` → `ShippingAddress` → `City` | `string` | No | City of the Shipping Address. |
@@ -39,11 +39,11 @@ You need to include specific fields for this payment method to work correctly. C
 
 {{% alert title="Info" color="info"%}}
 * <sup>*</sup> This parameter is mandatory when `DataUY.IsFinalConsumer` is `true`.
-* Remember that for the Anti-fraud system's correct functioning, we suggest sending additional data described in the section [Anti-fraud]({{< ref Antifraud.md>}}).
+* Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref Antifraud.md>}}).
 
 {{% /alert %}}
 
-### Request example
+### Ejemplo del Request {#request-example}
 ```json
 {
   "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
@@ -113,10 +113,10 @@ Then, include the token in the purchase creation according to the following scen
   * For Recurring purchases (Without CVV), send the device FingerPrint you generate and the **CT token**. You can use an existing **CT token** or generate one.
   * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
 
-## Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+## Parámetros del Response {#response-parameters}
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-### Response example
+### Ejemplo del Response {#response-example}
 
 ```json
 {
@@ -247,7 +247,7 @@ Ejemplo:
 }
 ```
 
-## Testing cards
+## Tarjetas de prueba {#testing-cards}
 When generating valid card data for testing, you must first establish which acquirer you want to test and what type of test you want to perform.
 
 ### Determination of BIN
@@ -255,7 +255,7 @@ When setting up an acquirer, the card's BIN (Bank Identification Number) is also
 
 This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. Por ejemplo, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
 
-| BIN (format) | Brand | Notas |
+| BIN (format) | Marca | Notas |
 |--------------|-------|-------|
 | `^4\[0-9]*` | VISA | Any card that starts with `4`. |
 | `^5\[1-5]\[0-9]*`| MasterCard | Any card that starts with `51` through `5`. |

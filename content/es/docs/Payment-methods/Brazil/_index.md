@@ -46,7 +46,7 @@ La siguiente tabla describe los tipos de documentos válidos para Argentina:
 | 24   | Cadastro de Pessoas Físicas            | CPF          |
 | 25   | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
 
-## Customer's state of residence
+## Estado del cliente of residence
 
 <div id="shortTable"></div>
 
