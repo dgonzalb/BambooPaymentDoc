@@ -25,7 +25,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -209,7 +209,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**112**_.<br>_Redirection payment is only available for Visa and MasterCard cards_ |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |

@@ -37,7 +37,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -255,7 +255,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**67**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -475,7 +475,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**67**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |

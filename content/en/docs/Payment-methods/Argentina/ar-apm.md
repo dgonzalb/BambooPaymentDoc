@@ -21,7 +21,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**61**_. |
-| `TargetCountryISO` | `string` | Yes| Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes| Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -214,7 +214,7 @@ You need to include specific fields for this payment method to work correctly. C
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**72**_. |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination currency. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
