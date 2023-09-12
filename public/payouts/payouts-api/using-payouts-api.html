@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-09-07T16:25:53-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-12T11:09:20-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Using Payouts API">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-09-07T16:25:53-05:00" />
-<meta itemprop="wordCount" content="1587">
+<meta itemprop="dateModified" content="2023-09-12T11:09:20-05:00" />
+<meta itemprop="wordCount" content="1591">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.4ea35d8f0e046ee175ceb1439331308dba5a3ed11ccbed030d0ab386928bc53d257d8be80ef13770f7cba974311cb9c649797652426219e2ff9b22d5d6b0ea40.json"
+  data-offline-search-index-json-src="../../offline-search-index.0efbfe8a3d8766bad4e6f79d4a7e790b6cd19cfff92b583a89ea6596b31af4dfcbfb8a9dcd75d7620e2e760ee22b95cf35dbdc48f3c4316f0373a158d2095871.json"
   data-offline-search-base-href="../../"
 >
 
@@ -284,6 +284,12 @@
         <a id="/payouts/payouts-api/variables.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-apivariableshtml" href="../../payouts/payouts-api/variables.html">Variables</a>
       
       
+      
+      
+      
+        <a id="/payouts/payouts-api/error-codes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-apierror-codeshtml" href="../../payouts/payouts-api/error-codes.html">Error Codes</a>
+      
+      
     </li>
   </ul>
    </ul> 
@@ -421,9 +427,9 @@
 <h4 id="signature-sample-code">Signature sample code</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">json</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">signdata</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">Country</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">country</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Amount</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">amount</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">currency</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Reference</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reference</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Type</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">type</span><span style="color:#000;font-weight:bold">};</span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">stringify</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">signdata</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">hexHash</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HmacSHA256</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">secret</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">key</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">hash</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">hexHash</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">toString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Hex</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#4e9a06">`stringify(signdata);
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">var hexHash = CryptoJS.HmacSHA256(data, secret-key);
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">var hash = hexHash.to`</span><span style="color:#000">string</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Hex</span><span style="color:#000;font-weight:bold">);</span>
 </span></span></code></pre></div><h2 id="api-methods">API methods</h2>
 <p>The Payouts API offers three primary methods that you can use when requesting Payouts.</p>
 <ul>
@@ -453,26 +459,26 @@
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td style="text-align:center">Integer</td>
-<td style="text-align:center"></td>
+<td style="text-align:center"><code>integer</code></td>
+<td style="text-align:center">-</td>
 <td>Internal identification of the bank.</td>
 </tr>
 <tr>
 <td><code>countryIsoCode</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">2</td>
 <td>Country to which the bank belongs.</td>
 </tr>
 <tr>
 <td><code>bankCode</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">4</td>
 <td>Internal code of the bank used in the parameter <code>payee.bankaccount.codebank</code> when requesting a Payout.</td>
 </tr>
 <tr>
 <td><code>bankName</code></td>
-<td style="text-align:center">String</td>
-<td style="text-align:center"></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">-</td>
 <td>Name of the bank.</td>
 </tr>
 </tbody>
@@ -524,126 +530,126 @@
 <tbody>
 <tr>
 <td><code>country</code></td>
-<td>String(2)</td>
+<td><code>string(2)</code></td>
 <td style="text-align:center">Yes</td>
 <td>ISO code of the country in format <code>ISO 3166-2</code>.<br><a href="../../payouts/overview.html#coverage">List of countries available for Payouts</a>.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td>Integer</td>
+<td><code>integer</code></td>
 <td style="text-align:center">Yes</td>
 <td>Amount of the payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>USD 1,00</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>currency</code></td>
-<td>String(3)</td>
+<td><code>string(3)</code></td>
 <td style="text-align:center">Yes</td>
-<td>ISO code of the currency.<br><em>Only USD is available</em>.</td>
+<td>ISO code of the currency.<br><em>Only <strong>USD</strong> is available</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>reason</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Description of the payment.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>reference</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes</td>
 <td>Unique identifier of the Payout defined by you.<br><em>It must be unique</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>type</code></td>
-<td>Integer</td>
+<td><code>integer</code></td>
 <td style="text-align:center">Yes</td>
 <td>Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li><code>1</code> for Cash</li><li><code>2</code> for Bank Transfer</li><li><code>3</code> for Wallet</li><li><code>4</code> for Instant Bank Transfer in Brazil</li></ul></td>
 <td></td>
 </tr>
 <tr>
 <td><code>notification_Url</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Callback to notify the result of the payout</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>FirstName</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes</td>
 <td>First Name of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>lastName </code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes</td>
 <td>Last Name of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>email</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Email address of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>phone</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Phone number of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>address</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Address of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>document</code> → <code>type</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes</td>
 <td>Document type of the Payee.<br><a href="../../payouts/payouts-api/variables.html#id-types">Find the document list here</a>.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>document</code> → <code>number</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes</td>
 <td>Document number of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>bankaccount</code> → <code>number</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul></td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>bankaccount</code> → <code>type</code></td>
-<td>Integer</td>
+<td><code>integer</code></td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Account type of the Payee. Set <code>1</code> for Checking and <code>2</code> for Savings.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>bankaccount</code> → <code>codebank</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">Yes<sup>*</sup></td>
 <td>Bank code of the Payee.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>payee</code> → <code>bankaccount</code> → <code>branch</code></td>
-<td>String</td>
+<td><code>string</code></td>
 <td style="text-align:center">No</td>
 <td>Branch code of the Payee&rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.</td>
 <td></td>
@@ -1184,67 +1190,67 @@ The validation of the message was successful, but the payout is <strong>Declined
 <tbody>
 <tr>
 <td><code>payoutId</code></td>
-<td style="text-align:center">Integer</td>
+<td style="text-align:center"><code>integer</code></td>
 <td>Internal identification of the payout.</td>
 </tr>
 <tr>
 <td><code>reference</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td>Unique identifier of the Payout you defined when you requested the Payout.</td>
 </tr>
 <tr>
 <td><code>isoCountry</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td>ISO code of the country in format <code>ISO 3166-2</code>.</td>
 </tr>
 <tr>
 <td><code>created</code></td>
-<td style="text-align:center">Date Time</td>
-<td>Date when the Payout was requested.</td>
+<td style="text-align:center"><code>date</code></td>
+<td>Date and time when the Payout was requested.</td>
 </tr>
 <tr>
 <td><code>lastUpdate</code></td>
-<td style="text-align:center">Date Time</td>
-<td>Date of the last update of the Payout was.</td>
+<td style="text-align:center"><code>date</code></td>
+<td>Date and time of the last update of the Payout was.</td>
 </tr>
 <tr>
 <td><code>status</code></td>
-<td style="text-align:center">Integer</td>
+<td style="text-align:center"><code>integer</code></td>
 <td>Internal code of the current status of the Payout.</td>
 </tr>
 <tr>
 <td><code>statusDescription</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td>Current status of the Payout. Refer to <a href="../../payouts/overview/payout-status.html">this article</a> to learn more about Payout status.</td>
 </tr>
 <tr>
 <td><code>errorCode</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td>Internal code of the error for the declined Payout.</td>
 </tr>
 <tr>
 <td><code>errorDescription</code></td>
-<td style="text-align:center">String</td>
+<td style="text-align:center"><code>string</code></td>
 <td>Error description for declined Payouts.</td>
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td style="text-align:center">Object</td>
+<td style="text-align:center"><code>object</code></td>
 <td>Value and currency requested in the payout.</td>
 </tr>
 <tr>
 <td><code>localAmount</code></td>
-<td style="text-align:center">Object</td>
+<td style="text-align:center"><code>object</code></td>
 <td>Value and currency requested in the payout in local currency.</td>
 </tr>
 <tr>
 <td><code>exchangeRate</code></td>
-<td style="text-align:center">Numeric</td>
+<td style="text-align:center"><code>numeric</code></td>
 <td>Conversion value used in the Payout.</td>
 </tr>
 <tr>
 <td><code>payee</code></td>
-<td style="text-align:center">Object</td>
+<td style="text-align:center"><code>object</code></td>
 <td>Information of the recipient or beneficiary of the Payout.</td>
 </tr>
 </tbody>
@@ -1289,9 +1295,9 @@ The validation of the message was successful, but the payout is <strong>Declined
 <br>
 <b>Last modified</b>
 
-September 7, 2023: 
+September 12, 2023: 
 
- <i>Adjustments in requests and responses and minor grammar adjustments (7753fec)</i>
+ <i>New organization for Error Codes (c1c39ba)</i>
   </div>
 </div>
 

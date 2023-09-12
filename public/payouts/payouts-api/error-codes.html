@@ -20,21 +20,21 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
-<title>Variables | Bamboo Payment</title><meta property="og:title" content="Variables" />
-<meta property="og:description" content="Find the list of variables and codes available for Payouts integration.
+<title>API Error codes | Bamboo Payment</title><meta property="og:title" content="API Error codes" />
+<meta property="og:description" content="This article provides information about the error codes ypu may find when using the Payouts integration.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/payouts/payouts-api/variables.html" /><meta property="article:section" content="Payouts" />
+<meta property="og:url" content="/payouts/payouts-api/error-codes.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
 <meta property="article:modified_time" content="2023-09-12T11:09:20-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Variables">
-<meta itemprop="description" content="Find the list of variables and codes available for Payouts integration.
+<meta itemprop="name" content="API Error codes">
+<meta itemprop="description" content="This article provides information about the error codes ypu may find when using the Payouts integration.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-09-12T11:09:20-05:00" />
-<meta itemprop="wordCount" content="314">
+<meta itemprop="wordCount" content="118">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Variables"/>
-<meta name="twitter:description" content="Find the list of variables and codes available for Payouts integration.
+<meta name="twitter:title" content="API Error codes"/>
+<meta name="twitter:description" content="This article provides information about the error codes ypu may find when using the Payouts integration.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -281,13 +281,13 @@
       
       
       
-        <a id="/payouts/payouts-api/variables.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-payoutspayouts-apivariableshtml" href="../../payouts/payouts-api/variables.html">Variables</a>
+        <a id="/payouts/payouts-api/variables.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-apivariableshtml" href="../../payouts/payouts-api/variables.html">Variables</a>
       
       
       
       
       
-        <a id="/payouts/payouts-api/error-codes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-payoutspayouts-apierror-codeshtml" href="../../payouts/payouts-api/error-codes.html">Error Codes</a>
+        <a id="/payouts/payouts-api/error-codes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-payoutspayouts-apierror-codeshtml" href="../../payouts/payouts-api/error-codes.html">Error Codes</a>
       
       
     </li>
@@ -330,23 +330,6 @@
 <p> </p>
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#document-types">Document Types</a>
-      <ul>
-        <li><a href="#argentina">Argentina</a></li>
-        <li><a href="#brazil">Brazil</a></li>
-        <li><a href="#chile">Chile</a></li>
-        <li><a href="#colombia">Colombia</a></li>
-        <li><a href="#mexico">Mexico</a></li>
-        <li><a href="#peru">Peru</a></li>
-        <li><a href="#uruguay">Uruguay</a></li>
-      </ul>
-    </li>
-    <li><a href="#payout-types">Payout types</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -382,7 +365,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../payouts/payouts-api/variables.html">Variables</a>
+	<a href="../../payouts/payouts-api/error-codes.html">Error Codes</a>
 </li>
 
 	</ol>
@@ -390,310 +373,104 @@
 
             
 <div class="td-content">
-	<h1>Variables</h1>
-    <div class="lead">Find the list of variables and codes available for Payouts integration.</div>
+	<h1>API Error codes</h1>
+    <div class="lead">This article provides information about the error codes ypu may find when using the Payouts integration.</div>
 	       
-	<h2 id="document-types">Document Types</h2>
-<p>The following tables show the document types you must configure in the parameter <code>payee.document.type</code> according to the country.</p>
-<h3 id="argentina">Argentina</h3>
-<table>
+	<table>
 <thead>
 <tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CUIT</td>
-<td>Unique Tax Identification Code</td>
-<td>Companies</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">11</td>
-</tr>
-<tr>
-<td style="text-align:center">CUIL</td>
-<td>Unique Labor Identification Code</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">11</td>
-</tr>
-</tbody>
-</table>
-<h3 id="brazil">Brazil</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CPF</td>
-<td>Individuals Registration</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">11<sup>*</sup></td>
-</tr>
-<tr>
-<td style="text-align:center">CNPJ</td>
-<td>National Registry of Legal Entities</td>
-<td>Company</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">14<sup>*</sup></td>
-</tr>
-</tbody>
-</table>
-<p><sup>*</sup> <em>Validate verifier-digits</em></p>
-<h3 id="chile">Chile</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CI</td>
-<td>Identity Card</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">8 or 9</td>
-</tr>
-<tr>
-<td style="text-align:center">RUN</td>
-<td>Unique National Role</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">8 or 9</td>
-</tr>
-<tr>
-<td style="text-align:center">RUT</td>
-<td>Individuals Tax Role</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">8 or 9</td>
-</tr>
-</tbody>
-</table>
-<h3 id="colombia">Colombia</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CC</td>
-<td>Citizenship ID</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">Between 6 and 10</td>
-</tr>
-<tr>
-<td style="text-align:center">CE</td>
-<td>Immigration ID</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">Between 6 and 10</td>
-</tr>
-<tr>
-<td style="text-align:center">NIT</td>
-<td>Tax Identification Number</td>
-<td>Companies</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">Between 8 and 15</td>
-</tr>
-</tbody>
-</table>
-<!--### Costa Rica
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
-|:-:|---|---|:-:|:-:|
-| CI | Identity Card | Individuals | Numeric | 9 |
-
-### El Salvador
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
-|:-:|---|---|:-:|:-:|
-| DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
-<h3 id="mexico">Mexico</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CURP</td>
-<td>Unique Population Registry Key</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-<tr>
-<td style="text-align:center">RFC</td>
-<td>Federal Taxpayer Registry</td>
-<td>Individuals and Companies</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-<tr>
-<td style="text-align:center">IFE</td>
-<td>Federal Electoral Institute</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-<tr>
-<td style="text-align:center">PASSPORT</td>
-<td>International Travel Document</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-<tr>
-<td style="text-align:center">RESIDENCIA</td>
-<td>Document of foreigner residing in the country</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 8 and 18</td>
-</tr>
-</tbody>
-</table>
-<!--### Nicaragua
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
-|:-:|---|---|:-:|:-:|
-| CI | Identity card | Individuals |  | Between 8 and 18 |-->
-<h3 id="peru">Peru</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CE</td>
-<td>Immigration ID</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">9</td>
-</tr>
-<tr>
-<td style="text-align:center">DNI</td>
-<td>National Identity Document</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric<br><hr>Numeric or Alphanumeric</td>
-<td style="text-align:center">8<br><hr>9</td>
-</tr>
-<tr>
-<td style="text-align:center">PASSPORT</td>
-<td>International Travel Document</td>
-<td>Individuals</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Between 7 and 18</td>
-</tr>
-<tr>
-<td style="text-align:center">RUC</td>
-<td>Single Taxpayer Registry</td>
-<td>Individuals and Companies</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">11</td>
-</tr>
-</tbody>
-</table>
-<h3 id="uruguay">Uruguay</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Abbreviation</th>
-<th>Document name</th>
-<th>Individuals / Companies</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Length</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">CI</td>
-<td>Identity Card</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">Between 6 and 8</td>
-</tr>
-<tr>
-<td style="text-align:center">DE</td>
-<td></td>
-<td>Single</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">PASSPORT</td>
-<td>International Travel Document</td>
-<td>Individuals</td>
-<td style="text-align:center">Alphanumeric</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">RUT</td>
-<td>Single Tax Role</td>
-<td>Individuals</td>
-<td style="text-align:center">Numeric</td>
-<td style="text-align:center">12</td>
-</tr>
-</tbody>
-</table>
-<h2 id="payout-types">Payout types</h2>
-<p>The following tables show the Payout types you must configure in the parameter <code>type</code>.</p>
-<div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Type</th>
+<th>Error code</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><code>1</code></td>
-<td>Cash</td>
+<td><code>200</code></td>
+<td>Success</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>2</code></td>
-<td>Bank Transfer</td>
+<td><code>400</code></td>
+<td>Bad Request</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>3</code></td>
-<td>Wallet</td>
+<td><code>401</code></td>
+<td>Unauthorized</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>4</code></td>
-<td>Instant Bank Transfer (Only for 🇧🇷)</td>
+<td><code>409</code></td>
+<td>Conflict</td>
+</tr>
+<tr>
+<td><code>812</code></td>
+<td>Declined by validation for document</td>
+</tr>
+<tr>
+<td><code>813</code></td>
+<td>Declined by validation for account</td>
+</tr>
+<tr>
+<td><code>814</code></td>
+<td>Declined by validation for country</td>
+</tr>
+<tr>
+<td><code>815</code></td>
+<td>Declined by Compliance</td>
+</tr>
+<tr>
+<td><code>816</code></td>
+<td>Reference ID already used.<br>This error is not be displayed in the <a href="../../payouts/payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
+</tr>
+<tr>
+<td><code>901</code></td>
+<td>Bank account is closed</td>
+</tr>
+<tr>
+<td><code>902</code></td>
+<td>Invalid bank account</td>
+</tr>
+<tr>
+<td><code>903</code></td>
+<td>Invalid bank account type</td>
+</tr>
+<tr>
+<td><code>904</code></td>
+<td>Invalid bank branch</td>
+</tr>
+<tr>
+<td><code>905</code></td>
+<td>Monthly limit exceeded for user</td>
+</tr>
+<tr>
+<td><code>906</code></td>
+<td>Rejected by merchant&rsquo;s request</td>
+</tr>
+<tr>
+<td><code>907</code></td>
+<td>The bank account is unable to receive transfers</td>
+</tr>
+<tr>
+<td><code>908</code></td>
+<td>Invalid beneficiary document</td>
+</tr>
+<tr>
+<td><code>909</code></td>
+<td>Beneficiary name doesn&rsquo;t match bank details</td>
+</tr>
+<tr>
+<td><code>910</code></td>
+<td>PIX key invalid</td>
+</tr>
+<tr>
+<td><code>911</code></td>
+<td>Invalid state change requested</td>
+</tr>
+<tr>
+<td><code>912</code></td>
+<td>Insufficient Balance</td>
+</tr>
+<tr>
+<td><code>999</code></td>
+<td>Error</td>
 </tr>
 </tbody>
 </table>
