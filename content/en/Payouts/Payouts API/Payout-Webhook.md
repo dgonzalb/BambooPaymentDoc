@@ -22,6 +22,25 @@ The WebHook service is a REST Service that must process a request with the follo
 |**Method:** | POST |
 |**Response:** | HTTP Code |
 
+### Notification parameters
+
+| Parameter | Format | Description |
+|---|:-:|---|
+| `payoutId` | `integer` | Internal identification of the Payout. |
+| `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
+| `isoCountry` | `string` | ISO code of the country in the format `ISO 3166-2`. |
+| `created` | `date` | Date and time when the Payout was requested. |
+| `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
+| `status` | `integer` | Internal code of the current status of the Payout. |
+| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `errorCode` | `string` | Internal code of the error for the declined Payout.Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
+| `errorDescription` | `string` | Error description for declined Payouts. |
+| `amount` | `object` | Value and currency requested in the Payout. |
+| `localAmount` | `object` | Value and currency requested in the Payout in local currency. |
+| `exchangeRate` | `numeric` | Conversion value used in the Payout. |
+| `payee` | `object` | Information of the recipient or beneficiary of the Payout. |
+
+
 ### Notification example
 ```json
 {
@@ -56,21 +75,3 @@ The WebHook service is a REST Service that must process a request with the follo
   }
 }
 ```
-#### Notification parameters
-
-| Parameter | Format | Description |
-|---|:-:|---|
-| `payoutId` | `integer` | Internal identification of the Payout. |
-| `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
-| `isoCountry` | `string` | ISO code of the country in the format `ISO 3166-2`. |
-| `created` | `date` | Date and time when the Payout was requested. |
-| `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
-| `status` | `integer` | Internal code of the current status of the Payout. |
-| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
-| `errorCode` | `string` | Internal code of the error for the declined Payout.Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
-| `errorDescription` | `string` | Error description for declined Payouts. |
-| `amount` | `object` | Value and currency requested in the Payout. |
-| `localAmount` | `object` | Value and currency requested in the Payout in local currency. |
-| `exchangeRate` | `numeric` | Conversion value used in the Payout. |
-| `payee` | `object` | Information of the recipient or beneficiary of the Payout. |
-
