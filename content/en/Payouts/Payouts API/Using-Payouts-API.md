@@ -111,7 +111,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `email` | `string` | No | Email address of the Payee. |  
 | `payee` → `phone` | `string` | No | Phone number of the Payee. | 
 | `payee` → `address` | `string` | No | Address of the Payee. | 
-| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
+| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
 | `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
