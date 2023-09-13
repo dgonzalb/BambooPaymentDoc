@@ -28,7 +28,7 @@
 &lt;h2 id=&#34;banking-connections&#34;&gt;Banking Connections&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;Banking Connection&lt;/em&gt; technology allows us to send money to a payee regardless of the selected payment method.&lt;/p&gt;
 &lt;h2 id=&#34;fx-service&#34;&gt;FX Service&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt; or &lt;em&gt;FX&lt;/em&gt; refers to the current rate to convert one country&amp;rsquo;s currency to another. This value is updated according to destination country regulations.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Foreign Exchange&lt;/em&gt; or &lt;em&gt;FX&lt;/em&gt; refers to the current rate to convert one country&amp;rsquo;s currency to another. We update this value according to destination country regulations.&lt;/p&gt;
 &lt;h2 id=&#34;payee&#34;&gt;Payee&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;Payee&lt;/em&gt; is a third party who will receive the money result of your Payout request. The information required for a &lt;em&gt;Payee&lt;/em&gt; is their name, document, phone, e-mail address, and bank account.&lt;/p&gt;
 &lt;h2 id=&#34;payout&#34;&gt;Payout&lt;/h2&gt;
@@ -65,7 +65,7 @@
 &lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;: This status indicates that the payout and the payee have met all the validations required and it is about to be sent to the &lt;em&gt;Banking Connections&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the &lt;em&gt;Banking Connections&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Processing&lt;/strong&gt;: The &lt;em&gt;Banking Connection&lt;/em&gt; has received the payout; the time before moving to &lt;em&gt;&lt;strong&gt;Paid&lt;/strong&gt;&lt;/em&gt; status depends on the country and selected payment method. &lt;a href=&#34;../overview.html#considerations&#34;&gt;Click here to learn more&lt;/a&gt;.&lt;/p&gt;
@@ -99,7 +99,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;: This amount corresponds to your account&amp;rsquo;s total amount of money.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee) and the chosen &lt;a href=&#34;#balance-models&#34;&gt;model&lt;/a&gt;. Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Available Balance&lt;/strong&gt;: correspond to the amount of money yo have to process more Payouts and ir is the difference between the &lt;em&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;&lt;/em&gt; and the &lt;em&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Available Balance&lt;/strong&gt;: This corresponds to the amount of money you have to process more Payouts, which is the difference between the &lt;em&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/em&gt; Balance.&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -113,7 +113,7 @@
 &lt;p&gt;The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Simplified Model&lt;/strong&gt;: a single balance for Payouts.&lt;br&gt;
-In this case, the payout amount and the fee charged are deducted from your global balance.&lt;/li&gt;
+In this case, Bamboo deducts the payout amount and the fee charged from your global balance..&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts3_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
