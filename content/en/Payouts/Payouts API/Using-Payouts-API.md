@@ -26,9 +26,9 @@ Build the hash using the parameters `country`, `amount`, `currency`, `reference`
 ```javascript
 var json = JSON.parse(request.data);
 let signdata = {Country:json.country, Amount: json.amount,Currency:json.currency, Reference:json.reference, Type: json.type};
-var data = JSON.`stringify(signdata);
+var data = JSON.stringify(signdata);
 var hexHash = CryptoJS.HmacSHA256(data, secret-key);
-var hash = hexHash.to`string(CryptoJS.enc.Hex);
+var hash = hexHash.toString(CryptoJS.enc.Hex);
 ```
 
 ## API methods
