@@ -15,7 +15,7 @@ You can see the following balances in the Payouts console:
 
 * **Total Balance**: This amount corresponds to your account's total amount of money.
 * **Processing Balance**: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee) and the chosen [model]({{< ref "#balance-models" >}}). Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.
-* **Available Balance**: correspond to the amount of money yo have to process more Payouts and ir is the difference between the ***Total Balance*** and the ***Processing Balance***.
+* **Available Balance**: This corresponds to the amount of money you have to process more Payouts, which is the difference between the _**Total**_ and _**Processing**_ Balance.
 
 {{% alert title="Info" color="info"%}}
 If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.
@@ -25,7 +25,7 @@ If the payee assumes the fee, the Payouts feature does not add the fee to any ba
 The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:
 
 * **Simplified Model**: a single balance for Payouts.<br>
-In this case, the payout amount and the fee charged are deducted from your global balance.
+In this case, Bamboo deducts the payout amount and the fee charged from your global balance..
 
 ![](/assets/Payouts/Payouts3_en.png)
 
@@ -34,7 +34,7 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 
 ![](/assets/Payouts/Payouts4_en.png)
 
-## Ejemplos
+## Examples
 Let's make an example to let you understand the concepts of type and model behind the Payout balances.
 
 Let's assume that you have the following information:

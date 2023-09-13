@@ -8,8 +8,8 @@ Description: >
 weight: 20
 ---
 
-To navigate the Payout Balance report, open your Merchant console and expand ***Payout*** section in the left menu.
+To navigate the Payout Balance report, open your Merchant console and expand the ***Payout*** section in the left menu.
 
 ![PrintScreen](/assets/Payouts/Payouts8_en.png)
 
-The Payouts console has two options: _**Payout Reports**_, and _**Payouts Balance**_; find the related information below.
+The Payouts console has two options: _**Payout Reports**_ and _**Payouts Balance**_; find the related information below.

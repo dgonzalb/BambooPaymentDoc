@@ -20,7 +20,7 @@ All methods used in Payouts API require the following authentication headers.
 | `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using the _HmacSHA256_ algorithm. This header is mandatory only for Payout creation. |
 
 ### Signing the message
-Build the hash using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. The `secret-key` and `MerchantPrivateKey` are provided to you when sing the onboarding contract with Bamboo.
+Build the hash using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. When signing the onboarding contract with Bamboo, the `secret-key` and `MerchantPrivateKey` are provided to you.
 
 #### Signature sample code
 ```javascript
@@ -42,7 +42,7 @@ The Payouts API offers three primary methods that you can use when requesting Pa
 This method lets you get the list of available banks in a country.
 
 #### Request URL
-Use any to the following URLS according to your needs.
+You must invoke a **GET** request to the following URLs according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
@@ -53,10 +53,10 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 
 | Parameter | Format | Size | Description |
 |---|:-:|:-:|---|
-| `id` | Integer |  | Internal identification of the bank. |
-| `countryIsoCode` | String | 2 | Country to which the bank belongs.  |
-| `bankCode` | String | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
-| `bankName` | String |  | Name of the bank. |
+| `id` | `integer` | - | Internal identification of the bank. |
+| `countryIsoCode` | `string` | 2 | Country to which the bank belongs.  |
+| `bankCode` | `string` | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
+| `bankName` | `string` | - | Name of the bank. |
 
 #### Response example
 ```json
@@ -89,7 +89,7 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 This method allows you to request one or more Payouts using the funds settled in your account.
 
 #### Request URL
-Use any of the following URLS according to your needs.
+You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
@@ -99,24 +99,24 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `country` | String(2) | Yes | ISO code of the country in format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
-| `amount` | Integer | Yes | Amount of the payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
-| `currency` | String(3) | Yes | ISO code of the currency.<br>_Only USD is available_. |
-| `reason` | String | No | Description of the payment. |
-| `reference` | String | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
-| `type` | Integer | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
-| `notification_Url` | String | No | Callback to notify the result of the payout |
-| `payee` → `FirstName` | String | Yes | First Name of the Payee. | 
-| `payee` → `lastName `| String | Yes | Last Name of the Payee. | 
-| `payee` → `email` | String | No | Email address of the Payee. |  
-| `payee` → `phone` | String | No | Phone number of the Payee. | 
-| `payee` → `address` | String | No | Address of the Payee. | 
-| `payee` → `document` → `type` | String | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#id-types). |  
-| `payee` → `document` → `number` | String | Yes | Document number of the Payee. | 
-| `payee` → `bankaccount` → `number` | String | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
-| `payee` → `bankaccount` → `type` | Integer | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
-| `payee` → `bankaccount` → `codebank` | String |  Yes<sup>*</sup> | Bank code of the Payee. | 
-| `payee` → `bankaccount` → `branch` | String | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
+| `country` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
+| `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
+| `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
+| `reason` | `string` | No | Description of the payment. |
+| `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
+| `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
+| `notification_Url` | `string` | No | Callback to notify the result of the Payout. |
+| `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
+| `payee` → `lastName `| `string` | Yes | Last Name of the Payee. | 
+| `payee` → `email` | `string` | No | Email address of the Payee. |  
+| `payee` → `phone` | `string` | No | Phone number of the Payee. | 
+| `payee` → `address` | `string` | No | Address of the Payee. | 
+| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#document-types). |  
+| `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
+| `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
+| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee. | 
+| `payee` → `bankaccount` → `branch` | `string` | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
 <sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
@@ -154,7 +154,7 @@ Refer to the corresponding tab according to the payee's country.
       "codeBank": "7"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -185,7 +185,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
       "number": "54562271779"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 <br>
@@ -217,7 +217,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "branch": "1234"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -251,7 +251,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "codeBank": "1"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -284,7 +284,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "codeBank": "1007"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 {{< /tab >}}
@@ -316,7 +316,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "codeBank": "2"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -349,7 +349,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "codeBank": "2"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -383,7 +383,7 @@ When using _Bank transfer_ you need to send the request as follows:
       "branch": "1"
     }
   },
-  "notification_Url": "string"
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
 
@@ -415,7 +415,7 @@ Where:
 | `status` | Internal code of the current status of the Payout. |
 | `statusDescription` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
 | `reference` | Unique identifier of the Payout you defined when you requested the Payout. |
-| `errors` | Errors that may appear  |
+| `errors` | Errors that may appear. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 | `statusCode` | HTTP code of the response. |
 
 * `Unauthorized`: HttpCode `401`.<br>
@@ -430,7 +430,7 @@ Authorization error.
 <br>
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-The validation of the message failed, and the payout is **Declined**.
+The validation of the message failed, and the Payout is **Declined**.
 
 **Response body**
 ```json
@@ -448,7 +448,7 @@ The validation of the message failed, and the payout is **Declined**.
 <br>
 
 * `Conflict` - `Declined`: HttpCode `HttpCode 409`.<br>
-The validation of the message was successful, but the payout is **Declined** due to business rules.
+The validation of the message was successful, but the Payout is **Declined** due to business rules.
 
 **Response body**
 ```json
@@ -469,10 +469,10 @@ The validation of the message was successful, but the payout is **Declined** due
 ```
 
 ### Obtaining a Payout
-This method allows you to retrieve the information of a Payout. You can retrieve the payouts by using either the generated identification (ID) or the reference you provided when requesting the Payout.
+This method allows you to retrieve the information of a Payout. You can retrieve the Payouts using the generated identification (ID) or the reference you provided when requesting the Payout.
 
 #### Request URL
-Use any of the following URLS according to your needs.
+You must invoke a **GET** request to the following URLs according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
@@ -486,19 +486,19 @@ To get the payout, include the following endpoints according to your needs.
 
 | Parameter | Format | Description |
 |---|:-:|---|
-| `payoutId` | Integer | Internal identification of the payout. |
-| `reference` | String | Unique identifier of the Payout you defined when you requested the Payout. |
-| `isoCountry` | String | ISO code of the country in format `ISO 3166-2`. |
-| `created` | Date Time | Date when the Payout was requested. |
-| `lastUpdate` | Date Time | Date of the last update of the Payout was. |
-| `status` | Integer | Internal code of the current status of the Payout. |
-| `statusDescription` | String | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
-| `errorCode` | String | Internal code of the error for the declined Payout. |
-| `errorDescription` | String | Error description for declined Payouts. |
-| `amount` | Object | Value and currency requested in the payout. |
-| `localAmount` | Object | Value and currency requested in the payout in local currency. |
-| `exchangeRate` | Numeric | Conversion value used in the Payout. |
-| `payee` | Object | Information of the recipient or beneficiary of the Payout.  |
+| `payoutId` | `integer` | Internal identification of the Payout. |
+| `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
+| `isoCountry` | `string` | ISO code of the country in format `ISO 3166-2`. |
+| `created` | `date` | Date and time when the Payout was requested. |
+| `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
+| `status` | `integer` | Internal code of the current status of the Payout. |
+| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `errorCode` | `string` | Internal code of the error for the declined Payout.Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
+| `errorDescription` | `string` | Error description for declined Payouts. |
+| `amount` | `object` | Value and currency requested in the Payout. |
+| `localAmount` | `object` | Value and currency requested in the Payout in local currency. |
+| `exchangeRate` | `numeric` | Conversion value used in the Payout. |
+| `payee` | `object` | Information of the recipient or beneficiary of the Payout.  |
 
 
 #### Response example
