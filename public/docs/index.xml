@@ -2493,13 +2493,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;risk-index-information-local-credit-cards&#34;&gt;Risk index information (local credit cards)&lt;/h2&gt;
 &lt;p&gt;The acquirer processes the transactions and establishes a &lt;em&gt;&lt;strong&gt;risk index&lt;/strong&gt;&lt;/em&gt; associated with transactions with &lt;strong&gt;local credit cards&lt;/strong&gt;. This information must be processed by the merchant to ensure that the transaction is legitimate and to be able to process the order or cancel it if necessary.&lt;/p&gt;
-&lt;p&gt;The risk index will be reported as an error code in the response (within the Transaction object), even though the status is &lt;code&gt;Approved&lt;/code&gt;, the &lt;code&gt;ErrorCode&lt;/code&gt; field must be validated, which may have one of the following values:&lt;/p&gt;
+&lt;p&gt;The acquirer reports the risk index as an error code in the response (within the Transaction object); even though the status is &lt;code&gt;Approved&lt;/code&gt;, you must validate the &lt;code&gt;ErrorCode&lt;/code&gt; field, which may have one of the following values:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;RSK01&lt;/strong&gt; - The transaction was marked with a low risk of fraud, it can be processed normally.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RSK02&lt;/strong&gt; - The transaction was marked with a medium risk of fraud, the merchant will decide the actions to take in this case.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RSK03&lt;/strong&gt; - The transaction was marked with a high risk of fraud, it is suggested to verify its data, including, for example, direct contact with the end customer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSK01&lt;/strong&gt;: The acquirer marked the transaction with a low risk of fraud. You can process it normally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSK02&lt;/strong&gt;: The acquirer marked the transaction with a medium risk of fraud. You decide the actions to take in this case.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSK03&lt;/strong&gt;: The acquirer marked the transaction with a high risk of fraud. We suggest to verify the data, including direct contact with the end customer.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It will be the responsibility of the merchant to process and manage the risk responses, the gateway will only report the index established by the acquirer.&lt;/p&gt;
+&lt;p&gt;You are responsible for processing and managing the risk responses, and the gateway will only report the index established by the acquirer.&lt;/p&gt;
 
       </description>
     </item>

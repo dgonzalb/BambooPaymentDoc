@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/payment-methods/paraguay/py-cards.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-13T16:17:15-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-13T16:47:23-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Credit and Debit cards">
 <meta itemprop="description" content="Learn how to integrate your solution to process credit or debit card payments.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-13T16:17:15-05:00" />
-<meta itemprop="wordCount" content="780">
+<meta itemprop="dateModified" content="2023-09-13T16:47:23-05:00" />
+<meta itemprop="wordCount" content="771">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Credit and Debit cards"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process credit or debit card payments.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.834f441441f01b7193240393798815cd36170ae76a7c34bb8dc2860ee224a09e3b3ad93e5c6cddd81cb80398faeb11198039c7842fa0027f1fe7beee3256d1ed.json"
+  data-offline-search-index-json-src="../../../offline-search-index.09bc921bb08d281346133d9f332578203d80f331bc5b4e57c102dc29687c08c19d5908d3e537de030c1f63efe99d53763ee0aafef667a22c9dc928c0a79624c1.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -1200,13 +1200,13 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h2 id="risk-index-information-local-credit-cards">Risk index information (local credit cards)</h2>
 <p>The acquirer processes the transactions and establishes a <em><strong>risk index</strong></em> associated with transactions with <strong>local credit cards</strong>. This information must be processed by the merchant to ensure that the transaction is legitimate and to be able to process the order or cancel it if necessary.</p>
-<p>The risk index will be reported as an error code in the response (within the Transaction object), even though the status is <code>Approved</code>, the <code>ErrorCode</code> field must be validated, which may have one of the following values:</p>
+<p>The acquirer reports the risk index as an error code in the response (within the Transaction object); even though the status is <code>Approved</code>, you must validate the <code>ErrorCode</code> field, which may have one of the following values:</p>
 <ul>
-<li><strong>RSK01</strong> - The transaction was marked with a low risk of fraud, it can be processed normally.</li>
-<li><strong>RSK02</strong> - The transaction was marked with a medium risk of fraud, the merchant will decide the actions to take in this case.</li>
-<li><strong>RSK03</strong> - The transaction was marked with a high risk of fraud, it is suggested to verify its data, including, for example, direct contact with the end customer.</li>
+<li><strong>RSK01</strong>: The acquirer marked the transaction with a low risk of fraud. You can process it normally.</li>
+<li><strong>RSK02</strong>: The acquirer marked the transaction with a medium risk of fraud. You decide the actions to take in this case.</li>
+<li><strong>RSK03</strong>: The acquirer marked the transaction with a high risk of fraud. We suggest to verify the data, including direct contact with the end customer.</li>
 </ul>
-<p>It will be the responsibility of the merchant to process and manage the risk responses, the gateway will only report the index established by the acquirer.</p>
+<p>You are responsible for processing and managing the risk responses, and the gateway will only report the index established by the acquirer.</p>
 
 	
 	
@@ -1217,7 +1217,7 @@
 
 September 13, 2023: 
 
- <i>Payment method information for Paraguay (a973fa9)</i>
+ <i>Payment method information for Paraguay (324b28e)</i>
   </div>
 </div>
 
