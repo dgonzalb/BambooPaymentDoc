@@ -35,7 +35,7 @@ The WebHook service is a REST Service that must process a request with the follo
 | `created` | `date` | Date and time when the Payout was requested. |
 | `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
 | `status` | `integer` | Internal code of the current status of the Payout. |
-| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
+| `statusDescription` | `string` | Final status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
 | `errorCode` | `string` | Internal code of the error for the declined Payout.Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 | `errorDescription` | `string` | Error description for declined Payouts. |
 | `amount` | `object` | Value and currency requested in the Payout. |
