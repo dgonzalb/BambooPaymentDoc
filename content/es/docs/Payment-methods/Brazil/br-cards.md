@@ -13,7 +13,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -22,10 +22,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente.<br>Refer to [states of residence](/es/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente.<br>Consulte [estados de residencia](/es/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
 | `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. Do not include hyphens. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. No utilice guiones. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -217,7 +217,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
 | Marca | PAN | CVV | Fecha de Expiración |
 |---|---|---|---|

@@ -49,7 +49,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
 
 {{% alert title="Considerations" color="info"%}}
 * Colombian Pesos don't support decimal amounts, so all received values will be rounded.
@@ -88,13 +88,13 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters}
-In the response, you will find the following parameters:
+En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the coupon to be presented by your customer in the physical network. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference returned by the acquirer to identify the order generated. |
-| `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
+| `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
@@ -254,7 +254,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
@@ -267,7 +267,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -301,7 +301,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters}
-The following example shows the response to the request.
+El siguiente ejemplo muestra la respuesta al request.
 
 ```json
 {
@@ -454,7 +454,7 @@ In the field `MetadataOut` inside the purchase `Response` object, the QR code is
 
 <br>
 
-Result:
+Resultado:
 
 <img src="/assets/QRNequi.png" width="40%" alt="PrintScreen"/>
 
@@ -474,7 +474,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**67**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**67**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
@@ -487,7 +487,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json

@@ -8,23 +8,23 @@ weight: 10
 tags: ["subtopic"]
 ---
 
-You can create the purchase using [API](#card-payments-using-api-flow) or [Redirection](#card-payments-using-redirection-flow) flow.
+Puede crear la compra utilizando el flujo [API](#card-payments-using-api-flow) o [Redirect](#card-payments-using-redirection-flow).
 
-## Considerations 
-* Debit cards using the API flow is available for full capture (Purchase operation).
-* The CVV is mandatory for debit cards.
-* The maximum time to confirm a transaction is seven calendar days.
-* Chile does not support decimal amounts, so all received amount values will be rounded.
+## Consideraciones {#considerations}
+* Las tarjetas de débito que utilizan el flujo API están disponibles para la captura completa (operación de compra).
+* El CVV es obligatorio para las tarjetas de débito.
+* El tiempo máximo para confirmar una transacción es de siete días calendario.
+* Chile no soporta montos decimales, por lo que todos los valores de monto recibidos serán redondeados.
 
-## Card payments using API flow
-Using this flow, you can offer the possibility to receive payments using cards without the intervention of the payer.
+## Pagos con tarjeta mediante flujo API {#card-payments-using-api-flow}
+Utilizando este flujo, puede ofrecer la posibilidad de recibir pagos con tarjetas sin la intervención del pagador.
 
 ### Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
@@ -198,17 +198,17 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Card payments using Redirection flow
-Using this flow, the payer must be redirected to the _**webpay**_ page to complete the payment according to the selected payment method (debit, credit or prepaid card).
+## Pagos con tarjeta mediante flujo Redirect {#card-payments-using-redirection-flow}
+Utilizando este flujo, el pagador debe ser redirigido a la página _**webpay**_ para completar el pago según el medio de pago seleccionado (tarjeta de débito, crédito o prepago).
 
-The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
+El estado de las compras con tarjeta mediante el flujo Redirect permanecerá _Pending_ hasta que el cliente complete el pago. Haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para obtener más información sobre las compras con redirect.
 
-### Parámetros del Request {#request-parameters}
+### Parámetros del Request {#request-parameters-1}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**112**_.<br>_Redirection payment is only available for Visa and MasterCard cards_ |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**112**_.<br>_Los pagos por redirección solo están disponibles para tarjetas Visa y MasterCard_ |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -225,17 +225,17 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
-| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
+| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
 | `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 
-* The `Redirection` object and its parameter are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
+* The `Redirection` object and its parameters are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
 
 {{% /alert %}}
 
-#### Ejemplo del Request {#request-example}
+#### Ejemplo del Request {#request-example-1}
 ```json
 {
     "PaymentMediaId": 112,
@@ -261,14 +261,14 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters}
-We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the _**webpay**_ page.
+### Parámetros del Response {#response-parameters-1}
+Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago en la página de _**webpay**_.
 
 ![PrintScreen](/assets/WebPay.png)
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Ejemplo del Response {#response-example}
+#### Ejemplo del Response {#response-example-1}
 
 ```json
 {
@@ -457,17 +457,17 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra. These cards apply for both API and redirection flow.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra. These cards apply for both API and redirection flow.
 
 ### Para compras aprobadas {#for-approved-purchases}
 
 | Marca | PAN | CVV | Fecha de Expiración | Tipo |
 |---|---|---|---|---|
-| Amex | `370000000002032` | `1234` | `10/29` | Credit |
-| Visa | `4051885600446623` | `123` | `10/29` | Credit |
-| Visa | `4051886000056590` | `123` | `10/29` | Prepaid |
-| Redcompra | `4051884239937763` | `123` | `10/29` | Debit |
-| Redcompra | `4511346660037060` | `123` | `10/29` | Debit |
+| Amex | `370000000002032` | `1234` | `10/29` | Crédito |
+| Visa | `4051885600446623` | `123` | `10/29` | Crédito |
+| Visa | `4051886000056590` | `123` | `10/29` | Prepago |
+| Redcompra | `4051884239937763` | `123` | `10/29` | Débito |
+| Redcompra | `4511346660037060` | `123` | `10/29` | Débito |
 
 {{% alert title="Info note" color="info"%}}
 If the RUT and password are requested, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
@@ -477,6 +477,6 @@ If the RUT and password are requested, please use a valid RUT (por ejemplo **11.
 
 | Marca | PAN | CVV | Fecha de Expiración | Tipo |
 |---|---|---|---|---|
-| MasterCard | `5186059559590568` | `123` | `10/29` | Credit |
-| Redcompra | `5186008541233829` | `123` | `10/29` | Debit |
-| MasterCard | `5186174110629480` | `123` | `10/29` | Prepaid |
+| MasterCard | `5186059559590568` | `123` | `10/29` | Crédito |
+| Redcompra | `5186008541233829` | `123` | `10/29` | Débito |
+| MasterCard | `5186174110629480` | `123` | `10/29` | Prepago |

@@ -113,7 +113,7 @@ Consider the following parameters when invoking a refund request.
 | `Response` → `Amount` | `number` | Refund amount as sent in the request. |
 | `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
 | `Response` → `StatusId` | `number` | Identifier of the refund status. |
-| `Response` → `Status` | `string` | Description of the refund status. |
+| `Response` → `Status` | `string` | Descripción of the refund status. |
 | `Response` → `AuthorizationCode` | `string` | Response code returned by the acquirer of the transaction. |
 | `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction if the refund is rejected. |
 | `Response` → `Description` | `string` | Error description returned by the acquirer of the transaction if the refund is rejected. |

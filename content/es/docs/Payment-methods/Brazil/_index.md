@@ -1,35 +1,35 @@
 ---
-title: "Brazil"
-linkTitle: "Brazil"
+title: "Brasil"
+linkTitle: "Brasil"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _Brazil_ is the largest economy in Latin America. Digital technology adoption has ballooned in recent years, primarily focused on online commerce, payments, and banking.
+  _Brasil_ es la mayor economía de América Latina. La adopción de la tecnología digital se ha disparado en los últimos años, centrándose principalmente en comercio electrónico, pagos y banca en línea.
 weight: 20
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to consider when processing in _Brazil_.
+Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Brasil_.
 
 ## Medios de pago {#payment-methods}
 
 | | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /> | 1 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="master" style="" /> | 2 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="amex" style="" /> | 3 | American Express | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" alt="amex" style="" /> | 12 | Diners | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/PIX_BankTransfer.png" alt="pix" style="" /> | 31 | PIX | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | BankTransfer | API
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" alt="boleto" style="" /> | 66 | Boleto | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | PhysicalNetwork | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" alt="amex" style="" /> | 62 | Hipercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" alt="amex" style="" /> | 63 | Elo | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" alt="amex" style="" /> | 64 | Aura | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Credit & Tarjeta Débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="" /> | 1 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="master" style="" /> | 2 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="amex" style="" /> | 3 | American Express | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" alt="amex" style="" /> | 12 | Diners | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/PIX_BankTransfer.png" alt="pix" style="" /> | 31 | PIX | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Transferencia Bancaria | API
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" alt="amex" style="" /> | 62 | Hipercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" alt="amex" style="" /> | 63 | Elo | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" alt="amex" style="" /> | 64 | Aura | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" alt="boleto" style="" /> | 66 | Boleto | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API |
 
 ## Monedas {#currencies}
 
-| Código | Descripción    | Modo                     |
-|------|----------------|--------------------------|
-| USD  | Dólar estadounidense      | CrossBorder              |
-| BRL  | Brazilian Real | Doméstico y CrossBorder |
+| Código | Descripción          | Modo                     |
+|--------|----------------------|--------------------------|
+| USD    | Dólar estadounidense | CrossBorder              |
+| BRL    | Real brasileño       | Doméstico y CrossBorder |
 
 ## Límites de montos {#amount-limits}
 
@@ -39,18 +39,18 @@ This section shows the available payment methods, currencies, and related inform
 | **Máximo** | BRL 99.999,99 | BRL 99.999,99 | BRL 99.999,99 |
 
 ## Tipos de documentos {#document-types}
-La siguiente tabla describe los tipos de documentos válidos para Argentina:
+La siguiente tabla describe los tipos de documentos válidos para Brasil:
 
-| Código | Nombre del documento                          | Abreviación |
-|:----:|----------------------------------------|--------------|
-| 24   | Cadastro de Pessoas Físicas            | CPF          |
-| 25   | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
+| Código | Nombre del documento                   | Abreviación |
+|:------:|----------------------------------------|--------------|
+| 24     | Cadastro de Pessoas Físicas            | CPF          |
+| 25     | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
 
-## Estado del cliente of residence
+## Estado de residencia del cliente {#customers-state-of-residence}
 
 <div id="shortTable"></div>
 
-| State | Abreviación |
+| Estado | Abreviación |
 |---|:-:|
 | Acre | `AC` |
 | Alagoas | `AL` |

@@ -8,7 +8,7 @@ Description: >
 weight: 40
 ---
 
-| Error code | Description |
+| Error code | Descripción |
 |---|---|
 | `200` | Success. |
 | `400` | Bad Request. |

@@ -51,7 +51,7 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 
 #### Response parameters
 
-| Parameter | Format | Size | Description |
+| Parameter | Format | Size | Descripción |
 |---|:-:|:-:|---|
 | `id` | `integer` | - | Internal identification of the bank. |
 | `countryIsoCode` | `string` | 2 | Country to which the bank belongs.  |
@@ -97,12 +97,12 @@ You must invoke a **POST** request to the following URLs according to your needs
 #### Request parameters
 The following table shows the mandatory and optional parameters to create a Payout for all the countries.
 
-| Field | Type | Mandatory? | Description |
+| Field | Type | Mandatory? | Descripción |
 |---|---|:-:|---|---|
 | `country` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
 | `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
 | `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
-| `reason` | `string` | No | Description of the payment. |
+| `reason` | `string` | No | Descripción of the payment. |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
 | `notification_Url` | `string` | No | Callback to notify the result of the Payout. |
@@ -409,7 +409,7 @@ Message received correctly, at this point the Payout starts to be processed
 <br>
 Where:
 
-| Field | Description |
+| Field | Descripción |
 |---|---|
 | `payoutId` | Internal identifier of the Payout. |
 | `status` | Internal code of the current status of the Payout. |
@@ -484,7 +484,7 @@ To get the payout, include the following endpoints according to your needs.
 
 #### Response parameters
 
-| Parameter | Format | Description |
+| Parameter | Format | Descripción |
 |---|:-:|---|
 | `payoutId` | `integer` | Internal identification of the Payout. |
 | `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |

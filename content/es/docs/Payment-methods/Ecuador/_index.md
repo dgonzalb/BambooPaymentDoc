@@ -8,7 +8,7 @@ weight: 60
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to consider when processing in _Ecuador_.
+Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Ecuador_.
 
 ## Medios de pago {#payment-methods}
 

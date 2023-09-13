@@ -13,7 +13,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -48,7 +48,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
 ### Para compras aprobadas {#for-approved-purchases}
 

@@ -226,12 +226,12 @@ You need to include specific fields for this payment method to work correctly. C
 | `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
 | `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 
-* The `Redirection` object and its parameter are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
+* The `Redirection` object and its parameters are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
 
 {{% /alert %}}
 

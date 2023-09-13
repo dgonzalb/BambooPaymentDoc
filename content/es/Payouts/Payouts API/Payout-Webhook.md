@@ -24,7 +24,7 @@ The WebHook service is a REST Service that must process a request with the follo
 
 ### Notification parameters
 
-| Parameter | Format | Description |
+| Parameter | Format | Descripción |
 |---|:-:|---|
 | `payoutId` | `integer` | Internal identification of the Payout. |
 | `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |

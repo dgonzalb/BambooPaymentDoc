@@ -16,7 +16,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**111**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**111**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -32,7 +32,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
-| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser tambiñen estática y configurada por el equipo de soporte. |
+| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
 | `AntifraudData` → `AntifraudFingerprintId` | `string` | Sí | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
 | `CustomerIP` | `string` | Sí | IP of to the customer connected to the commerce website. |
 
@@ -72,7 +72,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ## Parámetros del Response {#response-parameters}
-We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the card capture.
+Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago on the card capture.
 
 ![PrintScreen](/assets/OpenPayCards.png)
 
@@ -219,7 +219,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra. These cards apply for both API and redirection flow.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra. These cards apply for both API and redirection flow.
 
 | Marca | PAN | CVV | Fecha de Expiración |
 |---|---|---|---|

@@ -3,12 +3,12 @@ title: "Chile"
 linkTitle: "Chile"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _**Chile**_ has a highly globalized domestic market with several Free Trade Agreements, including the _United States_ and _China_. Purchasing power is one of the highest in the region, and the increased adoption of local credit and debit cards enables eCommerce merchants to gain traction quickly.
+  _**Chile**_ tiene un mercado nacional muy globalizado con varios acuerdos de libre comercio, incluidos los de _Estados Unidos_ y _China_. El poder adquisitivo es uno de los más altos de la región, y la creciente adopción de tarjetas de crédito y débito locales permite a los comericos de comercio electrónico ganar tracción rápidamente.
 weight: 40
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to consider when processing in _Chile_.
+Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Chile_.
 
 ## Medios de pago {#payment-methods}
 
@@ -17,29 +17,29 @@ This section shows the available payment methods, currencies, and related inform
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  style="" /> | 1 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png"  style="" /> | 2 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png"  style="" /> | 3 | American Express | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png"  style="" />| 106 | Khipu | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Bank Transfer | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png"  style="" />| 106 | Khipu | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png"  style="" />| 107 | Klap Efectivo | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  style="" /> | 112 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta Débito | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png"  style="" /> | 112 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Tarjeta Débito | Redirect |
 
 ## Monedas {#currencies}
 
-| Código | Description  | Mode                     |
-|------|--------------|--------------------------|
-| USD  | Dólar estadounidense    | CrossBorder              |
-| CLP  | Chilean peso | Doméstico y CrossBorder |
+| Código | Descripción          | Modo                    |
+|--------|----------------------|-------------------------|
+| USD    | Dólar estadounidense | CrossBorder             |
+| CLP    | Peso chileno         | Doméstico y CrossBorder |
 
 ## Límites de montos {#amount-limits}
 
-|  | Tarjetas | Efectivo | Bank transfer |
+|  | Tarjetas | Efectivo | Transferencia Bancaria |
 |---|:---:|:---:|:---:|
 | **Mínimo**  | CLP 50 | CLP 50 | CLP 50 |
 | **Máximo** | CLP 99.999.999 | CLP 99.999.999 | CLP 50.000 |
 
 ## Tipos de documentos {#document-types}
-La siguiente tabla describe los tipos de documentos válidos para Argentina:
+La siguiente tabla describe los tipos de documentos válidos para Chile:
 
-| Código | Nombre del documento        | Abreviación |
-|:----:|----------------------|--------------|
-| 20   | Rol Único Tributario | DNI          |
-| 21   | Cédula de Identidad  | CI           |
+| Código | Nombre del documento | Abreviación |
+|:------:|----------------------|-------------|
+| 20     | Rol Único Tributario | DNI         |
+| 21     | Cédula de Identidad  | CI          |

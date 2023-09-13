@@ -13,7 +13,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -286,17 +286,17 @@ This format means it must start with the number **5**; the second number must be
 
 | Operation | Termination | Behavior  |
 |-----------|:-----------:|-----------|
-| Purchase | `0001` | Result: OK <br> Approved. |
-| Purchase | `0010` | Result: OK <br> Approved. |
-| Purchase | `0011` | Result: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Purchase | `0012` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase |
-| Purchase | `0013` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Purchase | `0002` | Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| Purchase | `0003` | Result: Rejected <br> Error: TR010 <br> Invalid identity document. |
-| Purchase | `0004` | Result: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Purchase | `0005` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase. |
-| Cancellation | `0001` | Result: Cancel OK. |
-| Cancellation | `0010` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Cancellation not made. |
+| Purchase | `0001` | Resultado: OK <br> Approved. |
+| Purchase | `0010` | Resultado: OK <br> Approved. |
+| Purchase | `0011` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
+| Purchase | `0012` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase |
+| Purchase | `0013` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
+| Purchase | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
+| Purchase | `0003` | Resultado: Rejected <br> Error: TR010 <br> Invalid identity document. |
+| Purchase | `0004` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
+| Purchase | `0005` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase. |
+| Cancellation | `0001` | Resultado: Cancel OK. |
+| Cancellation | `0010` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Cancellation not made. |
 
 {{< /tab >}}
 
@@ -307,31 +307,31 @@ This format means it must start with the number **5**; the second number must be
 
 | Operation | Termination | Behavior |
 |---------|:-----------:| -----------|
-| Pre-authorization (Purchase) | `0001` | Result: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0011` | Result: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0012` | Result: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0013` | Result: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0014` | Result: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0002` | Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| Pre-authorization (Purchase) | `0003` | Result: Rejected <br> Error: TR005 <br> Sender offline. |
-| Pre-authorization (Purchase) | `0004` | Result: Rejected <br> Error: TR014 <br> The Acquirer denied the transaction due to possible fraud. |
-| Pre-authorization (Purchase) | `0005` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Pre-authorization (Purchase) | `0006` | Result: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Pre-Authorization Capture (Commit) | `0001` | Result: OK <br> Approved. |
-| Pre-Authorization Capture (Commit) | `0011` | Result: OK <br> Approved. |
-| Pre-Authorization Capture (Commit) | `0012` | Result: Rejected <br> Error: TR005 <br> Sender offline. |
-| Pre-Authorization Capture (Commit) | `0013` | Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Pre-Authorization Capture (Commit) | `0014` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
-| Cancellation of Pre-Authorization (Rollback) | `0001` | Result: OK <br> Canceled. |
-| Cancellation of Pre-Authorization (Rollback) | `0011` | Result: Rejected <br> Error: TR005 <br> Sender offline. |
+| Pre-authorization (Purchase) | `0001` | Resultado: OK <br> Approved. |
+| Pre-authorization (Purchase) | `0011` | Resultado: OK <br> Approved. |
+| Pre-authorization (Purchase) | `0012` | Resultado: OK <br> Approved. |
+| Pre-authorization (Purchase) | `0013` | Resultado: OK <br> Approved. |
+| Pre-authorization (Purchase) | `0014` | Resultado: OK <br> Approved. |
+| Pre-authorization (Purchase) | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
+| Pre-authorization (Purchase) | `0003` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
+| Pre-authorization (Purchase) | `0004` | Resultado: Rejected <br> Error: TR014 <br> The Acquirer denied the transaction due to possible fraud. |
+| Pre-authorization (Purchase) | `0005` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
+| Pre-authorization (Purchase) | `0006` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
+| Pre-Authorization Capture (Commit) | `0001` | Resultado: OK <br> Approved. |
+| Pre-Authorization Capture (Commit) | `0011` | Resultado: OK <br> Approved. |
+| Pre-Authorization Capture (Commit) | `0012` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
+| Pre-Authorization Capture (Commit) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
+| Pre-Authorization Capture (Commit) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
+| Cancellation of Pre-Authorization (Rollback) | `0001` | Resultado: OK <br> Canceled. |
+| Cancellation of Pre-Authorization (Rollback) | `0011` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
 | Cancellation of Pre-Authorization (Rollback) | `0012` | result: Rejected <br> Error: TR003 <br> Problems with the merchant's account in Acquirer. |
-| Pre-Authorization Cancellation (Rollback) | `0013` | Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Pre-Authorization Cancellation (Rollback) | `0014` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
-| Refund | `0001` | Result: OK <br> Error: TR013 <br> Returned. |
-| Refund | `0011` | Result: Rejected <br> Error: TR005 <br> Sender offline. |
-| Refund | `0012` | Result: Rejected <br> Error: TR003 <br> Problems with the merchant's account in Acquirer. |
-| Refund | `0013` | Result: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Refund | `0014` | Result: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
+| Pre-Authorization Cancellation (Rollback) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
+| Pre-Authorization Cancellation (Rollback) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
+| Refund | `0001` | Resultado: OK <br> Error: TR013 <br> Returned. |
+| Refund | `0011` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
+| Refund | `0012` | Resultado: Rejected <br> Error: TR003 <br> Problems with the merchant's account in Acquirer. |
+| Refund | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
+| Refund | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
 
 Example of BIN (first 6 digits) for testing specific card types:
 
@@ -348,13 +348,13 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Result: OK <br> Approved. |
-| Buy | `0002` | Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
-| Buy | `0003` | Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
-| Buy | `0004` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Buy | `0005` | Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
-| Cancellation | `0001` | Result: OK <br> Canceled. |
-| Cancellation | `0010` | Result: Rejected <br> Error: TR001 <br> Buyer communication error. |
+| Buy | `0001` | Resultado: OK <br> Approved. |
+| Buy | `0002` | Resultado: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
+| Buy | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
+| Buy | `0004` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
+| Buy | `0005` | Resultado: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
+| Cancellation | `0001` | Resultado: OK <br> Canceled. |
+| Cancellation | `0010` | Resultado: Rejected <br> Error: TR001 <br> Buyer communication error. |
 
 
 {{< /tab >}}
@@ -366,11 +366,11 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Result: OK <br>Approved. |
-| Buy | `0002` | Result: OK <br>Approved. |
-| Buy | `0003` | Result: OK <br>Approved. |
-| Refund | `0001` | Result: OK. |
-| Refund | `0002` | Result: OK. |
+| Buy | `0001` | Resultado: OK <br>Approved. |
+| Buy | `0002` | Resultado: OK <br>Approved. |
+| Buy | `0003` | Resultado: OK <br>Approved. |
+| Refund | `0001` | Resultado: OK. |
+| Refund | `0002` | Resultado: OK. |
 
 {{< /tab >}}
 
@@ -381,13 +381,13 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Result: OK <br> Approved
-| Buy | `0002` | Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
-| Buy | `0003` | Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
-| Buy | `0004` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Buy | `0005` | Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
-| Cancellation | `0001` | Result: OK <br> Canceled. |
-| Cancellation | `0010` | Result: Rejected <br> Error: TR001 <br> Buyer communication error. |
+| Buy | `0001` | Resultado: OK <br> Approved
+| Buy | `0002` | Resultado: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
+| Buy | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
+| Buy | `0004` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
+| Buy | `0005` | Resultado: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
+| Cancellation | `0001` | Resultado: OK <br> Canceled. |
+| Cancellation | `0010` | Resultado: Rejected <br> Error: TR001 <br> Buyer communication error. |
 
 {{< /tab >}}
 
@@ -398,12 +398,12 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Result: OK <br> Approved. |
-| Buy | `0002` | Result: Rejected <br> Error: TR005 <br> Issuer offline or problem related to Acquirer. |
-| Buy | `0003` | Result: Rejected <br> Error: TR009 <br> Unknown Buyer Error. |
-| Buy | `0004` | Result: Rejected <br> Error: TR013 <br> The Acquirer denied the transaction. |
-| Buy | `0005` | Result: Rejected <br> Error: TR004 <br> Communication error when sending transaction to Acquirer. |
-| Cancellation | `0001` | Result: OK <br> Canceled. |
+| Buy | `0001` | Resultado: OK <br> Approved. |
+| Buy | `0002` | Resultado: Rejected <br> Error: TR005 <br> Issuer offline or problem related to Acquirer. |
+| Buy | `0003` | Resultado: Rejected <br> Error: TR009 <br> Unknown Buyer Error. |
+| Buy | `0004` | Resultado: Rejected <br> Error: TR013 <br> The Acquirer denied the transaction. |
+| Buy | `0005` | Resultado: Rejected <br> Error: TR004 <br> Communication error when sending transaction to Acquirer. |
+| Cancellation | `0001` | Resultado: OK <br> Canceled. |
 
 {{< /tab >}}
 
@@ -414,10 +414,10 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` to `0010` | Result: OK <br>Approved. |
-| Buy | `0011` | Result: Rejected <br>Error: PR003<br>Invalid Amount. |
-| Buy | `0012` | Result: Rejected <br>Error: TR007<br>Invalid Card. |
-| Buy | `0013` | Result: Rejected <br>Error: TR019<br>Dennied. |
+| Buy | `0001` to `0010` | Resultado: OK <br>Approved. |
+| Buy | `0011` | Resultado: Rejected <br>Error: PR003<br>Invalid Amount. |
+| Buy | `0012` | Resultado: Rejected <br>Error: TR007<br>Invalid Card. |
+| Buy | `0013` | Resultado: Rejected <br>Error: TR019<br>Dennied. |
 
 {{< /tab >}}
 

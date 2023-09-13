@@ -1,22 +1,22 @@
 ---
-title: "Cash"
-linkTitle: "Cash"
+title: "Pagos en Efectivo"
+linkTitle: "Pagos en Efectivo"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con Cash.
+  Aprenda a integrar su solución para procesar pagos en efectivo.
 weight: 20
 tags: ["subtopic"]
 ---
 
 ## PuntoXpress
-_PuntoXpress_ is a cash collection network with regional coverage in Central America. When the customers of e-commerce platforms make purchases on the e-commerce websites, the e-commerce platform requests us to generate a debt. Subsequently, the customer goes to a PuntoXpress collection point, checks the debt associated with a reference, makes the payment, notifies us, and we notify the merchant.
+_PuntoXpress_ es una red de cobro en efectivo con cobertura regional en América Central. Cuando los clientes de las plataformas de comercio electrónico realizan compras en sus sitios web, el comercio nos solicita que generemos una deuda. Posteriormente, el cliente acude a un punto de cobro de _PuntoXpress_, comprueba la deuda asociada a la referencia y realiza el pago. Luego, _PuntoXpress_ nos notifica y nosotros reportamos al comercio.
 
 ### Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | The `PaymentMediaId` for this payment method is _**28**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**28**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -29,7 +29,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the validity of the generated debt using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure la validez de la deuda generada utilizando este campo, especificando la duración en minutos. La API aplica un valor por defecto si no proporciona esta información. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -52,7 +52,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters}
-In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a `PuntoXpress` agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity date in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
+En la respuesta, se encuentra el parámetro `MetadataOut.PaymentCode` con el número de referencia de la deuda generada que el cliente debe presentar en una agencia de `PuntoXpress` para pagar la deuda. Además, el parámetro `MetadataOut.PaymentExpirationDate` muestra la fecha de expiración en formato ISO 8601 (_AAAA-MM-DDTHH:MM:SS_).
 
 #### Ejemplo del Response {#response-example}
 

@@ -84,9 +84,9 @@ The following tables show the Payout types you must configure in the parameter `
 
 <div id="shortTable"></div>
 
-| Type | Description |
+| Type | Descripción |
 |:-:|---|
-| `1` | Cash |
-| `2` | Bank Transfer |
+| `1` | Efectivo |
+| `2` | Transferencia Bancaria |
 | `3` | Wallet |
 | `4` | Instant Bank Transfer (Only for 🇧🇷) |

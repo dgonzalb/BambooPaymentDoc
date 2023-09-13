@@ -17,7 +17,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la carjeta del cliente.<br>Para más información sobre cómo crear el toke, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
@@ -26,7 +26,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_Este parámetro es requerido para calcular el impuesto de **II.BB**. Consulte [provincias](/es/docs/payment-methods/argentina.html#argentina-provinces) para saber sus valores posibles_. |
+| `Customer` → `BillingAddress` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_Este parámetro es requerido para calcular el impuesto de **II.BB**. Consulte [provincias](/es/docs/payment-methods/argentina.html#argentina-provinces) para saber sus posibles valores_. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
@@ -211,7 +211,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estadis de ka compra.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
 ### Para compras aprobadas {#for-approved-purchases}
 

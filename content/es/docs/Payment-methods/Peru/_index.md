@@ -8,7 +8,7 @@ weight: 90
 tags: ["parenttopic"]
 ---
 
-This section shows the available payment methods, currencies, and related information to consider when processing in _Peru_.
+Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Peru_.
 
 ## Medios de pago {#payment-methods}
 
@@ -18,7 +18,7 @@ This section shows the available payment methods, currencies, and related inform
 
 ## Monedas {#currencies}
 
-| Código | Description  | Mode                     |
+| Código | Descripción  | Modo                     |
 |------|--------------|--------------------------|
 | USD  | Dólar estadounidense    | Doméstico y CrossBorder |
 | PEN  | Peruvian Sol | Doméstico y CrossBorder |
