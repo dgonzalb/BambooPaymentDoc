@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 ## PuntoXpress
-_PuntoXpress_ is a cash collection network with regional coverage in Central America. When the customers of e-commerce platforms make purchases on their websites, the merchant requests us to generate a debt. Subsequently, the customer goes to a _PuntoXpress_ collection point, checks the debt associated with a reference, and makes the payment. Then, _PuntoXpress_ notifies us, and we report the merchant.
+_PuntoXpress_ is a cash collection network with regional coverage in Central America. When the customers of e-commerce platforms make purchases on their websites, the merchant requests us to generate a debt. Subsequently, the customer goes to a _PuntoXpress_ collection point, checks the debt associated with a reference, and makes the payment. Then, _PuntoXpress_ notifies us, and we report to the merchant.
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
@@ -52,7 +52,7 @@ You need to include specific fields for this payment method to work correctly. C
 ```
 
 ### Response parameters
-In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a `PuntoXpress` agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity date in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
+In the response, you find the parameter `MetadataOut.PaymentCode` with the reference number of the generated debt that the customer must present in a _PuntoXpress_ agency to pay the debt. Furthermore, the parameter `MetadataOut.PaymentExpirationDate` displays the validity date in ISO 8601 format (_YYYY-MM-DDTHH:MM:SS_).
 
 #### Response example
 
