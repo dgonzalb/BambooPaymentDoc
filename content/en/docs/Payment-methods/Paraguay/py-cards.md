@@ -224,10 +224,10 @@ For more information on the response parameters, please refer to the [Response p
 ## Risk index information (local credit cards)
 The acquirer processes the transactions and establishes a _**risk index**_ associated with transactions with **local credit cards**. This information must be processed by the merchant to ensure that the transaction is legitimate and to be able to process the order or cancel it if necessary.
 
-The risk index will be reported as an error code in the response (within the Transaction object), even though the status is `Approved`, the `ErrorCode` field must be validated, which may have one of the following values:
+The acquirer reports the risk index as an error code in the response (within the Transaction object); even though the status is `Approved`, you must validate the `ErrorCode` field, which may have one of the following values:
 
-- **RSK01** - The transaction was marked with a low risk of fraud, it can be processed normally.
-- **RSK02** - The transaction was marked with a medium risk of fraud, the merchant will decide the actions to take in this case.
-- **RSK03** - The transaction was marked with a high risk of fraud, it is suggested to verify its data, including, for example, direct contact with the end customer.
+* **RSK01**: The acquirer marked the transaction with a low risk of fraud. You can process it normally.
+* **RSK02**: The acquirer marked the transaction with a medium risk of fraud. You decide the actions to take in this case.
+* **RSK03**: The acquirer marked the transaction with a high risk of fraud. We suggest to verify the data, including direct contact with the end customer.
 
-It will be the responsibility of the merchant to process and manage the risk responses, the gateway will only report the index established by the acquirer.
+You are responsible for processing and managing the risk responses, and the gateway will only report the index established by the acquirer.
