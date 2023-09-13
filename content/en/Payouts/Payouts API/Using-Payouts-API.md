@@ -105,7 +105,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `reason` | `string` | No | Description of the payment. |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
-| `notification_Url` | `string` | No | Callback to notify the result of the Payout. |
+| `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}) |
 | `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
 | `payee` → `lastName `| `string` | Yes | Last Name of the Payee. | 
 | `payee` → `email` | `string` | No | Email address of the Payee. |  
