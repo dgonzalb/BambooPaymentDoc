@@ -2,7 +2,7 @@
 title: "Países y medios de pago"
 date: 2023-05-08T07:28:16-05:00
 Description: >
-  This section shows all the information related to the payment methods for the different countries.
+  Esta sección muestra toda la información relacionada con los medios de pago de los diferentes países.
 weight: 70
 ---
 
