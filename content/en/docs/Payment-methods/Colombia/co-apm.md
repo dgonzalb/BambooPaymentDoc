@@ -245,7 +245,7 @@ For more information on the response parameters, please refer to the [Response p
 ```
 
 ## Nequi QR
-Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo's Payments API generates the QR code in the response to the payment request.
+Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo's Payment API generates the QR code in the response to the payment request.
 
 The flow of this payment method is _**Redirect**_, so you must direct your customer to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1), you can find the parameter of the redirection URL. For more information, refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
