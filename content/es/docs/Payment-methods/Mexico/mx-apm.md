@@ -208,8 +208,8 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
 ## Paynet Cash
 **Paynet** allows your customers to generate a coupon and complete the payment in a physical payment office.
 
-### Cash acquirers
-You can offer your customer the possibility to pay using cash in the following networks:
+## Redes de pago en efectivo {#cash-acquirers}
+Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:
 
 * Farmacias Benavides
 * 7Eleven

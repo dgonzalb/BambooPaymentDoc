@@ -38,7 +38,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 {{% alert title="Info" color="info"%}}
 
-* The `Redirection` object and its parameter are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
+* El objeto `Redirection` y sus parámetros no son requeridos; sin embargo, debe configurarlos para redireccionar a su cliente luego de que la transacción termine en cualquier estado.
 
 {{% /alert %}}
 
@@ -72,7 +72,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ## Parámetros del Response {#response-parameters}
-Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago on the card capture.
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago on the card capture.
 
 ![PrintScreen](/assets/OpenPayCards.png)
 

@@ -3,7 +3,7 @@ title: "Data Types"
 linkTitle: "Data Types"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Review the Data types you need to use to integrate with Bamboo Payments.
+  Review the Data types you need to use to integrate with Bamboo Payment.
 weight: 20
 ---
 

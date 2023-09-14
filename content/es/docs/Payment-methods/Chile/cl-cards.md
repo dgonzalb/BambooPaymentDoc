@@ -226,12 +226,12 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
-| `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
+| `CustomerIP` | `string` | No | IP correspondiente al cliente conectado al sitio web del comercio. |
 
 {{% alert title="Info" color="info"%}}
 
-* The `Redirection` object and its parameters are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
+* El objeto `Redirection` y sus parámetros no son requeridos; sin embargo, debe configurarlos para redireccionar a su cliente luego de que la transacción termine en cualquier estado.
 
 {{% /alert %}}
 
@@ -262,7 +262,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters-1}
-Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago en la página de _**webpay**_.
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago en la página de _**webpay**_.
 
 ![PrintScreen](/assets/WebPay.png)
 
@@ -457,7 +457,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estados de la compra. These cards apply for both API and redirection flow.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra. Estas tarjetas aplican tanto para el flujo API como para el de Redirect.
 
 ### Para compras aprobadas {#for-approved-purchases}
 
@@ -470,7 +470,7 @@ Utilice las siguientes tarjetas para simular los diferentes estados de la compra
 | Redcompra | `4511346660037060` | `123` | `10/29` | Débito |
 
 {{% alert title="Info note" color="info"%}}
-If the RUT and password are requested, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
+Si se solicitan RUT y contraseña, utilice un RUT válido (por ejemplo **11.111.111-1**) y contraseña **123**.
 {{% /alert %}}
 
 ### Para compras rechazadas {#for-rejected-purchases}

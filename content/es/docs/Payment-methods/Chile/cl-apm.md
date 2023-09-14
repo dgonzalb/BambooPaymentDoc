@@ -9,12 +9,12 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-* El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in their _Khipu_ app or at a physical payment office.
-* Chile does not support decimal amounts, so all received amount values will be rounded.
+* El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago ya sea en la app de _Khipu_ o en una oficina física de pago.
+* Chile no soporta montos decimales, por lo que todos los valores de monto recibidos serán redondeados.
 {{% /alert %}}
 
 ## Khipu
-**Khipu** allows payers to pay using transfers from their bank accounts using the _Khipu_ app. The payer can pay using bank accounts or through the **Khipu** app where the payment experience is better.
+**Khipu** permite a los clientes pagar utilizando transferencias desde sus cuentas bancarias utilizando la app de _Khipu_. El pagador puede pagar usando cuentas bancarias o la app de **Khipu** donde la experiencia de pago es mejor.
 
 ### Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
@@ -43,7 +43,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 {{% alert title="Info" color="info"%}}
 
-The `Redirection` object and its parameter are not required; nevertheless, you must configure it to redirect your customer after the transaction finishes in any status.
+El objeto `Redirection` y sus parámetros no son requeridos; sin embargo, debe configurarlos para redireccionar a su cliente luego de que la transacción termine en cualquier estado.
 
 {{% /alert %}}
 
@@ -70,10 +70,10 @@ The `Redirection` object and its parameter are not required; nevertheless, you m
 ```
 
 ### Parámetros del Response {#response-parameters}
-Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago on the _**Khipu**_ app.
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago en la app de _**Khipu**_.
 
 {{% alert title="Info" color="info"%}}
-If the RUT and password are requested during testing, please use a valid RUT (por ejemplo **11.111.111-1**) and password **123**.
+Si se solicitan RUT y contraseña durante las pruebas, utilice un RUT válido (por ejemplo **11.111.111-1**) y contraseña **123**.
 {{% /alert %}}
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
@@ -217,9 +217,9 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Klap Efectivo
-With **Klap efectivo**, your customers can generate a coupon and complete the payment in a physical payment office.
+Con **Klap efectivo**, sus clientes pueden generar un cupón y completar el pago en una oficina de pago física.
 
-### Parámetros del Request {#request-parameters}
+### Parámetros del Request {#request-parameters-1}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -243,7 +243,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
 
-#### Ejemplo del Request {#request-example}
+#### Ejemplo del Request {#request-example-1}
 ```json
 {
     "PaymentMediaId": 107,
@@ -264,14 +264,14 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters}
-Retprnamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. You must redirect the customer to this URL to let the customer generate the coupon and complete the payment in a _**Klap**_ office.
+### Parámetros del Response {#response-parameters-1}
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Se debe redirigir al cliente a esta URL para permitirle generar el cupón y completar el pago en una oficina de _**Klap**_.
 
 ![PrintScreen](/assets/Klap.png)
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Ejemplo del Response {#response-example}
+#### Ejemplo del Response {#response-example-1}
 
 ```json
 {

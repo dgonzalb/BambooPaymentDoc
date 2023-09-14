@@ -123,7 +123,7 @@ The `Balance` parameter in the response contains the points available to the use
 ## OCA Metros
 OCA Metros is the loyalty plan OCA offers that allows customers to purchase using points and a card.
 
-### Considerations
+### Consideraciones
 When using OCA Metros, consider the following.
 
 * Refunds with OCA Metros must be total.

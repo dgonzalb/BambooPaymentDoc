@@ -18,15 +18,15 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/argentina.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_This parameter is required to calculate **II.BB** Tax. Refer to [provinces](/es/docs/payment-methods/argentina.html#argentina-provinces) to know its possible values_. |
+| `Customer` → `BillingAddress` → `State` | `string` | No<sup>*</sup> | Departamento del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `TaxAmount` | `numeric` | No | The VAT amount of the gross amount For domestic purchases, this parameter is required.<br>When you must include decimals in this amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`. |
+| `MetaDataIn` → `TaxAmount` | `numeric` | No | Valor del IVA del monto total. Este parámetro es requerido para compras domésticas.<br>Cuando deba incluir decimales en este monto, concatene los dígitos decimales sin el punto. Ejemplo `12,25` > `1225`. |
 
 {{% alert title="Info" color="info"%}}
 Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref Antifraud.md>}}).
@@ -204,10 +204,10 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ## Tarjetas de prueba {#testing-cards}
 Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
-| Marca | PAN | CVV | Expiration |
+| Marca | PAN | CVV | Fecha de Expiración |
 |---|---|---|---|
 | Mastercard | `5303710409428783` | `355` | `05/26` |
 | Visa | `4513076106055348` | `159` | `06/26` |
 | Diners | `36032429319768` | `9052` | `12/26 `|
-| ***Insufficient funds*** |  |  |  |
+| ***Fondos insuficientes*** |  |  |  |
 | Mastercard | `5529030604551745` | `124` | `11/26` |

@@ -3,7 +3,7 @@ title: "Concepts"
 linkTitle: "Concepts"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Understand the concepts behind any integration with Bamboo Payments.
+  Understand the concepts behind any integration with Bamboo Payment.
 weight: 10
 ---
 

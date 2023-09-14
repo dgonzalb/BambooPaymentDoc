@@ -12,10 +12,10 @@ tags: ["subtopic"]
 El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in their bank app or at a physical payment office.
 {{% /alert %}}
 
-## Cash
-The Cash payment method allows your customers to generate a coupon and complete the payment in a physical payment office.
+## Efectivo {#cash}
+El método de pago en efectivo permite a sus clientes generar un cupón y completar el pago en una oficina de pago física.
 
-### Cash acquirers
+## Redes de pago en efectivo {#cash-acquirers}
 
 <div id="shortTable"></div>
 
@@ -30,7 +30,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the selected Cash acquirer in this [table](#cash-acquirers). |
+| `PaymentMediaId` | `numeric` | Sí | Envíe el `PaymentMediaId` de acuerdo con la red de pago en efectivo en esta [tabla](#cash-acquirers). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
@@ -174,7 +174,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Bank transfers
-The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Parámetros del Response {#response-parameters} sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
+El flujo de este medio de pago es _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [sección Parámetros del Response](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
 ### Supported banks
 You can offer to your customers the possibility to pay using bank transfers if the customer's account is in the following banks:

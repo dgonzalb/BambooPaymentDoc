@@ -83,7 +83,7 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Considerations
+### Consideraciones
 * You can make purchases in installments as long as the Issuing Bank has it enabled.
 * You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
 * **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.

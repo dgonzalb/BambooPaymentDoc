@@ -76,7 +76,7 @@ Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo ob
 ## Refund a purchase
 The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
 
-### Considerations
+### Consideraciones
 _To be defined_
 
 ### URL del Request {#request-url-1}

@@ -17,7 +17,7 @@ Nuestra plataforma certificada **PCI-DSS Nivel 1** nos permite procesar números
 Puede incrustar el [formulario de Checkout]({{< ref "Checkout-Form.md" >}}) en sus páginas o aplicaciones móviles; ahora puede aceptar pagos sin recibir información confidencial como datos de clientes, ofrecer seguridad a sus clientes y facilidad de uso.
 
 ## Empezar a procesar con Bamboo {#start-processing-with-bamboo}
-Siga estos pasos para iniciar a procesar pagos con Bamboo Payments:
+Siga estos pasos para iniciar a procesar pagos con Bamboo Payment:
 
 1. **Regístrese**.<br>Cree su cuenta de comercio [contactando a nuestros representantes de ventas](mailto:sales@bamboopayment.com).
 

@@ -40,7 +40,7 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 | Peru  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
-## Considerations
+## Consideraciones
 Consider the following considerations when using the Payouts feature according to the payee’s country to avoid rejections.
 
 ### Argentina
