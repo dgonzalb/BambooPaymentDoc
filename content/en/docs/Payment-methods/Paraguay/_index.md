@@ -9,7 +9,7 @@ tags: ["parenttopic"]
 ---
 
 {{% alert title="Note" color="info"%}}
-Support for Paraguay only in the **Gateway** model, and we invoice them from Uruguay.
+We only offer support for merchants in Paraguay through the **Gateway** model, and we send the invoice to them from Uruguay.
 {{% /alert %}}
 
 This section shows the available payment methods, currencies, and related information to consider when processing in _Paraguay_.
@@ -40,6 +40,6 @@ The following table describes the valid document types for Paraguay:
 | Code | Document name                    | Abbreviation |
 |:----:|----------------------------------|--------------|
 | 1    | Registro Único del Contribuyente | RUC          |
-| 2    | Cédula de Identidad              | CI           |
-| 3    | Extranjero                       | EXT          |
+| 2    | Cédula de Identidad              | CIC          |
+| 3    | Documento Extranjero             | DEX          |
 | 23   | Referencia genérica              | GEN          |

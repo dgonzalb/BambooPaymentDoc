@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Note" color="info"%}}
-Support for Paraguay only in the **Gateway** model, and we invoice them from Uruguay.
+We only offer support for merchants in Paraguay through the **Gateway** model, and we send the invoice to them from Uruguay.
 {{% /alert %}}
 
 ## Considerations
