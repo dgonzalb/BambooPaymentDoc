@@ -17,7 +17,7 @@ Our certified **PCI-DSS Level 1** platform allows us to process card numbers and
 You can embed the [Checkout Form]({{< ref "Checkout-Form.md" >}}) in your pages or mobile applications; you can now accept payments without receiving confidential information such as customer data, provide security to your customers, and ease of use.
 
 ## Start processing with Bamboo.
-Follow these steps to start processing payments with Bamboo Payments:
+Follow these steps to start processing payments with Bamboo Payment:
 
 1. **Sign Up**.<br>Create your merchant account by [contacting our sales representatives](mailto:sales@bamboopayment.com).
 
