@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Note" color="info"%}}
-We only offer support for merchants in Paraguay through the **Gateway** model, and we send the invoice to them from Uruguay.
+Solo ofrecemos soporte para comercios en Paraguay a través del modelo **Gateway**, y les enviamos la factura desde Uruguay.
 {{% /alert %}}
 
 ## Pago Express

@@ -3,17 +3,17 @@ title: "Medios alternativos de pago"
 linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments in physical payment branches or using Bank transfers.
+  Aprenda cómo integrar su solución para procesar pagos en sucursales físicas de pago o utilizando transferencias bancarias.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago  at a physical payment office, online banking, or mobile banking app.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago en una oficina física de pago, banca en línea o aplicación de banca móvil.
 {{% /alert %}}
 
 ## OXXO
-**OXXO**, the largest convenience store chain in Mexico, provides a service to let your customers pay for their purchases. Your customers must provide the coupon in the store. The customer can pay the coupon using cash or cards.
+**OXXO**, la cadena de tiendas de autoservicio más grande de México, ofrece un servicio para que sus clientes paguen sus compras. Sus clientes deben entregar el cupón en la tienda y pueden pagar utilizando efectivo o tarjetas.
 
 ### Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.

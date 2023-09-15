@@ -3,13 +3,13 @@ title: "Paraguay"
 linkTitle: "Paraguay"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  In _**Paraguay**_, the electronic payments market is in constant development and growth, driven by the population's expansion of internet access and the adoption of financial technologies. There are still challenges regarding financial inclusion and the massive adoption of these payment methods; hence, the market is expected to grow in the following years.
+  En _**Paraguay**_, el mercado de pagos electrónicos está en constante desarrollo y crecimiento, impulsado por la expansión del acceso a internet de la población y la adopción de tecnologías financieras. Aún existen desafíos en cuanto a la inclusión financiera y la adopción masiva de estos medios de pago, por lo que se espera que el mercado crezca en los próximos años.
 weight: 80
 tags: ["parenttopic"]
 ---
 
 {{% alert title="Note" color="info"%}}
-We only offer support for merchants in Paraguay through the **Gateway** model, and we send the invoice to them from Uruguay.
+Solo ofrecemos soporte para comercios en Paraguay a través del modelo **Gateway**, y les enviamos la factura desde Uruguay.
 {{% /alert %}}
 
 Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Paraguay_.

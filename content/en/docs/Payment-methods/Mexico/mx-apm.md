@@ -13,7 +13,7 @@ The purchase status for Alternative Payment methods will remain _Pending_ until 
 {{% /alert %}}
 
 ## OXXO
-**OXXO**, the largest convenience store chain in Mexico, provides a service to let your customers pay for their purchases. Your customers must provide the coupon in the store. The customer can pay the coupon using cash or cards.
+**OXXO**, the largest convenience store chain in Mexico, provides a service to let your customers pay for their purchases. Your customers must provide the coupon in the store and they can pay using cash or cards.
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.

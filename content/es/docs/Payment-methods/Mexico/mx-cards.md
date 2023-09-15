@@ -7,9 +7,10 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
-When using cards, the payer must be redirected to the card capture page to complete the payment.
 
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago. haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para aprender más acerca de compras por redirect.
+Cuanto utilice tarjetas, el pagador debe ser redireccionado a la página de captura de tarjeta para finalizar el pago.
+
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago. Haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para aprender más acerca de compras por redirect.
 
 ## Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
@@ -33,8 +34,8 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
-| `CustomerIP` | `string` | No | IP correspondiente al cliente conectado al sitio web del comercio. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | Sí | Session Id (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
+| `CustomerIP` | `string` | Sí | IP correspondiente al cliente conectado al sitio web del comercio. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -72,7 +73,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ## Parámetros del Response {#response-parameters}
-Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago on the card capture.
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Usted debe redireccionar al cliente a esta URL para completar el pago en la página de captura de la tarjeta.
 
 ![PrintScreen](/assets/OpenPayCards.png)
 
