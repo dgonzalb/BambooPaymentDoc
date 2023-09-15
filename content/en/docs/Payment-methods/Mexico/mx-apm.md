@@ -13,7 +13,7 @@ The purchase status for Alternative Payment methods will remain _Pending_ until 
 {{% /alert %}}
 
 ## OXXO
-**OXXO**, the largest convenience store chain in Mexico, provides a service to let your customers pay for their purchases. Your customers must provide the coupon in the store. The customer can pay the coupon using cash or cards.
+**OXXO**, the largest convenience store chain in Mexico, provides a service to let your customers pay for their purchases. Your customers must provide the coupon in the store and they can pay using cash or cards.
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
@@ -459,12 +459,12 @@ In the response, you will find the following parameters:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentUrl` | `string` | Url of the generic **Openpay** payment receipt. |
+| `Response` → `MetadataOut` → `PaymentUrl` | `string` | Url of the generic payment receipt. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string` | Reference number for _BBVA Bancomer_, or Payment concept for other banks. |
 | `Response` → `MetadataOut` → `BankName` | `string`  | Name of the destination bank. |
 | `Response` → `MetadataOut` → `BankAccount` | `string` | CIE agreement number for _BBVA Bancomer_, or Payment reference for other banks. |
 | `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | _CLABE_ account number to which the funds will be sent |
-| `Response` → `MetadataOut` → `BankReference` | `string` | Reference number for _BBVA Bancomer_, or Payment concept for other banks. |
+| `Response` → `MetadataOut` → `BankReference` | `string` | Bank Reference number. |
 
 You can redirect your customer to the URL displayed in the parameter `Response.MetadataOut.PaymentUrl` to download the voucher and with the steps and information to complete the payment.
 
