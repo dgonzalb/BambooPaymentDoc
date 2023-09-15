@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Medios alternativos de pago will remain _Pending_ until the customer completes the payment at a physical payment office, online banking, or mobile banking app.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago  at a physical payment office, online banking, or mobile banking app.
 {{% /alert %}}
 
 ## OXXO

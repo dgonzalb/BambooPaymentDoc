@@ -3,7 +3,7 @@ title: "Ecuador"
 linkTitle: "Ecuador"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  With Bamboo Payment, design a unique checkout flow by connecting directly to our APIs and offer reliable and effective payment solutions for eCommerce in _**Ecuador**_.
+  Disere con Bamboo Payment un flujo único de pago conectándose diréctamente con nuestros API y ofrezca una solución de pago confiable y efectiva pra comercio electrónico en _**Ecuador**_.
 weight: 60
 tags: ["parenttopic"]
 ---
@@ -18,9 +18,9 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 
 ## Monedas {#currencies}
 
-| Código | Descripción    | Modo                     |
-|------|----------------|--------------------------|
-| USD  | Dólar estadounidense      | Doméstico y CrossBorder |
+| Código | Descripción          | Modo                    |
+|--------|----------------------|-------------------------|
+| USD    | Dólar estadounidense | Doméstico y CrossBorder |
 
 ## Límites de montos {#amount-limits}
 
@@ -28,12 +28,12 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 
 |  | Efectivo | 
 |---|:---:|
-| **Mínimo**  | USD 0,50 |
+| **Mínimo** | USD 0,50  |
 | **Máximo** | USD 1.000 | 
 
 ## Tipos de documentos {#document-types}
-La siguiente tabla describe los tipos de documentos válidos para Argentina:
+La siguiente tabla describe los tipos de documentos válidos para Ecuador:
 
-| Código | Nombre del documento | Abreviación |
-|:----:|---------------|--------------|
-| 10   | Other         | NAN          |
+| Código | Nombre del documento | Abreviación  |
+|:------:|----------------------|--------------|
+| 10     | Other                | NAN          |

@@ -33,8 +33,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | Yes | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
-| `CustomerIP` | `string` | Yes | IP of to the customer connected to the commerce website. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
+| `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -219,7 +219,7 @@ For more information on the response parameters, please refer to the [Response p
 ```
 
 ## Testing cards
-Use the following cards to simulate the different status of the purchase. These cards apply for both API and redirection flow.
+Use the following cards to simulate the different status of the purchase.
 
 | Brand | PAN | CVV | Expiration Date |
 |---|---|---|---|

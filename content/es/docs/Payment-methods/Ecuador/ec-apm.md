@@ -9,11 +9,11 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Medios alternativos de pago will remain _Pending_ until the customer completes the payment.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago.
 {{% /alert %}}
 
 ## PagoEfectivo Ecuador
-**PagoEfectivo** provides a network of physical payment centers where your customers can pay their purchases in cash or using their bank app. Your customer can pay giving the debt identifier (CIP) in a physical payment office or using their bank app. 
+**PagoEfectivo** provee una red de centros de pago físicos donde sus clientes pueden pagar las compras en efectivo o utilizando su aplicación bancaria. Su cliente puede pagar mostrando el identificador de la deuda (CIP) en una oficina o a través de su aplicación bancaria.
 
 ### Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
@@ -27,13 +27,13 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
 | `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/ecuador.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. The phone number format must be `<characteristic>\|<number>`. Ejemplo: `+593\|971516229`. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. El número de teléfono debe tener el formato `<característica>\|<número>`. Ejemplo: `+593\|971516229`. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto.<br>The expiration date must be at least 10 minutes and less than six months from the current date (in UTC GMT -5). |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto.<br>La fecha de expiración debe ser de al menos 10 minutos y menos de seis meses a partir de la fecha actual (en UTC GMT -5). |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -64,8 +64,8 @@ En el Response, se encuentran los siguientes parámetros:
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Código de pago generado por **PagoEfectivo**. |
-| `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the CIP will expire.<br>Format _ISO 8601_. |
-| `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the HTML document of the CIP. |
+| `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del CIP.<br>Formato _ISO 8601_. |
+| `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL del documento HTML del CIP. |
 
 ![PrintScreen](/assets/PagoEfectivoEC.png)
 

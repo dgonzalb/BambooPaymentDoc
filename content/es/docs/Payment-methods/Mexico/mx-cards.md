@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 When using cards, the payer must be redirected to the card capture page to complete the payment.
 
-The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago. haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para aprender más acerca de compras por redirect.
 
 ## Parámetros del Request {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
@@ -33,8 +33,8 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
-| `AntifraudData` → `AntifraudFingerprintId` | `string` | Sí | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud). |
-| `CustomerIP` | `string` | Sí | IP of to the customer connected to the commerce website. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | No | Session Id (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
+| `CustomerIP` | `string` | No | IP correspondiente al cliente conectado al sitio web del comercio. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -219,7 +219,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-Utilice las siguientes tarjetas para simular los diferentes estados de la compra. These cards apply for both API and redirection flow.
+Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
 | Marca | PAN | CVV | Fecha de Expiración |
 |---|---|---|---|
