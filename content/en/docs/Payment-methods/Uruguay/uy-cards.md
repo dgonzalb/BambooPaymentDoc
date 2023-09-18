@@ -25,7 +25,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States abd Canada. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States and Canada. |
 | `Customer` → `ShippingAddress` → `Country` | `string` | No | Country of the Shipping Address. |
 | `Customer` → `ShippingAddress` → `State` | `string` | No | State of the Shipping Address. | 
 | `Customer` → `ShippingAddress` → `City` | `string` | No | City of the Shipping Address. |
@@ -87,12 +87,12 @@ You need to include specific fields for this payment method to work correctly. C
 * You can make purchases in installments as long as the Issuing Bank has it enabled.
 * You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
 * **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
-* **FirstData** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute   [Verification Code Request Flow](#).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **FirstData** and notify us.
+* **FirstData** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute   [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **FirstData** and notify us.
 * **Creditel** and **PassCard** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
-* **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow](#).
+* **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
 
-#### Purchases using MasterCards through OCA
+#### Purchases using MasterCard through OCA
 When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.
 
 Add this function to the script used for the checkout form (`PWCheckOut`) to generate and return the value used in the purchases.
@@ -111,7 +111,7 @@ Then, include the token in the purchase creation according to the following scen
 * For _**OneTimeToken**_, send the device FingerPrint you generate and the **OT token**.
 * For _**CommerceToken**_, there are two cases:
   * For Recurring purchases (Without CVV), send the device FingerPrint you generate and the **CT token**. You can use an existing **CT token** or generate one.
-  * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
+  * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV, the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
 
 ## Response parameters
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
