@@ -184,7 +184,7 @@ Puede ofrecer a sus clientes la posibilidad de pagar mediante transferencia banc
 |-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | 101 | E-Brou |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | 102 | Santander |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" alt="Diners" width="52" style="" /> | 104 | Scotiabank |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | 104 | Scotiabank |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | 105 | Itau |
 
 ### Parámetros del Request {#request-parameters-1}
