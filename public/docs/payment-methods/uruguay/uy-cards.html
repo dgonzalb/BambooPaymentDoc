@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/payment-methods/uruguay/uy-cards.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-12T10:41:44-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-18T12:25:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Credit and Debit cards">
 <meta itemprop="description" content="Learn how to integrate your solution to process credit or debit card payments.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-12T10:41:44-05:00" />
+<meta itemprop="dateModified" content="2023-09-18T12:25:39-05:00" />
 <meta itemprop="wordCount" content="2107">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Credit and Debit cards"/>
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2d1238d64e22f9ed229a36a4809ef5926b3fda3412a73f0c699e523e52dc04fc567da304927c94f4e5b82bdb1adecc66ee974e88d0c5196b22ac0bf062bcccae.json"
+  data-offline-search-index-json-src="../../../offline-search-index.657e3fe7bafabad2b0188a5d8e212e863bd90209f88b94f94f9d63e82282a9963cbd52817c538f6102c0b0da02dac25c9cb812a4b432746a5415d0502ee3e019.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -1009,7 +1009,7 @@
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s Postal Code.<br>Postal code is mandatory for the United States abd Canada.</td>
+<td>Customer&rsquo;s Postal Code.<br>Postal code is mandatory for the United States and Canada.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>ShippingAddress</code> → <code>Country</code></td>
@@ -1127,12 +1127,12 @@
 <li>You can make purchases in installments as long as the Issuing Bank has it enabled.</li>
 <li>You can make purchases with Debit Cards as long as the Issuing Bank has it enabled</li>
 <li><strong>Visanet</strong> requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the <em>Commerce Token</em>, it is not necessary to request the CVV in future transactions.</li>
-<li><strong>FirstData</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. You need to execute   <a href="#">Verification Code Request Flow</a>.<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with <strong>FirstData</strong> and notify us.</li>
+<li><strong>FirstData</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. You need to execute   <a href="../../../docs/purchase-workflow/customer-types/registered-users.html#verification-code-request-flow">Verification Code Request Flow</a>.<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with <strong>FirstData</strong> and notify us.</li>
 <li><strong>Creditel</strong> and <strong>PassCard</strong> require that the purchase message include the cardholder&rsquo;s document and type of document (fields <code>Customer.DocumentTypeId</code> and <code>Customer.DocNumber</code>).</li>
-<li><strong>PassCard</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. Therefore, you need to execute <a href="#">Verification Code Request Flow</a>.</li>
+<li><strong>PassCard</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. Therefore, you need to execute <a href="../../../docs/purchase-workflow/customer-types/registered-users.html#verification-code-request-flow">Verification Code Request Flow</a>.</li>
 <li>When using <strong>OCAOneClick2</strong> (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the <code>CustomerIP</code> parameter in the request.</li>
 </ul>
-<h4 id="purchases-using-mastercards-through-oca">Purchases using MasterCards through OCA</h4>
+<h4 id="purchases-using-mastercard-through-oca">Purchases using MasterCard through OCA</h4>
 <p>When using <strong>MasterCard</strong>, sending the device FingerPrint using the <code>SetDeviceFingerPrint</code> method is recommended.</p>
 <p>Add this function to the script used for the checkout form (<code>PWCheckOut</code>) to generate and return the value used in the purchases.</p>
 <p>In this example, we show how to invoke and obtain the result.</p>
@@ -1146,7 +1146,7 @@
 <li>For <em><strong>CommerceToken</strong></em>, there are two cases:
 <ul>
 <li>For Recurring purchases (Without CVV), send the device FingerPrint you generate and the <strong>CT token</strong>. You can use an existing <strong>CT token</strong> or generate one.</li>
-<li>For Purchases with CVV, generating a <code>DeviceFingerPrint</code> is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the <em>Pending</em> state, and you need to redirect the customer to the URL returned in the <code>actionUrl</code> parameter where they enter the CVV.</li>
+<li>For Purchases with CVV, generating a <code>DeviceFingerPrint</code> is unnecessary since when the customer enters the CVV, the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the <em>Pending</em> state, and you need to redirect the customer to the URL returned in the <code>actionUrl</code> parameter where they enter the CVV.</li>
 </ul>
 </li>
 </ul>
@@ -2046,9 +2046,9 @@
 <br>
 <b>Last modified</b>
 
-September 12, 2023: 
+September 18, 2023: 
 
- <i>Request examples updated (0c7267b)</i>
+ <i>Request examples updated (9f726bc)</i>
   </div>
 </div>
 

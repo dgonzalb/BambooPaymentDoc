@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/payment-methods/uruguay/uy-loyaltyplans.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-04T15:40:12-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-18T12:25:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Loyalty plans">
 <meta itemprop="description" content="Learn how to integrate your solution to process payments using Loyalty plans such as _SoySantander_ or _OCA Metros_.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-04T15:40:12-05:00" />
-<meta itemprop="wordCount" content="656">
+<meta itemprop="dateModified" content="2023-09-18T12:25:39-05:00" />
+<meta itemprop="wordCount" content="655">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Loyalty plans"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments using Loyalty plans such as _SoySantander_ or _OCA Metros_.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2d1238d64e22f9ed229a36a4809ef5926b3fda3412a73f0c699e523e52dc04fc567da304927c94f4e5b82bdb1adecc66ee974e88d0c5196b22ac0bf062bcccae.json"
+  data-offline-search-index-json-src="../../../offline-search-index.657e3fe7bafabad2b0188a5d8e212e863bd90209f88b94f94f9d63e82282a9963cbd52817c538f6102c0b0da02dac25c9cb812a4b432746a5415d0502ee3e019.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -919,7 +919,7 @@
 	<h2 id="soysantander">SoySantander</h2>
 <p><em>SoySantander</em> allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.</p>
 <h3 id="token-request">Token request</h3>
-<p>The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in <a href="../../../docs/purchase-workflow/customer-types.html">Customers</a>. Otherwise, invoke the method <code>GetLoyaltyToken</code> of the <code>PWCheckout.</code> library PWCheckout.</p>
+<p>The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in <a href="../../../docs/purchase-workflow/customer-types.html">Customers</a>. Otherwise, invoke the method <code>GetLoyaltyToken</code> of the <code>PWCheckout</code> library.</p>
 <table>
 <thead>
 <tr>
@@ -934,7 +934,7 @@
 <td><code>loyaltyPlanId</code></td>
 <td style="text-align:center"><code>numeric</code></td>
 <td style="text-align:center">Yes</td>
-<td>Identifier of the Loyalty plan</td>
+<td>Identifier of the Loyalty plan.</td>
 </tr>
 <tr>
 <td><code>LoyaltyPlanUserIdentification</code></td>
@@ -950,8 +950,8 @@
 </tr>
 </tbody>
 </table>
-<br>
-Example:
+<p>Example:
+<br></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">”text/javascript”</span><span style="color:#000;font-weight:bold">&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">GetLoyaltyToken</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;ExampleLoyaltyPlanUserId&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;email@bank.com&#34;</span><span style="color:#000;font-weight:bold">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
@@ -1050,7 +1050,7 @@ Example:
 </span></span><span style="display:flex;"><span>     <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="consulting-the-number-of-points">Consulting the number of points</h3>
-<p>To get the number of points available for a user, create a <code>POST</code> request to the following URL</p>
+<p>To get the number of points available for a user, create a <code>POST</code> request to the following URL:</p>
 <ul>
 <li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance</code></li>
@@ -1139,9 +1139,9 @@ Example:
 <br>
 <b>Last modified</b>
 
-September 4, 2023: 
+September 18, 2023: 
 
- <i>Request examples updated (9be5c7d)</i>
+ <i>Request examples updated (9f726bc)</i>
   </div>
 </div>
 

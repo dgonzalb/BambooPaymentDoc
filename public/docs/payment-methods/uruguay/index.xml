@@ -111,7 +111,7 @@
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;BillingAddress&lt;/code&gt; → &lt;code&gt;PostalCode&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s Postal Code.&lt;br&gt;Postal code is mandatory for the United States abd Canada.&lt;/td&gt;
+&lt;td&gt;Customer&amp;rsquo;s Postal Code.&lt;br&gt;Postal code is mandatory for the United States and Canada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;ShippingAddress&lt;/code&gt; → &lt;code&gt;Country&lt;/code&gt;&lt;/td&gt;
@@ -229,12 +229,12 @@
 &lt;li&gt;You can make purchases in installments as long as the Issuing Bank has it enabled.&lt;/li&gt;
 &lt;li&gt;You can make purchases with Debit Cards as long as the Issuing Bank has it enabled&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Visanet&lt;/strong&gt; requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.&lt;br&gt;Once you make the registration and obtain the &lt;em&gt;Commerce Token&lt;/em&gt;, it is not necessary to request the CVV in future transactions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;FirstData&lt;/strong&gt; requires you to send the CVV, even if you have the &lt;em&gt;Commerce Token&lt;/em&gt;. You need to execute   &lt;a href=&#34;#&#34;&gt;Verification Code Request Flow&lt;/a&gt;.&lt;br&gt;This modality is enabled by default. If you wish to deactivate it, you must negotiate with &lt;strong&gt;FirstData&lt;/strong&gt; and notify us.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FirstData&lt;/strong&gt; requires you to send the CVV, even if you have the &lt;em&gt;Commerce Token&lt;/em&gt;. You need to execute   &lt;a href=&#34;../../../docs/purchase-workflow/customer-types/registered-users.html#verification-code-request-flow&#34;&gt;Verification Code Request Flow&lt;/a&gt;.&lt;br&gt;This modality is enabled by default. If you wish to deactivate it, you must negotiate with &lt;strong&gt;FirstData&lt;/strong&gt; and notify us.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Creditel&lt;/strong&gt; and &lt;strong&gt;PassCard&lt;/strong&gt; require that the purchase message include the cardholder&amp;rsquo;s document and type of document (fields &lt;code&gt;Customer.DocumentTypeId&lt;/code&gt; and &lt;code&gt;Customer.DocNumber&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PassCard&lt;/strong&gt; requires you to send the CVV, even if you have the &lt;em&gt;Commerce Token&lt;/em&gt;. Therefore, you need to execute &lt;a href=&#34;#&#34;&gt;Verification Code Request Flow&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PassCard&lt;/strong&gt; requires you to send the CVV, even if you have the &lt;em&gt;Commerce Token&lt;/em&gt;. Therefore, you need to execute &lt;a href=&#34;../../../docs/purchase-workflow/customer-types/registered-users.html#verification-code-request-flow&#34;&gt;Verification Code Request Flow&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;When using &lt;strong&gt;OCAOneClick2&lt;/strong&gt; (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the &lt;code&gt;CustomerIP&lt;/code&gt; parameter in the request.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;purchases-using-mastercards-through-oca&#34;&gt;Purchases using MasterCards through OCA&lt;/h4&gt;
+&lt;h4 id=&#34;purchases-using-mastercard-through-oca&#34;&gt;Purchases using MasterCard through OCA&lt;/h4&gt;
 &lt;p&gt;When using &lt;strong&gt;MasterCard&lt;/strong&gt;, sending the device FingerPrint using the &lt;code&gt;SetDeviceFingerPrint&lt;/code&gt; method is recommended.&lt;/p&gt;
 &lt;p&gt;Add this function to the script used for the checkout form (&lt;code&gt;PWCheckOut&lt;/code&gt;) to generate and return the value used in the purchases.&lt;/p&gt;
 &lt;p&gt;In this example, we show how to invoke and obtain the result.&lt;/p&gt;
@@ -248,7 +248,7 @@
 &lt;li&gt;For &lt;em&gt;&lt;strong&gt;CommerceToken&lt;/strong&gt;&lt;/em&gt;, there are two cases:
 &lt;ul&gt;
 &lt;li&gt;For Recurring purchases (Without CVV), send the device FingerPrint you generate and the &lt;strong&gt;CT token&lt;/strong&gt;. You can use an existing &lt;strong&gt;CT token&lt;/strong&gt; or generate one.&lt;/li&gt;
-&lt;li&gt;For Purchases with CVV, generating a &lt;code&gt;DeviceFingerPrint&lt;/code&gt; is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the &lt;em&gt;Pending&lt;/em&gt; state, and you need to redirect the customer to the URL returned in the &lt;code&gt;actionUrl&lt;/code&gt; parameter where they enter the CVV.&lt;/li&gt;
+&lt;li&gt;For Purchases with CVV, generating a &lt;code&gt;DeviceFingerPrint&lt;/code&gt; is unnecessary since when the customer enters the CVV, the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the &lt;em&gt;Pending&lt;/em&gt; state, and you need to redirect the customer to the URL returned in the &lt;code&gt;actionUrl&lt;/code&gt; parameter where they enter the CVV.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1156,7 +1156,7 @@
         &lt;h2 id=&#34;soysantander&#34;&gt;SoySantander&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;SoySantander&lt;/em&gt; allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.&lt;/p&gt;
 &lt;h3 id=&#34;token-request&#34;&gt;Token request&lt;/h3&gt;
-&lt;p&gt;The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in &lt;a href=&#34;../../../docs/purchase-workflow/customer-types.html&#34;&gt;Customers&lt;/a&gt;. Otherwise, invoke the method &lt;code&gt;GetLoyaltyToken&lt;/code&gt; of the &lt;code&gt;PWCheckout.&lt;/code&gt; library PWCheckout.&lt;/p&gt;
+&lt;p&gt;The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in &lt;a href=&#34;../../../docs/purchase-workflow/customer-types.html&#34;&gt;Customers&lt;/a&gt;. Otherwise, invoke the method &lt;code&gt;GetLoyaltyToken&lt;/code&gt; of the &lt;code&gt;PWCheckout&lt;/code&gt; library.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1171,7 +1171,7 @@
 &lt;td&gt;&lt;code&gt;loyaltyPlanId&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;numeric&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Identifier of the Loyalty plan&lt;/td&gt;
+&lt;td&gt;Identifier of the Loyalty plan.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LoyaltyPlanUserIdentification&lt;/code&gt;&lt;/td&gt;
@@ -1187,8 +1187,8 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;br&gt;
-Example:
+&lt;p&gt;Example:
+&lt;br&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;”text/javascript”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;PWCheckout&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GetLoyaltyToken&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ExampleLoyaltyPlanUserId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;email@bank.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
@@ -1287,7 +1287,7 @@ Example:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;consulting-the-number-of-points&#34;&gt;Consulting the number of points&lt;/h3&gt;
-&lt;p&gt;To get the number of points available for a user, create a &lt;code&gt;POST&lt;/code&gt; request to the following URL&lt;/p&gt;
+&lt;p&gt;To get the number of points available for a user, create a &lt;code&gt;POST&lt;/code&gt; request to the following URL:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
@@ -1410,12 +1410,7 @@ Example:
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png&#34;  width=&#34;52&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;RedPagos&lt;br&gt;&lt;em&gt;If you are in Gateway model.&lt;/em&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png&#34;  width=&#34;52&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;65&lt;/td&gt;
-&lt;td&gt;RedPagos Payfac&lt;br&gt;&lt;em&gt;If you are in PayFac model.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;RedPagos&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1546,7 +1541,7 @@ Example:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
-&lt;p&gt;The response returns the coupon in &lt;em&gt;PDF&lt;/em&gt; format that the client must present in the agency in order to pay the generated debt, in the &lt;code&gt;MetadataOut.PaymentBarcodeUrl&lt;/code&gt; parameter:&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;MetadataOut.PaymentBarcodeUrl&lt;/code&gt; parameter, the response returns the coupon in &lt;em&gt;PDF&lt;/em&gt; format that the client must present in the agency to pay the generated debt.&lt;/p&gt;
 &lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1652,22 +1647,22 @@ Example:
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png&#34; alt=&#34;CASH&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;101&lt;/td&gt;
 &lt;td&gt;E-Brou&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png&#34; alt=&#34;CASH&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;102&lt;/td&gt;
 &lt;td&gt;Santander&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png&#34; alt=&#34;Diners&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;104&lt;/td&gt;
 &lt;td&gt;Scotiabank&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png&#34; alt=&#34;CASH&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;105&lt;/td&gt;
 &lt;td&gt;Itau&lt;/td&gt;
 &lt;/tr&gt;

@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/payment-methods/uruguay/uy-apm.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-12T10:41:44-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-18T12:25:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Alternative Payment Methods">
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with cash and Bank transfers.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-12T10:41:44-05:00" />
-<meta itemprop="wordCount" content="1256">
+<meta itemprop="dateModified" content="2023-09-18T12:25:39-05:00" />
+<meta itemprop="wordCount" content="1239">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with cash and Bank transfers.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.2d1238d64e22f9ed229a36a4809ef5926b3fda3412a73f0c699e523e52dc04fc567da304927c94f4e5b82bdb1adecc66ee974e88d0c5196b22ac0bf062bcccae.json"
+  data-offline-search-index-json-src="../../../offline-search-index.657e3fe7bafabad2b0188a5d8e212e863bd90209f88b94f94f9d63e82282a9963cbd52817c538f6102c0b0da02dac25c9cb812a4b432746a5415d0502ee3e019.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -946,12 +946,7 @@
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /></td>
 <td>10</td>
-<td>RedPagos<br><em>If you are in Gateway model.</em></td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /></td>
-<td>65</td>
-<td>RedPagos Payfac<br><em>If you are in PayFac model.</em></td>
+<td>RedPagos</td>
 </tr>
 </tbody>
 </table>
@@ -1082,7 +1077,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
-<p>The response returns the coupon in <em>PDF</em> format that the client must present in the agency in order to pay the generated debt, in the <code>MetadataOut.PaymentBarcodeUrl</code> parameter:</p>
+<p>In the <code>MetadataOut.PaymentBarcodeUrl</code> parameter, the response returns the coupon in <em>PDF</em> format that the client must present in the agency to pay the generated debt.</p>
 <p>For more information on the response parameters, please refer to the <a href="../../../docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
 <h4 id="response-example">Response example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
@@ -1188,22 +1183,22 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" alt="CASH" width="52" style="" /></td>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /></td>
 <td>101</td>
 <td>E-Brou</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" alt="CASH" width="52" style="" /></td>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /></td>
 <td>102</td>
 <td>Santander</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" alt="Diners" width="52" style="" /></td>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /></td>
 <td>104</td>
 <td>Scotiabank</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" alt="CASH" width="52" style="" /></td>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /></td>
 <td>105</td>
 <td>Itau</td>
 </tr>
@@ -1503,9 +1498,9 @@
 <br>
 <b>Last modified</b>
 
-September 12, 2023: 
+September 18, 2023: 
 
- <i>Request examples updated (0c7267b)</i>
+ <i>Request examples updated (9f726bc)</i>
   </div>
 </div>
 
