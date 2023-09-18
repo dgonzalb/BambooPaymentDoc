@@ -32,7 +32,7 @@ Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | 44 | SuSuerte |
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -49,7 +49,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 {{% alert title="Consideraciones" color="info"%}}
 * Los Pesos Colombianos no soportan cantidades decimales, por lo que todos los valores recibidos serán redondeados.
@@ -245,12 +245,12 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Nequi QR
-Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. EL API de Bamboo Payment genera el código QR en la respuesta del request.
+Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.
 
 El flujo de este medio de pago es _**Redirect**_, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1), puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -267,7 +267,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example-1}
 ```json
@@ -470,7 +470,7 @@ Al utilizar este método de pago, su cliente recibirá una notificación para qu
 <img src="/assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
 
 ### Parámetros del Request {#request-parameters-2}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -487,7 +487,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example-2}
 ```json

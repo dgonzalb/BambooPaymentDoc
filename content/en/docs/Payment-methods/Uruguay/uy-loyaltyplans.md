@@ -12,16 +12,16 @@ tags: ["subtopic"]
 _SoySantander_ allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.
 
 ### Token request
-The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout.` library PWCheckout.
+The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout` library.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `loyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan |
+| `loyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan. |
 | `LoyaltyPlanUserIdentification` | `string` | Yes | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
 | `email` | `string` | Yes | E-mail address of the customer. |
 
-<br>
 Example:
+<br>
 
 ```html
 <script type=”text/javascript”>
@@ -79,7 +79,7 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 ```
 
 ### Consulting the number of points
-To get the number of points available for a user, create a `POST` request to the following URL
+To get the number of points available for a user, create a `POST` request to the following URL:
 
 * **Production**: `https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`

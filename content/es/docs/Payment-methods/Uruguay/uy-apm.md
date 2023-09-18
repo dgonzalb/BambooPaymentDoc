@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago either in their bank app or at a physical payment office.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago ya sea en su aplicación bancaria o en una oficina física de pago.
 {{% /alert %}}
 
 ## Efectivo {#cash}
@@ -22,11 +22,10 @@ El método de pago en efectivo permite a sus clientes generar un cupón y comple
 | | Payment MediaId | Acquirer |
 |-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png"  width="52" /> | 5 | Abitab |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 10 | RedPagos<br>_If you are in Gateway model._ |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 65 | RedPagos Payfac<br>_If you are in PayFac model._ |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 10 | RedPagos |
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -43,7 +42,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -77,7 +76,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters}
-The response returns the coupon in _PDF_ format that the client must present in the agency in order to pay the generated debt, in the `MetadataOut.PaymentBarcodeUrl` parameter:
+En el parámetro `MetadataOut.PaymentBarcodeUrl` de la respuesta, se retorna el cupon en formato _PDF_ que el cliente debe presentar en la agencia para pagar la deuda generada.
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
@@ -173,27 +172,27 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Bank transfers
-El flujo de este medio de pago es _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [sección Parámetros del Response](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
+## Transferencia bancaria {#bank-transfers}
+El flujo de este medio de pago es _**Redirect**_, por lo que el cliente debe ser redireccionado a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1) puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
 
-### Supported banks
-You can offer to your customers the possibility to pay using bank transfers if the customer's account is in the following banks:
+### Bancos soportados {#supported-banks}
+Puede ofrecer a sus clientes la posibilidad de pagar mediante transferencia bancaria si la cuenta del cliente está en los siguientes bancos:
 
 <div id="shortTable"></div>
 
 | | Payment MediaId | Bank |
 |-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" alt="CASH" width="52" style="" /> | 101 | E-Brou |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" alt="CASH" width="52" style="" /> | 102 | Santander |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | 101 | E-Brou |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | 102 | Santander |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" alt="Diners" width="52" style="" /> | 104 | Scotiabank |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" alt="CASH" width="52" style="" /> | 105 | Itau |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | 105 | Itau |
 
-### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+### Parámetros del Request {#request-parameters-1}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
+| `PaymentMediaId` | `numeric` | Sí | Envíe el `PaymentMediaId` de acuerdo con el banco del cliente en la [tabla de bancos soportados](#supported-banks). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
@@ -206,9 +205,9 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `sourceReference` | `string` | No | This field is used to configure a Bank reference for the customer. |
-| `MetaDataIn` → `destinationReference` | `string` | No | This field is used to configure a bank reference for the merchant. The API applies a default value if you don't provide this information. |
-| `MetaDataIn` → `externalReference` | `string` | No | This field is used to configure a external reference of the system who invokes the API. |
+| `MetaDataIn` → `sourceReference` | `string` | No | Este campo se utiliza para configurar una referencia bancaria para el cliente. |
+| `MetaDataIn` → `destinationReference` | `string` | No | Este campo se utiliza para configurar una referencia bancaria para el comercio. La API aplica un valor predeterminado si no proporciona esta información. |
+| `MetaDataIn` → `externalReference` | `string` | No | Este campo se utiliza para configurar una referencia externa del sistema que invoca la API. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -244,12 +243,12 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters}
+### Parámetros del Response {#response-parameters-1}
 As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Ejemplo del Response {#response-example}
+#### Ejemplo del Response {#response-example-1}
 ```json
 {
     "Response": {

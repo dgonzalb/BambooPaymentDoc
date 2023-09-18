@@ -3,7 +3,7 @@ title: "Uruguay"
 linkTitle: "Uruguay"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _**Uruguay**_ has a developing e-commerce industry that is progressively gaining favor with customers. A favorable regulatory framework, rising smartphone usage, and increased internet penetration contributed to Uruguay’s booming e-commerce sector.
+  _**Uruguay**_ ha desarrollado una industria de comercio electrónico que ha ido ganando favorabilidad en los clientes de forma progresiva. Su favorable entorno regulatorio, el aumento del uso de teléfonos inteligentes y el aumento de la penetración de Internet han contribuido al boom del comercio electrónico en Uruguay.
 weight: 100
 tags: ["parenttopic"]
 ---
@@ -12,7 +12,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 
 ## Medios de pago {#payment-methods}
 
-| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flow
+| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /> | 1 | VISA | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /> | 2 | Mastercard |  <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
@@ -38,10 +38,10 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 
 ## Monedas {#currencies}
 
-| Código | Descripción    |
-|------|----------------|
-| USD  | Dólar estadounidense      | 
-| UYU  | Uruguayan Peso |
+| Código | Descripción          |
+|--------|----------------------|
+| USD    | Dólar estadounidense | 
+| UYU    | Peso uruguayo        |
 
 ## Límites de montos {#amount-limits}
 
@@ -59,8 +59,8 @@ La siguiente tabla describe los tipos de documentos válidos para Uruguay:
 | 2    | Cédula de Identidad | CI           |
 | 3    | Extrajero           | EXT          |
 
-## Issuer Banks Table
-The following table lists the configured Issuer Banks.
+## Tabla de bancos emisores {#issuer-banks-table}
+La siguiente tabla muestra el listado de bancos emisores configurados.
 
 | IssuerBankId | Banco Emisor |
 |---------|----------|

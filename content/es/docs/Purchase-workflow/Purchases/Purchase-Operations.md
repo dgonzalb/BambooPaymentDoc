@@ -27,8 +27,8 @@ Puede recibir la descripción del error basándose en las funciones de localizac
 | `es` | Español. |
 | `pt` | Portugués. |
 
-## Métodos del API de Compras {#purchase-api-methods}
-Las siguientes operaciones expuestas por el _**API de Compras**_ le permite realizar varias acciones sobre las compras. Usted cuenta con los siguientes métodos.
+## Métodos de la API de Compras {#purchase-api-methods}
+Las siguientes operaciones expuestas por la _**API de Compras**_ le permite realizar varias acciones sobre las compras. Usted cuenta con los siguientes métodos.
 
 * [Crear una compra](#create-a-purchase)
 * [Confirmar una compra](#confirm-a-purchase)

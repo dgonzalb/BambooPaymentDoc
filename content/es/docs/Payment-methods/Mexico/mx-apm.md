@@ -16,7 +16,7 @@ El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending
 **OXXO**, la cadena de tiendas de autoservicio más grande de México, ofrece un servicio para que sus clientes paguen sus compras. Sus clientes deben entregar el cupón en la tienda y pueden pagar utilizando efectivo o tarjetas.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -32,7 +32,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -221,7 +221,7 @@ Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes
 * Circle K
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -237,7 +237,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example-1}
 ```json
@@ -416,7 +416,7 @@ El **SPEI** (Sistema de Pagos Electrónicos Interbancarios) es un sistema de pag
 Para utilizar **SPEI**, los clientes deben tener acceso a la banca en línea o a una aplicación de banca móvil ofrecida por su banco y luego iniciar una transferencia proporcionando el número de convenio CIE, la referencia, la cantidad y el número CLABE (Clave Bancaria Estandarizada) si es necesario.
 
 ### Parámetros del Request {#request-parameters-2}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -432,7 +432,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto.<br>El tiempo máximo permitido es de **30** días (**43200** minutos). |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.<br>El tiempo máximo permitido es de **30** días (**43200** minutos). |
 
 #### Ejemplo del Request {#request-example-2}
 ```json

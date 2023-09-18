@@ -8,7 +8,7 @@ weight: 80
 tags: ["parenttopic"]
 ---
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Solo ofrecemos soporte para comercios en Paraguay a través del modelo **Gateway**, y les enviamos la factura desde Uruguay.
 {{% /alert %}}
 
@@ -29,17 +29,17 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 
 ## Monedas {#currencies}
 
-| Código | Descripción        | Modo        |
-|------|--------------------|-------------|
-| USD  | Dólar estadounidense          | CrossBorder |
-| PYG  | Paraguayan Guaraní | Domestic    |
+| Código | Descripción          | Modo        |
+|--------|----------------------|-------------|
+| USD    | Dólar estadounidense | CrossBorder |
+| PYG    | Guaraní paraguayo    | Doméstico   |
 
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Paraguay:
 
-| Código | Nombre del documento                    | Abreviación |
-|:----:|----------------------------------|--------------|
-| 1    | Registro Único del Contribuyente | RUC          |
-| 2    | Cédula de Identidad              | CIC          |
-| 3    | Documento Extranjero             | DEX          |
-| 23   | Referencia genérica              | GEN          |
+| Código | Nombre del documento             | Abreviación |
+|:------:|----------------------------------|--------------|
+| 1      | Registro Único del Contribuyente | RUC          |
+| 2      | Cédula de Identidad              | CIC          |
+| 3      | Documento Extranjero             | DEX          |
+| 23     | Referencia genérica              | GEN          |

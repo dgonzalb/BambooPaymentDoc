@@ -16,7 +16,7 @@ El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending
 **PagoEfectivo** provee una red de centros de pago físicos donde sus clientes pueden pagar las compras en efectivo o utilizando su aplicación bancaria. Su cliente puede pagar mostrando el identificador de la deuda (CIP) en una oficina o a través de su aplicación bancaria.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -33,7 +33,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto.<br>La fecha de expiración debe ser de al menos 10 minutos y menos de seis meses a partir de la fecha actual (en UTC GMT -5). |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.<br>La fecha de expiración debe ser de al menos 10 minutos y menos de seis meses a partir de la fecha actual (en UTC GMT -5). |
 
 #### Ejemplo del Request {#request-example}
 ```json

@@ -31,7 +31,7 @@ Para las compras utilizando API, puede usar cualquiera de la siguientes opciones
 * [Preview de la compra]({{< ref "Purchase-Preview.md" >}})
 
 ### Flujo Redirect {#redirect-flow}
-Al invocar la API para iniciar una compra, se obtendrá un _CommerceAction_. Este _CommerceAction_ indica que el comercio necesita realizar los pasos necesarios para avanzar en el proceso de compra. En este caso, el API retorna una URL asociada al _CommerceAction_ para redirigir al cliente para continuar con el pago.
+Al invocar la API para iniciar una compra, se obtendrá un _CommerceAction_. Este _CommerceAction_ indica que el comercio necesita realizar los pasos necesarios para avanzar en el proceso de compra. En este caso, la API retorna una URL asociada al _CommerceAction_ para redirigir al cliente para continuar con el pago.
 
 ![PrintScreen](/assets/RedirectionFlow_es.png)
 

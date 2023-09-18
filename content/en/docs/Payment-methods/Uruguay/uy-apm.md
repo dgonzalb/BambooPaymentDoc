@@ -22,8 +22,7 @@ The Cash payment method allows your customers to generate a coupon and complete 
 | | Payment MediaId | Acquirer |
 |-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png"  width="52" /> | 5 | Abitab |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 10 | RedPagos<br>_If you are in Gateway model._ |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 65 | RedPagos Payfac<br>_If you are in PayFac model._ |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png"  width="52" /> | 10 | RedPagos |
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
@@ -77,7 +76,7 @@ You need to include specific fields for this payment method to work correctly. C
 ```
 
 ### Response parameters
-The response returns the coupon in _PDF_ format that the client must present in the agency in order to pay the generated debt, in the `MetadataOut.PaymentBarcodeUrl` parameter:
+In the `MetadataOut.PaymentBarcodeUrl` parameter, the response returns the coupon in _PDF_ format that the client must present in the agency to pay the generated debt.
 
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
 
@@ -183,10 +182,10 @@ You can offer to your customers the possibility to pay using bank transfers if t
 
 | | Payment MediaId | Bank |
 |-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" alt="CASH" width="52" style="" /> | 101 | E-Brou |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" alt="CASH" width="52" style="" /> | 102 | Santander |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | 101 | E-Brou |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | 102 | Santander |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" alt="Diners" width="52" style="" /> | 104 | Scotiabank |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" alt="CASH" width="52" style="" /> | 105 | Itau |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | 105 | Itau |
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.

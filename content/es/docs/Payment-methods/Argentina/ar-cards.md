@@ -13,7 +13,7 @@ tags: ["subtopic"]
 * **Compras sin CVV**: Permite tokenización y recurrencia.<br>En el caso de la tokenización, la API genera un cargo por un mínimo de **ARS 3**, que se reembolsa para validar los datos del titular de la tarjeta. Con este token, es posible realizar compras sin CVV.
 
 ## Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|

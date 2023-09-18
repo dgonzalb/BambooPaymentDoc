@@ -12,7 +12,7 @@ tags: ["subtopic"]
 _PuntoXpress_ es una red de cobro en efectivo con cobertura regional en América Central. Cuando los clientes de las plataformas de comercio electrónico realizan compras en sus sitios web, el comercio nos solicita que generemos una deuda. Posteriormente, el cliente acude a un punto de cobro de _PuntoXpress_, comprueba la deuda asociada a la referencia y realiza el pago. Luego, _PuntoXpress_ nos notifica y nosotros reportamos al comercio.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|

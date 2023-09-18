@@ -2,7 +2,7 @@
 title: "API para saldos de cuentas"
 date: 2023-05-08T07:28:16-05:00
 Description: >
-  El API para saldos de cuenta permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
+  La API para saldos de cuenta permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
 weight: 60
 notopicssection: true
 ---
@@ -19,7 +19,7 @@ En el header se debe configurar el parámetro `Authorization` concatenando la pa
 ## Ejemplo del Response {#response-example}
 
 {{% alert title="Info" color="info"%}}
-No es necesario configurar un request para invocar el API.
+No es necesario configurar un request para invocar la API.
 {{% /alert %}}
 
 

@@ -1,27 +1,27 @@
 ---
-title: "Loyalty plans"
-linkTitle: "Loyalty plans"
+title: "Planes de Fidelización"
+linkTitle: "Planes de Fidelización"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments using Loyalty plans such as _SoySantander_ or _OCA Metros_.
+  Aprenda cómo integrar su solución para procesar pagos utilizando Planes de Fidelización como _SoySantander_ u _OCA Metros_.
 weight: 20
 tags: ["subtopic"]
 --- 
 
 ## SoySantander
-_SoySantander_ allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.
+_SoySantander_ permite a los clientes utilizar puntos para pagar el monto parcial o total de una compra. Utilizando nuestra API, puede crear comprar y consultar el número de puntos de un cliente.
 
-### Token request
-The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/es/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout.` library PWCheckout.
+### Solicitud de Token {#token-request}
+El primer paso es obtener un token válido para realizar la transacción. Si la compra es mixta, obtenga el token como se explica en [Clientes](/es/docs/purchase-workflow/customer-types.html). En caso contrario, invoque el método `GetLoyaltyToken` de la librería `PWCheckout`.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `loyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan |
-| `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
-| `email` | `string` | Sí | E-mail address of the customer. |
+| `loyaltyPlanId` | `numeric` | Sí | Identificador del Plan de fidelización. |
+| `LoyaltyPlanUserIdentification` | `string` | Sí | Identificador del usuario en el Plan de fidelización. _Santander_ genera y notifica este valor utilizando un algoritmo. |
+| `email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 
-<br>
 Ejemplo:
+<br>
 
 ```html
 <script type=”text/javascript”>
@@ -29,22 +29,22 @@ Ejemplo:
 </script>
 ```
 
-### Purchases with _SoySantander_ points
-Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{< ref uy-cards.md >}}) using it. Furthermore, include the `LoyaltyPlan` object with the number of points to redeem and the user identifier of the Loyalty Plan.
+### Compras con puntos _SoySantander_ {#purchases-with-_soysantander_-points}
+Una vez tenga el token asociado con el Plan de fidelización [Cree una compra]({{< ref uy-cards.md >}}) usándolo. Además, incluya el objeto `LoyaltyPlan` con el número de puntos a redimir y el identificador del usuario en el Plan de fidelización.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
-| `Order` | `string` | Sí | Order number of the purchase. |
-| `Amount` | `number` | No | Amount of the purchase. Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it.<br>If you must include decimals in the amount, concatenate the decimal places without de decimal point. Example  `12,25` > `1225`. |
-| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the posibles valores in the [Currencies](/es/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
-| `Capture` | `boolean` | Sí | Send `true` in this parameter as the Loyalty plan purchases don't support Pre-authorization. |
-| `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan. |
-| `LoyaltyPlan` → `Amount` | `numeric` | Sí | Total of points to redeem. |
-| `LoyaltyPlan` → `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
+| `TrxToken` | `string` | Sí | Token generado como se explicó en [solicitud del token](#token-request). |
+| `Order` | `string` | Sí | Número de orden de la compra. |
+| `Amount` | `number` | No | Monto de la compra. Envíe este parámetro para compras mixtas (puntos + una tarjeta). En caso contrario, omita este campo.<br>Si necesita incluir decimales en el monto, concatene los dígitos decimales sin el punto decimal. Ejemplo `12,25` > `1225`. |
+| `Currency` | `string` | No | Moneda de la compra en formato ISO-4217. Encuentre los posibles valores en la tabla [Monedas](/es/docs/payment-methods/uruguay.html#currencies).<br>Envíe este parámetro para compras mixtas (puntos + una tarjeta). En caso contrario, omita este campo. |
+| `Capture` | `boolean` | Sí | Envíe `true` en este parámetro ya que el plan las compras por plan de fidelización no soportan preautorización. |
+| `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Sí | Identificador del Plan de fidelización. |
+| `LoyaltyPlan` → `Amount` | `numeric` | Sí | Total de puntos a redimir. |
+| `LoyaltyPlan` → `LoyaltyPlanUserIdentification` | `string` | Sí | Identificador del usuario en el Plan de fidelización. _Santander_ genera y notifica este valor utilizando un algoritmo. |
 
 {{% alert title="Info" color="info"%}}
-The outcome of a mixed purchase depends on processing points and cards. If the acquirer rejects either of these processes, the entire purchase will also be rejected.
+El resultado de una compra mixta depende del procesamiento de puntos y tarjetas. Si la entidad adquirente rechaza cualquiera de estos procesos, se rechazará toda la compra.
 {{% /alert %}}
 
 #### Ejemplo del Request {#request-example} 
@@ -61,7 +61,7 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 }
 ```
 
-#### Ejemplo del Request {#request-example} for mixed purchases
+#### Ejemplo del Request para compras mixtas {#request-example-for-mixed-purchases}
 
 ```json
 {
@@ -79,23 +79,24 @@ The outcome of a mixed purchase depends on processing points and cards. If the a
 ```
 
 ### Consulting the number of points
-To get the number of points available for a user, create a `POST` request to the following URL
+Para obtener el número de puntos disponibles de un usuario, cree un request `POST` a la siguientes URL:
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance`
 
-Where `{{LoyaltyPlan-ID}}` is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in [Purchase operations]({{< ref Purchase-Operations.md >}}).
+Donde `{{LoyaltyPlan-ID}}` es el identificador del plan de fidelización que desea consultar. Además, recuerde utilizar la autenticación mostrada en [operaciones de compra]({{< ref Purchase-Operations.md >}}).
 
 #### Parámetros del Request {#request-parameters}
-Include the following parameters in the request.
+Incluya los siguientes parámetros en el request.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `LoyaltyPlanId` | `numeric` | Sí | Identifier of the Loyalty plan. |
-| `LoyaltyPlanUserIdentification` | `string` | Sí | User identifier in the Loyalty Plan. _Santander_ generates this value using an algorithm, and they indicate it to you. |
-| `TrxToken` | `string` | Sí | Token generated as explained in [Token request](#token-request). |
+| `LoyaltyPlanId` | `numeric` | Sí | Identificador del Plan de fidelización. |
+| `LoyaltyPlanUserIdentification` | `string` | Sí | Identificador del usuario en el Plan de fidelización. _Santander_ genera y notifica este valor utilizando un algoritmo. |
+| `TrxToken` | `string` | Sí | Token generado como se explicó en [solicitud del token](#token-request). |
 
-#### Ejemplo del Request {#request-example} 
+#### Ejemplo del Request {#request-example-1} 
+
 ```json
 {
   "LoyaltyPlanId": 1,
@@ -105,7 +106,7 @@ Include the following parameters in the request.
 ```
 
 #### Ejemplo del Response {#response-example}
-The `Balance` parameter in the response contains the points available to the user.
+El parámetro `Balance` en el response tiene los puntos disponibles del usuario.
 
 ```json
 {
@@ -121,20 +122,20 @@ The `Balance` parameter in the response contains the points available to the use
 ```
 
 ## OCA Metros
-OCA Metros is the loyalty plan OCA offers that allows customers to purchase using points and a card.
+OCA Metros es el plan de fidelización que ofrece OCA que permite a los clientes realizar compras utilizando puntos y una tarjeta.
 
-### Consideraciones
-When using OCA Metros, consider the following.
+### Consideraciones {#considetrations}
+Cuando utilice OCA Metros, tenga en cuenta lo siguiente.
 
-* Refunds with OCA Metros must be total.
-* There are no pre-authorizations with OCA Metros.
-* Send the Points as numbers without decimals.
-* You can use OCA Metros only for MasterCard cards issued by OCA.
+* Los reembolsos con OCA Metros deben ser totales.
+* No hay preautorizaciones con OCA Metros.
+* Envíe los Puntos como números sin decimales.
+* Sólo puede utilizar OCA Metros para tarjetas MasterCard emitidas por OCA.
 
-### Purchases with _OCA Metros_
-To create a purchase with Metros, include the `OCAMetros` parameter with the number of OCA Metros to redeem in the `MetadataIn` structure for the `Purchase` object. For more information about creating a Purchase, refer [Credit and Debit cards]({{< ref uy-cards.md >}}).
+### Compras con _OCA Metros_ {#purchases-with-_oca-metros_}
+Para crear una compra con Metros, incluya el parámetro `OCAMetros` con el número de OCA Metros que desea redimir en la estructura `MetadataIn` del objeto `Purchase`. Para más información sobre la creación de la compra, consulte [tarjetas crédito y débito]({{< ref uy-cards.md >}}).
 
-The following example demonstrates how to use it and obtain the result:
+El siguiente ejemplo muestra cómo utilizar el parámetro y cómo obtener el resultado:
 
 ```json
 {

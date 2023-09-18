@@ -3,7 +3,7 @@ title: "Chile"
 linkTitle: "Chile"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _**Chile**_ tiene un mercado nacional muy globalizado con varios acuerdos de libre comercio, incluidos los de _Estados Unidos_ y _China_. El poder adquisitivo es uno de los más altos de la región, y la creciente adopción de tarjetas de crédito y débito locales permite a los comericos de comercio electrónico ganar tracción rápidamente.
+  _**Chile**_ tiene un mercado nacional muy globalizado con varios acuerdos de libre comercio, incluidos los de _Estados Unidos_ y _China_. El poder adquisitivo es uno de los más altos de la región, y la creciente adopción de tarjetas de crédito y débito locales permite a los comercios de comercio electrónico ganar tracción rápidamente.
 weight: 40
 tags: ["parenttopic"]
 ---

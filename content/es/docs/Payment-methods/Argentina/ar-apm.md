@@ -16,7 +16,7 @@ El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending
 **Pago Fácil** proporciona una red de centros de pago físicos donde sus clientes pueden pagar sus compras en efectivo. Sus clientes deben facilitar los datos de pago y el monto que desean pagar, y el sistema se encarga del resto.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -33,7 +33,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json
@@ -209,7 +209,7 @@ Debe redirigir a su cliente a la URL mostrada en el parámetro `Response.Metadat
 Con **Transferencias 3.0**, puede mostrar un código QR code generado por Bamboo que lo puede leer su cliente utilizando su wallet.
 
 ### Parámetros del Request {#request-parameters-1} 
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -226,7 +226,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example-1}
 ```json

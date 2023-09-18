@@ -3,7 +3,7 @@ title: "Colombia"
 linkTitle: "Colombia"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Un país diverso con preferencias de consumo específicas de la región, los colombianos son los primeros en adoptar soluciones tecnológicas, aunque siguen aferrados a los hábitos tradicionales. _**Colombia**_ es uno de los centros de startups de América Latina, y los nuevos métodos de pago electrónico, incluidas las billeters digitales, coexisten con una variada lista de soluciones de pago en efectivo.
+  Un país diverso con preferencias de consumo específicas de la región, los colombianos son los primeros en adoptar soluciones tecnológicas, aunque siguen aferrados a los hábitos tradicionales. _**Colombia**_ es uno de los centros de startups de América Latina, y los nuevos métodos de pago electrónico, incluidas las billeteras digitales, coexisten con una variada lista de soluciones de pago en efectivo.
 weight: 50
 tags: ["parenttopic"]
 ---

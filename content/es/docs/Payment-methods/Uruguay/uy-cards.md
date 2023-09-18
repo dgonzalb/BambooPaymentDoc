@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 ## Parámetros del Request {#request-parameters}
-You need to include specific fields for this payment method to work correctly. Check the [Parámetros del Request {#request-parameters}]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
+Se necesita incluir campos específicos para que este método de pago funcione correctamente. Consulte la sección [Parámetros del Request]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -25,20 +25,20 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente.<br>Postal code is mandatory for the United States abd Canada. |
-| `Customer` → `ShippingAddress` → `Country` | `string` | No | Country of the Shipping Address. |
-| `Customer` → `ShippingAddress` → `State` | `string` | No | State of the Shipping Address. | 
-| `Customer` → `ShippingAddress` → `City` | `string` | No | City of the Shipping Address. |
-| `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Address Detail of the Shipping Address. | 
-| `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Postal Code of the Shipping Address. |
-| `CustomerIP` | `string` | No | IP of the customer that uses the service. |
-| `DataUY` | `object` | Sí | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage. |
-| `DataUY` → `IsFinalConsumer` | `boolean` | Sí | Indicates if the sale is performed to a final consumer. |
-| `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Invoice number associated with the sale. |
-| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Amount taxed by VAT. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente.<br>El código postal es obligatorio para Estados Unidos y Canadá. |
+| `Customer` → `ShippingAddress` → `Country` | `string` | No | País de la dirección de envío. |
+| `Customer` → `ShippingAddress` → `State` | `string` | No | Estado de la dirección de envío. | 
+| `Customer` → `ShippingAddress` → `City` | `string` | No | Ciudad de la dirección de envío. |
+| `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección de envío. | 
+| `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Código postal de la dirección de envío. |
+| `CustomerIP` | `string` | No | IP del cliente que utiliza el servicio. |
+| `DataUY` | `object` | Sí | Información específica para _Uruguay_.<br>En Uruguay, dos leyes promueven los medios de pago electrónicos mediante la devolución de puntos de IVA. Las leyes **19.210** (Ley de inclusión financiera) y **17.934** de servicios gastronómicos y afines regulan estos beneficios, y los datos presentados en este objeto son necesarios para su correcto uso. |
+| `DataUY` → `IsFinalConsumer` | `boolean` | Sí | Indica si la venta se realiza a un consumidor final. |
+| `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Número de factura asociado a la venta. |
+| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Importe gravado por IVA. |
 
 {{% alert title="Info" color="info"%}}
-* <sup>*</sup> This parameter is mandatory when `DataUY.IsFinalConsumer` is `true`.
+* <sup>*</sup> Este parámetro es obligatorio cuando `DataUY.IsFinalConsumer` es `true`.
 * Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref Antifraud.md>}}).
 
 {{% /alert %}}
@@ -83,21 +83,21 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-### Consideraciones
-* You can make purchases in installments as long as the Issuing Bank has it enabled.
-* You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
-* **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
-* **FirstData** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute   [Verification Code Request Flow](#).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **FirstData** and notify us.
-* **Creditel** and **PassCard** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
-* **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow](#).
-* When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
+### Consideraciones {#considerations}
+* Puede realizar compras a cuotas siempre que el Banco Emisor lo tenga habilitado.
+* Puede realizar compras con Tarjetas de Débito siempre que el Banco Emisor lo tenga habilitado.
+* **Visanet** exige la inclusión del CVV en la primera compra del cliente o en el alta del cliente.<br>Una vez realizado el registro y obtenido el _Commerce Token_, no es necesario solicitar el CVV en futuras transacciones.
+* **FirstData** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Debe ejecutar [Flujo de solicitud de código de verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>Esta modalidad está activada por defecto. Si desea desactivarla, debe negociar con **FirstData** y notificarnoslo.
+* **Creditel** y **PassCard** requieren que el mensaje de `Purchase` incluya el número y tipo de documento del tarjetahabiente (campos `Customer.DocumentTypeId` y `Customer.DocNumber`).
+* **PassCard** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Por lo tanto, debe ejecutar el [Flujo de Solicitud de Código de Verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).
+* Cuando utilice **OCAOneClick2** (OCA Multi-Acquiring), necesita incluir la dirección IP de la persona que está haciendo la compra. Para esto, debe enviar el parámetro `CustomerIP` en el request.
 
-#### Purchases using MasterCards through OCA
-When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.
+#### Compras utilizando MasterCard a través de OCA {#purchases-using-mastercard-through-oca}
+Cuando utilice **MasterCard**, se recomienda enviar el device FingerPrint utilizando el método `SetDeviceFingerPrint`.
 
-Add this function to the script used for the checkout form (`PWCheckOut`) to generate and return the value used in the purchases.
+Agregue esta función al script utilizado en para el formulario de Checkout (`PWCheckOut`) para generar y retornar el valor utilizado en la compra.
 
-In this example, we show how to invoke and obtain the result.
+En este ejemplo, mostramos cómo invocar y obtener el resultado.
 
 ```html
 <script type="text/javascript">
@@ -106,12 +106,12 @@ In this example, we show how to invoke and obtain the result.
 ```
 <br>
 
-Then, include the token in the purchase creation according to the following scenarios.
+Luego, incluya el token en la creación de la compra de acuerdo con los siguientes escenarios.
 
-* For _**OneTimeToken**_, send the device FingerPrint you generate and the **OT token**.
-* For _**CommerceToken**_, there are two cases:
-  * For Recurring purchases (Without CVV), send the device FingerPrint you generate and the **CT token**. You can use an existing **CT token** or generate one.
-  * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV; the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
+* Para _**OneTimeToken**_, envíe el device FingerPrint que generó y el **OT token**.
+* Para _**CommerceToken**_, existen dos casos:
+  * Para compras recurrentes (sin CVV), envíe el device FingerPrint que genera y el **CT token**. Usted puede utilizar un **CT token** existente o generar uno nuevo.
+  * Para compras con CVV, no es necesario generar un `DeviceFingerPrint` ya que cuando el cliente ingresa el CVV, el sistema envía el valor generado cuando se muestra la página de solicitud de CVV. Después, se genera una Compra en estado _Pending_ y necesita redirigir al cliente a la URL retornada en el parámetro `actionUrl` donde ingresa el CVV.
 
 ## Parámetros del Response {#response-parameters}
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
@@ -216,19 +216,19 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-### Response for AMEX
-When using AMEX, the response includes the object `AcquirerResponseDetail` inside the `Response.Transaction.Steps` object with the following information.
+### Response para AMEX {#response-for-amex}
+Cuando utilice AMEX, la respuesta incluye el objeto `AcquirerResponseDetail` dentro del objeto `Response.Transaction.Steps` con la siguiente información.
 
 | Propiedad | Descripción |
 |---|---|
-| `ResponseCode` | Response code. |
-| `ResultDescription` | Description. |
-| `Indi` | Tax refund application indicator (1=apply, 2=not apply). |
-| `Monto_dev` | This amount corresponds to the tax refund. |
-| `SerialTraceAuditNumber` | Acquirer reference Id. |
-| `RetrievalReferenceNumber` | RRN, Acquirer reference Id. |
-| `PurchaseIdSended` | Identifier of the purchase sent to the acquirer. |
-| `BatchId` | Identifier of the batch to which the purchase made belongs. |
+| `ResponseCode` | Código de respuesta. |
+| `ResultDescription` | Descripción. |
+| `Indi` | Indicador de aplicación de devolución de impuestos (1=aplica, 2=no aplica). |
+| `Monto_dev` | Este monto corresponde a la devolución de impuestos. |
+| `SerialTraceAuditNumber` | Referencia del adquirente. |
+| `RetrievalReferenceNumber` | RRN, referencia del adquirente. |
+| `PurchaseIdSended` | Identificador de la compra que se envió al adquirente. |
+| `BatchId` | Identificador del batch al cual pertenece la compra realizada. |
 
 Ejemplo:
 
@@ -248,35 +248,35 @@ Ejemplo:
 ```
 
 ## Tarjetas de prueba {#testing-cards}
-When generating valid card data for testing, you must first establish which acquirer you want to test and what type of test you want to perform.
+Para generar información de tarjetas válidas para pruebas, debe establecer primero qué adquirente necesita probar y qué tipo de prueba quiere hacer.
 
-### Determination of BIN
-When setting up an acquirer, the card's BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with the FirstData acquirer (which is a local MasterCard acquirer in Uruguay), the BIN of the generated card should adhere to the following format: `^ 5 \ [1-5] \ [0-9]*`
+### Determinación del BIN {#determination-of-bin}
+Al configurar un adquirente, también se crea el BIN (número de identificación bancaria) de la tarjeta. Este BIN debe coincidir con uno de los bines asociados a las marcas procesadas por el adquirente. Por ejemplo, si está realizando una prueba de integración con el adquirente FirstData (que es un adquirente MasterCard local en Uruguay), el BIN de la tarjeta generada debe ajustarse al siguiente formato: `^ 5 \ [1-5] \ [0-9]*`
 
-This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. Por ejemplo, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
+Este formato significa que debe comenzar con el número **5**; el segundo número debe estar entre 1 y 5, luego se acepta cualquier otro número. Por ejemplo, el BIN a probar puede ser `510000`. A continuación se enumeran los bines válidos en el sistema y su adquirente correspondiente.
 
-| BIN (format) | Marca | Notas |
+| BIN (formato) | Marca | Notas |
 |--------------|-------|-------|
-| `^4\[0-9]*` | VISA | Any card that starts with `4`. |
-| `^5\[1-5]\[0-9]*`| MasterCard | Any card that starts with `51` through `5`. |
-| `^589892\|^542991`| OCA | Any card that starts with `589892` or `542991`. |
-| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
-| `^601828` | Créditos Directos | Any card that starts with `601828` |
-| `^3\[47\]\[0-9\]*` | American Express | Any card that starts with `3` followed by `4` or `7`. |
-| `^628026` | Passcard | Any card that starts with `628026`. |
-| `^504736` | Club del Este | Any card that starts with `504736`. |
-| `^589657\|^603522\|^6042\[0-9\]\[1-9\]\*\|^604400\*\|^6043\[0-9\]\*\|^600178\|^604230` | Cabal | Any card that starts with `589657`, `603522`, `604400`, `600178`, `604230`, `6042` followed by `0` to `9` in the fifth position, and `1` to `9` in the sixth position. |
-| `^637483` | Edenred | Any card that starts with `637483`. |
-| `^86\[0-9\]*` | Bancard Check | Any card that starts with `86`. |
-| `^280991` | Credifielco | Any card that starts with `280991`. |
-| `^600692` | Infonet | Any card that starts with `600692`. |
-| `^589562` | Tarjeta Naranja | Any card that starts with `589562`. |
-| `^603199` | Anda | Any card that starts with `603199`. |
-| `^606211` | Hipercard | Any card that starts with `606211`. |
-| `^636297` | Elo | Any card that starts with `636297`. |
-| `^507860` | Aura | Any card that starts with `507860`. |
+| `^4\[0-9]*` | VISA | Cualquier tarjeta que empiece con `4`. |
+| `^5\[1-5]\[0-9]*`| MasterCard | Cualquier tarjeta que empiece con `51` hasta `5`. |
+| `^589892\|^542991`| OCA | Cualquier tarjeta que empiece con `589892` o `542991`. |
+| `^601933\|^608700` | Creditel | Cualquier tarjeta que empiece con `601933` o `608700`. |
+| `^601828` | Créditos Directos | Cualquier tarjeta que empiece con `601828` |
+| `^3\[47\]\[0-9\]*` | American Express | Cualquier tarjeta que empiece con `3` seguido de `4` o `7`. |
+| `^628026` | Passcard | Cualquier tarjeta que empiece con `628026`. |
+| `^504736` | Club del Este | Cualquier tarjeta que empiece con `504736`. |
+| `^589657\|^603522\|^6042\[0-9\]\[1-9\]\*\|^604400\*\|^6043\[0-9\]\*\|^600178\|^604230` | Cabal | Cualquier tarjeta que empiece con `589657`, `603522`, `604400`, `600178`, `604230`, `6042` seguido de `0` al `9` en la quinta posición y `1` al `9` en la sexta posición. |
+| `^637483` | Edenred | Cualquier tarjeta que empiece con `637483`. |
+| `^86\[0-9\]*` | Bancard Check | Cualquier tarjeta que empiece con `86`. |
+| `^280991` | Credifielco | Cualquier tarjeta que empiece con `280991`. |
+| `^600692` | Infonet | Cualquier tarjeta que empiece con `600692`. |
+| `^589562` | Tarjeta Naranja | Cualquier tarjeta que empiece con `589562`. |
+| `^603199` | Anda | Cualquier tarjeta que empiece con `603199`. |
+| `^606211` | Hipercard | Cualquier tarjeta que empiece con `606211`. |
+| `^636297` | Elo | Cualquier tarjeta que empiece con `636297`. |
+| `^507860` | Aura | Cualquier tarjeta que empiece con `507860`. |
 
-### Configured Behaviors
+### Determinación de Comportamiento {#configured-behaviors}
 
 {{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
@@ -284,19 +284,19 @@ This format means it must start with the number **5**; the second number must be
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior  |
+| Operación | Terminación | Comportamiento  |
 |-----------|:-----------:|-----------|
-| Purchase | `0001` | Resultado: OK <br> Approved. |
-| Purchase | `0010` | Resultado: OK <br> Approved. |
-| Purchase | `0011` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Purchase | `0012` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase |
-| Purchase | `0013` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Purchase | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| Purchase | `0003` | Resultado: Rejected <br> Error: TR010 <br> Invalid identity document. |
-| Purchase | `0004` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Purchase | `0005` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Unauthorized purchase. |
-| Cancellation | `0001` | Resultado: Cancel OK. |
-| Cancellation | `0010` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. Cancellation not made. |
+| Compra | `0001` | Resultado: OK <br> Aprobado. |
+| Compra | `0010` | Resultado: OK <br> Aprobado. |
+| Compra | `0011` | Resultado: Rejected <br> Error: TR011 <br> Tarjeta perdida o bloqueada. |
+| Compra | `0012` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. Compra no autorizada. |
+| Compra | `0013` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
+| Compra | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración). |
+| Compra | `0003` | Resultado: Rejected <br> Error: TR010 <br> Documento de identidad inválido. |
+| Compra | `0004` | Resultado: Rejected <br> Error: TR011 <br> Tarjeta perdida o bloqueada. |
+| Compra | `0005` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. Compra no autorizada. |
+| Anulación | `0001` | Resultado: Cancel OK. |
+| Anulación | `0010` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. Anulación no realizada. |
 
 {{< /tab >}}
 
@@ -305,39 +305,39 @@ This format means it must start with the number **5**; the second number must be
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |---------|:-----------:| -----------|
-| Pre-authorization (Purchase) | `0001` | Resultado: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0011` | Resultado: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0012` | Resultado: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0013` | Resultado: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0014` | Resultado: OK <br> Approved. |
-| Pre-authorization (Purchase) | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| Pre-authorization (Purchase) | `0003` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
-| Pre-authorization (Purchase) | `0004` | Resultado: Rejected <br> Error: TR014 <br> The Acquirer denied the transaction due to possible fraud. |
-| Pre-authorization (Purchase) | `0005` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Pre-authorization (Purchase) | `0006` | Resultado: Rejected <br> Error: TR011 <br> Lost or blocked card. |
-| Pre-Authorization Capture (Commit) | `0001` | Resultado: OK <br> Approved. |
-| Pre-Authorization Capture (Commit) | `0011` | Resultado: OK <br> Approved. |
-| Pre-Authorization Capture (Commit) | `0012` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
-| Pre-Authorization Capture (Commit) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Pre-Authorization Capture (Commit) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
-| Cancellation of Pre-Authorization (Rollback) | `0001` | Resultado: OK <br> Canceled. |
-| Cancellation of Pre-Authorization (Rollback) | `0011` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
-| Cancellation of Pre-Authorization (Rollback) | `0012` | result: Rejected <br> Error: TR003 <br> Problems with the merchant's account in Acquirer. |
-| Pre-Authorization Cancellation (Rollback) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Pre-Authorization Cancellation (Rollback) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
-| Refund | `0001` | Resultado: OK <br> Error: TR013 <br> Returned. |
-| Refund | `0011` | Resultado: Rejected <br> Error: TR005 <br> Sender offline. |
-| Refund | `0012` | Resultado: Rejected <br> Error: TR003 <br> Problems with the merchant's account in Acquirer. |
-| Refund | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transaction rejected by Acquirer/Processor. |
-| Refund | `0014` | Resultado: Rejected <br> Error: TR013 <br> Undefined error in Acquirer. |
+| Preautorización (Purchase) | `0001` | Resultado: OK <br> Aprobado. |
+| Preautorización (Purchase) | `0011` | Resultado: OK <br> Aprobado. |
+| Preautorización (Purchase) | `0012` | Resultado: OK <br> Aprobado. |
+| Preautorización (Purchase) | `0013` | Resultado: OK <br> Aprobado. |
+| Preautorización (Purchase) | `0014` | Resultado: OK <br> Aprobado. |
+| Preautorización (Purchase) | `0002` | Resultado: Rejected <br> Error: TR007 <br> Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración). |
+| Preautorización (Purchase) | `0003` | Resultado: Rejected <br> Error: TR005 <br> Emisor fuera de línea. |
+| Preautorización (Purchase) | `0004` | Resultado: Rejected <br> Error: TR014 <br> El Adquirente denegó la transacción por posible fraude. |
+| Preautorización (Purchase) | `0005` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
+| Preautorización (Purchase) | `0006` | Resultado: Rejected <br> Error: TR011 <br> Tarjeta perdida o bloqueada. |
+| Captura de Preautorización (Commit) | `0001` | Resultado: OK <br> Aprobado. |
+| Captura de Preautorización (Commit) | `0011` | Resultado: OK <br> Aprobado. |
+| Captura de Preautorización (Commit) | `0012` | Resultado: Rejected <br> Error: TR005 <br> Emisor fuera de línea. |
+| Captura de Preautorización (Commit) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transacción rechazada por el Adquirente/Procesador. |
+| Captura de Preautorización (Commit) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. |
+| Anulación de Preautorización (Rollback) | `0001` | Resultado: OK <br> Anulado. |
+| Anulación de Preautorización (Rollback) | `0011` | Resultado: Rejected <br> Error: TR005 <br> Emisor fuera de línea. |
+| Anulación de Preautorización (Rollback) | `0012` | result: Rejected <br> Error: TR003 <br> Problemas con la cuenta del comercio en Adquirente. |
+| Anulación de Preautorización (Rollback) | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transacción rechazada por el Adquirente/Procesador. |
+| Anulación de Preautorización (Rollback) | `0014` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. |
+| Reembolso | `0001` | Resultado: OK <br> Error: TR013 <br> Reembolsado. |
+| Reembolso | `0011` | Resultado: Rejected <br> Error: TR005 <br> Emisor fuera de línea. |
+| Reembolso | `0012` | Resultado: Rejected <br> Error: TR003 <br> Problemas con la cuenta del comercio en Adquirente. |
+| Reembolso | `0013` | Resultado: Rejected <br> Error: TR019 <br> Transacción rechazada por el Adquirente/Procesador. |
+| Reembolso | `0014` | Resultado: Rejected <br> Error: TR013 <br> Error indefinido en Adquirente. |
 
-Example of BIN (first 6 digits) for testing specific card types:
+Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específicos:
 
-* `468562` – Prepaid Visa Card
-* `430307` – Visa Debit Card
-* `463308` – Visa Debit Card
+* `468562` – Tarjeta Visa prepago
+* `430307` – Tarjeta Débito Visa
+* `463308` – Tarjeta Débito Visa
 
 {{< /tab >}}
 
@@ -346,15 +346,15 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Resultado: OK <br> Approved. |
-| Buy | `0002` | Resultado: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
-| Buy | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
-| Buy | `0004` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Buy | `0005` | Resultado: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
-| Cancellation | `0001` | Resultado: OK <br> Canceled. |
-| Cancellation | `0010` | Resultado: Rejected <br> Error: TR001 <br> Buyer communication error. |
+| Compra | `0001` | Resultado: OK <br> Aprobado. |
+| Compra | `0002` | Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta. |
+| Compra | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error en los parámetros informados al adquirente. |
+| Compra | `0004` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
+| Compra | `0005` | Resultado: Rejected <br> Error: TR997 <br> Error del adquirente procesando el pago. |
+| Anulación | `0001` | Resultado: OK <br> Anulado. |
+| Anulación | `0010` | Resultado: Rejected <br> Error: TR001 <br> Error de comunicación con el Adquirente. |
 
 
 {{< /tab >}}
@@ -364,13 +364,13 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Resultado: OK <br>Approved. |
-| Buy | `0002` | Resultado: OK <br>Approved. |
-| Buy | `0003` | Resultado: OK <br>Approved. |
-| Refund | `0001` | Resultado: OK. |
-| Refund | `0002` | Resultado: OK. |
+| Compra | `0001` | Resultado: OK <br> Aprobado. |
+| Compra | `0002` | Resultado: OK <br> Aprobado. |
+| Compra | `0003` | Resultado: OK <br> Aprobado. |
+| Reembolso | `0001` | Resultado: OK. |
+| Reembolso | `0002` | Resultado: OK. |
 
 {{< /tab >}}
 
@@ -379,15 +379,15 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Resultado: OK <br> Approved
-| Buy | `0002` | Resultado: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
-| Buy | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
-| Buy | `0004` | Resultado: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Buy | `0005` | Resultado: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
-| Cancellation | `0001` | Resultado: OK <br> Canceled. |
-| Cancellation | `0010` | Resultado: Rejected <br> Error: TR001 <br> Buyer communication error. |
+| Compra | `0001` | Resultado: OK <br> Aprobado. |
+| Compra | `0002` | Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta. |
+| Compra | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error en los parámetros informados al adquirente. |
+| Compra | `0004` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
+| Compra | `0005` | Resultado: Rejected <br> Error: TR997 <br> Error del adquirente procesando el pago. |
+| Anulación | `0001` | Resultado: OK <br> Anulado. |
+| Anulación | `0010` | Resultado: Rejected <br> Error: TR001 <br> Error de comunicación con el Adquirente. |
 
 {{< /tab >}}
 
@@ -396,14 +396,14 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Resultado: OK <br> Approved. |
-| Buy | `0002` | Resultado: Rejected <br> Error: TR005 <br> Issuer offline or problem related to Acquirer. |
-| Buy | `0003` | Resultado: Rejected <br> Error: TR009 <br> Unknown Buyer Error. |
-| Buy | `0004` | Resultado: Rejected <br> Error: TR013 <br> The Acquirer denied the transaction. |
-| Buy | `0005` | Resultado: Rejected <br> Error: TR004 <br> Communication error when sending transaction to Acquirer. |
-| Cancellation | `0001` | Resultado: OK <br> Canceled. |
+| Compra | `0001` | Resultado: OK <br> Aprobado. |
+| Compra | `0002` | Resultado: Rejected <br> Error: TR005 <br> Emisor fuera de línea o problema relacionado al Adquirente. |
+| Compra | `0003` | Resultado: Rejected <br> Error: TR009 <br> Error desconocido del Adquirente. |
+| Compra | `0004` | Resultado: Rejected <br> Error: TR013 <br> El Adquirente denegó la transacción. |
+| Compra | `0005` | Resultado: Rejected <br> Error: TR004 <br> Error de comunicación al enviar transacción al Adquirente. |
+| Anulación | `0001` | Resultado: OK <br> Anulado. |
 
 {{< /tab >}}
 
@@ -412,12 +412,12 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 <div id="shortTable"></div>
 
-| Operation | Termination | Behavior |
+| Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
-| Buy | `0001` to `0010` | Resultado: OK <br>Approved. |
-| Buy | `0011` | Resultado: Rejected <br>Error: PR003<br>Invalid Amount. |
-| Buy | `0012` | Resultado: Rejected <br>Error: TR007<br>Invalid Card. |
-| Buy | `0013` | Resultado: Rejected <br>Error: TR019<br>Dennied. |
+| Compra | `0001` al `0010` | Resultado: OK <br> Aprobado. |
+| Compra | `0011` | Resultado: Rejected <br>Error: PR003<br>Monto inválido. |
+| Compra | `0012` | Resultado: Rejected <br>Error: TR007<br>Tarjeta inválida. |
+| Compra | `0013` | Resultado: Rejected <br>Error: TR019<br>Denegada. |
 
 {{< /tab >}}
 

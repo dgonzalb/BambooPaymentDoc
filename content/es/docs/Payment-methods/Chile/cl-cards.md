@@ -20,7 +20,7 @@ Puede crear la compra utilizando el flujo [API](#card-payments-using-api-flow) o
 Utilizando este flujo, puede ofrecer la posibilidad de recibir pagos con tarjetas sin la intervención del pagador.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -204,7 +204,7 @@ Utilizando este flujo, el pagador debe ser redirigido a la página _**webpay**_ 
 El estado de las compras con tarjeta mediante el flujo Redirect permanecerá _Pending_ hasta que el cliente complete el pago. Haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para obtener más información sobre las compras con redirect.
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|

@@ -3,7 +3,7 @@ title: "Ecuador"
 linkTitle: "Ecuador"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Disere con Bamboo Payment un flujo único de pago conectándose diréctamente con nuestros API y ofrezca una solución de pago confiable y efectiva pra comercio electrónico en _**Ecuador**_.
+  Diseñe con Bamboo Payment un flujo único de pago conectándose directamente con nuestras API y ofrezca una solución de pago confiable y efectiva para comercio electrónico en _**Ecuador**_.
 weight: 60
 tags: ["parenttopic"]
 ---

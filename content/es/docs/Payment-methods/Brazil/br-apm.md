@@ -16,7 +16,7 @@ El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending
 _PIX_ es un medio de pago oficial brasileño lanzado por el Banco Central local. Permite la confirmación inmediata del pago y está disponible 24 horas al día, 7 días a la semana. Para completar un pago, el pagador puede utilizar cualquier Home Banking o Wallet copiando y pegando el ID de transacción o escaneando el código QR.
 
 ### Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -33,7 +33,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 | `MetadataIn.` → `AddressStreet` | `string` | Sí | Calle de la dirección del cliente. |
 | `MetadataIn` → `AddressNumber` | `string` | Sí | Número, piso o apartamento de la dirección del cliente. |
 | `MetadataIn` → `AddressDistrict` | `string` | Sí | Distrito de la dirección del cliente. |
@@ -261,7 +261,7 @@ En el Response, se encuentran los siguientes parámetros:
 _Boleto Bancário_ es un medio de pago popular en Brasil que permite pagar facturas y compras en línea sin necesidad de una tarjeta de crédito: Genera un código de barras único que puede ser imprimido o accedido a través de una plataforma digital y puede ser pagado en cualquier banco u oficina de pago autorizada.
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -278,7 +278,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, el API asignará un valor por defecto. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 | `MetadataIn.` → `AddressStreet` | `string` | Sí | Calle de la dirección del cliente. |
 | `MetadataIn` → `AddressNumber` | `string` | Sí | Número, piso o apartamento de la dirección del cliente. |
 | `MetadataIn` → `AddressDistrict` | `string` | Sí | Distrito de la dirección del cliente. 

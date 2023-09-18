@@ -8,12 +8,12 @@ weight: 10
 tags: ["subtopic"]
 ---
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Solo ofrecemos soporte para comercios en Paraguay a través del modelo **Gateway**, y les enviamos la factura desde Uruguay.
 {{% /alert %}}
 
 ## Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -218,13 +218,13 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Risk index information (local credit cards)
-The acquirer processes the transactions and establishes a _**risk index**_ associated with transactions with **local credit cards**. This information must be processed by the merchant to ensure that the transaction is legitimate and to be able to process the order or cancel it if necessary.
+## Información sobre el índice de riesgo (tarjetas de crédito locales) {#risk-index-information-local-credit-cards}
+La entidad adquirente procesa las transacciones y establece un _**índice de riesgo**_ asociado a las transacciones con **tarjetas de crédito locales**. Esta información debe ser procesada por el comercio para asegurarse de que la transacción es legítima y poder procesar el pedido o cancelarlo en caso necesario.
 
-The acquirer reports the risk index as an error code in the response (within the Transaction object); even though the status is `Approved`, you must validate the `ErrorCode` field, which may have one of the following values:
+La entidad adquirente informa del índice de riesgo como un código de error en la respuesta (dentro del objeto Transaction); aunque el estado sea `Approved`, debe validar el campo `ErrorCode`, que puede tener uno de los siguientes valores:
 
-* **RSK01**: The acquirer marked the transaction with a low risk of fraud. You can process it normally.
-* **RSK02**: The acquirer marked the transaction with a medium risk of fraud. You decide the actions to take in this case.
-* **RSK03**: The acquirer marked the transaction with a high risk of fraud. We suggest to verify the data, including direct contact with the end customer.
+* **RSK01**: La entidad adquirente marcó la operación con un riesgo bajo de fraude. Puede procesarla normalmente.
+* **RSK02**: La entidad adquirente ha marcado la operación con un riesgo de fraude medio. Usted decide las acciones a tomar en este caso.
+* **RSK03**: La entidad adquirente ha marcado la transacción con un riesgo de fraude alto. Sugerimos verificar los datos, incluido el contacto directo con el cliente final.
 
-You are responsible for processing and managing the risk responses, and the gateway will only report the index established by the acquirer.
+El comercio es responsable de procesar y gestionar las respuestas de riesgo, y nosotros solo informaremos el índice establecido por la entidad adquirente.

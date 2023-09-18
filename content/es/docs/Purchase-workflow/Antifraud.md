@@ -51,7 +51,7 @@ La invocación al servicio de fingerprint se encuentra en una librería JavaScri
 
 El fragmento de JavaScript registra las interacciones del usuario con su sitio web y recopila información del dispositivo.
 
-En la llamada a dicha librería se debe incluir (como parámetro) la llave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia el API REST desde esta librería.
+En la llamada a dicha librería se debe incluir (como parámetro) la llave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia la API REST desde esta librería.
 
 ```html
 <script src="{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}" type="text/javascript"></script> 

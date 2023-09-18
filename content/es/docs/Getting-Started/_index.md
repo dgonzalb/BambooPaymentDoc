@@ -2,7 +2,7 @@
 title: "Primeros pasos"
 date: 2023-03-02T08:28:16-05:00
 Description: >
-  Esta sección expone las funcionalidades del API de Pagos de Bamboo para una segura integración con nuestra plataforma.
+  Esta sección expone las funcionalidades de la API de Pagos de Bamboo para una segura integración con nuestra plataforma.
 weight: 10
 ---
 

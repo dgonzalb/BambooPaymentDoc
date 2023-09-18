@@ -3,20 +3,20 @@ title: "Medios alternativos de pago"
 linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con Cash using _Pago Express_.
+  Aprenda a integrar su solución para procesar pagos en efectivo usando _Pago Express_.
 weight: 20
 tags: ["subtopic"]
 ---
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Solo ofrecemos soporte para comercios en Paraguay a través del modelo **Gateway**, y les enviamos la factura desde Uruguay.
 {{% /alert %}}
 
 ## Pago Express
-_Pago Express_ is a popular method for paying bills and services in _**Paraguay**_, offering convenience and accessibility throughout the country. The customer needs to provide the payment code in a physical branch of _Pago Express_ and complete the payment. Then, _Pago Express_ notifies us, and we report to the merchant.
+_Pago Express_ es un popular método de pago para pagar facturas y servicios en _**Paraguay**_, ofreciendo comodidad y accesibilidad en todo el país. El cliente necesita proporcionar el código de pago en una sucursal física de _Pago Express_ y completar el pago. Luego, _Pago Express_ nos notifica, y nosotros informamos al comercio.
 
 ## Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros básicos de compra, como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
