@@ -1,33 +1,31 @@
 ---
-title: "Payout status"
-linkTitle: "Payout status"
+title: "Estados de los Payouts"
+linkTitle: "Estados de los Payouts"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
+  Desde que solicita un Payout hasta que el beneficiario recibe el dinero, el Payout sigue un conjunto de estados. En esta sección, damos una explicación breve de los mismos.
 weight: 20
 ---
 
-The following diagram represents the status of a payout:
+El siguiente diagrama representa los estados de un Payout:
 
-![](/assets/Payouts/Payouts2_en.png)
+![](/assets/Payouts/Payouts2_es.png)
 
-* **Received**: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to [Payouts API](../payouts-api.html). 
+* **Recibido**: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la [API de Payouts](../payouts-api.html).<br>Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.
 
-Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.
+* **Validado**: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la comisión (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de [sanction screening](../overview/payout-concepts.html#sanction-screening).
 
-* **Validated**: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the [sanction screening](../overview/payout-concepts.html#sanction-screening) process.
+* **Held**: Este estado indica que el Payout está en revisiñon manual de nuestro lado debido a las validaciones realizadas en el paso anterior. <!--El ETC de este estado es de XX días hábiles.-->
 
-* **Held**: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.
+* **Pendiente**: Este estado indica que el Payout y el pagador ha complido todas las validaciones requeridas y está por ser enviado a la _Conexión bancaria_.
 
-* **Pending**: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the _Banking Connections_.
+* **Procesándose**: La _Conexión bancaria_ ha recibido el Payout; el tiempo antes de pasar al estado ***Pagado*** depende del país y el método de pago seleccionado. [Haga clic aquí para aprender más](../overview.html#considerations).
 
-* **Processing**: The _Banking Connection_ has received the payout; the time before moving to ***Paid*** status depends on the country and selected payment method. [Click here to learn more](../overview.html#considerations).
+* **Pagado**: La _Conexión bancaria_ ha procesado el Payout y fue aprobado. En este estado, actualizamos su [saldo]({{< ref "Payout-Balances.md" >}}) con los valores de la transacción.
 
-* **Paid**: The _Banking Connection_ has processed the Payout and is approved. In this status, we update your [balance]({{< ref "Payout-Balances.md" >}}) with the transaction values.
+* **Rechazado**: La _Conexión bancaria_ ha procesado el Payout y no fue aprobado. En este estado, actualizamos su [saldo]({{< ref "Payout-Balances.md" >}}) con los valores de la transacción.
 
-* **Rejected**: The _Banking Connection_ has processed the Payout and is not approved. In this status, we update your [balance]({{< ref "Payout-Balances.md" >}}) with the transaction values.
-
-* **Declined**: The payout was rejected due to structure validation or internal reasons.
+* **Declinado**: El payout fue rechazado debido a una validación de estructura o debido a razones internas.
 
  

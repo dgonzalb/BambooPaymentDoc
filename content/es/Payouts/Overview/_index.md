@@ -1,114 +1,114 @@
 ---
-title: "Overview"
+title: "Resumen"
 date: 2023-03-28T08:28:16-05:00
 type: docs
 Description: >
-  Bamboo Payouts is a reliable, scalable, and automated solution that operates across LATAM, producing high-standard processing for merchants that attend to their necessities.
+  Bamboo Payouts es una solución confiable, escalable y automatizada que opera a través de Latinoamérica, ofreciendo a los comercios un procesamiento de alto nivel que cumple con sus necesidades.
 weight: 10
 ---
 
-## Why use Bamboo Payouts?
-Dispersing funds to third parties in Latin American markets is complex. It involves having connections with banks in each country and several legal considerations.
+## ¿Por qué utilizar Bamboo Payouts? {#why-use-bamboo-payouts}
+La dispersión de fondos en Latinoamérica es compleja. Involucra tener conexiones con bancos en cada país y además, múltiples consideraciones legales.
 
-The current model has been a restriction for businesses that do not have local operations and want to pay third parties from other countries.
+El modelo actual ha sido una restricción para los negocios que no tienen operaciones locales y que quieren pagar a terceros en otros países.
 
-Bamboo Payouts offers you a payment system to allow mass transfers to third parties, using API or the dashboard, with updates on the status of transactions and notifications via e-mail to you and your third parties.
+Bamboo Payouts ofrece un sistema de pagos que permite transferencias masivas a terceros, utilizando el API o la consola, con actualizaciones de estados de transacciones y notificaciones a través de correo electrónico tanto para usted como para su tercero.
 
-## How do Bamboo Payouts work?
-Using Bamboo Payouts, you can efficiently disburse the funds settled in your account to local beneficiary accounts. The following image briefly explains the process.
+## ¿Cómo funciona Bamboo Payouts? {#how-do-bamboo-payouts-work}
+A través de Bamboo Payouts, se puede dispersar los fondos acreditados en su cuenta a cuentas locales de beneficiarios. La siguiente imágen explica el proceso.
 
-![Concepts](/assets/Payouts/Payouts1_en.png)
+![Concepts](/assets/Payouts/Payouts1_es.png)
 
-You can configure the Payout fee to be assumed by you or the payee. For more information about pricing and activation of the services, [contact our local experts](https://bamboopaymentsystems.com/#contact-form-principal).
+Puede configurar la comisión del Payout para que sea asumida por usted o por el beneficiario. Para más información sobre precios y activación de los servicios, [póngase en contacto con nuestros expertos locales](https://bamboopaymentsystems.com/#contact-form-principal).
 
-## Benefits
-* Industry experts created our solution.
-* ***Coverage*** - Our service is in 7 countries and counting!
-* ***Flexibility*** -  Connect easily using our API.
-* We offer alternative Payouts transfers, as Nequi in Colombia.
-* The payout fee can be assumed either by you or your payee.
+## Beneficios {#benefits}
+* Expertos del sector crearon nuestra solución.
+* ***Cobertura*** - ¡Nuestro servicio está en 7 países y aumentando!
+* ***Flexibilidad*** - Conéctese fácilmente usando nuestra API.
+* Ofrecemos transferencias alternativas de Payouts, como Nequi en Colombia.
+* La comisión del Payout puede ser asumida por usted o su beneficiario.
 
-## Coverage
+## Cobertura {#coverage}
 
-| Country | ISO Code | Currency | Local Bank Transfer | Efectivo | Instant Transfer | Wallet |
+| País | Código ISO | Moneda | Trasnferencia Local Bancaria | Efectivo | Transferencia instantánea | Billetera |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
 | Argentina  | `AR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
-| Brazil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
+| Brasil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
 | Chile  | `CL` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Colombia  | `CO` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Mexico  | `MX` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Peru  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| México  | `MX` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
+| Perú  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
-## Consideraciones
-Consider the following considerations when using the Payouts feature according to the payee’s country to avoid rejections.
+## Consideraciones {#considerations}
+Tenga en cuenta las siguientes consideraciones cuando utilice Payouts según el país del beneficiario para evitar rechazos.
 
 ### Argentina
 
-* The CBU/CVU **cannot** exceed 22 characters.<br>Example: `0123456789012345678901`.
+* El CBU/CVU **no puede** exceder 22 caracteres.<br>Ejemplo: `0123456789012345678901`.
 
-### Brazil
+### Brasil {#brasil}
 
-* The bank account **cannot** exceed 15 characters.
+* La cuenta bancaria **no puede** exceder 15 caracteres.
 
-| Bank name | Bank code | Format | Example |
+| Nombre del banco | Código del banco | Formato | Ejemplo |
 |---|---|---|---|
-| Banco do Brasil | `001` | `DDDDDDDDD-X` or `DDDDDDDDDX` where `D` is a digit and `X` is a digit (number) or the letter `X`. <br>The number of digits may change, but it cannot exceed ten. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
-| Santander | `033` | `DDDDDDDD`, `DDDDDDDDD`, `DDDDDDDD-D`, where `D` is a digit.<br>The number of digits must be 8 or 9. | `12345678`<br>`12345678-9` |
-| Banrisul | `041` | `DDDDDDDDD-D` or `DDDDDDDDDD` where `D` is a digit.<br>The number of digits must be 10. | `1234567890`<br>`123456789-0` |
-| Caixa | `104` | `DDDDDDDDD-D` or `DDDDDDDDDDDDDD-D` where `D` is a digit.<br>The number of digits must be between 1 and 15. | `1234567890`<br>`123456789-0`<br>`12345678901234-5` |
-| Bradesco | `237` | `DDDDDDD-D` or `DDDDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed eight. | `12345678`<br>`1234567-8` |
-| Mercado Pago | `323` | `DDDDDDDDDD-D` or `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed 11. | `12345678910`<br>`1234567891-0` |
-| Itaú | `341` | `DDDDD-D` or `DDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed 6. | `123456`<br>`12345-6` |
-| Instant Bank Transfer (Pix Key) Document | - | `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits for **CPF** must be 11, and **CNPJ** must be 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
+| Banco do Brasil | `001` | `DDDDDDDDD-X` o `DDDDDDDDDX` donde `D` es un dígito y `X` es un dígito (number) o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder diez. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
+| Santander | `033` | `DDDDDDDD`, `DDDDDDDDD`, `DDDDDDDD-D`, donde `D` es un dígito.<br>El número de dígitos debe ser 8 o 9. | `12345678`<br>`12345678-9` |
+| Banrisul | `041` | `DDDDDDDDD-D` o `DDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos debe ser 10. | `1234567890`<br>`123456789-0` |
+| Caixa | `104` | `DDDDDDDDD-D` o `DDDDDDDDDDDDDD-D` donde `D` es un dígito.<br>El número de dígitos debe ser between 1 y 15. | `1234567890`<br>`123456789-0`<br>`12345678901234-5` |
+| Bradesco | `237` | `DDDDDDD-D` o `DDDDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder ocho. | `12345678`<br>`1234567-8` |
+| Mercado Pago | `323` | `DDDDDDDDDD-D` o `DDDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 11. | `12345678910`<br>`1234567891-0` |
+| Itaú | `341` | `DDDDD-D` o `DDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 6. | `123456`<br>`12345-6` |
+| Documento de Transferencias Bancarias Instantáneas (Llave Pix) | - | `DDDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos para **CPF** debe ser 11 y para **CNPJ** debe ser 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
 
-* The bank branch **cannot** exceed 4 digits. Except for Banco do Brasil.
+* La sucursal bancaria **no puede** exceder 4 dígitos. Excepto para Banco do Brasil.
 
-| Bank name | Bank code | Format | Exceptions | Example |
+| Nombre del banco | Código del banco | Formato | Excepciones | Ejemplo |
 |---|---|---|---|---|
-| Banco do Brasil | `001` | `DDDD-X ` or `DDDDX` where `D` is a digit and `X` is a digit (number) or the letter `X`. <br>The number of digits may change, but cannot exceed five digits. | Can't have four zeros and a digit. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
-| Santander | `033` | `DDDD` where `D` is a digit. | Cannot be `033` | `1234` |
-| Banrisul | `041` | `DDDD` where `D` is a digit. | - | `1234` |
-| Banco Inter | `077` | `DDDD` where `D` is a digit. | Cannot be `077` | `1234` |
-| Caixa | `104` | `DDDD` where `D` is a digit. | Cannot be `001` / `013` / `023` / `104` | `1234` |
-| Banco Original | `212` | `DDDD` where `D` is a digit. | Cannot be `212` | `1234` |
-| Bradesco | `237` | `DDDD` where `D` is a digit. | Cannot be `237` | `1234` |
-| Banco Nu Pagamento | `260` | `DDDD` where `D` is a digit. | Cannot be `260` | `1234` |
-| PagSeguro | `290` | `DDDD` where `D` is a digit. | Cannot be `290` | `1234` |
-| Itau | `341` | `DDDD` where `D` is a digit. | Cannot be `341` | `1234` |
-| Others | - | `DDDD` where `D` is a digit. | - | `1234` |
+| Banco do Brasil | `001` | `DDDD-X ` o `DDDDX` donde `D` es un dígito y `X` es un dígito (number) o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder cinco dígitos. | No puede tener cuatros ceros y un dígito. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
+| Santander | `033` | `DDDD` donde `D` es un dígito. | No puede ser `033` | `1234` |
+| Banrisul | `041` | `DDDD` donde `D` es un dígito. | - | `1234` |
+| Banco Inter | `077` | `DDDD` donde `D` es un dígito. | No puede ser `077` | `1234` |
+| Caixa | `104` | `DDDD` donde `D` es un dígito. | No puede ser `001` / `013` / `023` / `104` | `1234` |
+| Banco Original | `212` | `DDDD` donde `D` es un dígito. | No puede ser `212` | `1234` |
+| Bradesco | `237` | `DDDD` donde `D` es un dígito. | No puede ser `237` | `1234` |
+| Banco Nu Pagamento | `260` | `DDDD` donde `D` es un dígito. | No puede ser `260` | `1234` |
+| PagSeguro | `290` | `DDDD` donde `D` es un dígito. | No puede ser `290` | `1234` |
+| Itau | `341` | `DDDD` donde `D` es un dígito. | No puede ser `341` | `1234` |
+| Others | - | `DDDD` donde `D` es un dígito. | - | `1234` |
 
 ### Chile
 
-* The bank account **cannot** exceed 16 characters. Format: `DDDDDDDDDDDDDDDD` where `D` is a digit.
-Example: `1234567890123456`.
+* La cuenta bancaria **no puede** exceder 16 caracteres. Formato: `DDDDDDDDDDDDDDDD` donde `D` es un dígito.
+Ejemplo: `1234567890123456`.
 
 ### Colombia
 
-* The bank account **cannot** exceed 17 characters. Format: `DDDDDDDDDDDDDDDDD` where `D` is a digit.
-Example `12345678901234567`.
+* La cuenta bancaria **no puede** exceder 17 caracteres. Formato: `DDDDDDDDDDDDDDDDD` donde `D` es un dígito.
+Ejemplo: `12345678901234567`.
 
-### Mexico
+### México {#Mexico}
 
-* The CLABE number **cannot** exceed 18 characters and is validated using a verification algorithm.
-Example: `21790064060296600`.
+* El número CLABE **no puede** exceder 18 caracteres y se valida utilizando un algoritmo de verificación.
+Ejemplo: `21790064060296600`.
 
-### Peru
+### Perú {#peru}
 
-* The bank account **cannot** exceed 20 characters. Format: `DDDDDDDDDDDDDDDDDDDD` where `D` is a digit.
-Example: `12345678901234567890`.
+* La cuenta bancaria **no puede** exceder 20 caracteres. Formato: `DDDDDDDDDDDDDDDDDDDD` donde `D` es un dígito.
+Ejemplo: `12345678901234567890`.
 
 ### Uruguay
 
-| Bank name | Format | Length | Details | Example |
+| Nombre del banco | Formato | Longitud | Detalles | Ejemplo |
 |---|---|---|---|---|
-| BROU | `YYYYYYYYYWWWWW` | 14 | <ul style="margin-bottom: initial;"><li>`Y` -> Account number.</li><li>`W` -> sub-account.</li></ul> | `12345678901234` |
-| BHU | `XXXYYZZZZV` | 10 | <ul style="margin-bottom: initial;"><li>`X` -> Bank branch starts with 0.</li><li>`Y` -> Product number.</li><li>`Z` -> Account number filled with 0 on the left.</li><li>`V` -> Verifying Digit.</li></ul> | `0123401234` |
-| Citibank | `XXXXXXXXXX` | 10 | Filled with 0 on the left<br>The account number starts with 0, 1, or 5. | `0123456789` |
-| Itau | `XXXXXXX` | 7 | Filled with 0 on the left. | `0123456` |
-| Scotiabank | `CCCCCCCCII` | 10 | <ul style="margin-bottom: initial;"><li>`C` -> Client number filled with 0 on the left.</li><li>`I` -> Account ID.</li></ul> | `0123456789` |
-| Santander | `XXXXXXXXXXXX` | 12 | The account number filled with 0 on the left. | `012345678901` |
-| Nación | `XXXXXXXXXXXX` | 12 | The account number filled with 0 on the left. | `012345678901` |
-| BBVA | `XXXXXXXXX` | 9 | Account number without filling with 0 on the left only numeric digits. | `123456789` |
-| HSBC | `XXXXXXXXXX` | 10 | Filled with 0 to the left. | `0123456789` |
-| Heritage | `XXXXXXXYY` | 9 | <ul style="margin-bottom: initial;"><li>`X` -> Account number filled with 0 on the left.</li><li>`Y` -> Sub Account number.</li></ul> | `012345678` 
+| BROU | `YYYYYYYYYWWWWW` | 14 | <ul style="margin-bottom: initial;"><li>`Y` -> Número de cuenta.</li><li>`W` -> subcuenta.</li></ul> | `12345678901234` |
+| BHU | `XXXYYZZZZV` | 10 | <ul style="margin-bottom: initial;"><li>`X` -> La sucursal bancaria inicia con 0.</li><li>`Y` -> Número de producto.</li><li>`Z` -> Número de cuenta con 0 a la izquierda.</li><li>`V` -> Dígito de verificación.</li></ul> | `0123401234` |
+| Citibank | `XXXXXXXXXX` | 10 | Con 0 a la izquierda<br>El número de cuenta empieza con 0, 1 o 5. | `0123456789` |
+| Itau | `XXXXXXX` | 7 | Con 0 a la izquierda. | `0123456` |
+| Scotiabank | `CCCCCCCCII` | 10 | <ul style="margin-bottom: initial;"><li>`C` -> Número de cliente con 0 a la izquierda.</li><li>`I` -> ID de la cuenta.</li></ul> | `0123456789` |
+| Santander | `XXXXXXXXXXXX` | 12 | El número de cuenta con 0 a la izquierda. | `012345678901` |
+| Nación | `XXXXXXXXXXXX` | 12 | El número de cuenta con 0 a la izquierda. | `012345678901` |
+| BBVA | `XXXXXXXXX` | 9 | Número de cuenta sin ceros a la izquierda y solo dígitos. | `123456789` |
+| HSBC | `XXXXXXXXXX` | 10 | Con 0 a la izquierda. | `0123456789` |
+| Heritage | `XXXXXXXYY` | 9 | <ul style="margin-bottom: initial;"><li>`X` -> Número de cuenta con 0 a la izquierda.</li><li>`Y` -> Subnúmero de cuenta.</li></ul> | `012345678` |

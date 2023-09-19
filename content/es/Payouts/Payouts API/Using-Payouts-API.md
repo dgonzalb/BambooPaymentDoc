@@ -16,7 +16,7 @@ All methods used in Payouts API require the following authentication headers.
 | Key | Value | Comments |
 |---|---|---|
 | `Content-Type` | `application/json` | With this header, the request will be transmitted in _JSON_ format. |
-| `Authorization` | `Basic {{MerchantPrivateKey}}` | Send the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
+| `Authorization` | `Basic {{MerchantPrivateKey}}` | Send the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Ejemplo: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
 | `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using the _HmacSHA256_ algorithm. This header is mandatory only for Payout creation. |
 
 ### Signing the message
@@ -47,7 +47,7 @@ You must invoke a **GET** request to the following URLs according to your needs.
 * **Production**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
 
-Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](/payouts/overview.html#coverage).
+Donde `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](/payouts/overview.html#coverage).
 
 #### Response parameters
 
@@ -104,7 +104,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
 | `reason` | `string` | No | Descripción of the payment. |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
-| `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
+| `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Transferencias Bancarias Instantáneas in Brazil</li></ul>|
 | `notification_Url` | `string` | No | Callback to notify the result of the Payout. |
 | `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
 | `payee` → `lastName `| `string` | Yes | Last Name of the Payee. | 
@@ -113,13 +113,13 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `address` | `string` | No | Address of the Payee. | 
 | `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
-| `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank numero de cuenta of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
 | `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee. | 
 | `payee` → `bankaccount` → `branch` | `string` | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
-<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
+<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Transferencias Bancarias Instantáneas in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
 #### Request example
@@ -163,7 +163,7 @@ Refer to the corresponding tab according to the payee's country.
 {{< tab tabNum="2" >}}
 <br>
 
-As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _Instant Bank Transfer_ you need to send the request as follows:
+As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _Transferencias Bancarias Instantáneas_ you need to send the request as follows:
 
 
 ```json
@@ -439,7 +439,7 @@ The validation of the message failed, and the Payout is **Declined**.
         {
             "ErrorCode": "ExactLengthValidator",
             "PropertyName": "Country",
-            "Message": "'Country' must be 2 characters in length. You entered 1 characters."
+            "Message": "'Country' must be 2 caracteres in length. You entered 1 caracteres."
         }
     ],
     "statusCode": 400

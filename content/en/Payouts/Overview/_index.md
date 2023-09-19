@@ -86,7 +86,7 @@ Example: `1234567890123456`.
 ### Colombia
 
 * The bank account **cannot** exceed 17 characters. Format: `DDDDDDDDDDDDDDDDD` where `D` is a digit.
-Example `12345678901234567`.
+Example: `12345678901234567`.
 
 ### Mexico
 
@@ -104,7 +104,7 @@ Example: `12345678901234567890`.
 |---|---|---|---|---|
 | BROU | `YYYYYYYYYWWWWW` | 14 | <ul style="margin-bottom: initial;"><li>`Y` -> Account number.</li><li>`W` -> sub-account.</li></ul> | `12345678901234` |
 | BHU | `XXXYYZZZZV` | 10 | <ul style="margin-bottom: initial;"><li>`X` -> Bank branch starts with 0.</li><li>`Y` -> Product number.</li><li>`Z` -> Account number filled with 0 on the left.</li><li>`V` -> Verifying Digit.</li></ul> | `0123401234` |
-| Citibank | `XXXXXXXXXX` | 10 | Filled with 0 on the left<br>The account number starts with 0, 1, or 5. | `0123456789` |
+| Citibank | `XXXXXXXXXX` | 10 | Filled with 0 on the left.<br>The account number starts with 0, 1, or 5. | `0123456789` |
 | Itau | `XXXXXXX` | 7 | Filled with 0 on the left. | `0123456` |
 | Scotiabank | `CCCCCCCCII` | 10 | <ul style="margin-bottom: initial;"><li>`C` -> Client number filled with 0 on the left.</li><li>`I` -> Account ID.</li></ul> | `0123456789` |
 | Santander | `XXXXXXXXXXXX` | 12 | The account number filled with 0 on the left. | `012345678901` |

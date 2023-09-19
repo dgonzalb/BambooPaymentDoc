@@ -1,34 +1,34 @@
 ---
-title: "Concepts"
-linkTitle: "Concepts"
+title: "Conceptos"
+linkTitle: "Conceptos"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  Please look at the concepts behind the ***Payouts*** feature so you can start using it easily!
+  Consulte los conceptos de ***Payouts*** para empezar a utilizar esta función ¡fácilmente!.
 weight: 20
 ---
 
-## Balance
-The _Balance_ is the amount of money settled in your account. We have three different balances for Payouts; consult those types [here]({{< ref "Payout-Balances" >}}).
+## Beneficiario {#payee}
+Un _Beneficiario_ es un tercero que va recibir el dinero resultado de su solicitud de Payout. La información requerida para un _Beneficiario_ es su nombre, dirección de correo electrónico y cuenta bancaria.
 
-## Banking Connections
-The _Banking Connection_ technology allows us to send money to a payee regardless of the selected payment method.
+## Comisión del Payout {#payout-fee}
+La _Comisión del Payout_ se refiere al costo de procesamiento del [Payout](#payout). Este costo puede ser asumido por usted (como pagador) o por el Beneficiario configurando una variable en el request.
 
-## FX Service
-_Foreign Exchange_ or _FX_ refers to the current rate to convert one country's currency to another. We update this value according to destination country regulations.
+## Conexiones bancarias {#banking-connections}
+La tecnología de _Conexiones bancarias_ nos permite enviar dinero a los beneficiarios sin importar el método de pago seleccionado.
 
-## Payee
-A _Payee_ is a third party who will receive the money result of your Payout request. The information required for a _Payee_ is their name, document, phone, e-mail address, and bank account.
+## Saldo {#balance}
+El _Saldo_ es la cantidad de dinero depositada en su cuenta. Tenemos tres tipos de saldos diferentes para Payouts; consulte estos tipos [aquí]({{< ref "Payout-Balances" >}}).
+
+## Servicio de FX {#fx-service}
+El servicio de FX (en inglés, _Foreign Exchange_) se refiere a la tasa actual para convertir una moneda de un país a otro. Nosotros actualizamos este valor de acuerdo con las regulaciones del país.
 
 ## Payout
-_Payout_ refers to disbursing funds to a third party using funds settled in your account. 
-
-## Payout fee
-The _Payout fee_ refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee by setting a variable in the request.
+_Payout_ se refiere a la dispersión de fondos a un tercero utilizando los fondos depositados en la cuenta del comercio. 
 
 ## Sanction screening
-_Sanction screening_ lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.
+El proceso de _Sanction screening_ (evaluación de sanciones) nos permite saber si el comercio está haciendo pagos a personas sancionadas legalmente. Este proceso es esencial como control de Lucha contra el Lavado de Dinero (AML - Anti-Money Laundering) y de límites de Payouts.
 
-The output of this process determines whether the _Payout_ requires manual validation.
+El resultado de este proceso determina si el _Payout_ requiere una validación manual.
 
 

@@ -1,10 +1,10 @@
 ---
 title: "Payouts"
-linkTitle: "Home"
+linkTitle: "Inicio"
 date: 2023-03-22
 type: docs
 description: >
-  Enable merchants to payout throughout Latin America in local currency to sales teams, content creators, suppliers, and partners without **conducting hundreds of international wire transfers**.
+  Permite a los comercios realizar pagos en toda Latinoamérica en moneda local a equipos de ventas, creadores de contenido, proveedores y socios sin **realizar cientos de transferencias bancarias internacionales**.
 menu:
   main:
     name: Payouts

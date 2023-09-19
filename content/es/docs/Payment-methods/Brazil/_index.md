@@ -3,7 +3,7 @@ title: "Brasil"
 linkTitle: "Brasil"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  _Brasil_ es la mayor economía de América Latina. La adopción de la tecnología digital se ha disparado en los últimos años, centrándose principalmente en comercio electrónico, pagos y banca en línea.
+  _Brasil_ es la mayor economía de Latinoamérica. La adopción de la tecnología digital se ha disparado en los últimos años, centrándose principalmente en comercio electrónico, pagos y banca en línea.
 weight: 20
 tags: ["parenttopic"]
 ---

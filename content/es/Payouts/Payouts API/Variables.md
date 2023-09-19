@@ -17,7 +17,7 @@ The following tables show the document types you must configure in the parameter
 | CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
 
-### Brazil
+### Brasil {#brasil}
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CPF | Individuals Registration | Individuals | Numeric | 11<sup>*</sup> |
@@ -49,7 +49,7 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
 
-### Mexico
+### México {#Mexico}
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CURP | Unique Population Registry Key | Individuals | | Between 8 and 18 |
@@ -63,7 +63,7 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | CI | Identity card | Individuals |  | Between 8 and 18 |-->
 
-### Peru
+### Perú {#peru}
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
@@ -89,4 +89,4 @@ The following tables show the Payout types you must configure in the parameter `
 | `1` | Efectivo |
 | `2` | Transferencia Bancaria |
 | `3` | Wallet |
-| `4` | Instant Bank Transfer (Only for 🇧🇷) |
+| `4` | Transferencias Bancarias Instantáneas (Only for 🇧🇷) |

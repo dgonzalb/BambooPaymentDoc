@@ -1,176 +1,182 @@
 ---
-title: "Payout balances"
-linkTitle: "Payout balances"
+title: "Saldos de payouts"
+linkTitle: "Saldos de payouts"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  The balance is the amount of money you have to process Payout transactions. We have three types of Balances in Bamboo Payout, and you can see them in two models.
+  El saldo es el monto de dinero que tiene para procesar las transacciones de Payout. Tenemos tres tipos de Saldos en los Payouts de Bamboo.
 weight: 30
 ---
+<!-- y los puede ver en dos modelos-->
 
-We update the balances available according to the movements performed in your account, such as funds deposit or disbursement.
+Nosotros actualizamos los saldos de acuerdo con los movimientos realizados en su cuenta como depósitos y dispersiones.
 
-## Balance types
-You can see the following balances in the Payouts console:
+## Tipos de saldos {#balance-types}
+Usted puede ver los siguientes saldos en la consola de Payouts:
 
-* **Total Balance**: This amount corresponds to your account's total amount of money.
-* **Processing Balance**: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee) and the chosen [model]({{< ref "#balance-models" >}}). Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.
-* **Available Balance**: This corresponds to the amount of money you have to process more Payouts, which is the difference between the _**Total**_ and _**Processing**_ Balance.
+* **Saldo Total**: Este monto corresponde al total de dinero de su cuenta.
+* **Saldo para procesamiento**: Este monto corresponde a todos las disposiciones solicitadas en Payouts. El monto de la comisión del Payout puede estar incluída dependiendo de la parte que va a asumir la comisión (ya sea usted o el beneficiario)<!-- y el [modelo](#balance-models) seleccionado-->. Una vez todos los Payouts hayan llegado a un estado final (Pagado o rechazado), el valor mostrado acá será 0.
+* **Saldo disponible**: Corresponde al monto de dinero que tiene disponible para procesar más Payouts, el cual es la diferencia entre el _**Saldo Total**_ y el _**Saldo para procesamiento**_.
 
 {{% alert title="Info" color="info"%}}
-If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.
+Si el pagador asume la comisión, no se agrega la misma a ningún tipo de saldo.
 {{% /alert %}}
 
-## Balance models
-The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:
+<!--
+## Modelos de los saldos {#balance-models}
+La funcionalidad de Payouts de Bamboo le ofrece la posibilidad de ver los tres tipos de saldos en dos modelos:
 
-* **Simplified Model**: a single balance for Payouts.<br>
-In this case, Bamboo deducts the payout amount and the fee charged from your global balance..
+* **Modelo Simplificado**: un saldo único para Payouts.<br>
+En este caso, Bamboo deduce el monto del pago y la comisión cobrada de su saldo global.
 
 ![](/assets/Payouts/Payouts3_en.png)
 
-* **Detailed Model**: one Balance for Payouts and one for fees.<br>
-In this case, you have two Balances, one to remove the net amounts from the Payout and another to deduct the fees charged exclusively.
+* **Modelo Detallado**: un saldo para Payouts y otro para comisiones.<br>
+En este caso, tienes dos saldos, uno para deducir los montos netos del Payout y otro para deducir exclusivamente las comisiones cobradas.
 
 ![](/assets/Payouts/Payouts4_en.png)
+-->
 
-## Examples
-Let's make an example to let you understand the concepts of type and model behind the Payout balances.
+## Ejemplos {#examples}
+Hagamos un ejemplo para que entienda el concepto de tipo <!--y modelo -->que hay detrás de los Saldos de pagos.
 
-Let's assume that you have the following information:
+Supongamos que usted tiene la siguiente información:
 
 | | |
 |---|---|
-| Payout amount requested | 10 USD |
-| Fee | 2 USD |
-| Initial balance | 20 USD |
-| Initial balance for the fee | 5 USD |
+| Monto del Payout solicitado | 10 USD |
+| Comisión | 2 USD |
+| Saldo inicial | 20 USD |
+<!--| Saldo inicial para la comisión | 5 USD |-->
 
-### Simplified Model - fee assumed by you
+### <!--Modelo Simplificado - c-->Comisión asumida por usted {#simplified-model---fee-assumed-by-you}
 
-**Balance when the payout is requested**
+**Saldo cuando el Payout es solicitado**
 |  |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance<br>_Payout amount requested + fee_ | 12 USD |
-| Available Balance | 8 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento<br>_Monto del Payout solicitado + comisión_ | 12 USD |
+| Saldo disponible | 8 USD |
 
-**Balance if the payout is paid**
+**Saldo si el Payout fue pagado**
 | | |
 |---|---|
-| Total Balance | 8 USD |
-| Processing Balance | - |
-| Available Balance | 8 USD |
+| Saldo Total | 8 USD |
+| Saldo para procesamiento | - |
+| Saldo disponible | 8 USD |
 
-**Balance if the payout is rejected.**
+**Saldo si el Payout fue rechazado.**
 | | |
 |---|---|
-| Total Balance | 18 USD |
-| Processing Balance | - |
-| Available Balance | 18 USD |
+| Saldo Total | 18 USD |
+| Saldo para procesamiento | - |
+| Saldo disponible | 18 USD |
 
-_If the payout is rejected, the processing fee is not refunded._
+_Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 
-### Simplified Model - fee assumed by the payee
-**Balance when the payout is requested**
+### <!--Modelo Simplificado - c-->Comisión asumida por el beneficiario {#simplified-model---fee-assumed-by-the-payee}
+**Saldo cuando el Payout es solicitado**
 |  |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance| 10 USD |
-| Available Balance | 10 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| 10 USD |
+| Saldo disponible | 10 USD |
 
-**Balance if the payout is paid**
+**Saldo si el Payout fue pagado**
 | | |
 |---|---|
-| Total Balance | 10 USD |
-| Processing Balance | - |
-| Available Balance | 10 USD |
+| Saldo Total | 10 USD |
+| Saldo para procesamiento | - |
+| Saldo disponible | 10 USD |
 
-**Balance if the payout is rejected.**
+**Saldo si el Payout fue rechazado.**
 | | |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance | - |
-| Available Balance | 20 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento | - |
+| Saldo disponible | 20 USD |
 
-### Detailed Model - fee assumed by you
-**Balance when the payout is requested**
-| Balance for Payouts |  |
+<!--
+### Modelo Detallado - comisión asumida por usted {#detailed-model---fee-assumed-by-you}
+
+**Saldo cuando el Payout es solicitado**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance| 10 USD |
-| Available Balance | 10 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| 10 USD |
+| Saldo disponible | 10 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 5 USD |
-| Processing Balance | 2 USD |
-| Available Balance | 3 USD |
+| Saldo Total | 5 USD |
+| Saldo para procesamiento | 2 USD |
+| Saldo disponible | 3 USD |
 
-**Balance if the payout is paid**
-| Balance for Payouts |  |
+**Saldo si el Payout fue pagado**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 10 USD |
-| Processing Balance| - |
-| Available Balance | 10 USD |
+| Saldo Total | 10 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 10 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 3 USD |
-| Processing Balance| - |
-| Available Balance | 3 USD |
+| Saldo Total | 3 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 3 USD |
 
-**Balance if the payout is rejected.**
-| Balance for Payouts |  |
+**Saldo si el Payout fue rechazado.**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance| - |
-| Available Balance | 20 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 20 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 3 USD |
-| Processing Balance| - |
-| Available Balance | 3 USD |
+| Saldo Total | 3 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 3 USD |
 
-_If the payout is rejected, the processing fee is not refunded._
+_Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 
-### Detailed Model - fee assumed by the payee
-**Balance when the payout is requested**
-| Balance for Payouts |  |
+### Modelo Detallado - comisión asumida por el beneficiario {#detailed-model---fee-assumed-by-the-payee}
+**Saldo cuando el Payout es solicitado**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance| 10 USD |
-| Available Balance | 10 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| 10 USD |
+| Saldo disponible | 10 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 5 USD |
-| Processing Balance| - |
-| Available Balance | 5 USD |
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
 
-**Balance if the payout is paid**
-| Balance for Payouts |  |
+**Saldo si el Payout fue pagado**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 10 USD |
-| Processing Balance| - |
-| Available Balance | 10 USD |
+| Saldo Total | 10 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 10 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 5 USD |
-| Processing Balance| - |
-| Available Balance | 5 USD |
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
 
-**Balance if the payout is rejected.**
-| Balance for Payouts |  |
+**Saldo si el Payout fue rechazado.**
+| Saldo para Payouts |  |
 |---|---|
-| Total Balance | 20 USD |
-| Processing Balance| - |
-| Available Balance | 20 USD |
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 20 USD |
 
-| Balance for fee |  |
+| Saldo para comisiones |  |
 |---|---|
-| Total Balance | 5 USD |
-| Processing Balance| - |
-| Available Balance | 5 USD |
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
+-->
