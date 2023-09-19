@@ -12,13 +12,11 @@ The following diagram represents the status of a payout:
 
 ![](/assets/Payouts/Payouts2_en.png)
 
-* **Received**: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to [Payouts API](../payouts-api.html). 
+* **Received**: This is the initial status. Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to [Payouts API](../payouts-api.html).<br>Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.
 
-Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.
+* **Validated**: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status: first, the limit of payments received by the payee, and second, the [sanction screening](../overview/payout-concepts.html#sanction-screening) process.
 
-* **Validated**: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the [sanction screening](../overview/payout-concepts.html#sanction-screening) process.
-
-* **Held**: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.
+* **Held**: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. <!--The ETC of this status is XX business days.-->
 
 * **Pending**: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the _Banking Connections_.
 
