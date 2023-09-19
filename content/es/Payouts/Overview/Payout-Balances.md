@@ -42,6 +42,8 @@ Hagamos un ejemplo para que entienda el concepto de tipo <!--y modelo -->que hay
 
 Supongamos que usted tiene la siguiente información:
 
+<div id="shortTable"></div>
+
 | | |
 |---|---|
 | Monto del Payout solicitado | 10 USD |
@@ -51,22 +53,25 @@ Supongamos que usted tiene la siguiente información:
 
 ### <!--Modelo Simplificado - c-->Comisión asumida por usted {#simplified-model---fee-assumed-by-you}
 
-**Saldo cuando el Payout es solicitado**
-|  |  |
+<div id="shortTable"></div>
+
+| Saldo cuando el Payout es solicitado |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento<br>_Monto del Payout solicitado + comisión_ | 12 USD |
 | Saldo disponible | 8 USD |
 
-**Saldo si el Payout fue pagado**
-| | |
+<div id="shortTable"></div>
+
+| Saldo si el Payout fue pagado | | |
 |---|---|
 | Saldo Total | 8 USD |
 | Saldo para procesamiento | - |
 | Saldo disponible | 8 USD |
 
-**Saldo si el Payout fue rechazado.**
-| | |
+<div id="shortTable"></div>
+
+| Saldo si el Payout fue rechazado | | |
 |---|---|
 | Saldo Total | 18 USD |
 | Saldo para procesamiento | - |
@@ -75,22 +80,26 @@ Supongamos que usted tiene la siguiente información:
 _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 
 ### <!--Modelo Simplificado - c-->Comisión asumida por el beneficiario {#simplified-model---fee-assumed-by-the-payee}
-**Saldo cuando el Payout es solicitado**
-|  |  |
+
+<div id="shortTable"></div>
+
+| Saldo cuando el Payout es solicitado |  |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento| 10 USD |
 | Saldo disponible | 10 USD |
 
-**Saldo si el Payout fue pagado**
-| | |
+<div id="shortTable"></div>
+
+| Saldo si el Payout fue pagado | | |
 |---|---|
 | Saldo Total | 10 USD |
 | Saldo para procesamiento | - |
 | Saldo disponible | 10 USD |
 
-**Saldo si el Payout fue rechazado.**
-| | |
+<div id="shortTable"></div>
+
+| Saldo si el Payout fue rechazado | | |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento | - |
@@ -100,11 +109,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 ### Modelo Detallado - comisión asumida por usted {#detailed-model---fee-assumed-by-you}
 
 **Saldo cuando el Payout es solicitado**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento| 10 USD |
 | Saldo disponible | 10 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
@@ -113,11 +127,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 | Saldo disponible | 3 USD |
 
 **Saldo si el Payout fue pagado**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 10 USD |
 | Saldo para procesamiento| - |
 | Saldo disponible | 10 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
@@ -126,11 +145,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 | Saldo disponible | 3 USD |
 
 **Saldo si el Payout fue rechazado.**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento| - |
 | Saldo disponible | 20 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
@@ -142,11 +166,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 
 ### Modelo Detallado - comisión asumida por el beneficiario {#detailed-model---fee-assumed-by-the-payee}
 **Saldo cuando el Payout es solicitado**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento| 10 USD |
 | Saldo disponible | 10 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
@@ -155,11 +184,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 | Saldo disponible | 5 USD |
 
 **Saldo si el Payout fue pagado**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 10 USD |
 | Saldo para procesamiento| - |
 | Saldo disponible | 10 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
@@ -168,11 +202,16 @@ _Si el Payout es rechazado, la comisión de procesamiento no se reembolsa._
 | Saldo disponible | 5 USD |
 
 **Saldo si el Payout fue rechazado.**
+
+<div id="shortTable"></div>
+
 | Saldo para Payouts |  |
 |---|---|
 | Saldo Total | 20 USD |
 | Saldo para procesamiento| - |
 | Saldo disponible | 20 USD |
+
+<div id="shortTable"></div>
 
 | Saldo para comisiones |  |
 |---|---|
