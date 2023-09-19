@@ -54,15 +54,14 @@
         &lt;p&gt;The following diagram represents the status of a payout:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts2_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Received&lt;/strong&gt;: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to &lt;a href=&#34;../payouts-api.html&#34;&gt;Payouts API&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.&lt;/p&gt;
-&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Received&lt;/strong&gt;: This is the initial status. Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to &lt;a href=&#34;../payouts-api.html&#34;&gt;Payouts API&lt;/a&gt;.&lt;br&gt;Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Validated&lt;/strong&gt;: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status: first, the limit of payments received by the payee, and second, the &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt; process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. &lt;!--The ETC of this status is XX business days.--&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the &lt;em&gt;Banking Connections&lt;/em&gt;.&lt;/p&gt;
@@ -93,12 +92,13 @@
       <description>
         
         
-        &lt;p&gt;We update the balances available according to the movements performed in your account, such as funds deposit or disbursement.&lt;/p&gt;
+        &lt;!-- , and you can see them in two models --&gt;
+&lt;p&gt;We update the balances available according to the movements performed in your account, such as funds deposit or disbursement.&lt;/p&gt;
 &lt;h2 id=&#34;balance-types&#34;&gt;Balance types&lt;/h2&gt;
 &lt;p&gt;You can see the following balances in the Payouts console:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;: This amount corresponds to your account&amp;rsquo;s total amount of money.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee) and the chosen &lt;a href=&#34;#balance-models&#34;&gt;model&lt;/a&gt;. Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Processing Balance&lt;/strong&gt;: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee)&lt;!-- and the chosen [model](#balance-models)--&gt;. Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Available Balance&lt;/strong&gt;: This corresponds to the amount of money you have to process more Payouts, which is the difference between the &lt;em&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/em&gt; Balance.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -109,21 +109,24 @@
 &lt;p class=&#34;alert-text&#34;&gt;If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;balance-models&#34;&gt;Balance models&lt;/h2&gt;
-&lt;p&gt;The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Simplified Model&lt;/strong&gt;: a single balance for Payouts.&lt;br&gt;
-In this case, Bamboo deducts the payout amount and the fee charged from your global balance..&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts3_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Detailed Model&lt;/strong&gt;: one Balance for Payouts and one for fees.&lt;br&gt;
-In this case, you have two Balances, one to remove the net amounts from the Payout and another to deduct the fees charged exclusively.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts4_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;!--
+## Balance models
+The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:
+
+* **Simplified Model**: a single balance for Payouts.&lt;br&gt;
+In this case, Bamboo deducts the payout amount and the fee charged from your global balance..
+
+![](/assets/Payouts/Payouts3_en.png)
+
+* **Detailed Model**: one Balance for Payouts and one for fees.&lt;br&gt;
+In this case, you have two Balances, one to remove the net amounts from the Payout and another to deduct the fees charged exclusively.
+
+![](/assets/Payouts/Payouts4_en.png)
+--&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s make an example to let you understand the concepts of type and model behind the Payout balances.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make an example to let you understand the concept&lt;!--s--&gt; of type &lt;!--and model --&gt;behind the Payout balances.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s assume that you have the following information:&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -144,18 +147,15 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;td&gt;Initial balance&lt;/td&gt;
 &lt;td&gt;20 USD&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Initial balance for the fee&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;simplified-model---fee-assumed-by-you&#34;&gt;Simplified Model - fee assumed by you&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
+&lt;!--| Initial balance for the fee | 5 USD |--&gt;
+&lt;h3 id=&#34;simplified-model---fee-assumed-by-you&#34;&gt;&lt;!--Simplified Model - f--&gt;Fee assumed by you&lt;/h3&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance when the payout is requested&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -174,11 +174,11 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is paid&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance if the payout is paid&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -197,11 +197,11 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is rejected.&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance if the payout is rejected&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -221,12 +221,12 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;em&gt;If the payout is rejected, the processing fee is not refunded.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;simplified-model---fee-assumed-by-the-payee&#34;&gt;Simplified Model - fee assumed by the payee&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;simplified-model---fee-assumed-by-the-payee&#34;&gt;&lt;!--Simplified Model - f--&gt;Fee assumed by the payee&lt;/h3&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance when the payout is requested&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -245,11 +245,11 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is paid&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance if the payout is paid&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -268,11 +268,11 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is rejected.&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Balance if the payout is rejected&lt;/th&gt;
 &lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -291,280 +291,113 @@ In this case, you have two Balances, one to remove the net amounts from the Payo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;detailed-model---fee-assumed-by-you&#34;&gt;Detailed Model - fee assumed by you&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;2 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;3 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is paid&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;3 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;3 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is rejected.&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;3 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;3 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;em&gt;If the payout is rejected, the processing fee is not refunded.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;detailed-model---fee-assumed-by-the-payee&#34;&gt;Detailed Model - fee assumed by the payee&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Balance when the payout is requested&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is paid&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;10 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Balance if the payout is rejected.&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for Payouts&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;20 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Balance for fee&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Processing Balance&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Available Balance&lt;/td&gt;
-&lt;td&gt;5 USD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;!--
+### Detailed Model - fee assumed by you
+**Balance when the payout is requested**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| 10 USD |
+| Available Balance | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance | 2 USD |
+| Available Balance | 3 USD |
+
+**Balance if the payout is paid**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 10 USD |
+| Processing Balance| - |
+| Available Balance | 10 USD |
+
+| Balance for fee |  |
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+|---|---|
+| Total Balance | 3 USD |
+| Processing Balance| - |
+| Available Balance | 3 USD |
+
+**Balance if the payout is rejected.**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| - |
+| Available Balance | 20 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 3 USD |
+| Processing Balance| - |
+| Available Balance | 3 USD |
+
+_If the payout is rejected, the processing fee is not refunded._
+
+### Detailed Model - fee assumed by the payee
+**Balance when the payout is requested**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| 10 USD |
+| Available Balance | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+
+**Balance if the payout is paid**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 10 USD |
+| Processing Balance| - |
+| Available Balance | 10 USD |
+
+| Balance for fee |  |
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+
+**Balance if the payout is rejected.**
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| - |
+| Available Balance | 20 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+--&gt;
       </description>
     </item>
     

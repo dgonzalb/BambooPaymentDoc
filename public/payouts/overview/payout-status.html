@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/payouts/overview/payout-status.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-09-12T12:18:46-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-19T10:56:43-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Payout status">
 <meta itemprop="description" content="From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-09-12T12:18:46-05:00" />
-<meta itemprop="wordCount" content="274">
+<meta itemprop="dateModified" content="2023-09-19T10:56:43-05:00" />
+<meta itemprop="wordCount" content="263">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payout status"/>
 <meta name="twitter:description" content="From when you request a payout to when your payee receives the money, the Payout follows a set of statuses. In this section, we give a brief explanation of these statuses.
@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.657e3fe7bafabad2b0188a5d8e212e863bd90209f88b94f94f9d63e82282a9963cbd52817c538f6102c0b0da02dac25c9cb812a4b432746a5415d0502ee3e019.json"
+  data-offline-search-index-json-src="../../offline-search-index.9803656cd6ac3db4d6542b46829dc8794cffd0bc993478d392e99e334cfffbbc427959b1b97216deafb3afa471ec475997b1d0df0a067dbb3155f6aa63e0fc72.json"
   data-offline-search-base-href="../../"
 >
 
@@ -385,15 +385,14 @@
 	<p>The following diagram represents the status of a payout:</p>
 <p><img src="../../assets/Payouts/Payouts2_en.png" alt=""></p>
 <ul>
-<li><strong>Received</strong>: This is the initial status after the Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to <a href="../payouts-api.html">Payouts API</a>.</li>
-</ul>
-<p>Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.</p>
-<ul>
 <li>
-<p><strong>Validated</strong>: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status. First, the limit of payments received by the payee, and second, the <a href="../overview/payout-concepts.html#sanction-screening">sanction screening</a> process.</p>
+<p><strong>Received</strong>: This is the initial status. Once you request a payout, we validate the Payout structure (for Payouts requested through API) and create it in our system. For more information about the design, refer to <a href="../payouts-api.html">Payouts API</a>.<br>Furthermore, we validate that your account has enough balance before moving to the following state; otherwise, the request will be declined.</p>
 </li>
 <li>
-<p><strong>Held</strong>: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. The ETC of this status is XX business days.</p>
+<p><strong>Validated</strong>: This status indicates that the Payout has a valid structure and your account has enough funds to cover the Payout amount and the fee (in case you assume it). We define whether the Payout needs a manual review under two criteria during this status: first, the limit of payments received by the payee, and second, the <a href="../overview/payout-concepts.html#sanction-screening">sanction screening</a> process.</p>
+</li>
+<li>
+<p><strong>Held</strong>: This status indicates that the payout is under a manual review from our side due to the validations performed in the previous step. <!--The ETC of this status is XX business days.--></p>
 </li>
 <li>
 <p><strong>Pending</strong>: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the <em>Banking Connections</em>.</p>
@@ -419,9 +418,9 @@
 <br>
 <b>Last modified</b>
 
-September 12, 2023: 
+September 19, 2023: 
 
- <i>Grammar improvements (2536c49)</i>
+ <i>Definitions updated for Balances and Status (f682aa4)</i>
   </div>
 </div>
 
