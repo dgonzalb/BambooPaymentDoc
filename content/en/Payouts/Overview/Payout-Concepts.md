@@ -24,7 +24,7 @@ A _Payee_ is a third party who will receive the money result of your Payout requ
 _Payout_ refers to disbursing funds to a third party using funds settled in your account. 
 
 ## Payout fee
-The _Payout fee_ refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee by setting a variable in the request.
+The _Payout fee_ refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee.
 
 ## Sanction screening
 _Sanction screening_ lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.

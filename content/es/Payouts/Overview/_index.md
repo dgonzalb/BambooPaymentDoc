@@ -19,14 +19,14 @@ A través de Bamboo Payouts, se puede dispersar los fondos acreditados en su cue
 
 ![Concepts](/assets/Payouts/Payouts1_es.png)
 
-Puede configurar la comisión del Payout para que sea asumida por usted o por el beneficiario. Para más información sobre precios y activación de los servicios, [póngase en contacto con nuestros expertos locales](https://bamboopaymentsystems.com/#contact-form-principal).
+Puede configurar la tasa del Payout para que sea asumida por usted o por el beneficiario. Para más información sobre precios y activación de los servicios, [póngase en contacto con nuestros expertos locales](https://bamboopaymentsystems.com/#contact-form-principal).
 
 ## Beneficios {#benefits}
 * Expertos del sector crearon nuestra solución.
 * ***Cobertura*** - ¡Nuestro servicio está en 7 países y aumentando!
 * ***Flexibilidad*** - Conéctese fácilmente usando nuestra API.
 * Ofrecemos transferencias alternativas de Payouts, como Nequi en Colombia.
-* La comisión del Payout puede ser asumida por usted o su beneficiario.
+* La tasa del Payout puede ser asumida por usted o su beneficiario.
 
 ## Cobertura {#coverage}
 

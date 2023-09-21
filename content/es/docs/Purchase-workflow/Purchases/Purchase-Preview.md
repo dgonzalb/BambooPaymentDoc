@@ -11,7 +11,7 @@ tags: ["subtopic"]
 Cuando un comercio realiza una compra, los montos de ésta pueden ser modificados por varios motivos:
 
 * Conversión de moneda (USD a Moneda local del país destino)
-* Comisiones que debe pagar el cliente
+* tasas que debe pagar el cliente
 * Impuestos
 * etc.
 

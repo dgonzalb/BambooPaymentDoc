@@ -11,8 +11,8 @@ weight: 20
 ## Beneficiario {#payee}
 Un _Beneficiario_ es un tercero que va recibir el dinero resultado de su solicitud de Payout. La información requerida para un _Beneficiario_ es su nombre, dirección de correo electrónico y cuenta bancaria.
 
-## Comisión del Payout {#payout-fee}
-La _Comisión del Payout_ se refiere al costo de procesamiento del [Payout](#payout). Este costo puede ser asumido por usted (como pagador) o por el Beneficiario configurando una variable en el request.
+## tasa del Payout {#payout-fee}
+La _tasa del Payout_ se refiere al costo de procesamiento del [Payout](#payout). Este costo puede ser asumido por usted (como pagador) o por el Beneficiario.
 
 ## Conexiones bancarias {#banking-connections}
 La tecnología de _Conexiones bancarias_ nos permite enviar dinero a los beneficiarios sin importar el método de pago seleccionado.

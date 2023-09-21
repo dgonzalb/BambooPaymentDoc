@@ -1,6 +1,6 @@
 ---
-title: "Payout Balance movements"
-linkTitle: "Payout Balance movements"
+title: "Payout Balance report"
+linkTitle: "Payout Balance report"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
@@ -16,7 +16,7 @@ On this screen, you have two sections. The first section shows the Balance types
 
 ![PrintScreen](/assets/Payouts/Payouts10_en.png)
 
-For more information, refer to [Payout Balances](/payouts/overview/payout-balances.html#balance-types).
+For more information, refer to [Payout Balances]({{< ref Payout-Balances.md>}}#balance-types).
 
 The second section shows the movements of your balance. Where you have the following columns:
 

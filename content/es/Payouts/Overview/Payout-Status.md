@@ -14,7 +14,7 @@ El siguiente diagrama representa los estados de un Payout:
 
 * **Recibido**: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la [API de Payouts](../payouts-api.html).<br>Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.
 
-* **Validado**: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la comisión (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de [sanction screening](../overview/payout-concepts.html#sanction-screening).
+* **Validado**: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de [sanction screening](../overview/payout-concepts.html#sanction-screening).
 
 * **Held**: Este estado indica que el Payout está en revisiñon manual de nuestro lado debido a las validaciones realizadas en el paso anterior. <!--El ETC de este estado es de XX días hábiles.-->
 

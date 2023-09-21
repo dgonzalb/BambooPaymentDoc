@@ -1,15 +1,15 @@
 ---
-title: "Payouts console"
-linkTitle: "Payouts console"
+title: "Consola de Payouts"
+linkTitle: "Consola de Payouts"
 date: 2023-03-02T08:28:16-05:00
 type: docs
 Description: >
-  This section shows your options in the Merchant Console when using Bamboo Payouts.
+  Esta sección muestra las opciones en la Consola de Comercios disponibles cuando utilice Payouts de Bamboo.
 weight: 20
 ---
 
-To navigate the Payout Balance report, open your Merchant console and expand the ***Payout*** section in the left menu.
+Para navegar a las opciones de Payout, abre su consola de Comercios y expanda la sección ***Payout*** en el menú de la izquierda.
 
-![PrintScreen](/assets/Payouts/Payouts8_en.png)
+![PrintScreen](/assets/Payouts/Payouts8_es.png)
 
-The Payouts console has two options: _**Payout Reports**_ and _**Payouts Balance**_; find the related information below.
+La consola de Payouts tiene dos opciones: _**Reporte de Payouts**_ y _**Saldos de Payouts**_; encuentre a continuación la información relacionada.
