@@ -185,7 +185,7 @@ Drupal.attachBehaviors = function (context, settings) {
  *   A string containing what's causing the behaviors to be detached. The
  *   possible triggers are:
  *   - unload: (default) The context element is being removed from the DOM.
- *   - move: The element is about to be moved within the DOM (por ejemplo,
+ *   - move: The element is about to be moved within the DOM (for example,
  *     during a tabledrag row swap). After the move is completed,
  *     Drupal.attachBehaviors() is called, so that the behavior can undo
  *     whatever it did in response to the move. Many behaviors won't need to
@@ -361,7 +361,7 @@ Drupal.formatPlural = function (count, singular, plural, args, options) {
  * theme does not provide an override function, the generic theme function is
  * called.
  *
- * Por ejemplo, to retrieve the HTML for text that should be emphasized and
+ * For example, to retrieve the HTML for text that should be emphasized and
  * displayed as a placeholder inside a sentence, call
  * Drupal.theme('placeholder', text).
  *
