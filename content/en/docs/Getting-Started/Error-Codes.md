@@ -51,10 +51,10 @@ Tokenization errors always starts with `TK`.
 | `TK001` | INVALID_CARD_PAN | The card number entered is incorrect. | Ask your customer to check the card number and retry the transaction. |
 | `TK002` | INVALID_CVV | The CVV number entered is incorrect. | Ask your customer to check the validation code and retry the transaction. |
 | `TK003` | INVALID_EXPIRATION_DATE | The card expiration date is incorrect. | Ask your customer to check the expiration date and retry the transaction. |
-| `TK004` | INVALID_SESSION_IDENTIFIER | An invalid session ID was sent in a token request. | [Regenerate the token](/docs/purchase-workflow/customer-types.html) and retry the transaction. |
+| `TK004` | INVALID_SESSION_IDENTIFIER | An invalid session ID was sent in a token request. | [Regenerate the token](/en/docs/purchase-workflow/customer-types.html) and retry the transaction. |
 | `TK005` | INVALID_EMAIL | An email with incorrect format was entered. | Ask your customer to check the email address and retry the transaction.|
 | `TK006` | EXPIRED_TOKEN | The token (One-Time type) has already been used or is expired. | [Regenerate the token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) and retry the transaction. |
-| `TK007` | INVALID_PAYMENT_MEDIA | Error with the information of the payment method. | The `PaymentMediaId` is not correct. Check the payment method's value in the respective [country's list](/docs/payment-methods.html). |
+| `TK007` | INVALID_PAYMENT_MEDIA | Error with the information of the payment method. | The `PaymentMediaId` is not correct. Check the payment method's value in the respective [country's list](/en/docs/payment-methods.html). |
 | `TK008` | ISSUER_BANK_NOT_MATCH | Issuer bank does not match the expected. | Validate the issuer bank of your customer's card |
 | `TK009` | INVALID_ACTIVATION_CODE | Token activation code is invalid. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
 | `TK010` | INVALID_COMMERCE_TOKEN | Commerce Token is invalid. | [Regenerate the token (CT)]({{< ref Registered-users.md >}}) and retry the transaction. |

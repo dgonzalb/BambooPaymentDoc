@@ -40,7 +40,7 @@ You can receive the error description by relying on localization features. You m
 | `CVV` | `string` | Yes | The security code of the card. |
 | `Expiration` | `string` | Yes | Expiration date printed on the card. |
 | `Titular` | `string` | Yes | Name of the cardholder. | 
-| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indicates the country of the cardholder. For _CrossBorder_ tokenization, this parameter is mandatory.<br>You can find the list of countries available [here](/docs/payment-methods.html#countries-table-iso-3166-1). |
+| `CrossBorderData` → `TargetCountryISO` | `string` | No | Indicates the country of the cardholder. For _CrossBorder_ tokenization, this parameter is mandatory.<br>You can find the list of countries available [here](/en/docs/payment-methods.html#countries-table-iso-3166-1). |
 | `CustomerId` | `string` | No | Identifier of the customer. If sent, the API generates a payment within the customer with a _Commerce Token_ (CT) for future use.<br>Refer to [create a customer]({{< ref Registered-users.md >}}#create-a-customer) for more information. | 
 
 ### Create a One Time Token (OTT) {#OTT}

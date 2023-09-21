@@ -13,16 +13,16 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/docs/purchase-workflow/customer-types.html). |
+| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/brazil.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/brazil.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State.<br>Refer to [states of residence](/docs/payment-methods/brazil.html#customers-state-of-residence) to know its possible values. |
+| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State.<br>Refer to [states of residence](/en/docs/payment-methods/brazil.html#customers-state-of-residence) to know its possible values. |
 | `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | Yes | Customer's Postal Code. Do not include hyphens. |

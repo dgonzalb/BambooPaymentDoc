@@ -49,7 +49,7 @@ From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md"
 
 The **PaymentMediaId** and **TrxToken** fields are optional, but sending one is mandatory, depending on the flow you want to use.
 
-* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/docs/payment-methods.html) section.
+* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/en/docs/payment-methods.html) section.
 
 * **TrxToken**: You can generate the token and transact by sending it in this field.
 
