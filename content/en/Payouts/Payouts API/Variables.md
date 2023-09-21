@@ -21,7 +21,7 @@ The following tables show the document types you must configure in the parameter
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CPF | Individuals Registration | Individuals | Numeric | 11<sup>*</sup> |
-| CNPJ | National Registry of Legal Entities | Company | Numeric | 14<sup>*</sup> |
+| CNPJ | National Registry of Legal Entities | Companies | Numeric | 14<sup>*</sup> |
 
 <sup>*</sup> _Validate verifier-digits_
 
@@ -75,12 +75,12 @@ The following tables show the document types you must configure in the parameter
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
-| DE | | Single | Numeric | |
+| DE | | Individuals | Numeric | |
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | |
 | RUT | Single Tax Role | Individuals | Numeric | 12 |
 
 ## Payout types
-The following tables show the Payout types you must configure in the parameter `type`.
+The following table shows the Payout types you must configure in the parameter `type`.
 
 <div id="shortTable"></div>
 

@@ -4,89 +4,89 @@ linkTitle: "Variables"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  Find the list of variables and codes available for Payouts integration.
+  Encuentre el listado de variables y códigos disponibles para la integración de Payouts.
 weight: 30
 ---
 
-## Document Types
-The following tables show the document types you must configure in the parameter `payee.document.type` according to the country.
+## Tipos de documentos {#document-types}
+Las siguientes tablas muestran los tipos de documento que debe configurar en el parámetro `payee.document.type` según el país.
 
 ### Argentina
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
-| CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
+| CUIT | Clave Única de Identificación Tributaria | Compañías | Numérico | 11 |
+| CUIL | Código único de Identificación Laboral | Individuos | Numérico | 11 |
 
 ### Brasil {#brasil}
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CPF | Individuals Registration | Individuals | Numeric | 11<sup>*</sup> |
-| CNPJ | National Registry of Legal Entities | Company | Numeric | 14<sup>*</sup> |
+| CPF | Registro de Personas Físicas | Individuos | Numérico | 11<sup>*</sup> |
+| CNPJ | Registro Nacional de Personas Jurídicas | Compañías | Numérico | 14<sup>*</sup> |
 
-<sup>*</sup> _Validate verifier-digits_
+<sup>*</sup> _Validar dígitos verificadores_
 
 ### Chile
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CI | Identity Card | Individuals | Numeric | 8 or 9 |
-| RUN | Unique National Role | Individuals | Numeric | 8 or 9 |
-| RUT | Individuals Tax Role | Individuals | Numeric | 8 or 9 |
+| CI | Cédula de Identidad | Individuos | Numérico | 8 o 9 |
+| RUN | Rol Único Nacional | Individuos | Numérico | 8 o 9 |
+| RUT | Rol Único Tributario | Individuos | Numérico | 8 o 9 |
 
 ### Colombia
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CC | Citizenship ID | Individuals | Numeric | Between 6 and 10 |
-| CE | Immigration ID | Individuals | Numeric | Between 6 and 10 |
-| NIT | Tax Identification Number | Companies | Numeric | Between 8 and 15 |
+| CC | Cédula de ciudadanía | Individuos | Numérico | Entre 6 y 10 |
+| CE | Cédula de extranjería | Individuos | Numérico | Entre 6 y 10 |
+| NIT | NIT | Compañías | Numérico | Entre 8 y 15 |
 
 <!--### Costa Rica
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CI | Identity Card | Individuals | Numeric | 9 |
+| CI | Cédula de identidad | Individuos | Numérico | 9 |
 
 ### El Salvador
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| DUI | Unique identity document | Individuals |  | Between 6 and 18 |-->
+| DUI | Documento único de identidad | Individuos |  | Entre 6 y 18 |-->
 
 ### México {#Mexico}
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CURP | Unique Population Registry Key | Individuals | | Between 8 and 18 |
-| RFC | Federal Taxpayer Registry | Individuals and Companies | | Between 8 and 18 |
-| IFE | Federal Electoral Institute | Individuals | | Between 8 and 18 |
-| PASSPORT | International Travel Document | Individuals |  | Between 8 and 18 |
-| RESIDENCIA | Document of foreigner residing in the country | Individuals |  | Between 8 and 18 |
+| CURP | Clave Única de Registro de Población | Individuos | | Entre 8 y 18 |
+| RFC | Registro Federal de Contribuyentes | Individuos y Compañías | | Entre 8 y 18 |
+| IFE | Instituto Federal Electoral | Individuos | | Entre 8 y 18 |
+| PASSPORT | Documento de Viaje Internacional | Individuos |  | Entre 8 y 18 |
+| RESIDENCIA | Documento de extranjero residente en el país | Individuos |  | Entre 8 y 18 |
 
 <!--### Nicaragua
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CI | Identity card | Individuals |  | Between 8 and 18 |-->
+| CI | Cédula de identidad | Individuos |  | Entre 8 y 18 |-->
 
 ### Perú {#peru}
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CE | Immigration ID | Individuals | Numeric | 9 |
-| DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
-| PASSPORT | International Travel Document | Individuals | | Between 7 and 18 |
-| RUC | Single Taxpayer Registry | Individuals and Companies | | 11 |
+| CE | Cédula de Extranjería | Individuos | Numérico | 9 |
+| DNI | Documento Nacional de Identidad | Individuos | Numérico<br><hr>Numérico o Alfanumérico | 8<br><hr>9 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | | Entre 7 y 18 |
+| RUC | Registro Único de Contribuyentes | Individuos y Compañías | | 11 |
 
 ### Uruguay
-| Abbreviation | Document name | Individuals / Companies | Type | Length |
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
-| DE | | Single | Numeric | |
-| PASSPORT | International Travel Document | Individuals | Alphanumeric | |
-| RUT | Single Tax Role | Individuals | Numeric | 12 |
+| CI | Cédula de Identidad| Individuos | Numérico | Entre 6 y 8 |
+| DE | | Individuos | Numérico | |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | |
+| RUT | Rol Único Tributario | Individuos | Numérico | 12 |
 
-## Payout types
-The following tables show the Payout types you must configure in the parameter `type`.
+## Tipos de Payout {#payout-types}
+La siguiente tabla muestra los tipos de Pago que debe configurar en el parámetro `type`.
 
 <div id="shortTable"></div>
 
-| Type | Descripción |
+| Tipo | Descripción |
 |:-:|---|
 | `1` | Efectivo |
 | `2` | Transferencia Bancaria |
 | `3` | Wallet |
-| `4` | Transferencias Bancarias Instantáneas (Only for 🇧🇷) |
+| `4` | Transferencias Bancarias Instantáneas (Solo para 🇧🇷) |

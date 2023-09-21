@@ -36,7 +36,7 @@ Este tipo de datos muestra los valores de fecha y hora que deben ser expresados 
 
 `"YYYY-MM-DDTHH:mm:ss.ttt"`
 
-Where:
+Donde:
 
 * `YYYY` indica el año
 * `MM` indica el mes

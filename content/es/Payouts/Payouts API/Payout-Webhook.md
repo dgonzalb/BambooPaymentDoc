@@ -1,47 +1,51 @@
 ---
-title: "Notification Webhook"
-linkTitle: "Notification Webhook"
+title: "Webhook de notificación"
+linkTitle: "Webhook de notificación"
 date: 2023-09-12T11:19:09-05:00
 type: docs
 Description: >
-  You can implement a service to receive and process notifications related to the Payout status from the Bamboo Payment systems.
+  Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.
 weight: 20
 ---
 
-The merchant must publish an HTTP/REST service to send the notifications generated.
+El API de Payouts solo envía notificaciones para los estados finales (**Pagado**, **Declinado** y **Rechazado**). Para los estados de los Payouts, revise nuestro [artículo de estados]({{< ref Payout-Status.md >}}).
 
-## WebHook Service specifications
-The WebHook service is a REST Service that must process a request with the following characteristics:
+
+El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.
+
+## Especificaciones del servicio WebHook {#webhook-service-specifications}
+El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:
 
 <div id="shortTable"></div>
 
 |        |          | 
 |:-------|:---------|
-|**URL:** | *\<Determined by the merchant\>* |
-|**API Type:** | Public |
+|**URL:** | *\<Determinado por el comercio>* |
+|**API Type:** | Pública |
 |**Method:** | POST |
-|**Response:** | HTTP Code |
+|**Response:** | Código HTTP |
 
-### Notification parameters
+### Parámetros de la notificación {#notification-parameters}
 
-| Parameter | Format | Descripción |
+| Parámetro | Formato | Description |
 |---|:-:|---|
-| `payoutId` | `integer` | Internal identification of the Payout. |
-| `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
-| `isoCountry` | `string` | ISO code of the country in the format `ISO 3166-2`. |
-| `created` | `date` | Date and time when the Payout was requested. |
-| `lastUpdate` | `date` | Date and time of the last update of the Payout was. |
-| `status` | `integer` | Internal code of the current status of the Payout. |
-| `statusDescription` | `string` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
-| `errorCode` | `string` | Internal code of the error for the declined Payout.Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
-| `errorDescription` | `string` | Error description for declined Payouts. |
-| `amount` | `object` | Value and currency requested in the Payout. |
-| `localAmount` | `object` | Value and currency requested in the Payout in local currency. |
-| `exchangeRate` | `numeric` | Conversion value used in the Payout. |
-| `payee` | `object` | Information of the recipient or beneficiary of the Payout. |
+| `payoutId` | `integer` | Identificador interno del Payout. |
+| `reference` | `string` | Identificador único del Payout definido por usted cuando solicitó el Payout. |
+| `isoCountry` | `string` | Código ISO del país en formato `ISO 3166-2`. |
+| `created` | `date` | Fecha y hora de la solicitud del Payout. |
+| `lastUpdate` | `date` | Fecha y hora de la última actualización del Payout. |
+| `status` | `integer` | Código interno del estado actual del Payout. |
+| `statusDescription` | `string` | Estado actual del Payout. Consulte [este artículo]({{< ref "Payout-Status.md" >}}) para aprender más acerca de los estados de los Payouts. |
+| `errorCode` | `string` | Código interno del error del Payout declinado. Encuentre los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
+| `errorDescription` | `string` | Descripción del error del Payout declinado. |
+| `amount` | `object` | Valor y moneda solicitado en el Payout. |
+| `localAmount` | `object` | Valor y moneda solicitado en el Payout en moneda local. |
+| `exchangeRate` | `numeric` | Valor de conversión utilizado en el Payout. |
+| `payee` | `object` | Información del beneficiario del Payout.  |
 
 
-### Notification example
+
+### Ejemplo de la notificación {#notification-example}
 ```json
 {
   "payoutId": 18009,

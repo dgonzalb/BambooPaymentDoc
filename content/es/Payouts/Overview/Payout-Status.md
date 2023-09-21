@@ -20,7 +20,7 @@ El siguiente diagrama representa los estados de un Payout:
 
 * **Pendiente**: Este estado indica que el Payout y el pagador ha complido todas las validaciones requeridas y está por ser enviado a la _Conexión bancaria_.
 
-* **Procesándose**: La _Conexión bancaria_ ha recibido el Payout; el tiempo antes de pasar al estado ***Pagado*** depende del país y el método de pago seleccionado. [Haga clic aquí para aprender más](../overview.html#considerations).
+* **Procesándose**: La _Conexión bancaria_ ha recibido el Payout; el tiempo antes de pasar al estado ***Pagado*** depende del país y el método de pago seleccionado.
 
 * **Pagado**: La _Conexión bancaria_ ha procesado el Payout y fue aprobado. En este estado, actualizamos su [saldo]({{< ref "Payout-Balances.md" >}}) con los valores de la transacción.
 

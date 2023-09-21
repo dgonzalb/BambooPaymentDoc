@@ -56,7 +56,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 | `Capture` | `boolean` | No | Define si la compra debe ser realizada en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización y la compra queda preautorizada hasta que se realice la confirmación final a través de los métodos confirmar o anular.</li><li>Si es `true`, la transacción es autorizada y capturada (confirmada).</li></ul><br>No todos los [medios de pago y países](/es/docs/payment-methods.html) soportan la funcionalidad de preautorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesa la compra.<br>Envíe el país usando el formato `ISO-3166-1`. |
 | `MetadataIn` | `object` | No | Corresponde a los campos adicionales requeridos por cada medio de pago o adquirente. |
-| `Customer` | `object` | Yes <sup>3</sup> | El objeto `Customer` contiene la información de la persona que realiza la compra. |
+| `Customer` | `object` | Sí <sup>3</sup> | El objeto `Customer` contiene la información de la persona que realiza la compra. |
 | `Customer` → `CommerceCustomerId` | `string` | No | Identificador del cliente.<br>El comercio genera y utiliza este valor internamente para identificar al cliente dentro de la plataforma de Bamboo Payment. |
 | `Customer` → `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |

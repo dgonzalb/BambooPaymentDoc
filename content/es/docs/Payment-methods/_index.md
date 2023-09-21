@@ -15,7 +15,7 @@ weight: 70
 | 3 | PhysicalNetwork | Pago en efectivo |
 | 4 | PrePaid | Tarjeta prepago |
 | 5 | Loyalty | Puntos de fidelización (Solo para 🇺🇾) |
-| 7 | BankTransfer | Trasnferencia bancaria |
+| 7 | BankTransfer | Transferencia bancaria |
 
 ## Tabla de paises (ISO-3166-1) {#countries-table-iso-3166-1}
 

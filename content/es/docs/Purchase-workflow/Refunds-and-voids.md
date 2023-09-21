@@ -90,7 +90,7 @@ Consider the following parameters when invoking a refund request.
 
 | Parameter | Tipo | Mandatory | Descripción |
 |---|---|---|---|---|
-| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
+| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Ejemplo `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
 | `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
 
 #### Ejemplo del Request {#request-example} 

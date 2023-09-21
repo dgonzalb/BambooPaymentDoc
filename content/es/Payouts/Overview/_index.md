@@ -30,7 +30,7 @@ Puede configurar la tasa del Payout para que sea asumida por usted o por el bene
 
 ## Cobertura {#coverage}
 
-| País | Código ISO | Moneda | Trasnferencia Local Bancaria | Efectivo | Transferencia instantánea | Billetera |
+| País | Código ISO | Moneda | Transferencia Local Bancaria | Efectivo | Transferencia instantánea | Billetera |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
 | Argentina  | `AR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
 | Brasil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |

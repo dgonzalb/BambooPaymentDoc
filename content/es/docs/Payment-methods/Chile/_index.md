@@ -41,5 +41,5 @@ La siguiente tabla describe los tipos de documentos válidos para Chile:
 
 | Código | Nombre del documento | Abreviación |
 |:------:|----------------------|-------------|
-| 20     | Rol Único Tributario | DNI         |
+| 20     | Rol Único Tributario | RUT         |
 | 21     | Cédula de Identidad  | CI          |

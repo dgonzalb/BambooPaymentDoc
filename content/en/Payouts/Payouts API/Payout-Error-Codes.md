@@ -4,7 +4,7 @@ linkTitle: "Error Codes"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
-  This article provides information about the error codes ypu may find when using the Payouts integration.
+  This article provides information about the error codes you may find when using the Payouts integration.
 weight: 40
 ---
 
@@ -18,7 +18,7 @@ weight: 40
 | `813` | Declined by validation for account. |
 | `814` | Declined by validation for country. |
 | `815` | Declined by Compliance. |
-| `816` | Reference ID already used.<br>This error is not be displayed in the [Payouts console](/payouts/payouts-merchant-console.html) but it is returned via API. |
+| `816` | Reference ID already used.<br>This error is not be displayed in the [Payouts console](../payouts-merchant-console.html) but it is returned via API. |
 | `901` | Bank account is closed. |
 | `902` | Invalid bank account. |
 | `903` | Invalid bank account type. |

@@ -41,5 +41,5 @@ The following table describes the valid document types for Chile:
 
 | Code | Document name        | Abbreviation |
 |:----:|----------------------|--------------|
-| 20   | Rol Único Tributario | DNI          |
+| 20   | Rol Único Tributario | RUT          |
 | 21   | Cédula de Identidad  | CI           |
