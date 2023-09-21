@@ -79,8 +79,8 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | |
 | RUT | Rol Único Tributario | Individuos | Numérico | 12 |
 
-## Tipos de Payout {#payout-types}
-La siguiente tabla muestra los tipos de Pago que debe configurar en el parámetro `type`.
+## Tipos de Transferencias para Payout {#transfer-types-for-payouts}
+La siguiente tabla muestra los tipos de transferencias que puede configurar en el parámetro `type`.
 
 <div id="shortTable"></div>
 

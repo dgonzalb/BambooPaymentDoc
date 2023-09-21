@@ -1,5 +1,5 @@
 ---
-title: "Resumen"
+title: "Bamboo Payouts"
 date: 2023-03-28T08:28:16-05:00
 type: docs
 Description: >
@@ -22,11 +22,12 @@ A través de Bamboo Payouts, se puede dispersar los fondos acreditados en su cue
 Puede configurar la tasa del Payout para que sea asumida por usted o por el beneficiario. Para más información sobre precios y activación de los servicios, [póngase en contacto con nuestros expertos locales](https://bamboopaymentsystems.com/#contact-form-principal).
 
 ## Beneficios {#benefits}
-* Expertos del sector crearon nuestra solución.
-* ***Cobertura*** - ¡Nuestro servicio está en 7 países y aumentando!
-* ***Flexibilidad*** - Conéctese fácilmente usando nuestra API.
-* Ofrecemos transferencias alternativas de Payouts, como Nequi en Colombia.
-* La tasa del Payout puede ser asumida por usted o su beneficiario.
+* ***Disponibilidad*** - Ofrecemos transferencias bancarias y otras transferencias alternativas, como Nequi en Colombia.
+* ***Tecnología*** - Conéctese rápida y fácilmente usando nuestra API para todos los países.
+* ***Fiabilidad*** - Expertos de la industria crearon nuestra solución.
+* ***Cobertura*** - ¡Nuestro servicio está en 7 países y contando!
+* ***Transparencia*** - Obtendrá una consola fácil de navegar con saldos disponibles en tiempo real.
+* ***Flexibilidad*** - Usted o su beneficiario pueden asumir la tasa del Payout.
 
 ## Cobertura {#coverage}
 
@@ -40,8 +41,29 @@ Puede configurar la tasa del Payout para que sea asumida por usted o por el bene
 | Perú  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
+## Horarios de corte {#cut-off-schedule}
+Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de lo contrario, procesaremos el pago el siguiente día hábil.
+
+<div id="shortTable"></div>
+
+| País | Hora máxima<sup>*</sup> | Zona horaria |
+|---|---|---|
+| Argentina | 10:00 am. | **GMT-3** |
+| Brasil | 10:00 am. | **GMT-3** |
+| Chile  | Real time. | |
+| Colombia | 10:00 am. | **GMT-5** |
+| México  | 10:00 am. | **GMT-6** |
+| Perú | 09:00 am. | **GMT-5** |
+| Uruguay | 10:00 am. | **GMT-3** |
+
+<sup>*</sup> _Hora indicada en hora local de Uruguay_.
+
+{{% alert title="Importante" color="info"%}}
+Cuando los Payouts ocurren en **T+0**, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como _**Pagado**_ al día siguiente. Esto se aplica a todos los países excepto Brasil y México, donde la consola mostrará el estado como _**Pagado**_ el mismo día.
+{{% /alert %}}
+
 ## Consideraciones {#considerations}
-Tenga en cuenta las siguientes consideraciones cuando utilice Payouts según el país del beneficiario para evitar rechazos.
+Cuando utilice Payouts, tenga en cuenta los requisitos específicos del país de cada beneficiario para evitar rechazos de pagos.
 
 ### Argentina
 
@@ -53,7 +75,7 @@ Tenga en cuenta las siguientes consideraciones cuando utilice Payouts según el 
 
 | Nombre del banco | Código del banco | Formato | Ejemplo |
 |---|---|---|---|
-| Banco do Brasil | `001` | `DDDDDDDDD-X` o `DDDDDDDDDX` donde `D` es un dígito y `X` es un dígito (number) o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder diez. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
+| Banco do Brasil | `001` | `DDDDDDDDD-X` o `DDDDDDDDDX` donde `D` es un dígito y `X` es un dígito (número)  o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder diez. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
 | Santander | `033` | `DDDDDDDD`, `DDDDDDDDD`, `DDDDDDDD-D`, donde `D` es un dígito.<br>El número de dígitos debe ser 8 o 9. | `12345678`<br>`12345678-9` |
 | Banrisul | `041` | `DDDDDDDDD-D` o `DDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos debe ser 10. | `1234567890`<br>`123456789-0` |
 | Caixa | `104` | `DDDDDDDDD-D` o `DDDDDDDDDDDDDD-D` donde `D` es un dígito.<br>El número de dígitos debe ser between 1 y 15. | `1234567890`<br>`123456789-0`<br>`12345678901234-5` |
@@ -66,7 +88,7 @@ Tenga en cuenta las siguientes consideraciones cuando utilice Payouts según el 
 
 | Nombre del banco | Código del banco | Formato | Excepciones | Ejemplo |
 |---|---|---|---|---|
-| Banco do Brasil | `001` | `DDDD-X ` o `DDDDX` donde `D` es un dígito y `X` es un dígito (number) o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder cinco dígitos. | No puede tener cuatros ceros y un dígito. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
+| Banco do Brasil | `001` | `DDDD-X ` o `DDDDX` donde `D` es un dígito y `X` es un dígito (número)  o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder cinco dígitos. | No puede tener cuatros ceros y un dígito. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
 | Santander | `033` | `DDDD` donde `D` es un dígito. | No puede ser `033` | `1234` |
 | Banrisul | `041` | `DDDD` donde `D` es un dígito. | - | `1234` |
 | Banco Inter | `077` | `DDDD` donde `D` es un dígito. | No puede ser `077` | `1234` |
@@ -76,7 +98,7 @@ Tenga en cuenta las siguientes consideraciones cuando utilice Payouts según el 
 | Banco Nu Pagamento | `260` | `DDDD` donde `D` es un dígito. | No puede ser `260` | `1234` |
 | PagSeguro | `290` | `DDDD` donde `D` es un dígito. | No puede ser `290` | `1234` |
 | Itau | `341` | `DDDD` donde `D` es un dígito. | No puede ser `341` | `1234` |
-| Others | - | `DDDD` donde `D` es un dígito. | - | `1234` |
+| Otros | - | `DDDD` donde `D` es un dígito. | - | `1234` |
 
 ### Chile
 

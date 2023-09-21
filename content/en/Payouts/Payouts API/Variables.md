@@ -79,8 +79,8 @@ The following tables show the document types you must configure in the parameter
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | |
 | RUT | Single Tax Role | Individuals | Numeric | 12 |
 
-## Payout types
-The following table shows the Payout types you must configure in the parameter `type`.
+## Transfer types for Payouts
+The following table shows the transfer types you can configure in the parameter `type`.
 
 <div id="shortTable"></div>
 

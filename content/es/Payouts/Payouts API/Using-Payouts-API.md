@@ -479,7 +479,7 @@ Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesida
 
 Para obtener el Payout, incluya los siguientes endpoints de acuerdo con sus necesidades.
 
-* **A través del ID del Payout**: `{{URL}}/api/Payout/{{PayoutId}}`
+* **A través del ID del Payout**: `{{URL}}/api/Payout/{{PayoutID}}`
 * **A través del ID de la referencia del Payout**: `{{URL}}/api/Payout/reference/{{PayoutReference}}`
 
 #### Parámetros del Response {#response-parameters-1}
