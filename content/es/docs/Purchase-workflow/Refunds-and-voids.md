@@ -41,12 +41,18 @@ La funcionalidad de preautorización puede no estar soportada por todos lo medio
 
 {{% /alert %}}
 
+<!--
+### Considerations {#considerations}
+_To be defined_
+-->
+
 ### URL del Request {#request-url}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
+<!--
 ## Reembolsar una compra {#refund-a-purchase}
 La operación de _**refund**_ está disponible para compras con estado _Approved_. Los reembolsos pueden ser totales o parciales.
 
@@ -55,14 +61,15 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+-->
 
-## Parámetros del Request {#request-parameters}
-No es necesario enviar el cuerpo del request para anular o reembolsar una compra. Si no envía el request, la compra será anulada o reembolsada con su monto original. 
+### Parámetros del Request {#request-parameters}
+No es necesario enviar el cuerpo del request para anular una compra. Si no envía el request, la compra será anulada con su monto original. 
 
-El monto a anular o reembolsar puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.
+El monto a anular puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.
 
-### Ejemplo del Request {#request-example}
-Para realizar la devolución o reembolso de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:
+#### Ejemplo del Request {#request-example}
+Para realizar la devolución de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:
 
 ```json
 {
@@ -70,76 +77,77 @@ Para realizar la devolución o reembolso de una compra con un monto inferior al 
 }
 ```
 
-## Parámetros del Response {#response-parameters}
+### Parámetros del Response {#response-parameters}
 Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto `Response` [retornado]({{< ref "purchase-operations.md" >}}#response-parameters).
-<!--
-## Refund a purchase
-The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
 
-### Consideraciones
+## Reembolsar una compra {#refund-a-purchase}
+La operación de _**reembolso**_ está disponible únicamente para compras con estado _Aprobado_. Los reembolsos pueden ser totales o parciales.
+
+<!--
+### Consideraciones  {#considerations-1}
 _To be defined_
+-->
 
 ### URL del Request {#request-url-1}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Producción**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Production**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
 
 ### Parámetros del Request {#request-parameters}
-Consider the following parameters when invoking a refund request.
+Considere los siguientes parámetros cuando invoque un request de reembolso.
 
-| Parameter | Tipo | Mandatory | Descripción |
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
 |---|---|---|---|---|
-| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Ejemplo `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
-| `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
+| `Amount` | `number` | No | Monto a se reembolsado (reembolso parcial). Si no envía este parámetro el reembolso se hará por el monto de la compra (reembolso total).<br>Si requiere incluir decimales en el monto, concatene los dígitos decimales sin el punto decimal. Ejemplo: `12,25` > `1225`.<br>Este valor **no puede** ser mayor que el valor original del monto de la compra. |
+| `MetadataIn`  → `Description` | `string` | No | Descripción opcional del reembolso. |
 
-#### Ejemplo del Request {#request-example} 
+#### Ejemplo del Request {#request-example-1}
 
 ```json
 {
-  "Amount":"25000",
+  "Amount":"2500",
   "MetadataIn": {
     "Description": "Refund description"
-  },
+  }
 }
 ```
 
-### Parámetros del Response {#response-parameters}
+### Parámetros del Response {#response-parameters-1}
 
 | Parámetro | Tipo | Descripción |
 |---|---|---|
-| `Response` → `PurchaseRefundId` | `number` | Internal identifier of the refund. |
-| `Response` → `Created` | `date` | Date and time when the refund was created.<br>Formato de la fecha _**ISO-8601**_. |
-| `Response` → `Amount` | `number` | Refund amount as sent in the request. |
-| `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
-| `Response` → `StatusId` | `number` | Identifier of the refund status. |
-| `Response` → `Status` | `string` | Descripción of the refund status. |
-| `Response` → `AuthorizationCode` | `string` | Response code returned by the acquirer of the transaction. |
-| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction if the refund is rejected. |
-| `Response` → `Description` | `string` | Error description returned by the acquirer of the transaction if the refund is rejected. |
-| `Response` → `MetadataOut` | `object` | Additional information returned by the acquirer. |
-| `Errors` → `ErrorCode` | `string` | Error code returned. |
-| `Errors` → `Created` | `string` | Date and time when the error was generated. |
-| `Errors` → `Message` | `string` | Descriptive text of the error. |
-| `Errors` → `Detail` | `string` | Error detail. |
+| `Response` → `PurchaseRefundId` | `number` | Identificador interno del reembolso. |
+| `Response` → `Created` | `date` | Fecha y hora de la creación del reembolso.<br>Formato de fecha: _**ISO-8601**_. |
+| `Response` → `Amount` | `number` | Monto del reembolso tal como se envió en el request. |
+| `Response` → `Currency` | `string` | Moneda del reembolso de acuerdo al formato ISO-4217 (códigos alfanuméricos). |
+| `Response` → `StatusId` | `number` | Identificador del estado del reembolso. |
+| `Response` → `Status` | `string` | Descripción del estado del reembolso. |
+| `Response` → `AuthorizationCode` | `string` | Código de reembolso retornado por el adquirente de la transacción. |
+| `Response` → `Code` | `string` | Código de error retornado por el adquirente de la transacción. |
+| `Response` → `Description` | `string` | Descripción retornada por el adquirente de la transacción. |
+| `Response` → `MetadataOut` | `object` | Información adicional retornada por el adquirente de la transacción. |
+| `Errors` → `ErrorCode` | `string` | Código de error retornado por Bamboo. |
+| `Errors` → `Created` | `string` | Fecha y hora de la generación del error. |
+| `Errors` → `Message` | `string` | Texto descriptivo del error. |
+| `Errors` → `Detail` | `string` | Detalle del error. |
 
 #### Ejemplo del Response {#response-example}
 
 ```json
 {
-  "Response": {
-    "PurchaseRefundId": 194441,
-    "Created": "2023-07-04T16:26:33.850",
-    "Amount": 50000,
-    "Currency": "UYU",
-    "StatusId": 111,
-    "Status": "Approved",
-    "AuthorizationCode": "876961",
-    "Code": "",
-    "Description": "",
-    "MetadataOut": {}
-  },
-  "Errors": []
+    "Response": {
+        "PurchaseRefundId": 1246459,
+        "Created": "2023-09-22T13:46:47.089",
+        "Amount": 100.00,
+        "Currency": "CLP",
+        "StatusId": 10,
+        "Status": "Refund_OK",
+        "AuthorizationCode": null,
+        "Code": "0",
+        "Description": "REVERSED",
+        "MetadataOut": null
+    },
+    "Errors": []
 }
 ```
--->

@@ -32,10 +32,10 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 
 <div style="text-align: center;">
 
-<a href=("en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
-<a href=("en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
-<a href=("en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
-<a href=("en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+<a href="en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
+<a href="en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
 
@@ -63,12 +63,12 @@ You must invoke a **POST** request to the following URLs according to your needs
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 -->
 
-## Request parameters
+### Request parameters
 Request body is not required to rollback a purchase. If you don't send any request the purchase will be voided with its original amount. 
 
 The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
 
-### Request example
+#### Request example
 To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
 
 ```json
@@ -77,11 +77,11 @@ To perform the rollback of a purchase with a lower amount than the original, you
 }
 ```
 
-## Response parameters
+### Response parameters
 When you perform the rollback, you will get the same `Response` object [returned]({{< ref "purchase-operations.md" >}}#response-parameters).
 
 ## Refund a purchase
-The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial
+The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial.
 
 <!--
 ### Considerations
@@ -99,17 +99,17 @@ Consider the following parameters when invoking a refund request.
 
 | Parameter | Type | Mandatory | Description |
 |---|---|---|---|---|
-| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
-| `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
+| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example: `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
+| `MetadataIn`  → `Description` | `string` | No | Optional description for the refund. |
 
 #### Request example 
 
 ```json
 {
-  "Amount":"25000",
+  "Amount":"2500",
   "MetadataIn": {
     "Description": "Refund description"
-  },
+  }
 }
 ```
 
@@ -123,11 +123,11 @@ Consider the following parameters when invoking a refund request.
 | `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
 | `Response` → `StatusId` | `number` | Identifier of the refund status. |
 | `Response` → `Status` | `string` | Description of the refund status. |
-| `Response` → `AuthorizationCode` | `string` | Response code returned by the acquirer of the transaction. |
-| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction if the refund is rejected. |
-| `Response` → `Description` | `string` | Error description returned by the acquirer of the transaction if the refund is rejected. |
+| `Response` → `AuthorizationCode` | `string` | Refund code returned by the acquirer of the transaction. |
+| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction. |
+| `Response` → `Description` | `string` | Description returned by the acquirer of the transaction. |
 | `Response` → `MetadataOut` | `object` | Additional information returned by the acquirer. |
-| `Errors` → `ErrorCode` | `string` | Error code returned. |
+| `Errors` → `ErrorCode` | `string` | Error code returned by Bamboo. |
 | `Errors` → `Created` | `string` | Date and time when the error was generated. |
 | `Errors` → `Message` | `string` | Descriptive text of the error. |
 | `Errors` → `Detail` | `string` | Error detail. |
@@ -136,18 +136,18 @@ Consider the following parameters when invoking a refund request.
 
 ```json
 {
-  "Response": {
-    "PurchaseRefundId": 194441,
-    "Created": "2023-07-04T16:26:33.850",
-    "Amount": 50000,
-    "Currency": "UYU",
-    "StatusId": 111,
-    "Status": "Approved",
-    "AuthorizationCode": "876961",
-    "Code": "",
-    "Description": "",
-    "MetadataOut": {}
-  },
-  "Errors": []
+    "Response": {
+        "PurchaseRefundId": 1246459,
+        "Created": "2023-09-22T13:46:47.089",
+        "Amount": 100.00,
+        "Currency": "CLP",
+        "StatusId": 10,
+        "Status": "Refund_OK",
+        "AuthorizationCode": null,
+        "Code": "0",
+        "Description": "REVERSED",
+        "MetadataOut": null
+    },
+    "Errors": []
 }
 ```

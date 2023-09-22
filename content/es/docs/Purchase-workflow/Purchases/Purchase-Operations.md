@@ -37,7 +37,7 @@ Las siguientes operaciones expuestas por la _**API de Compras**_ le permite real
 ### Crear una compra {#create-a-purchase}
 Cree una compra básica en Bamboo Payment.
 
-#### URL de Request {#request-url}
+#### URL del Request {#request-url}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase`
@@ -142,7 +142,7 @@ No todos los medios de pago soportan la funcionalidad de preautorización y est�
 
 {{% /alert %}}
 
-#### URL de Request {#request-url-1}
+#### URL del Request {#request-url-1}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit`
@@ -165,7 +165,7 @@ Debe incluir el nuevo monto en la solicitud para confirmar una compra con un mon
 ### Obtener compras {#get-purchases}
 Este método le permite obtener la información de una o más compras según el criterio de búsqueda enviado en el cuerpo del mismo.
 
-#### URL de Request {#request-url-2}
+#### URL del Request {#request-url-2}
 Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase`
