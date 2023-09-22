@@ -3779,12 +3779,13 @@
 &lt;p&gt;La API de Payouts ofrece tres métodos que puede utilizar cuando solicite Payouts.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#get-bank-list&#34;&gt;Obtener listado de bancos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#payout-preview&#34;&gt;Preview del Payout&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#payout-request&#34;&gt;Solicitud del Payout&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#obtaining-a-payout&#34;&gt;Obtener un Payout&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;get-bank-list&#34;&gt;Obtener listado de bancos&lt;/h3&gt;
 &lt;p&gt;Este método le permite obtener el listado de bancos disponibles en un país.&lt;/p&gt;
-&lt;h4 id=&#34;request-url&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}&lt;/code&gt;&lt;/li&gt;
@@ -3852,9 +3853,135 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a40000&#34;&gt;...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payout-preview&#34;&gt;Preview del Payout&lt;/h3&gt;
+&lt;p&gt;El método de Preview del Payout le permite mostrar el valor final recibido por el beneficiario y la fecha prevista en la que recibirá el dinero.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts12_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Advertencia&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El Preview del Payout es meramente informativo y no congela el tipo de cambio, el cual se congela al &lt;a href=&#34;#payout-request&#34;&gt;solicitar el Payout&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;request-url-3&#34;&gt;URL del Request&lt;/h4&gt;
+&lt;p&gt;Debe invocar un request &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout/preview&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout/preview&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h4&gt;
+&lt;p&gt;La siguiente tabla muestra los parámetros obligatorios y opcionales para el Preview del Payout.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;amount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Monto del Payout, el formato tiene dos dígitos decimales.&lt;br&gt;Ejemplo &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;USD 1,00&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;destinationCountryIsoCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string(2)&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Código ISO del país en formato &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../overview.html#coverage&#34;&gt;Listado de países disponibles de Payouts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;originalCurrencyIsoCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string(3)&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Código ISO de la moneda.&lt;br&gt;&lt;em&gt;Solo está disponible &lt;strong&gt;USD&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;request-example-1&#34;&gt;Ejemplo del Request&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;125000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;destinationCountryIsoCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;originalCurrencyIsoCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;USD&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;response-parameters-2&#34;&gt;Parámetros del Response&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Formato&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;amountInOrignalCurrency&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Valor solicitado en el Preview del Payout.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fee&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto cobrado por Bamboo para porcesar el Payout. Usted o el beneficiario pueden asumir la tasa de acuerdo con su contrato.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;amountToBeSentInOrignalCurrency&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto a ser enviado al Beneficiario, el cual se calcula como la diferencia entre &lt;code&gt;amountInOrignalCurrency&lt;/code&gt; y &lt;code&gt;fee&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;exchangeRate&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Valor de conversión entre la moneda origen y destino. Este valor incluye hasta &lt;code&gt;5&lt;/code&gt; dígitos decimales.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;amountToBeSentInLocalCurrency&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto que va a recbir el Beneficiario, el cual se calcula multiplicando &lt;code&gt;amountToBeSentInOriginalCurrency&lt;/code&gt; por &lt;code&gt;exchangeRate&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;errors&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Errores que pueden aparecer. Los códigos de error para este método empiezan por &lt;code&gt;6&lt;/code&gt;.&lt;br&gt;Encuentre los posibles errores &lt;a href=&#34;../../es/payouts/payouts-api/payout-error-codes.html&#34;&gt;aquí&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;errors&lt;/code&gt; → &lt;code&gt;ErrorCode&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código interno del error. Encuentra los posibles errores &lt;a href=&#34;../../es/payouts/payouts-api/payout-error-codes.html&#34;&gt;aquí&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;errors&lt;/code&gt; → &lt;code&gt;PropertyName&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Propiedad que provocó el error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;errors&lt;/code&gt; → &lt;code&gt;Message&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Descripción del error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;response-example-2&#34;&gt;Ejemplo del Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amountInOrignalCurrency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1250&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fee&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;37.5000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amountToBeSentInOrignalCurrency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1212.5000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;exchangeRate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3941.510000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amountToBeSentInLocalCurrency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4779080.88&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;expectedPaymentDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2023-09-26T15:59:03Z&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payout-request&#34;&gt;Solicitud del Payout&lt;/h3&gt;
 &lt;p&gt;Este método le permite solicitar uno o más Payouts utilizando los fondos depositados en su cuenta.&lt;/p&gt;
-&lt;h4 id=&#34;request-url-1&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url-1&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -4512,7 +4639,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;obtaining-a-payout&#34;&gt;Obtener un Payout&lt;/h3&gt;
 &lt;p&gt;Este método le permite traer la información de un Payout utilizando el identificador (ID) generado o la referencia que asignó cuando solicitó el Payout.&lt;/p&gt;
-&lt;h4 id=&#34;request-url-2&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url-2&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout&lt;/code&gt;&lt;/li&gt;
@@ -5194,7 +5321,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/ul&gt;
 &lt;h3 id=&#34;create-a-purchase&#34;&gt;Crear una compra&lt;/h3&gt;
 &lt;p&gt;Cree una compra básica en Bamboo Payment.&lt;/p&gt;
-&lt;h4 id=&#34;request-url&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase&lt;/code&gt;&lt;/li&gt;
@@ -5479,7 +5606,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request-url-1&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url-1&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit&lt;/code&gt;&lt;/li&gt;
@@ -5495,7 +5622,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;get-purchases&#34;&gt;Obtener compras&lt;/h3&gt;
 &lt;p&gt;Este método le permite obtener la información de una o más compras según el criterio de búsqueda enviado en el cuerpo del mismo.&lt;/p&gt;
-&lt;h4 id=&#34;request-url-2&#34;&gt;URL de Request&lt;/h4&gt;
+&lt;h4 id=&#34;request-url-2&#34;&gt;URL del Request&lt;/h4&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase&lt;/code&gt;&lt;/li&gt;
@@ -12243,101 +12370,183 @@ Estos campos siempre están expresados como la parte entera más dos dígitos de
 &lt;/p&gt;
 &lt;/div&gt;
 
+&lt;!--
+### Considerations {#considerations}
+_To be defined_
+--&gt;
 &lt;h3 id=&#34;request-url&#34;&gt;URL del Request&lt;/h3&gt;
 &lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;refund-a-purchase&#34;&gt;Reembolsar una compra&lt;/h2&gt;
-&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;refund&lt;/strong&gt;&lt;/em&gt; está disponible para compras con estado &lt;em&gt;Approved&lt;/em&gt;. Los reembolsos pueden ser totales o parciales.&lt;/p&gt;
-&lt;h3 id=&#34;request-url-1&#34;&gt;URL del Request&lt;/h3&gt;
-&lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;No es necesario enviar el cuerpo del request para anular o reembolsar una compra. Si no envía el request, la compra será anulada o reembolsada con su monto original.&lt;/p&gt;
-&lt;p&gt;El monto a anular o reembolsar puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.&lt;/p&gt;
-&lt;h3 id=&#34;request-example&#34;&gt;Ejemplo del Request&lt;/h3&gt;
-&lt;p&gt;Para realizar la devolución o reembolso de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h2&gt;
-&lt;p&gt;Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;retornado&lt;/a&gt;.&lt;/p&gt;
 &lt;!--
-## Refund a purchase
-The _**refunds**_ operations is only available for purchases with state _Approved_. Refunds can be total or partial
-
-### Consideraciones
-_To be defined_
+## Reembolsar una compra {#refund-a-purchase}
+La operación de _**refund**_ está disponible para compras con estado _Approved_. Los reembolsos pueden ser totales o parciales.
 
 ### URL del Request {#request-url-1}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Producción**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
-* **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
-
-### Parámetros del Request {#request-parameters}
-Consider the following parameters when invoking a refund request.
-
-| Parameter | Tipo | Mandatory | Descripción |
-|---|---|---|---|---|
-| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).&lt;br&gt;If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Ejemplo `12,25` &gt; `1225`.&lt;br&gt;This value **cannot** be higher than the original amount of the purchase. |
-| `MetadataIn`  → `Description` | string | No | Optional description for the refund. |
-
-#### Ejemplo del Request {#request-example} 
-
-```json
-{
-  &#34;Amount&#34;:&#34;25000&#34;,
-  &#34;MetadataIn&#34;: {
-    &#34;Description&#34;: &#34;Refund description&#34;
-  },
-}
-```
-
-### Parámetros del Response {#response-parameters}
-
-| Parámetro | Tipo | Descripción |
-|---|---|---|
-| `Response` → `PurchaseRefundId` | `number` | Internal identifier of the refund. |
-| `Response` → `Created` | `date` | Date and time when the refund was created.&lt;br&gt;Formato de la fecha _**ISO-8601**_. |
-| `Response` → `Amount` | `number` | Refund amount as sent in the request. |
-| `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
-| `Response` → `StatusId` | `number` | Identifier of the refund status. |
-| `Response` → `Status` | `string` | Descripción of the refund status. |
-| `Response` → `AuthorizationCode` | `string` | Response code returned by the acquirer of the transaction. |
-| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction if the refund is rejected. |
-| `Response` → `Description` | `string` | Error description returned by the acquirer of the transaction if the refund is rejected. |
-| `Response` → `MetadataOut` | `object` | Additional information returned by the acquirer. |
-| `Errors` → `ErrorCode` | `string` | Error code returned. |
-| `Errors` → `Created` | `string` | Date and time when the error was generated. |
-| `Errors` → `Message` | `string` | Descriptive text of the error. |
-| `Errors` → `Detail` | `string` | Error detail. |
-
-#### Ejemplo del Response {#response-example}
-
-```json
-{
-  &#34;Response&#34;: {
-    &#34;PurchaseRefundId&#34;: 194441,
-    &#34;Created&#34;: &#34;2023-07-04T16:26:33.850&#34;,
-    &#34;Amount&#34;: 50000,
-    &#34;Currency&#34;: &#34;UYU&#34;,
-    &#34;StatusId&#34;: 111,
-    &#34;Status&#34;: &#34;Approved&#34;,
-    &#34;AuthorizationCode&#34;: &#34;876961&#34;,
-    &#34;Code&#34;: &#34;&#34;,
-    &#34;Description&#34;: &#34;&#34;,
-    &#34;MetadataOut&#34;: {}
-  },
-  &#34;Errors&#34;: []
-}
-```
+* **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 --&gt;
+&lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
+&lt;p&gt;No es necesario enviar el cuerpo del request para anular una compra. Si no envía el request, la compra será anulada con su monto original.&lt;/p&gt;
+&lt;p&gt;El monto a anular puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.&lt;/p&gt;
+&lt;h4 id=&#34;request-example&#34;&gt;Ejemplo del Request&lt;/h4&gt;
+&lt;p&gt;Para realizar la devolución de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h3&gt;
+&lt;p&gt;Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;retornado&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;refund-a-purchase&#34;&gt;Reembolsar una compra&lt;/h2&gt;
+&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;reembolso&lt;/strong&gt;&lt;/em&gt; está disponible únicamente para compras con estado &lt;em&gt;Aprobado&lt;/em&gt;. Los reembolsos pueden ser totales o parciales.&lt;/p&gt;
+&lt;!--
+### Consideraciones  {#considerations-1}
+_To be defined_
+--&gt;
+&lt;h3 id=&#34;request-url-1&#34;&gt;URL del Request&lt;/h3&gt;
+&lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
+&lt;p&gt;Considere los siguientes parámetros cuando invoque un request de reembolso.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Monto a se reembolsado (reembolso parcial). Si no envía este parámetro el reembolso se hará por el monto de la compra (reembolso total).&lt;br&gt;Si requiere incluir decimales en el monto, concatene los dígitos decimales sin el punto decimal. Ejemplo: &lt;code&gt;12,25&lt;/code&gt; &amp;gt; &lt;code&gt;1225&lt;/code&gt;.&lt;br&gt;Este valor &lt;strong&gt;no puede&lt;/strong&gt; ser mayor que el valor original del monto de la compra.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;MetadataIn&lt;/code&gt;  → &lt;code&gt;Description&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Descripción opcional del reembolso.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;request-example-1&#34;&gt;Ejemplo del Request&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2500&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;MetadataIn&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Refund description&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-1&#34;&gt;Parámetros del Response&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;PurchaseRefundId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identificador interno del reembolso.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Created&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fecha y hora de la creación del reembolso.&lt;br&gt;Formato de fecha: &lt;em&gt;&lt;strong&gt;ISO-8601&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto del reembolso tal como se envió en el request.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Currency&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Moneda del reembolso de acuerdo al formato ISO-4217 (códigos alfanuméricos).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;StatusId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identificador del estado del reembolso.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Descripción del estado del reembolso.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;AuthorizationCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código de reembolso retornado por el adquirente de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Code&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código de error retornado por el adquirente de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Description&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Descripción retornada por el adquirente de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;MetadataOut&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Información adicional retornada por el adquirente de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Errors&lt;/code&gt; → &lt;code&gt;ErrorCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código de error retornado por Bamboo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Errors&lt;/code&gt; → &lt;code&gt;Created&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fecha y hora de la generación del error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Errors&lt;/code&gt; → &lt;code&gt;Message&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Texto descriptivo del error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Errors&lt;/code&gt; → &lt;code&gt;Detail&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Detalle del error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PurchaseRefundId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1246459&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2023-09-22T13:46:47.089&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100.00&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CLP&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;StatusId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Refund_OK&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;REVERSED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;MetadataOut&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -14752,96 +14961,134 @@ _Si el Payout es rechazado, la tasa de procesamiento no se reembolsa._
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Código de error&lt;/th&gt;
+&lt;th&gt;Categoría&lt;/th&gt;
 &lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;200&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Códigos del Response&lt;/td&gt;
 &lt;td&gt;Éxito.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;400&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Códigos del Response&lt;/td&gt;
 &lt;td&gt;Request incorrecto.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;401&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Códigos del Response&lt;/td&gt;
 &lt;td&gt;No autorizado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;409&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Códigos del Response&lt;/td&gt;
 &lt;td&gt;Conflicto.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;601&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Purchase Preview&lt;/td&gt;
+&lt;td&gt;Invalid Destination Country.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;602&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Purchase Preview&lt;/td&gt;
+&lt;td&gt;Invalid Origin currency.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;699&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Purchase Preview&lt;/td&gt;
+&lt;td&gt;Generic error for Purchase Preview.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;812&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Validación del API&lt;/td&gt;
 &lt;td&gt;Declinado por validación de documento.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;813&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Validación del API&lt;/td&gt;
 &lt;td&gt;Declinado por validación de cuenta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;814&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Validación del API&lt;/td&gt;
 &lt;td&gt;Declinado por validación de país.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;815&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Validación del API&lt;/td&gt;
 &lt;td&gt;Declinado por cumplimiento.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;816&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Validación del API&lt;/td&gt;
 &lt;td&gt;ID de referencia ya utilizada.&lt;br&gt;Este error no se muestra en la &lt;a href=&#34;../payouts-merchant-console.html&#34;&gt;Consola de Payouts&lt;/a&gt; pero se devuelve a través de la API.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;901&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;La cuenta bancaria está cerrada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;902&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Cuenta bancaria no válida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;903&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Tipo de cuenta bancaria no válida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;904&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Sucursal bancaria no válida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;905&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Límite mensual del usuario excedido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;906&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Rechazado por solicitud del comercio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;907&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;La cuenta bancaria no puede recibir transferencias.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;908&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Documento de beneficiario no válido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;909&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;El nombre del beneficiario no coincide con los datos bancarios.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;910&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Llave PIX no válida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;911&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Se ha solicitado un cambio de estado no válido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;912&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Saldo insuficiente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;999&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rechazos&lt;/td&gt;
 &lt;td&gt;Error.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;

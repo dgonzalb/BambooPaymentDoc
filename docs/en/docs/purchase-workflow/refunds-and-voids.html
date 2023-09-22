@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/refunds-and-voids.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-08-02T08:46:32-05:00" />
-<meta property="article:modified_time" content="2023-09-21T15:39:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-22T14:22:34-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Refunds and voids">
 <meta itemprop="description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
 "><meta itemprop="datePublished" content="2023-08-02T08:46:32-05:00" />
-<meta itemprop="dateModified" content="2023-09-21T15:39:41-05:00" />
-<meta itemprop="wordCount" content="690">
+<meta itemprop="dateModified" content="2023-09-22T14:22:34-05:00" />
+<meta itemprop="wordCount" content="673">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Refunds and voids"/>
 <meta name="twitter:description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
@@ -144,7 +144,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6f896c73f1f61c48125094fd7383c216486acd212fc98efeb221d5f66841db2a0919146d2368700106707123b199d4564ef5535cd8482d00a7367b0dc3e5e3d1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2e2f01df614a9c4a3cec4807fc986f21aade6b3d9bd1c4487c4930acdb9a75d8031701e3a05d9ddce1b74810cbc535c9991bb07c8d8dc586e7e628ad38d9fdef.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -420,12 +420,6 @@
       
       
         <a id="/en/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformsembedded-checkout-formhtml" href="../../../en/docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
-      
-      
-      
-      
-      
-        <a id="/en/docs/forms/testing.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformstestinghtml" href="../../../en/docs/forms/testing.html">testing</a>
       
       
     </li>
@@ -882,14 +876,10 @@
     <li><a href="#rollback-a-purchase">Rollback a purchase</a>
       <ul>
         <li><a href="#request-url">Request URL</a></li>
+        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#response-parameters">Response parameters</a></li>
       </ul>
     </li>
-    <li><a href="#request-parameters">Request parameters</a>
-      <ul>
-        <li><a href="#request-example">Request example</a></li>
-      </ul>
-    </li>
-    <li><a href="#response-parameters">Response parameters</a></li>
     <li><a href="#refund-a-purchase">Refund a purchase</a>
       <ul>
         <li><a href="#request-url-1">Request URL</a></li>
@@ -989,10 +979,10 @@
     Note</h4>
 <p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
 <div style="text-align: center;">
-<p>&lt;a href=(&ldquo;en/docs/payment-methods/brazil.html&rdquo;&gt;<img src="../../../assets/Flags/FlagBR.png" width="30" /></a>
-&lt;a href=(&ldquo;en/docs/payment-methods/chile.html&rdquo;&gt;<img src="../../../assets/Flags/FlagCL.png" width="30" /></a>
-&lt;a href=(&ldquo;en/docs/payment-methods/colombia.html&rdquo;&gt;<img src="../../../assets/Flags/FlagCO.png" width="30" /></a>
-&lt;a href=(&ldquo;en/docs/payment-methods/uruguay.html&rdquo;&gt;<img src="../../../assets/Flags/FlagUY.png" width="30" /></a></p>
+<p><a href="en/docs/payment-methods/brazil.html"><img src="../../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="en/docs/payment-methods/chile.html"><img src="../../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="en/docs/payment-methods/colombia.html"><img src="../../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="en/docs/payment-methods/uruguay.html"><img src="../../../assets/Flags/FlagUY.png" width="30" /></a></p>
 </div>
 </p>
 </div>
@@ -1017,18 +1007,18 @@ You must invoke a **POST** request to the following URLs according to your needs
 * **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 -->
-<h2 id="request-parameters">Request parameters</h2>
+<h3 id="request-parameters">Request parameters</h3>
 <p>Request body is not required to rollback a purchase. If you don&rsquo;t send any request the purchase will be voided with its original amount.</p>
 <p>The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
-<h3 id="request-example">Request example</h3>
+<h4 id="request-example">Request example</h4>
 <p>To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="response-parameters">Response parameters</h2>
+</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
 <p>When you perform the rollback, you will get the same <code>Response</code> object <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
 <h2 id="refund-a-purchase">Refund a purchase</h2>
-<p>The <em><strong>refund</strong></em> operation is only available for purchases with state <em>Approved</em>. Refunds can be total or partial</p>
+<p>The <em><strong>refund</strong></em> operation is only available for purchases with state <em>Approved</em>. Refunds can be total or partial.</p>
 <!--
 ### Considerations
 _To be defined_
@@ -1056,12 +1046,12 @@ _To be defined_
 <td><code>Amount</code></td>
 <td><code>number</code></td>
 <td>No</td>
-<td>Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example <code>12,25</code> &gt; <code>1225</code>.<br>This value <strong>cannot</strong> be higher than the original amount of the purchase.</td>
+<td>Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example: <code>12,25</code> &gt; <code>1225</code>.<br>This value <strong>cannot</strong> be higher than the original amount of the purchase.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>MetadataIn</code>  → <code>Description</code></td>
-<td>string</td>
+<td><code>string</code></td>
 <td>No</td>
 <td>Optional description for the refund.</td>
 <td></td>
@@ -1070,10 +1060,10 @@ _To be defined_
 </table>
 <h4 id="request-example-1">Request example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;25000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;2500&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund description&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="response-parameters-1">Response parameters</h3>
 <table>
@@ -1118,17 +1108,17 @@ _To be defined_
 <tr>
 <td><code>Response</code> → <code>AuthorizationCode</code></td>
 <td><code>string</code></td>
-<td>Response code returned by the acquirer of the transaction.</td>
+<td>Refund code returned by the acquirer of the transaction.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>Code</code></td>
 <td><code>string</code></td>
-<td>Error code returned by the acquirer of the transaction if the refund is rejected.</td>
+<td>Error code returned by the acquirer of the transaction.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>Description</code></td>
 <td><code>string</code></td>
-<td>Error description returned by the acquirer of the transaction if the refund is rejected.</td>
+<td>Description returned by the acquirer of the transaction.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code></td>
@@ -1138,7 +1128,7 @@ _To be defined_
 <tr>
 <td><code>Errors</code> → <code>ErrorCode</code></td>
 <td><code>string</code></td>
-<td>Error code returned.</td>
+<td>Error code returned by Bamboo.</td>
 </tr>
 <tr>
 <td><code>Errors</code> → <code>Created</code></td>
@@ -1159,19 +1149,19 @@ _To be defined_
 </table>
 <h4 id="response-example">Response example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PurchaseRefundId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">194441</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-07-04T16:26:33.850&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;StatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">111</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;876961&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseRefundId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1246459</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-22T13:46:47.089&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100.00</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;StatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund_OK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REVERSED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div>
 	
@@ -1181,9 +1171,9 @@ _To be defined_
 <br>
 <b>Last modified</b>
 
-September 21, 2023: 
+September 22, 2023: 
 
- <i>Traducciones y actualizaciones de links en inglés (3d35e29)</i>
+ <i>Payouts Preview feature (de723e4)</i>
   </div>
 </div>
 
