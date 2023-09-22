@@ -20,7 +20,7 @@ The following diagram represents the status of a payout:
 
 * **Pending**: This status indicates that the payout and the payee have met all the validations required, and it is about to be sent to the _Banking Connections_.
 
-* **Processing**: The _Banking Connection_ has received the payout; the time before moving to ***Paid*** status depends on the country and selected payment method. [Click here to learn more](../overview.html#considerations).
+* **Processing**: The _Banking Connection_ has received the payout; the time before moving to ***Paid*** status depends on the country and selected payment method.
 
 * **Paid**: The _Banking Connection_ has processed the Payout and is approved. In this status, we update your [balance]({{< ref "Payout-Balances.md" >}}) with the transaction values.
 

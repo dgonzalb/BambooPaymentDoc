@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Bamboo Payouts"
 date: 2023-03-28T08:28:16-05:00
 type: docs
 Description: >
@@ -22,11 +22,12 @@ Using Bamboo Payouts, you can efficiently disburse the funds settled in your acc
 You can configure the Payout fee to be assumed by you or the payee. For more information about pricing and activation of the services, [contact our local experts](https://bamboopaymentsystems.com/#contact-form-principal).
 
 ## Benefits
-* Industry experts created our solution.
+* ***Availability*** - We offer Bank Transfers and other alternative transfers, such as Nequi in Colombia.
+* ***Technology*** - Connect fast and easily using our API for all countries.
+* ***Reliability*** - Industry experts created our solution.
 * ***Coverage*** - Our service is in 7 countries and counting!
-* ***Flexibility*** -  Connect easily using our API.
-* We offer alternative Payouts transfers, as Nequi in Colombia.
-* The payout fee can be assumed either by you or your payee.
+* ***Transparency*** - You get an easy-to-navigate Merchant panel with balances available in real time!
+* ***Flexibility*** - You or your payee can assume the payout fee.
 
 ## Coverage
 
@@ -40,8 +41,29 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 | Peru  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
 | Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
 
+## Cut-off Schedule
+Please consider the following schedule to receive the Payout on the same day; otherwise, we will process the Payout on the next business day.
+
+<div id="shortTable"></div>
+
+| Country | Maximum time<sup>*</sup> | Time zone |
+|---|---|---|
+| Argentina | 10:00 am. | **GMT-3** |
+| Brazil | 10:00 am. | **GMT-3** |
+| Chile  | Real time. | |
+| Colombia | 10:00 am. | **GMT-5** |
+| Mexico  | 10:00 am. | **GMT-6** |
+| Peru | 09:00 am. | **GMT-5** |
+| Uruguay | 10:00 am. | **GMT-3** |
+
+<sup>*</sup> _Time displayed in local time in Uruguay_.
+
+{{% alert title="Important" color="info"%}}
+When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Brazil and Mexico, where the console will display the status as _**Paid**_ on the same day.
+{{% /alert %}}
+
 ## Considerations
-Consider the following considerations when using the Payouts feature according to the payee’s country to avoid rejections.
+When using the Payouts feature, consider the specific requirements for each payee's country to avoid payment rejections.
 
 ### Argentina
 
