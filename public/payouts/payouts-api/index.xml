@@ -183,7 +183,7 @@
 &lt;td&gt;&lt;code&gt;reason&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Description of the payment.&lt;/td&gt;
+&lt;td&gt;Description of the Payout.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -204,7 +204,7 @@
 &lt;td&gt;&lt;code&gt;notification_Url&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this &lt;a href=&#34;../../payouts/payouts-api/payout-webhook.html&#34;&gt;article&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this &lt;a href=&#34;../../payouts/payouts-api/payout-webhook.html&#34;&gt;article&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -704,7 +704,7 @@
 &lt;h4 id=&#34;responses&#34;&gt;Responses&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Ok&lt;/code&gt;: HttpCode &lt;code&gt;200&lt;/code&gt;.&lt;br&gt;
-Message received correctly, at this point the Payout starts to be processed&lt;/li&gt;
+Message received correctly, at this point the Payout starts to be processed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Response body&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -796,7 +796,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;statusCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;409&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;obtaining-a-payout&#34;&gt;Obtaining a Payout&lt;/h3&gt;
-&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the Payouts using the generated identification (ID) or the reference you provided when requesting the Payout.&lt;/p&gt;
+&lt;p&gt;This method allows you to retrieve the information of a Payout. You can retrieve the Payouts using the generated identifier (ID) or the reference you provided when requesting the Payout.&lt;/p&gt;
 &lt;h4 id=&#34;request-url-2&#34;&gt;Request URL&lt;/h4&gt;
 &lt;p&gt;You must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
@@ -805,7 +805,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;/ul&gt;
 &lt;p&gt;To get the payout, include the following endpoints according to your needs.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Using Payout ID&lt;/strong&gt;: &lt;code&gt;{{URL}}/api/Payout/{{PayoutId}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Using Payout ID&lt;/strong&gt;: &lt;code&gt;{{URL}}/api/Payout/{{PayoutID}}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Using Payout Reference&lt;/strong&gt;: &lt;code&gt;{{URL}}/api/Payout/reference/{{PayoutReference}}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;response-parameters-1&#34;&gt;Response parameters&lt;/h4&gt;
@@ -841,7 +841,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;lastUpdate&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Date and time of the last update of the Payout was.&lt;/td&gt;
+&lt;td&gt;Date and time of the last update of the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
@@ -856,7 +856,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errorCode&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Internal code of the error for the declined Payout.Find the possible errors &lt;a href=&#34;../../payouts/payouts-api/payout-error-codes.html&#34;&gt;here&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Internal code of the error for the declined Payout. Find the possible errors &lt;a href=&#34;../../payouts/payouts-api/payout-error-codes.html&#34;&gt;here&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errorDescription&lt;/code&gt;&lt;/td&gt;
@@ -994,7 +994,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;lastUpdate&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Date and time of the last update of the Payout was.&lt;/td&gt;
+&lt;td&gt;Date and time of the last update of the Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
@@ -1009,7 +1009,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errorCode&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Internal code of the error for the declined Payout.Find the possible errors &lt;a href=&#34;../../payouts/payouts-api/payout-error-codes.html&#34;&gt;here&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Internal code of the error for the declined Payout. Find the possible errors &lt;a href=&#34;../../payouts/payouts-api/payout-error-codes.html&#34;&gt;here&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;errorDescription&lt;/code&gt;&lt;/td&gt;
@@ -1135,7 +1135,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;CNPJ&lt;/td&gt;
 &lt;td&gt;National Registry of Legal Entities&lt;/td&gt;
-&lt;td&gt;Company&lt;/td&gt;
+&lt;td&gt;Companies&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Numeric&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;14&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -1338,7 +1338,7 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;DE&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Single&lt;/td&gt;
+&lt;td&gt;Individuals&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Numeric&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -1358,8 +1358,8 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;payout-types&#34;&gt;Payout types&lt;/h2&gt;
-&lt;p&gt;The following tables show the Payout types you must configure in the parameter &lt;code&gt;type&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;transfer-types-for-payouts&#34;&gt;Transfer types for Payouts&lt;/h2&gt;
+&lt;p&gt;The following table shows the transfer types you can configure in the parameter &lt;code&gt;type&lt;/code&gt;.&lt;/p&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
