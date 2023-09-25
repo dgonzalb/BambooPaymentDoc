@@ -120,11 +120,11 @@ Purchase errors always starts with `PR`.
 |---|---|---|
 | `PR001` | INVALID_TOKEN | The informed token is invalid, expired or does not correspond to the commerce. | 
 | `PR002` | INVALID_ORDER | The order number is invalid. |
-| `PR003` | INVALID_AMOUNT | The reported amount is invalid. |
-| `PR004` | INVALID_CURRENCY | The reported currency is invalid. |
+| `PR003` | PR_INVALID_AMOUNT | The amount to refund cannot be greater than the purchase amount.. |
+| `PR004` | PR_INVALID_CURRENCY_PARAMETER | Invalid Currency parameter for the Purchase. |
 | `PR005` | INVALID_INVOICE | The invoice number is invalid (it must be numeric). |
-| `PR006` | INVALID_PURCHASE_IDENTIFIER | The Purchase identifier is invalid. |
-| `PR007` | INVALID_TRANSACTION_IDENTIFIER | Invalid `TransactionID`. |
+| `PR006` | PR_INVALID_PURCHASE_IDENTIFIER | Invalid Purchase Id for the Purchase. |
+| `PR007` | PR_INVALID_TRANSACTION_IDENTIFIER | Invalid `TransactionID` for the Purchase. |
 | `PR008` | PURCHASE_NOT_FOUND | The requested purchase cannot be found. |
 | `PR009` | INVALID_PURCHASE_STATE | The current purchase state does not allow the requested operation. |
 | `PR010` | TAXABLE_AMOUNT_REQUIRED | The `TaxableAmount` field is required. |
