@@ -5,7 +5,7 @@ date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
   The Payout balance shows a report on how much money you have to process Payout transactions. For introductory terms about this feature, refer to [Payout Balances]({{< ref "Payout-Balances.md" >}}).
-weight: 20
+weight: 30
 ---
 
 To navigate the Payout Balance report, open your Merchant console and expand ***Payout***, then ***Payouts Balance***.
