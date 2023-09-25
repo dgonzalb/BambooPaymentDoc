@@ -193,7 +193,7 @@ With the information obtained in the [previous step](#create-a-customer), you ca
 #### OpenIframeCustom
 The **OpenIframeCustom** method receives two parameters:
 
-* **URL:** The URL specifies the iFrame window address where customers enter Card data.<br>The URL is created by concatenating the received data as follows: `{CaptureURL}?key={publicKey}&session_id={UniqueID}` where `{CaptureURL}` represents the [base URLl]({{<ref concepts.md >}}#environment) + `/Capture`. For example `https://api.stage.bamboopayment.com/v1/Capture`.<br>You can found this information in the `CaptureURL` parameter in the [response](#response-parameters).
+* **URL:** The URL specifies the iFrame window address where customers enter Card data.<br>The URL is created by concatenating the received data as follows: `{CaptureURL}?key={publicKey}&session_id={UniqueID}` where `{CaptureURL}` represents the [base URL]({{<ref concepts.md >}}#environment) + `/Capture`. For example `https://api.stage.bamboopayment.com/v1/Capture`.<br>You can found this information in the `CaptureURL` parameter in the [response](#response-parameters).
 * **UniqueID:** an identifier to distinguish the data capture session.<br>You can found this information in the `UniqueID` parameter in the [response](#response-parameters).
 
 ```javascript
