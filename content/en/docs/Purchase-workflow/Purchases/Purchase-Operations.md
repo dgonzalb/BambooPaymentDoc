@@ -196,7 +196,7 @@ The following table describes the parameters in the `Response` object relevant t
 
 | Parameter | Type | Description |
 |---|---|---|
-| `Response` | `object` | Parameters returned as the result of the purchase processing. |
+| `Response` | `object` | Parameters returned due to the purchase processing. |
 | `Response` → `PurchaseId` | `integer` | Purchase identifier. |
 | `Response` → `Created` | `date` | Date and time when the purchase was created.<br>Date format _**ISO-8601**_. | 
 | `Response` → `Transaction` | `object` | This object is associated with the Purchase and has the information on the request sent and the response obtained from the corresponding payment method. |
