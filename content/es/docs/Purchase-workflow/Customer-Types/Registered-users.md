@@ -59,6 +59,12 @@ El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un
 ### Parámetros del Response {#response-parameters}
 El objeto de respuesta retorna la información del cliente recién creado o el error que se haya podido producir. En el parámetro `Response.CustomerId` se encuentra el identificador de cliente generado por la API para poder consultarlo o actualizarlo.
 
+Utilice los siguientes parámetros para realizar operaciones adicionales sobre los clientes:
+
+* `CaptureURL`: URL de captura de datos de la tarjeta. Abra esta URL en un iframe para iniciar la captura de datos sensibles. Para más información, consulte [Invocando el formulario de inscripción de tarjeta](#invoking-the-card-enrollment).
+* `UniqueID`: Identificador único temporal utilizado para registrar métodos de pago externos. Cada vez que se solicita la información del Cliente, se obtiene un nuevo identificador. Para más información, consulte [Invocando el formulario de inscripción de tarjeta](#invoking-the-card-enrollment).
+* `URL`: URL en la que se puede consultar la información de un cliente. Para más información, consulte [Obtener un cliente](#get-a-customer).
+
 #### Ejemplo del Response {#response-example}
 
 ```json
@@ -187,8 +193,8 @@ Con la información obtenida en el [paso anterior](#create-a-customer), puede in
 #### OpenIframeCustom
 El método **OpenIframeCustom** recibe dos parámetros:
 
-* **URL:** La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.<br>La URL se crea concatenando los datos recibidos de la siguiente manera: `{CaptureURL}?key={publicKey}&session_id={UniqueID}``
-* **UniqueID:** un identificador para distinguir la sesión de captura de datos.
+* **URL:** La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.<br>La URL se crea concatenando los datos recibidos de la siguiente manera: `{CaptureURL}?key={publicKey}&session_id={UniqueID}` donde `{CaptureURL}` representa la [URL base]({{<ref concepts.md >}}#environment) + `/Capture`. Por ejemplo `https://api.stage.bamboopayment.com/v1/Capture`.<br>Puede encontrar esta información en el parámetro `CaptureURL` del [response](#response-parameters).
+* **UniqueID:** un identificador para distinguir la sesión de captura de datos. Puede encontrar esta información en el parámetro `CaptureURL` del [response](#response-parameters).
 
 ```javascript
 <script type="text/javascript">
@@ -199,8 +205,8 @@ El método **OpenIframeCustom** recibe dos parámetros:
 #### OpenIframeCustomWithPaymentMediaOptions
 El método  **OpenIframeCustomWithPaymentMediaOptions** recibe cuatro parámetros:
 
-* **URL:** Igual que en OpenIframeCustom.
-* **UniqueID:** Igual que en OpenIframeCustom.
+* **URL:** Igual que en [OpenIframeCustom](#openiframecustom).
+* **UniqueID:** Igual que en [OpenIframeCustom](#openiframecustom).
 * **PaymentMediaid:** Identificador del Medio de pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. _Este parámetro sólo aplica para Uruguay_.
 * **BankId:** [Identificador del banco](/es/docs/payment-methods/uruguay.html#issuer-banks-table). _Este parámetro sólo aplica para Uruguay_.
 
