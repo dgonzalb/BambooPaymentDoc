@@ -480,8 +480,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number.  |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
