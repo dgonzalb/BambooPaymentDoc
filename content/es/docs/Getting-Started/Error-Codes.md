@@ -120,11 +120,11 @@ Los errores del servicio Purchase empiezan por `PR`.
 |---|---|---|
 | `PR001` | INVALID_TOKEN | El token informado no es válido, ha caducado o no corresponde al comercio. |
 | `PR002` | INVALID_ORDER | El número de orden no es válido. |
-| `PR003` | INVALID_AMOUNT | El importe informado no es válido. |
-| `PR004` | INVALID_CURRENCY | La moneda registrada no es válida. |
+| `PR003` | PR_INVALID_AMOUNT | El monto a devolver no puede ser mayor al de la compra. |
+| `PR004` | PR_INVALID_CURRENCY_PARAMETER | El parámetro de moneda de la compra es inválido. |
 | `PR005` | INVALID_INVOICE | El número de factura no es válido (debe ser numérico). |
-| `PR006` | INVALID_PURCHASE_IDENTIFIER | El identificador de la compra no es válido. |
-| `PR007` | INVALID_TRANSACTION_IDENTIFIER | El identificador de transacción no es válido. |
+| `PR006` | PR_INVALID_PURCHASE_IDENTIFIER | Identificador inválido para la compra. |
+| `PR007` | PR_INVALID_TRANSACTION_IDENTIFIER | Identificador de transacción inválido |
 | `PR008` | PURCHASE_NOT_FOUND | No se encuentra la compra solicitada. |
 | `PR009` | INVALID_PURCHASE_STATE | El estado actual de la compra no permite la operación solicitada. |
 | `PR010` | TAXABLE_AMOUNT_REQUIRED | El campo `TaxableAmount` es obligatorio. |
