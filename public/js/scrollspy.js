@@ -16,7 +16,11 @@ function createObserver() {
             if (entry.intersectionRatio > 0) {
                 document.querySelector(`nav li a[href="#${id}"]`).classList.add('activeToc');
             } else {
-                document.querySelector(`nav li a[href="#${id}"]`).classList.remove('activeToc');
+                if (document.querySelector(`nav li a[href="#${id}"]`) !== null) {
+                    document.querySelector(`nav li a[href="#${id}"]`).classList.remove('activeToc');
+                } else {
+                    true;
+                }
             }
         });
         
