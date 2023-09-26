@@ -8,7 +8,7 @@ Description: >
 weight: 10
 ---
 
-Para navegar al Reporte de Payouts, abre su consola de Comercios y seleccione ***Payout***, luego ***Reporte de Payouts***.
+Para navegar al Reporte de Payouts, abra su consola de Comercios y seleccione ***Payout***, luego ***Reporte de Payouts***.
 
 ![PrintScreen](/assets/Payouts/Payouts5_es.png)
 

@@ -5,10 +5,10 @@ date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
   Los saldos de Payouts muestran un reporte de cuánto dinero tiene para procesar transacciones. Para conocer los términos introductorios de esta funcionalidad, consulte [Saldos de Payout]({{< ref "Payout-Balances.md" >}}).
-weight: 20
+weight: 30
 ---
 
-Para navegar al Reporte de Payouts, abre su consola de Comercios y seleccione ***Payout***, luego ***Saldos de Payouts***.
+Para navegar al Reporte de Payouts, abra su consola de Comercios y seleccione ***Payout***, luego ***Saldos de Payouts***.
 
 ![PrintScreen](/assets/Payouts/Payouts9_es.png)
 
