@@ -240,10 +240,10 @@ When using _Bank transfer_ you need to send the request as follows:
     "lastName": "Garrido",
     "email": "merceddo@mail.com",
     "phone": "099999999",
-    "address": "Camino Franco, 13, Ático 4º, 93631, L' Garay",
+    "address": "Camino Franco, 13, Atico 4, 93631, L Garay",
     "document": {
       "type": "CI",
-      "number": "12345678"
+      "number": "26068762K"
     },
     "bankAccount": {
       "number": "1234567890123450",
