@@ -4,7 +4,7 @@ linkTitle: "Payouts exprés"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- COn _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar multiplos pagos con facilidad y precisión de forma eficiente.
+ Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar multiplos pagos con facilidad y precisión de forma eficiente.
 weight: 20
 ---
 
@@ -18,7 +18,7 @@ Para acceder a la funcionalidad de _**Payouts exprés**_, abra su consola de Com
 * Centralice sus Payouts con mínimo esfuerzo.
 
 ## ¿Cómo utilizar Payouts exprés? {#how-to-use-express-payouts}
-_**Payouts exprés**_ tiene una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultanea. Una vez complete un paso, la secuencia activa el siguiente para evitar errores.
+_**Payouts exprés**_ le brinda una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultanea. Una vez complete un paso, la secuencia activa el siguiente para evitar errores.
 
 A continuación, describimos cada paso y le damos instrucciones.
 
