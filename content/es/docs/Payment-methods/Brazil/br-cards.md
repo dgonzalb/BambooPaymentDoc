@@ -1,9 +1,9 @@
 ---
-title: "Tarjetas crédito y débito"
-linkTitle: "Tarjetas crédito y débito"
+title: "Tarjetas crédito"
+linkTitle: "Tarjetas crédito"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda cómo integrar su solución para procesar pagos con tarjetas crédito o débito.
+  Aprenda cómo integrar su solución para procesar pagos con tarjetas crédito.
 weight: 10
 tags: ["subtopic"]
 ---

@@ -133,10 +133,10 @@ All payment methods may not support the pre-authorization feature, and it’s av
 
 <div style="text-align: center;">
 
-<a href="en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
-<a href="en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
-<a href="en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
-<a href="en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+<a href="/en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="/en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
+<a href="/en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
 
@@ -196,7 +196,7 @@ The following table describes the parameters in the `Response` object relevant t
 
 | Parameter | Type | Description |
 |---|---|---|
-| `Response` | `object` | Parameters returned as the result of the purchase processing. |
+| `Response` | `object` | Parameters returned due to the purchase processing. |
 | `Response` → `PurchaseId` | `integer` | Purchase identifier. |
 | `Response` → `Created` | `date` | Date and time when the purchase was created.<br>Date format _**ISO-8601**_. | 
 | `Response` → `Transaction` | `object` | This object is associated with the Purchase and has the information on the request sent and the response obtained from the corresponding payment method. |
