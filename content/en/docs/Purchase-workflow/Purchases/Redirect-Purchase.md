@@ -65,7 +65,7 @@ Therefore, the following URLs are defined to be sent in the Purchase when the sa
 
 The _**PaymentMediaId**_ and _**TrxToken**_ fields are optional, but it is mandatory to send one of them, depending on the flow you want to use.
 
-* _**PaymentMediaId**_: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment methods by country section](/docs/payment-methods.html).
+* _**PaymentMediaId**_: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment methods by country section](/en/docs/payment-methods.html).
 * _**TrxToken**_: You can pre-generate the token and process the purchase by sending it in this field.
 
 ### Redirect response content

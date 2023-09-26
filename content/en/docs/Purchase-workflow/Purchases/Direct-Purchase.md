@@ -54,7 +54,7 @@ The fields **CardData**, **PaymentMediaId** and **TrxToken** are not required; N
 
 * **CardData**: Must be used for transactions using non-tokenized cards.
 
-* **PaymentMediaId**: Identifier of alternative payment method (transference, cash and any flow needing a redirection of the client). This identifier can be found in the [Payment Methods by Country](/docs/payment-methods.html) section.
+* **PaymentMediaId**: Identifier of alternative payment method (transference, cash and any flow needing a redirection of the client). This identifier can be found in the [Payment Methods by Country](/en/docs/payment-methods.html) section.
 
 * **TrxToken**: The merchant can generate a token and use it to generate transactions if necessary.
 

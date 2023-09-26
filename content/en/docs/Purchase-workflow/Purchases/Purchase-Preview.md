@@ -54,11 +54,11 @@ Where:
 | `baseAmount` | `integer` | Yes | Amount to be paid before taxes. |
 | `currency` | `string` | Yes | Currency of the amount defined in `baseAmount`. |
 | `countryIso` | `string` | Yes | Country in ISO 3166-2 format. |
-| `paymentMediaId` | `string` | No | Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](/docs/payment-methods.html) by country section in the documentation. |
+| `paymentMediaId` | `string` | No | Payment Method identifier. This identifier can be obtained by consulting the [Payment Methods](/en/docs/payment-methods.html) by country section in the documentation. |
 | `customer` | `Object` | No<sup>*</sup> | Payer Information.<br><sup>*</sup>_Required for Argentina_. |
 | `customer.documentTypeId` | `string` | No | Payer Document Type. |
 | `customer.docNumber` | `string` | No | Payer document number. |
-| `customer.state` | `string` | No<sup>*</sup> | Payer state.<br><sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in [this section](/docs/payment-methods/argentina.html#argentina-provinces)_. |
+| `customer.state` | `string` | No<sup>*</sup> | Payer state.<br><sup>*</sup>_For Argentina, this field is mandatory and you must include the corresponding value using the table displayed in [this section](/en/docs/payment-methods/argentina.html#argentina-provinces)_. |
 | `customer.postalCode` | `string` | No | Payer Zip Code. |
 
 ## Response
