@@ -41,7 +41,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -259,7 +259,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
@@ -479,7 +479,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
