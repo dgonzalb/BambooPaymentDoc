@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Anti-fraud system information | Bamboo Payment</title><meta property="og:title" content="Anti-fraud system information" />
+<meta property="og:description" content="All the purchases received through API or Redirection flow for merchants in the [Payments Facilitator]({{&lt; ref &#34;Concepts.md&#34;&gt;}}#payfac-model) model, are evaluated by the anti-fraud system.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/purchase-workflow/antifraud.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-08-02T08:43:44-05:00" />
+<meta property="article:modified_time" content="2023-09-08T15:52:19-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Anti-fraud system information">
+<meta itemprop="description" content="All the purchases received through API or Redirection flow for merchants in the [Payments Facilitator]({{&lt; ref &#34;Concepts.md&#34;&gt;}}#payfac-model) model, are evaluated by the anti-fraud system.
+"><meta itemprop="datePublished" content="2023-08-02T08:43:44-05:00" />
+<meta itemprop="dateModified" content="2023-09-08T15:52:19-05:00" />
+<meta itemprop="wordCount" content="388">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Anti-fraud system information"/>
+<meta name="twitter:description" content="All the purchases received through API or Redirection flow for merchants in the [Payments Facilitator]({{&lt; ref &#34;Concepts.md&#34;&gt;}}#payfac-model) model, are evaluated by the anti-fraud system.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" as="style">
+<link href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/docs/purchase-workflow/antifraud.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.506e3f945cc28080a7097a6129f891532beb19ce0256e9b879e4a945656bcf55da0cb0f143acc3874908a9c33469650d09debe2f43bcd962bde2f980ad589493.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/docs/purchase-workflow/antifraud.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedconceptshtml" href="../../../en/docs/getting-started/concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddata-typeshtml" href="../../../en/docs/getting-started/data-types.html">Data Types</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedpayment-methodshtml" href="../../../en/docs/getting-started/payment-methods.html">Payment methods</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-our-serviceshtml" href="../../../en/docs/getting-started/test-our-services.html">Test our services</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startederror-codeshtml" href="../../../en/docs/getting-started/error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/purchase-workflow.html" href="../../../en/docs/purchase-workflow.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/customer-types.html" href="../../../en/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../en/docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesregistered-usershtml" href="../../../en/docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../en/docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-operationshtml" href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesredirect-purchasehtml" href="../../../en/docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesdirect-purchasehtml" href="../../../en/docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/refunds-and-voids.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefunds-and-voidshtml" href="../../../en/docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/antifraud.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-endocspurchase-workflowantifraudhtml" href="../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflownotification-webhookshtml" href="../../../en/docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/forms.html" href="../../../en/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformscheckout-formhtml" href="../../../en/docs/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformsembedded-checkout-formhtml" href="../../../en/docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/merchant-balances.html" href="../../../en/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Account Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsmerchant-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/payment-methods.html" href="../../../en/docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/argentina.html" href="../../../en/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-cardshtml" href="../../../en/docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-apmhtml" href="../../../en/docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/brazil.html" href="../../../en/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-cardshtml" href="../../../en/docs/payment-methods/brazil/br-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/central-america.html" href="../../../en/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscentral-americacam-apmhtml" href="../../../en/docs/payment-methods/central-america/cam-apm.html">Cash</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/chile.html" href="../../../en/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-cardshtml" href="../../../en/docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-apmhtml" href="../../../en/docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/colombia.html" href="../../../en/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-cardshtml" href="../../../en/docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apmhtml" href="../../../en/docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/ecuador.html" href="../../../en/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsecuadorec-apmhtml" href="../../../en/docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/mexico.html" href="../../../en/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-cardshtml" href="../../../en/docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/paraguay.html" href="../../../en/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-cardshtml" href="../../../en/docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-apmhtml" href="../../../en/docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/peru.html" href="../../../en/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsperupe-apmhtml" href="../../../en/docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/uruguay.html" href="../../../en/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-cardshtml" href="../../../en/docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../en/docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-apmhtml" href="../../../en/docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#parameters-to-send-when-making-a-purchase">Parameters to send when making a purchase</a>
+      <ul>
+        <li><a href="#authorization-flow-by-api">Authorization flow by API</a></li>
+        <li><a href="#authorization-flow-by-redirection">Authorization flow by Redirection</a></li>
+      </ul>
+    </li>
+    <li><a href="#device-fingerprint">Device Fingerprint</a>
+      <ul>
+        <li><a href="#javascript-library-import">JavaScript Library Import</a></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li><a href="#getsessionantifraud">getSessionAntifraud</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/docs.html">Payins Integration Guide</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/docs/purchase-workflow.html">Purchase API</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Anti-fraud system information</h1>
+    <div class="lead">All the purchases received through API or Redirection flow for merchants in the <a href="../../../en/docs/getting-started/concepts.html#payfac-model">Payments Facilitator</a> model, are evaluated by the anti-fraud system.</div>
+	       
+	<h2 id="parameters-to-send-when-making-a-purchase">Parameters to send when making a purchase</h2>
+<p>Below, you can find the required and suggested (optional) parameters to be sent when generating a purchase according to the authorization flow.</p>
+<h3 id="authorization-flow-by-api">Authorization flow by API</h3>
+<p><strong>Mandatory parameters:</strong></p>
+<ul>
+<li><code>{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}</code><br>Name, last name and email corresponding to the customer of the commerce website.</li>
+<li><code>{&quot;AntifraudData&quot;:{&quot;AntifraudFingerprintId&quot;:&quot;&quot;}}</code><br>Session Id (<code>AntifraudFingerprintId</code>) which is obtained by the javascript function <a href="#getsessionantifraud">getSessionAntifraud</a>.</li>
+<li><code>&quot;CustomerIP&quot;:&quot;&quot;</code><br>IP of to the customer connected to the commerce website</li>
+</ul>
+<p><strong>Suggested parameters:</strong></p>
+<ul>
+<li><code>{“Customer”:{“ShippingAddress”:{}}}</code><br>Shipping address provided by the customer. If you send this parameter, all its properties are mandatory.</li>
+<li><code>{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}</code><br>Document of the customer.</li>
+<li><code>{&quot;AntifraudData&quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}</code><br><code>AntifraudMetadataIn</code> is a data dictionary to be defined, to adjust the anti-fraud system to the particular needs of each business.</li>
+</ul>
+<h3 id="authorization-flow-by-redirection">Authorization flow by Redirection</h3>
+<p>In the case of the redirection authorization flow, the required and suggested parameters are governed by the following table:</p>
+<p><strong>Mandatory parameters:</strong></p>
+<p>All the parameters in Column A and at least one in Column B.</p>
+<table>
+<thead>
+<tr>
+<th>Column A - Mandatory</th>
+<th>Column B - At least one is mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AntifraudData</code> → <code>AntifraudFingerprintId</code></td>
+<td><code>Email</code></td>
+</tr>
+<tr>
+<td><code>CustomerIp</code></td>
+<td><code>FirstName</code> - <code>LastName</code><br><code>DocumentTypeId</code> - <code>DocNumber</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Suggested parameters:</strong></p>
+<ul>
+<li><code>{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}</code><br>Phone, and Shipping address provided by the customer.</li>
+<li><code>{&quot;AntifraudData&quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}</code><br><code>AntifraudMetadataIn</code> is a data dictionary to be defined, to adjust the anti-fraud system to the particular needs of each business.</li>
+</ul>
+<h2 id="device-fingerprint">Device Fingerprint</h2>
+<h3 id="javascript-library-import">JavaScript Library Import</h3>
+<p>The invocation of the fingerprint service is found in a JavaScript library, which must be imported into the client&rsquo;s web page directly from a public URL on our platform.</p>
+<p>The JavaScript snippet records user interactions with your website and collects device information. <br></p>
+<p>In the call to said library, the public key of the trading account (PublicAccountKey) must be included (as a parameter), which will be used for calls to the REST API from this library.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span> 
+</span></span></code></pre></div>
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text"><p>You must import the library through the public URL provided by Bamboo Payment. It should not be downloaded and used locally from a merchant&rsquo;s own server or from a URL of a third party not authorized by Bamboo Payment.</p>
+<p>This is important for security reasons and to always keep up-to-date with the latest modifications and corrections made to it.</p>
+</p>
+</div>
+
+<h2 id="methods">Methods</h2>
+<h3 id="getsessionantifraud">getSessionAntifraud</h3>
+<p>This method returns the <code>SessionId</code> of the fingerprint (string). The <code>SessionId</code> is the data that must be passed in the API invocation at the time of purchase in the <code>AntifraudFingerprintId</code> parameter.</p>
+<p><img src="../../../assets/getSessionAntifraudFlow_en.png" alt="PrintScreen"></p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+September 8, 2023: 
+
+ <i>Adjustments in requests and responses and minor grammar adjustments (0031c03)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

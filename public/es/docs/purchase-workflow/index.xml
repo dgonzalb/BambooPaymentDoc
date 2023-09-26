@@ -1,0 +1,422 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – API de compras</title>
+    <link>/es/docs/purchase-workflow.html</link>
+    <description>Recent content in API de compras on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 02 Mar 2023 08:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/docs/purchase-workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Clientes</title>
+      <link>/es/docs/purchase-workflow/customer-types.html</link>
+      <pubDate>Mon, 17 Jul 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/customer-types.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Operaciones de Compras</title>
+      <link>/es/docs/purchase-workflow/purchases.html</link>
+      <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/purchases.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Dependiendo del contrato que haya firmado con &lt;em&gt;Bamboo Payment&lt;/em&gt; (modelo &lt;a href=&#34;../../../es/docs/getting-started/concepts.html#gateway-model&#34;&gt;Gateway&lt;/a&gt; o &lt;a href=&#34;concepts.html#payfac-model&#34;&gt;Payfac&lt;/a&gt;) y de los países en los que procese, puede crear compras Locales o CrossBorder.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Una &lt;em&gt;Compra Local&lt;/em&gt; se refiere a aquellas en las que la moneda del pagador y la moneda de su tienda son iguales. Cuando su tienda y el comprador están en Uruguay, la moneda de la compra y el importe que recibe es en &lt;strong&gt;UYU&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Una &lt;em&gt;Compra CrossBorder&lt;/em&gt; se refiere a todas las compras en las que la moneda del pagador es diferente a la moneda que tiene configurada en su tienda. Por ejemplo, si su tienda está en Uruguay y el comprador está en Colombia, la compra será en &lt;strong&gt;COP&lt;/strong&gt;, pero recibirá el importe en &lt;strong&gt;UYU&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consulte los siguientes temas para conocer las operaciones que puede realizar con la API de compras.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Reembolsos y anulaciones</title>
+      <link>/es/docs/purchase-workflow/refunds-and-voids.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:46:32 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/refunds-and-voids.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Antes de empezar, revisemos algunos conceptos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Anulación&lt;/strong&gt;: Una anulación es el acto de cancelar una transacción preautorizada (rollback) antes de que finalice o se liquide. Cuando se anula una transacción, es como si la compra nunca se hubiera producido, y no se transfiere dinero. Las anulaciones suelen producirse antes de que el pago se haya procesado por completo, por lo que no se cobra al método de pago por la transacción anulada.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reembolso&lt;/strong&gt;: Un reembolso, por otro lado, es una transacción que se produce cuando un cliente devuelve un artículo comprado o cancela un servicio, y el comercio reembolsa al cliente el monto pagado. El monto reembolsado suele devolverse al medio de pago original utilizado por el cliente. A diferencia de las anulaciones, el reembolso se produce después de que se haya liquidado la transacción.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Configurar el idioma de los códigos de respuesta&lt;/h2&gt;
+&lt;p&gt;Puede recibir la descripción del error basándose en las funciones de localización. Para ello, debe enviar el encabezado &lt;code&gt;lang&lt;/code&gt; en su integración, utilizando cualquiera de los siguientes idiomas en formato &lt;strong&gt;ISO 639-1&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Código&lt;/th&gt;
+&lt;th&gt;Idioma&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;en&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Inglés.&lt;br&gt;&lt;em&gt;Este es el idioma por defecto. Si no envía este encabezado o envía un idioma diferente a los soportados, recibirá los errores en este idioma.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;es&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Español.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;pt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Portugués.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;rollback-a-purchase&#34;&gt;Anular una compra&lt;/h2&gt;
+&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;rollback&lt;/strong&gt;&lt;/em&gt; está disponible para compras previamente &lt;a href=&#34;../../../es/docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase&#34;&gt;autorizadas&lt;/a&gt; con estado &lt;em&gt;PreAuthorized&lt;/em&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;La funcionalidad de preautorización puede no estar soportada por todos lo medios de pago y está disponible en los siguientes países.&lt;/p&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;../../../es/docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../es/docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../es/docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../es/docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!--
+### Considerations {#considerations}
+_To be defined_
+--&gt;
+&lt;h3 id=&#34;request-url&#34;&gt;URL del Request&lt;/h3&gt;
+&lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;refund-a-purchase&#34;&gt;Reembolsar una compra&lt;/h2&gt;
+&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;refund&lt;/strong&gt;&lt;/em&gt; está disponible para compras con estado &lt;em&gt;Approved&lt;/em&gt;. Los reembolsos pueden ser totales o parciales.&lt;/p&gt;
+&lt;h3 id=&#34;request-url-1&#34;&gt;URL del Request&lt;/h3&gt;
+&lt;p&gt;Debe invocar un request &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URL de acuerdo con sus necesidades.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
+&lt;p&gt;No es necesario enviar el cuerpo del request para anular o reembolsar una compra. Si no envía el request, la compra será anulada con su monto original.&lt;/p&gt;
+&lt;p&gt;El monto a anular/reembolsar puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.&lt;/p&gt;
+&lt;h3 id=&#34;request-example&#34;&gt;Ejemplo del Request&lt;/h3&gt;
+&lt;p&gt;Para realizar la anulación o reembolso de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h2&gt;
+&lt;p&gt;Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; &lt;a href=&#34;../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;retornado&lt;/a&gt;.&lt;/p&gt;
+&lt;!--
+## Reembolsar una compra {#refund-a-purchase}
+La operación de _**reembolso**_ está disponible únicamente para compras con estado _Aprobado_. Los reembolsos pueden ser totales o parciales.
+
+
+### Consideraciones  {#considerations-1}
+_To be defined_
+
+
+### URL del Request {#request-url-1}
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
+
+* **Production**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
+
+### Parámetros del Request {#request-parameters}
+Considere los siguientes parámetros cuando invoque un request de reembolso.
+
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|---|---|---|---|---|
+| `Amount` | `number` | No | Monto a se reembolsado (reembolso parcial). Si no envía este parámetro el reembolso se hará por el monto de la compra (reembolso total).&lt;br&gt;Si requiere incluir decimales en el monto, concatene los dígitos decimales sin el punto decimal. Ejemplo: `12,25` &gt; `1225`.&lt;br&gt;Este valor **no puede** ser mayor que el valor original del monto de la compra. |
+| `MetadataIn`  → `Description` | `string` | No | Descripción opcional del reembolso. |
+
+#### Ejemplo del Request {#request-example-1}
+
+```json
+{
+  &#34;Amount&#34;:&#34;2500&#34;,
+  &#34;MetadataIn&#34;: {
+    &#34;Description&#34;: &#34;Refund description&#34;
+  }
+}
+```
+
+### Parámetros del Response {#response-parameters-1}
+
+| Parámetro | Tipo | Descripción |
+|---|---|---|
+| `Response` → `PurchaseRefundId` | `number` | Identificador interno del reembolso. |
+| `Response` → `Created` | `date` | Fecha y hora de la creación del reembolso.&lt;br&gt;Formato de fecha: _**ISO-8601**_. |
+| `Response` → `Amount` | `number` | Monto del reembolso tal como se envió en el request. |
+| `Response` → `Currency` | `string` | Moneda del reembolso de acuerdo al formato ISO-4217 (códigos alfanuméricos). |
+| `Response` → `StatusId` | `number` | Identificador del estado del reembolso. |
+| `Response` → `Status` | `string` | Descripción del estado del reembolso. |
+| `Response` → `AuthorizationCode` | `string` | Código de reembolso retornado por el adquirente de la transacción. |
+| `Response` → `Code` | `string` | Código de error retornado por el adquirente de la transacción. |
+| `Response` → `Description` | `string` | Descripción retornada por el adquirente de la transacción. |
+| `Response` → `MetadataOut` | `object` | Información adicional retornada por el adquirente de la transacción. |
+| `Errors` → `ErrorCode` | `string` | Código de error retornado por Bamboo. |
+| `Errors` → `Created` | `string` | Fecha y hora de la generación del error. |
+| `Errors` → `Message` | `string` | Texto descriptivo del error. |
+| `Errors` → `Detail` | `string` | Detalle del error. |
+
+#### Ejemplo del Response {#response-example}
+
+```json
+{
+    &#34;Response&#34;: {
+        &#34;PurchaseRefundId&#34;: 1246459,
+        &#34;Created&#34;: &#34;2023-09-22T13:46:47.089&#34;,
+        &#34;Amount&#34;: 100.00,
+        &#34;Currency&#34;: &#34;CLP&#34;,
+        &#34;StatusId&#34;: 10,
+        &#34;Status&#34;: &#34;Refund_OK&#34;,
+        &#34;AuthorizationCode&#34;: null,
+        &#34;Code&#34;: &#34;0&#34;,
+        &#34;Description&#34;: &#34;REVERSED&#34;,
+        &#34;MetadataOut&#34;: null
+    },
+    &#34;Errors&#34;: []
+}
+```
+--&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Sistema de información de antifraude</title>
+      <link>/es/docs/purchase-workflow/antifraud.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/antifraud.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;parameters-to-send-when-making-a-purchase&#34;&gt;Parámetros a enviar al realizar una compra&lt;/h2&gt;
+&lt;p&gt;A continuación se listan los parámetros requeridos y sugeridos (opcionales) que deben ser enviados al momento de generar una compra en función del flujo de autorización.&lt;/p&gt;
+&lt;h3 id=&#34;authorization-flow-by-api&#34;&gt;Flujo de autorización por API&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}&lt;/code&gt;&lt;br&gt;Nombre, apellido y correo electrónico correspondientes al cliente conectado al sitio web del comercio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{&amp;quot;AntifraudFingerprintId&amp;quot;:&amp;quot;&amp;quot;}}&lt;/code&gt;&lt;br&gt;SessionId (&lt;code&gt;AntifraudFingerprintId&lt;/code&gt;) que se obtiene por medio de la función JavaScript &lt;a href=&#34;#getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;CustomerIP&amp;quot;:&amp;quot;&amp;quot;&lt;/code&gt;&lt;br&gt;IP correspondiente al cliente conectado al sitio web del comercio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{“ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Dirección de envío proporcionada por el cliente. Si envía este parámetro, todas sus propiedades son obligatorias.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}&lt;/code&gt;&lt;br&gt;Documento del cliente.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt; que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;authorization-flow-by-redirection&#34;&gt;Flujo de autorización por Redirección&lt;/h3&gt;
+&lt;p&gt;Para el caso del flujo de autorización por redirección, los parámetros requeridos y sug&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Todos los de la columna A y al menos uno de la columna B&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Columna A - Obligatorios&lt;/th&gt;
+&lt;th&gt;Columna B - Al menos un dato es obligatorio&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AntifraudData&lt;/code&gt; → &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CustomerIp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FirstName&lt;/code&gt; - &lt;code&gt;LastName&lt;/code&gt;&lt;br&gt;&lt;code&gt;DocumentTypeId&lt;/code&gt; - &lt;code&gt;DocNumber&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Teléfono y dirección de envío proporcionada por el cliente.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;, diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Phone, and Shipping address provided by the customer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;  que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;device-fingerprint&#34;&gt;Device Fingerprint&lt;/h2&gt;
+&lt;h3 id=&#34;javascript-library-import&#34;&gt;Importación de la Librería JavaScript&lt;/h3&gt;
+&lt;p&gt;La invocación al servicio de fingerprint se encuentra en una librería JavaScript, que debe ser importada en la página web del cliente directamente desde una URL pública de nuestra plataforma.&lt;/p&gt;
+&lt;p&gt;El fragmento de JavaScript registra las interacciones del usuario con su sitio web y recopila información del dispositivo.&lt;/p&gt;
+&lt;p&gt;En la llamada a dicha librería se debe incluir (como parámetro) la llave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia la API REST desde esta librería.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Usted debe importar la librería a través de la URL pública dispuesta por Bamboo Payment. No debe ser descargada y usada localmente desde un servidor propio del comercio o desde una URL de un tercero no autorizado por Bamboo Payment.&lt;/p&gt;
+&lt;p&gt;Esto es importante por motivos de seguridad y para mantenerse siempre actualizados con las últimas modificaciones y correcciones realizadas sobre la misma.&lt;/p&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;methods&#34;&gt;Métodos&lt;/h2&gt;
+&lt;h3 id=&#34;getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/h3&gt;
+&lt;p&gt;Este método retorna el &lt;code&gt;SessionId&lt;/code&gt; del fingerprint (string). El &lt;code&gt;SessionId&lt;/code&gt; es el dato que se debe enviar en la invocación de la API al momento de la compra en el parámetro &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/getSessionAntifraudFlow_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Webhook</title>
+      <link>/es/docs/purchase-workflow/notification-webhooks.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:41:05 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/notification-webhooks.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Este servicio es necesario en algunos flujos de transacción donde el proceso no puede completarse de forma sincrónica, por lo que el estado final de la transacción se informará de forma asíncrona una vez que se haya obtenido.&lt;/p&gt;
+&lt;p&gt;El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.&lt;/p&gt;
+&lt;h2 id=&#34;webhook-service-specifications&#34;&gt;Especificaciones del servicio WebHook&lt;/h2&gt;
+&lt;p&gt;El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;em&gt;&amp;lt;Determinado por el comercio&amp;gt;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;API Type:&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Pública&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Method:&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;POST&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Authentication:&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Firma en el encabezado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Response:&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Código HTTP.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;notification-example&#34;&gt;Ejemplo de notificación&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PurchaseId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;184098&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;UniqueId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3733689&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Installments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;MetadataOut&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Transaction&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionStatusId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Approved&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ApprovalCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Ok&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;technical-requirements&#34;&gt;Requisitos técnicos&lt;/h2&gt;
+&lt;p&gt;La implementación de este servicio depende de la plataforma y el lenguaje elegido por el comercio.&lt;/p&gt;
+&lt;p&gt;Los únicos requisitos técnicos son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Debe aceptar mensajes en formato JSON (application/json).&lt;/li&gt;
+&lt;li&gt;Debe implementar un método de validación de la firma en el webhook.&lt;/li&gt;
+&lt;li&gt;Debe responder solo con un código HTTP, donde:
+&lt;ul&gt;
+&lt;li&gt;Si se responde con el código &lt;code&gt;200&lt;/code&gt; (OK), Bamboo Payment asumirá que el procesamiento de la notificación fue exitoso.&lt;/li&gt;
+&lt;li&gt;Si se responde con cualquier otro código distinto a &lt;code&gt;200&lt;/code&gt;, Bamboo Payment asumirá que el procesamiento fue fallido y se volverá a intentar la notificación.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;signature-validation&#34;&gt;Validación de la firma&lt;/h2&gt;
+&lt;p&gt;Para mitigar el riesgo de transacciones fraudulentas, es crucial que los comercios validen la firma digital. Al verificar la autenticidad e integridad de los datos recibidos, las empresas pueden protegerse eficazmente contra posibles intentos de fraude y garantizar transacciones seguras y confiables.&lt;/p&gt;
+&lt;p&gt;El comercio puede validar la firma digital del comercio de la siguiente forma. La firma recibida en el webhook debe coincidir con la firma generada con el hash.&lt;/p&gt;
+&lt;h4 id=&#34;pseudocode&#34;&gt;Pseudocódigo&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//private key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;merchantSecretKey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//Concatenate Webhook information
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//utcNow is obtained from the header field &amp;#34;dateSent&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;receivedData&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PurchaseId&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Amount&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Currency&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;utcNow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//Digital signature creation to compare with received signature in webhook
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HmacSHA256&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;receivedData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hexHash&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;enc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Hex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//Digital Signatures compare
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;receivedSignature&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;console&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;signature is valid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;console&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;signature is not valid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;hmacsha256-code-example&#34;&gt;Ejemplo de código HmacSha256&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;calculateHMAC&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;encoder&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;TextEncoder&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;keyBuffer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;encoder&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;encode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;dataBuffer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;encoder&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;encode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;cryptoKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;crypto&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;subtle&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;importKey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;raw&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#000&#34;&gt;keyBuffer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;HMAC&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;SHA-256&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;sign&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hashBuffer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;crypto&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;subtle&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sign&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;HMAC&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;cryptoKey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;dataBuffer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hashArray&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;Array&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Uint8Array&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;hashBuffer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hashHex&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hashArray&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;map&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;byte&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;padStart&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;join&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;hashHex&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;retry-management-for-errors&#34;&gt;Manejo de reintentos ante errores&lt;/h2&gt;
+&lt;p&gt;El webhook utiliza una configuración de cinco reintentos para fallos espaciados en el tiempo.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El primer reintento se realiza después de 15 minutos.&lt;/li&gt;
+&lt;li&gt;El segundo reintento se realiza después de 30 minutos.&lt;/li&gt;
+&lt;li&gt;El tercer reintento se realiza después de una hora.&lt;/li&gt;
+&lt;li&gt;El cuarto reintento se realiza después de tres horas.&lt;/li&gt;
+&lt;li&gt;El quinto reintento se realiza después de seis horas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para reintentos adicionales, póngase en contacto con nuestro equipo de asistencia.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

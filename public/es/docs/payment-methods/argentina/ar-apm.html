@@ -1,0 +1,1544 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Medios alternativos de pago | Bamboo Payment</title><meta property="og:title" content="Medios alternativos de pago" />
+<meta property="og:description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/docs/payment-methods/argentina/ar-apm.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
+<meta property="article:modified_time" content="2023-09-22T14:36:46-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Medios alternativos de pago">
+<meta itemprop="description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.
+"><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
+<meta itemprop="dateModified" content="2023-09-22T14:36:46-05:00" />
+<meta itemprop="wordCount" content="1296">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Medios alternativos de pago"/>
+<meta name="twitter:description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" as="style">
+<link href="../../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../es/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/payment-methods/argentina/ar-apm.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.506e3f945cc28080a7097a6129f891532beb19ce0256e9b879e4a945656bcf55da0cb0f143acc3874908a9c33469650d09debe2f43bcd962bde2f980ad589493.json"
+  data-offline-search-base-href="../../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/payment-methods/argentina/ar-apm.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs.html" href="../../../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Guía de Integración de Payins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/getting-started.html" href="../../../../es/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Primeros pasos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedconceptshtml" href="../../../../es/docs/getting-started/concepts.html">Conceptos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-starteddata-typeshtml" href="../../../../es/docs/getting-started/data-types.html">Tipos de datos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedpayment-methodshtml" href="../../../../es/docs/getting-started/payment-methods.html">Medios de pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Pruebe nuestros servicios</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startederror-codeshtml" href="../../../../es/docs/getting-started/error-codes.html">Códigos de error</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/purchase-workflow.html" href="../../../../es/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Clientes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../../es/docs/purchase-workflow/customer-types/anonymous-users.html">Usuarios Anónimos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesregistered-usershtml" href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html">Usuarios Registrados</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../../es/docs/purchase-workflow/customer-types/direct-tokenization.html">Tokenización Directa</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Operaciones de Compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-operationshtml" href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html">Operaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesredirect-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/redirect-purchase.html">Compra Redirect</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesdirect-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../es/docs/purchase-workflow/purchases/purchase-preview.html">Preview de la compra</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefunds-and-voidshtml" href="../../../../es/docs/purchase-workflow/refunds-and-voids.html">Reembolsos y anulaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowantifraudhtml" href="../../../../es/docs/purchase-workflow/antifraud.html">Antifraude</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflownotification-webhookshtml" href="../../../../es/docs/purchase-workflow/notification-webhooks.html">Webhook</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/forms.html" href="../../../../es/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Formularios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsformscheckout-formhtml" href="../../../../es/docs/forms/checkout-form.html">Formulario del Checkout</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsformsembedded-checkout-formhtml" href="../../../../es/docs/forms/embedded-checkout-form.html">Formulario del Checkout embebido</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/merchant-balances.html" href="../../../../es/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API para saldos de cuentas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsmerchant-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/payment-methods.html" href="../../../../es/docs/payment-methods.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Países y medios de pago</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/argentina.html" href="../../../../es/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-cards.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-cardshtml" href="../../../../es/docs/payment-methods/argentina/ar-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apmhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/brazil.html" href="../../../../es/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brasil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apmhtml" href="../../../../es/docs/payment-methods/brazil/br-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/central-america.html" href="../../../../es/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">América Central</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscentral-americacam-apmhtml" href="../../../../es/docs/payment-methods/central-america/cam-apm.html">Pagos en Efectivo</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/chile.html" href="../../../../es/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-cardshtml" href="../../../../es/docs/payment-methods/chile/cl-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-apmhtml" href="../../../../es/docs/payment-methods/chile/cl-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/colombia.html" href="../../../../es/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-cardshtml" href="../../../../es/docs/payment-methods/colombia/co-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apmhtml" href="../../../../es/docs/payment-methods/colombia/co-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/ecuador.html" href="../../../../es/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsecuadorec-apmhtml" href="../../../../es/docs/payment-methods/ecuador/ec-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/mexico.html" href="../../../../es/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">México</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-cardshtml" href="../../../../es/docs/payment-methods/mexico/mx-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apmhtml" href="../../../../es/docs/payment-methods/mexico/mx-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/paraguay.html" href="../../../../es/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-cardshtml" href="../../../../es/docs/payment-methods/paraguay/py-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-apmhtml" href="../../../../es/docs/payment-methods/paraguay/py-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/peru.html" href="../../../../es/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Perú</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/uruguay.html" href="../../../../es/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-cardshtml" href="../../../../es/docs/payment-methods/uruguay/uy-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../../es/docs/payment-methods/uruguay/uy-loyaltyplans.html">Planes de Fidelización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-apmhtml" href="../../../../es/docs/payment-methods/uruguay/uy-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pago-fácil">Pago Fácil</a>
+      <ul>
+        <li><a href="#request-parameters">Parámetros del Request</a></li>
+        <li><a href="#response-parameters">Parámetros del Response</a></li>
+      </ul>
+    </li>
+    <li><a href="#transferencias-30">Transferencias 3.0</a>
+      <ul>
+        <li><a href="#request-parameters-1">Parámetros del Request</a></li>
+        <li><a href="#response-parameters-1">Parámetros del Response</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs.html">Guía de Integración de Payins</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/payment-methods.html">Países y medios de pago</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/payment-methods/argentina.html">Argentina</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../es/docs/payment-methods/argentina/ar-apm.html">Medios alternativos de pago</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Medios alternativos de pago</h1>
+    <div class="lead">Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.</div>
+	       
+	
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">El estado de la compra para Medios Alternativos de Pago permanecerá en <em>Pending</em> hasta que el cliente complete el pago ya sea en su billetera o en una sucursal física de pago.</p>
+</div>
+
+<h2 id="pago-fácil">Pago Fácil</h2>
+<p><strong>Pago Fácil</strong> proporciona una red de centros de pago físicos donde sus clientes pueden pagar sus compras en efectivo. Sus clientes deben facilitar los datos de pago y el monto que desean pagar, y el sistema se encarga del resto.</p>
+<h3 id="request-parameters">Parámetros del Request</h3>
+<p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th style="text-align:center">Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PaymentMediaId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">Sí</td>
+<td>El <code>PaymentMediaId</code> para este medio de pago es <em><strong>61</strong></em>.</td>
+</tr>
+<tr>
+<td><code>TargetCountryISO</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Indica el país destino.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>Email</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Correo electrónico del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>FirstName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Nombre del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>LastName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Apellido del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocumentTypeId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Tipo de documento del cliente.<br>Consulte la <a href="../../../../es/docs/payment-methods/argentina.html#document-types">tabla de tipos de documento</a> para ver los posibles valores.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Número de documento del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>PhoneNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Número de teléfono del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>País del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Estado del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Ciudad del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Detalle de la dirección del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Código postal del cliente.</td>
+</tr>
+<tr>
+<td><code>MetaDataIn</code> → <code>PaymentExpirationInMinutes</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example">Ejemplo del Request</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">72</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;eluna@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BsAs&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joaquin Requena 1580&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C1054AAU&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Erik&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Luna&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">17</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;24022330&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetaDataIn&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationInMinutes&#34;</span> <span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;7200&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Prueba Argentina Pago Facil&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters">Parámetros del Response</h3>
+<p>En el Response, se encuentran los siguientes parámetros:</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th style="text-align:center">Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentUrl</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>URL a la que debe redirigir al cliente para obtener la información de pago.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Referencia de pago generada por <strong>Pago Fácil</strong>.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentExpirationDate</code></td>
+<td style="text-align:center"><code>date</code></td>
+<td>Fecha en la que caducará el pago.<br>Formato <em>DD/MM/AAAA</em>.</td>
+</tr>
+</tbody>
+</table>
+<p>Debe redirigir a su cliente a la URL mostrada en el parámetro <code>Response.MetadataOut.PaymentUrl</code>, donde podrá imprimir el comprobante y completar el pago en una oficina de <strong>Pago Fácil</strong>.</p>
+<img src="../../../../assets/PagoFacilVoucher.png" width="60%" alt="PrintScreen"/>
+<h4 id="response-example">Ejemplo del Response</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1130909</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T14:37:16.410&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1148775</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-15T14:37:16.410&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pending&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Generic External&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;200&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{\&#34;trnId\&#34;:\&#34;190444\&#34;}&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">12000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;OriginalAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">12000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Prueba Argentina Pago Facil&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">88230</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2022-12-08T11:30:35.933&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Commerce&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">88894</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Antioquia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Carrera 80 #30 - 20&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Medellin&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentProfiles&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">101557</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-24T21:35:14.387&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-24T21:40:30.700&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;529991&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">40604</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Token&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CT__uYBBUihIydvI--7Pyl8U665OfY_kbX2GGUsAV93Sj0k_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0015&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;74857601&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0224d9a155f229d17a966c8f331978dd06df92dcc305fddb9535befe8d7bf999&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">252287</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-07-31T18:23:43.257&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-07-31T18:23:43.257&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jhon Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;405188&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Visa&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">41630</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Token&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CT__01dPtulDMY-yaNLK0D4isQhI2h7Angq5R5aAyNExBiM_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;202912&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6623&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CaptureURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/v1/Capture/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Customer/88230&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;139899768&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/1130909&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataDO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Tax&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Acquirer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AcquirerID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">69</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pago Facil&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchasePaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">97029</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationInMinutes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7200&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1130909_71afa71e-bb69-4f75-9ce7-666014f6c919_20231115.html&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1130909&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;20/08/2023&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderDataResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCurrencyISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IsFirstRecurrentPurchase&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AntifraudData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="transferencias-30">Transferencias 3.0</h2>
+<p>Con <strong>Transferencias 3.0</strong>, puede mostrar un código QR code generado por Bamboo que lo puede leer su cliente utilizando su wallet.</p>
+<h3 id="request-parameters-1">Parámetros del Request</h3>
+<p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th style="text-align:center">Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PaymentMediaId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">Sí</td>
+<td>El <code>PaymentMediaId</code> para este medio de pago es <em><strong>72</strong></em>.</td>
+</tr>
+<tr>
+<td><code>TargetCountryISO</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Indica el país destino.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>Email</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Correo electrónico del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>FirstName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Nombre del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>LastName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Apellido del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocumentTypeId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Tipo de documento del cliente.<br>Consulte la <a href="../../../../es/docs/payment-methods/argentina.html#document-types">tabla de tipos de documento</a> para ver los posibles valores.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Número de documento del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>PhoneNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Número de teléfono del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>País del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Estado del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Ciudad del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Detalle de la dirección del cliente.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Código postal del cliente.</td>
+</tr>
+<tr>
+<td><code>MetaDataIn</code> → <code>PaymentExpirationInMinutes</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example-1">Ejemplo del Request</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;72&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;QA908&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">55734</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;eluna@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BsAs&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joaquin Requena 1580&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C1054AAU&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Erik&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Luna&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">17</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;24022330&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Test purchase&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters-1">Parámetros del Response</h3>
+<p>El siguiente ejemplo muestra la respuesta al request.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1167185</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T20:08:58.295&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;QA908&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1186082</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T20:08:58.295&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pending&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Generic External&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">55734</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;OriginalAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">55734</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Test purchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">251238</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T20:08:57.450&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceCustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Anonymous&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;eluna@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">374730</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joaquin Requena 1580&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;C1054AAU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BsAs&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Plans&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentProfiles&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">256000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">72</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T20:08:57.550&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-04T20:08:57.893&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Transferencias30&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Token&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AffinityGroup&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CaptureURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Customer/251238&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Erik&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Luna&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">17</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;24022330&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;RefundList&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PlanID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerUserAgent&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerIP&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/1167185&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataDO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Tax&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Acquirer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AcquirerID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">83</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Transferencias 3.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CommerceAction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchasePaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">256000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LoyaltyPlan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DeviceFingerprintId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CodeQr&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;630414D2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Base64Qr&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;data:image/png;base64,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&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderDataResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCurrencyISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">557.34</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Redirection&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IsFirstRecurrentPurchase&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AntifraudData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AntifraudFingerprintId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AntifraudMetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;HasCvv&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>En el campo <code>MetadataOut</code> dentro del objeto <code>Response</code>, el código QR se devuelve como una imagen <em>base64</em> (Parámetro <code>Base64Qr</code>); añada esta imagen dentro de una etiqueta HTML de imagen. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">img</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;data:image/png;base64,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&#34;</span> <span style="color:#c4a000">id</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;qr-code-display&#34;</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;max-width: 400px;&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
+<p>Resultado:</p>
+<img src="../../../../assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Última modificación</b>
+
+22 de septiembre de 2023: 
+
+ <i>Traducción de la documentación de Bamboo a español (73b9660)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

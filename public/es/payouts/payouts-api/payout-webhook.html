@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Webhook de notificación | Bamboo Payment</title><meta property="og:title" content="Webhook de notificación" />
+<meta property="og:description" content="Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/payouts/payouts-api/payout-webhook.html" /><meta property="article:section" content="Payouts" />
+<meta property="article:published_time" content="2023-09-12T11:19:09-05:00" />
+<meta property="article:modified_time" content="2023-09-22T14:36:46-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Webhook de notificación">
+<meta itemprop="description" content="Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.
+"><meta itemprop="datePublished" content="2023-09-12T11:19:09-05:00" />
+<meta itemprop="dateModified" content="2023-09-22T14:36:46-05:00" />
+<meta itemprop="wordCount" content="285">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webhook de notificación"/>
+<meta name="twitter:description" content="Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" as="style">
+<link href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../es/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../es/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../en/payouts/payouts-api/payout-webhook.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.506e3f945cc28080a7097a6129f891532beb19ce0256e9b879e4a945656bcf55da0cb0f143acc3874908a9c33469650d09debe2f43bcd962bde2f980ad589493.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../en/payouts/payouts-api/payout-webhook.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts.html" href="../../../es/payouts.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Inicio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/overview.html" href="../../../es/payouts/overview.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-conceptshtml" href="../../../es/payouts/overview/payout-concepts.html">Conceptos</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-status.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-statushtml" href="../../../es/payouts/overview/payout-status.html">Estados de los Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-balanceshtml" href="../../../es/payouts/overview/payout-balances.html">Saldos de Payouts</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/payouts-merchant-console.html" href="../../../es/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Consola de Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consolereportshtml" href="../../../es/payouts/payouts-merchant-console/reports.html">Reporte de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consolebalanceshtml" href="../../../es/payouts/payouts-merchant-console/balances.html">Reporte de Saldos de Payouts</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/payouts-api.html" href="../../../es/payouts/payouts-api.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">API de Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/using-payouts-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apiusing-payouts-apihtml" href="../../../es/payouts/payouts-api/using-payouts-api.html">Utilizar el API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payout-webhook.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-espayoutspayouts-apipayout-webhookhtml" href="../../../es/payouts/payouts-api/payout-webhook.html">Webhook de notificación</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/variables.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apivariableshtml" href="../../../es/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payout-error-codes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apipayout-error-codeshtml" href="../../../es/payouts/payouts-api/payout-error-codes.html">Códigos de error</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#webhook-service-specifications">Especificaciones del servicio WebHook</a>
+      <ul>
+        <li><a href="#notification-parameters">Parámetros de la notificación</a></li>
+        <li><a href="#notification-example">Ejemplo de la notificación</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../es/payouts.html">Inicio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../es/payouts/payouts-api.html">API de Payouts</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../es/payouts/payouts-api/payout-webhook.html">Webhook de notificación</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Webhook de notificación</h1>
+    <div class="lead">Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.</div>
+	       
+	<p>El API de Payouts solo envía notificaciones para los estados finales (<strong>Pagado</strong>, <strong>Declinado</strong> y <strong>Rechazado</strong>). Para los estados de los Payouts, revise nuestro <a href="../../../es/payouts/overview/payout-status.html">artículo de estados</a>.</p>
+<p>El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.</p>
+<h2 id="webhook-service-specifications">Especificaciones del servicio WebHook</h2>
+<p>El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:</p>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>URL:</strong></td>
+<td style="text-align:left"><em>&lt;Determinado por el comercio&gt;</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API Type:</strong></td>
+<td style="text-align:left">Pública</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Method:</strong></td>
+<td style="text-align:left">POST</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Response:</strong></td>
+<td style="text-align:left">Código HTTP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notification-parameters">Parámetros de la notificación</h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th style="text-align:center">Formato</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>payoutId</code></td>
+<td style="text-align:center"><code>integer</code></td>
+<td>Identificador interno del Payout.</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Identificador único del Payout definido por usted cuando solicitó el Payout.</td>
+</tr>
+<tr>
+<td><code>isoCountry</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Código ISO del país en formato <code>ISO 3166-2</code>.</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td style="text-align:center"><code>date</code></td>
+<td>Fecha y hora de la solicitud del Payout.</td>
+</tr>
+<tr>
+<td><code>lastUpdate</code></td>
+<td style="text-align:center"><code>date</code></td>
+<td>Fecha y hora de la última actualización del Payout.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td style="text-align:center"><code>integer</code></td>
+<td>Código interno del estado actual del Payout.</td>
+</tr>
+<tr>
+<td><code>statusDescription</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Estado actual del Payout. Consulte <a href="../../../es/payouts/overview/payout-status.html">este artículo</a> para aprender más acerca de los estados de los Payouts.</td>
+</tr>
+<tr>
+<td><code>errorCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Código interno del error del Payout declinado. Encuentre los posibles errores <a href="../../../es/payouts/payouts-api/payout-error-codes.html">aquí</a>.</td>
+</tr>
+<tr>
+<td><code>errorDescription</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Descripción del error del Payout declinado.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td>Valor y moneda solicitado en el Payout.</td>
+</tr>
+<tr>
+<td><code>localAmount</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td>Valor y moneda solicitado en el Payout en moneda local.</td>
+</tr>
+<tr>
+<td><code>exchangeRate</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td>Valor de conversión utilizado en el Payout.</td>
+</tr>
+<tr>
+<td><code>payee</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td>Información del beneficiario del Payout.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notification-example">Ejemplo de la notificación</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">18009</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PAB-3268&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;isoCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-30T12:02:39.1987743+00:00&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;lastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-08-30T12:06:26.9119828+00:00&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;statusDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Paid&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;errorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;isoCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;localAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">47.31</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;isoCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;exchangeRate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4.851803</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Tiago&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Costa&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;92799322&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;55489-272, Travessa Eduardo, 90 Esteves do Norte - CE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;54562271779&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Última modificación</b>
+
+22 de septiembre de 2023: 
+
+ <i>Traducción de la documentación de Bamboo a español (73b9660)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>
