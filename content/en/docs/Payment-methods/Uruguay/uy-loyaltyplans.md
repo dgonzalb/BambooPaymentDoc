@@ -12,7 +12,7 @@ tags: ["subtopic"]
 _SoySantander_ allows customers to use points to pay the total or partial purchase amount. Using our API, you can create purchases and consult the number of points of a customer.
 
 ### Token request
-The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout` library.
+The first step is to get a valid token to perform the transaction. If the purchase is mixed, get the token from the card as explained in [Customers](/en/docs/purchase-workflow/customer-types.html). Otherwise, invoke the method `GetLoyaltyToken` of the `PWCheckout` library.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -37,7 +37,7 @@ Once you have the token associated with the Loyalty Plan, [Create a Purchase]({{
 | `TrxToken` | `string` | Yes | Token generated as explained in [Token request](#token-request). |
 | `Order` | `string` | Yes | Order number of the purchase. |
 | `Amount` | `number` | No | Amount of the purchase. Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it.<br>If you must include decimals in the amount, concatenate the decimal places without de decimal point. Example  `12,25` > `1225`. |
-| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the possible values in the [Currencies](/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
+| `Currency` | `string` | No | Currency of the purchase, according to ISO-4217. Find the possible values in the [Currencies](/en/docs/payment-methods/uruguay.html#currencies) table.<br>Send this parameter for Mixed purchases (Points + a card). Otherwise, discard it. |
 | `Capture` | `boolean` | Yes | Send `true` in this parameter as the Loyalty plan purchases don't support Pre-authorization. |
 | `LoyaltyPlan` → `LoyaltyPlanId` | `numeric` | Yes | Identifier of the Loyalty plan. |
 | `LoyaltyPlan` → `Amount` | `numeric` | Yes | Total of points to redeem. |

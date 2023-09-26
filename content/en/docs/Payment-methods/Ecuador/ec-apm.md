@@ -25,7 +25,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/docs/payment-methods/ecuador.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/ecuador.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+593\|971516229`. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
