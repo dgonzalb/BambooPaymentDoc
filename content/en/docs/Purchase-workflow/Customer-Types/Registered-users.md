@@ -23,7 +23,7 @@ The first step is to create the customer in Bamboo Payment. To do so, you must i
 | `Email` | `string` | Yes | Customer email address. |
 | `FirstName` | `string` | Yes | Customer name. |
 | `LastName` | `string` | Yes | Customer last name. |
-| `DocumentTypeId` | `string` | Yes | Customer document type. Find the possible values in the Document types table according to the [country](/docs/payment-methods.html). |
+| `DocumentTypeId` | `string` | Yes | Customer document type. Find the possible values in the Document types table according to the [country](/en/docs/payment-methods.html). |
 | `DocNumber` | `string` | Yes | Customer document Number. |
 | `Owner` | `string` | No | It determines whether the user is anonymous or if the merchant, or us, registered it.<br>The possible values are:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value</li><li>_Anonymous_</li></ul>|
 | `PhoneNumber` | `string` | Yes | Customer contact telephone number. |
@@ -208,7 +208,7 @@ The **OpenIframeCustomWithPaymentMediaOptions** method receives four parameters:
 * **URL:** The same as [OpenIframeCustom](#openiframecustom).
 * **UniqueID:** The same as [OpenIframeCustom](#openiframecustom).
 * **PaymentMediaid:** Identifier of the Payment method. If set, the Card Capture Form will only accept cards of this Payment Media. _This parameter applies only to Uruguay_.
-* **BankId:** [Bank identifier](/docs/payment-methods/uruguay.html#issuer-banks-table). _This parameter applies only to Uruguay_.
+* **BankId:** [Bank identifier](/en/docs/payment-methods/uruguay.html#issuer-banks-table). _This parameter applies only to Uruguay_.
 
 The Card Capture Form will only accept cards of the specified Payment Method and Bank if you set both parameters, but they are optional.
 
@@ -323,7 +323,7 @@ From the server, invoke the [Create a Purchase]({{< ref "Purchase-Operations.md"
 
 The **PaymentMediaId** and **TrxToken** fields are optional, but sending one is mandatory, depending on the flow you want to use.
 
-* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/docs/payment-methods.html) section.
+* **PaymentMediaId**: Alternative payment method identifier (transfer, cash, and processing that requires customer redirection). You can obtain this identifier by consulting the [Payment Methods by country](/en/docs/payment-methods.html) section.
 
 * **TrxToken**: You can generate the token and transact by sending it in this field.
 
