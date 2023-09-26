@@ -18,8 +18,8 @@ This method receives an object with the specific parameters for the desired paym
 |-------------|--------------------|:-----------:|:------:|:------:|
 | | | **Physical Network** | **Cards** | **Redirect** |
 | **PaymentMediaId** <br> *numeric* | Payment media identifier. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
-| **IssuerBank** <br> *numeric* | Bank identifier (see [table](/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
+| **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/en/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
+| **IssuerBank** <br> *numeric* | Bank identifier (see [table](/en/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
 | **Email** <br> *string* | Email address of the Customer. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | **DocumentNumber** <br> *string* | Customer document number. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
 | **DocumentType** <br> *numeric* | Customer document type. | <img src="/assets/check_mark_64.png" width="15px"/> | | |

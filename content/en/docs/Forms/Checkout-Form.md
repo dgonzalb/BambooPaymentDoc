@@ -243,9 +243,9 @@ You need to process payment form data, including the value in the `PWToken` fiel
 If you need to validate the entry of a particular card, either by the brand or the issuing bank, you must proceed to the personalized opening of the Card Capture Form. Use an explicit method for validating data.
 
 The method to be used is the **OpenIframeWithPaymentMediaOptions**, which receives the following parameters:
-* **PaymentMediaId**: Identifier of the payment method in the gateway (see [table](/docs/payment-methods.html#payment-method-types) Payment method types).
-* **BankId**: Bank identifier on the gateway (see [table](/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank).
-* **PaymentMediaType**: Payment method type identifier  (see [table](/docs/payment-methods/uruguay.html#payment-methods) Payment methods).
+* **PaymentMediaId**: Identifier of the payment method in the gateway (see [table](/en/docs/payment-methods.html#payment-method-types) Payment method types).
+* **BankId**: Bank identifier on the gateway (see [table](/en/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank).
+* **PaymentMediaType**: Payment method type identifier  (see [table](/en/docs/payment-methods/uruguay.html#payment-methods) Payment methods).
 
 
 Invocation example of **OpenIframeWithPaymentMediaOptions**:
