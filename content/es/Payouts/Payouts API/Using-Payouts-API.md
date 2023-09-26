@@ -300,10 +300,10 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
     "lastName": "Garrido",
     "email": "merceddo@mail.com",
     "phone": "099999999",
-    "address": "Camino Franco, 13, Ático 4º, 93631, L' Garay",
+    "address": "Camino Franco, 13, Atico 4º, 93631, L Garay",
     "document": {
       "type": "CI",
-      "number": "12345678"
+      "number": "26068762K"
     },
     "bankAccount": {
       "number": "1234567890123450",
