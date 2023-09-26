@@ -52,7 +52,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback`
 
-<!--
+
 ## Reembolsar una compra {#refund-a-purchase}
 La operación de _**refund**_ está disponible para compras con estado _Approved_. Los reembolsos pueden ser totales o parciales.
 
@@ -61,15 +61,15 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 
 * **Producción**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
--->
 
-### Parámetros del Request {#request-parameters}
-No es necesario enviar el cuerpo del request para anular una compra. Si no envía el request, la compra será anulada con su monto original. 
 
-El monto a anular puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.
+## Parámetros del Request {#request-parameters}
+No es necesario enviar el cuerpo del request para anular o reembolsar una compra. Si no envía el request, la compra será anulada con su monto original. 
 
-#### Ejemplo del Request {#request-example}
-Para realizar la devolución de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:
+El monto a anular/reembolsar puede variar respecto al que se envió en la compra inicial, pero este no puede ser superior al original.
+
+### Ejemplo del Request {#request-example}
+Para realizar la anulación o reembolso de una compra con un monto inferior al original, es necesario incluir el nuevo monto en el request. Por ejemplo:
 
 ```json
 {
@@ -77,16 +77,16 @@ Para realizar la devolución de una compra con un monto inferior al original, es
 }
 ```
 
-### Parámetros del Response {#response-parameters}
+## Parámetros del Response {#response-parameters}
 Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto `Response` [retornado]({{< ref "purchase-operations.md" >}}#response-parameters).
-
+<!--
 ## Reembolsar una compra {#refund-a-purchase}
 La operación de _**reembolso**_ está disponible únicamente para compras con estado _Aprobado_. Los reembolsos pueden ser totales o parciales.
 
-<!--
+
 ### Consideraciones  {#considerations-1}
 _To be defined_
--->
+
 
 ### URL del Request {#request-url-1}
 Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
@@ -151,3 +151,4 @@ Considere los siguientes parámetros cuando invoque un request de reembolso.
     "Errors": []
 }
 ```
+-->
