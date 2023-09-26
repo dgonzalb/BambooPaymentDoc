@@ -4,7 +4,7 @@ linkTitle: "Payouts exprés"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar multiplos pagos con facilidad y precisión de forma eficiente.
+ Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 weight: 20
 ---
 
@@ -18,7 +18,7 @@ Para acceder a la funcionalidad de _**Payouts exprés**_, abra su consola de Com
 * Centralice sus Payouts con mínimo esfuerzo.
 
 ## ¿Cómo utilizar Payouts exprés? {#how-to-use-express-payouts}
-_**Payouts exprés**_ le brinda una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultanea. Una vez complete un paso, la secuencia activa el siguiente para evitar errores.
+_**Payouts exprés**_ le brinda una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultánea. Una vez complete un paso, la secuencia activa el siguiente para evitar errores.
 
 A continuación, describimos cada paso y le damos instrucciones.
 
@@ -29,7 +29,7 @@ Haga clic en el botón _**Descargar plantilla**_ para obtener el archivo de Exce
 
 ![PrintScreen](/assets/Payouts/Payouts14_es.png)
 
-Una vez tenga el archivo de Excel, puede diligenciarlo con la inofrmación de los Payouts. Cada fila representa una solicitud de Payout y tiene las siguientes columnas.
+Una vez tenga el archivo de Excel, puede diligenciarlo con la información de los Payouts. Cada fila representa una solicitud de Payout y tiene las siguientes columnas.
 
 ![PrintScreen](/assets/Payouts/Payouts15_en.png)
 
@@ -57,14 +57,14 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la inofrmación de lo
 <sup>*</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank` y `Payee.BankAccount.Branch` no deben estar presentes en el request._
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
-* **No** modifique el archivo descgargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.
+* **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.
 * La funcionalidad soporta un máximo de **100** registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.
 * Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.
 * Puede guardar el archivo utilizando cualquier nombre.
 {{% /alert %}}
 
 ### 2. Seleccionar la cuenta {#step2}
-El segundo paso involucra escoger la cuenta de la que se debitarán los montos de los Payouts. Asegúrese de que la cuenta seleccionada tenga saldo suficiente prar procesarlos todos.
+El segundo paso involucra escoger la cuenta de la que se debitarán los montos de los Payouts. Asegúrese de que la cuenta seleccionada tenga saldo suficiente para procesarlos todos.
 
 Abra la lista desplegable _**Selecciona la cuenta**_ y seleccione la cuenta que desea utilizar.
 
@@ -76,18 +76,18 @@ Una vez seleccione la cuenta en el [paso 2](#step2), el proceso activa este paso
 ![PrintScreen](/assets/Payouts/Payouts17_es.png)
 
 ### 4. Resultados de la carga {#step4}
-Si todos los payouts fueron correctos y no hubo errores en el archivo, el sstema informa el número de Payouts creados.
+Si todos los payouts fueron correctos y no hubo errores en el archivo, el sistema informa el número de Payouts creados.
 
 ![PrintScreen](/assets/Payouts/Payouts18_es.png)
 
-En caso contrario, la funcionalidad de _**Payouts exprés**_ informa el número de Payouts exitosos y fallidos. Puede consultar los Payouts faillidos en el archivo de Excel que generamos utilizando el enlace disponible.
+En caso contrario, la funcionalidad de _**Payouts exprés**_ informa el número de Payouts exitosos y fallidos. Puede consultar los Payouts fallidos en el archivo de Excel que generamos utilizando el enlace disponible.
 
 ![PrintScreen](/assets/Payouts/Payouts19_es.png)
 
-Cunsulte la última columna en el archivo apra pasaber el error del Payout.
+Consulte la última columna en el archivo para saber el error del Payout.
 
 ![PrintScreen](/assets/Payouts/Payouts20_en.png)
 
 Luego de corregir el error, guarde el archivo y cárguelo nuevamente utilizando la opción en el [paso 3](#step3).
 
-Independiente de si el Payout fue exitoso, puede consultarlo en el [Reporte de Payouts]({{< ref Reports.md>}}). Los Payoutsa exitosos tienen el estado _Pendiente_ mientras que los fallidos, tienen el estado _Rechazado_.
+Independiente de si el Payout fue exitoso, puede consultarlo en el [Reporte de Payouts]({{< ref Reports.md>}}). Los Payouts exitosos tienen el estado _Pendiente_ mientras que los fallidos, tienen el estado _Rechazado_.
