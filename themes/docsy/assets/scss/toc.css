@@ -99,3 +99,27 @@ a.activeToc  {
 .td-toc #TableOfContents a {
     font-size: 12px !important;
 }
+
+/* Estilos para la barra de desplazamiento en navegadores webkit (como Chrome y Safari) */
+/* Reemplaza 'td-section-nav' con el ID o la clase de tu div */
+#td-section-nav::-webkit-scrollbar {
+    width: 6px; /* Ancho de la barra de desplazamiento vertical */
+    background-color: #f5f5f5; /* Color de fondo de la barra de desplazamiento */
+}
+
+/* Estilos para el control deslizante de la barra de desplazamiento */
+#td-section-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(38, 38, 38, 0.7); /* Color del control deslizante de la barra de desplazamiento */
+    border-radius: 6px; /* Radio de borde del control deslizante */
+}
+
+/* Estilos para la barra de desplazamiento horizontal (si es necesario) */
+#td-section-nav::-webkit-scrollbar-track {
+    background-color: #EBEFFF; /* Color de fondo de la pista de la barra de desplazamiento horizontal */
+}
+
+/* Estilos para la barra de desplazamiento en Firefox */
+/* Reemplaza 'td-section-nav' con el ID o la clase de tu div */
+#td-section-nav {
+    scrollbar-color: rgba(38, 38, 38, 0.7) #f5f5f5; /* Color de la barra de desplazamiento y la pista en Firefox */
+}
