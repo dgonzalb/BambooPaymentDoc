@@ -8,7 +8,7 @@ Description: >
 weight: 10
 ---
 
-To learn more about Payouts, refer to this [article](/payouts/overview.html).
+To learn more about Payouts, refer to this [article](../overview.html).
 
 ## Configuring the authentication
 All methods used in Payouts API require the following authentication headers.
@@ -99,7 +99,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `country` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](/payouts/overview.html#coverage). |
+| `country` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
 | `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
 | `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
 | `reason` | `string` | No | Description of the Payout. |
@@ -111,7 +111,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `email` | `string` | No | Email address of the Payee. |  
 | `payee` → `phone` | `string` | No | Phone number of the Payee. | 
 | `payee` → `address` | `string` | No | Address of the Payee. | 
-| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](/payouts/payouts-api/variables.html#document-types). |  
+| `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](../payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
 | `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
