@@ -4,8 +4,8 @@ linkTitle: "Express Payouts"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- With _**Express Payouts**_, you can effortlessly initiate mass Payouts by simply uploading an Excel file containing your Payout requests. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
-weight: 20
+ With _**Express Payouts**_, you can effortlessly initiate mass Payouts by simply uploading an Excel file containing your payout requests. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
+weight: 30
 ---
 
 To access the _**Express Payouts**_ feature, open your Merchant console and expand ***Payout***, then ***Express Payouts***.
@@ -18,12 +18,12 @@ To access the _**Express Payouts**_ feature, open your Merchant console and expa
 * Centralize your Payouts with minimum effort.
 
 ## How to use Express Payouts?
-_**Express Payouts**_ has an easy-to-follow step sequence that allows you to create one or more Payouts simultaneously. Once you complete a step, the sequence activates the next to avoid errors.
+_**Express Payouts**_ has an easy-to-follow step sequence that allows you to create one or more payouts simultaneously. Once you complete a step, the sequence activates the next to avoid errors.
 
 Next, we describe each step and provide you with instructions.
 
 ### 1. Download the template {#step1}
-The first step is downloading the _Express Payouts template_. This Excel file has all the information related to a Payout and provides examples of how to fill it.
+The first step is downloading the _Express Payouts template_. This Excel file has all the information related to a payout and provides examples of how to fill it.
 
 Click the _**Download template**_ button to get the Excel file.
 
@@ -39,8 +39,8 @@ Once you have the Excel file, you can fill it with the information of the Payout
  | **Amount** | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
  | **Currency** | Yes | ISO code of the selected currency.<br>_Only **USD** is available_. |
  | **Reason** | No | Description of the Payout. |
- | **Reference** | Yes | Unique identifier of the Payout defined by you.<br>_This reference should not appear more than once in the file or exist in previous Payouts._ |
- | **Type** | Yes | Transfer Payout type.<br>[List of Transfer types for Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
+ | **Reference** | Yes | Unique identifier of the Payout defined by you.<br>_This reference should not appear more than once in the file or exist in previous Payouts._. |
+ | **Type** | Yes | Transfer Payout type.<br>[List of countries available for Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
  | **Payee.FirstName** | Yes | First Name of the Payee. | 
  | **Payee.LastName** | Yes | Last Name of the Payee. | 
  | **Payee.Email** | No | Email address of the Payee. | 
@@ -58,13 +58,13 @@ Once you have the Excel file, you can fill it with the information of the Payout
 
 {{% alert title="Important about Express Payouts" color="warning"%}}
 * Do **NOT** modify the downloaded file by adding new columns, sheets or changing the column names.
-* The feature supports a maximum of **100** records per file. If you need to include more, repeat the procedure for the remaining Payouts.
+* The feature supports a maximum of **100** records per file. If you need to include more, repeat the procedure for the remaining payouts.
 * If you already have the template downloaded, it is not required to download it again.
 * You can save the file using any name of your choice.
 {{% /alert %}}
 
 ### 2. Select the account {#step2}
-The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all Payouts.
+The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.
 
 Open the _**Select the account**_ dropdown list and select the account you want to use.
 
@@ -90,4 +90,4 @@ Refer to the last column in the file to know the Payout error.
 
 After fixing the error, save the file and upload it using the option in [step 3](#step3).
 
-Regardless of whether the Payout was successful, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status, and failed Payouts have _Rejected_ status.
+Regardless if the Payout was successful or not, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status and failed Payouts have _Rejected_ status. 
