@@ -12,4 +12,4 @@ To navigate the Payout options, open your Merchant console and expand the ***Pay
 
 ![PrintScreen](/assets/Payouts/Payouts8_en.png)
 
-The Payouts console has two options: _**Payout Reports**_ and _**Payouts Balance**_; find the related information below.
+The Payouts console has three options: _**Payout Reports**_, _**Express Payouts**_ and _**Payouts Balance**_; find the related information below.

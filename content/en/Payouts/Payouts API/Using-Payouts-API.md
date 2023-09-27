@@ -47,7 +47,7 @@ You must invoke a **GET** request to the following URLs according to your needs.
 * **Production**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
 
-Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](/payouts/overview.html#coverage).
+Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](../overview.html#coverage).
 
 #### Response parameters
 
