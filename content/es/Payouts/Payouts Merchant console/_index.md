@@ -12,4 +12,4 @@ Para navegar a las opciones de Payout, abre su consola de Comercios y expanda la
 
 ![PrintScreen](/assets/Payouts/Payouts8_es.png)
 
-La consola de Payouts tiene dos opciones: _**Reporte de Payouts**_ y _**Saldos de Payouts**_; encuentre a continuación la información relacionada.
+La consola de Payouts tiene tres opciones: _**Reporte de Payouts**_, _**Payouts Exprés**_ y _**Saldos de Payouts**_; encuentre a continuación la información relacionada.

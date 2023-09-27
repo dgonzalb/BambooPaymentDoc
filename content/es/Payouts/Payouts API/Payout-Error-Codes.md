@@ -14,14 +14,11 @@ weight: 40
 | `400` | Códigos del Response | Request incorrecto. |
 | `401` | Códigos del Response | No autorizado. |
 | `409` | Códigos del Response | Conflicto. |
-| `601` | Purchase Preview | Invalid Destination Country. |
-| `602` | Purchase Preview | Invalid Origin currency. |
-| `699` | Purchase Preview | Generic error for Purchase Preview. |
-| `812` | Validación del API | Declinado por validación de documento. |
-| `813` | Validación del API | Declinado por validación de cuenta. |
-| `814` | Validación del API | Declinado por validación de país. |
+| `812` | Validación del API | Declinado por validación del documento. |
+| `813` | Validación del API | Declinado por validación de la cuenta. |
+| `814` | Validación del API | Declinado por validación del país. |
 | `815` | Validación del API | Declinado por cumplimiento. |
-| `816` | Validación del API | ID de referencia ya utilizada.<br>Este error no se muestra en la [Consola de Payouts](../payouts-merchant-console.html) pero se devuelve a través de la API. |. |
+| `816` | Validación del API | ID de referencia ya utilizado.<br>Este error no se muestra en la [Consola de Payouts](../payouts-merchant-console.html) pero se devuelve a través de la API. |. |
 | `901` | Rechazos | La cuenta bancaria está cerrada. |
 | `902` | Rechazos | Cuenta bancaria no válida. |
 | `903` | Rechazos | Tipo de cuenta bancaria no válida. |
@@ -29,7 +26,7 @@ weight: 40
 | `905` | Rechazos | Límite mensual del usuario excedido. |
 | `906` | Rechazos | Rechazado por solicitud del comercio. |
 | `907` | Rechazos | La cuenta bancaria no puede recibir transferencias. |
-| `908` | Rechazos | Documento de beneficiario no válido. |
+| `908` | Rechazos | Documento del beneficiario no válido. |
 | `909` | Rechazos | El nombre del beneficiario no coincide con los datos bancarios. |
 | `910` | Rechazos | Llave PIX no válida. |
 | `911` | Rechazos | Se ha solicitado un cambio de estado no válido. |
