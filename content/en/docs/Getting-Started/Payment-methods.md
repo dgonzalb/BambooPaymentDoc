@@ -32,15 +32,15 @@ weight: 30
 
 | | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa |  Credit and Debit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard |  Credit and Debit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Credit and Debit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" width="52" style="" /> | Diners |  Credit and Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa |  Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard |  Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" width="52" style="" /> | Diners |  Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/PIX_BankTransfer.png" width="52" style="" /> | PIX | Bank Transfer | API
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" width="52" style="" /> | Boleto | Cash Payment | API
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" width="52" style="" /> | Hipercard |  Credit and Debit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" width="52" style="" /> | Elo |  Credit and Debit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" width="52" style="" /> | Aura |  Credit and Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" width="52" style="" /> | Hipercard |  Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" width="52" style="" /> | Elo |  Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" width="52" style="" /> | Aura |  Credit Card | API |
 
 ## Chile
 
