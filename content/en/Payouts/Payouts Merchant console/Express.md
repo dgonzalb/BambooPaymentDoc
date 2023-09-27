@@ -4,8 +4,8 @@ linkTitle: "Express Payouts"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- With _**Express Payouts**_, you can effortlessly initiate mass Payouts by simply uploading an Excel file containing your payout requests. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
-weight: 30
+ With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
+weight: 20
 ---
 
 To access the _**Express Payouts**_ feature, open your Merchant console and expand ***Payout***, then ***Express Payouts***.
@@ -13,7 +13,7 @@ To access the _**Express Payouts**_ feature, open your Merchant console and expa
 ![PrintScreen](/assets/Payouts/Payouts13_en.png)
 
 ## Benefits
-* Instant Setup.
+* Instant Setup without API integration.
 * Speedy and Flexible using batch upload.
 * Centralize your Payouts with minimum effort.
 
@@ -90,4 +90,4 @@ Refer to the last column in the file to know the Payout error.
 
 After fixing the error, save the file and upload it using the option in [step 3](#step3).
 
-Regardless if the Payout was successful or not, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status and failed Payouts have _Rejected_ status. 
+Regardless if the Payout was successful or not, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status and failed Payouts have _Declined_ status. 
