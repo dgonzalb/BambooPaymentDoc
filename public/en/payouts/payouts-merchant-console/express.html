@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Express Payouts | Bamboo Payment</title><meta property="og:title" content="Express Payouts" />
+<meta property="og:description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/payouts/payouts-merchant-console/express.html" /><meta property="article:section" content="Payouts" />
+<meta property="article:published_time" content="2023-06-30T08:16:09-05:00" />
+<meta property="article:modified_time" content="2023-09-27T08:46:40-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Express Payouts">
+<meta itemprop="description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
+"><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
+<meta itemprop="dateModified" content="2023-09-27T08:46:40-05:00" />
+<meta itemprop="wordCount" content="680">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Express Payouts"/>
+<meta name="twitter:description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" as="style">
+<link href="../../../scss/main.min.98ea8c3a1aada8a2e4c6b4e193f590563e240036660a9530d18fa2fc7ce10509.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/express.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.c42637f303c3c04b49606981c3137db164bab52219723206f6db0a97eb204858a06ae6e458752955b9af950feeef525b262ec51f15a8b1388c385ac08fde9a78.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/express.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts.html" href="../../../en/payouts.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/overview.html" href="../../../en/payouts/overview.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-conceptshtml" href="../../../en/payouts/overview/payout-concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-status.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-statushtml" href="../../../en/payouts/overview/payout-status.html">Payout status</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-merchant-console.html" href="../../../en/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Payouts console</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/reports.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolereportshtml" href="../../../en/payouts/payouts-merchant-console/reports.html">Payout Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/express.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-enpayoutspayouts-merchant-consoleexpresshtml" href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/balances.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolebalanceshtml" href="../../../en/payouts/payouts-merchant-console/balances.html">Payout Balance report</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-api.html" href="../../../en/payouts/payouts-api.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../../en/payouts/payouts-api/using-payouts-api.html">Using Payouts API</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-webhookhtml" href="../../../en/payouts/payouts-api/payout-webhook.html">Notification Webhook</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apivariableshtml" href="../../../en/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-error-codeshtml" href="../../../en/payouts/payouts-api/payout-error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#how-to-use-express-payouts">How to use Express Payouts?</a>
+      <ul>
+        <li><a href="#step1">1. Download the template</a></li>
+        <li><a href="#step2">2. Select the account</a></li>
+        <li><a href="#step3">3. Upload the template</a></li>
+        <li><a href="#step4">4. Upload results</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts/payouts-merchant-console.html">Payouts console</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Express Payouts</h1>
+    <div class="lead">With <em><strong>Express Payouts</strong></em>, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.</div>
+	       
+	<p>To access the <em><strong>Express Payouts</strong></em> feature, open your Merchant console and expand <em><strong>Payout</strong></em>, then <em><strong>Express Payouts</strong></em>.</p>
+<p><img src="../../../assets/Payouts/Payouts13_en.png" alt="PrintScreen"></p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li>Instant Setup without API integration.</li>
+<li>Speedy and Flexible using batch upload.</li>
+<li>Centralize your Payouts with minimum effort.</li>
+</ul>
+<h2 id="how-to-use-express-payouts">How to use Express Payouts?</h2>
+<p><em><strong>Express Payouts</strong></em> has an easy-to-follow step sequence that allows you to create one or more payouts simultaneously. Once you complete a step, the sequence activates the next to avoid errors.</p>
+<p>Next, we describe each step and provide you with instructions.</p>
+<h3 id="step1">1. Download the template</h3>
+<p>The first step is downloading the <em>Express Payouts template</em>. This Excel file has all the information related to a payout and provides examples of how to fill it.</p>
+<p>Click the <em><strong>Download template</strong></em> button to get the Excel file.</p>
+<p><img src="../../../assets/Payouts/Payouts14_en.png" alt="PrintScreen"></p>
+<p>Once you have the Excel file, you can fill it with the information of the Payouts. Each row represents a new Payout request and has the following columns.</p>
+<p><img src="../../../assets/Payouts/Payouts15_en.png" alt="PrintScreen"></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Country</strong></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the country in the format <code>ISO 3166-2</code>.<br><a href="../overview.html#coverage">List of countries available for Payouts</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>USD 1,00</em>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Currency</strong></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the selected currency.<br><em>Only <strong>USD</strong> is available</em>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reason</strong></td>
+<td style="text-align:center">No</td>
+<td>Description of the Payout.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reference</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Unique identifier of the Payout defined by you.<br><em>This reference should not appear more than once in the file or exist in previous Payouts.</em>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Transfer Payout type.<br><a href="../../../en/payouts/payouts-api/variables.html#transfer-types-for-payouts">List of countries available for Payouts</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.FirstName</strong></td>
+<td style="text-align:center">Yes</td>
+<td>First Name of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.LastName</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Last Name of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.Email</strong></td>
+<td style="text-align:center">No</td>
+<td>Email address of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.Phone</strong></td>
+<td style="text-align:center">No</td>
+<td>Phone number of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.Address</strong></td>
+<td style="text-align:center">No</td>
+<td>Address of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.Document.Type</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Document type of the Payee.<br><a href="../../../en/payouts/payouts-api/variables.html#document-types">Find the document list here</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.Document.Number</strong></td>
+<td style="text-align:center">Yes</td>
+<td>Document number of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.BankAccount.Number</strong></td>
+<td style="text-align:center">Yes<sup>*</sup></td>
+<td>Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.BankAccount.Type</strong></td>
+<td style="text-align:center">Yes<sup>*</sup></td>
+<td>Account type of the Payee.<br>Set <code>1</code> for Checking and <code>2</code> for Savings.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.BankAccount.CodeBank</strong></td>
+<td style="text-align:center">Yes<sup>*</sup></td>
+<td>Bank code of the Payee.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payee.BankAccount.Branch</strong></td>
+<td style="text-align:center">No</td>
+<td>Branch code of the Payee&rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notification_Url</strong></td>
+<td style="text-align:center">No</td>
+<td>Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this <a href="../../../en/payouts/payouts-api/payout-webhook.html">article</a>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>*</sup> <em>When using Bank transfer, these parameters are mandatory for</em> <em><strong>ALL</strong></em> <em>countries. For Instant Bank Transfer in Brazil, the columns <code>Payee.BankAccount.Type</code>, <code>Payee.BankAccount.CodeBank</code>, and <code>Payee.BankAccount.Branch</code> must not be present in the request.</em></p>
+
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important about Express Payouts</h4>
+<p class="alert-text"><ul>
+<li>Do <strong>NOT</strong> modify the downloaded file by adding new columns, sheets or changing the column names.</li>
+<li>The feature supports a maximum of <strong>100</strong> records per file. If you need to include more, repeat the procedure for the remaining payouts.</li>
+<li>If you already have the template downloaded, it is not required to download it again.</li>
+<li>You can save the file using any name of your choice.</li>
+</ul>
+</p>
+</div>
+
+<h3 id="step2">2. Select the account</h3>
+<p>The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.</p>
+<p>Open the <em><strong>Select the account</strong></em> dropdown list and select the account you want to use.</p>
+<p><img src="../../../assets/Payouts/Payouts16_en.png" alt="PrintScreen"></p>
+<h3 id="step3">3. Upload the template</h3>
+<p>Once you select the account in <a href="#step2">step 2</a>, the process activates this step. Click the <em><strong>Upload template</strong></em> button to upload the file created in <a href="#step1">step 1</a>.</p>
+<p><img src="../../../assets/Payouts/Payouts17_en.png" alt="PrintScreen"></p>
+<h3 id="step4">4. Upload results</h3>
+<p>If all the Payouts are correct and there were no errors in the file, the system prompts you with the number of Payouts created.</p>
+<p><img src="../../../assets/Payouts/Payouts18_en.png" alt="PrintScreen"></p>
+<p>Otherwise, the <em><strong>Express Payouts</strong></em>  feature informs the number of successful and failed Payouts. You can consult the error of the failed Payouts in the Excel file we generate using the available link.</p>
+<p><img src="../../../assets/Payouts/Payouts19_en.png" alt="PrintScreen"></p>
+<p>Refer to the last column in the file to know the Payout error.</p>
+<p><img src="../../../assets/Payouts/Payouts20_en.png" alt="PrintScreen"></p>
+<p>After fixing the error, save the file and upload it using the option in <a href="#step3">step 3</a>.</p>
+<p>Regardless if the Payout was successful or not, you can consult it in the <a href="../../../en/payouts/payouts-merchant-console/reports.html">Payouts Report</a>. Successful Payouts have <em>Pending</em> status and failed Payouts have <em>Declined</em> status.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+September 27, 2023: 
+
+ <i>New Payouts Express feature (045fd04)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

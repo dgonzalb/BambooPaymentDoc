@@ -112,6 +112,187 @@
     </item>
     
     <item>
+      <title>Payouts: Express Payouts</title>
+      <link>/en/payouts/payouts-merchant-console/express.html</link>
+      <pubDate>Fri, 30 Jun 2023 08:16:09 -0500</pubDate>
+      
+      <guid>/en/payouts/payouts-merchant-console/express.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To access the &lt;em&gt;&lt;strong&gt;Express Payouts&lt;/strong&gt;&lt;/em&gt; feature, open your Merchant console and expand &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt;, then &lt;em&gt;&lt;strong&gt;Express Payouts&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts13_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;benefits&#34;&gt;Benefits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instant Setup without API integration.&lt;/li&gt;
+&lt;li&gt;Speedy and Flexible using batch upload.&lt;/li&gt;
+&lt;li&gt;Centralize your Payouts with minimum effort.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-use-express-payouts&#34;&gt;How to use Express Payouts?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Express Payouts&lt;/strong&gt;&lt;/em&gt; has an easy-to-follow step sequence that allows you to create one or more payouts simultaneously. Once you complete a step, the sequence activates the next to avoid errors.&lt;/p&gt;
+&lt;p&gt;Next, we describe each step and provide you with instructions.&lt;/p&gt;
+&lt;h3 id=&#34;step1&#34;&gt;1. Download the template&lt;/h3&gt;
+&lt;p&gt;The first step is downloading the &lt;em&gt;Express Payouts template&lt;/em&gt;. This Excel file has all the information related to a payout and provides examples of how to fill it.&lt;/p&gt;
+&lt;p&gt;Click the &lt;em&gt;&lt;strong&gt;Download template&lt;/strong&gt;&lt;/em&gt; button to get the Excel file.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts14_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once you have the Excel file, you can fill it with the information of the Payouts. Each row represents a new Payout request and has the following columns.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts15_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Country&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;ISO code of the country in the format &lt;code&gt;ISO 3166-2&lt;/code&gt;.&lt;br&gt;&lt;a href=&#34;../overview.html#coverage&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Amount&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Amount of the Payout, the format has two digits for decimals.&lt;br&gt;Example &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;USD 1,00&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Currency&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;ISO code of the selected currency.&lt;br&gt;&lt;em&gt;Only &lt;strong&gt;USD&lt;/strong&gt; is available&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Reason&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Description of the Payout.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Unique identifier of the Payout defined by you.&lt;br&gt;&lt;em&gt;This reference should not appear more than once in the file or exist in previous Payouts.&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Transfer Payout type.&lt;br&gt;&lt;a href=&#34;../../../en/payouts/payouts-api/variables.html#transfer-types-for-payouts&#34;&gt;List of countries available for Payouts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.FirstName&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;First Name of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.LastName&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Last Name of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.Email&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Email address of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.Phone&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Phone number of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.Address&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Address of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.Document.Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Document type of the Payee.&lt;br&gt;&lt;a href=&#34;../../../en/payouts/payouts-api/variables.html#document-types&#34;&gt;Find the document list here&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.Document.Number&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Document number of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.BankAccount.Number&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Bank account number of the Payee.&lt;br&gt;Take into account the following considerations:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For Argentina, set the CBU/CVU.&lt;/li&gt;&lt;li&gt;For Mexico, set the CLABE number.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.BankAccount.Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Account type of the Payee.&lt;br&gt;Set &lt;code&gt;1&lt;/code&gt; for Checking and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.BankAccount.CodeBank&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Bank code of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.BankAccount.Branch&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Branch code of the Payee&amp;rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Notification_Url&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this &lt;a href=&#34;../../../en/payouts/payouts-api/payout-webhook.html&#34;&gt;article&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;When using Bank transfer, these parameters are mandatory for&lt;/em&gt; &lt;em&gt;&lt;strong&gt;ALL&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;countries. For Instant Bank Transfer in Brazil, the columns &lt;code&gt;Payee.BankAccount.Type&lt;/code&gt;, &lt;code&gt;Payee.BankAccount.CodeBank&lt;/code&gt;, and &lt;code&gt;Payee.BankAccount.Branch&lt;/code&gt; must not be present in the request.&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important about Express Payouts&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;ul&gt;
+&lt;li&gt;Do &lt;strong&gt;NOT&lt;/strong&gt; modify the downloaded file by adding new columns, sheets or changing the column names.&lt;/li&gt;
+&lt;li&gt;The feature supports a maximum of &lt;strong&gt;100&lt;/strong&gt; records per file. If you need to include more, repeat the procedure for the remaining payouts.&lt;/li&gt;
+&lt;li&gt;If you already have the template downloaded, it is not required to download it again.&lt;/li&gt;
+&lt;li&gt;You can save the file using any name of your choice.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;step2&#34;&gt;2. Select the account&lt;/h3&gt;
+&lt;p&gt;The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.&lt;/p&gt;
+&lt;p&gt;Open the &lt;em&gt;&lt;strong&gt;Select the account&lt;/strong&gt;&lt;/em&gt; dropdown list and select the account you want to use.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts16_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;step3&#34;&gt;3. Upload the template&lt;/h3&gt;
+&lt;p&gt;Once you select the account in &lt;a href=&#34;#step2&#34;&gt;step 2&lt;/a&gt;, the process activates this step. Click the &lt;em&gt;&lt;strong&gt;Upload template&lt;/strong&gt;&lt;/em&gt; button to upload the file created in &lt;a href=&#34;#step1&#34;&gt;step 1&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts17_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;step4&#34;&gt;4. Upload results&lt;/h3&gt;
+&lt;p&gt;If all the Payouts are correct and there were no errors in the file, the system prompts you with the number of Payouts created.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts18_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Otherwise, the &lt;em&gt;&lt;strong&gt;Express Payouts&lt;/strong&gt;&lt;/em&gt;  feature informs the number of successful and failed Payouts. You can consult the error of the failed Payouts in the Excel file we generate using the available link.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts19_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Refer to the last column in the file to know the Payout error.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts20_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After fixing the error, save the file and upload it using the option in &lt;a href=&#34;#step3&#34;&gt;step 3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Regardless if the Payout was successful or not, you can consult it in the &lt;a href=&#34;../../../en/payouts/payouts-merchant-console/reports.html&#34;&gt;Payouts Report&lt;/a&gt;. Successful Payouts have &lt;em&gt;Pending&lt;/em&gt; status and failed Payouts have &lt;em&gt;Declined&lt;/em&gt; status.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Payouts: Payout Balance report</title>
       <link>/en/payouts/payouts-merchant-console/balances.html</link>
       <pubDate>Fri, 30 Jun 2023 08:16:09 -0500</pubDate>

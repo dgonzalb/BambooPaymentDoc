@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payouts/payouts-api/payout-error-codes.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-09-22T14:42:05-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-27T08:46:40-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="API Error codes">
 <meta itemprop="description" content="This article provides information about the error codes you may find when using the Payouts integration.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-09-22T14:42:05-05:00" />
-<meta itemprop="wordCount" content="118">
+<meta itemprop="dateModified" content="2023-09-27T08:46:40-05:00" />
+<meta itemprop="wordCount" content="150">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API Error codes"/>
 <meta name="twitter:description" content="This article provides information about the error codes you may find when using the Payouts integration.
@@ -144,7 +144,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.536bcd04187741347da3c20b3eba6b3b0f2567c4adc5abad1111839598f2b08c9af1174f2486ebf80f7ee8a476fb37f1b97d6f4f0bc57c5210698f0b411da65b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c42637f303c3c04b49606981c3137db164bab52219723206f6db0a97eb204858a06ae6e458752955b9af950feeef525b262ec51f15a8b1388c385ac08fde9a78.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -267,6 +267,12 @@
       
       
         <a id="/en/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolereportshtml" href="../../../en/payouts/payouts-merchant-console/reports.html">Payout Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consoleexpresshtml" href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
       
       
       
@@ -414,96 +420,119 @@
 <thead>
 <tr>
 <th>Error code</th>
+<th>Category</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>200</code></td>
+<td>Response codes</td>
 <td>Success.</td>
 </tr>
 <tr>
 <td><code>400</code></td>
+<td>Response codes</td>
 <td>Bad Request.</td>
 </tr>
 <tr>
 <td><code>401</code></td>
+<td>Response codes</td>
 <td>Unauthorized.</td>
 </tr>
 <tr>
 <td><code>409</code></td>
+<td>Response codes</td>
 <td>Conflict.</td>
 </tr>
 <tr>
 <td><code>812</code></td>
+<td>API Validation</td>
 <td>Declined by validation for document.</td>
 </tr>
 <tr>
 <td><code>813</code></td>
+<td>API Validation</td>
 <td>Declined by validation for account.</td>
 </tr>
 <tr>
 <td><code>814</code></td>
+<td>API Validation</td>
 <td>Declined by validation for country.</td>
 </tr>
 <tr>
 <td><code>815</code></td>
+<td>API Validation</td>
 <td>Declined by Compliance.</td>
 </tr>
 <tr>
 <td><code>816</code></td>
-<td>Reference ID already used.<br>This error is not be displayed in the <a href="../../../payouts/payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
+<td>API Validation</td>
+<td>Reference ID already used.<br>This error is not be displayed in the <a href="../payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
 </tr>
 <tr>
 <td><code>901</code></td>
+<td>Rejections</td>
 <td>Bank account is closed.</td>
 </tr>
 <tr>
 <td><code>902</code></td>
+<td>Rejections</td>
 <td>Invalid bank account.</td>
 </tr>
 <tr>
 <td><code>903</code></td>
+<td>Rejections</td>
 <td>Invalid bank account type.</td>
 </tr>
 <tr>
 <td><code>904</code></td>
+<td>Rejections</td>
 <td>Invalid bank branch.</td>
 </tr>
 <tr>
 <td><code>905</code></td>
+<td>Rejections</td>
 <td>Monthly limit exceeded for user.</td>
 </tr>
 <tr>
 <td><code>906</code></td>
+<td>Rejections</td>
 <td>Rejected by merchant&rsquo;s request.</td>
 </tr>
 <tr>
 <td><code>907</code></td>
+<td>Rejections</td>
 <td>The bank account is unable to receive transfers.</td>
 </tr>
 <tr>
 <td><code>908</code></td>
+<td>Rejections</td>
 <td>Invalid beneficiary document.</td>
 </tr>
 <tr>
 <td><code>909</code></td>
+<td>Rejections</td>
 <td>Beneficiary name doesn&rsquo;t match bank details.</td>
 </tr>
 <tr>
 <td><code>910</code></td>
+<td>Rejections</td>
 <td>PIX key invalid.</td>
 </tr>
 <tr>
 <td><code>911</code></td>
+<td>Rejections</td>
 <td>Invalid state change requested.</td>
 </tr>
 <tr>
 <td><code>912</code></td>
+<td>Rejections</td>
 <td>Insufficient Balance.</td>
 </tr>
 <tr>
 <td><code>999</code></td>
+<td>Rejections</td>
 <td>Error.</td>
 </tr>
 </tbody>
@@ -516,9 +545,9 @@
 <br>
 <b>Last modified</b>
 
-September 22, 2023: 
+September 27, 2023: 
 
- <i>Grammar improvements (6950b6d)</i>
+ <i>New Payouts Express feature (045fd04)</i>
   </div>
 </div>
 
