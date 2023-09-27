@@ -4,7 +4,7 @@ linkTitle: "Payouts exprés"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
+ Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 weight: 20
 ---
 
@@ -13,12 +13,12 @@ Para acceder a la funcionalidad de _**Payouts exprés**_, abra su consola de Com
 ![PrintScreen](/assets/Payouts/Payouts13_es.png)
 
 ## Beneficios {#benefits}
-* Configuración instantánea.
+* Configuración instantánea sin necesidad de integrarse mediante API.
 * Rapidez y flexibilidad gracias a la carga por lotes.
 * Centralice sus Payouts con mínimo esfuerzo.
 
 ## ¿Cómo utilizar Payouts exprés? {#how-to-use-express-payouts}
-_**Payouts exprés**_ le brinda una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultánea. Una vez complete un paso, la secuencia activa el siguiente para evitar errores.
+_**Payouts exprés**_ le brinda una secuencia fácil de llevar que le permite crear uno o más Payouts de forma simultánea. Una vez completado un paso, la secuencia activa el siguiente para evitar errores.
 
 A continuación, describimos cada paso y le damos instrucciones.
 
@@ -90,4 +90,4 @@ Consulte la última columna en el archivo para saber el error del Payout.
 
 Luego de corregir el error, guarde el archivo y cárguelo nuevamente utilizando la opción en el [paso 3](#step3).
 
-Independiente de si el Payout fue exitoso, puede consultarlo en el [Reporte de Payouts]({{< ref Reports.md>}}). Los Payouts exitosos tienen el estado _Pendiente_ mientras que los fallidos, tienen el estado _Rechazado_.
+Independiente de si el Payout fue exitoso, puede consultarlo en el [Reporte de Payouts]({{< ref Reports.md>}}). Los Payouts exitosos tienen el estado _Pendiente_ mientras que los fallidos, tienen el estado _Declinado_.
