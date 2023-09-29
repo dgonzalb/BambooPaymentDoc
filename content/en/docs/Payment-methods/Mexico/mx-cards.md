@@ -7,11 +7,56 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
-When using cards, the payer must be redirected to the card capture page to complete the payment.
+You can create the purchase using [API](#card-payments-using-api-flow) or [Redirection](#card-payments-using-redirection-flow) flow.
+
+## Card payments using API flow
+Using this flow, you can offer the possibility to receive payments using cards without the intervention of the payer.
+
+### Request parameters
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `Customer` → `FirstName` | `string` | No | Customer's first name. |
+| `Customer` → `LastName` | `string` | No | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/chile.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+
+{{% alert title="Info" color="info"%}}
+
+Remember that for the Anti-fraud system's correct functioning, we suggest sending additional data described in the section [Anti-fraud]({{< ref Antifraud.md>}}).
+
+{{% /alert %}}
+
+#### Request example
+```json
+
+```
+
+### Response parameters
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+
+#### Response example
+
+```json
+
+```
+
+## Card payments using Redirection flow
+Using this flow, the payer must be redirected to the _**Openpay**_ page to complete the payment according to the selected payment method (debit, credit or prepaid card).
 
 The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
 
-## Request parameters
+### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
@@ -42,7 +87,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 {{% /alert %}}
 
-### Request example
+#### Request example
 ```json
 {
     "PaymentMediaId": 111,
@@ -71,14 +116,14 @@ You need to include specific fields for this payment method to work correctly. C
 }
 ```
 
-## Response parameters
+### Response parameters
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment on the card capture.
 
 ![PrintScreen](/assets/OpenPayCards.png)
 
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
 
-### Response example
+#### Response example
 
 ```json
 {
@@ -219,7 +264,7 @@ For more information on the response parameters, please refer to the [Response p
 ```
 
 ## Testing cards
-Use the following cards to simulate the different status of the purchase.
+Use the following cards to simulate the different status of the purchase. These cards apply for both API and redirection flow.
 
 | Brand | PAN | CVV | Expiration Date |
 |---|---|---|---|
