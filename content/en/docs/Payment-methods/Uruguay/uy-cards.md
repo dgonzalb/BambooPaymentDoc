@@ -8,6 +8,10 @@ weight: 10
 tags: ["subtopic"]
 ---
 
+{{% alert title="Info" color="info"%}}
+The Request and Response shown in this article apply to both the [Gateway]({{< ref Concepts.md >}}#gateway-model) and [Payfac]({{< ref Concepts.md >}}#payfac-model) models. For the Getway model, take into account the recommendations shown in [this section](#considerations).
+{{% /alert %}}
+
 ## Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Request parameters]({{< ref purchase-operations.md >}}#request-parameters) section for details on basic purchase parameters such as amount and currency.
 
@@ -32,8 +36,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Address Detail of the Shipping Address. | 
 | `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Postal Code of the Shipping Address. |
 | `CustomerIP` | `string` | No | IP of the customer that uses the service. |
-| `DataUY` | `object` | Yes | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage. |
-| `DataUY` → `IsFinalConsumer` | `boolean` | Yes | Indicates if the sale is performed to a final consumer. |
+| `DataUY` | `object` | No | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage.<br>This parameter is required for the Gateway model. |
+| `DataUY` → `IsFinalConsumer` | `boolean` | No | Indicates if the sale is performed to a final consumer.<br>This parameter is required for the Gateway model. |
 | `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Invoice number associated with the sale. |
 | `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Amount taxed by VAT. |
 
@@ -46,102 +50,31 @@ You need to include specific fields for this payment method to work correctly. C
 ### Request example
 ```json
 {
-  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
-  "Order": "099927564",
-  "Capture": true,
-  "Amount": 10000,
-  "Currency": "UYU",
-  "TargetCountryISO": "UY",
-  "Tip": 0,
-  "Customer": {
-    "BillingAddress": {
-      "Country": "Uruguay",
-      "City": "Montevideo",
-      "State": "Montevideo",
-      "PostalCode": "150000",
-      "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-    },
-    "ShippingAddress": {
-      "Country": "Uruguay",
-      "City": "Montevideo",
-      "State": "Montevideo",
-      "PostalCode": "150000",
-      "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-    },
-    "DocumentTypeId": 2,
-    "DocNumber": "31130749",
-    "PhoneNumber": "093000000",
-    "FirstName": "Rodrigo",
-    "LastName": "Serrano",
-    "Email": "rserrano@mail.com"
-  },
-  "DataUY": {
-    "IsFinalConsumer": "false",
-    "Invoice": "1234567",
-    "TaxableAmount": 900
-  }
-}
-```
-
-### Considerations
-* You can make purchases in installments as long as the Issuing Bank has it enabled.
-* You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
-* **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
-* **FirstData** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute   [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **FirstData** and notify us.
-* **Creditel** and **PassCard** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
-* **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
-* When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
-
-#### Purchases using MasterCard through OCA
-When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.
-
-Add this function to the script used for the checkout form (`PWCheckOut`) to generate and return the value used in the purchases.
-
-In this example, we show how to invoke and obtain the result.
-
-```html
-<script type="text/javascript">
-    PWCheckout.SetDeviceFingerprint();
-</script>
-```
-<br>
-
-Then, include the token in the purchase creation according to the following scenarios.
-
-* For _**OneTimeToken**_, send the device FingerPrint you generate and the **OT token**.
-* For _**CommerceToken**_, there are two cases:
-  * For Recurring purchases (Without CVV), send the device FingerPrint you generate and the **CT token**. You can use an existing **CT token** or generate one.
-  * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV, the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
-
-## Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
-
-### Response example
-
-```json
-{
   "Response": {
-    "PurchaseId": 1130954,
-    "Created": "2023-08-15T19:42:36.873",
-    "Order": "099927564",
+    "PurchaseId": 1248284,
+    "Created": "2023-09-29T15:34:10.012",
+    "TrxToken": null,
+    "Order": "20201229",
     "Transaction": {
-      "TransactionID": 1148827,
-      "Created": "2023-08-15T19:42:36.873",
-      "AuthorizationDate": "2023-08-15T19:42:37.443",
+      "TransactionID": 1267112,
+      "Created": "2023-09-29T15:34:10.012",
+      "AuthorizationDate": "",
       "TransactionStatusId": 1,
       "Status": "Approved",
-      "Description": "0 00",
-      "ApprovalCode": "622810",
+      "ErrorCode": "0",
+      "Description": "",
+      "ApprovalCode": null,
       "Steps": [
         {
-          "Step": "FirstData Authorization with CVV",
-          "Created": "2023-08-15T19:42:37.433",
-          "Status": "Authorization OK",
-          "ResponseCode": "0",
-          "ResponseMessage": "00",
-          "Error": "",
-          "AuthorizationCode": "622810",
-          "AcquirerResponseDetail": "{ 'PrimaryResponseCode' : '0', 'SecondaryResponseCode' : '0', 'ISO8583Code' : '00' }"
+          "Step": "Generic External",
+          "Created": "",
+          "Status": null,
+          "ResponseCode": "00",
+          "ResponseMessage": "Authorization - Function performed error-free",
+          "Error": "0",
+          "AuthorizationCode": "586316",
+          "UniqueID": null,
+          "AcquirerResponseDetail": "{\"TransactionResult\":\"APPROVED\",\"ProcessorResponseCode\":\"00\",\"ProcessorResponseMessage\":\"Function performed error-free\",\"ApprovalCode\":\"Y:586316:4637904926:PPXX:5863160734\",\"OrderId\":\"A-79d7a01b-5b36-4326-b872-82c29f196ec0\",\"IpgTransactionId\":\"84637904926\",\"ProcessorApprovalCode\":\"586316\",\"ProcessorReceiptNumber\":\"0734\",\"ProcessorBatchNumber\":\"001\",\"ProcessorReferenceNumber\":\"586316586316\",\"ProcessorTraceNumber\":\"586316\"}"
         }
       ]
     },
@@ -151,71 +84,104 @@ For more information on the response parameters, please refer to the [Response p
     "TaxableAmount": 0,
     "Tip": 0,
     "Installments": 1,
-    "Currency": "UYU",
+    "Currency": "USD",
+    "Description": null,
     "Customer": {
-      "CustomerId": 248693,
-      "Created": "2023-08-15T19:42:27.413",
+      "CustomerId": 254952,
+      "Created": "2023-09-29T15:34:05.713",
+      "CommerceCustomerId": null,
       "Owner": "Anonymous",
-      "Email": "jmartinezq@mail.com",
+      "Email": "rserrano@mail.com",
       "Enabled": true,
-      "ShippingAddress": {
-        "AddressId": 0,
-        "AddressType": 1,
-        "Country": "Uruguay",
-        "State": "Montevideo",
-        "AddressDetail": "Calle falsa 4567/Depto/Provincia",
-        "PostalCode": "150000",
-        "City": "Montevideo"
-      },
+      "ShippingAddress": null,
       "BillingAddress": {
-        "AddressId": 372731,
+        "AddressId": 377785,
         "AddressType": 2,
         "Country": "Uruguay",
+        "City": "Montevideo",
         "State": "Montevideo",
-        "AddressDetail": "Calle falsa 4567/Depto/Provincia",
         "PostalCode": "150000",
-        "City": "Montevideo"
+        "AddressDetail": "Calle falsa 4567/Depto/Provincia"
       },
+      "Plans": null,
+      "AdditionalData": null,
       "PaymentProfiles": [
         {
-          "PaymentProfileId": 253353,
+          "PaymentProfileId": 259793,
           "PaymentMediaId": 2,
-          "Created": "2023-08-15T19:42:27.413",
+          "Created": "2023-09-29T15:34:05.713",
+          "LastUpdate": null,
           "Brand": "MasterCard",
-          "CardOwner": "Rodrigo Serrano",
-          "Bin": "550799",
+          "CardOwner": "Diego Tobler",
+          "Bin": null,
+          "IssuerBank": null,
+          "Installments": null,
           "Type": "CreditCard",
           "IdCommerceToken": 0,
-          "Expiration": "202605",
-          "Last4": "0001"
+          "Token": null,
+          "Expiration": "202912",
+          "Last4": "0008",
+          "Enabled": null,
+          "DocumentNumber": null,
+          "DocumentTypeId": null,
+          "ExternalValue": null,
+          "AffinityGroup": null
         }
       ],
-      "URL": "https://api.stage.bamboopayment.com/Customer/248693",
+      "CaptureURL": null,
+      "UniqueID": null,
+      "URL": "https://api.stage.bamboopayment.com/Customer/254952",
       "FirstName": "Rodrigo",
       "LastName": "Serrano",
-      "DocNumber": "31130749",
+      "DocNumber": "47666489",
       "DocumentTypeId": 2,
-      "PhoneNumber": "093000000"
+      "PhoneNumber": "0930000111",
+      "ExternalValue": null
     },
-    "URL": "https://api.stage.bamboopayment.com/Purchase/1130954",
+    "RefundList": null,
+    "PlanID": null,
+    "UniqueID": null,
+    "AdditionalData": null,
+    "CustomerUserAgent": null,
+    "CustomerIP": null,
+    "URL": "https://api.stage.bamboopayment.com/Purchase/1248284",
     "DataUY": {
       "IsFinalConsumer": false,
-      "Invoice": "1234567",
-      "TaxableAmount": 900
+      "Invoice": null,
+      "TaxableAmount": 0
+    },
+    "DataDO": {
+      "Invoice": null,
+      "Tax": 0
     },
     "Acquirer": {
-      "AcquirerID": 1,
-      "Name": "FirstData"
+      "AcquirerID": 73,
+      "Name": "FiservIPG",
+      "CommerceNumber": null
     },
-    "PurchasePaymentProfileId": 253353,
+    "CommerceAction": null,
+    "PurchasePaymentProfileId": 259793,
+    "LoyaltyPlan": null,
+    "DeviceFingerprintId": null,
+    "MetadataIn": null,
+    "MetadataOut": null,
+    "CrossBorderData": null,
+    "CrossBorderDataResponse": null,
+    "Redirection": null,
     "IsFirstRecurrentPurchase": false,
-    "AntifraudData": {},
-    "PurchaseType": 1
+    "AntifraudData": {
+      "AntifraudFingerprintId": null,
+      "AntifraudMetadataIn": null
+    },
+    "PaymentMediaId": null,
+    "PurchaseType": 1,
+    "HasCvv": null,
+    "TargetCountryISO": null
   },
   "Errors": []
 }
 ```
-
+<!--
 ### Response for AMEX
 When using AMEX, the response includes the object `AcquirerResponseDetail` inside the `Response.Transaction.Steps` object with the following information.
 
@@ -246,12 +212,13 @@ Example:
   "Errors": []
 }
 ```
+-->
 
 ## Testing cards
 When generating valid card data for testing, you must first establish which acquirer you want to test and what type of test you want to perform.
 
 ### Determination of BIN
-When setting up an acquirer, the card's BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with the FirstData acquirer (which is a local MasterCard acquirer in Uruguay), the BIN of the generated card should adhere to the following format: `^ 5 \ [1-5] \ [0-9]*`
+When setting up an acquirer, the card's BIN (Bank Identification Number) is also created.  This BIN should align with one of the BINs associated with the brands processed by the acquirer. For instance, if you are conducting an integration test with MasterCard, the BIN of the generated card should adhere to the following format: `^ 5 \ [1-5] \ [0-9]*`
 
 This format means it must start with the number **5**; the second number must be between 1 and 5, then any other number is accepted. For example, the BIN to test can be `510000`. The valid Bines in the system and their related acquirer are listed below.
 
@@ -260,7 +227,7 @@ This format means it must start with the number **5**; the second number must be
 | `^4\[0-9]*` | VISA | Any card that starts with `4`. |
 | `^5\[1-5]\[0-9]*`| MasterCard | Any card that starts with `51` through `5`. |
 | `^589892\|^542991`| OCA | Any card that starts with `589892` or `542991`. |
-| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
+<!--| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
 | `^601828` | Créditos Directos | Any card that starts with `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Any card that starts with `3` followed by `4` or `7`. |
 | `^628026` | Passcard | Any card that starts with `628026`. |
@@ -274,11 +241,26 @@ This format means it must start with the number **5**; the second number must be
 | `^603199` | Anda | Any card that starts with `603199`. |
 | `^606211` | Hipercard | Any card that starts with `606211`. |
 | `^636297` | Elo | Any card that starts with `636297`. |
-| `^507860` | Aura | Any card that starts with `507860`. |
+| `^507860` | Aura | Any card that starts with `507860`. |-->
 
 ### Configured Behaviors
+The behavior of the response will depend on the amount sent. Use the following cards to simulate the different purchase statuses∫.
 
-{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
+| Brand | PAN | CVV | Expiration Date |
+|---|---|---|---|
+| Mastercard | `5165850000000008` | `123` | `12/29` | 
+| Visa | `4704550000000005` | `123` | `12/29` |
+
+<div id="shortTable"></div>
+
+| Behavior | Amount |
+|---|---|
+| Result: Rejected <br> Error: The card can't operate with installments. | **UYU** 1045,00  |
+| Result: Rejected <br> Error: Expired card. | **UYU** 1046,00  |
+| Result: Rejected <br> Error: Insufficient funds. | **UYU** 1051,00  |
+| Result: OK <br> Approved | <ul style="margin-bottom: initial;"><li>Less than or equal to **UYU** 1000,00</li><li>Greater than **UYU** 1061,00</li></ul> |
+
+<!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -421,4 +403,34 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 {{< /tab >}}
 
-{{< /tabs >}}
+{{< /tabs >}}-->
+
+### Special features for the Gateway model {#considerations}
+* You can make purchases in installments as long as the Issuing Bank has it enabled.
+* You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
+* **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
+* **Fiserv** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **Fiserv** and notify us.
+* **Creditel** and **PassCard** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
+* **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
+* When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
+
+#### Purchases using MasterCard through OCA
+When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.
+
+Add this function to the script used for the checkout form (`PWCheckOut`) to generate and return the value used in the purchases.
+
+In this example, we show how to invoke and obtain the result.
+
+```html
+<script type="text/javascript">
+    PWCheckout.SetDeviceFingerprint();
+</script>
+```
+<br>
+
+Then, include the token in the purchase creation according to the following scenarios.
+
+* For _**OneTimeToken**_, send the device FingerPrint you generate and the **OT token**.
+* For _**CommerceToken**_, there are two cases:
+  * For Recurring purchases (Without CVV), send the device FingerPrint you generate and the **CT token**. You can use an existing **CT token** or generate one.
+  * For Purchases with CVV, generating a `DeviceFingerPrint` is unnecessary since when the customer enters the CVV, the system sends the value generated when displaying the CVV request page. Then, the system generates a Purchase in the _Pending_ state, and you need to redirect the customer to the URL returned in the `actionUrl` parameter where they enter the CVV.
