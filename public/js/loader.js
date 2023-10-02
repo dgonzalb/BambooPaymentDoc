@@ -36,6 +36,11 @@ function onPage404Load() {
     }
 }
 
+function onHomePageLoad() {
+    loadIcons();
+    document.querySelector('h1').style.display = 'none';
+}
+
 function loadIcons() {
     var head = document.head || document.getElementsByTagName('head')[0];
 
