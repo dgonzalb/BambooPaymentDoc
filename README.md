@@ -1,3 +1,8 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; URL='https://docs.bamboopayment.com/public'" />
+</head>
+
 <script src="../js/loader.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", onHomePageLoad);
@@ -7,18 +12,18 @@
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
    <a class="navbar-brand" href="#">
-   <span class="navbar-logo"><img src="/devBambooPaymentDoc/assets/BambooPayment.svg" style="height: 36px;"></span>
+   <span class="navbar-logo"><img src="/public/assets/BambooPayment.svg" style="height: 36px;"></span>
    </a>
    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
       <ul class="navbar-nav mt-2 mt-lg-0">
          <li class="nav-item mr-4 mb-2 mb-lg-0">
-            <a class="nav-link active" href="/devBambooPaymentDoc/en/docs.html">
+            <a class="nav-link active" href="/public/en/docs.html">
                <span class="active">Payins</span>
                <div class="content-bar-menu2"></div>
             </a>
          </li>
          <li class="nav-item mr-4 mb-2 mb-lg-0">
-            <a class="nav-link" href="/devBambooPaymentDoc/en/payouts.html">
+            <a class="nav-link" href="/public/en/payouts.html">
                <span>Payouts</span>
                <div class="content-bar-menu2"></div>
             </a>
