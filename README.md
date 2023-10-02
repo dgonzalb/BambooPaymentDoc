@@ -3,7 +3,7 @@
     <meta http-equiv="refresh" content="0; URL='https://docs.bamboopayment.com/public'" />
 </head>
 
-<script src="../js/loader.js"></script>
+<script src="../public/js/loader.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", onHomePageLoad);
 </script>
