@@ -24,8 +24,10 @@ This section shows the available payment methods, currencies, and related inform
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /> | 14 | MasterCard Prepago | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Prepaid Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | 26 | PagoEfectivo Perú  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
 
-## Refund information
-
+### Considerations
+* For **Visa** and **MasterCard**, the acquirer performs a void operation if you request a refund on the same day before 0:00. You can only process refunds for transactions that occurred more than 48 hours after the settlement.
+* You can request refunds for **UnionPay**, **Diners**, and **Amex** by contacting support. Refunds for **Amex** apply for transactions up to six months old and three months for **Diners**.
+* You can perform zero authorization transactions to register or validate cards for **Visa** and **MasterCard**.
 
 ## Currencies
 
