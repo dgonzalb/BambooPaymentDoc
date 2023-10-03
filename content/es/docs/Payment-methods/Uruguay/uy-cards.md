@@ -55,9 +55,7 @@ Se necesita incluir campos específicos para que este método de pago funcione c
   "Order": "20201229",
   "Amount": "10000",
   "Currency": "USD",
-  "CrossBorderData": {
-    "TargetCountryISO": "UY"
-  },
+  "TargetCountryISO": "UY",
   "Installments": 1,
   "Customer": {
     "BillingAddress": {
@@ -146,7 +144,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
           "Created": "2023-09-29T15:34:05.713",
           "LastUpdate": null,
           "Brand": "MasterCard",
-          "CardOwner": "Diego Tobler",
+          "CardOwner": "Rodrigo Serrano",
           "Bin": null,
           "IssuerBank": null,
           "Installments": null,
