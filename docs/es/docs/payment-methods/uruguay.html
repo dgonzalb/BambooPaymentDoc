@@ -37,12 +37,11 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
-<link href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.36844e4300b3e8bb015a706733efa05d879646d16f746046253f0a57fcd3defa.css" as="style">
+<link href="../../../scss/main.min.36844e4300b3e8bb015a706733efa05d879646d16f746046253f0a57fcd3defa.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link href="../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -140,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4266f15b2b7a124fb80c23599e0290c17ae66650c12afb0305a4b3eb531619895a0b17e84b7b0283c1f9e1152e7844afacacca08e1a7a48ed2623bd51830301f.json"
+  data-offline-search-index-json-src="../../../offline-search-index.06d8911c27ed974b97e90eecc2927985c9d4bcc165fb8b0a802cbcf47b9048884a6a70c42898feafeefd8d04abf4c94daf2749cf2dd333269cbe75ed005ca0fa.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -527,7 +526,7 @@
       
       
       
-        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito y débito</a>
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
       
       
       
@@ -774,6 +773,12 @@
       
       
       
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
         <a id="/es/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
       
       
@@ -868,7 +873,12 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#payment-methods">Medios de pago</a></li>
+    <li><a href="#payment-methods">Medios de pago</a>
+      <ul>
+        <li><a href="#gateway-model">Modelo Gateway</a></li>
+        <li><a href="#payfac-model">Modelo PayFac</a></li>
+      </ul>
+    </li>
     <li><a href="#currencies">Monedas</a></li>
     <li><a href="#amount-limits">Límites de montos</a></li>
     <li><a href="#document-types">Tipos de documentos</a></li>
@@ -924,6 +934,7 @@
 	
 	<p>Esta sección muestra  los medios de pago disponibles, monedas y la información relacionada que debe considerar cuando procese en <em>Uruguay</em>.</p>
 <h2 id="payment-methods">Medios de pago</h2>
+<h3 id="gateway-model">Modelo Gateway</h3>
 <table>
 <thead>
 <tr>
@@ -966,7 +977,7 @@
 <td style="text-align:center">3</td>
 <td>American Express</td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
 <td>Tarjeta de crédito</td>
@@ -1010,7 +1021,7 @@
 <td style="text-align:center">7</td>
 <td>Visa Prepago</td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Tarjeta de crédito prepago</td>
@@ -1116,14 +1127,131 @@
 <td>API</td>
 </tr>
 <tr>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">101</td>
+<td>E-Brou</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Transferencia Bancaria</td>
+<td>Redirect</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">102</td>
+<td>Santander</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Transferencia Bancaria</td>
+<td>Redirect</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">104</td>
+<td>Scotiabank</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Transferencia Bancaria</td>
+<td>Redirect</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">105</td>
+<td>Itau</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Transferencia Bancaria</td>
+<td>Redirect</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payfac-model">Modelo PayFac</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Payment MediaId</th>
+<th>Medio de pago</th>
+<th style="text-align:center">Compra</th>
+<th style="text-align:center">Preautorización</th>
+<th style="text-align:center">Reembolso total</th>
+<th style="text-align:center">Reembolso parcial</th>
+<th>Tipo</th>
+<th>Flujo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">1</td>
+<td>VISA</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">2</td>
+<td>Mastercard</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">6</td>
+<td>Visa Débito</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta Débito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">7</td>
+<td>Visa Prepago</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito prepago</td>
+<td>API</td>
+</tr>
+<tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">65</td>
-<td>Red Pagos Payfac</td>
+<td style="text-align:center">10</td>
+<td>RedPagos</td>
 <td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
 <td>Efectivo</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png"  style="min-width: 40px;" /></td>
+<td style="text-align:center">14</td>
+<td>MasterCard <br>Prepago</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito</td>
 <td>API</td>
 </tr>
 <tr>
@@ -1246,6 +1374,7 @@
 </table>
 <h2 id="issuer-banks-table">Tabla de bancos emisores</h2>
 <p>La siguiente tabla muestra el listado de bancos emisores configurados.</p>
+<div id="shortTable"></div>
 <table>
 <thead>
 <tr>
@@ -1313,6 +1442,8 @@
     
     
     
+        
+            
         
             
         
@@ -1452,9 +1583,9 @@
 <br>
 <b>Última modificación</b>
 
-18 de septiembre de 2023: 
+29 de septiembre de 2023: 
 
- <i>Traducciones al español (3c370bb)</i>
+ <i>Actualizaciones para los modelos Gateway y PayFac en Uruguay (1a460da)</i>
   </div>
 </div>
 
