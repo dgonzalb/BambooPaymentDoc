@@ -3,7 +3,7 @@ title: "Payment methods"
 linkTitle: "Payment methods"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Rely on our payment methods according to your country & needs.
+  Rely on our payment methods according to your country and needs.
 weight: 30
 ---
 
@@ -45,8 +45,10 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png"  width="52" style="" />| Khipu | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png" width="52" style="" />| Klap Efectivo | Cash Payment | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Credit & Debit Card | API & Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit & Debit Card | API & Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Credit, Debit & Prepaid Card | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit, Debit & Prepaid Card | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API |
 
 ## Colombia
