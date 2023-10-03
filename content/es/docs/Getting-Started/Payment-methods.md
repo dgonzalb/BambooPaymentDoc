@@ -16,13 +16,10 @@ weight: 30
 
 | | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> |  MasterCard | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito, débito y prepago | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> |  MasterCard | Tarjeta de crédito, débito y prepago  | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Debit | Tarjeta débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Prepaid | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/11_passcard_3.png" width="52" style="" /> | PassCard | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | MasterCard Prepaid | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/17_cabal.png" width="52" style="" /> | Cabal | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" width="52" style="" />| Pago Fácil | Pago en efectivo | API |
@@ -48,10 +45,8 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png"  width="52" style="" />| Khipu | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png" width="52" style="" />| Klap Efectivo | Pago en efectivo | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Tarjeta débito | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta débito | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | Tarjeta débito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta débito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |
 
 ## Colombia
@@ -59,7 +54,7 @@ weight: 30
 | | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | API | Tarjeta de crédito y débito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" style="" /> | Apostar | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" style="" /> | Bancolombia | Pago en efectivo | API
@@ -113,10 +108,9 @@ weight: 30
 
 | | Payment Method | Tipo | Flow
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa |  Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa |  Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard |  Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Tarjeta de crédito y débito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Debit |  Tarjeta débito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Bancard_CreditCard.png" width="52" style="" /> | Bancard Check |  Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Credifielco_CreditCard.png" width="52" style="" /> | Credifielco |  Tarjeta de crédito | API
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/InfoNet_DebitCard.png" width="52" style="" /> | Infonet |  Tarjeta débito | API |
@@ -126,29 +120,25 @@ weight: 30
 
 |  | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Pago en efectivo y Transferencia bancaria | API |
 
 ## Uruguay
 
 |  | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito, débito y prepago| API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito, débito y prepago | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png" width="52" style="" /> | OCA | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png" width="52" style="" /> | Abitab | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Débito | Tarjeta débito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa Prepago | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png" width="52" style="" />  | Creditel | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CreditosDirectos_CreditCard.png" width="52" style="" /> | Créditos Directos | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" width="52" style="" /> | RedPagos | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Passcard_CreditCard.png" width="52" style="" /> | PassCard | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | MasterCard Prepago | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Lider_CreditCard.png" width="52" style="" /> | Líder | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/ClubDelEste_CreditCard.png" width="52" style="" /> | Club del Este | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Cabal_CreditCard.png" alt="master" width="52" style="" /> | Cabal | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Anda_CreditCard.png" alt="anda" width="52" style="" /> | Anda | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" alt="redpagos" width="52" style="" /> | Red Pagos Payfac | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png" width="52" style="" /> | Abitab | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" width="52" style="" /> | RedPagos | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | E-Brou | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | Santander | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | Scotiabank | Transferencia Bancaria | Redirect |
