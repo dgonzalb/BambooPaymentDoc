@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Payout balances | Bamboo Payment</title><meta property="og:title" content="Payout balances" />
+<meta property="og:description" content="The balance is the amount of money you have to process Payout transactions. We have three types of Balances in Bamboo Payout.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/payouts/overview/payout-balances.html" /><meta property="article:section" content="Payouts" />
+<meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
+<meta property="article:modified_time" content="2023-09-19T10:56:43-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Payout balances">
+<meta itemprop="description" content="The balance is the amount of money you have to process Payout transactions. We have three types of Balances in Bamboo Payout.
+"><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
+<meta itemprop="dateModified" content="2023-09-19T10:56:43-05:00" />
+<meta itemprop="wordCount" content="304">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Payout balances"/>
+<meta name="twitter:description" content="The balance is the amount of money you have to process Payout transactions. We have three types of Balances in Bamboo Payout.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" as="style">
+<link href="../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/overview/payout-balances.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.c73a7881b5ab2dac415d89ae169308760d16d4daa6962d862a7189c31ac1055585ecd42db6a3e840c3bdd1e90b068162ad46f812e23966e781c3de1a3a9a799e.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/overview/payout-balances.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts.html" href="../../../en/payouts.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/overview.html" href="../../../en/payouts/overview.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-concepts.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-conceptshtml" href="../../../en/payouts/overview/payout-concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-status.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-statushtml" href="../../../en/payouts/overview/payout-status.html">Payout status</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-balances.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-merchant-console.html" href="../../../en/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts console</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolereportshtml" href="../../../en/payouts/payouts-merchant-console/reports.html">Payout Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consoleexpresshtml" href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolebalanceshtml" href="../../../en/payouts/payouts-merchant-console/balances.html">Payout Balance report</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-api.html" href="../../../en/payouts/payouts-api.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../../en/payouts/payouts-api/using-payouts-api.html">Using Payouts API</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-webhookhtml" href="../../../en/payouts/payouts-api/payout-webhook.html">Notification Webhook</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apivariableshtml" href="../../../en/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-error-codeshtml" href="../../../en/payouts/payouts-api/payout-error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#balance-types">Balance types</a></li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#simplified-model---fee-assumed-by-you"><!--Simplified Model - f-->Fee assumed by you</a></li>
+        <li><a href="#simplified-model---fee-assumed-by-the-payee"><!--Simplified Model - f-->Fee assumed by the payee</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts/overview.html">Bamboo Payouts</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Payout balances</h1>
+    <div class="lead">The balance is the amount of money you have to process Payout transactions. We have three types of Balances in Bamboo Payout.</div>
+	       
+	<!-- , and you can see them in two models -->
+<p>We update the balances available according to the movements performed in your account, such as funds deposit or disbursement.</p>
+<h2 id="balance-types">Balance types</h2>
+<p>You can see the following balances in the Payouts console:</p>
+<ul>
+<li><strong>Total Balance</strong>: This amount corresponds to your account&rsquo;s total amount of money.</li>
+<li><strong>Processing Balance</strong>: This amount corresponds to all your requested disbursements in Payouts. The payout fee amount might be included, depending on the party responsible for the fee (either you or your payee)<!-- and the chosen [model](#balance-models)-->. Once all the Payouts have reached a terminal state (Paid or rejected), the value displayed here will be 0.</li>
+<li><strong>Available Balance</strong>: This corresponds to the amount of money you have to process more Payouts, which is the difference between the <em><strong>Total</strong></em> and <em><strong>Processing</strong></em> Balance.</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.</p>
+</div>
+
+<!--
+## Balance models
+The Bamboo Payouts feature offers you the possibility to see the three balance types in two models:
+
+* **Simplified Model**: a single balance for Payouts.<br>
+In this case, Bamboo deducts the payout amount and the fee charged from your global balance..
+
+![](/assets/Payouts/Payouts3_en.png)
+
+* **Detailed Model**: one Balance for Payouts and one for fees.<br>
+In this case, you have two Balances, one to remove the net amounts from the Payout and another to deduct the fees charged exclusively.
+
+![](/assets/Payouts/Payouts4_en.png)
+-->
+<h2 id="examples">Examples</h2>
+<p>Let&rsquo;s make an example to let you understand the concept<!--s--> of type <!--and model -->behind the Payout balances.</p>
+<p>Let&rsquo;s assume that you have the following information:</p>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Payout amount requested</td>
+<td>10 USD</td>
+</tr>
+<tr>
+<td>Fee</td>
+<td>2 USD</td>
+</tr>
+<tr>
+<td>Initial balance</td>
+<td>20 USD</td>
+</tr>
+</tbody>
+</table>
+<!--| Initial balance for the fee | 5 USD |-->
+<h3 id="simplified-model---fee-assumed-by-you"><!--Simplified Model - f-->Fee assumed by you</h3>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance when the payout is requested</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>20 USD</td>
+</tr>
+<tr>
+<td>Processing Balance<br><em>Payout amount requested + fee</em></td>
+<td>12 USD</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>8 USD</td>
+</tr>
+</tbody>
+</table>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance if the payout is paid</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>8 USD</td>
+</tr>
+<tr>
+<td>Processing Balance</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>8 USD</td>
+</tr>
+</tbody>
+</table>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance if the payout is rejected</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>18 USD</td>
+</tr>
+<tr>
+<td>Processing Balance</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>18 USD</td>
+</tr>
+</tbody>
+</table>
+<p><em>If the payout is rejected, the processing fee is not refunded.</em></p>
+<h3 id="simplified-model---fee-assumed-by-the-payee"><!--Simplified Model - f-->Fee assumed by the payee</h3>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance when the payout is requested</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>20 USD</td>
+</tr>
+<tr>
+<td>Processing Balance</td>
+<td>10 USD</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>10 USD</td>
+</tr>
+</tbody>
+</table>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance if the payout is paid</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>10 USD</td>
+</tr>
+<tr>
+<td>Processing Balance</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>10 USD</td>
+</tr>
+</tbody>
+</table>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th>Balance if the payout is rejected</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Balance</td>
+<td>20 USD</td>
+</tr>
+<tr>
+<td>Processing Balance</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Available Balance</td>
+<td>20 USD</td>
+</tr>
+</tbody>
+</table>
+<!--
+### Detailed Model - fee assumed by you
+**Balance when the payout is requested**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| 10 USD |
+| Available Balance | 10 USD |
+
+<div id="shortTable"></div>
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance | 2 USD |
+| Available Balance | 3 USD |
+
+**Balance if the payout is paid**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 10 USD |
+| Processing Balance| - |
+| Available Balance | 10 USD |
+
+| Balance for fee |  |
+<div id="shortTable"></div>
+
+|---|---|
+| Total Balance | 3 USD |
+| Processing Balance| - |
+| Available Balance | 3 USD |
+
+**Balance if the payout is rejected.**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| - |
+| Available Balance | 20 USD |
+
+<div id="shortTable"></div>
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 3 USD |
+| Processing Balance| - |
+| Available Balance | 3 USD |
+
+_If the payout is rejected, the processing fee is not refunded._
+
+### Detailed Model - fee assumed by the payee
+**Balance when the payout is requested**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| 10 USD |
+| Available Balance | 10 USD |
+
+<div id="shortTable"></div>
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+
+**Balance if the payout is paid**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 10 USD |
+| Processing Balance| - |
+| Available Balance | 10 USD |
+
+| Balance for fee |  |
+<div id="shortTable"></div>
+
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+
+**Balance if the payout is rejected.**
+<div id="shortTable"></div>
+
+| Balance for Payouts |  |
+|---|---|
+| Total Balance | 20 USD |
+| Processing Balance| - |
+| Available Balance | 20 USD |
+
+<div id="shortTable"></div>
+
+| Balance for fee |  |
+|---|---|
+| Total Balance | 5 USD |
+| Processing Balance| - |
+| Available Balance | 5 USD |
+-->
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+September 19, 2023: 
+
+ <i>Definitions updated for Balances and Status (f682aa4)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

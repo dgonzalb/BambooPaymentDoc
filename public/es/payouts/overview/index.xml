@@ -1,0 +1,412 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – Bamboo Payouts</title>
+    <link>/es/payouts/overview.html</link>
+    <description>Recent content in Bamboo Payouts on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 28 Mar 2023 08:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/payouts/overview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Payouts: Conceptos</title>
+      <link>/es/payouts/overview/payout-concepts.html</link>
+      <pubDate>Wed, 22 Mar 2023 15:30:03 -0500</pubDate>
+      
+      <guid>/es/payouts/overview/payout-concepts.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;payee&#34;&gt;Beneficiario&lt;/h2&gt;
+&lt;p&gt;Un &lt;em&gt;Beneficiario&lt;/em&gt; es un tercero que va recibir el dinero resultado de su solicitud de Payout. La información requerida para un &lt;em&gt;Beneficiario&lt;/em&gt; es su nombre, dirección de correo electrónico y cuenta bancaria.&lt;/p&gt;
+&lt;h2 id=&#34;banking-connections&#34;&gt;Conexiones bancarias&lt;/h2&gt;
+&lt;p&gt;La tecnología de &lt;em&gt;Conexiones bancarias&lt;/em&gt; nos permite enviar dinero a los beneficiarios sin importar el método de pago seleccionado.&lt;/p&gt;
+&lt;h2 id=&#34;payout&#34;&gt;Payout&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; se refiere a la dispersión de fondos a un tercero utilizando los fondos depositados en la cuenta del comercio.&lt;/p&gt;
+&lt;h2 id=&#34;balance&#34;&gt;Saldo&lt;/h2&gt;
+&lt;p&gt;El &lt;em&gt;Saldo&lt;/em&gt; es la cantidad de dinero depositada en su cuenta. Tenemos tres tipos de saldos diferentes para Payouts; consulte estos tipos &lt;a href=&#34;../../../es/payouts/overview/payout-balances.html&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;fx-service&#34;&gt;Servicio de FX&lt;/h2&gt;
+&lt;p&gt;El servicio de FX (en inglés, &lt;em&gt;Foreign Exchange&lt;/em&gt;) se refiere a la tasa actual para convertir una moneda de un país a otro. Nosotros actualizamos este valor de acuerdo con las regulaciones del país.&lt;/p&gt;
+&lt;h2 id=&#34;sanction-screening&#34;&gt;Sanction screening&lt;/h2&gt;
+&lt;p&gt;El proceso de &lt;em&gt;Sanction screening&lt;/em&gt; (evaluación de sanciones) nos permite saber si el comercio está haciendo pagos a personas sancionadas legalmente. Este proceso es esencial como control de Lucha contra el Lavado de Dinero (AML - Anti-Money Laundering) y de límites de Payouts.&lt;/p&gt;
+&lt;p&gt;El resultado de este proceso determina si el &lt;em&gt;Payout&lt;/em&gt; requiere una validación manual.&lt;/p&gt;
+&lt;h2 id=&#34;payout-fee&#34;&gt;Tasa del Payout&lt;/h2&gt;
+&lt;p&gt;La &lt;em&gt;Tasa del Payout&lt;/em&gt; se refiere al costo de procesamiento del &lt;a href=&#34;#payout&#34;&gt;Payout&lt;/a&gt;. Este costo puede ser asumido por usted (como pagador) o por el Beneficiario.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Payouts: Estados de los Payouts</title>
+      <link>/es/payouts/overview/payout-status.html</link>
+      <pubDate>Wed, 22 Mar 2023 15:30:03 -0500</pubDate>
+      
+      <guid>/es/payouts/overview/payout-status.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;El siguiente diagrama representa los estados de un Payout:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts2_es.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Recibido&lt;/strong&gt;: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la &lt;a href=&#34;../payouts-api.html&#34;&gt;API de Payouts&lt;/a&gt;.&lt;br&gt;Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Validado&lt;/strong&gt;: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Held&lt;/strong&gt;: Este estado indica que el Payout está en revisiñon manual de nuestro lado debido a las validaciones realizadas en el paso anterior. &lt;!--El ETC de este estado es de XX días hábiles.--&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pendiente&lt;/strong&gt;: Este estado indica que el Payout y el pagador ha complido todas las validaciones requeridas y está por ser enviado a la &lt;em&gt;Conexión bancaria&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Procesándose&lt;/strong&gt;: La &lt;em&gt;Conexión bancaria&lt;/em&gt; ha recibido el Payout; el tiempo antes de pasar al estado &lt;em&gt;&lt;strong&gt;Pagado&lt;/strong&gt;&lt;/em&gt; depende del país y el método de pago seleccionado.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pagado&lt;/strong&gt;: La &lt;em&gt;Conexión bancaria&lt;/em&gt; ha procesado el Payout y fue aprobado. En este estado, actualizamos su &lt;a href=&#34;../../../es/payouts/overview/payout-balances.html&#34;&gt;saldo&lt;/a&gt; con los valores de la transacción.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Rechazado&lt;/strong&gt;: La &lt;em&gt;Conexión bancaria&lt;/em&gt; ha procesado el Payout y no fue aprobado. En este estado, actualizamos su &lt;a href=&#34;../../../es/payouts/overview/payout-balances.html&#34;&gt;saldo&lt;/a&gt; con los valores de la transacción.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Declinado&lt;/strong&gt;: El payout fue rechazado debido a una validación de estructura o debido a razones internas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Payouts: Saldos de Payouts</title>
+      <link>/es/payouts/overview/payout-balances.html</link>
+      <pubDate>Wed, 22 Mar 2023 15:30:03 -0500</pubDate>
+      
+      <guid>/es/payouts/overview/payout-balances.html</guid>
+      <description>
+        
+        
+        &lt;!-- y los puede ver en dos modelos--&gt;
+&lt;p&gt;Nosotros actualizamos los saldos de acuerdo con los movimientos realizados en su cuenta como depósitos y dispersiones.&lt;/p&gt;
+&lt;h2 id=&#34;balance-types&#34;&gt;Tipos de saldos&lt;/h2&gt;
+&lt;p&gt;Usted puede ver los siguientes saldos en la consola de Payouts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Saldo Total&lt;/strong&gt;: Este monto corresponde al total de dinero de su cuenta.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Saldo para procesamiento&lt;/strong&gt;: Este monto corresponde a todos las disposiciones solicitadas en Payouts. El monto de la tasa del Payout puede estar incluída dependiendo de la parte que va a asumir la tasa (ya sea usted o el beneficiario)&lt;!-- y el [modelo](#balance-models) seleccionado--&gt;. Una vez todos los Payouts hayan llegado a un estado final (Pagado o rechazado), el valor mostrado acá será 0.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Saldo disponible&lt;/strong&gt;: Corresponde al monto de dinero que tiene disponible para procesar más Payouts, el cual es la diferencia entre el &lt;em&gt;&lt;strong&gt;Saldo Total&lt;/strong&gt;&lt;/em&gt; y el &lt;em&gt;&lt;strong&gt;Saldo para procesamiento&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Si el pagador asume la tasa, no se agrega la misma a ningún tipo de saldo.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!--
+## Modelos de los saldos {#balance-models}
+La funcionalidad de Payouts de Bamboo le ofrece la posibilidad de ver los tres tipos de saldos en dos modelos:
+
+* **Modelo Simplificado**: un saldo único para Payouts.&lt;br&gt;
+En este caso, Bamboo deduce el monto del pago y la tasa cobrada de su saldo global.
+
+![](/assets/Payouts/Payouts3_en.png)
+
+* **Modelo Detallado**: un saldo para Payouts y otro para tasas.&lt;br&gt;
+En este caso, tienes dos saldos, uno para deducir los montos netos del Payout y otro para deducir exclusivamente las tasas cobradas.
+
+![](/assets/Payouts/Payouts4_en.png)
+--&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Ejemplos&lt;/h2&gt;
+&lt;p&gt;Hagamos un ejemplo para que entienda el concepto de tipo &lt;!--y modelo --&gt;que hay detrás de los Saldos de pagos.&lt;/p&gt;
+&lt;p&gt;Supongamos que usted tiene la siguiente información:&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Monto del Payout solicitado&lt;/td&gt;
+&lt;td&gt;10 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tasa&lt;/td&gt;
+&lt;td&gt;2 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo inicial&lt;/td&gt;
+&lt;td&gt;20 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;!--| Saldo inicial para la tasa | 5 USD |--&gt;
+&lt;h3 id=&#34;simplified-model---fee-assumed-by-you&#34;&gt;&lt;!--Modelo Simplificado - c--&gt;tasa asumida por usted&lt;/h3&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo cuando el Payout es solicitado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;20 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;br&gt;&lt;em&gt;Monto del Payout solicitado + tasa&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;12 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;8 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo si el Payout fue pagado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;8 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;8 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo si el Payout fue rechazado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;18 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;18 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Si el Payout es rechazado, la tasa de procesamiento no se reembolsa.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;simplified-model---fee-assumed-by-the-payee&#34;&gt;&lt;!--Modelo Simplificado - c--&gt;tasa asumida por el beneficiario&lt;/h3&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo cuando el Payout es solicitado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;20 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;/td&gt;
+&lt;td&gt;10 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;10 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo si el Payout fue pagado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;10 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;10 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Saldo si el Payout fue rechazado&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo Total&lt;/td&gt;
+&lt;td&gt;20 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo para procesamiento&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponible&lt;/td&gt;
+&lt;td&gt;20 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;!--
+### Modelo Detallado - tasa asumida por usted {#detailed-model---fee-assumed-by-you}
+
+**Saldo cuando el Payout es solicitado**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| 10 USD |
+| Saldo disponible | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 5 USD |
+| Saldo para procesamiento | 2 USD |
+| Saldo disponible | 3 USD |
+
+**Saldo si el Payout fue pagado**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 10 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 3 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 3 USD |
+
+**Saldo si el Payout fue rechazado.**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 20 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 3 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 3 USD |
+
+_Si el Payout es rechazado, la tasa de procesamiento no se reembolsa._
+
+### Modelo Detallado - tasa asumida por el beneficiario {#detailed-model---fee-assumed-by-the-payee}
+**Saldo cuando el Payout es solicitado**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| 10 USD |
+| Saldo disponible | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
+
+**Saldo si el Payout fue pagado**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 10 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 10 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
+
+**Saldo si el Payout fue rechazado.**
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para Payouts |  |
+|---|---|
+| Saldo Total | 20 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 20 USD |
+
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+
+| Saldo para tasas |  |
+|---|---|
+| Saldo Total | 5 USD |
+| Saldo para procesamiento| - |
+| Saldo disponible | 5 USD |
+--&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
