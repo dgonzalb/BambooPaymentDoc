@@ -2,14 +2,17 @@ function onPage404Load() {
     loadIcons();
     document.querySelector('h1').style.display = 'none';
     const currentUrl = window.location.href;
-    if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {
-          var pathName = window.location.pathname.substring(1);
+    if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
+        var anchor = "";
+        var pathName = window.location.pathname.substring(1);
         var host = currentUrl.replace(pathName, "");
+        if(currentUrl.includes("#")) {
+            anchor = "#" + currentUrl.split("#")[1];
+            host = host.replace(anchor, "");
+        }
         var splitPathName = pathName.split("/");
         pathName = pathName.replace(splitPathName[0], "");
-          var newUrl = host+splitPathName[0]+"/en"+pathName;
-          console.log(currentUrl);
-          console.log(newUrl);
+        var newUrl = host+splitPathName[0]+"/en"+pathName+anchor;
         window.location.href = newUrl;
     } else {
         var homeLink = document.getElementsByClassName("navbar-brand")[0];
