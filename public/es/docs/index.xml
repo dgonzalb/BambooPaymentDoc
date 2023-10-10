@@ -2516,7 +2516,7 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;El Request y Response mostrado en este artículo aplican tanto para el Modelo &lt;a href=&#34;../../es/docs/getting-started/concepts.html#gateway-model&#34;&gt;Gateway&lt;/a&gt; como &lt;a href=&#34;../../es/docs/getting-started/concepts.html#payfac-model&#34;&gt;Payfac&lt;/a&gt;. Para el modelo Getway, tenga en cuenta las recomendiaciones mostradas en &lt;a href=&#34;#considerations&#34;&gt;esta sección&lt;/a&gt;.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El Request y Response mostrado en este artículo aplican tanto para el Modelo &lt;a href=&#34;../../es/docs/getting-started/concepts.html#gateway-model&#34;&gt;Gateway&lt;/a&gt; como &lt;a href=&#34;../../es/docs/getting-started/concepts.html#payfac-model&#34;&gt;Payfac&lt;/a&gt;. Para el modelo Gateway, tenga en cuenta las recomendiaciones mostradas en &lt;a href=&#34;#considerations&#34;&gt;esta sección&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
@@ -2920,7 +2920,7 @@ Ejemplo:
 | `^606211` | Hipercard | Cualquier tarjeta que empiece con `606211`. |
 | `^636297` | Elo | Cualquier tarjeta que empiece con `636297`. |
 | `^507860` | Aura | Cualquier tarjeta que empiece con `507860`. |--&gt;
-&lt;h3 id=&#34;configured-behaviors&#34;&gt;Determinación de Comportamiento&lt;/h3&gt;
+&lt;h3 id=&#34;configured-behaviors-for-the-payfac-model&#34;&gt;Determinación de Comportamiento para el modelo PayFac&lt;/h3&gt;
 &lt;p&gt;El comportamiento de la respuesta dependerá del monto enviado. Utilice las siguientes tarjetas para simular los diferentes estados de la compra.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2970,6 +2970,31 @@ Ejemplo:
 &lt;tr&gt;
 &lt;td&gt;Resultado: OK &lt;br&gt; Aprobado&lt;/td&gt;
 &lt;td&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Menor o igual a &lt;strong&gt;UYU&lt;/strong&gt; 1000,00&lt;/li&gt;&lt;li&gt;Mayor a &lt;strong&gt;UYU&lt;/strong&gt; 1061,00&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;configured-behaviors-for-the-gateway-model&#34;&gt;Determinación de Comportamiento para el modelo Gateway&lt;/h3&gt;
+&lt;p&gt;El comportamiento de la respuesta dependerá de la terminación de la tarjeta. Genere la tarjeta utilizando el &lt;a href=&#34;#determinaci%C3%B3n-del-bin&#34;&gt;bin de la marca&lt;/a&gt; correspondiente, y envíe los siguientes cuatro últimos dígitos de acuerdo con el resultado esperado.&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Terminación&lt;/th&gt;
+&lt;th&gt;Comportamiento&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0001&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Resultado: OK &lt;br&gt; Aprobado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0002&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Resultado: Rechazado &lt;br&gt; Error: TR007 &lt;br&gt; Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0013&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Resultado: Rechazado &lt;br&gt; Error: TR012 &lt;br&gt; Límite de crédito excedido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
