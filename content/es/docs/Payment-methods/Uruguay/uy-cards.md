@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-El Request y Response mostrado en este artículo aplican tanto para el Modelo [Gateway]({{< ref Concepts.md >}}#gateway-model) como [Payfac]({{< ref Concepts.md >}}#payfac-model). Para el modelo Getway, tenga en cuenta las recomendiaciones mostradas en [esta sección](#considerations).
+El Request y Response mostrado en este artículo aplican tanto para el Modelo [Gateway]({{< ref Concepts.md >}}#gateway-model) como [Payfac]({{< ref Concepts.md >}}#payfac-model). Para el modelo Gateway, tenga en cuenta las recomendiaciones mostradas en [esta sección](#considerations).
 {{% /alert %}}
 
 ## Parámetros del Request {#request-parameters}
@@ -275,7 +275,7 @@ Este formato significa que debe comenzar con el número **5**; el segundo númer
 | `^636297` | Elo | Cualquier tarjeta que empiece con `636297`. |
 | `^507860` | Aura | Cualquier tarjeta que empiece con `507860`. |-->
 
-### Determinación de Comportamiento {#configured-behaviors}
+### Determinación de Comportamiento para el modelo PayFac {#configured-behaviors-for-the-payfac-model}
 El comportamiento de la respuesta dependerá del monto enviado. Utilice las siguientes tarjetas para simular los diferentes estados de la compra.
 
 | Marca | PAN | CVV | Fecha de Expiración |
@@ -291,6 +291,17 @@ El comportamiento de la respuesta dependerá del monto enviado. Utilice las sigu
 | Resultado: Rejected <br> Error: Tarjeta expirada. | **UYU** 1046,00  |
 | Resultado: Rejected <br> Error: Fondos insuficientes. | **UYU** 1051,00  |
 | Resultado: OK <br> Aprobado | <ul style="margin-bottom: initial;"><li>Menor o igual a **UYU** 1000,00</li><li>Mayor a **UYU** 1061,00</li></ul> |
+
+### Determinación de Comportamiento para el modelo Gateway {#configured-behaviors-for-the-gateway-model}
+El comportamiento de la respuesta dependerá de la terminación de la tarjeta. Genere la tarjeta utilizando el [bin de la marca](#determinación-del-bin) correspondiente, y envíe los siguientes cuatro últimos dígitos de acuerdo con el resultado esperado.
+
+<div id="shortTable"></div>
+
+| Terminación | Comportamiento  |
+|:-----------:|-----------|
+| `0001` | Resultado: OK <br> Aprobado. |
+| `0002` | Resultado: Rechazado <br> Error: TR007 <br> Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración). |
+| `0013` | Resultado: Rechazado <br> Error: TR012 <br> Límite de crédito excedido. |
 
 <!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
