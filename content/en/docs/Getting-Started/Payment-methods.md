@@ -122,12 +122,7 @@ weight: 30
 
 |  | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit, Debit & Prepaid Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit, Debit & Prepaid Card  | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Cash Payment & Bank Transfer | API |
-<!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Credit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Credit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | UnionPay | Credit Card | API |-->
 
 ## Uruguay
 
