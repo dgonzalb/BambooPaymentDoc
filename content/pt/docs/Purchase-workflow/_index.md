@@ -1,33 +1,38 @@
 ---
-title: "Purchase workflow"
+title: "API de compras"
 date: 2023-03-02T08:28:16-05:00
 Description: >
-  In Bamboo Payments, the purchase authorization workflow is driven by two factors. _Flow Type_ and _Customer Type_.
-weight: 20
+  Es posible generar una compra utilizando nuestra API. El _tipo de cliente_ y el _tipo de flujo_ dirigen el flujo de trabajo de la compra.
+weight: 40
 ---
 
-## Flow type
-There are two different workflows that can be used to authorize a purchase:
+## Tipo de cliente {#customer-type}
+Sin importar el tipo de flujo, puede tener clientes anónimos o registrados. Los clientes anónimos no están registrados en el sitio web y hacen una compra por única vez. Los clientes registrados son compradores registrados en el sitio web, de tal manera que pueden ser identificados y tener funcionalidades adicionales como recurrencias.
+
+## Tipo de flujo {#flow-type}
+Se puede utilizar dos tipos diferentes de flujos para autorizar una compra:
 
 * API
 * Redirect
 
-This depends on each payment method, it's specified in the payment methods table by country in the column _**FLOW**_.
+{{% alert title="Nota" color="info"%}}
+El tipo de flujo depende de cada medio de pago. Se especifica en la [tabla de medios de pago por país](/es/docs/getting-started/payment-methods.html) en la columna _**FLOW**_.
+{{% /alert %}}
 
-### API
-Show the flow
+### Flujo API {#api-flow}
+Al invocar la API para iniciar una compra, la respuesta de la invocación proporcionará directamente un estado, que podrá ser final o parcial.
 
-### Redirect
-Show the flow
+![PrintScreen](/assets/APIFlow_es.png)
 
-## Customer Type
-There are two types of client:
+Para las compras utilizando API, puede usar cualquiera de la siguientes opciones:
 
-* Anonymous users
-* Registered users
+* [Creación de la compra]({{< ref "Purchase-Operations.md" >}}), que puede ser local o CrossBorder.
+* [Compra Directa]({{< ref "Direct-Purchase.md" >}})
+* [Preview de la compra]({{< ref "Purchase-Preview.md" >}})
 
-### Anonymous users
-An anonymous user is the one who is not registered in the site and makes a one-time purchase. In this case, you always must to ask for the card data to carry out the transaction.
+### Flujo Redirect {#redirect-flow}
+Al invocar la API para iniciar una compra, se obtendrá un _CommerceAction_. Este _CommerceAction_ indica que el comercio necesita realizar los pasos necesarios para avanzar en el proceso de compra. En este caso, la API retorna una URL asociada al _CommerceAction_ para redirigir al cliente para continuar con el pago.
 
-### Registered users
-Despite of the Anonymous users, this users are registered in the website, so can be identified and their card data can be associated to make other purchases without having to enter the data again.
+![PrintScreen](/assets/RedirectionFlow_es.png)
+
+Para la Compra Redirect, consulte [flujo de pagos por Redirect]({{< ref "Redirect-Purchase.md" >}}).
