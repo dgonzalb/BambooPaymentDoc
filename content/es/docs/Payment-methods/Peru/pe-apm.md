@@ -3,7 +3,7 @@ title: "Medios alternativos de pago"
 linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con **PagoEfectivo**.
+  Aprenda a integrar su solución para procesar pagos con Efectivo.
 weight: 20
 tags: ["subtopic"]
 ---
