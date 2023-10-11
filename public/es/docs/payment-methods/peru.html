@@ -139,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.215664283bfc390063b72a7b88230135cffc6dae8f6b38dbff91ba98c4a6b1572ec8e88c345404db2dccd50be1f87fac7bed5a49039c74cbe8d91e66606658ac.json"
+  data-offline-search-index-json-src="../../../offline-search-index.02e284ee7e7d7987bdb0e5834b2dbadd48860532513bac82db78981ef5e93104417d091c7ef4ed9bb4d59c042ccb80dd4a80a3982845bbc2d98ed075de78658a.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -773,6 +773,12 @@
       
       
       
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
         <a id="/es/docs/payment-methods/peru/pe-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
       
       
@@ -867,7 +873,11 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#payment-methods">Medios de pago</a></li>
+    <li><a href="#payment-methods">Medios de pago</a>
+      <ul>
+        <li><a href="#considerations">Consideraciones</a></li>
+      </ul>
+    </li>
     <li><a href="#currencies">Monedas</a></li>
     <li><a href="#amount-limits">Límites de montos</a></li>
     <li><a href="#document-types">Tipos de documentos</a></li>
@@ -938,6 +948,72 @@
 </thead>
 <tbody>
 <tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">1</td>
+<td>VISA</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">2</td>
+<td>MasterCard</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
+<td style="text-align:center">6</td>
+<td>Visa Débito</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta débito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
+<td style="text-align:center">7</td>
+<td>Visa Prepago</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito prepago</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
+<td style="text-align:center">13</td>
+<td>MasterCard Débito</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta débito</td>
+<td>API</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
+<td style="text-align:center">14</td>
+<td>MasterCard Prepago</td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td>Tarjeta de crédito prepago</td>
+<td>API</td>
+</tr>
+<tr>
 <td><img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /></td>
 <td style="text-align:center">26</td>
 <td>PagoEfectivo Perú</td>
@@ -950,6 +1026,16 @@
 </tr>
 </tbody>
 </table>
+<!--
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" style="min-width: 40px;" /> | 3 | American Express | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /> |  | UnionPay | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" alt="amex" style="min-width: 40px;" /> | 12 | Diners | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |-->
+<h3 id="considerations">Consideraciones</h3>
+<ul>
+<li>Para <strong>Visa</strong> y <strong>MasterCard</strong>, la entidad adquirente realiza una operación de anulación si solicita un reembolso el mismo día antes de las 0:00. Sólo puede procesar reembolsos de transacciones después de 48 horas de la liquidación.</li>
+<li>Puede realizar transacciones de autorización cero para registrar o validar tarjetas para <strong>Visa</strong> y <strong>MasterCard</strong>.</li>
+</ul>
+<!--* Puede solicitar reembolsos para **UnionPay**, **Diners** y **Amex** poniéndose en contacto con soporte. Los reembolsos para **Amex** se aplican a transacciones de hasta seis meses de antigüedad y de tres meses para **Diners**.-->
 <h2 id="currencies">Monedas</h2>
 <table>
 <thead>
@@ -978,6 +1064,7 @@
 <thead>
 <tr>
 <th></th>
+<th style="text-align:center">Tarjeta</th>
 <th style="text-align:center">Efectivo</th>
 </tr>
 </thead>
@@ -985,9 +1072,11 @@
 <tr>
 <td><strong>Mínimo</strong></td>
 <td style="text-align:center">PEN 1</td>
+<td style="text-align:center">PEN 1</td>
 </tr>
 <tr>
 <td><strong>Máximo</strong></td>
+<td style="text-align:center">-</td>
 <td style="text-align:center">PEN 5.000</td>
 </tr>
 </tbody>
@@ -1056,6 +1145,15 @@
         
             
         
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+                    </h5>
+                    <p>Aprenda cómo integrar su solución para procesar pagos con tarjetas crédito o débito.</p>
+                </div>
             
         
             
@@ -1164,9 +1262,9 @@
 <br>
 <b>Última modificación</b>
 
-22 de septiembre de 2023: 
+11 de octubre de 2023: 
 
- <i>Traducción de la documentación de Bamboo a español (73b9660)</i>
+ <i>Nueva funcionalidad de Tarjetas den Perú vía API (43f0fe3)</i>
   </div>
 </div>
 
