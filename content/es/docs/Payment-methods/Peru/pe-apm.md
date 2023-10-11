@@ -217,3 +217,219 @@ En el Response, se encuentran los siguientes parámetros:
     "Errors": []
 }
 ```
+
+## Redes de cobranza en efectivo {#cash-collection-networks}
+Utilizando este método de pago, su cliente puede dirigirse a una red de cobranza de efectivo y completar el pago utilizando el número de referencia generado.
+
+### Redes {#networks}
+Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:
+
+<div id="shortTable"></div>
+
+| | Payment MediaId | Descripción |
+|-----|-----|-----|
+| <img src="/assets/LogosCashPeru/bcp.png" width="52" /> | 46 | BCP | 
+| <img src="/assets/LogosCashPeru/arequipa.png" width="52" /> | 47 | Caja Arequipa  | 
+| <img src="/assets/LogosCashPeru/cusco.png" width="52" /> | 48 | Caja Cusco  | 
+| <img src="/assets/LogosCashPeru/huancayo.png" width="52" /> | 49 | Caja Huancayo  | 
+| <img src="/assets/LogosCashPeru/ica.png" width="52" /> | 50 | Caja Ica  | 
+| <img src="/assets/LogosCashPeru/piura.png" width="52" /> | 51 | Caja Piura  | 
+| <img src="/assets/LogosCashPeru/tacna.png" width="52" /> | 52 | Caja Tacna  | 
+| <img src="/assets/LogosCashPeru/trujillo.png" width="52" /> | 53 | Caja Trujillo  | 
+| <img src="/assets/LogosCashPeru/interbank.png" width="52" /> | 54 | Interbank  | 
+| <img src="/assets/LogosCashPeru/westernunion.png" width="52" /> | 55 | Western Union  | 
+| <img src="/assets/LogosCashPeru/bbva.png" width="52" /> | 103 | BBVA  | 
+
+### Parámetros del Request {#request-parameters-1}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Sí | Envíe el `PaymentMediaId` de acuerdo con la red de pago en efectivo en esta [tabla](#cash-acquirers). |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/peru.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+
+#### Ejemplo del Request {#request-example-1}
+```json
+{
+    "PaymentMediaId": 55,
+    "Currency": "USD",
+    "TargetCountryISO": "PE",
+    "MetadataIn": {
+        "PaymentExpirationInMinutes": "15"
+    },
+    "Customer": {
+        "Email": "rguerrero@mail.com",
+        "FirstName": "Rodrigo",
+        "LastName": "Guerrero",
+        "PhoneNumber": "+51|971516229",
+        "DocNumber": "46701208",
+        "DocumentTypeId": 6
+    },
+    "Amount": 100,
+    "Installments": 1,
+    "Capture": true,
+    "Description": "Cash test"
+}
+```
+
+### Parámetros del Response {#response-parameters-1}
+En el Response, se encuentran los siguientes parámetros:
+
+| Propiedad | Tipo | Descripción |
+|---|:-:|---|
+| `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL de la información del pago. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string`  | Referencia de pago retornada por el adquirente que identifica la orden generada. |
+| `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA_. |
+| `Response` → `MetadataOut` → `AgreementCode` | `string`  | Número de convenio entre el adquirente y la red física. |
+
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+
+#### Ejemplo del Response {#response-example-1}
+```json
+{
+    "Response": {
+        "PurchaseId": 148346,
+        "Created": "2023-10-11T18:20:14.465",
+        "TrxToken": null,
+        "Order": null,
+        "Transaction": {
+            "TransactionID": 159251,
+            "Created": "2023-10-11T18:20:14.465",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-10-11T18:20:15.227",
+                    "Status": null,
+                    "ResponseCode": "0000",
+                    "ResponseMessage": "OK",
+                    "Error": null,
+                    "AuthorizationCode": "7851376",
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": "{\"Operacion\":\"CREADA\",\"OrdenID\":\"148346\",\"PVOrdenID\":\"3468502\",\"Referencia\":\"7851376\"}"
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 306,
+        "OriginalAmount": 306,
+        "TaxableAmount": 0,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "PEN",
+        "Description": "Cash test",
+        "Customer": {
+            "CustomerId": 70118,
+            "Created": "2023-10-11T18:20:14.070",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "rguerrero@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": null,
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 71937,
+                    "PaymentMediaId": 55,
+                    "Created": "2023-10-11T18:20:14.117",
+                    "LastUpdate": "2023-10-11T18:20:14.203",
+                    "Brand": "WesternUnion",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "PhysicalNetwork",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": "46701208",
+                    "DocumentTypeId": 2,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.dev.bamboopayment.com/Customer/70118",
+            "FirstName": "Rodrigo",
+            "LastName": "Guerrero",
+            "DocNumber": "46701208",
+            "DocumentTypeId": 6,
+            "PhoneNumber": "+51|971516229",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.dev.bamboopayment.com/Purchase/148346",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": 0
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": 0
+        },
+        "Acquirer": {
+            "AcquirerID": 101,
+            "Name": "PayvalidaCashPFPE",
+            "CommerceNumber": null
+        },
+        "CommerceAction": null,
+        "PurchasePaymentProfileId": 71937,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {
+            "PaymentExpirationInMinutes": "15"
+        },
+        "MetadataOut": {
+            "PaymentUrl": "https://s3.amazonaws.com/gateway.dev.bamboopayment.com/purchase-coupons/148346_ab14bee9-1870-4711-a656-9e308d37126a_20240111.html",
+            "PaymentCode": "7851376",
+            "PaymentExpirationDate": "11/10/2023",
+            "AgreementCode": "PAYVALIDA"
+        },
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "PE",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
