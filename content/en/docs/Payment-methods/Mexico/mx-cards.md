@@ -30,6 +30,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `AntifraudData` → `AntifraudFingerprintId` | `string` | Yes | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
 
 {{% alert title="Info" color="info"%}}
 
@@ -79,7 +80,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
 | `AntifraudData` → `AntifraudFingerprintId` | `string` | Yes | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
-| `CustomerIP` | `string` | Yes | IP of to the customer connected to the commerce website. |
+| `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 
