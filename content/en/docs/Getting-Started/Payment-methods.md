@@ -123,6 +123,16 @@ weight: 30
 |  | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Cash Payment & Bank Transfer | API |
+| <img src="/assets/LogosCashPeru/arequipa.png" width="52" /> | Caja Arequipa  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/cusco.png" width="52" /> | Caja Cusco  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/huancayo.png" width="52" /> | Caja Huancayo  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/ica.png" width="52" /> | Caja Ica  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/piura.png" width="52" /> | Caja Piura  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/tacna.png" width="52" /> | Caja Tacna  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/trujillo.png" width="52" /> | Caja Trujillo  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/interbank.png" width="52" /> | Interbank  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/westernunion.png" width="52" /> | Western Union  | Cash Payment | API |
+| <img src="/assets/LogosCashPeru/bbva.png" width="52" /> | BBVA  | Cash Payment | API |
 
 ## Uruguay
 
