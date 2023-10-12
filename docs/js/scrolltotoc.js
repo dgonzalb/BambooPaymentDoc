@@ -16,3 +16,4 @@ miDiv.addEventListener('mouseenter', () => {
 miDiv.addEventListener('mouseleave', () => {
     miDiv.style.overflow = 'hidden'; // Oculta el scroll cuando el mouse sale del div
 });
+
