@@ -1,36 +1,36 @@
 ---
-title: "Primeros pasos"
+title: "Primeiros passos"
 date: 2023-03-02T08:28:16-05:00
 Description: >
-  Esta sección expone las funcionalidades de la API de Pagos de Bamboo para una segura integración con nuestra plataforma.
+  Esta seção apresenta as funcionalidades da API de Pagamentos da Bamboo para uma integração segura com nossa plataforma.
 weight: 10
 ---
 
-## Introducción {#overview}
-Utilizando nuestra plataforma, puede ofrecer a sus clientes una experiencia de pago mejorada, pudiendo obtener datos de tarjetas como si estuvieran en su página o aplicación móvil a través de nuestro [**Formulario de Checkout**]({{< ref "Checkout-Form.md" >}}).
+## Introdução {#overview}
+Ao utilizar nossa plataforma, você pode oferecer aos seus clientes uma experiência de pagamento aprimorada, podendo obter os dados do cartão como se estivessem em sua página ou aplicativo móvel através do nosso [**Formulário de Checkout**]({{< ref "Checkout-Form.md" >}}).
 
-Puede solicitar la información una sola vez y almacenar un _**token**_ asociado con la tarjeta que el cliente ingresó de forma segura en nuestra plataforma.
+Você pode solicitar as informações apenas uma vez e armazenar um token associado ao cartão que o cliente inseriu de forma segura em nossa plataforma.
 
 ### PCI-DSS
-Nuestra plataforma certificada **PCI-DSS Nivel 1** nos permite procesar números de tarjeta y otros datos confidenciales de autenticación de clientes.
+Nossa plataforma certificada **PCI-DSS Nível 1** nos permite processar números de cartão e outros dados confidenciais de autenticação de clientes.
 
-Puede incrustar el [formulario de Checkout]({{< ref "Checkout-Form.md" >}}) en sus páginas o aplicaciones móviles; ahora puede aceptar pagos sin recibir información confidencial como datos de clientes, ofrecer seguridad a sus clientes y facilidad de uso.
+Você pode incorporar o [formulário de Checkout]({{< ref "Checkout-Form.md" >}}) em suas páginas ou aplicativos móveis; agora pode aceitar pagamentos sem receber informações confidenciais, como dados de clientes, proporcionando segurança aos seus clientes e facilidade de uso.
 
-## Empezar a procesar con Bamboo {#start-processing-with-bamboo}
-Siga estos pasos para iniciar a procesar pagos con Bamboo Payment:
+## Comece a Processar com o Bamboo {#start-processing-with-bamboo}
+Siga estes passos para começar a processar pagamentos com o Bamboo Payment:
 
-1. **Regístrese**.<br>Cree su cuenta de comercio [contactando a nuestros representantes de ventas](mailto:sales@bamboopayment.com).
+1. **Registre-se**.<br>Crie sua conta de comércio [entrando em contato com nossos representantes de vendas](mailto:sales@bamboopayment.com).
 
-2. **Obtenga sus credenciales**.<br>Luego de activar la cuenta, recibirá sus API Keys para tener acceso al ambiente de `STAGE`.
+2. **Obtenha suas credenciais**.<br>Após ativar a conta, você receberá suas API Keys para ter acesso ao ambiente de `STAGE`.
 
-3. **Integre la API**.<br>Siga las instrucciones en esta documentación para integrar nuestra API de pagos. Debe seguir el proceso de homologación para pasar su cuenta de `STAGE` a `PRODUCTION`.
+3. **Integre a API**.<br>Siga as instruções neste documento para integrar nossa API de pagamentos. Você deve seguir o processo de homologação para migrar sua conta do ambiente de `STAGE` para o ambiente de `PRODUCTION`.
 
-4. **Póngase en Marcha**.<br>Una vez haya completado las pruebas requeridas en el paso 3, solicite el paso a producción con nuestro [equipo de soporte](mailto:soportecomercios@bamboopayment.com).
+4. **Vá em frente**.<br>Depois de concluir os testes necessários no passo 3, solicite a transição para o ambiente de produção com a ajuda de nossa [equipe de suporte](mailto:soportecomercios@bamboopayment.com).
 
-5. **Procese pagos**.<br>Una vez tenga las credenciales de producción, cambie al ambiente de `PRODUCTION` e ¡inicie a procesar sus pagos!
+5. **Processe pagamentos**.<br>Uma vez que você tenha as credenciais de produção, mude para o ambiente de `PRODUCTION` e comece a processar seus pagamentos!
 
-{{% alert title="¡No se quede estancado!" color="info"%}}
-Si tiene alguna duda técnica o requiere más información, siéntase libre de [contactar a nuestro equipo de soporte](mailto:soportecomercios@bamboopayment.com) para obtener asistencia.
+{{% alert title="Não fique parado!" color="info"%}}
+Se tiver alguma dúvida técnica ou precisar de mais informações, sinta-se à vontade para [entrar em contato com nossa equipe de suporte](mailto:soportecomercios@bamboopayment.com) para obter assistência.
 {{% /alert %}}
 
 <!--1 - Sign Up: Create your merchant account contacting our sales representatives sales@bamboopayment.com
