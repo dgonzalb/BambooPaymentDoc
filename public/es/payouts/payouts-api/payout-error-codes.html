@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payouts/payouts-api/payout-error-codes.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-09-21T11:25:12-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-26T17:21:07-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Códigos de error del API">
 <meta itemprop="description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-09-21T11:25:12-05:00" />
-<meta itemprop="wordCount" content="140">
+<meta itemprop="dateModified" content="2023-09-26T17:21:07-05:00" />
+<meta itemprop="wordCount" content="206">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Códigos de error del API"/>
 <meta name="twitter:description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
@@ -41,12 +41,11 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
-<link href="../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.scss" as="style">
+<link href="../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link href="../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -144,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6f896c73f1f61c48125094fd7383c216486acd212fc98efeb221d5f66841db2a0919146d2368700106707123b199d4564ef5535cd8482d00a7367b0dc3e5e3d1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b6ab97d7ee35e3bbfde7ad2fa149bc0b38c242a287171a6203a8e793409e7a0ff628707572aae1ba2ad4b42e29ce476b52187443706d67ef33c17966b02b986c.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -267,6 +266,12 @@
       
       
         <a id="/es/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consolereportshtml" href="../../../es/payouts/payouts-merchant-console/reports.html">Reporte de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consoleexpresshtml" href="../../../es/payouts/payouts-merchant-console/express.html">Payouts exprés</a>
       
       
       
@@ -414,96 +419,134 @@
 <thead>
 <tr>
 <th>Código de error</th>
+<th>Categoría</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>200</code></td>
+<td>Códigos del Response</td>
 <td>Éxito.</td>
 </tr>
 <tr>
 <td><code>400</code></td>
+<td>Códigos del Response</td>
 <td>Request incorrecto.</td>
 </tr>
 <tr>
 <td><code>401</code></td>
+<td>Códigos del Response</td>
 <td>No autorizado.</td>
 </tr>
 <tr>
 <td><code>409</code></td>
+<td>Códigos del Response</td>
 <td>Conflicto.</td>
 </tr>
 <tr>
+<td><code>601</code></td>
+<td>Purchase Preview</td>
+<td>País destino no válido.</td>
+</tr>
+<tr>
+<td><code>602</code></td>
+<td>Purchase Preview</td>
+<td>Moneda de origen no válida.</td>
+</tr>
+<tr>
+<td><code>699</code></td>
+<td>Purchase Preview</td>
+<td>Error genérico del Preview de Payouts.</td>
+</tr>
+<tr>
 <td><code>812</code></td>
-<td>Declinado por validación de documento.</td>
+<td>Validación del API</td>
+<td>Declinado por validación del documento.</td>
 </tr>
 <tr>
 <td><code>813</code></td>
-<td>Declinado por validación de cuenta.</td>
+<td>Validación del API</td>
+<td>Declinado por validación de la cuenta.</td>
 </tr>
 <tr>
 <td><code>814</code></td>
-<td>Declinado por validación de país.</td>
+<td>Validación del API</td>
+<td>Declinado por validación del país.</td>
 </tr>
 <tr>
 <td><code>815</code></td>
+<td>Validación del API</td>
 <td>Declinado por cumplimiento.</td>
 </tr>
 <tr>
 <td><code>816</code></td>
-<td>ID de referencia ya utilizada.<br>Este error no se muestra en la <a href="../payouts-merchant-console.html">Consola de Payouts</a> pero se devuelve a través de la API.</td>
+<td>Validación del API</td>
+<td>ID de referencia ya utilizado.<br>Este error no se muestra en la <a href="../payouts-merchant-console.html">Consola de Payouts</a> pero se devuelve a través de la API.</td>
 </tr>
 <tr>
 <td><code>901</code></td>
+<td>Rechazos</td>
 <td>La cuenta bancaria está cerrada.</td>
 </tr>
 <tr>
 <td><code>902</code></td>
+<td>Rechazos</td>
 <td>Cuenta bancaria no válida.</td>
 </tr>
 <tr>
 <td><code>903</code></td>
+<td>Rechazos</td>
 <td>Tipo de cuenta bancaria no válida.</td>
 </tr>
 <tr>
 <td><code>904</code></td>
+<td>Rechazos</td>
 <td>Sucursal bancaria no válida.</td>
 </tr>
 <tr>
 <td><code>905</code></td>
+<td>Rechazos</td>
 <td>Límite mensual del usuario excedido.</td>
 </tr>
 <tr>
 <td><code>906</code></td>
+<td>Rechazos</td>
 <td>Rechazado por solicitud del comercio.</td>
 </tr>
 <tr>
 <td><code>907</code></td>
+<td>Rechazos</td>
 <td>La cuenta bancaria no puede recibir transferencias.</td>
 </tr>
 <tr>
 <td><code>908</code></td>
-<td>Documento de beneficiario no válido.</td>
+<td>Rechazos</td>
+<td>Documento del beneficiario no válido.</td>
 </tr>
 <tr>
 <td><code>909</code></td>
+<td>Rechazos</td>
 <td>El nombre del beneficiario no coincide con los datos bancarios.</td>
 </tr>
 <tr>
 <td><code>910</code></td>
+<td>Rechazos</td>
 <td>Llave PIX no válida.</td>
 </tr>
 <tr>
 <td><code>911</code></td>
+<td>Rechazos</td>
 <td>Se ha solicitado un cambio de estado no válido.</td>
 </tr>
 <tr>
 <td><code>912</code></td>
+<td>Rechazos</td>
 <td>Saldo insuficiente.</td>
 </tr>
 <tr>
 <td><code>999</code></td>
+<td>Rechazos</td>
 <td>Error.</td>
 </tr>
 </tbody>
@@ -516,9 +559,9 @@
 <br>
 <b>Última modificación</b>
 
-21 de septiembre de 2023: 
+26 de septiembre de 2023: 
 
- <i>Traducciones al español (f44bacb)</i>
+ <i>Actualización de códigos de Error (3bb5582e)</i>
   </div>
 </div>
 

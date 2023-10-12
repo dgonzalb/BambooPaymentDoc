@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase-operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-09-21T11:25:12-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-22T14:22:34-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Operaciones">
 <meta itemprop="description" content="Cree una compra utilizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-09-21T11:25:12-05:00" />
+<meta itemprop="dateModified" content="2023-09-22T14:22:34-05:00" />
 <meta itemprop="wordCount" content="2085">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Operaciones"/>
@@ -41,12 +41,11 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
-<link href="../../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link href="../../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -144,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.6f896c73f1f61c48125094fd7383c216486acd212fc98efeb221d5f66841db2a0919146d2368700106707123b199d4564ef5535cd8482d00a7367b0dc3e5e3d1.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b6ab97d7ee35e3bbfde7ad2fa149bc0b38c242a287171a6203a8e793409e7a0ff628707572aae1ba2ad4b42e29ce476b52187443706d67ef33c17966b02b986c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -531,7 +530,7 @@
       
       
       
-        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito y débito</a>
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
       
       
       
@@ -778,6 +777,12 @@
       
       
       
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
         <a id="/es/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
       
       
@@ -1002,7 +1007,7 @@
 </ul>
 <h3 id="create-a-purchase">Crear una compra</h3>
 <p>Cree una compra básica en Bamboo Payment.</p>
-<h4 id="request-url">URL de Request</h4>
+<h4 id="request-url">URL del Request</h4>
 <p>Debe invocar un request <strong>POST</strong> a las siguientes URL de acuerdo con sus necesidades.</p>
 <ul>
 <li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v1/api/purchase</code></li>
@@ -1287,7 +1292,7 @@
 </p>
 </div>
 
-<h4 id="request-url-1">URL de Request</h4>
+<h4 id="request-url-1">URL del Request</h4>
 <p>Debe invocar un request <strong>POST</strong> a las siguientes URL de acuerdo con sus necesidades.</p>
 <ul>
 <li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/commit</code></li>
@@ -1303,7 +1308,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="get-purchases">Obtener compras</h3>
 <p>Este método le permite obtener la información de una o más compras según el criterio de búsqueda enviado en el cuerpo del mismo.</p>
-<h4 id="request-url-2">URL de Request</h4>
+<h4 id="request-url-2">URL del Request</h4>
 <p>Debe invocar un request <strong>GET</strong> a las siguientes URL de acuerdo con sus necesidades.</p>
 <ul>
 <li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v1/api/purchase</code></li>
@@ -1667,9 +1672,9 @@
 <br>
 <b>Última modificación</b>
 
-21 de septiembre de 2023: 
+22 de septiembre de 2023: 
 
- <i>Traducciones al español (f44bacb)</i>
+ <i>Payouts Preview feature (de723e42)</i>
   </div>
 </div>
 

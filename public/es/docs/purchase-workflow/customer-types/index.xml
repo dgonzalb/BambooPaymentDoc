@@ -213,6 +213,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h3&gt;
 &lt;p&gt;El objeto de respuesta retorna la información del cliente recién creado o el error que se haya podido producir. En el parámetro &lt;code&gt;Response.CustomerId&lt;/code&gt; se encuentra el identificador de cliente generado por la API para poder consultarlo o actualizarlo.&lt;/p&gt;
+&lt;p&gt;Utilice los siguientes parámetros para realizar operaciones adicionales sobre los clientes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CaptureURL&lt;/code&gt;: URL de captura de datos de la tarjeta. Abra esta URL en un iframe para iniciar la captura de datos sensibles. Para más información, consulte &lt;a href=&#34;#invoking-the-card-enrollment&#34;&gt;Invocando el formulario de inscripción de tarjeta&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UniqueID&lt;/code&gt;: Identificador único temporal utilizado para registrar métodos de pago externos. Cada vez que se solicita la información del Cliente, se obtiene un nuevo identificador. Para más información, consulte &lt;a href=&#34;#invoking-the-card-enrollment&#34;&gt;Invocando el formulario de inscripción de tarjeta&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;URL&lt;/code&gt;: URL en la que se puede consultar la información de un cliente. Para más información, consulte &lt;a href=&#34;#get-a-customer&#34;&gt;Obtener un cliente&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -344,8 +350,8 @@
 &lt;h4 id=&#34;openiframecustom&#34;&gt;OpenIframeCustom&lt;/h4&gt;
 &lt;p&gt;El método &lt;strong&gt;OpenIframeCustom&lt;/strong&gt; recibe dos parámetros:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL:&lt;/strong&gt; La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.&lt;br&gt;La URL se crea concatenando los datos recibidos de la siguiente manera: `{CaptureURL}?key={publicKey}&amp;amp;session_id={UniqueID}``&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;UniqueID:&lt;/strong&gt; un identificador para distinguir la sesión de captura de datos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL:&lt;/strong&gt; La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.&lt;br&gt;La URL se crea concatenando los datos recibidos de la siguiente manera: &lt;code&gt;{CaptureURL}?key={publicKey}&amp;amp;session_id={UniqueID}&lt;/code&gt; donde &lt;code&gt;{CaptureURL}&lt;/code&gt; representa la &lt;a href=&#34;../../../../es/docs/getting-started/concepts.html#environment&#34;&gt;URL base&lt;/a&gt; + &lt;code&gt;/Capture&lt;/code&gt;. Por ejemplo &lt;code&gt;https://api.stage.bamboopayment.com/v1/Capture&lt;/code&gt;.&lt;br&gt;Puede encontrar esta información en el parámetro &lt;code&gt;CaptureURL&lt;/code&gt; del &lt;a href=&#34;#response-parameters&#34;&gt;response&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniqueID:&lt;/strong&gt; un identificador para distinguir la sesión de captura de datos. Puede encontrar esta información en el parámetro &lt;code&gt;CaptureURL&lt;/code&gt; del &lt;a href=&#34;#response-parameters&#34;&gt;response&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#000&#34;&gt;PWCheckout&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;OpenIframeCustom&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;UniqueID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
@@ -353,8 +359,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;openiframecustomwithpaymentmediaoptions&#34;&gt;OpenIframeCustomWithPaymentMediaOptions&lt;/h4&gt;
 &lt;p&gt;El método  &lt;strong&gt;OpenIframeCustomWithPaymentMediaOptions&lt;/strong&gt; recibe cuatro parámetros:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL:&lt;/strong&gt; Igual que en OpenIframeCustom.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;UniqueID:&lt;/strong&gt; Igual que en OpenIframeCustom.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL:&lt;/strong&gt; Igual que en &lt;a href=&#34;#openiframecustom&#34;&gt;OpenIframeCustom&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniqueID:&lt;/strong&gt; Igual que en &lt;a href=&#34;#openiframecustom&#34;&gt;OpenIframeCustom&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PaymentMediaid:&lt;/strong&gt; Identificador del Medio de pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. &lt;em&gt;Este parámetro sólo aplica para Uruguay&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BankId:&lt;/strong&gt; &lt;a href=&#34;../../../../es/docs/payment-methods/uruguay.html#issuer-banks-table&#34;&gt;Identificador del banco&lt;/a&gt;. &lt;em&gt;Este parámetro sólo aplica para Uruguay&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;

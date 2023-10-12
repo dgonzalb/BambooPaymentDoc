@@ -93,12 +93,13 @@ weight: 30
 |  | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/BankTransfer.png" width="52" style="" /> | SPEI | Transferencia Bancaria | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_BankTransfer.png" width="52" style="" /> | SPEI | Transferencia Bancaria | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" width="52" style="" /> | Oxxo | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet | Tarjeta débito | API |
 
 
 ## Nicaragua

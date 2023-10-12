@@ -471,33 +471,5 @@
       </description>
     </item>
     
-    <item>
-      <title>Docs: testing</title>
-      <link>/en/docs/forms/testing.html</link>
-      <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
-      
-      <guid>/en/docs/forms/testing.html</guid>
-      <description>
-        
-        
-        &lt;script&gt;
-    function onPageLoad() {
-        const currentUrl = window.location.href;
-        if(!currentUrl.includes(&#34;/en/&#34;) &amp;&amp; !currentUrl.includes(&#34;/es/&#34;) &amp;&amp; !currentUrl.includes(&#34;/pt/&#34;)) {
-            alert(&#34;Me quedo acá&#34;);
-        } else {
-            var urlSplit = currentUrl.split(&#34;docs&#34;);
-            var newUrl = urlSplit[0].replace(&#34;en/&#34;,&#34;&#34;)+&#34;es/docs&#34;+urlSplit[1];
-            window.location.href = newUrl.replace(&#34;testing.html&#34;, &#34;checkout-form.html&#34;);
-        }
-    }
-
-    document.addEventListener(&#34;DOMContentLoaded&#34;, onPageLoad);
-&lt;/script&gt;&lt;blockquote&gt;
-&lt;/blockquote&gt;
-
-      </description>
-    </item>
-    
   </channel>
 </rss>

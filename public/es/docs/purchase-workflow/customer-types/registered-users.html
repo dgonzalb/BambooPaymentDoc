@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/customer-types/registered-users.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-07-17T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-07T16:06:14-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-09-25T15:29:32-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Usuarios Registrados">
 <meta itemprop="description" content="A diferencia de los [Usuarios Anónimos]({{&lt; ref Anonymous-users.md&gt;}}), estos usuarios están registrados en el sitio web por lo que puede identificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.
 "><meta itemprop="datePublished" content="2023-07-17T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-07T16:06:14-05:00" />
-<meta itemprop="wordCount" content="2253">
+<meta itemprop="dateModified" content="2023-09-25T15:29:32-05:00" />
+<meta itemprop="wordCount" content="2384">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Usuarios Registrados"/>
 <meta name="twitter:description" content="A diferencia de los [Usuarios Anónimos]({{&lt; ref Anonymous-users.md&gt;}}), estos usuarios están registrados en el sitio web por lo que puede identificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.
@@ -41,12 +41,11 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" as="style">
-<link href="../../../../scss/main.min.906fa7734f9762ef9a33d484f1cde8dbe03b7f09f1d0520327c6662d445282a6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
-<link href="../../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -144,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.6f896c73f1f61c48125094fd7383c216486acd212fc98efeb221d5f66841db2a0919146d2368700106707123b199d4564ef5535cd8482d00a7367b0dc3e5e3d1.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b6ab97d7ee35e3bbfde7ad2fa149bc0b38c242a287171a6203a8e793409e7a0ff628707572aae1ba2ad4b42e29ce476b52187443706d67ef33c17966b02b986c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -531,7 +530,7 @@
       
       
       
-        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito y débito</a>
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
       
       
       
@@ -773,6 +772,12 @@
   <ul class="side-main">
     <li class="" id="esdocspayment-methodsperuhtml">
       
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
       
       
       
@@ -1071,6 +1076,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="response-parameters">Parámetros del Response</h3>
 <p>El objeto de respuesta retorna la información del cliente recién creado o el error que se haya podido producir. En el parámetro <code>Response.CustomerId</code> se encuentra el identificador de cliente generado por la API para poder consultarlo o actualizarlo.</p>
+<p>Utilice los siguientes parámetros para realizar operaciones adicionales sobre los clientes:</p>
+<ul>
+<li><code>CaptureURL</code>: URL de captura de datos de la tarjeta. Abra esta URL en un iframe para iniciar la captura de datos sensibles. Para más información, consulte <a href="#invoking-the-card-enrollment">Invocando el formulario de inscripción de tarjeta</a>.</li>
+<li><code>UniqueID</code>: Identificador único temporal utilizado para registrar métodos de pago externos. Cada vez que se solicita la información del Cliente, se obtiene un nuevo identificador. Para más información, consulte <a href="#invoking-the-card-enrollment">Invocando el formulario de inscripción de tarjeta</a>.</li>
+<li><code>URL</code>: URL en la que se puede consultar la información de un cliente. Para más información, consulte <a href="#get-a-customer">Obtener un cliente</a>.</li>
+</ul>
 <h4 id="response-example">Ejemplo del Response</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
@@ -1202,8 +1213,8 @@
 <h4 id="openiframecustom">OpenIframeCustom</h4>
 <p>El método <strong>OpenIframeCustom</strong> recibe dos parámetros:</p>
 <ul>
-<li><strong>URL:</strong> La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.<br>La URL se crea concatenando los datos recibidos de la siguiente manera: `{CaptureURL}?key={publicKey}&amp;session_id={UniqueID}``</li>
-<li><strong>UniqueID:</strong> un identificador para distinguir la sesión de captura de datos.</li>
+<li><strong>URL:</strong> La URL especifica la dirección del iFrame donde los clientes introducen los datos de la Tarjeta.<br>La URL se crea concatenando los datos recibidos de la siguiente manera: <code>{CaptureURL}?key={publicKey}&amp;session_id={UniqueID}</code> donde <code>{CaptureURL}</code> representa la <a href="../../../../es/docs/getting-started/concepts.html#environment">URL base</a> + <code>/Capture</code>. Por ejemplo <code>https://api.stage.bamboopayment.com/v1/Capture</code>.<br>Puede encontrar esta información en el parámetro <code>CaptureURL</code> del <a href="#response-parameters">response</a>.</li>
+<li><strong>UniqueID:</strong> un identificador para distinguir la sesión de captura de datos. Puede encontrar esta información en el parámetro <code>CaptureURL</code> del <a href="#response-parameters">response</a>.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">OpenIframeCustom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">url</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">UniqueID</span><span style="color:#000;font-weight:bold">);</span>
@@ -1211,8 +1222,8 @@
 </span></span></code></pre></div><h4 id="openiframecustomwithpaymentmediaoptions">OpenIframeCustomWithPaymentMediaOptions</h4>
 <p>El método  <strong>OpenIframeCustomWithPaymentMediaOptions</strong> recibe cuatro parámetros:</p>
 <ul>
-<li><strong>URL:</strong> Igual que en OpenIframeCustom.</li>
-<li><strong>UniqueID:</strong> Igual que en OpenIframeCustom.</li>
+<li><strong>URL:</strong> Igual que en <a href="#openiframecustom">OpenIframeCustom</a>.</li>
+<li><strong>UniqueID:</strong> Igual que en <a href="#openiframecustom">OpenIframeCustom</a>.</li>
 <li><strong>PaymentMediaid:</strong> Identificador del Medio de pago. Si se envía, el Formulario de Captura de Tarjeta sólo aceptará tarjetas de este medio de pago. <em>Este parámetro sólo aplica para Uruguay</em>.</li>
 <li><strong>BankId:</strong> <a href="../../../../es/docs/payment-methods/uruguay.html#issuer-banks-table">Identificador del banco</a>. <em>Este parámetro sólo aplica para Uruguay</em>.</li>
 </ul>
@@ -1436,9 +1447,9 @@
 <br>
 <b>Última modificación</b>
 
-7 de septiembre de 2023: 
+25 de septiembre de 2023: 
 
- <i>Traducciones al español (4dfc2a7)</i>
+ <i>Adjustments from Production environment (8b48f0c7)</i>
   </div>
 </div>
 
