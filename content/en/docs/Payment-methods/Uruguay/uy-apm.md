@@ -71,7 +71,7 @@ You need to include specific fields for this payment method to work correctly. C
         "DocNumber" : "12345672",
         "DocumentTypeId": 2,
         "PhoneNumber" : "099111222"
-    },
+    }
 }
 ```
 

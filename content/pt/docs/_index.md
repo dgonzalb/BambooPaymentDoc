@@ -1,29 +1,29 @@
 ---
 title: "Payins"
-linkTitle: "Guía de Integración de Payins"
+linkTitle: "Guia de Integração de Payins"
 date: 2023-03-02
 description: >
-  Bamboo Payment ofrece a los comercios la posibilidad de aceptar pagos soportando todos los medios de pago disponibles en cada país.
+  Bamboo Payment oferece aos comércios a possibilidade de aceitar pagamentos, suportando todos os meios de pagamento disponíveis em cada país.
 menu:
   main:
     name: Payins
     weight: 10     
 ---
 
-* Tarjetas débito/crédito locales e internacionales
-* Transferencias bancarias
-* Pagos en efectivo
-* E-wallets (Billeteras electrónicas)
+* Cartões de débito/crédito locais e internacionais
+* Transferências bancárias
+* Pagamentos em dinheiro
+* E-wallets (Carteiras eletrônicas)
 
 <img src="https://bamboopaymentsystems.com/wp-content/themes/Bamboo_Theme/images/pci-logo.png" alt="Bamboo PCI certified by GMsectec" style="width: 20%; height:auto;">
 
 
 ## Países disponibles {#available-countries}
-Maximice la cobertura de mercado con soluciones de pago locales en **MM** países de Latinoamérica.
+Maximize a cobertura de mercado com soluções de pagamento locais em **MM** países da América Latina.
 
-Las compañías globales están aprovechando el crecimiento exponencial del comercio electrónico en Latinoamérica conectándose a medios de pago locales a través de una única API de Bamboo.
+Empresas globais estão aproveitando o crescimento exponencial do comércio eletrônico na América Latina, conectando-se a meios de pagamento locais por meio de uma única API da Bamboo.
 
- {{< Countries/countriesMap_es >}}
+ {{< Countries/countriesMap_pt >}}
 
  <script>
   window.onload = function() {
