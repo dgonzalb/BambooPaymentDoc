@@ -31,7 +31,7 @@ function onPage404Load() {
             document.getElementById("404paragraph").innerText = "Desculpe, a página que você está procurando não existe.";
             document.getElementById("404link").innerText = "Voltar para a página inicial";
         } 
-        homeLink.href = "/public" + language
+        homeLink.href = language
         document.getElementById("404link").href = homeLink.href;
         barLinks[0].href = homeLink.href + "/docs.html";
         barLinks[1].href = homeLink.href + "/payouts.html";
