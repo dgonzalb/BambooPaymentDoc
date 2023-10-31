@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Alternative Payment Methods | Bamboo Payment</title><meta property="og:title" content="Alternative Payment Methods" />
+<meta property="og:description" content="Learn how to integrate your solution to process payments with Cash using _Pago Express_.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/payment-methods/paraguay/py-apm.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
+<meta property="article:modified_time" content="2023-09-26T11:44:25-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Alternative Payment Methods">
+<meta itemprop="description" content="Learn how to integrate your solution to process payments with Cash using _Pago Express_.
+"><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
+<meta itemprop="dateModified" content="2023-09-26T11:44:25-05:00" />
+<meta itemprop="wordCount" content="655">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Alternative Payment Methods"/>
+<meta name="twitter:description" content="Learn how to integrate your solution to process payments with Cash using _Pago Express_.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" as="style">
+<link href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../en/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../en/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/payment-methods/paraguay/py-apm.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.d2c416ac8ca9df869dd4ad19ac6a4a8ba666813d7a39a60b74cb302c4b5be7143cd9039b863c6c0b888edf8fdde8d6769333a4f1d3e41a65abb31744ed2ea2c7.json"
+  data-offline-search-base-href="../../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/payment-methods/paraguay/py-apm.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedconceptshtml" href="../../../../en/docs/getting-started/concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddata-typeshtml" href="../../../../en/docs/getting-started/data-types.html">Data Types</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedpayment-methodshtml" href="../../../../en/docs/getting-started/payment-methods.html">Payment methods</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-our-serviceshtml" href="../../../../en/docs/getting-started/test-our-services.html">Test our services</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startederror-codeshtml" href="../../../../en/docs/getting-started/error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/purchase-workflow.html" href="../../../../en/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/customer-types.html" href="../../../../en/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Customers</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../../en/docs/purchase-workflow/customer-types/anonymous-users.html">Anonymous users</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesregistered-usershtml" href="../../../../en/docs/purchase-workflow/customer-types/registered-users.html">Registered users</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../../en/docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-operationshtml" href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html">Operations</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesredirect-purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesdirect-purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/direct-purchase.html">Direct purchases</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefunds-and-voidshtml" href="../../../../en/docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowantifraudhtml" href="../../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflownotification-webhookshtml" href="../../../../en/docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/forms.html" href="../../../../en/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformscheckout-formhtml" href="../../../../en/docs/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformsembedded-checkout-formhtml" href="../../../../en/docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/merchant-balances.html" href="../../../../en/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Account Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsmerchant-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/payment-methods.html" href="../../../../en/docs/payment-methods.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/argentina.html" href="../../../../en/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-cardshtml" href="../../../../en/docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-apmhtml" href="../../../../en/docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/brazil.html" href="../../../../en/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-cardshtml" href="../../../../en/docs/payment-methods/brazil/br-cards.html">Credit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/central-america.html" href="../../../../en/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscentral-americacam-apmhtml" href="../../../../en/docs/payment-methods/central-america/cam-apm.html">Cash</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/chile.html" href="../../../../en/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-cardshtml" href="../../../../en/docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-apmhtml" href="../../../../en/docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/colombia.html" href="../../../../en/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-cardshtml" href="../../../../en/docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apmhtml" href="../../../../en/docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/ecuador.html" href="../../../../en/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsecuadorec-apmhtml" href="../../../../en/docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/mexico.html" href="../../../../en/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-cardshtml" href="../../../../en/docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/paraguay.html" href="../../../../en/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-cards.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-cardshtml" href="../../../../en/docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-apmhtml" href="../../../../en/docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/peru.html" href="../../../../en/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsperupe-apmhtml" href="../../../../en/docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/uruguay.html" href="../../../../en/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-cardshtml" href="../../../../en/docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../../en/docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-apmhtml" href="../../../../en/docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pago-express">Pago Express</a>
+      <ul>
+        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#response-parameters">Response parameters</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs.html">Payins Integration Guide</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/payment-methods.html">Countries and payment methods</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/payment-methods/paraguay.html">Paraguay</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../en/docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Alternative Payment Methods</h1>
+    <div class="lead">Learn how to integrate your solution to process payments with Cash using <em>Pago Express</em>.</div>
+	       
+	
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text">We only offer support for merchants in Paraguay through the <strong>Gateway</strong> model, and we send the invoice to them from Uruguay.</p>
+</div>
+
+<h2 id="pago-express">Pago Express</h2>
+<p><em>Pago Express</em> is a popular method for paying bills and services in <em><strong>Paraguay</strong></em>, offering convenience and accessibility throughout the country. The customer needs to provide the payment code in a physical branch of <em>Pago Express</em> and complete the payment. Then, <em>Pago Express</em> notifies us, and we report to the merchant.</p>
+<h3 id="request-parameters">Request parameters</h3>
+<p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PaymentMediaId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">Yes</td>
+<td>The <code>PaymentMediaId</code> for this payment method is <em><strong>27</strong></em>.</td>
+</tr>
+<tr>
+<td><code>TargetCountryISO</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Indicate the destination country.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>Email</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s email.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>FirstName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s first name.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>LastName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Customer&rsquo;s last name.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocumentTypeId</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../../en/docs/payment-methods/paraguay.html#document-types">Document types table</a> to see the possible values.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>DocNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Document Number.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>PhoneNumber</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s phone number.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Country.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s State.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s City.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Address Detail.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Customer&rsquo;s Postal Code.</td>
+</tr>
+<tr>
+<td><code>MetaDataIn</code> → <code>PaymentExpirationInMinutes</code></td>
+<td style="text-align:center"><code>numeric</code></td>
+<td style="text-align:center">No</td>
+<td>Configure the validity of the generated debt using this field, specifying the duration in minutes. The API applies a default value if you don&rsquo;t provide this information.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">27</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationInMinutes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;43800&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jaime&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Benitez&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;090000001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jbenitez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1223334444&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
+<p>In the response, you find the parameter <code>MetadataOut.PaymentCode</code> with the reference number of the generated debt that the customer must present in a <em>Pago Express</em> agency to pay the debt. Furthermore, the parameter <code>MetadataOut.PaymentExpirationDate</code> displays the validity date in ISO 8601 format (<em>YYYY-MM-DDTHH:MM:SS</em>).</p>
+<h4 id="response-example">Response example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1244788</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:54.926&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1263666</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:54.927&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pending&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0 Transaction registered in PagosWeb&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Generic External&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:55.753&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Antifraud Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CashPaymentGetPWData&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:55.923&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PhysicalNetwork GetData&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CashPayment Authorization&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:56.657&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PhysicalNetwork Pending&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Transaction registered in PagosWeb&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">58233308</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;OriginalAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">58233308</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PYG&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">252569</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:54.270&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceCustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Anonymous&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jbenitez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Plans&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentProfiles&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">257359</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">27</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:54.463&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-13T20:14:54.630&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PagoExpress&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PhysicalNetwork&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Token&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1223334444&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AffinityGroup&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CaptureURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Customer/252569&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jaime&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Benitez&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1223334444&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;090000001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;RefundList&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PlanID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerUserAgent&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerIP&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/1244788&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataDO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Tax&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Acquirer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AcquirerID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">53</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pago Express Paraguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CommerceAction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchasePaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">257359</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LoyaltyPlan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DeviceFingerprintId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationInMinutes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;43800&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1244788&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentMerchantId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;772&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-10-14T03:14:54-03:00&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderDataResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCurrencyISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Redirection&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IsFirstRecurrentPurchase&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AntifraudData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AntifraudFingerprintId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AntifraudMetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;HasCvv&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<b>Last modified</b>
+
+September 26, 2023: 
+
+ <i>Payment method information for Paraguay (18473ee8)</i>
+  </div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>
