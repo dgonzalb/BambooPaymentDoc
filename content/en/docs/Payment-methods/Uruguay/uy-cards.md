@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The Request and Response shown in this article apply to both the [Gateway]({{< ref Concepts.md >}}#gateway-model) and [Payfac]({{< ref Concepts.md >}}#payfac-model) models. For the Gateway model, take into account the recommendations shown in [this section](#considerations).
+The Request and Response shown in this article apply to both the [Gateway]({{< ref Concepts.md >}}#gateway-model) and [Payfac]({{< ref Concepts.md >}}#payfac-model) models. For the Getway model, take into account the recommendations shown in [this section](#considerations).
 {{% /alert %}}
 
 ## Request parameters
@@ -48,37 +48,6 @@ You need to include specific fields for this payment method to work correctly. C
 {{% /alert %}}
 
 ### Request example
-```json
-{
-  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
-  "Capture": true,
-  "Order": "20201229",
-  "Amount": "10000",
-  "Currency": "USD",
-  "TargetCountryISO": "UY",
-  "Installments": 1,
-  "Customer": {
-    "BillingAddress": {
-      "Country": "Uruguay",
-      "City": "Montevideo",
-      "State": "Montevideo",
-      "PostalCode": "150000",
-      "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-    },
-    "Email": "rserrano@mail.com",
-    "DocNumber": "47666489",
-    "DocumentTypeId": 2,
-    "PhoneNumber": "0930000111",
-    "FirstName": "Rodrigo",
-    "LastName": "Serrano"
-  }
-}
-```
-
-## Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
-
-### Response example
 ```json
 {
   "Response": {
@@ -143,7 +112,7 @@ For more information on the response parameters, please refer to the [Response p
           "Created": "2023-09-29T15:34:05.713",
           "LastUpdate": null,
           "Brand": "MasterCard",
-          "CardOwner": "Rodrigo Serrano",
+          "CardOwner": "Diego Tobler",
           "Bin": null,
           "IssuerBank": null,
           "Installments": null,
@@ -274,8 +243,8 @@ This format means it must start with the number **5**; the second number must be
 | `^636297` | Elo | Any card that starts with `636297`. |
 | `^507860` | Aura | Any card that starts with `507860`. |-->
 
-### Configured Behaviors for the Payfac model
-The behavior of the response will depend on the amount sent. Use the following cards to simulate the different purchase statuses.
+### Configured Behaviors
+The behavior of the response will depend on the amount sent. Use the following cards to simulate the different purchase statuses∫.
 
 | Brand | PAN | CVV | Expiration Date |
 |---|---|---|---|
@@ -290,17 +259,6 @@ The behavior of the response will depend on the amount sent. Use the following c
 | Result: Rejected <br> Error: Expired card. | **UYU** 1046,00  |
 | Result: Rejected <br> Error: Insufficient funds. | **UYU** 1051,00  |
 | Result: OK <br> Approved | <ul style="margin-bottom: initial;"><li>Less than or equal to **UYU** 1000,00</li><li>Greater than **UYU** 1061,00</li></ul> |
-
-### Configured Behaviors for the Gateway model
-The behavior of the response will depend on the termination of the card. Generate the card using the corresponding [bin of the brand](#determination-of-bin), and send the following last four digits according to the expected result.
-
-<div id="shortTable"></div>
-
-| Termination | Behavior  |
-|:-----------:|-----------|
-| `0001` | Result: OK <br> Approved. |
-| `0002` | Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| `0013` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
 
 <!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
@@ -447,7 +405,7 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 {{< /tabs >}}-->
 
-## Special features for the Gateway model {#considerations}
+### Special features for the Gateway model {#considerations}
 * You can make purchases in installments as long as the Issuing Bank has it enabled.
 * You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
 * **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
@@ -456,7 +414,7 @@ Example of BIN (first 6 digits) for testing specific card types:
 * **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
 
-### Purchases using MasterCard through OCA
+#### Purchases using MasterCard through OCA
 When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.
 
 Add this function to the script used for the checkout form (`PWCheckOut`) to generate and return the value used in the purchases.
