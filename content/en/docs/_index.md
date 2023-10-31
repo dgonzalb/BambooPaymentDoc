@@ -26,6 +26,4 @@ Global companies are leveraging exponential eCommerce growth in Latin America by
 
  {{< Countries/countriesMap_en >}}
 
- <script>
-  
-</script>
+ Esto es una prueba
