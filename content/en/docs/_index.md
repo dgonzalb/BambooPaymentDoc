@@ -9,7 +9,6 @@ menu:
     name: Payins
     weight: 10     
 ---
-<script src="/js/countCountries.js"></script>
 
 * International and local credit/debit cards
 * Bank transfers
