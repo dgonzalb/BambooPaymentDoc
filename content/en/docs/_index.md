@@ -9,6 +9,7 @@ menu:
     name: Payins
     weight: 10     
 ---
+<script src="/js/searchcodes.js"></script>
 
 * International and local credit/debit cards
 * Bank transfers
@@ -26,8 +27,5 @@ Global companies are leveraging exponential eCommerce growth in Latin America by
  {{< Countries/countriesMap_en >}}
 
  <script>
-  window.onload = function() {
-    var phtml = document.getElementById('available-countries').nextSibling.nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
-    document.getElementById('available-countries').nextSibling.nextSibling.innerHTML = phtml;
-  }
+  
 </script>
