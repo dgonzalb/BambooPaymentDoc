@@ -1,8 +1,9 @@
-var strLocation = window.location.pathname;
+var strLocation = window.location.pathname.replace('/public', '');
 var strsplit = strLocation.split('/');
-if (strsplit[1].length !== 2) {
-    strLocation = window.location.pathname.substring(strsplit[1].length + 1);
-}
+/*if (strsplit[1].length == 2) {
+    var folder = '/' + strsplit[1];
+    strLocation = strLocation.replace(folder, '');
+}*/
 
 var element = document.getElementById(strLocation);
 element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
@@ -16,4 +17,3 @@ miDiv.addEventListener('mouseenter', () => {
 miDiv.addEventListener('mouseleave', () => {
     miDiv.style.overflow = 'hidden'; // Oculta el scroll cuando el mouse sale del div
 });
-
