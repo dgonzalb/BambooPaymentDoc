@@ -1,7 +1,7 @@
 function onPage404Load() {
     loadIcons();
     document.querySelector('h1').style.display = 'none';
-    const currentUrl = window.location.href.replace('/public','');
+    const currentUrl = window.location.href;
     if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
         var anchor = "";
         var pathName = window.location.pathname.substring(1);
@@ -11,30 +11,38 @@ function onPage404Load() {
             host = host.replace(anchor, "");
         }
         var splitPathName = pathName.split("/");
-        pathName = pathName.replace(splitPathName[0], "");
-        var newUrl = host+splitPathName[0]+"/en"+pathName+anchor;
-        window.location.href = newUrl;
-    } else {
-        var homeLink = document.getElementsByClassName("navbar-brand")[0];
-        var barLinks = document.getElementsByClassName("nav-link");
-        var language = "/en";
-        if(currentUrl.includes("/es/")) {
-            language = "/es";
-            document.getElementById("navbarDropdown").innerText = "Español";
-            document.getElementById("page-not-found").innerText = "Página no encontrada";
-            document.getElementById("404paragraph").innerText = "Lo siento, la página que está buscando no existe.";
-            document.getElementById("404link").innerText = "Volver a la página de inicio";
-        } else if(currentUrl.includes("/pt/")) {
-            language = "/pt";
-            document.getElementById("navbarDropdown").innerText = "Português";
-            document.getElementById("page-not-found").innerText = "Página não encontrada";
-            document.getElementById("404paragraph").innerText = "Desculpe, a página que você está procurando não existe.";
-            document.getElementById("404link").innerText = "Voltar para a página inicial";
+        if(splitPathName.length > 1) {
+            pathName = pathName.replace(splitPathName[0], "");
+            var newUrl = host+splitPathName[0]+"/en"+pathName+anchor;
+            window.location.href = newUrl;
+        } else {
+            var newUrl = host+"/en"+pathName+anchor;
+            window.location.href = newUrl;
         } 
-        homeLink.href = language
-        document.getElementById("404link").href = homeLink.href;
-        barLinks[0].href = homeLink.href + "/docs.html";
-        barLinks[1].href = homeLink.href + "/payouts.html";
+    } else {
+        if(currentUrl.includes("/public")) {
+            window.location.href = currentUrl.replace('/public','');
+        } else {
+            var homeLink = document.getElementsByClassName("navbar-brand")[0];
+            var barLinks = document.getElementsByClassName("nav-link");
+            var language = "/en";
+            if(currentUrl.includes("/es/")) {
+                language = "/es";
+                document.getElementById("navbarDropdown").innerText = "Español";
+                document.getElementById("page-not-found").innerText = "Página no encontrada";
+                document.getElementById("404paragraph").innerText = "Lo siento, la página que está buscando no existe.";
+                document.getElementById("404link").innerText = "Volver a la página de inicio";
+            } else if(currentUrl.includes("/pt/")) {
+                language = "/pt";
+                document.getElementById("navbarDropdown").innerText = "Português";
+                document.getElementById("page-not-found").innerText = "Página não encontrada";
+                document.getElementById("404paragraph").innerText = "Desculpe, a página que você está procurando não existe.";
+                document.getElementById("404link").innerText = "Voltar para a página inicial";
+            } 
+            homeLink.href = language
+            document.getElementById("404link").href = homeLink.href;
+            barLinks[0].href = homeLink.href + "/docs.html";
+            barLinks[1].href = homeLink.href + "/payouts.html";
         
     }
 }
