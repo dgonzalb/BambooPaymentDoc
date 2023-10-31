@@ -88,7 +88,7 @@ function loadIcons() {
     
     cssLink.rel = 'stylesheet';
     cssLink.type = 'text/css';
-    cssLink.href = '/public/css/custom.css'; 
+    cssLink.href = '/css/custom.css'; 
 
     head.appendChild(cssLink);
         
