@@ -28,6 +28,6 @@ Las compañías globales están aprovechando el crecimiento exponencial del come
  <script>
   window.onload = function() {
     var phtml = document.getElementById('available-countries').nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
-    document.getElementById('available-countries').nextSibling.nextSibling.innerHTML = phtml;
+    document.getElementById('available-countries').nextSibling.innerHTML = phtml;
   }
 </script>
