@@ -76,7 +76,7 @@ The **blocks/lead** block shortcode is a simple lead/title block with centred te
 
 ```go-html-template
 {{%/* blocks/lead color="dark" */%}}
-Bamboo Payment Systems is the OS of the future. 
+TechOS is the OS of the future. 
 
 Runs on **bare metal** in the **cloud**!
 {{%/* /blocks/lead */%}}
@@ -97,7 +97,7 @@ The example below shows a section wrapping 3 feature sections.
 ```go-html-template
 {{</* blocks/section color="dark" */>}}
 {{%/* blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" */%}}
-The new **Bamboo Payment Systems** operating system is an open source project. It is a new project, but with grand ambitions.
+The new **TechOS** operating system is an open source project. It is a new project, but with grand ambitions.
 Please follow this space for updates!
 {{%/* /blocks/feature */%}}
 {{%/* blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/gohugoio/hugo" */%}}

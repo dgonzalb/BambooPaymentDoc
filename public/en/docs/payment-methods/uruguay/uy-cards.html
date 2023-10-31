@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Learn how to integrate your solution to process credit or debit card payments.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2023-10-31T11:35:53-05:00" />
-<meta itemprop="wordCount" content="1272">
+<meta itemprop="wordCount" content="1419">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Credit and Debit cards"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process credit or debit card payments.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.5780603bbe89387bddc367154fbad0277b8a3cb61b5ed6f994d23e63dc8c53e72eb84c2929f516b5171f2a3fbfb13998b6080c9ec393377ac732255b391008ec.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.bb6bc814cf7f2fd38b8bf6ebcf6e17de1e9d132d0ff923330dd34debe4427e9aa3fd3198324e98674cf6feb0002ebce7d08b79db0b8c78542980da18dec78166.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -876,11 +876,21 @@
         <li><a href="#request-example">Request example</a></li>
       </ul>
     </li>
+    <li><a href="#response-parameters">Response parameters</a>
+      <ul>
+        <li><a href="#response-example">Response example</a></li>
+      </ul>
+    </li>
     <li><a href="#testing-cards">Testing cards</a>
       <ul>
         <li><a href="#determination-of-bin">Determination of BIN</a></li>
-        <li><a href="#configured-behaviors">Configured Behaviors</a></li>
-        <li><a href="#considerations">Special features for the Gateway model</a></li>
+        <li><a href="#configured-behaviors-for-the-payfac-model">Configured Behaviors for the Payfac model</a></li>
+        <li><a href="#configured-behaviors-for-the-gateway-model">Configured Behaviors for the Gateway model</a></li>
+      </ul>
+    </li>
+    <li><a href="#considerations">Special features for the Gateway model</a>
+      <ul>
+        <li><a href="#purchases-using-mastercard-through-oca">Purchases using MasterCard through OCA</a></li>
       </ul>
     </li>
   </ul>
@@ -947,7 +957,7 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Info</h4>
-<p class="alert-text">The Request and Response shown in this article apply to both the <a href="../../../../en/docs/getting-started/concepts.html#gateway-model">Gateway</a> and <a href="../../../../en/docs/getting-started/concepts.html#payfac-model">Payfac</a> models. For the Getway model, take into account the recommendations shown in <a href="#considerations">this section</a>.</p>
+<p class="alert-text">The Request and Response shown in this article apply to both the <a href="../../../../en/docs/getting-started/concepts.html#gateway-model">Gateway</a> and <a href="../../../../en/docs/getting-started/concepts.html#payfac-model">Payfac</a> models. For the Gateway model, take into account the recommendations shown in <a href="#considerations">this section</a>.</p>
 </div>
 
 <h2 id="request-parameters">Request parameters</h2>
@@ -1116,6 +1126,33 @@
 
 <h3 id="request-example">Request example</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;20201229&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;10000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;150000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle falsa 4567/Depto/Provincia&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rserrano@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;47666489&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0930000111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Serrano&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="response-parameters">Response parameters</h2>
+<p>For more information on the response parameters, please refer to the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
+<h3 id="response-example">Response example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1248284</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-29T15:34:10.012&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1178,7 +1215,7 @@
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-29T15:34:05.713&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Diego Tobler&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rodrigo Serrano&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1324,8 +1361,8 @@ Example:
 | `^606211` | Hipercard | Any card that starts with `606211`. |
 | `^636297` | Elo | Any card that starts with `636297`. |
 | `^507860` | Aura | Any card that starts with `507860`. |-->
-<h3 id="configured-behaviors">Configured Behaviors</h3>
-<p>The behavior of the response will depend on the amount sent. Use the following cards to simulate the different purchase statuses∫.</p>
+<h3 id="configured-behaviors-for-the-payfac-model">Configured Behaviors for the Payfac model</h3>
+<p>The behavior of the response will depend on the amount sent. Use the following cards to simulate the different purchase statuses.</p>
 <table>
 <thead>
 <tr>
@@ -1374,6 +1411,31 @@ Example:
 <tr>
 <td>Result: OK <br> Approved</td>
 <td><ul style="margin-bottom: initial;"><li>Less than or equal to <strong>UYU</strong> 1000,00</li><li>Greater than <strong>UYU</strong> 1061,00</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="configured-behaviors-for-the-gateway-model">Configured Behaviors for the Gateway model</h3>
+<p>The behavior of the response will depend on the termination of the card. Generate the card using the corresponding <a href="#determination-of-bin">bin of the brand</a>, and send the following last four digits according to the expected result.</p>
+<div id="shortTable"></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Termination</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>0001</code></td>
+<td>Result: OK <br> Approved.</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date).</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>0013</code></td>
+<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
 </tr>
 </tbody>
 </table>
@@ -2003,7 +2065,7 @@ Example:
 
 
 </div>-->
-<h3 id="considerations">Special features for the Gateway model</h3>
+<h2 id="considerations">Special features for the Gateway model</h2>
 <ul>
 <li>You can make purchases in installments as long as the Issuing Bank has it enabled.</li>
 <li>You can make purchases with Debit Cards as long as the Issuing Bank has it enabled</li>
@@ -2013,7 +2075,7 @@ Example:
 <li><strong>PassCard</strong> requires you to send the CVV, even if you have the <em>Commerce Token</em>. Therefore, you need to execute <a href="../../../../en/docs/purchase-workflow/customer-types/registered-users.html#verification-code-request-flow">Verification Code Request Flow</a>.</li>
 <li>When using <strong>OCAOneClick2</strong> (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the <code>CustomerIP</code> parameter in the request.</li>
 </ul>
-<h4 id="purchases-using-mastercard-through-oca">Purchases using MasterCard through OCA</h4>
+<h3 id="purchases-using-mastercard-through-oca">Purchases using MasterCard through OCA</h3>
 <p>When using <strong>MasterCard</strong>, sending the device FingerPrint using the <code>SetDeviceFingerPrint</code> method is recommended.</p>
 <p>Add this function to the script used for the checkout form (<code>PWCheckOut</code>) to generate and return the value used in the purchases.</p>
 <p>In this example, we show how to invoke and obtain the result.</p>
