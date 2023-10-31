@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/refunds-and-voids.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-08-02T08:46:32-05:00" />
-<meta property="article:modified_time" content="2023-09-26T11:47:20-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-10-31T08:32:31-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Refunds and voids">
 <meta itemprop="description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
 "><meta itemprop="datePublished" content="2023-08-02T08:46:32-05:00" />
-<meta itemprop="dateModified" content="2023-09-26T11:47:20-05:00" />
-<meta itemprop="wordCount" content="403">
+<meta itemprop="dateModified" content="2023-10-31T08:32:31-05:00" />
+<meta itemprop="wordCount" content="673">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Refunds and voids"/>
 <meta name="twitter:description" content="Refunds and voids are related to the process of reversing a purchase already confirmed or the cancellation of a pre-authorized purchase.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1ba42d3ca185c70121352e7d7fdd674caead97e4a0a62eb9b37676f0cfff89d695485e554d230e10432e274fd5f13df9252b121268ac820cca04b8c419b053f6.json"
+  data-offline-search-index-json-src="../../../offline-search-index.28dea052cc744746b5b9d134463e549c0c8683ce48a1243bf54a5365b9df62813345afacb4609a04a300893c831790131445de92abdc0552fe1227d7f4cdec3e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -875,19 +875,17 @@
     <li><a href="#rollback-a-purchase">Rollback a purchase</a>
       <ul>
         <li><a href="#request-url">Request URL</a></li>
+        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#response-parameters">Response parameters</a></li>
       </ul>
     </li>
     <li><a href="#refund-a-purchase">Refund a purchase</a>
       <ul>
         <li><a href="#request-url-1">Request URL</a></li>
+        <li><a href="#request-parameters-1">Request parameters</a></li>
+        <li><a href="#response-parameters-1">Response parameters</a></li>
       </ul>
     </li>
-    <li><a href="#request-parameters">Request parameters</a>
-      <ul>
-        <li><a href="#request-example">Request example</a></li>
-      </ul>
-    </li>
-    <li><a href="#response-parameters">Response parameters</a></li>
   </ul>
 </nav>
 
@@ -988,101 +986,183 @@
 </p>
 </div>
 
+<!--
+### Considerations
+_To be defined_
+-->
 <h3 id="request-url">Request URL</h3>
 <p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/rollback</code></li>
 </ul>
-<h2 id="refund-a-purchase">Refund a purchase</h2>
-<p>The <em><strong>refund</strong></em> operation is only available for purchases with state <em>Approved</em>. Refunds can be total or partial.</p>
-<h3 id="request-url-1">Request URL</h3>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
-<ul>
-<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
-<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund</code></li>
-</ul>
-<h2 id="request-parameters">Request parameters</h2>
-<p>Request body is not required to rollback or refund a purchase. If you don&rsquo;t send any request the purchase will be voided or refunded with its original amount.</p>
-<p>The amount to be void/refund may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
-<h3 id="request-example">Request example</h3>
-<p>To perform the rollback or a refund of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="response-parameters">Response parameters</h2>
-<p>When you perform the rollback or a refund, you will get the same <code>Response</code> object <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
 <!--
 ## Refund a purchase
 The _**refund**_ operation is only available for purchases with state _Approved_. Refunds can be total or partial.
 
-### Considerations
-_To be defined_
-
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
-* **Stage**: `https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund`
-
-### Request parameters
-Consider the following parameters when invoking a refund request.
-
-| Parameter | Type | Mandatory | Description |
-|---|---|---|---|---|
-| `Amount` | `number` | No | Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example: `12,25` > `1225`.<br>This value **cannot** be higher than the original amount of the purchase. |
-| `MetadataIn`  → `Description` | `string` | No | Optional description for the refund. |
-
-#### Request example 
-
-```json
-{
-  "Amount":"2500",
-  "MetadataIn": {
-    "Description": "Refund description"
-  }
-}
-```
-
-### Response parameters
-
-| Parameter | Type | Description |
-|---|---|---|
-| `Response` → `PurchaseRefundId` | `number` | Internal identifier of the refund. |
-| `Response` → `Created` | `date` | Date and time when the refund was created.<br>Date format _**ISO-8601**_. |
-| `Response` → `Amount` | `number` | Refund amount as sent in the request. |
-| `Response` → `Currency` | `string` | Currency of the refund, according to ISO-4217 (alphanumeric codes). |
-| `Response` → `StatusId` | `number` | Identifier of the refund status. |
-| `Response` → `Status` | `string` | Description of the refund status. |
-| `Response` → `AuthorizationCode` | `string` | Refund code returned by the acquirer of the transaction. |
-| `Response` → `Code` | `string` | Error code returned by the acquirer of the transaction. |
-| `Response` → `Description` | `string` | Description returned by the acquirer of the transaction. |
-| `Response` → `MetadataOut` | `object` | Additional information returned by the acquirer. |
-| `Errors` → `ErrorCode` | `string` | Error code returned by Bamboo. |
-| `Errors` → `Created` | `string` | Date and time when the error was generated. |
-| `Errors` → `Message` | `string` | Descriptive text of the error. |
-| `Errors` → `Detail` | `string` | Error detail. |
-
-#### Response example
-
-```json
-{
-    "Response": {
-        "PurchaseRefundId": 1246459,
-        "Created": "2023-09-22T13:46:47.089",
-        "Amount": 100.00,
-        "Currency": "CLP",
-        "StatusId": 10,
-        "Status": "Refund_OK",
-        "AuthorizationCode": null,
-        "Code": "0",
-        "Description": "REVERSED",
-        "MetadataOut": null
-    },
-    "Errors": []
-}
-```
+* **Production**: `https://api.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/purchase/{{PurchaseID}}/refund`
 -->
+<h3 id="request-parameters">Request parameters</h3>
+<p>Request body is not required to rollback a purchase. If you don&rsquo;t send any request the purchase will be voided with its original amount.</p>
+<p>The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
+<h4 id="request-example">Request example</h4>
+<p>To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
+<p>When you perform the rollback, you will get the same <code>Response</code> object <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">returned</a>.</p>
+<h2 id="refund-a-purchase">Refund a purchase</h2>
+<p>The <em><strong>refund</strong></em> operation is only available for purchases with state <em>Approved</em>. Refunds can be total or partial.</p>
+<!--
+### Considerations
+_To be defined_
+-->
+<h3 id="request-url-1">Request URL</h3>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<ul>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v2/api/purchase/{{PurchaseId}}/refund</code></li>
+</ul>
+<h3 id="request-parameters-1">Request parameters</h3>
+<p>Consider the following parameters when invoking a refund request.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Amount</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Amount to be refunded (Partial refund). If this parameter is not send, the refund will be for the amount of the purchase (Total refund).<br>If you require to include decimals in the amount, concatenate the decimal places without de decimal point. Example: <code>12,25</code> &gt; <code>1225</code>.<br>This value <strong>cannot</strong> be higher than the original amount of the purchase.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>MetadataIn</code>  → <code>Description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional description for the refund.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example-1">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;2500&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund description&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters-1">Response parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Response</code> → <code>PurchaseRefundId</code></td>
+<td><code>number</code></td>
+<td>Internal identifier of the refund.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Created</code></td>
+<td><code>date</code></td>
+<td>Date and time when the refund was created.<br>Date format <em><strong>ISO-8601</strong></em>.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Amount</code></td>
+<td><code>number</code></td>
+<td>Refund amount as sent in the request.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Currency</code></td>
+<td><code>string</code></td>
+<td>Currency of the refund, according to ISO-4217 (alphanumeric codes).</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>StatusId</code></td>
+<td><code>number</code></td>
+<td>Identifier of the refund status.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Status</code></td>
+<td><code>string</code></td>
+<td>Description of the refund status.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>AuthorizationCode</code></td>
+<td><code>string</code></td>
+<td>Refund code returned by the acquirer of the transaction.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Code</code></td>
+<td><code>string</code></td>
+<td>Error code returned by the acquirer of the transaction.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Description</code></td>
+<td><code>string</code></td>
+<td>Description returned by the acquirer of the transaction.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>MetadataOut</code></td>
+<td><code>object</code></td>
+<td>Additional information returned by the acquirer.</td>
+</tr>
+<tr>
+<td><code>Errors</code> → <code>ErrorCode</code></td>
+<td><code>string</code></td>
+<td>Error code returned by Bamboo.</td>
+</tr>
+<tr>
+<td><code>Errors</code> → <code>Created</code></td>
+<td><code>string</code></td>
+<td>Date and time when the error was generated.</td>
+</tr>
+<tr>
+<td><code>Errors</code> → <code>Message</code></td>
+<td><code>string</code></td>
+<td>Descriptive text of the error.</td>
+</tr>
+<tr>
+<td><code>Errors</code> → <code>Detail</code></td>
+<td><code>string</code></td>
+<td>Error detail.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-example">Response example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseRefundId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1246459</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-22T13:46:47.089&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100.00</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;StatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund_OK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REVERSED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1090,9 +1170,9 @@ Consider the following parameters when invoking a refund request.
 <br>
 <b>Last modified</b>
 
-September 26, 2023: 
+October 31, 2023: 
 
- <i>Endpoint URL updated (c26f4cd)</i>
+ <i>New version for Refunds (fe810bda)</i>
   </div>
 </div>
 
