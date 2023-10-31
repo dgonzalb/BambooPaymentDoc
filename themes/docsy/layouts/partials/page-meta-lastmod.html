@@ -3,9 +3,8 @@
 <br>
 <b>{{ T "post_last_mod"}}</b>
 {{ if eq "en" .Language.Lang }}
-{{ .Lastmod.Format .Site.Params.time_format_default }}: 
+{{ .Lastmod.Format .Site.Params.time_format_default }}
 {{ else }}
-{{ .Lastmod.Day }} de {{i18n .Lastmod.Month }} de {{ .Lastmod.Year }}: 
+{{ .Lastmod.Day }} de {{i18n .Lastmod.Month }} de {{ .Lastmod.Year }}
 {{ end }}
-{{ with .GitInfo }} <i>{{ .Subject }} ({{ .AbbreviatedHash }})</i>{{ end }}
-  
+<p>© Bamboo | All rights reserved <b>{{ .Now.Format "2006" }}</b></p>
