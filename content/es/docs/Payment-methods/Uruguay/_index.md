@@ -62,7 +62,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 ## Límites de montos {#amount-limits}
 
 |  | Efectivo | Transferencia Bancaria |
-|---|:---:|:---:|:---:|
+|---|:---:|:---:|
 | **Mínimo**  | UYU 1 | UYU 1 |
 | **Máximo** | UYU 9.999.999.999| UYU 22.000,00<hr>USD 500,00 |
 
