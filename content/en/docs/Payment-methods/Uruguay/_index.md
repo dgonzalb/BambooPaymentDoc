@@ -62,7 +62,7 @@ This section shows the available payment methods, currencies, and related inform
 ## Amount limits
 
 |  | Cash | Bank transfer |
-|---|:---:|:---:|:---:|
+|---|:---:|:---:|
 | **Minimum** | UYU 1 | UYU 1 |
 | **Maximum** | UYU 9.999.999.999| UYU 22.000,00<hr>USD 500,00 |
 
