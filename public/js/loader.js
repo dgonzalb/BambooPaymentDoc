@@ -4,6 +4,7 @@ function onPage404Load() {
     const currentUrl = window.location.href;
     if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
         var anchor = "";
+        var newUrl = "";
         var pathName = window.location.pathname.substring(1);
         var host = currentUrl.replace(pathName, "");
         if(currentUrl.includes("#")) {
@@ -13,12 +14,11 @@ function onPage404Load() {
         var splitPathName = pathName.split("/");
         if(splitPathName.length > 1) {
             pathName = pathName.replace(splitPathName[0], "");
-            var newUrl = host+splitPathName[0]+"/en"+pathName+anchor;
-            window.location.href = newUrl;
+            newUrl = host+splitPathName[0]+"/en"+pathName+anchor;
         } else {
-            var newUrl = host+"/en"+pathName+anchor;
-            window.location.href = newUrl;
+            newUrl = host+"/en"+pathName+anchor;
         } 
+        window.location.href = newUrl;
     } else {
         if(currentUrl.includes("/public")) {
             window.location.href = currentUrl.replace('/public','');
@@ -43,7 +43,7 @@ function onPage404Load() {
             document.getElementById("404link").href = homeLink.href;
             barLinks[0].href = homeLink.href + "/docs.html";
             barLinks[1].href = homeLink.href + "/payouts.html";
-        
+        }
     }
 }
 
