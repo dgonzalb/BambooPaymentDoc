@@ -1,7 +1,7 @@
 function onPage404Load() {
     loadIcons();
     document.querySelector('h1').style.display = 'none';
-    const currentUrl = window.location.href;
+    var currentUrl = window.location.href;
     if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
         var anchor = "";
         var newUrl = "";
@@ -39,7 +39,7 @@ function onPage404Load() {
                 document.getElementById("404paragraph").innerText = "Desculpe, a página que você está procurando não existe.";
                 document.getElementById("404link").innerText = "Voltar para a página inicial";
             } 
-            homeLink.href = language
+            homeLink.href = language;
             document.getElementById("404link").href = homeLink.href;
             barLinks[0].href = homeLink.href + "/docs.html";
             barLinks[1].href = homeLink.href + "/payouts.html";
