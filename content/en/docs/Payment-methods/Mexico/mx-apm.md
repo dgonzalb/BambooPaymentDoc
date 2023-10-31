@@ -413,14 +413,14 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
 ## Bank Transfer (SPEI)
 **SPEI** (Sistema de Pagos Electrónicos Interbancarios) is an electronic payment system in Mexico that allows your customers to transfer funds between banks instantly. 
 
-To use **SPEI**, customers must have access to online banking or a mobile banking app offered by their bank and then initiate a transfer by providing the CIE agreement number, the reference, the amount, and the CLABE (Clave Bancaria Estandarizada) number if required. 
+To use **SPEI**, customers must have access to online banking or a mobile banking app offered by their bank and then initiate a transfer by providing the CLABE (Clave Bancaria Estandarizada) number returned in the response. 
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**32**_. |
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**73**_. |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
@@ -437,15 +437,15 @@ You need to include specific fields for this payment method to work correctly. C
 #### Request example
 ```json
 {
-    "PaymentMediaId": 32,
-    "Order": "ORD1001",
-    "Amount": 1000000,
-    "TargetCountryISO": "MX",
-    "MetadataIn": {
+    "PaymentMediaId": 73,
+    "Order": "ORD1012",
+    "Amount": 77000,
+    "Currency": "USD",
+    "Description": "Test Order",
+    "MetaDataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
-    "Currency": "MXN",
-    "Capture": true,
+    "TargetCountryISO": "MX",
     "Customer": {
         "FirstName": "John",
         "LastName": "Diaz",
@@ -459,61 +459,56 @@ In the response, you will find the following parameters:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentUrl` | `string` | Url of the generic payment receipt. |
-| `Response` → `MetadataOut` → `PaymentCode` | `string` | Reference number for _BBVA Bancomer_, or Payment concept for other banks. |
-| `Response` → `MetadataOut` → `BankName` | `string`  | Name of the destination bank. |
-| `Response` → `MetadataOut` → `BankAccount` | `string` | CIE agreement number for _BBVA Bancomer_, or Payment reference for other banks. |
-| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | _CLABE_ account number to which the funds will be sent |
-| `Response` → `MetadataOut` → `BankReference` | `string` | Bank Reference number. |
+| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent |
+| `Response` → `MetadataOut` → `Expiration` | `date` | Payment expiration date and time. |
 
-You can redirect your customer to the URL displayed in the parameter `Response.MetadataOut.PaymentUrl` to download the voucher and with the steps and information to complete the payment.
-
-<img src="/assets/SPEIVoucher.png" width="60%" alt="PrintScreen"/>
-
+{{% alert title="Note" color="info"%}}
+The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your customer must set up a wire transfer to this number from their banking application.
+{{% /alert %}}
 
 #### Response example
 
 ```json
 {
     "Response": {
-        "PurchaseId": 1134267,
-        "Created": "2023-09-01T17:40:18.599",
+        "PurchaseId": 148817,
+        "Created": "2023-10-31T12:23:00.494",
         "TrxToken": null,
-        "Order": "ORD1001",
+        "Order": "ORD1012",
         "Transaction": {
-            "TransactionID": 1153152,
-            "Created": "2023-09-01T17:40:18.599",
+            "TransactionID": 159700,
+            "Created": "2023-10-31T12:23:00.493",
             "AuthorizationDate": "",
             "TransactionStatusId": 2,
             "Status": "Pending",
             "ErrorCode": null,
-            "Description": " ",
+            "Description": "",
             "ApprovalCode": null,
             "Steps": [
                 {
                     "Step": "Generic External",
-                    "Created": "",
+                    "Created": "2023-10-31T12:23:29.923",
                     "Status": null,
-                    "ResponseCode": "Ok",
-                    "ResponseMessage": "tryyscihs1lifsi5ymw5",
+                    "ResponseCode": "",
+                    "ResponseMessage": "",
                     "Error": null,
-                    "AuthorizationCode": null,
+                    "AuthorizationCode": "",
                     "UniqueID": null,
-                    "AcquirerResponseDetail": null
+                    "AcquirerResponseDetail": ""
                 }
             ]
         },
         "Capture": true,
-        "Amount": 1000000,
-        "OriginalAmount": 1000000,
+        "Amount": 1104886,
+        "OriginalAmount": 1104886,
         "TaxableAmount": null,
         "Tip": 0,
         "Installments": 1,
         "Currency": "MXN",
-        "Description": null,
+        "Description": "Test Order",
         "Customer": {
-            "CustomerId": 250981,
-            "Created": "2023-09-01T17:40:17.930",
+            "CustomerId": 70505,
+            "Created": "2023-10-31T12:22:51.353",
             "CommerceCustomerId": null,
             "Owner": "Anonymous",
             "Email": "jdiaz@mail.com",
@@ -524,11 +519,11 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
             "AdditionalData": null,
             "PaymentProfiles": [
                 {
-                    "PaymentProfileId": 255734,
-                    "PaymentMediaId": 32,
-                    "Created": "2023-09-01T17:40:18.023",
-                    "LastUpdate": "2023-09-01T17:40:18.440",
-                    "Brand": "OpenPayBank",
+                    "PaymentProfileId": 72313,
+                    "PaymentMediaId": 73,
+                    "Created": "2023-10-31T12:22:52.153",
+                    "LastUpdate": "2023-10-31T12:22:53.173",
+                    "Brand": "STP",
                     "CardOwner": null,
                     "Bin": null,
                     "IssuerBank": null,
@@ -547,7 +542,7 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
             ],
             "CaptureURL": null,
             "UniqueID": null,
-            "URL": "https://api.stage.bamboopayment.com/Customer/250981",
+            "URL": "https://devapi.siemprepago.com/v1/api/Customer/70505",
             "FirstName": "John",
             "LastName": "Diaz",
             "DocNumber": null,
@@ -561,7 +556,7 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
         "AdditionalData": null,
         "CustomerUserAgent": null,
         "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1134267",
+        "URL": "https://devapi.siemprepago.com/v1/api/Purchase/148817",
         "DataUY": {
             "IsFinalConsumer": false,
             "Invoice": null,
@@ -572,41 +567,36 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
             "Tax": null
         },
         "Acquirer": {
-            "AcquirerID": 65,
-            "Name": "OpenPay Bank",
+            "AcquirerID": 105,
+            "Name": "STP",
             "CommerceNumber": null
         },
         "CommerceAction": null,
-        "PurchasePaymentProfileId": 255734,
+        "PurchasePaymentProfileId": 72313,
         "LoyaltyPlan": null,
         "DeviceFingerprintId": null,
         "MetadataIn": {
             "PaymentExpirationInMinutes": "1440"
         },
         "MetadataOut": {
-            "PaymentUrl": "https://sandbox-dashboard.openpay.mx/spei-pdf/m46uqwpxz7otrhsinbx1/tryyscihs1lifsi5ymw5",
-            "PaymentCode": "25966327953597018268",
-            "BankName": "BBVA Bancomer",
-            "BankAccount": "1411217",
-            "BankAccountLabel": "000000000000000001",
-            "BankReference": "tryyscihs1lifsi5ymw5"
+            "Clabe": "646180366600000240",
+            "Expiration": "11/03/2023 13:43:00"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "MX",
-            "TargetCurrencyISO": "MXN",
-            "TargetAmount": 10000
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 770.0
         },
         "Redirection": null,
-        "IsFirstRecurrentPurchase": false,
         "AntifraudData": {
             "AntifraudFingerprintId": null,
             "AntifraudMetadataIn": null
         },
         "PaymentMediaId": null,
+        "TargetCountryISO": null,
         "PurchaseType": 1,
-        "HasCvv": null,
-        "TargetCountryISO": null
+        "IsFirstRecurrentPurchase": false
     },
     "Errors": []
 }

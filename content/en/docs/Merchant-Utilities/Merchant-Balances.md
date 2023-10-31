@@ -1,10 +1,11 @@
 ---
-title: "API for Account Balances"
-date: 2023-05-08T07:28:16-05:00
+title: "Merchant Balances"
+linkTitle: "Merchant Balances"
+date: 2023-03-02T11:40:29-05:00
 Description: >
   The API for Account Balances allows merchants to check their account balances without using Bamboo's merchant console.
-weight: 60
-notopicssection: true
+weight: 10
+url: docs/merchant-balances.html
 ---
 
 ## Request URL

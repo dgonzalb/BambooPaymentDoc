@@ -19,6 +19,7 @@ You need to include specific fields for this payment method to work correctly. C
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Installments` | `integer` | No | This parameter refers to the number of payments that a credit card purchase is divided into. You can select `1`, `3`, `6`, `9`, and `12` installments.<br>Default value is `1`. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |

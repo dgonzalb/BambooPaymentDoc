@@ -20,6 +20,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Installments` | `integer` | No | Este parámetro se refiere al número de pagos en que se divide una compra con tarjeta de crédito. Puede seleccionar `1`, `3`, `6`, `9` y `12` cuotas.<br>El valor por defecto es `1`. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
