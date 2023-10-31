@@ -27,7 +27,7 @@ Empresas globais estão aproveitando o crescimento exponencial do comércio elet
 
  <script>
   window.onload = function() {
-    var phtml = document.getElementById('available-countries').nextSibling.nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
+    var phtml = document.getElementById('available-countries').nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
     document.getElementById('available-countries').nextSibling.nextSibling.innerHTML = phtml;
   }
 </script>
