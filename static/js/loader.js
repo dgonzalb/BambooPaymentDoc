@@ -1,7 +1,7 @@
 function onPage404Load() {
     loadIcons();
     document.querySelector('h1').style.display = 'none';
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.href.replace('/public','');
     if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
         var anchor = "";
         var pathName = window.location.pathname.substring(1);
