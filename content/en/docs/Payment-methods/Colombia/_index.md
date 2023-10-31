@@ -39,7 +39,7 @@ This section shows the available payment methods, currencies, and related inform
 ## Amount limits
 
 |  | Cards | PSE | Cash | Nequi |
-|---|:---:|:---:|:---:|:---:|:---:|
+|---|:---:|:---:|:---:|:---:|
 | **Minimum** | COP 300 | COP 5.000 | COP 1 | - |
 | **Maximum** | - | COP 20.000.000 | COP 5.000.000 | - |
 
