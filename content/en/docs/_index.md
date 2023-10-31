@@ -9,7 +9,7 @@ menu:
     name: Payins
     weight: 10     
 ---
-<script src="/js/searchcodes.js"></script>
+<script src="/js/countCountries.js"></script>
 
 * International and local credit/debit cards
 * Bank transfers
@@ -25,5 +25,3 @@ Maximize market coverage with local payment solutions in **MM** countries across
 Global companies are leveraging exponential eCommerce growth in Latin America by connecting to Local Payment methods through Bamboo’s single API.
 
  {{< Countries/countriesMap_en >}}
-
- Esto es una prueba
