@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/purchases/purchase-operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-09-26T11:46:15-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-11-01T14:13:58-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Operations">
 <meta itemprop="description" content="Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-09-26T11:46:15-05:00" />
-<meta itemprop="wordCount" content="1984">
+<meta itemprop="dateModified" content="2023-11-01T14:13:58-05:00" />
+<meta itemprop="wordCount" content="2007">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Operations"/>
 <meta name="twitter:description" content="Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" as="style">
-<link href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.min.bb43da3673e9614949f0cab99a94d2e389a76c2e7bc544b3bace9c984bc6dd47.css" as="style">
+<link href="../../../../scss/main.min.bb43da3673e9614949f0cab99a94d2e389a76c2e7bc544b3bace9c984bc6dd47.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.bb6bc814cf7f2fd38b8bf6ebcf6e17de1e9d132d0ff923330dd34debe4427e9aa3fd3198324e98674cf6feb0002ebce7d08b79db0b8c78542980da18dec78166.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.fbe22677f087d7922749466b2e8fe9296dee9b132aeb765f49ec4d361d417d59d6e6824da2f13f3c408ebad04e4794ccd68f99b4d6e22dc47e4e88cbb2c8dea5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1040,7 +1040,7 @@
 <td><code>Amount</code></td>
 <td><code>number</code></td>
 <td style="text-align:center">Yes</td>
-<td>Amount of the purchase. This value must be greater than zero.<br>If you must include decimals in the amount, concatenate the decimal places without de decimal point. Example <code>12,25</code> &gt; <code>1225</code>.</td>
+<td>Amount of the purchase. This value must be greater than zero.<br>If you must include decimals in the amount, concatenate the decimal places without the decimal point. Example <code>12,25</code> &gt; <code>1225</code>.</td>
 </tr>
 <tr>
 <td><code>Currency</code></td>
@@ -1201,7 +1201,7 @@
 <tr>
 <td><code>Description</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">No <sup>4</sup></td>
 <td>Optional description of the purchase.</td>
 </tr>
 <tr>
@@ -1233,6 +1233,7 @@
 <li><sup>1</sup> The <code>PaymentMediaId</code> and <code>TrxToken</code> parameters are not required. Nevertheless, sending one of them is mandatory, depending on the flow you want to use.</li>
 <li><sup>2</sup> All the payment methods may not support the pre-authorization feature. Review the <a href="../../../../en/docs/payment-methods.html">Countries and payment methods</a> section to check availability.</li>
 <li><sup>3</sup> This object is not required if you create the purchase using <a href="../../../../en/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
+<li><sup>4</sup> When using <a href="../../../../en/docs/payment-methods/brazil/br-cards.html">cards in Brazil</a>, the description is mandatory and must use a fixed format, as explained in the <a href="../../../../en/docs/payment-methods/brazil/br-cards.html#request-parameters">request parameters</a>.</li>
 <li>Keep in mind that for the Anti-fraud system&rsquo;s correct functioning, we suggest sending additional data described in the <a href="../../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a> section.</li>
 </ul>
 </p>
@@ -1664,11 +1665,16 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 <img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
 <br>
-<b>Last modified</b>
-
-September 26, 2023
-
-<p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Last modified</b>
+    
+    November 1, 2023
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+</div>
+</div>
 </div>
 
 
