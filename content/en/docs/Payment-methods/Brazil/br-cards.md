@@ -15,7 +15,7 @@ You need to include specific fields for this payment method to work correctly. C
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
-| `Description` | `string` | Yes | As acquirer requirement, send the purchase description using the following format. `MerchanName+OrderId+ [merchantUrl]`.<br>Example: `TestCommerce #order2572023, [testcommerce.com.br]`. |
+| `Description` | `string` | Yes | As acquirer requirement, send the purchase description using the following format. `MerchantName+OrderId+ [merchantUrl]`.<br>Example: `TestCommerce #order2572023, [testcommerce.com.br]`. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |

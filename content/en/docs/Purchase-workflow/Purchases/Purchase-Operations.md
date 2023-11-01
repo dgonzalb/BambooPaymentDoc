@@ -87,7 +87,7 @@ You must invoke a **POST** request to the following URLs according to your needs
 * <sup>1</sup> The `PaymentMediaId` and `TrxToken` parameters are not required. Nevertheless, sending one of them is mandatory, depending on the flow you want to use.
 * <sup>2</sup> All the payment methods may not support the pre-authorization feature. Review the [Countries and payment methods](/en/docs/payment-methods.html) section to check availability.
 * <sup>3</sup> This object is not required if you create the purchase using [_CommerceToken_]({{< ref Registered-users.md >}}).
-* <sup>4</sup> Cuando utilice [tarjetas en Brasil]({{< ref br-cards.md>}}), la descripción es obligatoria y debe utilizar un formato fijo, como se explica en los [parámetros del request]({{< ref br-cards.md>}}#request-parameters).
+* <sup>4</sup> When using [cards in Brazil]({{< ref br-cards.md>}}), the description is mandatory and must use a fixed format, as explained in the [request parameters]({{< ref br-cards.md>}}#request-parameters).
 * Keep in mind that for the Anti-fraud system's correct functioning, we suggest sending additional data described in the [Anti-fraud]({{< ref "Antifraud.md" >}}) section.
 {{% /alert %}}
 

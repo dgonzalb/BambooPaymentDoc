@@ -19,7 +19,7 @@ menu:
 
 
 ## Países disponibles {#available-countries}
-Maximice la cobertura de mercado con soluciones de pago locales en **MM** países de Latinoamérica.
+<div id="countries">Maximice la cobertura de mercado con soluciones de pago locales en <strong>MM</strong> países de Latinoamérica.</div><br>
 
 Las compañías globales están aprovechando el crecimiento exponencial del comercio electrónico en Latinoamérica conectándose a medios de pago locales a través de una única API de Bamboo.
 
@@ -27,7 +27,6 @@ Las compañías globales están aprovechando el crecimiento exponencial del come
 
  <script>
   window.onload = function() {
-    var phtml = document.getElementById('available-countries').nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
-    document.getElementById('available-countries').nextSibling.innerHTML = phtml;
+    document.getElementById('countries').innerHTML = document.getElementById('countries').innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
   }
 </script>
