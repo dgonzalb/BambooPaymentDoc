@@ -71,7 +71,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
         "DocNumber" : "12345672",
         "DocumentTypeId": 2,
         "PhoneNumber" : "099111222"
-    },
+    }
 }
 ```
 

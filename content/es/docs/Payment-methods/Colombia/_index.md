@@ -39,7 +39,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 ## Límites de montos {#amount-limits}
 
 |  | Tarjetas | PSE | Efectivo | Nequi |
-|---|:---:|:---:|:---:|:---:|:---:|
+|---|:---:|:---:|:---:|:---:|
 | **Mínimo**  | COP 300 | COP 5.000 | COP 1 | - |
 | **Máximo** | - | COP 20.000.000 | COP 5.000.000 | - |
 
