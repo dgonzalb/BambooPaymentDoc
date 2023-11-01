@@ -77,7 +77,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 | `Customer` → `DocumentTypeId` | `string` | No | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de documento de [cada país](/es/docs/payment-methods.html). |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
 | `Tip` | `number` | No | Propina adicional de la compra si es necesaria. |
-| `Description` | `string` | No | Descripción de la compra. |
+| `Description` | `string` | No <sup>4</sup> | Descripción de la compra. |
 | `UniqueID` | `string` | No | Identificador único de la compra.<br>Este valor es opcional y le permite identificar una compra de forma única y evitar duplicación de transacciones en caso de errores de comunicación. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
 | `AdditionalData` | `string` | No | Puede agregar información adicional a la transacción (Por ejemplo una lista de datos `Clave:Valor`).<br>Esta información se retorna cada vez que se consulta la compra. |
 | `CustomerUserAgent` | `string` | No | User Agent del cliente que utiliza el servicio; para dispositivos de escritorio, debe ser el `UserAgent` informado por el navegador, y para móviles, la información sobre el dispositivo, S.O. utilizado y nombre de la App. |
@@ -87,6 +87,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 * <sup>1</sup> Los parámetros `PaymentMediaId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos dependiendo del flujo que desee utilizar.
 * <sup>2</sup> No todos los medios de pago soportan la funcionalidad de preautorización. Revise la sección de [Países y medios de pago](/es/docs/payment-methods.html) para verificar la disponibilidad.
 * <sup>3</sup> No se requiere este objeto cuando cree una compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
+* <sup>4</sup> Cuando utilice [tarjetas en Brasil]({{< ref br-cards.md>}}), la descripción es obligatoria y debe utilizar un formato fijo, como se explica en los [parámetros del request]({{< ref br-cards.md>}}#request-parameters).
 * Tenga en cuenta que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref "Antifraud.md" >}}).
 {{% /alert %}}
 

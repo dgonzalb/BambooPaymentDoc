@@ -15,6 +15,7 @@ You need to include specific fields for this payment method to work correctly. C
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Description` | `string` | Yes | As acquirer requirement, send the purchase description using the following format. `MerchantName+OrderId+ [merchantUrl]`.<br>Example: `TestCommerce #order2572023, [testcommerce.com.br]`. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
@@ -43,6 +44,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
     "Capture": true,
     "Installments": 0,
     "TargetCountryISO" : "BR",
+    "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
     "Customer": {
         "Email": "breno@mail.com.br",
         "FirstName": "Breno",
@@ -57,8 +59,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
             "State": "ES",
             "Country": "Brasil"
         }
-    },
-    "Description": "Kommo order #2572023"
+    }
 }
 ```
 
@@ -115,7 +116,7 @@ For more information on the response parameters, please refer to the [Response p
         "Tip": 0,
         "Installments": 1,
         "Currency": "BRL",
-        "Description": "Kommo order #2572023",
+        "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
         "Customer": {
             "CustomerId": 250580,
             "Created": "2023-08-31T15:42:21.197",

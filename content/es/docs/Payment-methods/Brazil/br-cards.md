@@ -15,6 +15,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Description` | `string` | Sí | Como requisito del adquirente, envíe la descripción de la compra utilizando el siguiente formato. `NombreComerio+IdOrden+ [merchantUrl]`.<br>Ejemplo: `TestCommerce #order2572023, [testcommerce.com.br]`. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
@@ -43,6 +44,7 @@ Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos e
     "Capture": true,
     "Installments": 0,
     "TargetCountryISO" : "BR",
+    "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
     "Customer": {
         "Email": "breno@mail.com.br",
         "FirstName": "Breno",
@@ -57,8 +59,7 @@ Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos e
             "State": "ES",
             "Country": "Brasil"
         }
-    },
-    "Description": "Kommo order #2572023"
+    }
 }
 ```
 
@@ -115,7 +116,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
         "Tip": 0,
         "Installments": 1,
         "Currency": "BRL",
-        "Description": "Kommo order #2572023",
+        "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
         "Customer": {
             "CustomerId": 250580,
             "Created": "2023-08-31T15:42:21.197",

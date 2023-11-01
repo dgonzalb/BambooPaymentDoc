@@ -19,7 +19,7 @@ menu:
 
 
 ## Available countries
-Maximize market coverage with local payment solutions in **MM** countries across Latin America.
+<div id="countries">Maximize market coverage with local payment solutions in <strong>MM</strong> countries across Latin America.</div><br>
 
 Global companies are leveraging exponential eCommerce growth in Latin America by connecting to Local Payment methods through Bamboo’s single API.
 
@@ -27,7 +27,6 @@ Global companies are leveraging exponential eCommerce growth in Latin America by
 
  <script>
   window.onload = function() {
-    var phtml = document.getElementById('available-countries').nextSibling.innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
-    document.getElementById('available-countries').nextSibling.innerHTML = phtml;
+    document.getElementById('countries').innerHTML = document.getElementById('countries').innerHTML.replace('MM', document.getElementsByClassName('map-point').length);
   }
 </script>
