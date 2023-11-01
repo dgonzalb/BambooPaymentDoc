@@ -279,8 +279,19 @@ The behavior of the response will depend on the amount sent. Use the following c
 
 | Brand | PAN | CVV | Expiration Date |
 |---|---|---|---|
-| Mastercard | `5165850000000008` | `123` | `12/29` | 
+| Mastercard | `5165850000000008` | `123` | `12/29` |
 | Visa | `4704550000000005` | `123` | `12/29` |
+
+#### Cards without CVV
+
+| Brand | PAN | Expiration Date |
+|---|---|---|
+| Mastercard Credit | `5101980000000000` | `12/29` |
+| Mastercard Prepaid | `5599260000000006` | `12/29` |
+| Visa Credit | `4103770000000006` | `12/29` |
+| Visa Debit | `4213000000000005` | `12/29` |
+| Visa International Credit | `4147960000000001` | `12/29` |
+| Visa International Debit | `4345590000000006` | `12/29` |
 
 <div id="shortTable"></div>
 
