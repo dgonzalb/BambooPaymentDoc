@@ -108,6 +108,7 @@ Transaction errors always starts with `TR`.
 | `TR101` | ACQUIRER_REFUND_ERROR | The acquirer cannot process the refund. Contact the acquirer. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR301` | Antifraud_Reject | Rejected by anti-fraud system | Bamboo's Anti-fraud system.<br>Validate with [Bamboo support](mailto:merchantsupport@bamboopayment.com) what rule was affected before your customer retries the purchase. |
 | `TR302` | Antifraud_Invalid_Parameter | Invalid parameters for anti-fraud system | Bamboo's Anti-fraud system.<br>Validate with [Bamboo support](mailto:merchantsupport@bamboopayment.com) what rule was affected before your customer retries the purchase. |
+| `TR996` | TR_BILLINGCORE_ERROR | An internal error occurred while processing the request. | Try again later. If the error persists, contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR997` | TRANSACTION_STEP_ERROR | An error occurred while executing the current process. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR999` | UNKNOWN | Undetermined error when executing the transaction. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 
