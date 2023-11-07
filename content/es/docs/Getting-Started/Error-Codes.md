@@ -108,6 +108,7 @@ Los errores del servicio Transactions empiezan por `TR`.
 | `TR101` | ACQUIRER_REFUND_ERROR | La entidad adquirente no puede procesar el reembolso. Póngase en contacto con la entidad adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 | `TR301` | Antifraud_Reject | Rechazado por el sistema antifraude | Sistema antifraude de Bamboo.<br>Valide con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
 | `TR302` | Antifraud_Invalid_Parameter | Parámetros no válidos para el sistema antifraude de Bamboo.<br>Valide con [Soporte de Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
+| `TR996` | TR_BILLINGCORE_ERROR | Ocurrió un error interno ejecutando la solicitud. | Vuelva a intentarlo más tarde. Si el error persiste, contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 | `TR997` | TRANSACTION_STEP_ERROR | Se ha producido un error al ejecutar el proceso actual. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 | `TR999` | UNKNOWN | Error indeterminado al ejecutar la transacción. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
 
