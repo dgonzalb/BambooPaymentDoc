@@ -31,7 +31,7 @@
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-09-26T17:23:41-05:00" />
-<meta itemprop="wordCount" content="1934">
+<meta itemprop="wordCount" content="1968">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" as="style">
-<link href="../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" as="style">
+<link href="../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b6ab97d7ee35e3bbfde7ad2fa149bc0b38c242a287171a6203a8e793409e7a0ff628707572aae1ba2ad4b42e29ce476b52187443706d67ef33c17966b02b986c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.21559ffe8a2a022a1af82c6253156e52b77aaaa72dd98c503b762e967f3a83e47cc3834b214d2f7787c10ea439c1e2874f2c773b3202b0a43b5b9014c9acdd23.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -811,7 +811,7 @@
 <td><code>payee</code> → <code>bankaccount</code> → <code>codebank</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">Yes<sup>*</sup></td>
-<td>Bank code of the Payee.</td>
+<td>Bank code of the Payee.<br>You can get the list of banks for a given country using the <a href="#get-bank-list"><em><strong>Get Bank list</strong></em> method</a>. Alternatively, <a href="../payouts-api/variables.html#bank-codes">find the bank list here</a>.<br>Do not include zeros on the left in the bank code.</td>
 <td></td>
 </tr>
 <tr>
@@ -1460,12 +1460,16 @@ The validation of the message was successful, but the Payout is <strong>Declined
 	<div class="text-muted mt-5 pt-3 border-top">
 <img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
 <br>
-<b>Last modified</b>
-
-September 26, 2023: 
-
- <i>Update request example for Chile (18639163)</i>
-  </div>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Last modified</b>
+    
+    September 26, 2023
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+</div>
+</div>
 </div>
 
 

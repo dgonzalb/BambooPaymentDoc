@@ -1,0 +1,187 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – Merchant Utilities</title>
+    <link>/en/docs/merchant-utilities.html</link>
+    <description>Recent content in Merchant Utilities on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 May 2023 07:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/en/docs/merchant-utilities/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Merchant Balances</title>
+      <link>/en/docs/merchant-balances.html</link>
+      <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
+      
+      <guid>/en/docs/merchant-balances.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;request-url&#34;&gt;Request URL&lt;/h2&gt;
+&lt;p&gt;You must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/merchant/account/balance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/merchant/account/balance&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;authorization&#34;&gt;Authorization&lt;/h2&gt;
+&lt;p&gt;In the header, the &lt;code&gt;Authorization&lt;/code&gt; parameter must be configured by concatenating the word &lt;code&gt;Basic&lt;/code&gt;, a space and the &lt;em&gt;&lt;strong&gt;Private Key&lt;/strong&gt;&lt;/em&gt; of the merchant.&lt;/p&gt;
+&lt;h2 id=&#34;response-example&#34;&gt;Response example&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;You don&amp;rsquo;t need to configure a request to invoke this API.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Date&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2023-06-02T20:59:59-03:00&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CurrencyCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UYU&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;FinalAccountingBalance&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;13670.0000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;FinalAvailableBalance&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;13670.0000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;FinalFeeBalance&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;FinalProcessingBalance&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+Where:
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;Date&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Date and time when you send the request.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;CurrencyCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;ISO code of the currency configured for the merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;FinalAccountingBalance&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Total balance.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;FinalAvailableBalance&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Total balance available for withdraw.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;FinalFeeBalance&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Balance available for fees.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;FinalProcessingBalance&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Balance in processing. This balance will be available when the processing finishes successfully; otherwise, it is canceled.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Errors&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Errors that may appear during the execution of the API method.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Provider Installation Guide on VTEX</title>
+      <link>/en/docs/merchant-utilities/bamboo-payment-provider-vtex.html</link>
+      <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
+      
+      <guid>/en/docs/merchant-utilities/bamboo-payment-provider-vtex.html</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;ul&gt;
+&lt;li&gt;The Bamboo Payment Provider is available only for Uruguay.&lt;/li&gt;
+&lt;li&gt;Along this guide, we will refer your VTEX site as &lt;code&gt;{your-site}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Before proceeding, it is required for you to take into account the following prerequisites.&lt;/p&gt;
+&lt;h3 id=&#34;register-your-commerce-in-vtex&#34;&gt;Register your commerce in VTEX&lt;/h3&gt;
+&lt;p&gt;Log into the &lt;a href=&#34;https://vtex.com/&#34;&gt;VTEX site&lt;/a&gt; to register you eCommerce. Once you are registered, you must have an administrator user to be used along the whole integration process with Bamboo Payment System.&lt;/p&gt;
+&lt;h3 id=&#34;generate-key-and-token-for-vtex&#34;&gt;Generate Key and Token for VTEX&lt;/h3&gt;
+&lt;p&gt;Open your Merchant console (Production or Stage) and expand the &lt;em&gt;&lt;strong&gt;Setting&lt;/strong&gt;&lt;/em&gt; section in the left menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This window displays the configuration setting of your account. Go to the &lt;em&gt;&lt;strong&gt;VTEX&lt;/strong&gt;&lt;/em&gt; tab.&lt;br&gt;In the &lt;strong&gt;App Key-Token Bamboo&lt;/strong&gt; section of the VTEX settings, click the &lt;em&gt;&lt;strong&gt;Generate new key and token&lt;/strong&gt;&lt;/em&gt; button to create the new credentials.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Keep both keys &lt;code&gt;Bamboo app key&lt;/code&gt; and &lt;code&gt;Bamboo app token&lt;/code&gt; in a safe place as they will be required later.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;enable-sandbox-environment&#34;&gt;Enable Sandbox environment&lt;/h2&gt;
+&lt;p&gt;To enable testing in the Sandbox environment, you must use the &lt;em&gt;testing&lt;/em&gt; workspace and request an access to the merchant console in stage environment. This step is required before moving to the production environment.&lt;/p&gt;
+&lt;p&gt;To create this workspace, download and install &lt;code&gt;nodejs&lt;/code&gt; from the &lt;a href=&#34;https://nodejs.org/en/download&#34;&gt;node&amp;rsquo;s official page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Then, run the following command in your command prompt.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npx vtex use testing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Warning&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Do not use this configuration in production environment and you must always use the &lt;em&gt;master&lt;/em&gt; workspace.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;install-and-configure-bamboo-payment-provider-on-vtex&#34;&gt;Install and configure Bamboo Payment Provider on VTEX&lt;/h2&gt;
+&lt;p&gt;Open the &lt;em&gt;VTEX App Store&lt;/em&gt; using the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/store/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then, search &lt;em&gt;Payment Provider Bamboo&lt;/em&gt;. In case you could not find the component, use the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/apps/bamboopayments.payment@1.3.4/setup/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once you have installed the component, you need to configure the payment methods to be used. To do so, add Bamboo as payment processor as mentioned in the &lt;a href=&#34;#configure-bamboo-payment-provider&#34;&gt;Configure Bamboo Payment provider&lt;/a&gt; section.&lt;/p&gt;
+&lt;h2 id=&#34;configure-bamboo-payment-provider&#34;&gt;Configure Bamboo Payment provider&lt;/h2&gt;
+&lt;p&gt;To configure the payment provider, click the &lt;em&gt;&lt;strong&gt;Store Settings&lt;/strong&gt;&lt;/em&gt; option in the left panel. Then, select the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; option in the &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt; group.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens, go to the &lt;em&gt;&lt;strong&gt;Gateway Affiliations&lt;/strong&gt;&lt;/em&gt; tab. Alternatively, you can use to the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/pci-gateway/#/affiliations&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click the plus icon in the top right corner to add the connector, then search for the Bamboo connector in the &lt;em&gt;&lt;strong&gt;OTHER&lt;/strong&gt;&lt;/em&gt; section.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the following information for the Bamboo Gateway Affiliation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Affiliation name&lt;/strong&gt;: VTEX assigns a name by default. Nevertheless, you can set one of your choice.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test or Live toggle&lt;/strong&gt;: select mode of the Gateway Affiliation. You should select the &lt;em&gt;Test&lt;/em&gt; mode first to try out the Gateway Affiliation before start using it in real transactions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Key&lt;/strong&gt;: Use the &lt;em&gt;&lt;strong&gt;Bamboo app key&lt;/strong&gt;&lt;/em&gt; field &lt;a href=&#34;#generate-key-and-token-for-vtex&#34;&gt;generated before&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Token&lt;/strong&gt;: Use the &lt;em&gt;&lt;strong&gt;Bamboo app token&lt;/strong&gt;&lt;/em&gt; field &lt;a href=&#34;#generate-key-and-token-for-vtex&#34;&gt;generated before&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finish.&lt;/p&gt;
+&lt;h2 id=&#34;configure-the-payment-methods&#34;&gt;Configure the payment methods&lt;/h2&gt;
+&lt;p&gt;After you configured the Bamboo Gateway Affiliation, you need to configure the payment methods. You can configure the payment methods predefined by VTEX or custom payment methods.&lt;/p&gt;
+&lt;h3 id=&#34;configure-predefined-payment-methods&#34;&gt;Configure predefined payment methods&lt;/h3&gt;
+&lt;p&gt;Within the payment methods, you can configure the pre-existing ones in VTEX (Visa, Mastercard, Cabal, etc). Follow the next procedure to add a payment method.&lt;/p&gt;
+&lt;p&gt;Go to the &lt;em&gt;&lt;strong&gt;Store Settings&lt;/strong&gt;&lt;/em&gt; option in the left panel. Then, select the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; option in the &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt; group.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens, go to the &lt;em&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click the plus icon in the top right corner to add a new payment condition, then search for the payment method you want to include.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the following information for the payment condition:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Condition name&lt;/strong&gt;: Provide a meaningful name for the condition in the field next to the payment method name.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: define whether the condition is enabled.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Process with affiliation&lt;/strong&gt;: select the Bamboo Gateway Affiliation created in the previous step.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;: In the right panel, add the conditions related to the payment method such as installments, rates, among others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentProvider/PaymentProvider_en_11.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finish.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

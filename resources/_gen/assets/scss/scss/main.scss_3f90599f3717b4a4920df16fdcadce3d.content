@@ -298,7 +298,7 @@ output {
 summary {
   display: list-item;
   cursor: pointer;
-  padding: 5px 0; }
+  padding: 7px 10px; }
 
 template {
   display: none; }
@@ -310,9 +310,14 @@ details > summary {
   position: relative;
   top: 8px;
   border-radius: 10px;
-  border: 1px solid #A6C307;
+  border: 2px solid #004179;
   outline: none;
-  margin: 10px 0; }
+  margin: 10px 0;
+  font-weight: bold; }
+
+details[open] > summary {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit; }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1054,7 +1059,7 @@ pre {
 
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table,
 .td-content > table,
 .td-box .row.section > table {
@@ -1069,10 +1074,10 @@ details > table,
   .alert > table details > td,
   .alert > table th,
   .alert > table td,
-  details > table details > th,
-  details > table details > td,
-  details > table th,
-  details > table td,
+  #contentdiv table details > th,
+  #contentdiv table details > td,
+  #contentdiv table th,
+  #contentdiv table td,
   .table details > th,
   .table details > td,
   .table th,
@@ -1086,7 +1091,7 @@ details > table,
     border-top: 1px solid #dae0eb; }
   .tab-pane > table thead th,
   .alert > table thead th,
-  details > table thead th,
+  #contentdiv table thead th,
   .table thead th,
   .td-content > table thead th,
   .td-box .row.section > table thead th {
@@ -1094,7 +1099,7 @@ details > table,
     border-bottom: 2px solid #dae0eb; }
   .tab-pane > table tbody + tbody,
   .alert > table tbody + tbody,
-  details > table tbody + tbody,
+  #contentdiv table tbody + tbody,
   .table tbody + tbody,
   .td-content > table tbody + tbody,
   .td-box .row.section > table tbody + tbody {
@@ -1104,10 +1109,10 @@ details > table,
   .alert > table .td-content > table,
   .alert > table .td-box .row.section > table,
   .td-box .alert > table .row.section > table,
-  details > table .table,
-  details > table .td-content > table,
-  details > table .td-box .row.section > table,
-  .td-box details > table .row.section > table,
+  #contentdiv table .table,
+  #contentdiv table .td-content > table,
+  #contentdiv table .td-box .row.section > table,
+  .td-box #contentdiv table .row.section > table,
   .table .table,
   .td-content > table .table,
   .table .td-content > table,
@@ -1142,7 +1147,7 @@ details > table,
 
 .tab-pane > table tbody tr:nth-of-type(even),
 .alert > table tbody tr:nth-of-type(even),
-details > table tbody tr:nth-of-type(even),
+#contentdiv table tbody tr:nth-of-type(even),
 .table-striped tbody tr:nth-of-type(even),
 .td-content > table tbody tr:nth-of-type(even),
 .td-box .row.section > table tbody tr:nth-of-type(even) {
@@ -1252,7 +1257,7 @@ details > table tbody tr:nth-of-type(even),
 
 .tab-pane > table .thead-dark th,
 .alert > table .thead-dark th,
-details > table .thead-dark th,
+#contentdiv table .thead-dark th,
 .table .thead-dark th,
 .td-content > table .thead-dark th,
 .td-box .row.section > table .thead-dark th {
@@ -1262,7 +1267,7 @@ details > table .thead-dark th,
 
 .tab-pane > table .thead-light th,
 .alert > table .thead-light th,
-details > table .thead-light th,
+#contentdiv table .thead-light th,
 .table .thead-light th,
 .td-content > table .thead-light th,
 .td-box .row.section > table .thead-light th {
@@ -1287,7 +1292,7 @@ details > table .thead-light th,
 @media (max-width: 575.98px) {
   .tab-pane > table-sm,
   .alert > table-sm,
-  details > table-sm,
+  #contentdiv table-sm,
   .table-responsive-sm {
     width: 80%;
     overflow-x: auto;
@@ -1295,14 +1300,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane > table-sm > .table-bordered,
     .alert > table-sm > .table-bordered,
-    details > table-sm > .table-bordered,
+    #contentdiv table-sm > .table-bordered,
     .table-responsive-sm > .table-bordered {
       border: 0; } }
 
 @media (max-width: 767.98px) {
   .tab-pane > table-md,
   .alert > table-md,
-  details > table-md,
+  #contentdiv table-md,
   .table-responsive-md {
     width: 80%;
     overflow-x: auto;
@@ -1310,14 +1315,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane > table-md > .table-bordered,
     .alert > table-md > .table-bordered,
-    details > table-md > .table-bordered,
+    #contentdiv table-md > .table-bordered,
     .table-responsive-md > .table-bordered {
       border: 0; } }
 
 @media (max-width: 991.98px) {
   .tab-pane > table-lg,
   .alert > table-lg,
-  details > table-lg,
+  #contentdiv table-lg,
   .table-responsive-lg {
     width: 80%;
     overflow-x: auto;
@@ -1325,14 +1330,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane > table-lg > .table-bordered,
     .alert > table-lg > .table-bordered,
-    details > table-lg > .table-bordered,
+    #contentdiv table-lg > .table-bordered,
     .table-responsive-lg > .table-bordered {
       border: 0; } }
 
 @media (max-width: 1199.98px) {
   .tab-pane > table-xl,
   .alert > table-xl,
-  details > table-xl,
+  #contentdiv table-xl,
   .table-responsive-xl {
     width: 80%;
     overflow-x: auto;
@@ -1340,13 +1345,13 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane > table-xl > .table-bordered,
     .alert > table-xl > .table-bordered,
-    details > table-xl > .table-bordered,
+    #contentdiv table-xl > .table-bordered,
     .table-responsive-xl > .table-bordered {
       border: 0; } }
 
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table-responsive,
 .td-content > table,
 .td-box .row.section > table {
@@ -1356,7 +1361,7 @@ details > table,
   -ms-overflow-style: -ms-autohiding-scrollbar; }
   .tab-pane > table > .table-bordered,
   .alert > table > .table-bordered,
-  details > table > .table-bordered,
+  #contentdiv table > .table-bordered,
   .table-responsive > .table-bordered,
   .td-content > table > .table-bordered,
   .td-box .row.section > table > .table-bordered {
@@ -8436,7 +8441,7 @@ a.text-dark:hover, a.text-dark:focus {
         padding-top: 5.5rem; } }
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table,
 .td-box .row.section > table,
 .td-content > table {
@@ -8445,18 +8450,26 @@ details > table,
   background-color: transparent; }
   .tab-pane table details > th,
   .tab-pane table details > td,
+  .tab-pane table #contentdiv > th,
+  .tab-pane table #contentdiv > td,
   .tab-pane table th,
   .tab-pane table td,
   .alert table details > th,
   .alert table details > td,
+  .alert table #contentdiv > th,
+  .alert table #contentdiv > td,
   .alert table th,
   .alert table td,
-  details > table details > th,
-  details > table details > td,
-  details > table th,
-  details > table td,
+  #contentdiv table details > th,
+  #contentdiv table details > td,
+  #contentdiv table #contentdiv > th,
+  #contentdiv table #contentdiv > td,
+  #contentdiv table th,
+  #contentdiv table td,
   .table details > th,
   .table details > td,
+  .table #contentdiv > th,
+  .table #contentdiv > td,
   .table th,
   .td-box .row.section > table th,
   .td-content > table th,
@@ -8467,7 +8480,7 @@ details > table,
     vertical-align: top; }
   .tab-pane table thead th,
   .alert table thead th,
-  details > table thead th,
+  #contentdiv table thead th,
   .table thead th,
   .td-box .row.section > table thead th,
   .td-content > table thead th {
@@ -8475,7 +8488,7 @@ details > table,
     border-bottom: 2px solid #dae0eb; }
   .tab-pane table tbody + tbody,
   .alert table tbody + tbody,
-  details > table tbody + tbody,
+  #contentdiv table tbody + tbody,
   .table tbody + tbody,
   .td-box .row.section > table tbody + tbody,
   .td-content > table tbody + tbody {
@@ -8485,10 +8498,10 @@ details > table,
   .alert table .td-box .row.section > table,
   .td-box .alert table .row.section > table,
   .alert table .td-content > table,
-  details > table .table,
-  details > table .td-box .row.section > table,
-  .td-box details > table .row.section > table,
-  details > table .td-content > table,
+  #contentdiv table .table,
+  #contentdiv table .td-box .row.section > table,
+  .td-box #contentdiv table .row.section > table,
+  #contentdiv table .td-content > table,
   .table .table,
   .td-box .row.section > table .table,
   .td-content > table .table,
@@ -8523,7 +8536,7 @@ details > table,
 
 .tab-pane table tbody tr:nth-of-type(even),
 .alert table tbody tr:nth-of-type(even),
-details > table tbody tr:nth-of-type(even),
+#contentdiv table tbody tr:nth-of-type(even),
 .table-striped tbody tr:nth-of-type(even),
 .td-box .row.section > table tbody tr:nth-of-type(even),
 .td-content > table tbody tr:nth-of-type(even) {
@@ -8633,7 +8646,7 @@ details > table tbody tr:nth-of-type(even),
 
 .tab-pane table .thead-dark th,
 .alert table .thead-dark th,
-details > table .thead-dark th,
+#contentdiv table .thead-dark th,
 .table .thead-dark th,
 .td-box .row.section > table .thead-dark th,
 .td-content > table .thead-dark th {
@@ -8643,7 +8656,7 @@ details > table .thead-dark th,
 
 .tab-pane table .thead-light th,
 .alert table .thead-light th,
-details > table .thead-light th,
+#contentdiv table .thead-light th,
 .table .thead-light th,
 .td-box .row.section > table .thead-light th,
 .td-content > table .thead-light th {
@@ -8668,7 +8681,7 @@ details > table .thead-light th,
 @media (max-width: 575.98px) {
   .tab-pane table-sm,
   .alert table-sm,
-  details > table-sm,
+  #contentdiv table-sm,
   .table-responsive-sm {
     margin-bottom: 1.5em;
     margin-left: -4px;
@@ -8680,14 +8693,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane table-sm > .table-bordered,
     .alert table-sm > .table-bordered,
-    details > table-sm > .table-bordered,
+    #contentdiv table-sm > .table-bordered,
     .table-responsive-sm > .table-bordered {
       border: 0; } }
 
 @media (max-width: 767.98px) {
   .tab-pane table-md,
   .alert table-md,
-  details > table-md,
+  #contentdiv table-md,
   .table-responsive-md {
     margin-bottom: 1.5em;
     margin-left: -4px;
@@ -8699,14 +8712,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane table-md > .table-bordered,
     .alert table-md > .table-bordered,
-    details > table-md > .table-bordered,
+    #contentdiv table-md > .table-bordered,
     .table-responsive-md > .table-bordered {
       border: 0; } }
 
 @media (max-width: 991.98px) {
   .tab-pane table-lg,
   .alert table-lg,
-  details > table-lg,
+  #contentdiv table-lg,
   .table-responsive-lg {
     margin-bottom: 1.5em;
     margin-left: -4px;
@@ -8718,14 +8731,14 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane table-lg > .table-bordered,
     .alert table-lg > .table-bordered,
-    details > table-lg > .table-bordered,
+    #contentdiv table-lg > .table-bordered,
     .table-responsive-lg > .table-bordered {
       border: 0; } }
 
 @media (max-width: 1199.98px) {
   .tab-pane table-xl,
   .alert table-xl,
-  details > table-xl,
+  #contentdiv table-xl,
   .table-responsive-xl {
     margin-bottom: 1.5em;
     margin-left: -4px;
@@ -8737,13 +8750,13 @@ details > table .thead-light th,
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .tab-pane table-xl > .table-bordered,
     .alert table-xl > .table-bordered,
-    details > table-xl > .table-bordered,
+    #contentdiv table-xl > .table-bordered,
     .table-responsive-xl > .table-bordered {
       border: 0; } }
 
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table-responsive,
 .td-box .row.section > table,
 .td-content > table {
@@ -8757,58 +8770,77 @@ details > table,
   -ms-overflow-style: -ms-autohiding-scrollbar; }
   .tab-pane table > .table-bordered,
   .alert table > .table-bordered,
-  details > table > .table-bordered,
+  #contentdiv table > .table-bordered,
   .table-responsive > .table-bordered,
   .td-box .row.section > table > .table-bordered,
   .td-content > table > .table-bordered {
     border: 0; }
 
+#contentdiv {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: -3px;
+  border-radius: 0 0 10px 10px; }
+
+#contentdiv table {
+  margin: 0 auto !important;
+  width: 90% !important; }
+
+#contentdiv table,
 .tab-pane table,
 .alert table,
 .td-content > table {
   border-collapse: separate;
   border-spacing: 0; }
 
+#contentdiv table thead th,
 .tab-pane > table thead th,
 .alert > table thead th,
 .td-content > table thead th {
   border: 0px !important;
   vertical-align: middle; }
 
+#contentdiv table tr:first-child td:first-child,
 .tab-pane > table tr:first-child td:first-child,
 .alert > table tr:first-child td:first-child,
 .td-content > table tr:first-child td:first-child {
   border-radius: 10px 0 0 0;
   border-left: 1px solid #dae0eb; }
 
+#contentdiv table tr:first-child td:last-child,
 .tab-pane > table tr:first-child td:last-child,
 .alert > table tr:first-child td:last-child,
 .td-content > table tr:first-child td:last-child {
   border-radius: 0 10px 0 0;
   border-right: 1px solid #dae0eb; }
 
+#contentdiv table tr:last-child td:first-child,
 .tab-pane > table tr:last-child td:first-child,
 .alert > table tr:last-child td:first-child,
 .td-content > table tr:last-child td:first-child {
   border-radius: 0 0 0 10px;
   border-left: 1px solid #dae0eb; }
 
+#contentdiv table tr:last-child td:last-child,
 .tab-pane > table tr:last-child td:last-child,
 .alert > table tr:last-child td:last-child,
 .td-content > table tr:last-child td:last-child {
   border-radius: 0 0 10px 0;
   border-right: 1px solid #dae0eb; }
 
+#contentdiv table td:first-child,
 .tab-pane > table td:first-child,
 .alert > table td:first-child,
 .td-content > table td:first-child {
   border-left: 1px solid #dae0eb; }
 
+#contentdiv table td:last-child,
 .tab-pane > table td:last-child,
 .alert > table td:last-child,
 .td-content > table td:last-child {
   border-right: 1px solid #dae0eb; }
 
+#contentdiv table tr:last-child td,
 .tab-pane > table tr:last-child td,
 .alert > table tr:last-child td,
 .td-content > table tr:last-child td {

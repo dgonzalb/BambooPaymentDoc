@@ -470,7 +470,7 @@ output {
 summary {
   display: list-item; // Add the correct display in all browsers
   cursor: pointer;
-  padding: 5px 0;
+  padding: 7px 10px;
 }
 
 template {
@@ -488,7 +488,13 @@ details > summary {
   position: relative;
   top: 8px;
   border-radius: 10px;
-  border: 1px solid #A6C307;
+  border: 2px solid #004179;
   outline: none;
   margin: 10px 0;
+  font-weight: bold;
+}
+
+details[open] > summary {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
 }

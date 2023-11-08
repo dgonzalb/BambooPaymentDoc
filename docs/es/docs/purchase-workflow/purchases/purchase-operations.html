@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase-operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2023-09-22T14:22:34-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-11-01T13:54:35-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Operaciones">
 <meta itemprop="description" content="Cree una compra utilizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2023-09-22T14:22:34-05:00" />
-<meta itemprop="wordCount" content="2085">
+<meta itemprop="dateModified" content="2023-11-01T13:54:35-05:00" />
+<meta itemprop="wordCount" content="2110">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Operaciones"/>
 <meta name="twitter:description" content="Cree una compra utilizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" as="style">
-<link href="../../../../scss/main.min.2943070a336705d2babfbfb120f9d4acd2c11d19f0eff4dbffab085a2d63d162.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" as="style">
+<link href="../../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html">English</a>
 	
+	<a class="dropdown-item" href="../../../../pt/docs/purchase-workflow/purchases/purchase-operations.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b6ab97d7ee35e3bbfde7ad2fa149bc0b38c242a287171a6203a8e793409e7a0ff628707572aae1ba2ad4b42e29ce476b52187443706d67ef33c17966b02b986c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.21559ffe8a2a022a1af82c6253156e52b77aaaa72dd98c503b762e967f3a83e47cc3834b214d2f7787c10ea439c1e2874f2c773b3202b0a43b5b9014c9acdd23.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html">English</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/purchase-workflow/purchases/purchase-operations.html">Português</a>
 	
 </div>
     </div>
@@ -1207,7 +1211,7 @@
 <tr>
 <td><code>Description</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">No <sup>4</sup></td>
 <td>Descripción de la compra.</td>
 </tr>
 <tr>
@@ -1239,6 +1243,7 @@
 <li><sup>1</sup> Los parámetros <code>PaymentMediaId</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos dependiendo del flujo que desee utilizar.</li>
 <li><sup>2</sup> No todos los medios de pago soportan la funcionalidad de preautorización. Revise la sección de <a href="../../../../es/docs/payment-methods.html">Países y medios de pago</a> para verificar la disponibilidad.</li>
 <li><sup>3</sup> No se requiere este objeto cuando cree una compra utilizando <a href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
+<li><sup>4</sup> Cuando utilice <a href="../../../../es/docs/payment-methods/brazil/br-cards.html">tarjetas en Brasil</a>, la descripción es obligatoria y debe utilizar un formato fijo, como se explica en los <a href="../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters">parámetros del request</a>.</li>
 <li>Tenga en cuenta que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección <a href="../../../../es/docs/purchase-workflow/antifraud.html">Antifraude</a>.</li>
 </ul>
 </p>
@@ -1670,12 +1675,16 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 <img src="https://bamboo-doc-assets.s3.amazonaws.com/images/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
 <br>
-<b>Última modificación</b>
-
-22 de septiembre de 2023: 
-
- <i>Payouts Preview feature (de723e42)</i>
-  </div>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    1 de noviembre de 2023
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+</div>
+</div>
 </div>
 
 
