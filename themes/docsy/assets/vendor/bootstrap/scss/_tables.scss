@@ -4,7 +4,7 @@
 
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table {
   width: 100%;
   margin-bottom: $spacer;
@@ -80,7 +80,7 @@ details > table,
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
@@ -120,7 +120,7 @@ details > table,
 // stylelint-disable-next-line no-duplicate-selectors
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table {
   .thead-dark {
     th {
@@ -175,7 +175,7 @@ details > table,
 // size of where your table will overflow.
 .tab-pane > table,
 .alert > table,
-details > table,
+#contentdiv table,
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);

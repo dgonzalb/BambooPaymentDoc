@@ -38,7 +38,7 @@
 //
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table {
   width: 100%;
   margin-bottom: $spacer;
@@ -46,6 +46,8 @@ details > table,
 
   details > th, 
   details > td,
+  #contentdiv > th,
+  #contentdiv > td,
   th,
   td {
     padding: $table-cell-padding;
@@ -114,7 +116,7 @@ details > table,
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
@@ -154,7 +156,7 @@ details > table,
 // stylelint-disable-next-line no-duplicate-selectors
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table {
   .thead-dark {
     th {
@@ -209,7 +211,7 @@ details > table,
 // size of where your table will overflow.
 .tab-pane table,
 .alert table,
-details > table,
+#contentdiv table,
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
@@ -235,6 +237,19 @@ details > table,
   }
 }
 
+#contentdiv {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: -3px;
+  border-radius: 0 0 10px 10px;
+}
+
+#contentdiv table {
+  margin: 0 auto !important;
+  width: 90% !important;
+}
+
+#contentdiv table,
 .tab-pane table,
 .alert table,
 .td-content > table {
@@ -242,6 +257,7 @@ details > table,
   border-spacing: 0;
 }
 
+#contentdiv table thead th,
 .tab-pane > table thead th,
 .alert > table thead th,
 .td-content > table thead th {
@@ -249,6 +265,7 @@ details > table,
   vertical-align: middle;
 }
 
+#contentdiv table tr:first-child td:first-child,
 .tab-pane > table tr:first-child td:first-child,
 .alert > table tr:first-child td:first-child,
 .td-content > table tr:first-child td:first-child{
@@ -256,6 +273,7 @@ details > table,
   border-left: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table tr:first-child td:last-child,
 .tab-pane > table tr:first-child td:last-child,
 .alert > table tr:first-child td:last-child,
 .td-content > table tr:first-child td:last-child{
@@ -263,6 +281,7 @@ details > table,
   border-right: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table tr:last-child td:first-child,
 .tab-pane > table tr:last-child td:first-child,
 .alert > table tr:last-child td:first-child,
 .td-content > table tr:last-child td:first-child{
@@ -270,6 +289,7 @@ details > table,
   border-left: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table tr:last-child td:last-child,
 .tab-pane > table tr:last-child td:last-child,
 .alert > table tr:last-child td:last-child,
 .td-content > table tr:last-child td:last-child{
@@ -277,20 +297,24 @@ details > table,
   border-right: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table td:first-child,
 .tab-pane > table td:first-child,
 .alert > table td:first-child,
 .td-content > table td:first-child{
   border-left: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table td:last-child,
 .tab-pane > table td:last-child,
 .alert > table td:last-child,
 .td-content > table td:last-child{
   border-right: $table-border-width solid $table-border-color;
 }
 
+#contentdiv table tr:last-child td,
 .tab-pane > table tr:last-child td,
 .alert > table tr:last-child td,
 .td-content > table tr:last-child td{
   border-bottom: $table-border-width solid $table-border-color;
 }
+
