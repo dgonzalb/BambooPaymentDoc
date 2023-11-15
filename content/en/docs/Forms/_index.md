@@ -173,6 +173,7 @@ The `TokenInfo` object is returned in the `tokenCreated` event triggered by the 
 | Brand <br> *string* | Brand of the card or payment method used. |
 | IssuerBank <br> *string* | Card issuer bank. |
 | Owner <br> *string* | Cardholder name. |
+| Bin <br> *numeric[6]* | Card identifier. |
 | Last4 <br> *numeric[4]* | The cards last four digits. |
 | CardType <br> *string* | Payment method (or card) type, possible values:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
 | CardExpMonth <br> *numeric[2]* | Card expiration month. |
