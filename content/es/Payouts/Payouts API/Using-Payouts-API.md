@@ -96,7 +96,7 @@ El Preview del Payout es meramente informativo y no congela el tipo de cambio, e
 {{% /alert %}}
 
 #### URL del Request {#request-url-3}
-Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
+Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
 * **Producción**: `https://payout-api.bamboopayment.com/api/payout/preview`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout/preview`
