@@ -173,6 +173,7 @@ El objeto `TokenInfo` se retorna en el evento `tokenCreated` lanzado por el form
 | Brand <br> *string* | Marca de la tarjeta o medio de pago utilizado. |
 | IssuerBank <br> *string* | Banco Emisor de la tarjeta. |
 | Owner <br> *string* | Nombre del tarjetahabiente. |
+| Bin <br> *numeric[6]* | Identificador de la tarjeta. |
 | Last4 <br> *numeric[4]* | Cuatro últimos dígitos de la tarjeta. |
 | CardType <br> *string* | Tipo de medio de pago o tarjeta, posibles valores:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
 | CardExpMonth <br> *numeric[2]* | Mes de vencimiento de la tarjeta. |
