@@ -413,3 +413,26 @@ In the field `MetadataOut` inside the purchase `Response` object, the QR code is
 Result:
 
 <img src="/assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
+
+## Bank transfers
+With this payment method, you can provide your customers with the option to pay using bank transfers from any bank or digital wallet that supports _**CVU**_ or _**CBU**_. Your customers will be presented with Bamboo's bank information (PAGO SIEMPRE), and they can use their home banking to make the transfer.
+
+### Request parameters
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+
+#### Request example
+```json
+
+```
+
+### Response parameters
+In the response, you will find the following parameters:
+
+| Property | Type | Description |
+|---|:-:|---|
+
+#### Payment experience
+As mentioned before, ...

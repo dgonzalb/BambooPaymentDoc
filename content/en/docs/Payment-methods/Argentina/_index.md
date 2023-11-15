@@ -26,6 +26,7 @@ This section shows the available payment methods, currencies, and related inform
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" alt="Naranja" style="min-width: 40px;" /> | 24 | Tarjeta Naranja | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" alt="PagoFacil" style="min-width: 40px;" />| 61 | Pago Fácil | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" alt="Transferencias30" style="min-width: 40px;" />| 72 | Transferencias 3.0 | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Wallet | API |
+| |  | Bank Transfer | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Bank Transfer | Redirect |
 
 ## Currencies
 
@@ -36,10 +37,14 @@ This section shows the available payment methods, currencies, and related inform
 
 ## Amount limits
 
-|  | Cards | Cash | Wallet |
-|---|:---:|:---:|:---:|
-| **Minimum** | ARS 1 | ARS 1 | ARS 1 |
-| **Maximum** | ARS 99.999.999.999.999.999 | ARS 1.000.000,00 | ARS 3.345.000,00<hr>USD 12.500,00 |
+|  | Cards | Cash | Wallet (Transferencias 3.0) | Bank Transfer |
+|---|:---:|:---:|:---:|:---:|
+| **Minimum** | ARS 1 | ARS 1 | ARS 1 | ARS 1 |
+| **Maximum** | ARS 99.999.999.999.999.999 | ARS 1.000.000,00 | ARS 3.345.000,00<hr>USD 12.500,00 | ARS 6.000.000,00<sup>*</sup> |
+
+{{% alert title="Info" color="info"%}}
+As a regulation, the maximum amount for Bank transfers is ARS 6.000.000,00 per day and account. Nevertheless, your account or wallet may have a lower transfer limit.
+{{% /alert %}}
 
 ## Document types
 The following table describes the valid document types for Argentina:
