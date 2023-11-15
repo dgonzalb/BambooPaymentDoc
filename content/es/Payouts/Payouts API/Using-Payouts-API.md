@@ -35,6 +35,7 @@ var hash = hexHash.toString(CryptoJS.enc.Hex);
 La API de Payouts ofrece tres métodos que puede utilizar cuando solicite Payouts.
 
 * [Obtener listado de bancos](#get-bank-list)
+* [Preview del Payout](#payout-preview)
 * [Solicitud del Payout](#payout-request)
 * [Obtener un Payout](#obtaining-a-payout)
 
@@ -83,6 +84,65 @@ Donde `{{Country}}` representa el código ISO del país que desea consultar, uti
     ...
   }
 ]
+```
+
+### Preview del Payout {#payout-preview}
+El método de Preview del Payout le permite mostrar el valor final recibido por el beneficiario y la fecha prevista en la que recibirá el dinero.
+
+![PrintScreen](/assets/Payouts/Payouts12_es.png)
+
+{{% alert title="Advertencia" color="warning"%}}
+El Preview del Payout es meramente informativo y no congela el tipo de cambio, el cual se congela al [solicitar el Payout](#payout-request).
+{{% /alert %}}
+
+#### URL del Request {#request-url-3}
+Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
+
+* **Producción**: `https://payout-api.bamboopayment.com/api/payout/preview`
+* **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout/preview`
+
+#### Parámetros del Request {#request-parameters-1}
+La siguiente tabla muestra los parámetros obligatorios y opcionales para el Preview del Payout.
+
+| Campo | Tipo | ¿Obligatorio? | Descripción |
+|---|---|:-:|---|---|
+| `amount` | `number` | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _USD 1,00_. |
+| `destinationCountryIsoCode` | `string(2)` | Sí | Código ISO del país en formato `ISO 3166-2`.<br>[Listado de países disponibles de Payouts](../overview.html#coverage). |
+| `originalCurrencyIsoCode` | `string(3)` | Sí | Código ISO de la moneda.<br>_Solo está disponible **USD**_. |
+
+#### Ejemplo del Request {#request-example-1}
+```json
+{
+  "amount": 125000,
+  "destinationCountryIsoCode": "CO",
+  "originalCurrencyIsoCode": "USD"
+}
+```
+#### Parámetros del Response {#response-parameters-2}
+
+| Parámetro | Formato | Descripción |
+|---|:-:|---|
+| `amountInOrignalCurrency` | `number` | Valor solicitado en el Preview del Payout. |
+| `fee` | `number` | Monto cobrado por Bamboo para porcesar el Payout. Usted o el beneficiario pueden asumir la tasa de acuerdo con su contrato. |
+| `amountToBeSentInOrignalCurrency` | `number` | Monto a ser enviado al Beneficiario, el cual se calcula como la diferencia entre `amountInOrignalCurrency` y `fee`. |
+| `exchangeRate` | `number` | Valor de conversión entre la moneda origen y destino. Este valor incluye hasta `5` dígitos decimales. |
+| `amountToBeSentInLocalCurrency` | `number` | Monto que va a recbir el Beneficiario, el cual se calcula multiplicando `amountToBeSentInOriginalCurrency` por `exchangeRate`. |
+| `errors` | `object` | Errores que pueden aparecer. Los códigos de error para este método empiezan por `6`.<br>Encuentre los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
+| `errors` → `ErrorCode` | `string` | Código interno del error. Encuentra los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
+| `errors` → `PropertyName` | `string` | Propiedad que provocó el error. |
+| `errors` → `Message` | `string` | Descripción del error. |
+
+#### Ejemplo del Response {#response-example-2}
+```json
+{
+    "amountInOrignalCurrency": 1250,
+    "fee": 37.5000,
+    "amountToBeSentInOrignalCurrency": 1212.5000,
+    "exchangeRate": 3941.510000,
+    "amountToBeSentInLocalCurrency": 4779080.88,
+    "expectedPaymentDate": "2023-09-26T15:59:03Z",
+    "error": null
+}
 ```
 
 ### Solicitud del Payout {#payout-request}

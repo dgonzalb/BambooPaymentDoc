@@ -14,6 +14,9 @@ weight: 40
 | `400` | Response codes | Bad Request. |
 | `401` | Response codes | Unauthorized. |
 | `409` | Response codes | Conflict. |
+| `601` | Purchase Preview | Invalid Destination Country. |
+| `602` | Purchase Preview | Invalid Origin currency. |
+| `699` | Purchase Preview | Generic error for Purchase Preview. |
 | `812` | API Validation | Declined by validation for document. |
 | `813` | API Validation | Declined by validation for account. |
 | `814` | API Validation | Declined by validation for country. |

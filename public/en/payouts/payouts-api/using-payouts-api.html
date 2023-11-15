@@ -31,7 +31,7 @@
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-11-08T14:31:33-05:00" />
-<meta itemprop="wordCount" content="1658">
+<meta itemprop="wordCount" content="1968">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d806a31ff3af316b36438831b295add54f7d4d29de8c414cabcaac96865aff7eab552818814df7674aecd23d7139aef7ef31961ac9d4909e238da1d0b096ad6b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e0650a1aacd0a04cf7afb125a20d4e9dd32e9dddde6aa17a1c69c856b3912933544f43e0cf2d57f776887fcbd486f66f1365c78f5ee17694ae65ddba9299810f.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -379,6 +379,7 @@
     <li><a href="#api-methods">API methods</a>
       <ul>
         <li><a href="#get-bank-list">Get Bank list</a></li>
+        <li><a href="#payout-preview">Payout Preview</a></li>
         <li><a href="#payout-request">Payout request</a></li>
         <li><a href="#obtaining-a-payout">Obtaining a Payout</a></li>
       </ul>
@@ -473,6 +474,7 @@
 <p>The Payouts API offers three primary methods that you can use when requesting Payouts.</p>
 <ul>
 <li><a href="#get-bank-list">Get Bank list</a></li>
+<li><a href="#payout-preview">Payout Preview</a></li>
 <li><a href="#payout-request">Payout request</a></li>
 <li><a href="#obtaining-a-payout">Obtaining a Payout</a></li>
 </ul>
@@ -546,6 +548,132 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">]</span>
+</span></span></code></pre></div><h3 id="payout-preview">Payout Preview</h3>
+<p>The Payout preview method allows you to show the final value received by the payee and the expected date when the payee will receive the money.</p>
+<p><img src="../../../assets/Payouts/Payouts12_en.png" alt="PrintScreen"></p>
+
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Warning</h4>
+<p class="alert-text">The Preview is for informational purposes only, and it does not freeze the exchange rate, which is frozen when you <a href="#payout-request">request the Payout</a>.</p>
+</div>
+
+<h4 id="request-url-3">Request URL</h4>
+<p>You must invoke a <strong>GET</strong> request to the following URLs according to your needs.</p>
+<ul>
+<li><strong>Production</strong>: <code>https://payout-api.bamboopayment.com/api/payout/preview</code></li>
+<li><strong>Stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/payout/preview</code></li>
+</ul>
+<h4 id="request-parameters-1">Request parameters</h4>
+<p>The following table shows the mandatory and optional parameters for the Payout preview.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amount</code></td>
+<td><code>number</code></td>
+<td style="text-align:center">Yes</td>
+<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>USD 1,00</em>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>destinationCountryIsoCode</code></td>
+<td><code>string(2)</code></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the country in the format <code>ISO 3166-2</code>.<br><a href="../overview.html#coverage">List of countries available for Payouts</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originalCurrencyIsoCode</code></td>
+<td><code>string(3)</code></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the origin currency.<br><em>Only <strong>USD</strong> is available</em>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example-1">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">125000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCountryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;originalCurrencyIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h4 id="response-parameters-2">Response parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amountInOrignalCurrency</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td>Value requested in the Payout preview.</td>
+</tr>
+<tr>
+<td><code>fee</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td>Amount charged by Bamboo to process the Payout. You or the payee can assume the fee according to your contract.</td>
+</tr>
+<tr>
+<td><code>amountToBeSentInOrignalCurrency</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td>The amount to be sent to the Payee, which is calculated as the difference between <code>amountInOrignalCurrency</code> and <code>fee</code>.</td>
+</tr>
+<tr>
+<td><code>exchangeRate</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td>Conversion value between the origin and target currencies. This parameter includes up to <code>5</code> decimal places.</td>
+</tr>
+<tr>
+<td><code>amountToBeSentInLocalCurrency</code></td>
+<td style="text-align:center"><code>number</code></td>
+<td>The amount received by the payee, which is calculated by multiplying <code>amountToBeSentInOriginalCurrency</code> by <code>exchangeRate</code>.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td style="text-align:center"><code>object</code></td>
+<td>Errors that may appear. The error codes for this method start with <code>6</code>.<br>Find the possible errors <a href="../../../en/payouts/payouts-api/payout-error-codes.html">here</a>.</td>
+</tr>
+<tr>
+<td><code>errors</code> → <code>ErrorCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Internal code of the error. Find the possible errors <a href="../../../en/payouts/payouts-api/payout-error-codes.html">here</a>.</td>
+</tr>
+<tr>
+<td><code>errors</code> → <code>PropertyName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Property that triggered the error.</td>
+</tr>
+<tr>
+<td><code>errors</code> → <code>Message</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Error description.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-example-2">Response example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amountInOrignalCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1250</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;fee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">37.5000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amountToBeSentInOrignalCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1212.5000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;exchangeRate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3941.510000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amountToBeSentInLocalCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4779080.88</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;expectedPaymentDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-09-26T15:59:03Z&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="payout-request">Payout request</h3>
 <p>This method allows you to request one or more Payouts using the funds settled in your account.</p>
 <h4 id="request-url-1">Request URL</h4>

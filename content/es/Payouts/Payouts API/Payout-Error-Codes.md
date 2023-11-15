@@ -14,6 +14,9 @@ weight: 40
 | `400` | Códigos del Response | Request incorrecto. |
 | `401` | Códigos del Response | No autorizado. |
 | `409` | Códigos del Response | Conflicto. |
+| `601` | Purchase Preview | País destino no válido. |
+| `602` | Purchase Preview | Moneda de origen no válida. |
+| `699` | Purchase Preview | Error genérico del Preview de Payouts. |
 | `812` | Validación del API | Declinado por validación del documento. |
 | `813` | Validación del API | Declinado por validación de la cuenta. |
 | `814` | Validación del API | Declinado por validación del país. |
