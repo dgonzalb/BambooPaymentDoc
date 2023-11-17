@@ -31,7 +31,7 @@ Keep both keys `Bamboo app key` and `Bamboo app token` in a safe place as they w
 
 ![PrintScreen](/assets/PaymentProvider/PaymentProvider_en_03.png)
 
-## Enable Sandbox environment
+### Enable Sandbox environment
 To enable testing in the Sandbox environment, you must use the _testing_ workspace and request an access to the merchant console in stage environment. This step is required before moving to the production environment.
 
 To create this workspace, download and install `nodejs` from the [node's official page](https://nodejs.org/en/download).
@@ -105,3 +105,22 @@ Provide the following information for the payment condition:
 ![PrintScreen](/assets/PaymentProvider/PaymentProvider_en_11.png)
 
 Click _**Save**_ when finish.
+
+### Configure custom payment methods
+Within the custom payment methods, you can configure the out-of-the-box payment methods of VTEX, you can configure the following cards.
+
+<div id="cards" style="padding: 10px;text-align: center;">
+
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png" style="max-width: 40%"/>
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png" style="max-width: 40%" />
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CreditosDirectos_CreditCard.png" style="max-width: 40%" />
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Lider_CreditCard.png" style="max-width: 40%" />
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Passcard_CreditCard.png" style="max-width: 40%" />
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/ClubDelEste_CreditCard.png" style="max-width: 40%" />
+<img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Anda_CreditCard.png" style="max-width: 40%" />
+
+</div>
+
+Go to the _**Store Settings**_ option in the left panel. Then, select the _**Settings**_ option in the _**Payment**_ group.
+
+The _Payment settings_ window opens, go to the _**Custom Payments**_ tab.
