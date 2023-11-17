@@ -19,6 +19,7 @@ Se necesita incluir campos específicos para que este método de pago funcione c
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Installments` | `integer` | No | Este parámetro hace referencia al número de pagos en el que se divide una compra con tarjeta de crédito. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
