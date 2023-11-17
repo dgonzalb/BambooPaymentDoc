@@ -96,7 +96,7 @@ The Preview is for informational purposes only, and it does not freeze the excha
 {{% /alert %}}
 
 #### Request URL {#request-url-3}
-You must invoke a **GET** request to the following URLs according to your needs.
+You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout/preview`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout/preview`
