@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/payment-methods/argentina/ar-apm.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-21T15:39:41-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-11-20T08:38:39-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Alternative Payment Methods">
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with Alternative Payment Methods.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-21T15:39:41-05:00" />
-<meta itemprop="wordCount" content="1226">
+<meta itemprop="dateModified" content="2023-11-20T08:38:39-05:00" />
+<meta itemprop="wordCount" content="1337">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with Alternative Payment Methods.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" as="style">
-<link href="../../../../scss/main.min.4f9dcf047328678523de01719ba8c22528aa2b0561612763b9cda5760a581e97.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
+<link href="../../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -145,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.21559ffe8a2a022a1af82c6253156e52b77aaaa72dd98c503b762e967f3a83e47cc3834b214d2f7787c10ea439c1e2874f2c773b3202b0a43b5b9014c9acdd23.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.2829dfccfd3fc143cba5e0d6926082f03022a0b4ab153340bef0a7d8647fd5eeb2587d02fecf38fe495f5f1877371a28cf72b63ca8fe8cd869996db39e159f6a.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -905,6 +905,12 @@
         <li><a href="#response-parameters-1">Response parameters</a></li>
       </ul>
     </li>
+    <li><a href="#bank-transfers">Bank transfers</a>
+      <ul>
+        <li><a href="#request-parameters-2">Request parameters</a></li>
+        <li><a href="#response-parameters-2">Response parameters</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1524,6 +1530,35 @@
 </span></span></code></pre></div><br>
 <p>Result:</p>
 <img src="../../../../assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
+<h2 id="bank-transfers">Bank transfers</h2>
+<p>This method lets customers pay through bank transfers from any bank or digital wallet supporting <strong>CVU</strong>_ (Clave Virtual Uniforme) or <em><strong>CBU</strong></em> (Clave Bancaria Uniforme). Bamboo&rsquo;s bank information (PAGO SIEMPRE) will be displayed to your customers, and they can utilize their home banking to initiate the transfer.</p>
+<h3 id="request-parameters-2">Request parameters</h3>
+<p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<h4 id="request-example-2">Request example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"></code></pre></div><h3 id="response-parameters-2">Response parameters</h3>
+<p>In the response, you will find the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<h4 id="payment-experience">Payment experience</h4>
+<p>As mentioned before, &hellip;</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1533,7 +1568,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    September 21, 2023
+    November 20, 2023
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>

@@ -2773,6 +2773,12 @@
 &lt;td&gt;Indicate the destination country.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Installments&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;This parameter refers to the number of payments that a credit card purchase is divided into.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -4504,7 +4510,7 @@ Example:
 &lt;/div&gt;
 
 &lt;h4 id=&#34;request-url-3&#34;&gt;Request URL&lt;/h4&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://payout-api.bamboopayment.com/api/payout/preview&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://payout-api.stage.bamboopayment.com/api/payout/preview&lt;/code&gt;&lt;/li&gt;
@@ -8131,6 +8137,35 @@ Where:
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;p&gt;Result:&lt;/p&gt;
 &lt;img src=&#34;../../assets/QRTransferencias30.png&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
+&lt;h2 id=&#34;bank-transfers&#34;&gt;Bank transfers&lt;/h2&gt;
+&lt;p&gt;This method lets customers pay through bank transfers from any bank or digital wallet supporting &lt;strong&gt;CVU&lt;/strong&gt;_ (Clave Virtual Uniforme) or &lt;em&gt;&lt;strong&gt;CBU&lt;/strong&gt;&lt;/em&gt; (Clave Bancaria Uniforme). Bamboo&amp;rsquo;s bank information (PAGO SIEMPRE) will be displayed to your customers, and they can utilize their home banking to initiate the transfer.&lt;/p&gt;
+&lt;h3 id=&#34;request-parameters-2&#34;&gt;Request parameters&lt;/h3&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;request-example-2&#34;&gt;Request example&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-2&#34;&gt;Response parameters&lt;/h3&gt;
+&lt;p&gt;In the response, you will find the following parameters:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;payment-experience&#34;&gt;Payment experience&lt;/h4&gt;
+&lt;p&gt;As mentioned before, &amp;hellip;&lt;/p&gt;
+
       </description>
     </item>
     
@@ -13421,18 +13456,18 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;/div&gt;
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;Before proceeding, it is required for you to take into account the following prerequisites.&lt;/p&gt;
+&lt;p&gt;Please consider the following prerequisites before proceeding.&lt;/p&gt;
 &lt;h3 id=&#34;register-your-commerce-in-vtex&#34;&gt;Register your commerce in VTEX&lt;/h3&gt;
-&lt;p&gt;Log into the &lt;a href=&#34;https://vtex.com/&#34;&gt;VTEX site&lt;/a&gt; to register you eCommerce. Once you are registered, you must have an administrator user to be used along the whole integration process with Bamboo Payment System.&lt;/p&gt;
+&lt;p&gt;Log into the &lt;a href=&#34;https://vtex.com/&#34;&gt;VTEX site&lt;/a&gt; to register you eCommerce. Once you are registered, you need an administrator user for the entire integration process with Bamboo Payment Systems.&lt;/p&gt;
 &lt;h3 id=&#34;generate-key-and-token-for-vtex&#34;&gt;Generate Key and Token for VTEX&lt;/h3&gt;
-&lt;p&gt;Open your Merchant console (Production or Stage) and expand the &lt;em&gt;&lt;strong&gt;Setting&lt;/strong&gt;&lt;/em&gt; section in the left menu.&lt;/p&gt;
+&lt;p&gt;Open your Merchant console (Production or Stage) and expand the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; section in the left menu.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This window displays the configuration setting of your account. Go to the &lt;em&gt;&lt;strong&gt;VTEX&lt;/strong&gt;&lt;/em&gt; tab.&lt;br&gt;In the &lt;strong&gt;App Key-Token Bamboo&lt;/strong&gt; section of the VTEX settings, click the &lt;em&gt;&lt;strong&gt;Generate new key and token&lt;/strong&gt;&lt;/em&gt; button to create the new credentials.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Keep both keys &lt;code&gt;Bamboo app key&lt;/code&gt; and &lt;code&gt;Bamboo app token&lt;/code&gt; in a safe place as they will be required later.&lt;/p&gt;
+&lt;p&gt;Keep both keys, the &lt;code&gt;Bamboo app key&lt;/code&gt; and &lt;code&gt;Bamboo app token&lt;/code&gt;, safe as you need them later.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;enable-sandbox-environment&#34;&gt;Enable Sandbox environment&lt;/h2&gt;
-&lt;p&gt;To enable testing in the Sandbox environment, you must use the &lt;em&gt;testing&lt;/em&gt; workspace and request an access to the merchant console in stage environment. This step is required before moving to the production environment.&lt;/p&gt;
+&lt;h3 id=&#34;enable-sandbox-environment&#34;&gt;Enable Sandbox environment&lt;/h3&gt;
+&lt;p&gt;To enable testing in the Sandbox environment, you must use the &lt;em&gt;testing&lt;/em&gt; workspace and request access to the merchant console in the stage environment. Complete this step before moving to the production environment.&lt;/p&gt;
 &lt;p&gt;To create this workspace, download and install &lt;code&gt;nodejs&lt;/code&gt; from the &lt;a href=&#34;https://nodejs.org/en/download&#34;&gt;node&amp;rsquo;s official page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Then, run the following command in your command prompt.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npx vtex use testing
@@ -13441,48 +13476,117 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Warning&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;Do not use this configuration in production environment and you must always use the &lt;em&gt;master&lt;/em&gt; workspace.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Do not use this configuration in the production environment; always use the &lt;em&gt;master&lt;/em&gt; workspace.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;install-and-configure-bamboo-payment-provider-on-vtex&#34;&gt;Install and configure Bamboo Payment Provider on VTEX&lt;/h2&gt;
-&lt;p&gt;Open the &lt;em&gt;VTEX App Store&lt;/em&gt; using the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/store/&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;install-and-configure-the-bamboo-payment-provider-on-vtex&#34;&gt;Install and configure the Bamboo Payment Provider on VTEX&lt;/h2&gt;
+&lt;p&gt;Open the &lt;em&gt;VTEX App Store&lt;/em&gt; using the URL: &lt;code&gt;https://{your-site}.myvtex.com/admin/store/&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Then, search &lt;em&gt;Payment Provider Bamboo&lt;/em&gt;. In case you could not find the component, use the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/apps/bamboopayments.payment@1.3.4/setup/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then, search &lt;em&gt;Payment Provider Bamboo&lt;/em&gt;. In case you cannot find the component, use the following URL: &lt;code&gt;https://{your-site}.myvtex.com/admin/apps/bamboopayments.payment@1.3.4/setup/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Once you have installed the component, you need to configure the payment methods to be used. To do so, add Bamboo as payment processor as mentioned in the &lt;a href=&#34;#configure-bamboo-payment-provider&#34;&gt;Configure Bamboo Payment provider&lt;/a&gt; section.&lt;/p&gt;
+&lt;p&gt;After installing the component, configure the payment methods for use. Add Bamboo as a payment processor, as mentioned in the &lt;a href=&#34;#configure-bamboo-payment-provider&#34;&gt;Configure Bamboo Payment Provider&lt;/a&gt; section.&lt;/p&gt;
 &lt;h2 id=&#34;configure-bamboo-payment-provider&#34;&gt;Configure Bamboo Payment provider&lt;/h2&gt;
 &lt;p&gt;To configure the payment provider, click the &lt;em&gt;&lt;strong&gt;Store Settings&lt;/strong&gt;&lt;/em&gt; option in the left panel. Then, select the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; option in the &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt; group.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens, go to the &lt;em&gt;&lt;strong&gt;Gateway Affiliations&lt;/strong&gt;&lt;/em&gt; tab. Alternatively, you can use to the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/pci-gateway/#/affiliations&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens. Go to the &lt;em&gt;&lt;strong&gt;Gateway Affiliations&lt;/strong&gt;&lt;/em&gt; tab. Alternatively, you can use to the following URL &lt;code&gt;https://{your-site}.myvtex.com/admin/pci-gateway/#/affiliations&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Click the plus icon in the top right corner to add the connector, then search for the Bamboo connector in the &lt;em&gt;&lt;strong&gt;OTHER&lt;/strong&gt;&lt;/em&gt; section.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Provide the following information for the Bamboo Gateway Affiliation:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Affiliation name&lt;/strong&gt;: VTEX assigns a name by default. Nevertheless, you can set one of your choice.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Test or Live toggle&lt;/strong&gt;: select mode of the Gateway Affiliation. You should select the &lt;em&gt;Test&lt;/em&gt; mode first to try out the Gateway Affiliation before start using it in real transactions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test or Live toggle&lt;/strong&gt;: select the mode of the Gateway Affiliation. Before using the Gateway Affiliation in real transactions, try it out in the &lt;em&gt;Test&lt;/em&gt; mode first.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Application Key&lt;/strong&gt;: Use the &lt;em&gt;&lt;strong&gt;Bamboo app key&lt;/strong&gt;&lt;/em&gt; field &lt;a href=&#34;#generate-key-and-token-for-vtex&#34;&gt;generated before&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Application Token&lt;/strong&gt;: Use the &lt;em&gt;&lt;strong&gt;Bamboo app token&lt;/strong&gt;&lt;/em&gt; field &lt;a href=&#34;#generate-key-and-token-for-vtex&#34;&gt;generated before&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finish.&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finished.&lt;/p&gt;
 &lt;h2 id=&#34;configure-the-payment-methods&#34;&gt;Configure the payment methods&lt;/h2&gt;
-&lt;p&gt;After you configured the Bamboo Gateway Affiliation, you need to configure the payment methods. You can configure the payment methods predefined by VTEX or custom payment methods.&lt;/p&gt;
+&lt;p&gt;After configuring the Bamboo Gateway Affiliation, you must configure the payment methods. You can configure the payment methods predefined by VTEX or custom payment methods.&lt;/p&gt;
 &lt;h3 id=&#34;configure-predefined-payment-methods&#34;&gt;Configure predefined payment methods&lt;/h3&gt;
-&lt;p&gt;Within the payment methods, you can configure the pre-existing ones in VTEX (Visa, Mastercard, Cabal, etc). Follow the next procedure to add a payment method.&lt;/p&gt;
+&lt;p&gt;You can configure the pre-existing ones in VTEX (Visa, Mastercard, Cabal, etc.) within the payment methods. Follow the next procedure to add a payment method.&lt;/p&gt;
 &lt;p&gt;Go to the &lt;em&gt;&lt;strong&gt;Store Settings&lt;/strong&gt;&lt;/em&gt; option in the left panel. Then, select the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; option in the &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt; group.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens, go to the &lt;em&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens. Go to the &lt;em&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Click the plus icon in the top right corner to add a new payment condition, then search for the payment method you want to include.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Provide the following information for the payment condition:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Condition name&lt;/strong&gt;: Provide a meaningful name for the condition in the field next to the payment method name.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Condition name&lt;/strong&gt;: provide a meaningful name for the condition in the field next to the payment method name.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: define whether the condition is enabled.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Process with affiliation&lt;/strong&gt;: select the Bamboo Gateway Affiliation created in the previous step.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;: In the right panel, add the conditions related to the payment method such as installments, rates, among others.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;: on the right panel, include payment method conditions, such as installment rates and other relevant factors.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_11.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finish.&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; when finished.&lt;/p&gt;
+&lt;h3 id=&#34;configure-custom-payment-methods&#34;&gt;Configure custom payment methods&lt;/h3&gt;
+&lt;p&gt;Within the custom payment methods, you can configure the out-of-the-box payment methods of VTEX and configure the following cards.&lt;/p&gt;
+&lt;div id=&#34;cards&#34; style=&#34;padding: 10px;text-align: center;&#34;&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png&#34; style=&#34;max-width: 40%&#34;/&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CreditosDirectos_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Lider_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Passcard_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/ClubDelEste_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Anda_CreditCard.png&#34; style=&#34;max-width: 40%&#34; /&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Go to the &lt;em&gt;&lt;strong&gt;Store Settings&lt;/strong&gt;&lt;/em&gt; option in the left panel. Then, select the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; option in the &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt; group.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Payment settings&lt;/em&gt; window opens. Go to the &lt;em&gt;&lt;strong&gt;Custom Payments&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_12.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can add either &lt;em&gt;&lt;strong&gt;Co-branded&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Private label&lt;/strong&gt;&lt;/em&gt; cards using the respective section. To do so, click one of the empty boxes with the label &lt;em&gt;&lt;strong&gt;Config&lt;/strong&gt;&lt;/em&gt;. In the form displayed, provide the following information according to the card bines and brands.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OCA: &lt;code&gt;589892,542991&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Creditel: &lt;code&gt;601933,608700&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Creditos Directos: &lt;code&gt;601828&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Lider: &lt;code&gt;501109,501088,505863,505864,505865,505866,505867,505868,505869,505870,505871,505872&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PassCard: &lt;code&gt;628026&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Club del Este: &lt;code&gt;504736&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Anda: &lt;code&gt;603199&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_13.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;For the fields &lt;em&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Acquirer payment code&lt;/strong&gt;&lt;/em&gt;, use the same value as used in the field &lt;em&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;checkout&#34;&gt;Checkout&lt;/h2&gt;
+&lt;p&gt;For this integration, the Checkout and the card capture are done by VTEX performing a direct debit. You can configure any card-type payment method displayed &lt;a href=&#34;../../docs/payment-methods/uruguay.html#payment-methods&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;cards-with-pre-authorization&#34;&gt;Cards with pre-authorization&lt;/h3&gt;
+&lt;p&gt;By default, VTEX reserves the purchase amount in the customer&amp;rsquo;s card (pre-authorization). When you generate the invoice, the amount to debit is confirmed, but it cannot be greater than the amount reserved initially. If the customer cancels the purchase before invoice generation, VTEX also cancels the amount reserved.&lt;/p&gt;
+&lt;h3 id=&#34;cards-without-pre-authorization&#34;&gt;Cards without pre-authorization&lt;/h3&gt;
+&lt;p&gt;VTEX performs a direct debit to these cards, and in the invoice generation, the amount must be the same as the purchase&amp;rsquo;s original amount. This type of transaction does not allow you to change the purchase amount from the VTEX admin panel. You can only request full refunds if the payment method supports it, and if you want to request a partial refund, you must request it from the Bamboo Merchant console.&lt;/p&gt;
+&lt;h2 id=&#34;enable-pre-authorizations&#34;&gt;Enable pre-authorizations&lt;/h2&gt;
+&lt;p&gt;Open your Merchant console (Production or Stage) and expand the &lt;em&gt;&lt;strong&gt;Setting&lt;/strong&gt;&lt;/em&gt; section in the left menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This window displays the configuration settings of your account. Go to the &lt;em&gt;&lt;strong&gt;VTEX&lt;/strong&gt;&lt;/em&gt; tab. In the &lt;strong&gt;Pre-authorization&lt;/strong&gt; section of the VTEX settings, you can enable the pre-authorizations and provide the reserve percentage you want to configure in each transaction using the corresponding fields.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_14.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-authorization enabled&lt;/strong&gt;: when you select this option, you indicate that all the purchases performed using a payment method that supports pre-authorization remain pre-authorized until you complete the purchase invoice in VTEX and, if the result is successful, it becomes approved in Bamboo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Percentage of reserve over purchase amount&lt;/strong&gt;: this value is optional and only has effect when you have enabled the Pre-authorization. If you enter a value in this field, VTEX will add the percentage to the pre-authorized purchase amount. For example, if the purchase amount is USD 100 and the percentage is 10%, the system will pre-authorize the purchase for a value of USD 110.00.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;The percentage of the reserve is applied only on the Bamboo side. In VTEX, you will always see the original amount of the purchase. You can increase this amount later if required. For example, the final price might exceed the initial estimate in the case of weighable items.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;amount-changing-and-purchase-cancellation&#34;&gt;Amount changing and purchase cancellation&lt;/h2&gt;
+&lt;p&gt;VTEX allows, in their purchase flow, to cancel the amount, change the original amount by increasing it, or perform a partial refund.&lt;/p&gt;
+&lt;p&gt;Cancellation and partial refund actions will be limited with respect to the different functionalities supported for each means of payment.&lt;/p&gt;
+&lt;p&gt;To request an amount increase or a total/partial refund, go to the order detail from the VTEX console. Expand the &lt;em&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/em&gt; section and click the &lt;em&gt;&lt;strong&gt;All Orders&lt;/strong&gt;&lt;/em&gt; option. Alternatively, you can use the URL: &lt;code&gt;https://{your-site}.myvtex.com/admin/checkout/#/orders&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_15.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;increase-purchase-amount&#34;&gt;Increase purchase amount&lt;/h3&gt;
+&lt;p&gt;This option is only available for pre-authorized purchases. From the details of an order, you must take it to the &lt;em&gt;&lt;strong&gt;Ready for handling&lt;/strong&gt;&lt;/em&gt; step.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentProvider/PaymentProvider_en_16.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once the order is in this step, VTEX enables the &lt;em&gt;&lt;strong&gt;Change value&lt;/strong&gt;&lt;/em&gt; option, where you can enter the amount to increase. Before confirming the action, make sure you are in the increase option.&lt;/p&gt;
 
       </description>
     </item>
