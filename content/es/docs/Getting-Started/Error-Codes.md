@@ -66,8 +66,7 @@ Los errores del servicio Tokenization empiezan por `TK`.
 | `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del medio de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
 | `TK017` | INVALID_DOCUMENT_NUMBER | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
 | `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
-| `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
-| `TK018` | INVALID_PAYMENT_TYPE | Tipo de pago no válido | El tipo de pago enviado no es válido o no pertenece al país. |
+| `TK019` | INVALID_PAYMENT_TYPE | Tipo de pago no válido | El tipo de pago enviado no es válido o no pertenece al país. |
 | `TK999` | UNKNOWN_ERROR | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
 
 ### Errores del servicio Transactions {#transactions-service-errors}
