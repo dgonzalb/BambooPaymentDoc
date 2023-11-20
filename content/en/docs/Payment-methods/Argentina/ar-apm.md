@@ -415,7 +415,7 @@ Result:
 <img src="/assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
 
 ## Bank transfers
-This payment method lets your customers choose to pay through bank transfers from any bank or digital wallet supporting _**CVU**_ (Clave Virtual Uniforme) or _**CBU**_ (Clave Bancaria Uniforme). Bamboo's bank information (PAGO SIEMPRE) will be displayed to your customers, and they can utilize their home banking to initiate the transfer.
+This method lets customers pay through bank transfers from any bank or digital wallet supporting **CVU**_ (Clave Virtual Uniforme) or _**CBU**_ (Clave Bancaria Uniforme). Bamboo's bank information (PAGO SIEMPRE) will be displayed to your customers, and they can utilize their home banking to initiate the transfer.
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.

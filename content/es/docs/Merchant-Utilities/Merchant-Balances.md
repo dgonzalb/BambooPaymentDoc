@@ -1,10 +1,11 @@
 ---
-title: "API para saldos de cuentas"
-date: 2023-05-08T07:28:16-05:00
+title: "Saldos de comercios"
+linkTitle: "Saldos de comercios"
+date: 2023-03-02T11:40:29-05:00
 Description: >
   La API para saldos de cuenta permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
-weight: 60
-notopicssection: true
+weight: 10
+url: docs/merchant-balances.html
 ---
 
 ## URL del Request {#request-url}
