@@ -66,6 +66,7 @@ Tokenization errors always starts with `TK`.
 | `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | An error occurred in the process of registering the payment method. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) to enable the payment method. |
 | `TK017` | INVALID_DOCUMENT_NUMBER | Invalid document. | The document provided is not valid according to the country rules. |
 | `TK018` | INVALID_DOCUMENT_TYPE | Invalid document type | The document type sent is not valid or does not belong to the country. |
+| `TK019` | INVALID_PAYMENT_TYPE | Invalid payment type | The payment type selected is not valid or does not belong to the country. |
 | `TK999` | UNKNOWN_ERROR | Unknown error. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 
 ### Transactions service errors
