@@ -413,17 +413,17 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
 ## Transferencia Bancaria (SPEI) {#bank-transfer-spei}
 El **SPEI** (Sistema de Pagos Electrónicos Interbancarios) es un sistema de pagos electrónicos en México que permite a sus clientes transferir fondos entre bancos al instante. 
 
-Para utilizar **SPEI**, los clientes deben tener acceso a la banca en línea o a una aplicación de banca móvil ofrecida por su banco y luego iniciar una transferencia proporcionando el número CLABE (Clave Bancaria Estandarizada) retornado en el response.
+Para utilizar **SPEI**, los clientes deben tener acceso a la banca en línea o a una aplicación de banca móvil ofrecida por su banco y luego iniciar una transferencia proporcionando el número de convenio CIE, la referencia, la cantidad y el número CLABE (Clave Bancaria Estandarizada) si es necesario.
 
 ### Parámetros del Request {#request-parameters-2}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**73**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**32**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
-| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
@@ -437,15 +437,15 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 #### Ejemplo del Request {#request-example-2}
 ```json
 {
-    "PaymentMediaId": 73,
-    "Order": "ORD1012",
-    "Amount": 77000,
-    "Currency": "USD",
-    "Description": "Test Order",
-    "MetaDataIn": {
+    "PaymentMediaId": 32,
+    "Order": "ORD1001",
+    "Amount": 1000000,
+    "TargetCountryISO": "MX",
+    "MetadataIn": {
         "PaymentExpirationInMinutes": "1440"
     },
-    "TargetCountryISO": "MX",
+    "Currency": "MXN",
+    "Capture": true,
     "Customer": {
         "FirstName": "John",
         "LastName": "Diaz",
@@ -459,12 +459,16 @@ En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponde al número _CLABE_ de la cuenta a la que se enviarán los fondos. |
-| `Response` → `MetadataOut` → `Expiration` | `date` | Fecha y hora de expiración del pago. |
+| `Response` → `MetadataOut` → `PaymentUrl` | `string` | Url del recibo de pago genérico. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string` | Número de referencia para _BBVA Bancomer_ o Concepto de pago para otros bancos. |
+| `Response` → `MetadataOut` → `BankName` | `string`  | Nombre del banco destino. |
+| `Response` → `MetadataOut` → `BankAccount` | `string` | Número de convenio CIE para _BBVA Bancomer_ o Referencia de pago para otros bancos. |
+| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | _CLABE_ número de cuenta a la que se enviarán los fondos. |
+| `Response` → `MetadataOut` → `BankReference` | `string` | Número de referencia del banco. |
 
-{{% alert title="Nota" color="info"%}}
-El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su cliente debe configurar una transferencia electrónica a este número desde su aplicación bancaria.
-{{% /alert %}}
+Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl` para descargar el recibo con los pasos e información para completar el pago.
+
+<img src="/assets/SPEIVoucher.png" width="60%" alt="PrintScreen"/>
 
 
 #### Ejemplo del Response {#response-example-2}
@@ -472,44 +476,44 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
 ```json
 {
     "Response": {
-        "PurchaseId": 148817,
-        "Created": "2023-10-31T12:23:00.494",
+        "PurchaseId": 1134267,
+        "Created": "2023-09-01T17:40:18.599",
         "TrxToken": null,
-        "Order": "ORD1012",
+        "Order": "ORD1001",
         "Transaction": {
-            "TransactionID": 159700,
-            "Created": "2023-10-31T12:23:00.493",
+            "TransactionID": 1153152,
+            "Created": "2023-09-01T17:40:18.599",
             "AuthorizationDate": "",
             "TransactionStatusId": 2,
             "Status": "Pending",
             "ErrorCode": null,
-            "Description": "",
+            "Description": " ",
             "ApprovalCode": null,
             "Steps": [
                 {
                     "Step": "Generic External",
-                    "Created": "2023-10-31T12:23:29.923",
+                    "Created": "",
                     "Status": null,
-                    "ResponseCode": "",
-                    "ResponseMessage": "",
+                    "ResponseCode": "Ok",
+                    "ResponseMessage": "tryyscihs1lifsi5ymw5",
                     "Error": null,
-                    "AuthorizationCode": "",
+                    "AuthorizationCode": null,
                     "UniqueID": null,
-                    "AcquirerResponseDetail": ""
+                    "AcquirerResponseDetail": null
                 }
             ]
         },
         "Capture": true,
-        "Amount": 1104886,
-        "OriginalAmount": 1104886,
+        "Amount": 1000000,
+        "OriginalAmount": 1000000,
         "TaxableAmount": null,
         "Tip": 0,
         "Installments": 1,
         "Currency": "MXN",
-        "Description": "Test Order",
+        "Description": null,
         "Customer": {
-            "CustomerId": 70505,
-            "Created": "2023-10-31T12:22:51.353",
+            "CustomerId": 250981,
+            "Created": "2023-09-01T17:40:17.930",
             "CommerceCustomerId": null,
             "Owner": "Anonymous",
             "Email": "jdiaz@mail.com",
@@ -520,11 +524,11 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
             "AdditionalData": null,
             "PaymentProfiles": [
                 {
-                    "PaymentProfileId": 72313,
-                    "PaymentMediaId": 73,
-                    "Created": "2023-10-31T12:22:52.153",
-                    "LastUpdate": "2023-10-31T12:22:53.173",
-                    "Brand": "STP",
+                    "PaymentProfileId": 255734,
+                    "PaymentMediaId": 32,
+                    "Created": "2023-09-01T17:40:18.023",
+                    "LastUpdate": "2023-09-01T17:40:18.440",
+                    "Brand": "OpenPayBank",
                     "CardOwner": null,
                     "Bin": null,
                     "IssuerBank": null,
@@ -543,7 +547,7 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
             ],
             "CaptureURL": null,
             "UniqueID": null,
-            "URL": "https://devapi.siemprepago.com/v1/api/Customer/70505",
+            "URL": "https://api.stage.bamboopayment.com/Customer/250981",
             "FirstName": "John",
             "LastName": "Diaz",
             "DocNumber": null,
@@ -557,7 +561,7 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
         "AdditionalData": null,
         "CustomerUserAgent": null,
         "CustomerIP": null,
-        "URL": "https://devapi.siemprepago.com/v1/api/Purchase/148817",
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1134267",
         "DataUY": {
             "IsFinalConsumer": false,
             "Invoice": null,
@@ -568,36 +572,41 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
             "Tax": null
         },
         "Acquirer": {
-            "AcquirerID": 105,
-            "Name": "STP",
+            "AcquirerID": 65,
+            "Name": "OpenPay Bank",
             "CommerceNumber": null
         },
         "CommerceAction": null,
-        "PurchasePaymentProfileId": 72313,
+        "PurchasePaymentProfileId": 255734,
         "LoyaltyPlan": null,
         "DeviceFingerprintId": null,
         "MetadataIn": {
             "PaymentExpirationInMinutes": "1440"
         },
         "MetadataOut": {
-            "Clabe": "646180366600000240",
-            "Expiration": "11/03/2023 13:43:00"
+            "PaymentUrl": "https://sandbox-dashboard.openpay.mx/spei-pdf/m46uqwpxz7otrhsinbx1/tryyscihs1lifsi5ymw5",
+            "PaymentCode": "25966327953597018268",
+            "BankName": "BBVA Bancomer",
+            "BankAccount": "1411217",
+            "BankAccountLabel": "000000000000000001",
+            "BankReference": "tryyscihs1lifsi5ymw5"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "MX",
-            "TargetCurrencyISO": "USD",
-            "TargetAmount": 770.0
+            "TargetCurrencyISO": "MXN",
+            "TargetAmount": 10000
         },
         "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
         "AntifraudData": {
             "AntifraudFingerprintId": null,
             "AntifraudMetadataIn": null
         },
         "PaymentMediaId": null,
-        "TargetCountryISO": null,
         "PurchaseType": 1,
-        "IsFirstRecurrentPurchase": false
+        "HasCvv": null,
+        "TargetCountryISO": null
     },
     "Errors": []
 }
