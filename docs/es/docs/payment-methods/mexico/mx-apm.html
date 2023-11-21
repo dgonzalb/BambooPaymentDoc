@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Aprenda cómo integrar su solución para procesar pagos en sucursales físicas de pago o utilizando transferencias bancarias.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2023-10-31T07:59:58-05:00" />
-<meta itemprop="wordCount" content="1898">
+<meta itemprop="wordCount" content="2243">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medios alternativos de pago"/>
 <meta name="twitter:description" content="Aprenda cómo integrar su solución para procesar pagos en sucursales físicas de pago o utilizando transferencias bancarias.
@@ -145,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.2829dfccfd3fc143cba5e0d6926082f03022a0b4ab153340bef0a7d8647fd5eeb2587d02fecf38fe495f5f1877371a28cf72b63ca8fe8cd869996db39e159f6a.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.491a50eadb9b0c06c843c7076861520f5c637f67213475f5122030d6c5fb65f28346be52a050d95e3427d182ebe0978e5ab52a30a109c34fc3392d24e5559c1b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -910,6 +910,7 @@
       <ul>
         <li><a href="#request-parameters-2">Parámetros del Request</a></li>
         <li><a href="#response-parameters-2">Parámetros del Response</a></li>
+        <li><a href="#payment-experience-for-customers">Experiencia de pago para los clientes</a></li>
       </ul>
     </li>
   </ul>
@@ -1667,7 +1668,7 @@
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>Clabe</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Corresponde al número <em>CLABE</em> de la cuenta a la que se enviarán los fondos.</td>
+<td>Corresponde al número <em>CLABE</em> de la cuenta a la que se enviarán los fondos. Este número es dinámico y único por transacción.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>Expiration</code></td>
@@ -1816,7 +1817,50 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="payment-experience-for-customers">Experiencia de pago para los clientes</h3>
+<p>Su cliente debe completar el pago creando una transferencia bancaria al número CLABE retornado en la respuesta. Su cliente debe seguir los siguientes pasos para realizar la transferencia en su app bancaria.</p>
+<ol>
+<li>
+<p><strong>Ingresar a la Plataforma bancaria</strong><br>
+Su cliente debe iniciar sesión en su plataforma de banca en línea para iniciar la transferencia única.</p>
+</li>
+<li>
+<p><strong>Seleccionar la opción de transferencia</strong><br>
+Su cliente debe navegar hasta la opción para realizar una transferencia o pago. Las plataformas bancarias suelen denominar esta opción como <em><strong>Transferencias</strong></em> o un término similar.</p>
+</li>
+<li>
+<p><strong>Ingresar los datos del destinatario</strong><br>
+Se debe informar el número de CLABE en la respuesta, y su cliente debe proporcionarlo en los datos del destinatario. Recuerde que su cliente debe ingresar información precisa para evitar cualquier problema con la transferencia.</p>
+</li>
+<li>
+<p><strong>Especificar monto de la transferencia</strong><br>
+Su cliente debe introducir el monto de la compra. Algunas plataformas pueden pedir el tipo de divisa si su cliente tiene cuentas con varias divisas.</p>
+</li>
+</ol>
+
+
+<div class="alert alert-danger" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    ¡Importante!</h4>
+<p class="alert-text">La transferencia debe coincidir con el monto de la compra. De lo contrario, Bamboo rechazará la transacción.</p>
+</div>
+
+<ol start="5">
+<li>
+<p><strong>Revisar y confirmar</strong><br>
+Recuérdele a su cliente que revise cuidadosamente toda la información introducida para garantizar su exactitud. Su cliente debe comprobar el número de CLABE y el monto de la transferencia. Además, confirmar que tenga fondos suficientes en su cuenta.</p>
+</li>
+<li>
+<p><strong>Autorizar la transferencia</strong><br>
+Si es necesario, el sistema puede pedirle a su cliente que autorice la transferencia utilizando una medida de seguridad como contraseña, NIP o autenticación de dos factores.</p>
+</li>
+<li>
+<p><strong>Confirmación de la Transferencia</strong><br>
+Su cliente recibirá un mensaje de confirmación una vez que la transferencia haya sido aprobada y procesada. Esta confirmación puede incluir un número de referencia de la transacción que pueden utilizar con fines de seguimiento.</p>
+</li>
+</ol>
+<p>Es importante tener en cuenta que los pasos y opciones específicos pueden variar ligeramente según el banco y la plataforma de banca electrónica que utilice su cliente. Consulte siempre las instrucciones del banco del cliente y siga sus protocolos de seguridad para garantizar una transferencia segura y satisfactoria.</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">

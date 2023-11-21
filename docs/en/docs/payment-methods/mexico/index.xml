@@ -1383,7 +1383,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;MetadataOut&lt;/code&gt; → &lt;code&gt;BankAccountLabel&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Corresponds to the &lt;em&gt;CLABE&lt;/em&gt; account number to which the funds will be sent&lt;/td&gt;
+&lt;td&gt;Corresponds to the &lt;em&gt;CLABE&lt;/em&gt; account number to which the funds will be sent. This number is dynamic and unique per transaction.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;MetadataOut&lt;/code&gt; → &lt;code&gt;Expiration&lt;/code&gt;&lt;/td&gt;
@@ -1532,7 +1532,50 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payment-experience-for-customers&#34;&gt;Payment experience for customers&lt;/h3&gt;
+&lt;p&gt;Your customer must complete the payment by creating a bank transfer to the CLABE number returned in the response. Your customers must follow these steps to transfer on their banking app.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Access Banking Platform&lt;/strong&gt;&lt;br&gt;
+Your customer must log in to their online banking platform to initiate the one-time transfer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Select Transfer Option&lt;/strong&gt;&lt;br&gt;
+Your customer must navigate to the option for making a transfer or payment. Banking platforms often label this option as &lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt; or a similar term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Enter Recipient Details&lt;/strong&gt;&lt;br&gt;
+You must inform the CLABE number in the response, and your customer must provide it in the recipient details. Remember that your customer must enter accurate information to avoid any issues with the transfer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Specify Transfer Amount&lt;/strong&gt;&lt;br&gt;
+Your customer must enter the amount of the purchase. Some platforms may ask for the currency type if your customer has multiple currency accounts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;The transfer must match the purchase amount. Otherwise, Bamboo will reject the transaction.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Review and Confirm&lt;/strong&gt;&lt;br&gt;
+Recall your customer to review all the entered information carefully to ensure accuracy. Your customer must check the CLABE number and the transfer amount. Also, confirm that they have sufficient funds in their account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authorize the Transfer&lt;/strong&gt;&lt;br&gt;
+If required, the system may ask your customer to authorize the transfer using a security measure such as a password, PIN, or two-factor authentication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transaction Confirmation&lt;/strong&gt;&lt;br&gt;
+Your customer should receive a confirmation message once the transfer is approved and processed. This confirmation may include a transaction reference number they can use for tracking purposes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It’s important to note that the specific steps and options may vary slightly depending on the bank and the online banking platform your customer is using. Always refer to the guidance the customer’s bank provides and follow their security protocols to ensure a secure and successful transfer.&lt;/p&gt;
+
       </description>
     </item>
     

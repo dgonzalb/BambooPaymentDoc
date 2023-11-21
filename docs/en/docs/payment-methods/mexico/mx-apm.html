@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Learn how to integrate your solution to process payments in physical payment branches or using Bank transfers.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2023-10-31T07:59:58-05:00" />
-<meta itemprop="wordCount" content="1788">
+<meta itemprop="wordCount" content="2096">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments in physical payment branches or using Bank transfers.
@@ -145,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.2829dfccfd3fc143cba5e0d6926082f03022a0b4ab153340bef0a7d8647fd5eeb2587d02fecf38fe495f5f1877371a28cf72b63ca8fe8cd869996db39e159f6a.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.491a50eadb9b0c06c843c7076861520f5c637f67213475f5122030d6c5fb65f28346be52a050d95e3427d182ebe0978e5ab52a30a109c34fc3392d24e5559c1b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -910,6 +910,7 @@
       <ul>
         <li><a href="#request-parameters-2">Request parameters</a></li>
         <li><a href="#response-parameters-2">Response parameters</a></li>
+        <li><a href="#payment-experience-for-customers">Payment experience for customers</a></li>
       </ul>
     </li>
   </ul>
@@ -1667,7 +1668,7 @@
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>BankAccountLabel</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Corresponds to the <em>CLABE</em> account number to which the funds will be sent</td>
+<td>Corresponds to the <em>CLABE</em> account number to which the funds will be sent. This number is dynamic and unique per transaction.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>Expiration</code></td>
@@ -1816,7 +1817,50 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="payment-experience-for-customers">Payment experience for customers</h3>
+<p>Your customer must complete the payment by creating a bank transfer to the CLABE number returned in the response. Your customers must follow these steps to transfer on their banking app.</p>
+<ol>
+<li>
+<p><strong>Access Banking Platform</strong><br>
+Your customer must log in to their online banking platform to initiate the one-time transfer.</p>
+</li>
+<li>
+<p><strong>Select Transfer Option</strong><br>
+Your customer must navigate to the option for making a transfer or payment. Banking platforms often label this option as <em><strong>Transferencias</strong></em> or a similar term.</p>
+</li>
+<li>
+<p><strong>Enter Recipient Details</strong><br>
+You must inform the CLABE number in the response, and your customer must provide it in the recipient details. Remember that your customer must enter accurate information to avoid any issues with the transfer.</p>
+</li>
+<li>
+<p><strong>Specify Transfer Amount</strong><br>
+Your customer must enter the amount of the purchase. Some platforms may ask for the currency type if your customer has multiple currency accounts.</p>
+</li>
+</ol>
+
+
+<div class="alert alert-danger" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important</h4>
+<p class="alert-text">The transfer must match the purchase amount. Otherwise, Bamboo will reject the transaction.</p>
+</div>
+
+<ol start="5">
+<li>
+<p><strong>Review and Confirm</strong><br>
+Recall your customer to review all the entered information carefully to ensure accuracy. Your customer must check the CLABE number and the transfer amount. Also, confirm that they have sufficient funds in their account.</p>
+</li>
+<li>
+<p><strong>Authorize the Transfer</strong><br>
+If required, the system may ask your customer to authorize the transfer using a security measure such as a password, PIN, or two-factor authentication.</p>
+</li>
+<li>
+<p><strong>Transaction Confirmation</strong><br>
+Your customer should receive a confirmation message once the transfer is approved and processed. This confirmation may include a transaction reference number they can use for tracking purposes.</p>
+</li>
+</ol>
+<p>It’s important to note that the specific steps and options may vary slightly depending on the bank and the online banking platform your customer is using. Always refer to the guidance the customer’s bank provides and follow their security protocols to ensure a secure and successful transfer.</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">

@@ -1377,7 +1377,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;MetadataOut&lt;/code&gt; → &lt;code&gt;Clabe&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Corresponde al número &lt;em&gt;CLABE&lt;/em&gt; de la cuenta a la que se enviarán los fondos.&lt;/td&gt;
+&lt;td&gt;Corresponde al número &lt;em&gt;CLABE&lt;/em&gt; de la cuenta a la que se enviarán los fondos. Este número es dinámico y único por transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Response&lt;/code&gt; → &lt;code&gt;MetadataOut&lt;/code&gt; → &lt;code&gt;Expiration&lt;/code&gt;&lt;/td&gt;
@@ -1526,7 +1526,50 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;payment-experience-for-customers&#34;&gt;Experiencia de pago para los clientes&lt;/h3&gt;
+&lt;p&gt;Su cliente debe completar el pago creando una transferencia bancaria al número CLABE retornado en la respuesta. Su cliente debe seguir los siguientes pasos para realizar la transferencia en su app bancaria.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ingresar a la Plataforma bancaria&lt;/strong&gt;&lt;br&gt;
+Su cliente debe iniciar sesión en su plataforma de banca en línea para iniciar la transferencia única.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Seleccionar la opción de transferencia&lt;/strong&gt;&lt;br&gt;
+Su cliente debe navegar hasta la opción para realizar una transferencia o pago. Las plataformas bancarias suelen denominar esta opción como &lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt; o un término similar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ingresar los datos del destinatario&lt;/strong&gt;&lt;br&gt;
+Se debe informar el número de CLABE en la respuesta, y su cliente debe proporcionarlo en los datos del destinatario. Recuerde que su cliente debe ingresar información precisa para evitar cualquier problema con la transferencia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Especificar monto de la transferencia&lt;/strong&gt;&lt;br&gt;
+Su cliente debe introducir el monto de la compra. Algunas plataformas pueden pedir el tipo de divisa si su cliente tiene cuentas con varias divisas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    ¡Importante!&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La transferencia debe coincidir con el monto de la compra. De lo contrario, Bamboo rechazará la transacción.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Revisar y confirmar&lt;/strong&gt;&lt;br&gt;
+Recuérdele a su cliente que revise cuidadosamente toda la información introducida para garantizar su exactitud. Su cliente debe comprobar el número de CLABE y el monto de la transferencia. Además, confirmar que tenga fondos suficientes en su cuenta.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Autorizar la transferencia&lt;/strong&gt;&lt;br&gt;
+Si es necesario, el sistema puede pedirle a su cliente que autorice la transferencia utilizando una medida de seguridad como contraseña, NIP o autenticación de dos factores.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Confirmación de la Transferencia&lt;/strong&gt;&lt;br&gt;
+Su cliente recibirá un mensaje de confirmación una vez que la transferencia haya sido aprobada y procesada. Esta confirmación puede incluir un número de referencia de la transacción que pueden utilizar con fines de seguimiento.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Es importante tener en cuenta que los pasos y opciones específicos pueden variar ligeramente según el banco y la plataforma de banca electrónica que utilice su cliente. Consulte siempre las instrucciones del banco del cliente y siga sus protocolos de seguridad para garantizar una transferencia segura y satisfactoria.&lt;/p&gt;
+
       </description>
     </item>
     

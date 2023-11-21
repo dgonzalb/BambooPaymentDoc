@@ -459,13 +459,12 @@ En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponde al número _CLABE_ de la cuenta a la que se enviarán los fondos. |
+| `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponde al número _CLABE_ de la cuenta a la que se enviarán los fondos. Este número es dinámico y único por transacción. |
 | `Response` → `MetadataOut` → `Expiration` | `date` | Fecha y hora de expiración del pago. |
 
 {{% alert title="Nota" color="info"%}}
 El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su cliente debe configurar una transferencia electrónica a este número desde su aplicación bancaria.
 {{% /alert %}}
-
 
 #### Ejemplo del Response {#response-example-2}
 
@@ -602,3 +601,33 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
     "Errors": []
 }
 ```
+
+### Experiencia de pago para los clientes {#payment-experience-for-customers}
+Su cliente debe completar el pago creando una transferencia bancaria al número CLABE retornado en la respuesta. Su cliente debe seguir los siguientes pasos para realizar la transferencia en su app bancaria.
+
+1. **Ingresar a la Plataforma bancaria**<br>
+Su cliente debe iniciar sesión en su plataforma de banca en línea para iniciar la transferencia única.
+
+2. **Seleccionar la opción de transferencia**<br>
+Su cliente debe navegar hasta la opción para realizar una transferencia o pago. Las plataformas bancarias suelen denominar esta opción como _**Transferencias**_ o un término similar.
+
+3. **Ingresar los datos del destinatario**<br>
+Se debe informar el número de CLABE en la respuesta, y su cliente debe proporcionarlo en los datos del destinatario. Recuerde que su cliente debe ingresar información precisa para evitar cualquier problema con la transferencia.
+
+4. **Especificar monto de la transferencia**<br>
+Su cliente debe introducir el monto de la compra. Algunas plataformas pueden pedir el tipo de divisa si su cliente tiene cuentas con varias divisas.
+
+{{% alert title="¡Importante!" color="danger"%}}
+La transferencia debe coincidir con el monto de la compra. De lo contrario, Bamboo rechazará la transacción.
+{{% /alert %}}
+
+5. **Revisar y confirmar**<br>
+Recuérdele a su cliente que revise cuidadosamente toda la información introducida para garantizar su exactitud. Su cliente debe comprobar el número de CLABE y el monto de la transferencia. Además, confirmar que tenga fondos suficientes en su cuenta.
+
+6. **Autorizar la transferencia**<br>
+Si es necesario, el sistema puede pedirle a su cliente que autorice la transferencia utilizando una medida de seguridad como contraseña, NIP o autenticación de dos factores.
+
+7. **Confirmación de la Transferencia**<br>
+Su cliente recibirá un mensaje de confirmación una vez que la transferencia haya sido aprobada y procesada. Esta confirmación puede incluir un número de referencia de la transacción que pueden utilizar con fines de seguimiento.
+
+Es importante tener en cuenta que los pasos y opciones específicos pueden variar ligeramente según el banco y la plataforma de banca electrónica que utilice su cliente. Consulte siempre las instrucciones del banco del cliente y siga sus protocolos de seguridad para garantizar una transferencia segura y satisfactoria.

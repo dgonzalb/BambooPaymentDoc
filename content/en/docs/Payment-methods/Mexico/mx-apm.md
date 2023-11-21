@@ -459,7 +459,7 @@ In the response, you will find the following parameters:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent |
+| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent. This number is dynamic and unique per transaction. |
 | `Response` → `MetadataOut` → `Expiration` | `date` | Payment expiration date and time. |
 
 {{% alert title="Note" color="info"%}}
@@ -601,3 +601,33 @@ The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your cus
     "Errors": []
 }
 ```
+
+### Payment experience for customers
+Your customer must complete the payment by creating a bank transfer to the CLABE number returned in the response. Your customers must follow these steps to transfer on their banking app.
+
+1. **Access Banking Platform**<br>
+Your customer must log in to their online banking platform to initiate the one-time transfer.
+
+2. **Select Transfer Option**<br>
+Your customer must navigate to the option for making a transfer or payment. Banking platforms often label this option as _**Transferencias**_ or a similar term.
+
+3. **Enter Recipient Details**<br>
+You must inform the CLABE number in the response, and your customer must provide it in the recipient details. Remember that your customer must enter accurate information to avoid any issues with the transfer.
+
+4. **Specify Transfer Amount**<br>
+Your customer must enter the amount of the purchase. Some platforms may ask for the currency type if your customer has multiple currency accounts.
+
+{{% alert title="Important" color="danger"%}}
+The transfer must match the purchase amount. Otherwise, Bamboo will reject the transaction.
+{{% /alert %}}
+
+5. **Review and Confirm**<br>
+Recall your customer to review all the entered information carefully to ensure accuracy. Your customer must check the CLABE number and the transfer amount. Also, confirm that they have sufficient funds in their account.
+
+6. **Authorize the Transfer**<br>
+If required, the system may ask your customer to authorize the transfer using a security measure such as a password, PIN, or two-factor authentication.
+
+7. **Transaction Confirmation**<br>
+Your customer should receive a confirmation message once the transfer is approved and processed. This confirmation may include a transaction reference number they can use for tracking purposes.
+
+It’s important to note that the specific steps and options may vary slightly depending on the bank and the online banking platform your customer is using. Always refer to the guidance the customer’s bank provides and follow their security protocols to ensure a secure and successful transfer.
