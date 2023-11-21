@@ -625,7 +625,7 @@ The transfer must match the purchase amount. Otherwise, Bamboo will reject the t
 Recall your customer to review all the entered information carefully to ensure accuracy. Your customer must check the CLABE number and the transfer amount. Also, confirm that they have sufficient funds in their account.
 
 6. **Authorize the Transfer**<br>
-If required, the system may ask your customer to authorize the transfer using a security measure such as a password, PIN, or two-factor authentication.
+If required, the online banking platform may ask your customer to authorize the transfer using a security measure such as a password, PIN, or two-factor authentication.
 
 7. **Transaction Confirmation**<br>
 Your customer should receive a confirmation message once the transfer is approved and processed. This confirmation may include a transaction reference number they can use for tracking purposes.
