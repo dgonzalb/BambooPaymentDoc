@@ -6,7 +6,6 @@ description: >
   Aprenda cómo integrar su solución para procesar pagos con tarjetas crédito o débito.
 weight: 10
 tags: ["subtopic"]
-draft: true
 ---
 
 ## Parámetros del Request {#request-parameters}

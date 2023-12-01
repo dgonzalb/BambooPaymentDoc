@@ -95,10 +95,11 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/BankTransfer.png" width="52" style="" /> | SPEI | Transferencia Bancaria | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" width="52" style="" /> | Oxxo | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | API y Redirect |
+
 
 ## Nicaragua
 
@@ -122,6 +123,8 @@ weight: 30
 
 |  | Medio de pago | Tipo | Flujo |
 |-----|-----|-----|-----|
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito, débito y prepago | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito, débito y prepago  | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Pago en efectivo y Transferencia bancaria | API |
 | <img src="/assets/LogosCashPeru/arequipa.png" width="52" /> | Caja Arequipa  | Pago en efectivo | API |
 | <img src="/assets/LogosCashPeru/cusco.png" width="52" /> | Caja Cusco  | Pago en efectivo | API |
@@ -133,6 +136,9 @@ weight: 30
 | <img src="/assets/LogosCashPeru/interbank.png" width="52" /> | Interbank  | Pago en efectivo | API |
 | <img src="/assets/LogosCashPeru/westernunion.png" width="52" /> | Western Union  | Pago en efectivo | API |
 | <img src="/assets/LogosCashPeru/bbva.png" width="52" /> | BBVA  | Pago en efectivo | API |
+<!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Tarjeta de crédito | API |
+| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | UnionPay | Tarjeta de crédito | API |-->
 
 ## Uruguay
 
