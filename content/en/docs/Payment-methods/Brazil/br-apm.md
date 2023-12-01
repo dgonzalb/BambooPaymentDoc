@@ -277,7 +277,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Yes | Customer's Postal Code. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Yes | Customer’s Postal Code. The postal code must have eight digits—for example, `29018660`. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 | `MetadataIn.` → `AddressStreet` | `string` | Yes | Customer address street. |
 | `MetadataIn` → `AddressNumber` | `string` | Yes | Customer address number, floor, apartment. |
