@@ -21,9 +21,9 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/11_passcard_3.png" width="52" style="" /> | PassCard | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/17_cabal.png" width="52" style="" /> | Cabal | Tarjeta de crédito | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" width="52" style="" />| Pago Fácil | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" />| Transferencias 3.0 | Transferencia Bancaria | API |
+<!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Tarjeta de crédito | API |-->
 
 ## Brasil {#brazil}
 

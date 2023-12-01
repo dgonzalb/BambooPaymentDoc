@@ -277,7 +277,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. El código postal debe tener ocho dígitos; por ejemplo, `29018660`. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 | `MetadataIn.` → `AddressStreet` | `string` | Sí | Calle de la dirección del cliente. |
 | `MetadataIn` → `AddressNumber` | `string` | Sí | Número, piso o apartamento de la dirección del cliente. |
