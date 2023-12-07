@@ -45,8 +45,8 @@ Este método le permite obtener el listado de bancos disponibles en un país.
 #### URL del Request {#request-url}
 Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Producción**: `https://payout-api.bamboopayment.com/api/Bank/country/{{Country}}`
-* **Stage**: `https://payout-api.stage.bamboopayment.com/api/Bank/country/{{Country}}`
+* **Producción**: `https://payout-api.bamboopayment.com/api/bank/country/{{Country}}`
+* **Stage**: `https://payout-api.stage.bamboopayment.com/api/bank/country/{{Country}}`
 
 Donde `{{Country}}` representa el código ISO del país que desea consultar, utilizando el formato ISO 3166-2. [Listado de países disponibles de Payouts](../overview.html#coverage).
 
@@ -539,8 +539,8 @@ Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesida
 
 Para obtener el Payout, incluya los siguientes endpoints de acuerdo con sus necesidades.
 
-* **A través del ID del Payout**: `{{URL}}/api/Payout/{{PayoutID}}`
-* **A través del ID de la referencia del Payout**: `{{URL}}/api/Payout/reference/{{PayoutReference}}`
+* **A través del ID del Payout**: `{{URL}}/api/payout/{{PayoutID}}`
+* **A través del ID de la referencia del Payout**: `{{URL}}/api/payout/reference/{{PayoutReference}}`
 
 #### Parámetros del Response {#response-parameters-1}
 
