@@ -413,3 +413,237 @@ In the field `MetadataOut` inside the purchase `Response` object, the QR code is
 Result:
 
 <img src="/assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
+
+## Offline Bank transfers
+With **Offline Bank transfers**, you can let your customer pay using bank transfers using any Bank account and wallet with _CVU_ (Clave Virtual Uniforme) or _CBU_ (Clave Bancaria Uniforme). To complete the payment, your customer must transfer the purchase amount to the account details in the response.
+
+### Request parameters 
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**532**_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `Customer` → `FirstName` | `string` | No | Customer's first name. |
+| `Customer` → `LastName` | `string` | No | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/argentina.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+
+#### Request example
+```json
+{
+    "PaymentMediaId": 532,
+    "Order": "QA541",
+    "Capture": "true",
+    "Amount": 100000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "AR"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "Email": "eluna@mail.com",
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "AR",
+            "State": "C",
+            "City": "BsAs",
+            "AddressDetail": "Joaquin Requena 1580",
+            "PostalCode": "C1054AAU"
+        },
+        "FirstName": "Erik",
+        "LastName": "Luna",
+        "DocNumber": "12345672",
+        "DocumentTypeId": 17,
+        "PhoneNumber": "24022330"
+    },
+    "MetaDataIn": {
+        "PaymentExpirationInMinutes": 60
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Response parameters
+We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the [Payment Experience](#payment-experience) section to see the payment flow.
+
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+
+#### Response example
+
+```json
+{
+    "Response": {
+        "PurchaseId": 1260547,
+        "Created": "2023-12-13T13:12:28.025",
+        "TrxToken": null,
+        "Order": "QA623",
+        "Transaction": {
+            "TransactionID": 1280439,
+            "Created": "2023-12-13T13:12:28.025",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-12-13T16:12:28.025",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 84860000,
+        "OriginalAmount": 84860000,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "ARS",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 263479,
+            "Created": "2023-12-13T13:12:27.663",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "eluna@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "AR",
+                "State": "C",
+                "AddressDetail": "Joaquin Requena 1580",
+                "PostalCode": "C1054AAU",
+                "City": "BsAs"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 268514,
+                    "PaymentMediaId": 532,
+                    "Created": "2023-12-13T16:12:27.810",
+                    "LastUpdate": "2023-12-13T16:12:27.863",
+                    "Brand": "Infinia",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/263479",
+            "FirstName": "Erik",
+            "LastName": "Luna",
+            "DocNumber": "12345672",
+            "DocumentTypeId": 17,
+            "PhoneNumber": "24022330",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1260547",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 147,
+            "Name": "Infinia Redirect AR",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_25001335-2c28-46b8-82f7-29d59963e663",
+            "ActionBody": null,
+            "ActionSessionId": "CA_25001335-2c28-46b8-82f7-29d59963e663"
+        },
+        "PurchasePaymentProfileId": 268514,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {},
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "AR",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1000
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
+
+### Payment experience
+As mentioned, you must redirect your customer to the URL returned in the response (parameter `CommerceAction.ActionURL`).
+
+The first step your customer must take is to provide their **DNI/CUIT** number.
+
+<img src="/assets/InfiniaAR/InfiniaAR_01.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
+
+Then, we show your customer the coupon with the bank information to where they need to create the transfer.
+
+<img src="/assets/InfiniaAR/InfiniaAR_02.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>
+
+{{% alert title="Info" color="info"%}}
+You can customize this coupon to display your logo at the top. Contact Bamboo support to include it.
+{{% /alert %}}
+
+Once your customer completes the transfer, they can use the confirmation button at the bottom of this screen.
+
+<img src="/assets/InfiniaAR/InfiniaAR_03.png" alt="PrintScreen" style="width: 50%; height:auto;">

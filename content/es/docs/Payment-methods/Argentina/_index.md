@@ -25,6 +25,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/17_cabal.png" alt="Cabal" style="min-width: 40px;" /> | 17 | Cabal | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" alt="PagoFacil" style="min-width: 40px;" />| 61 | Pago Fácil | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" alt="Transferencias30" style="min-width: 40px;" />| 72 | Transferencias 3.0 | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Wallet | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" alt="BankTransfer" style="min-width: 40px;" />| 532 | Transferencias Bancarias Offline | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Transferencia Bancaria | Redirect |
 <!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" alt="Naranja" style="min-width: 40px;" /> | 24 | Tarjeta Naranja | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |-->
 
 ## Monedas {#currencies}
@@ -36,7 +37,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 
 ## Límites de montos {#amount-limits}
 
-|  | Tarjetas | Efectivo | Wallet |
+|  | Tarjetas | Efectivo | Transferencias y Wallets |
 |---|:---:|:---:|:---:|
 | **Mínimo** | ARS 1 | ARS 1 | ARS 1 |
 | **Máximo** | ARS 99.999.999.999.999.999 | ARS 1.000.000,00 | ARS 3.345.000,00<hr>USD 12.500,00 |
