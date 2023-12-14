@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/payment-methods/argentina/ar-apm.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2023-09-22T14:36:46-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2023-12-13T12:28:33-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Medios alternativos de pago">
 <meta itemprop="description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2023-09-22T14:36:46-05:00" />
+<meta itemprop="dateModified" content="2023-12-13T12:28:33-05:00" />
 <meta itemprop="wordCount" content="2106">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medios alternativos de pago"/>
@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.7c20d70fc194f95bf0d915a40e870c51e57ed479051697d8a1a42709ab4aa4c25a113e5f2b97b90df912ee0958f1cd78e768bd0deb0d8fbcfa289a1497cec8d9.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b477bf522fc775d82e3aca2528388ec98f289dbb24be21ac9246c0bcc76219efd4c3375a907db24d5e3e71afa943bec8ec133e8261cb4a6e4051f1f1a5cae23f.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1516,7 +1516,7 @@
 <p>Resultado:</p>
 <img src="../../../../assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
 <h2 id="offline-bank-transfers">Transferencias Bancarias Offline</h2>
-<p>With <strong>Offline Bank transfers</strong>, you can let your customer pay using bank transfers using any Bank account and wallet with <em>CVU</em> (Clave Virtual Uniforme) or <em>CBU</em> (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.</p>
+<p>Con <strong>Transferencias bancarias offline</strong>, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con <em>CVU</em> (Clave Virtual Uniforme) o <em>CBU</em> (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.</p>
 <h3 id="request-parameters-2">Parámetros del Request</h3>
 <p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
 <table>
@@ -1654,7 +1654,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h3 id="response-parameters-2">Parámetros del Response</h3>
-<p>etornamos la compra (<code>Purchase</code>) con estado <em>Pending for Redirection</em> y un objeto <code>CommerceAction</code> con <code>ActionReason</code> como <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code> y el parámetro <code>ActionURL</code> con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección <a href="#payment-experience">Experiencia de pago</a> para ver el flujo de pago.</p>
+<p>Retornamos la compra (<code>Purchase</code>) con estado <em>Pending for Redirection</em> y un objeto <code>CommerceAction</code> con <code>ActionReason</code> como <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code> y el parámetro <code>ActionURL</code> con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección <a href="#payment-experience">Experiencia de pago</a> para ver el flujo de pago.</p>
 <p>Para más información sobre los parámetros del Response, consulte la <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">sección de parámetros</a> de la creación de la compra.</p>
 <h4 id="response-example-1">Ejemplo del Response</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
@@ -1812,7 +1812,7 @@
 <p class="alert-text">Puede personalizar este cupón para que muestre su logotipo en la parte superior. Para incluirlo, póngase en contacto con el servicio de soporte de Bamboo.</p>
 </div>
 
-<p>Una vez que tu cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.</p>
+<p>Una vez que su cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.</p>
 <img src="../../../../assets/InfiniaAR/InfiniaAR_03.png" alt="PrintScreen" style="width: 50%; height:auto;">
 	
 	
@@ -1823,7 +1823,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    22 de septiembre de 2023
+    13 de diciembre de 2023
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>

@@ -172,7 +172,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Transferencia bancaria {#bank-transfers}
+## Transferencia bancaria Online {#bank-transfers}
 El flujo de este medio de pago es _**Redirect**_, por lo que el cliente debe ser redireccionado a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1) puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
 
 ### Bancos soportados {#supported-banks}
@@ -244,7 +244,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters-1}
-As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
+Como necesita redirigir a su cliente a una página externa para completar el pago, puede encontrar la URL de redirección en el parámetro `MetadataOut.ActionURL`.
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
@@ -392,3 +392,238 @@ Para más información sobre los parámetros del Response, consulte la [sección
     "Errors": []
 }
 ```
+
+## Transferencias Bancarias Offline {#offline-bank-transfers}
+Con **Transferencias bancarias offline**, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con _CVU_ (Clave Virtual Uniforme) o _CBU_ (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.
+
+### Parámetros del Request {#request-parameters-2}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**532**_. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+
+#### Ejemplo del Request {#request-example-2}
+```json
+{
+    "PaymentMediaId": 532,
+    "Order": "QA83",
+    "Capture": "true",
+    "Amount": 100000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "UY"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "Email": "testuser@mail.com",
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "Uruguay",
+            "State": "Montevideo",
+            "City": "Montevideo",
+            "AddressDetail": "La Paz 1020"
+        },
+        "FirstName": "Mark",
+        "LastName": "Doe",
+        "DocNumber": "12345672",
+        "DocumentTypeId": 2,
+        "PhoneNumber": "099111222"
+    },
+    "MetaDataIn": {
+        "PaymentExpirationInMinutes": 60
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Parámetros del Response {#response-parameters-2}
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección [Experiencia de pago](#payment-experience) para ver el flujo de pago. 
+
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+
+#### Ejemplo del Response {#response-example-2}
+
+```json
+{
+    "Response": {
+        "PurchaseId": 1260840,
+        "Created": "2023-12-14T11:01:12.829",
+        "TrxToken": null,
+        "Order": "QA83",
+        "Transaction": {
+            "TransactionID": 1280797,
+            "Created": "2023-12-14T11:01:12.829",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-12-14T14:01:12.829",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 3188058,
+        "OriginalAmount": 3188058,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "UYU",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 263761,
+            "Created": "2023-12-14T11:01:12.473",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "testuser@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "Uruguay",
+                "State": "Montevideo",
+                "AddressDetail": "La Paz 1020",
+                "PostalCode": null,
+                "City": "Montevideo"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 268802,
+                    "PaymentMediaId": 532,
+                    "Created": "2023-12-14T14:01:12.597",
+                    "LastUpdate": "2023-12-14T14:01:12.670",
+                    "Brand": "Infinia",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/263761",
+            "FirstName": "Mark",
+            "LastName": "Doe",
+            "DocNumber": "12345672",
+            "DocumentTypeId": 2,
+            "PhoneNumber": "099111222",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1260840",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 91,
+            "Name": "Infinia Redirect",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_0cf91fa5-953c-43e9-8fb1-8ebb030d6748",
+            "ActionBody": null,
+            "ActionSessionId": "CA_0cf91fa5-953c-43e9-8fb1-8ebb030d6748"
+        },
+        "PurchasePaymentProfileId": 268802,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {
+            "PaymentExpirationInMinutes": "60"
+        },
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "UY",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1000
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
+
+### Experiencia de pago {#payment-experience}
+Como se ha mencionado, debe redirigir a su cliente a la URL devuelta en la respuesta (parámetro `CommerceAction.ActionURL`).
+
+El primer paso que debe realizar su cliente es seleccionar el banco del pagador.
+
+<img src="/assets/InfiniaAR/InfiniaAR_04.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
+
+A continuación, mostramos a su cliente el cupón con la información bancaria a la que debe crear la transferencia.
+
+<img src="/assets/InfiniaAR/InfiniaAR_05.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>
+
+{{% alert title="Info" color="info"%}}
+Puede personalizar este cupón para que muestre su logotipo en la parte superior. Para incluirlo, póngase en contacto con el servicio de soporte de Bamboo.
+{{% /alert %}}
+
+Una vez que su cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.
+
+<img src="/assets/InfiniaAR/InfiniaAR_06.png" alt="PrintScreen" style="width: 50%; height:auto;">

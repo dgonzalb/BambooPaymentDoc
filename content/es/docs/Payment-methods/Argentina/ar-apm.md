@@ -415,7 +415,7 @@ Resultado:
 <img src="/assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
 
 ## Transferencias Bancarias Offline {#offline-bank-transfers}
-With **Offline Bank transfers**, you can let your customer pay using bank transfers using any Bank account and wallet with _CVU_ (Clave Virtual Uniforme) or _CBU_ (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.
+Con **Transferencias bancarias offline**, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con _CVU_ (Clave Virtual Uniforme) o _CBU_ (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.
 
 ### Parámetros del Request {#request-parameters-2}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
@@ -479,7 +479,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters-2}
-etornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección [Experiencia de pago](#payment-experience) para ver el flujo de pago. 
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección [Experiencia de pago](#payment-experience) para ver el flujo de pago. 
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
@@ -644,6 +644,6 @@ A continuación, mostramos a su cliente el cupón con la información bancaria a
 Puede personalizar este cupón para que muestre su logotipo en la parte superior. Para incluirlo, póngase en contacto con el servicio de soporte de Bamboo.
 {{% /alert %}}
 
-Una vez que tu cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.
+Una vez que su cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.
 
 <img src="/assets/InfiniaAR/InfiniaAR_03.png" alt="PrintScreen" style="width: 50%; height:auto;">

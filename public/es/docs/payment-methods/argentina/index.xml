@@ -925,7 +925,7 @@
 &lt;p&gt;Resultado:&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/QRTransferencias30.png&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
 &lt;h2 id=&#34;offline-bank-transfers&#34;&gt;Transferencias Bancarias Offline&lt;/h2&gt;
-&lt;p&gt;With &lt;strong&gt;Offline Bank transfers&lt;/strong&gt;, you can let your customer pay using bank transfers using any Bank account and wallet with &lt;em&gt;CVU&lt;/em&gt; (Clave Virtual Uniforme) or &lt;em&gt;CBU&lt;/em&gt; (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.&lt;/p&gt;
+&lt;p&gt;Con &lt;strong&gt;Transferencias bancarias offline&lt;/strong&gt;, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con &lt;em&gt;CVU&lt;/em&gt; (Clave Virtual Uniforme) o &lt;em&gt;CBU&lt;/em&gt; (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
 &lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
@@ -1063,7 +1063,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-2&#34;&gt;Parámetros del Response&lt;/h3&gt;
-&lt;p&gt;etornamos la compra (&lt;code&gt;Purchase&lt;/code&gt;) con estado &lt;em&gt;Pending for Redirection&lt;/em&gt; y un objeto &lt;code&gt;CommerceAction&lt;/code&gt; con &lt;code&gt;ActionReason&lt;/code&gt; como &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; y el parámetro &lt;code&gt;ActionURL&lt;/code&gt; con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección &lt;a href=&#34;#payment-experience&#34;&gt;Experiencia de pago&lt;/a&gt; para ver el flujo de pago.&lt;/p&gt;
+&lt;p&gt;Retornamos la compra (&lt;code&gt;Purchase&lt;/code&gt;) con estado &lt;em&gt;Pending for Redirection&lt;/em&gt; y un objeto &lt;code&gt;CommerceAction&lt;/code&gt; con &lt;code&gt;ActionReason&lt;/code&gt; como &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; y el parámetro &lt;code&gt;ActionURL&lt;/code&gt; con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección &lt;a href=&#34;#payment-experience&#34;&gt;Experiencia de pago&lt;/a&gt; para ver el flujo de pago.&lt;/p&gt;
 &lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-1&#34;&gt;Ejemplo del Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1221,7 +1221,7 @@
 &lt;p class=&#34;alert-text&#34;&gt;Puede personalizar este cupón para que muestre su logotipo en la parte superior. Para incluirlo, póngase en contacto con el servicio de soporte de Bamboo.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Una vez que tu cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.&lt;/p&gt;
+&lt;p&gt;Una vez que su cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/InfiniaAR/InfiniaAR_03.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 50%; height:auto;&#34;&gt;
       </description>
     </item>
