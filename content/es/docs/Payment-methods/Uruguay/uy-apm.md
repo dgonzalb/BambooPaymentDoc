@@ -172,7 +172,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Transferencia bancaria Online {#bank-transfers}
+## Transferencias bancarias Online {#bank-transfers}
 El flujo de este medio de pago es _**Redirect**_, por lo que el cliente debe ser redireccionado a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1) puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
 
 ### Bancos soportados {#supported-banks}
@@ -394,7 +394,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ```
 
 ## Transferencias Bancarias Offline {#offline-bank-transfers}
-Con **Transferencias bancarias offline**, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con _CVU_ (Clave Virtual Uniforme) o _CBU_ (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.
+Con **Transferencias bancarias offline**, puede permitir que su cliente pague mediante transferencias bancarias utilizando una cuenta de E-Brou, Santander, Scotiabank o Itau Bank. A diferencia de las [Transferencias bancarias online](#bank-transfers) para completar el pago, su cliente debe transferir el importe de la compra a los detalles de la cuenta en la respuesta utilizando su home banking.
 
 ### Parámetros del Request {#request-parameters-2}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
