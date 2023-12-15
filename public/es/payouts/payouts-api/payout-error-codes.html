@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-11-15T08:41:07-05:00" />
-<meta itemprop="wordCount" content="206">
+<meta itemprop="wordCount" content="246">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Códigos de error del API"/>
 <meta name="twitter:description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.dec50f178e3c2c28a719c75914ad86dfbe5ca5e27ca077e7af83f86fff5a40ac5ec4c3de4f23d3307b830706b4967f9f7fbe60bae2fa676345e035a61cc3797b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d65612c3dabc357f03161f51573fc693c5d10fb79d8077f969048133efbd338db9d163140f7b6c0e5455a558d8be0c38b880a9c3277c26f14186916388af10bc.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -425,6 +425,16 @@
 </thead>
 <tbody>
 <tr>
+<td><code>000</code></td>
+<td>Códigos del Response</td>
+<td>Código inválido.</td>
+</tr>
+<tr>
+<td><code>200</code></td>
+<td>Códigos del Response</td>
+<td>Éxito.</td>
+</tr>
+<tr>
 <td><code>200</code></td>
 <td>Códigos del Response</td>
 <td>Éxito.</td>
@@ -460,6 +470,21 @@
 <td>Error genérico del Preview de Payouts.</td>
 </tr>
 <tr>
+<td><code>701</code></td>
+<td>Rechazos</td>
+<td>Saldo insuficiente.</td>
+</tr>
+<tr>
+<td><code>702</code></td>
+<td>Rechazos</td>
+<td>Rechazado por reglas de cumplimiento.</td>
+</tr>
+<tr>
+<td><code>703</code></td>
+<td>Rechazos</td>
+<td>Error general en el balance de cuentas.</td>
+</tr>
+<tr>
 <td><code>812</code></td>
 <td>Validación del API</td>
 <td>Declinado por validación del documento.</td>
@@ -483,6 +508,11 @@
 <td><code>816</code></td>
 <td>Validación del API</td>
 <td>ID de referencia ya utilizado.<br>Este error no se muestra en la <a href="../payouts-merchant-console.html">Consola de Payouts</a> pero se devuelve a través de la API.</td>
+</tr>
+<tr>
+<td><code>817</code></td>
+<td>Validación del API</td>
+<td>Moneda de destino no soportada.</td>
 </tr>
 <tr>
 <td><code>901</code></td>
