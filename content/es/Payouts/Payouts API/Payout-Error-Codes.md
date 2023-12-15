@@ -18,14 +18,16 @@ weight: 40
 | `409` | Códigos del Response | Conflicto. |
 | `601` | Purchase Preview | País destino no válido. |
 | `602` | Purchase Preview | Moneda de origen no válida. |
+| `603` | Purchase Preview | Monto invalido. |
+| `604` | Purchase Preview | Código ISO de moneda de destino inválido. |
 | `699` | Purchase Preview | Error genérico del Preview de Payouts. |
-| `701` | Rechazos | Saldo insuficiente. |
-| `702` | Rechazos | Rechazado por reglas de cumplimiento. |
-| `703` | Rechazos | Error general en el balance de cuentas. |
+| `701` | Errores transaccionales | Saldo insuficiente. |
+| `702` | Errores transaccionales | Rechazado por reglas de cumplimiento. |
+| `703` | Errores transaccionales | Error general en el balance de cuentas. |
+| `704` | Errores transaccionales | El monto mínimo del pago es inválido. |
 | `812` | Validación del API | Declinado por validación del documento. |
 | `813` | Validación del API | Declinado por validación de la cuenta. |
 | `814` | Validación del API | Declinado por validación del país. |
-| `815` | Validación del API | Declinado por cumplimiento. |
 | `816` | Validación del API | ID de referencia ya utilizado.<br>Este error no se muestra en la [Consola de Payouts](../payouts-merchant-console.html) pero se devuelve a través de la API. |
 | `817` | Validación del API | Moneda de destino no soportada. |
 | `901` | Rechazos | La cuenta bancaria está cerrada. |
@@ -40,4 +42,8 @@ weight: 40
 | `910` | Rechazos | Llave PIX no válida. |
 | `911` | Rechazos | Se ha solicitado un cambio de estado no válido. |
 | `912` | Rechazos | Saldo insuficiente. |
-| `999` | Rechazos | Error. |
+| `913` | Rechazos | Fecha de proceso no válida. |
+| `914` | Rechazos | Saldo insuficiente en la integración. |
+| `915` | Rechazos | Error general en la integración. |
+| `916` | Rechazos | Rechazado por el banco. |
+| `999` | Rechazos | Error general. |
