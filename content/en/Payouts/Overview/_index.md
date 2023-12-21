@@ -51,7 +51,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 | Argentina | 10:00 am. | **GMT-3** |
 | Brazil | 10:00 am. | **GMT-3** |
 | Chile  | Real time. | |
-| Colombia | 10:00 am. | **GMT-5** |
+| Colombia | Real time. | |
 | Mexico  | 10:00 am. | **GMT-6** |
 | Peru | 09:00 am. | **GMT-5** |
 | Uruguay | 10:00 am. | **GMT-3** |

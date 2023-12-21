@@ -51,7 +51,7 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 | Argentina | 10:00 am. | **GMT-3** |
 | Brasil | 10:00 am. | **GMT-3** |
 | Chile  | Real time. | |
-| Colombia | 10:00 am. | **GMT-5** |
+| Colombia |  Real time. | |
 | México  | 10:00 am. | **GMT-6** |
 | Perú | 09:00 am. | **GMT-5** |
 | Uruguay | 10:00 am. | **GMT-3** |
