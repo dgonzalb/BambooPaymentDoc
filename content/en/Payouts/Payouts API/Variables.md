@@ -486,6 +486,7 @@ Do not include zeros on the left in the bank code. For example, `017` > `17`.
 
 | Bank Name | Bank Code |
 |---|:---:|
+| BANCAMIA SA | `1059` |
 | BANCO AGRARIO | `1040` |
 | BANCO AV VILLAS | `1052` |
 | BANCO BTG PACTUAL | `1805` |
@@ -498,9 +499,11 @@ Do not include zeros on the left in the bank code. For example, `017` > `17`.
 | BANCO FINANDINA S.A. | `1063` |
 | BANCO GNB SUDAMERIS | `1012` |
 | BANCO J.P. MORGAN COLOMBIA S.A | `1071` |
+| BANCO MULTIBANK SA | `1064` |
 | BANCO MUNDO MUJER | `1047` |
 | BANCO PICHINCHA | `1060` |
 | BANCO POPULAR | `1002` |
+| BANCO PROCREDIT COLOMBIA | `1058` |
 | BANCO SANTANDER DE NEGOCIOS CO | `1065` |
 | BANCO SERFINANZA S.A | `1069` |
 | BANCO W S.A. | `1053` |
@@ -529,7 +532,7 @@ Do not include zeros on the left in the bank code. For example, `017` > `17`.
 | NEQUI | `1507` |
 | PIBANK | `1560` |
 | POWWI | `1803` |
-| RAPPIPAY | `1151` |
+| RAPPIPAY | `1811` |
 | SCOTIABANK COLPATRIA S.A | `1019` |
 | UALÁ | `1804` |
 
