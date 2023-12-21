@@ -529,7 +529,7 @@ No incluya ceros a la izquierda en el código del banco. Por ejemplo, `017` > `1
 | NEQUI | `1507` |
 | PIBANK | `1560` |
 | POWWI | `1803` |
-| RAPPIPAY | `1151` |
+| RAPPIPAY | `1811` |
 | SCOTIABANK COLPATRIA S.A | `1019` |
 | UALÁ | `1804` |
 
