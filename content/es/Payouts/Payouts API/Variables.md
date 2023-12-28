@@ -735,6 +735,7 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | CC | Cédula de ciudadanía | Individuos | Numérico | Entre 6 y 10 |
 | CE | Cédula de extranjería | Individuos | Numérico | Entre 6 y 10 |
 | NIT | NIT | Compañías | Numérico | Entre 8 y 15 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Numérico | Entre 6 y 10 |
 
 <!--### Costa Rica
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |

@@ -735,6 +735,7 @@ The following tables show the document types you must configure in the parameter
 | CC | Citizenship ID | Individuals | Numeric | Between 6 and 10 |
 | CE | Immigration ID | Individuals | Numeric | Between 6 and 10 |
 | NIT | Tax Identification Number | Companies | Numeric | Between 8 and 15 |
+| PASSPORT | International Travel Document | Individuals | Numeric | Between 6 and 10 |
 
 <!--### Costa Rica
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
