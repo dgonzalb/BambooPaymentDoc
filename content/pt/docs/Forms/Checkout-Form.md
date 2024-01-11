@@ -60,7 +60,7 @@ PWCheckout.SetProperties(
   "description": "Checkout de Mi tienda",
   "currency": "USD",
   "amount": "1843.21",
-  "lang": "ESP",
+  "lang": "ES",
   "form_id": "commerce_form",
   "checkout_card": "1",
   "autoSubmit": `true`,
