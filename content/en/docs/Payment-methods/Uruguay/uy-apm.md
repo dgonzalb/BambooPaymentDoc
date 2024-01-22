@@ -172,7 +172,7 @@ For more information on the response parameters, please refer to the [Response p
 }
 ```
 
-## Bank transfers
+## Online Bank transfers {#bank-transfers}
 The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
 ### Supported banks
@@ -392,3 +392,238 @@ For more information on the response parameters, please refer to the [Response p
     "Errors": []
 }
 ```
+
+## Offline Bank Transfers
+With **Offline Bank Transfers**, you can let your customer pay using bank transfers using an E-Brou, Santander, Scotiabank, or Itau Bank account. Unlike the [Online Bank Transfers](#bank-transfers) to complete the payment, your customer must transfer the purchase amount to the account details in the response using their home banking.
+
+### Request parameters 
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**532**_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `Customer` → `FirstName` | `string` | No | Customer's first name. |
+| `Customer` → `LastName` | `string` | No | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/uruguay.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+
+#### Request example
+```json
+{
+    "PaymentMediaId": 532,
+    "Order": "QA83",
+    "Capture": "true",
+    "Amount": 100000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "UY"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "Email": "testuser@mail.com",
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "Uruguay",
+            "State": "Montevideo",
+            "City": "Montevideo",
+            "AddressDetail": "La Paz 1020"
+        },
+        "FirstName": "Mark",
+        "LastName": "Doe",
+        "DocNumber": "12345672",
+        "DocumentTypeId": 2,
+        "PhoneNumber": "099111222"
+    },
+    "MetaDataIn": {
+        "PaymentExpirationInMinutes": 60
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Response parameters
+We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the [Payment Experience](#payment-experience) section to see the payment flow.
+
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+
+#### Response example
+
+```json
+{
+    "Response": {
+        "PurchaseId": 1260840,
+        "Created": "2023-12-14T11:01:12.829",
+        "TrxToken": null,
+        "Order": "QA83",
+        "Transaction": {
+            "TransactionID": 1280797,
+            "Created": "2023-12-14T11:01:12.829",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-12-14T14:01:12.829",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 3188058,
+        "OriginalAmount": 3188058,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "UYU",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 263761,
+            "Created": "2023-12-14T11:01:12.473",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "testuser@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "Uruguay",
+                "State": "Montevideo",
+                "AddressDetail": "La Paz 1020",
+                "PostalCode": null,
+                "City": "Montevideo"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 268802,
+                    "PaymentMediaId": 532,
+                    "Created": "2023-12-14T14:01:12.597",
+                    "LastUpdate": "2023-12-14T14:01:12.670",
+                    "Brand": "Infinia",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/263761",
+            "FirstName": "Mark",
+            "LastName": "Doe",
+            "DocNumber": "12345672",
+            "DocumentTypeId": 2,
+            "PhoneNumber": "099111222",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1260840",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 91,
+            "Name": "Infinia Redirect",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_0cf91fa5-953c-43e9-8fb1-8ebb030d6748",
+            "ActionBody": null,
+            "ActionSessionId": "CA_0cf91fa5-953c-43e9-8fb1-8ebb030d6748"
+        },
+        "PurchasePaymentProfileId": 268802,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {
+            "PaymentExpirationInMinutes": "60"
+        },
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "UY",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1000
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
+
+### Payment experience
+As mentioned, you must redirect your customer to the URL returned in the response (parameter `CommerceAction.ActionURL`).
+
+The first step your customer must take is to select the bank of the payer.
+
+<img src="/assets/InfiniaAR/InfiniaAR_04.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
+
+Then, we show your customer the coupon with the bank information to where they need to create the transfer.
+
+<img src="/assets/InfiniaAR/InfiniaAR_05.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>
+
+{{% alert title="Info" color="info"%}}
+You can customize this coupon to display your logo at the top. Contact Bamboo support to include it.
+{{% /alert %}}
+
+Once your customer completes the transfer, they can use the confirmation button at the bottom of this screen.
+
+<img src="/assets/InfiniaAR/InfiniaAR_06.png" alt="PrintScreen" style="width: 50%; height:auto;">

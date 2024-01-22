@@ -413,3 +413,237 @@ En el campo `MetadataOut` dentro del objeto `Response`, el código QR se devuelv
 Resultado:
 
 <img src="/assets/QRTransferencias30.png" width="40%" alt="PrintScreen"/>
+
+## Transferencias Bancarias Offline {#offline-bank-transfers}
+Con **Transferencias bancarias offline**, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con _CVU_ (Clave Virtual Uniforme) o _CBU_ (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.
+
+### Parámetros del Request {#request-parameters-2}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**532**_. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/argentina.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+
+#### Ejemplo del Request {#request-example-2}
+```json
+{
+    "PaymentMediaId": 532,
+    "Order": "QA541",
+    "Capture": "true",
+    "Amount": 100000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "AR"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "Email": "eluna@mail.com",
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "AR",
+            "State": "C",
+            "City": "BsAs",
+            "AddressDetail": "Joaquin Requena 1580",
+            "PostalCode": "C1054AAU"
+        },
+        "FirstName": "Erik",
+        "LastName": "Luna",
+        "DocNumber": "12345672",
+        "DocumentTypeId": 17,
+        "PhoneNumber": "24022330"
+    },
+    "MetaDataIn": {
+        "PaymentExpirationInMinutes": 60
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Parámetros del Response {#response-parameters-2}
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección [Experiencia de pago](#payment-experience) para ver el flujo de pago. 
+
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+
+#### Ejemplo del Response {#response-example-1}
+
+```json
+{
+    "Response": {
+        "PurchaseId": 1260547,
+        "Created": "2023-12-13T13:12:28.025",
+        "TrxToken": null,
+        "Order": "QA623",
+        "Transaction": {
+            "TransactionID": 1280439,
+            "Created": "2023-12-13T13:12:28.025",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-12-13T16:12:28.025",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 84860000,
+        "OriginalAmount": 84860000,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "ARS",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 263479,
+            "Created": "2023-12-13T13:12:27.663",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "eluna@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "AR",
+                "State": "C",
+                "AddressDetail": "Joaquin Requena 1580",
+                "PostalCode": "C1054AAU",
+                "City": "BsAs"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 268514,
+                    "PaymentMediaId": 532,
+                    "Created": "2023-12-13T16:12:27.810",
+                    "LastUpdate": "2023-12-13T16:12:27.863",
+                    "Brand": "Infinia",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/263479",
+            "FirstName": "Erik",
+            "LastName": "Luna",
+            "DocNumber": "12345672",
+            "DocumentTypeId": 17,
+            "PhoneNumber": "24022330",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1260547",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 147,
+            "Name": "Infinia Redirect AR",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_25001335-2c28-46b8-82f7-29d59963e663",
+            "ActionBody": null,
+            "ActionSessionId": "CA_25001335-2c28-46b8-82f7-29d59963e663"
+        },
+        "PurchasePaymentProfileId": 268514,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {},
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "AR",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1000
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
+
+### Experiencia de pago {#payment-experience}
+Como se ha mencionado, debe redirigir a su cliente a la URL devuelta en la respuesta (parámetro `CommerceAction.ActionURL`).
+
+El primer paso que debe realizar su cliente es proporcionar su número **DNI/CUIT**.
+
+<img src="/assets/InfiniaAR/InfiniaAR_01.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
+
+A continuación, mostramos a su cliente el cupón con la información bancaria a la que debe crear la transferencia.
+
+<img src="/assets/InfiniaAR/InfiniaAR_02.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>
+
+{{% alert title="Info" color="info"%}}
+Puede personalizar este cupón para que muestre su logotipo en la parte superior. Para incluirlo, póngase en contacto con el servicio de soporte de Bamboo.
+{{% /alert %}}
+
+Una vez que su cliente complete la transferencia, podrá utilizar el botón de confirmación situado en la parte inferior de esta pantalla.
+
+<img src="/assets/InfiniaAR/InfiniaAR_03.png" alt="PrintScreen" style="width: 50%; height:auto;">

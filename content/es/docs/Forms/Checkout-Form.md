@@ -37,7 +37,7 @@ Todas las propiedades son opcionales, excepto la propiedad `form_id`. Por lo tan
 | **description** | Descripción del pago a realizarse. | No |
 | **currency** | Moneda del pago.  | No |
 | **amount** | Monto del pago (solo para informar al usuario, el monto real se informa server to server en la operación Purchase). | No |
-| **lang** | Idioma de la interfaz. Si no se configura se obtiene de la configuración del browser. | No |
+| **lang** | Idioma de la interfaz en formato **ISO 639-1**. Si no se configura se obtiene de la configuración del browser. | No |
 | **form_id** | Identificador del formulario web donde se manejan los datos de la compra actual. Este dato es requerido ya que se utilizará para informar el token generado por la aplicación a partir de la tarjeta o medio de pago ingresado por el usuario. | Sí |
 | **checkout_card** | Si se envía esta propiedad, el Checkout va directamente a la captura de la tarjeta. | No |
 | **empty** | Si se envía esta propiedad como `true`, se oculta la imagen y el título de la ventana del formulario. El valor por defecto es `false`. | No |
@@ -60,7 +60,7 @@ PWCheckout.SetProperties(
   "description": "Checkout de Mi tienda",
   "currency": "USD",
   "amount": "1843.21",
-  "lang": "ESP",
+  "lang": "ES",
   "form_id": "commerce_form",
   "checkout_card": "1",
   "autoSubmit": `true`,

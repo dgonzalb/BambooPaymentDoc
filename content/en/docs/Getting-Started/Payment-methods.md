@@ -23,6 +23,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/17_cabal.png" width="52" style="" /> | Cabal | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" width="52" style="" />| Pago Fácil | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" />| Transferencias 3.0 | Bank Transfer | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" />| Offline Bank Transfer | Bank Transfer | Redirect |
 <!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Credit Card | API |-->
 
 ## Brazil
@@ -161,3 +162,4 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | Santander | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | Scotiabank | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | Itaú | Bank Transfer | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" />| Offline Bank Transfer | Bank Transfer | Redirect |

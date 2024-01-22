@@ -39,7 +39,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `CustomerIP` | `string` | No | IP of the customer that uses the service. |
 | `DataUY` | `object` | No | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage.<br>This parameter is required for the Gateway model. |
 | `DataUY` → `IsFinalConsumer` | `boolean` | No | Indicates if the sale is performed to a final consumer.<br>This parameter is required for the Gateway model. |
-| `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Invoice number associated with the sale. |
+| `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Invoice number associated with the sale. This parameter only accepts numeric characters.  |
 | `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Amount taxed by VAT. |
 
 {{% alert title="Info" color="info"%}}
