@@ -15,7 +15,7 @@ To navigate the Payout report, open your Merchant console and select ***Payout**
 On this screen, you have two sections: _**Filters**_ and _**Payout list**_.
 
 ## Filter section
-In the first section, you have the search criteria where you can combine one or more attributes to search a given Payout. 
+In the first section, you have the search criteria where you can combine one or more attributes to search a given Payout.
 
 Click the _**Filters**_ button to show all available filters.
 
@@ -28,7 +28,6 @@ You can include and combine any of the following parameters as search criteria.
 * Reference
 * Country
 * Final status
-* Account ID
 * Bank name
 
 In addition to fixed search parameters mentioned before, you can select an attribute in the _**Description**_ field and define an operator (**Is**, **Includes**, **Greater than**, **Lesser than**) to compare against a value. You have available the following parameters:
@@ -58,7 +57,15 @@ In addition to fixed search parameters mentioned before, you can select an attri
 Furthermore, you can use the _**Download**_ button at the bottom of the section to get an Excel file with the search results.
 
 ## Payout list section
-In the Second section, you find the list of payouts requested. Where you have the following columns:
+In the Second section, you find the list of payouts requested. By default, The Payout list section shows all the payout you have requested in all your accounts, you can filter by a given account using the _**Account**_ combobox in the top right corner. 
+
+![PrintScreen](/assets/Payouts/Payouts21_en.png)
+
+{{% alert title="Info" color="info"%}}
+The _**Account**_ filter is only available when you have multiple accounts with different currencies.
+{{% /alert %}}
+
+In this section you have the following columns:
 
 | Column | Description |
 |---|---|
@@ -68,7 +75,8 @@ In the Second section, you find the list of payouts requested. Where you have th
 | **Status** | The most recent status of the Payout. For more information, refer to [Payout status]({{< ref "Payout-Status.md" >}}). |
 | **Payee** | Name of the third-party benefit of the Payout. |
 | **Country** | Country of the payee. |
-| **Local Amount** | Amount of the Payout in the currency of the payee. |
+| **Source Amount** | Amount of the Payout in the source currency. |
+| **Target Amount** | Amount of the Payout in the target currency. |
 
 To see the details of a payout, click it in the table. The following window appears.
 

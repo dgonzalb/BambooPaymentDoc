@@ -37,7 +37,6 @@
 &lt;li&gt;Referencia&lt;/li&gt;
 &lt;li&gt;País&lt;/li&gt;
 &lt;li&gt;Estado final&lt;/li&gt;
-&lt;li&gt;ID cuenta&lt;/li&gt;
 &lt;li&gt;Nombre del banco&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Además de los parámetros de búsqueda fijos mencionados anteriormente, puede seleccionar un atributo en el campo Descripción y definir un operador (&lt;strong&gt;Es&lt;/strong&gt;, &lt;strong&gt;Incluye&lt;/strong&gt;, &lt;strong&gt;Mayor que&lt;/strong&gt;, &lt;strong&gt;Menor que&lt;/strong&gt;) para comparar con un valor. Dispone de los siguientes parámetros:&lt;/p&gt;
@@ -64,7 +63,17 @@
 &lt;br&gt;
 &lt;p&gt;Además, puede utilizar el botón &lt;em&gt;&lt;strong&gt;Descargar&lt;/strong&gt;&lt;/em&gt; situado en la parte inferior de la sección para obtener un archivo Excel con los resultados de la búsqueda.&lt;/p&gt;
 &lt;h2 id=&#34;sección-de-lista-de-payouts&#34;&gt;Sección de lista de Payouts&lt;/h2&gt;
-&lt;p&gt;En la segunda sección, encuentra el listado de Payouts solicitados. Donde encuentra las siguientes columnas:&lt;/p&gt;
+&lt;p&gt;En la segunda sección, encontrará la lista de payouts solicitados. Por defecto, la sección de la lista de Payouts muestra todos los Payouts que ha solicitado en todas sus cuentas, puede filtrar por una cuenta determinada utilizando el cuadro combinado &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt; en la esquina superior derecha.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts21_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas con distintas monedas.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;En esta sección, tiene las siguientes columnas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -98,8 +107,12 @@
 &lt;td&gt;País del beneficiario.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Monto Local&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Monto del Payout en la moneda del beneficiario.&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Monto Origen&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Monto del Payout en la moneda origen.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Monto Destino&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Monto del Payout en la moneda destino.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -156,13 +169,19 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Amount&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Monto del Payout, el formato tiene dos dígitos decimales.&lt;br&gt;Ejemplo &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;USD 1,00&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Monto del Payout, el formato tiene dos dígitos decimales.&lt;br&gt;Ejemplo &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;$ 1,00&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Currency&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Código ISO de la moneda.&lt;br&gt;&lt;em&gt;Solo está disponible &lt;strong&gt;USD&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Código ISO de la moneda de su cuenta, que corresponde a la moneda de origen.&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Consulte aquí la lista de monedas&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;destinationCurrency&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al &lt;a href=&#34;../../../es/payouts/overview/payout-concepts.html#payout-models&#34;&gt;modelo&lt;/a&gt; de su cuenta.&lt;br&gt;Por ejemplo:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2L&lt;/strong&gt;&lt;/em&gt;, la columna &lt;strong&gt;Currency&lt;/strong&gt; debe ser &lt;em&gt;USD&lt;/em&gt;, y la columna &lt;strong&gt;destinationCurrency&lt;/strong&gt; es optativa.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2USD&lt;/strong&gt;&lt;/em&gt;, tanto &lt;strong&gt;Currency&lt;/strong&gt; como &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser &lt;em&gt;USD&lt;/em&gt;.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;L2L&lt;/strong&gt;&lt;/em&gt;, &lt;strong&gt;Currency&lt;/strong&gt; y &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser la moneda del país elegido.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Consulte aquí la lista de monedas&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -303,10 +322,29 @@
         
         &lt;p&gt;Para navegar al Reporte de Payouts, abra su consola de Comercios y seleccione &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt;, luego &lt;em&gt;&lt;strong&gt;Saldos de Payouts&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts9_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;En esta ventana, cuenta con dos secciones. La primera, muestra los tipos de saldos de su cuenta.&lt;/p&gt;
+&lt;p&gt;Dispone de dos secciones en esta pantalla; la primera sección muestra los tipos de saldos. Para más información, consulte &lt;a href=&#34;../../../es/payouts/overview/payout-balances.html#balance-types&#34;&gt;Saldos de Payouts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Como se menciona en la sección &lt;a href=&#34;../../../es/payouts/overview/payout-concepts.html#payout-models&#34;&gt;Conceptos&lt;/a&gt;, cada cuenta representa una moneda específica para realizar los pagos. Por lo tanto, debe elegir la cuenta seleccionando la moneda en la lista desplegable de la esquina superior derecha.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts22_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Moneda&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas con diferentes monedas.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A continuación, podrá ver el saldo de la moneda seleccionada.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts10_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Para más información, consulte &lt;a href=&#34;../../../es/payouts/overview/payout-balances.html#balance-types&#34;&gt;Saldos de Payouts&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;La segunda sección muestra los movimientos de su balance. Donde encuentra las siguientes columnas:&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Importante&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El saldo de cada moneda es independiente. Al seleccionar una moneda, el saldo mostrado no es la cantidad exacta convertida a la misma. Por ejemplo, en su cuenta en &lt;em&gt;&lt;strong&gt;UYU&lt;/strong&gt;&lt;/em&gt;, el saldo podría ser &lt;em&gt;UYU 500&lt;/em&gt;, mientras que la cuenta en &lt;em&gt;&lt;strong&gt;USD&lt;/strong&gt;&lt;/em&gt; podría mostrar &lt;em&gt;USD 1000&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;La segunda sección muestra los movimientos de su saldo. Por defecto, cuando no ha seleccionado la moneda, la lista muestra todos los movimientos de todas las cuentas (monedas).&lt;/p&gt;
+&lt;p&gt;La lista muestra las siguientes columnas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -328,7 +366,7 @@
 &lt;td&gt;Tipo de movimiento aplicado en el payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Valor en USD&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Importe Origen&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;Monto del movimiento.&lt;br&gt;El reporte muestra los movimientos crédito (como retiros, tasas, etc.) en rojo y los movimientos débito (como los depósitos) en verde.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -337,7 +375,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Puede incluir filtros haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Filtros&lt;/strong&gt;&lt;/em&gt;, donde podrá filtrar por el intervalo de fechas del movimiento o por cualquiera de sus parámetros.&lt;/p&gt;
+&lt;p&gt;Puede incluir filtros haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Filtros&lt;/strong&gt;&lt;/em&gt;, donde podrá filtrar por el identificador del Payout, por monto o por tipo de movimiento.&lt;/p&gt;
 
       </description>
     </item>

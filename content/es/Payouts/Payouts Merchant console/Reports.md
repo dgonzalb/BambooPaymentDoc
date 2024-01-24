@@ -28,7 +28,6 @@ Puede incluir y combinar cualquiera de los siguientes parámetros como criterio 
 * Referencia
 * País
 * Estado final
-* ID cuenta
 * Nombre del banco
 
 Además de los parámetros de búsqueda fijos mencionados anteriormente, puede seleccionar un atributo en el campo Descripción y definir un operador (**Es**, **Incluye**, **Mayor que**, **Menor que**) para comparar con un valor. Dispone de los siguientes parámetros:
@@ -58,7 +57,15 @@ Además de los parámetros de búsqueda fijos mencionados anteriormente, puede s
 Además, puede utilizar el botón _**Descargar**_ situado en la parte inferior de la sección para obtener un archivo Excel con los resultados de la búsqueda.
 
 ## Sección de lista de Payouts
-En la segunda sección, encuentra el listado de Payouts solicitados. Donde encuentra las siguientes columnas:
+En la segunda sección, encontrará la lista de payouts solicitados. Por defecto, la sección de la lista de Payouts muestra todos los Payouts que ha solicitado en todas sus cuentas, puede filtrar por una cuenta determinada utilizando el cuadro combinado _**Cuenta**_ en la esquina superior derecha. 
+
+![PrintScreen](/assets/Payouts/Payouts21_es.png)
+
+{{% alert title="Info" color="info"%}}
+El filtro _**Cuenta**_ sólo está disponible cuando tiene varias cuentas con distintas monedas.
+{{% /alert %}}
+
+En esta sección, tiene las siguientes columnas:
 
 | Columna | Descripción |
 |---|---|
@@ -68,7 +75,8 @@ En la segunda sección, encuentra el listado de Payouts solicitados. Donde encue
 | **Estado** | Estado más reciente del Payout. Para más información, consulte [estados del Payout]({{< ref "Payout-Status.md" >}}). |
 | **Beneficiario** | Nombre del tercero beneficiario del Payout. |
 | **País** | País del beneficiario. |
-| **Monto Local** | Monto del Payout en la moneda del beneficiario. |
+| **Monto Origen** | Monto del Payout en la moneda origen. |
+| **Monto Destino** | Monto del Payout en la moneda destino. |
 
 Para ver los detalles de un Payout, haga clic sobre el mismo en la tabla. Aparece la siguiente ventana.
 

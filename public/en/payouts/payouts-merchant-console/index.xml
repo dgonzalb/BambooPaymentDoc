@@ -37,7 +37,6 @@
 &lt;li&gt;Reference&lt;/li&gt;
 &lt;li&gt;Country&lt;/li&gt;
 &lt;li&gt;Final status&lt;/li&gt;
-&lt;li&gt;Account ID&lt;/li&gt;
 &lt;li&gt;Bank name&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In addition to fixed search parameters mentioned before, you can select an attribute in the &lt;em&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/em&gt; field and define an operator (&lt;strong&gt;Is&lt;/strong&gt;, &lt;strong&gt;Includes&lt;/strong&gt;, &lt;strong&gt;Greater than&lt;/strong&gt;, &lt;strong&gt;Lesser than&lt;/strong&gt;) to compare against a value. You have available the following parameters:&lt;/p&gt;
@@ -64,7 +63,17 @@
 &lt;br&gt;
 &lt;p&gt;Furthermore, you can use the &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; button at the bottom of the section to get an Excel file with the search results.&lt;/p&gt;
 &lt;h2 id=&#34;payout-list-section&#34;&gt;Payout list section&lt;/h2&gt;
-&lt;p&gt;In the Second section, you find the list of payouts requested. Where you have the following columns:&lt;/p&gt;
+&lt;p&gt;In the Second section, you find the list of payouts requested. By default, The Payout list section shows all the payout you have requested in all your accounts, you can filter by a given account using the &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; combobox in the top right corner.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts21_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;The &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; filter is only available when you have multiple accounts with different currencies.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this section you have the following columns:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -98,8 +107,12 @@
 &lt;td&gt;Country of the payee.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Local Amount&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Amount of the Payout in the currency of the payee.&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Source Amount&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Amount of the Payout in the source currency.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Target Amount&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Amount of the Payout in the target currency.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -156,13 +169,19 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Amount&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Amount of the Payout, the format has two digits for decimals.&lt;br&gt;Example &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;USD 1,00&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Amount of the Payout, the format has two digits for decimals.&lt;br&gt;Example &lt;em&gt;100&lt;/em&gt; =&amp;gt; &lt;em&gt;$ 1,00&lt;/em&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Currency&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;ISO code of the selected currency.&lt;br&gt;&lt;em&gt;Only &lt;strong&gt;USD&lt;/strong&gt; is available&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of your account&amp;rsquo;s currency, which corresponds to the origin currency.&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Find the currencies list here&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;destinationCurrency&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;ISO code of the currency in which the beneficiary will receive the payout. This currency must meet the &lt;a href=&#34;../../../en/payouts/overview/payout-concepts.html#payout-models&#34;&gt;model&lt;/a&gt; of your account.&lt;br&gt;For example:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For &lt;em&gt;&lt;strong&gt;USD2L&lt;/strong&gt;&lt;/em&gt;, the &lt;strong&gt;Currency&lt;/strong&gt; column must be &lt;em&gt;USD&lt;/em&gt;, and the &lt;strong&gt;destinationCurrency&lt;/strong&gt; is optional.&lt;/li&gt;&lt;li&gt;For &lt;em&gt;&lt;strong&gt;USD2USD&lt;/strong&gt;&lt;/em&gt;, both &lt;strong&gt;Currency&lt;/strong&gt; and &lt;strong&gt;destinationCurrency&lt;/strong&gt; must be &lt;em&gt;USD&lt;/em&gt;.&lt;/li&gt;&lt;li&gt;For &lt;em&gt;&lt;strong&gt;L2L&lt;/strong&gt;&lt;/em&gt;, &lt;strong&gt;Currency&lt;/strong&gt; and &lt;strong&gt;destinationCurrency&lt;/strong&gt; must be the chosen country&amp;rsquo;s currency.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Find the currencies list here&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -303,10 +322,29 @@
         
         &lt;p&gt;To navigate the Payout Balance report, open your Merchant console and expand &lt;em&gt;&lt;strong&gt;Payout&lt;/strong&gt;&lt;/em&gt;, then &lt;em&gt;&lt;strong&gt;Payouts Balance&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts9_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;On this screen, you have two sections. The first section shows the Balance types of your account.&lt;/p&gt;
+&lt;p&gt;You have two sections on this screen; the first section displays the types of balances. For more information, refer to &lt;a href=&#34;../../../en/payouts/overview/payout-balances.html#balance-types&#34;&gt;Payout Balances&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As the &lt;a href=&#34;../../../en/payouts/overview/payout-concepts.html#payout-models&#34;&gt;Concepts&lt;/a&gt; section mentions, each account represents a specific currency for making payouts. Therefore, you must choose the account by selecting the currency from the dropdown list at the top right corner.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts22_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;The &lt;em&gt;&lt;strong&gt;Currency&lt;/strong&gt;&lt;/em&gt; filter is only available when you have multiple accounts.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, you can see the balance for the selected currency.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts10_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;For more information, refer to &lt;a href=&#34;../../../en/payouts/overview/payout-balances.html#balance-types&#34;&gt;Payout Balances&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The second section shows the movements of your balance. Where you have the following columns:&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Each currency balance is independent. When you select a currency, the balance displayed is not the exact amount converted into that currency. For instance, in your &lt;em&gt;&lt;strong&gt;UYU&lt;/strong&gt;&lt;/em&gt; account, the balance might be &lt;em&gt;UYU 500&lt;/em&gt;, while the &lt;em&gt;&lt;strong&gt;USD&lt;/strong&gt;&lt;/em&gt; account could show &lt;em&gt;USD 1000&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The second section shows the movements of your balance. By default, when you have not selected the currency, the list displays all the movements of all accounts (currencies).&lt;/p&gt;
+&lt;p&gt;The list shows the following columns:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -328,8 +366,8 @@
 &lt;td&gt;Type of movement applied in the payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;USD Amount&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Amount of the movement.&lt;br&gt;The report shows the credit movements (such as cash outs, fees, etc.) in red and the debit movements (such as deposits) in green.&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Original Amount&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Amount of the movement.&lt;br&gt;The report shows the credit movements (such as cash outs, fees, etc.) in red and the debit movements (such as deposits) in black.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Total Balance&lt;/strong&gt;&lt;/td&gt;
@@ -337,7 +375,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You can include filters by clicking the &lt;em&gt;&lt;strong&gt;Filters&lt;/strong&gt;&lt;/em&gt; button, where you can filter by the date range of the movement or any of its parameters.&lt;/p&gt;
+&lt;p&gt;You can include filters by clicking the &lt;em&gt;&lt;strong&gt;Filters&lt;/strong&gt;&lt;/em&gt; button, where you can filter by the ID of the payout, by amount, or by movement type.&lt;/p&gt;
 
       </description>
     </item>

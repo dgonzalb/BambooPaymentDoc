@@ -11,10 +11,6 @@ weight: 30
 ## Códigos de bancos {#bank-codes}
 Las siguientes tablas muestran el código bancario que puede asignar en el parámetro `payee.bankaccount.codebank` en función del país.
 
-{{% alert title="Importante" color="info"%}}
-No incluya ceros a la izquierda en el código del banco. Por ejemplo, `017` > `17`.
-{{% /alert %}}
-
 ### Argentina
 
 <details>
@@ -776,6 +772,22 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | DE | | Individuos | Numérico | |
 | PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | |
 | RUT | Rol Único Tributario | Individuos | Numérico | 12 |
+
+## Monedas {#currencies}
+La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `destinationCurrency` para solicitud de Payouts.
+
+<div id="shortTable"></div>
+
+| Moneda | Descripción |
+|:-:|---|
+| `USD` | Dólar estadounidense|
+| `ARS` | Peso argentino |
+| `BRL` | Real Brasileño|
+| `CLP` | Peso chileno |
+| `COP` | Peso colombiano |
+| `MXN` | Peso mexicano |
+| `PEN` | Sol peruano |
+| `UYU` | Peso uruguayo |
 
 ## Tipos de Transferencias para Payout {#transfer-types-for-payouts}
 La siguiente tabla muestra los tipos de transferencias que puede configurar en el parámetro `type`.

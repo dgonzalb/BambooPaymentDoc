@@ -31,7 +31,7 @@
 <meta itemprop="description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
 <meta itemprop="dateModified" content="2023-09-27T08:46:40-05:00" />
-<meta itemprop="wordCount" content="680">
+<meta itemprop="wordCount" content="749">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Express Payouts"/>
 <meta name="twitter:description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ed39a2dff6e1f98f25bdc3458587e33bac73b399bc3ee278a473c802d55d2d42387064cc67a460eb191c87365123ab150f035de7bda4169cf3dd239bd6fd79a5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b329cd476226801c787b597b08abd59aafdeaa80ebec47bef4e8e218e0804e6bc5cce5f7dbcc88090a6d03f05f0b0a5a4854cb36c1dd20c0c6a70569ba1670a5.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -465,13 +465,19 @@
 <tr>
 <td><strong>Amount</strong></td>
 <td style="text-align:center">Yes</td>
-<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>USD 1,00</em>.</td>
+<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>$ 1,00</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Currency</strong></td>
 <td style="text-align:center">Yes</td>
-<td>ISO code of the selected currency.<br><em>Only <strong>USD</strong> is available</em>.</td>
+<td>ISO code of your account&rsquo;s currency, which corresponds to the origin currency.<br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>destinationCurrency</strong></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the currency in which the beneficiary will receive the payout. This currency must meet the <a href="../../../en/payouts/overview/payout-concepts.html#payout-models">model</a> of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For <em><strong>USD2L</strong></em>, the <strong>Currency</strong> column must be <em>USD</em>, and the <strong>destinationCurrency</strong> is optional.</li><li>For <em><strong>USD2USD</strong></em>, both <strong>Currency</strong> and <strong>destinationCurrency</strong> must be <em>USD</em>.</li><li>For <em><strong>L2L</strong></em>, <strong>Currency</strong> and <strong>destinationCurrency</strong> must be the chosen country&rsquo;s currency.</li></ul><br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a>.</td>
 <td></td>
 </tr>
 <tr>

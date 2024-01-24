@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Please look at the concepts behind the ***Payouts*** feature so you can start using it easily!
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-09-22T14:42:05-05:00" />
-<meta itemprop="wordCount" content="189">
+<meta itemprop="wordCount" content="306">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concepts"/>
 <meta name="twitter:description" content="Please look at the concepts behind the ***Payouts*** feature so you can start using it easily!
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ed39a2dff6e1f98f25bdc3458587e33bac73b399bc3ee278a473c802d55d2d42387064cc67a460eb191c87365123ab150f035de7bda4169cf3dd239bd6fd79a5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b329cd476226801c787b597b08abd59aafdeaa80ebec47bef4e8e218e0804e6bc5cce5f7dbcc88090a6d03f05f0b0a5a4854cb36c1dd20c0c6a70569ba1670a5.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -371,12 +371,20 @@
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#account">Account</a></li>
     <li><a href="#balance">Balance</a></li>
     <li><a href="#banking-connections">Banking Connections</a></li>
     <li><a href="#fx-service">FX Service</a></li>
     <li><a href="#payee">Payee</a></li>
     <li><a href="#payout">Payout</a></li>
     <li><a href="#payout-fee">Payout fee</a></li>
+    <li><a href="#payout-models">Payout models</a>
+      <ul>
+        <li><a href="#usd-to-local-usd2l">USD to Local (USD2L)</a></li>
+        <li><a href="#local-to-local-l2l">Local to Local (L2L)</a></li>
+        <li><a href="#usd-to-usd-usd2usd">USD to USD (USD2USD)</a></li>
+      </ul>
+    </li>
     <li><a href="#sanction-screening">Sanction screening</a></li>
   </ul>
 </nav>
@@ -427,7 +435,9 @@
 	<h1>Concepts</h1>
     <div class="lead">Please look at the concepts behind the <em><strong>Payouts</strong></em> feature so you can start using it easily!</div>
 	       
-	<h2 id="balance">Balance</h2>
+	<h2 id="account">Account</h2>
+<p>An account represents the currency used to request Payouts. We configure the destination currency according to the model selected.</p>
+<h2 id="balance">Balance</h2>
 <p>The <em>Balance</em> is the amount of money settled in your account. We have three different balances for Payouts; consult those types <a href="../../../en/payouts/overview/payout-balances.html">here</a>.</p>
 <h2 id="banking-connections">Banking Connections</h2>
 <p>The <em>Banking Connection</em> technology allows us to send money to a payee regardless of the selected payment method.</p>
@@ -439,6 +449,14 @@
 <p><em>Payout</em> refers to disbursing funds to a third party using funds settled in your account.</p>
 <h2 id="payout-fee">Payout fee</h2>
 <p>The <em>Payout fee</em> refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee.</p>
+<h2 id="payout-models">Payout models</h2>
+<p>Bamboo Payouts offers three models that means a combination of origin and destination currency.</p>
+<h3 id="usd-to-local-usd2l">USD to Local (USD2L)</h3>
+<p>The payout is requested in US Dollars and the payee receives the funds in local currency.</p>
+<h3 id="local-to-local-l2l">Local to Local (L2L)</h3>
+<p>The payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.</p>
+<h3 id="usd-to-usd-usd2usd">USD to USD (USD2USD)</h3>
+<p>The payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.</p>
 <h2 id="sanction-screening">Sanction screening</h2>
 <p><em>Sanction screening</em> lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.</p>
 <p>The output of this process determines whether the <em>Payout</em> requires manual validation.</p>

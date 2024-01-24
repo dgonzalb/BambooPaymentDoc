@@ -14,6 +14,21 @@ Un _Beneficiario_ es un tercero que va recibir el dinero resultado de su solicit
 ## Conexiones bancarias {#banking-connections}
 La tecnología de _Conexiones bancarias_ nos permite enviar dinero a los beneficiarios sin importar el método de pago seleccionado.
 
+## Cuenta {#account}
+Una cuenta representa la moneda de origen utilizada para solicitar los Pagos. Configuramos la moneda de destino según el modelo seleccionado.
+
+## Modelos de Payout {#payout-models}
+Bamboo Payouts ofrece tres modelos que significan una combinación de moneda de origen y de destino.
+
+### USD to Local (USD2L)
+El Payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en moneda local.
+
+### Local to Local (L2L)
+El Payout se solicita en moneda local y el beneficiario recibe los fondos en moneda local.
+
+### USD to USD (USD2USD)
+El Payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en dólares estadounidenses. Actualmente, este modelo sólo está disponible en Perú.
+
 ## Payout
 _Payout_ se refiere a la dispersión de fondos a un tercero utilizando los fondos depositados en la cuenta del comercio. 
 

@@ -29,17 +29,24 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 * ***Transparency*** - You get an easy-to-navigate Merchant panel with balances available in real time!
 * ***Flexibility*** - You or your payee can assume the payout fee.
 
+## Payout models
+Bamboo Payouts offers three models that means a combination of origin and destination currency.
+
+* **USD to Local (USD2L)**: the payout is requested in US Dollars and the payee receives the funds in local currency.
+* **Local to Local (L2L)**: the payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.
+* **USD to USD (USD2USD)**: the payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.
+
 ## Coverage
 
-| Country | ISO Code | Currency | Local Bank Transfer | Cash | Instant Transfer | Wallet |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|
-| Argentina  | `AR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |
-| Brazil | `BR` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   |
-| Chile  | `CL` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Colombia  | `CO` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Mexico  | `MX` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Peru  | `PE` | USD | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   |
-| Uruguay  | `UY` | USD | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Country | ISO Code | Local Bank Transfer | Cash | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Brazil | `BR` | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/>  |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
 
 ## Cut-off Schedule
 Please consider the following schedule to receive the Payout on the same day; otherwise, we will process the Payout on the next business day.
