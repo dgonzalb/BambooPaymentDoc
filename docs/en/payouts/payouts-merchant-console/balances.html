@@ -31,7 +31,7 @@
 <meta itemprop="description" content="The Payout balance shows a report on how much money you have to process Payout transactions. For introductory terms about this feature, refer to [Payout Balances]({{&lt; ref &#34;Payout-Balances.md&#34; &gt;}}).
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
 <meta itemprop="dateModified" content="2023-09-27T08:39:19-05:00" />
-<meta itemprop="wordCount" content="150">
+<meta itemprop="wordCount" content="265">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payout Balance report"/>
 <meta name="twitter:description" content="The Payout balance shows a report on how much money you have to process Payout transactions. For introductory terms about this feature, refer to [Payout Balances]({{&lt; ref &#34;Payout-Balances.md&#34; &gt;}}).
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/balances.html">Español</a>
 	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/balances.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/balances.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/balances.html">Português</a>
 	
 </div>
     </div>
@@ -417,10 +421,29 @@
 	       
 	<p>To navigate the Payout Balance report, open your Merchant console and expand <em><strong>Payout</strong></em>, then <em><strong>Payouts Balance</strong></em>.</p>
 <p><img src="../../../assets/Payouts/Payouts9_en.png" alt="PrintScreen"></p>
-<p>On this screen, you have two sections. The first section shows the Balance types of your account.</p>
+<p>You have two sections on this screen; the first section displays the types of balances. For more information, refer to <a href="../../../en/payouts/overview/payout-balances.html#balance-types">Payout Balances</a>.</p>
+<p>As the <a href="../../../en/payouts/overview/payout-concepts.html#payout-models">Concepts</a> section mentions, each account represents a specific currency for making payouts. Therefore, you must choose the account by selecting the currency from the dropdown list at the top right corner.</p>
+<p><img src="../../../assets/Payouts/Payouts22_en.png" alt="PrintScreen"></p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">The <em><strong>Currency</strong></em> filter is only available when you have multiple accounts.</p>
+</div>
+
+<p>Then, you can see the balance for the selected currency.</p>
 <p><img src="../../../assets/Payouts/Payouts10_en.png" alt="PrintScreen"></p>
-<p>For more information, refer to <a href="../../../en/payouts/overview/payout-balances.html#balance-types">Payout Balances</a>.</p>
-<p>The second section shows the movements of your balance. Where you have the following columns:</p>
+
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important</h4>
+<p class="alert-text">Each currency balance is independent. When you select a currency, the balance displayed is not the exact amount converted into that currency. For instance, in your <em><strong>UYU</strong></em> account, the balance might be <em>UYU 500</em>, while the <em><strong>USD</strong></em> account could show <em>USD 1000</em>.</p>
+</div>
+
+<p>The second section shows the movements of your balance. By default, when you have not selected the currency, the list displays all the movements of all accounts (currencies).</p>
+<p>The list shows the following columns:</p>
 <table>
 <thead>
 <tr>
@@ -442,8 +465,8 @@
 <td>Type of movement applied in the payout.</td>
 </tr>
 <tr>
-<td><strong>USD Amount</strong></td>
-<td>Amount of the movement.<br>The report shows the credit movements (such as cash outs, fees, etc.) in red and the debit movements (such as deposits) in green.</td>
+<td><strong>Original Amount</strong></td>
+<td>Amount of the movement.<br>The report shows the credit movements (such as cash outs, fees, etc.) in red and the debit movements (such as deposits) in black.</td>
 </tr>
 <tr>
 <td><strong>Total Balance</strong></td>
@@ -451,7 +474,7 @@
 </tr>
 </tbody>
 </table>
-<p>You can include filters by clicking the <em><strong>Filters</strong></em> button, where you can filter by the date range of the movement or any of its parameters.</p>
+<p>You can include filters by clicking the <em><strong>Filters</strong></em> button, where you can filter by the ID of the payout, by amount, or by movement type.</p>
 
 	
 	
@@ -465,7 +488,7 @@
     September 27, 2023
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>

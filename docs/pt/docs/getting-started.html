@@ -21,15 +21,15 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
-<title>Primeros pasos | Bamboo Payment</title><meta property="og:title" content="Primeros pasos" />
+<title>Primeiros passos | Bamboo Payment</title><meta property="og:title" content="Primeiros passos" />
 <meta property="og:description" content="Esta seção apresenta as funcionalidades da API de Pagamentos da Bamboo para uma integração segura com nossa plataforma.
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/pt/docs/getting-started.html" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Primeros pasos">
+<meta itemprop="name" content="Primeiros passos">
 <meta itemprop="description" content="Esta seção apresenta as funcionalidades da API de Pagamentos da Bamboo para uma integração segura com nossa plataforma.
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Primeros pasos"/>
+<meta name="twitter:title" content="Primeiros passos"/>
 <meta name="twitter:description" content="Esta seção apresenta as funcionalidades da API de Pagamentos da Bamboo para uma integração segura com nossa plataforma.
 "/>
 
@@ -77,6 +77,18 @@
 				
 				
 				<a class="nav-link active" href="../../pt/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../pt/payouts.html" ><span>Payouts</span>
 					<div class="content-bar-menu2"></div>
 				</a>
 			</li>
@@ -129,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../"
 >
 
@@ -200,7 +212,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/pt/docs/getting-started.html" href="../../pt/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">Primeros pasos</a>
+    <a id="/pt/docs/getting-started.html" href="../../pt/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">Primeiros passos</a>
   </li>
   <ul class="side-main">
     <li class="" id="ptdocsgetting-startedhtml">
@@ -899,7 +911,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../pt/docs/getting-started.html">Primeros pasos</a>
+	<a href="../../pt/docs/getting-started.html">Primeiros passos</a>
 </li>
 
 	</ol>
@@ -907,12 +919,12 @@
 
             
 <div class="td-content">
-	<h1>Primeros pasos</h1>
+	<h1>Primeiros passos</h1>
         <div class="lead">Esta seção apresenta as funcionalidades da API de Pagamentos da Bamboo para uma integração segura com nossa plataforma.</div>
 	
 	<h2 id="overview">Introdução</h2>
 <p>Ao utilizar nossa plataforma, você pode oferecer aos seus clientes uma experiência de pagamento aprimorada, podendo obter os dados do cartão como se estivessem em sua página ou aplicativo móvel através do nosso <a href="../../pt/docs/forms/checkout-form.html"><strong>Formulário de Checkout</strong></a>.</p>
-<p>Você pode solicitar as informações apenas uma vez e armazenar um <em><strong>token</strong></em> associado ao cartão que o cliente inseriu de forma segura em nossa plataforma.</p>
+<p>Você pode solicitar as informações apenas uma vez e armazenar um token associado ao cartão que o cliente inseriu de forma segura em nossa plataforma.</p>
 <h3 id="pci-dss">PCI-DSS</h3>
 <p>Nossa plataforma certificada <strong>PCI-DSS Nível 1</strong> nos permite processar números de cartão e outros dados confidenciais de autenticação de clientes.</p>
 <p>Você pode incorporar o <a href="../../pt/docs/forms/checkout-form.html">formulário de Checkout</a> em suas páginas ou aplicativos móveis; agora pode aceitar pagamentos sem receber informações confidenciais, como dados de clientes, proporcionando segurança aos seus clientes e facilidade de uso.</p>
@@ -926,10 +938,10 @@
 <p><strong>Obtenha suas credenciais</strong>.<br>Após ativar a conta, você receberá suas API Keys para ter acesso ao ambiente de <code>STAGE</code>.</p>
 </li>
 <li>
-<p><strong>Integre a API</strong>.<br>Siga as instruções neste documento para integrar nossa API de pagamentos. Você deve seguir o processo de homologação para migrar sua conta do ambiente de <code>STAGE</code> para <code>PRODUCTION</code>.</p>
+<p><strong>Integre a API</strong>.<br>Siga as instruções neste documento para integrar nossa API de pagamentos. Você deve seguir o processo de homologação para migrar sua conta do ambiente de <code>STAGE</code> para o ambiente de <code>PRODUCTION</code>.</p>
 </li>
 <li>
-<p><strong>Vá em frente</strong>.<br>UDepois de concluir os testes necessários no passo 3, solicite a transição para o ambiente de produção com a ajuda de nossa <a href="mailto:soportecomercios@bamboopayment.com">equipe de suporte</a>.</p>
+<p><strong>Vá em frente</strong>.<br>Depois de concluir os testes necessários no passo 3, solicite a transição para o ambiente de produção com a ajuda de nossa <a href="mailto:soportecomercios@bamboopayment.com">equipe de suporte</a>.</p>
 </li>
 <li>
 <p><strong>Processe pagamentos</strong>.<br>Uma vez que você tenha as credenciais de produção, mude para o ambiente de <code>PRODUCTION</code> e comece a processar seus pagamentos!</p>
@@ -940,7 +952,7 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Não fique parado!</h4>
-<p class="alert-text">Se tiver alguma dúvida técnica ou precisar de mais informações, sinta-se à vontade para <a href="mailto:soportecomercios@bamboopayment.com">entrar em contato com nossa equipe de suporte</a> para obter assistênciaa.</p>
+<p class="alert-text">Se tiver alguma dúvida técnica ou precisar de mais informações, sinta-se à vontade para <a href="mailto:soportecomercios@bamboopayment.com">entrar em contato com nossa equipe de suporte</a> para obter assistência.</p>
 </div>
 
 <!--1 - Sign Up: Create your merchant account contacting our sales representatives sales@bamboopayment.com
@@ -1136,10 +1148,10 @@
 <div class="left-element">
     <b>Última modificação</b>
     
-    13 de outubro de 2023
+    1 de dezembro de 2023
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>

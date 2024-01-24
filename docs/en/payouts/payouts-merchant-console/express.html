@@ -31,7 +31,7 @@
 <meta itemprop="description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
 <meta itemprop="dateModified" content="2023-09-27T08:39:19-05:00" />
-<meta itemprop="wordCount" content="680">
+<meta itemprop="wordCount" content="753">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Express Payouts"/>
 <meta name="twitter:description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/express.html">Español</a>
 	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/express.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/express.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/express.html">Português</a>
 	
 </div>
     </div>
@@ -465,13 +469,19 @@
 <tr>
 <td><strong>Amount</strong></td>
 <td style="text-align:center">Yes</td>
-<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>USD 1,00</em>.</td>
+<td>Amount of the Payout, the format has two digits for decimals.<br>Example <em>100</em> =&gt; <em>$ 1,00</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Currency</strong></td>
 <td style="text-align:center">Yes</td>
-<td>ISO code of the selected currency.<br><em>Only <strong>USD</strong> is available</em>.</td>
+<td>ISO code of your account&rsquo;s currency, which corresponds to the origin currency.<br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DestinationCurrency</strong></td>
+<td style="text-align:center">Yes</td>
+<td>ISO code of the currency in which the beneficiary will receive the payout. This currency must meet the <a href="../../../en/payouts/overview/payout-concepts.html#payout-models">model</a> of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For <em><strong>USD2L</strong></em>, the <strong>Currency</strong> column must be <em>USD</em>, and the <strong>DestinationCurrency</strong> must be the selected country&rsquo;s currency.</li><li>For <em><strong>USD2USD</strong></em>, both <strong>Currency</strong> and <strong>DestinationCurrency</strong> must be <em>USD</em>.</li><li>For <em><strong>L2L</strong></em>, <strong>Currency</strong> and <strong>DestinationCurrency</strong> must be the chosen country&rsquo;s currency.</li></ul><br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a>.</td>
 <td></td>
 </tr>
 <tr>
@@ -610,7 +620,7 @@
     September 27, 2023
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>

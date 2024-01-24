@@ -31,7 +31,7 @@
 <meta itemprop="description" content="The Payout report shows the list of requested Payouts regardless of status and lets you search for a specific payout.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2023-09-21T08:39:11-05:00" />
-<meta itemprop="wordCount" content="329">
+<meta itemprop="wordCount" content="382">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payout Report"/>
 <meta name="twitter:description" content="The Payout report shows the list of requested Payouts regardless of status and lets you search for a specific payout.
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/reports.html">Español</a>
 	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/reports.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../es/payouts/payouts-merchant-console/reports.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/reports.html">Português</a>
 	
 </div>
     </div>
@@ -429,7 +433,6 @@
 <li>Reference</li>
 <li>Country</li>
 <li>Final status</li>
-<li>Account ID</li>
 <li>Bank name</li>
 </ul>
 <p>In addition to fixed search parameters mentioned before, you can select an attribute in the <em><strong>Description</strong></em> field and define an operator (<strong>Is</strong>, <strong>Includes</strong>, <strong>Greater than</strong>, <strong>Lesser than</strong>) to compare against a value. You have available the following parameters:</p>
@@ -456,7 +459,17 @@
 <br>
 <p>Furthermore, you can use the <em><strong>Download</strong></em> button at the bottom of the section to get an Excel file with the search results.</p>
 <h2 id="payout-list-section">Payout list section</h2>
-<p>In the Second section, you find the list of payouts requested. Where you have the following columns:</p>
+<p>In the Second section, you find the list of payouts requested. By default, The Payout list section shows all the payout you have requested in all your accounts, you can filter by a given account using the <em><strong>Account</strong></em> combobox in the top right corner.</p>
+<p><img src="../../../assets/Payouts/Payouts21_en.png" alt="PrintScreen"></p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">The <em><strong>Account</strong></em> filter is only available when you have multiple accounts.</p>
+</div>
+
+<p>In this section you have the following columns:</p>
 <table>
 <thead>
 <tr>
@@ -490,8 +503,12 @@
 <td>Country of the payee.</td>
 </tr>
 <tr>
-<td><strong>Local Amount</strong></td>
-<td>Amount of the Payout in the currency of the payee.</td>
+<td><strong>Source Amount</strong></td>
+<td>Amount of the Payout in the source currency.</td>
+</tr>
+<tr>
+<td><strong>Target Amount</strong></td>
+<td>Amount of the Payout in the target currency.</td>
 </tr>
 </tbody>
 </table>
@@ -512,7 +529,7 @@
     September 21, 2023
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>

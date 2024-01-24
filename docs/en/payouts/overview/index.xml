@@ -23,7 +23,9 @@
       <description>
         
         
-        &lt;h2 id=&#34;balance&#34;&gt;Balance&lt;/h2&gt;
+        &lt;h2 id=&#34;account&#34;&gt;Account&lt;/h2&gt;
+&lt;p&gt;An account represents the currency used to request Payouts. We configure the destination currency for your account according to the model selected.&lt;/p&gt;
+&lt;h2 id=&#34;balance&#34;&gt;Balance&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;Balance&lt;/em&gt; is the amount of money settled in your account. We have three different balances for Payouts; consult those types &lt;a href=&#34;../../../en/payouts/overview/payout-balances.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;banking-connections&#34;&gt;Banking Connections&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;Banking Connection&lt;/em&gt; technology allows us to send money to a payee regardless of the selected payment method.&lt;/p&gt;
@@ -35,6 +37,14 @@
 &lt;p&gt;&lt;em&gt;Payout&lt;/em&gt; refers to disbursing funds to a third party using funds settled in your account.&lt;/p&gt;
 &lt;h2 id=&#34;payout-fee&#34;&gt;Payout fee&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;Payout fee&lt;/em&gt; refers to the processing cost of the Payout. This cost can be assumed by you (as a Payer) or taken by the Payee.&lt;/p&gt;
+&lt;h2 id=&#34;payout-models&#34;&gt;Payout models&lt;/h2&gt;
+&lt;p&gt;Bamboo Payouts offers three models that means a combination of origin and destination currency.&lt;/p&gt;
+&lt;h3 id=&#34;usd-to-local-usd2l&#34;&gt;USD to Local (USD2L)&lt;/h3&gt;
+&lt;p&gt;The payout is requested in local currency and the payee receives the funds in local currency.&lt;/p&gt;
+&lt;h3 id=&#34;local-to-local-l2l&#34;&gt;Local to Local (L2L)&lt;/h3&gt;
+&lt;p&gt;The payout is requested in local currency and the payee receives the funds in US Dollars.&lt;/p&gt;
+&lt;h3 id=&#34;usd-to-usd-usd2usd&#34;&gt;USD to USD (USD2USD)&lt;/h3&gt;
+&lt;p&gt;The payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.&lt;/p&gt;
 &lt;h2 id=&#34;sanction-screening&#34;&gt;Sanction screening&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Sanction screening&lt;/em&gt; lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.&lt;/p&gt;
 &lt;p&gt;The output of this process determines whether the &lt;em&gt;Payout&lt;/em&gt; requires manual validation.&lt;/p&gt;
@@ -106,7 +116,11 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;ul&gt;
+&lt;li&gt;If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.&lt;/li&gt;
+&lt;li&gt;The balance is available in the currencies enabled in your account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;!--

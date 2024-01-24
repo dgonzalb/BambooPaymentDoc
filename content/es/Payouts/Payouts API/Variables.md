@@ -777,6 +777,22 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | |
 | RUT | Rol Único Tributario | Individuos | Numérico | 12 |
 
+## Monedas {#currencies}
+La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `DestinationCurrency` para solicitud de Payouts.
+
+<div id="shortTable"></div>
+
+| Moneda | Descripción |
+|:-:|---|
+| `USD` | Dólar estadounidense|
+| `ARS` | Peso argentino |
+| `BRL` | Real Brasileño|
+| `CLP` | Peso chileno |
+| `COP` | Peso colombiano |
+| `MXN` | Peso mexicano |
+| `PEN` | Sol peruano |
+| `UYU` | Peso uruguayo |
+
 ## Tipos de Transferencias para Payout {#transfer-types-for-payouts}
 La siguiente tabla muestra los tipos de transferencias que puede configurar en el parámetro `type`.
 

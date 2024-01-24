@@ -20,7 +20,8 @@ You can see the following balances in the Payouts console:
 * **Available Balance**: This corresponds to the amount of money you have to process more Payouts, which is the difference between the _**Total**_ and _**Processing**_ Balance.
 
 {{% alert title="Info" color="info"%}}
-If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.
+* If the payee assumes the fee, the Payouts feature does not add the fee to any balance type.
+* The balance is available in the currencies enabled in your account.
 {{% /alert %}}
 
 <!--

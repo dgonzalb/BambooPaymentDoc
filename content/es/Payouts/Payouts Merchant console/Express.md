@@ -36,8 +36,9 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 | Campo | ¿Obligatorio? | Descripción |
 |---|:-:|---|---|
  | **Country** | Sí | Código ISO del país en formato `ISO 3166-2`.<br>[Listado de países disponibles de Payouts](../overview.html#coverage). |
- | **Amount** | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _USD 1,00_. |
- | **Currency** | Sí | Código ISO de la moneda.<br>_Solo está disponible **USD**_. |
+ | **Amount** | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _$ 1,00_. |
+ | **Currency** | Sí | Código ISO de la moneda de su cuenta, que corresponde a la moneda de origen.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
+ | **DestinationCurrency** | Sí | Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al [modelo]({{< ref  Payout-Concepts.md >}}#payout-models) de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para _**USD2L**_, la columna **Currency** debe ser _USD_, y la columna **DestinationCurrency** debe ser la moneda del país seleccionado.</li><li>Para _**USD2USD**_, tanto **Currency** como **DestinationCurrency** deben ser _USD_.</li><li>Para _**L2L**_, **Currency** y **DestinationCurrency** deben ser la moneda del país elegido.</li></ul><br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
  | **Reason** | No | Descripción del Payout. |
  | **Reference** | Sí | Identificador único del Payout definido por usted.<br>_Esta referencia no debe aparecer más de una vez en el archivo ni existir en Payouts anteriores._ |
  | **Type** | Sí | Tipo de transferencia del Payout.<br>[Lista de tipos de transferencia para Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |

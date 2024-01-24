@@ -106,15 +106,17 @@ The following table shows the mandatory and optional parameters for the Payout p
 
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
-| `amount` | `number` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
+| `amount` | `number` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
 | `destinationCountryIsoCode` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
-| `originalCurrencyIsoCode` | `string(3)` | Yes | ISO code of the origin currency.<br>_Only **USD** is available_. |
+| `destinationCurrencyIsoCode` | `string(3)` | No | ISO code of the destination currency. If the parameter is not provided, the system will default to the currency of the destination country (parameter `destinationCountryIsoCode`).<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
+| `originalCurrencyIsoCode` | `string(3)` | Yes | ISO code of the origin currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
 
 #### Request example {#request-example-1}
 ```json
 {
-  "amount": 125000,
+  "amount": 1000,
   "destinationCountryIsoCode": "CO",
+  "destinationCurrencyIsoCode": "COP",
   "originalCurrencyIsoCode": "USD"
 }
 ```
@@ -135,12 +137,12 @@ The following table shows the mandatory and optional parameters for the Payout p
 #### Response example {#response-example-2}
 ```json
 {
-    "amountInOrignalCurrency": 1250,
-    "fee": 37.5000,
-    "amountToBeSentInOrignalCurrency": 1212.5000,
-    "exchangeRate": 3941.510000,
-    "amountToBeSentInLocalCurrency": 4779080.88,
-    "expectedPaymentDate": "2023-09-26T15:59:03Z",
+    "amountInOrignalCurrency": 10,
+    "fee": 1.8369100168676186120617370001,
+    "amountToBeSentInOrignalCurrency": 8.163089983132381387938263000,
+    "exchangeRate": 3878.5558000000,
+    "amountToBeSentInLocalCurrency": 31661.0,
+    "expectedPaymentDate": "2024-01-26T00:00:00Z",
     "error": null
 }
 ```
@@ -160,9 +162,10 @@ The following table shows the mandatory and optional parameters to create a Payo
 | Field | Type | Mandatory? | Description |
 |---|---|:-:|---|---|
 | `country` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
-| `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _USD 1,00_. |
-| `currency` | `string(3)` | Yes | ISO code of the currency.<br>_Only **USD** is available_. |
+| `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
+| `currency` | `string(3)` | Yes | ISO code of the origin currency. This currency must meet the one configured in your account.<br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reason` | `string` | No | Description of the Payout. |
+| `DestinationCurrency` | `string(3)` | No | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for **USD2L**_ and _**L2L**_ models, and the system will default to the currency of the destination country.<br>This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` parameter must be _USD_, and the `DestinationCurrency` parameter is not required.</li><li>For _**USD2USD**_, both `currency` and `DestinationCurrency` must be _USD_.</li><li>For _**L2L**_, `currency` and `DestinationCurrency` (if sent) must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
 | `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
@@ -190,12 +193,46 @@ Refer to the corresponding tab according to the payee's country.
 {{< tab tabNum="1" >}}
 <br>
 
+**USD2L**
+
 ```json
 {
   "country": "AR",
   "amount": 1000,
   "currency": "USD",
   "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Sara",
+    "lastName": "Jáquez",
+    "email": "sarasouez@mail.com",
+    "phone": "099999999",
+    "address": "Francisco  51 Gral. Ximena, AR-H 0376",
+    "document": {
+      "type": "CUIL",
+      "number": "12345678901"
+    },
+    "bankAccount": {
+      "number": "0071234567890123456789",
+      "type": 1,
+      "codeBank": "7"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "AR",
+  "amount": 1000,
+  "currency": "ARS",
+  "reason": "string",
+  "DestinationCurrency":"ARS",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -225,6 +262,7 @@ Refer to the corresponding tab according to the payee's country.
 
 As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _Instant Bank Transfer_ you need to send the request as follows:
 
+**USD2L**
 
 ```json
 {
@@ -250,13 +288,75 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
+**L2L**
+
+```json
+{
+  "country": "BR",
+  "amount": 100,
+  "currency": "BRL",
+  "DestinationCurrency":"BRL",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 4,
+  "payee": {
+    "firstName": "Tiago",
+    "lastName": "Costa",
+    "email": "tcosta@mail.com",
+    "phone": "92799322",
+    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
+    "document": {
+      "type": "CPF",
+      "number": "54562271779"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
 When using _Bank transfer_ you need to send the request as follows:
+
+**USD2L**
 
 ```json
 {
   "country": "BR",
   "amount": 100,
   "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Tiago",
+    "lastName": "Costa",
+    "email": "tcosta@mail.com",
+    "phone": "92799322",
+    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
+    "document": {
+      "type": "CPF",
+      "number": "54562271779"
+    },
+    "bankAccount": {
+      "number": "12345678901234-5",
+      "type": 1,
+      "codeBank": "104",
+      "branch": "1234"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "BR",
+  "amount": 100,
+  "currency": "BRL",
+  "DestinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -287,11 +387,45 @@ When using _Bank transfer_ you need to send the request as follows:
 {{< tab tabNum="3" >}}
 <br>
 
+**USD2L**
+
 ```json
 {
   "country": "CL",
   "amount": 1000,
   "currency": "USD",
+  "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Mercedes",
+    "lastName": "Garrido",
+    "email": "merceddo@mail.com",
+    "phone": "099999999",
+    "address": "Camino Franco, 13, Atico 4, 93631, L Garay",
+    "document": {
+      "type": "CI",
+      "number": "26068762K"
+    },
+    "bankAccount": {
+      "number": "1234567890123450",
+      "type": 1,
+      "codeBank": "1"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "CL",
+  "amount": 1000,
+  "currency": "CLP",
+  "DestinationCurrency":"CLP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -320,6 +454,8 @@ When using _Bank transfer_ you need to send the request as follows:
 {{< tab tabNum="4" >}}
 <br>
 
+**USD2L**
+
 ```json
 {
   "country": "CO",
@@ -347,10 +483,45 @@ When using _Bank transfer_ you need to send the request as follows:
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "CO",
+  "amount": 100,
+  "currency": "COP",
+  "reason": "string",
+  "DestinationCurrency":"COP",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Diego",
+    "lastName": "Silva",
+    "email": "dsilva@mail.com",
+    "phone": "099999999",
+    "address": "Cra 23 # 123-45 Apto 601",
+    "document": {
+      "type": "CC",
+      "number": "11111111"
+    },
+    "bankAccount": {
+      "number": "2288",
+      "type": 1,
+      "codeBank": "1007"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+
 {{< /tab >}}
 
 {{< tab tabNum="5" >}}
 <br>
+
+**USD2L**
 
 ```json
 {
@@ -379,11 +550,45 @@ When using _Bank transfer_ you need to send the request as follows:
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "MX",
+  "amount": 1000,
+  "currency": "MXN",
+  "reason": "string",
+  "DestinationCurrency":"MXN",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Rubén",
+    "lastName": "Torres",
+    "email": "rubentres@mail.com",
+    "phone": "01 55 5601 7965",
+    "address": "Coyoacan 2000",
+    "document": {
+      "type": "CURP",
+      "number": "OEAF771012HMCRGR09"
+    },
+    "bankAccount": {
+      "number": "123456789012345678",
+      "type": 1,
+      "codeBank": "2"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
 
 {{< /tab >}}
 
 {{< tab tabNum="6" >}}
 <br>
+
+**USD2L**
 
 ```json
 {
@@ -412,11 +617,77 @@ When using _Bank transfer_ you need to send the request as follows:
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
+<br>
+
+**L2L**
+
+```json
+{
+  "country": "PE",
+  "amount": 1000,
+  "currency": "PEN",
+  "reason": "string",
+  "DestinationCurrency":"PEN",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Ornela",
+    "lastName": "Olivera",
+    "email": "ornelera@mail.com",
+    "phone": "099999999",
+    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
+    "document": {
+      "type": "DNI",
+      "number": "12345678"
+    },
+    "bankAccount": {
+      "number": "11487349",
+      "type": 1,
+      "codeBank": "2"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
+**USD2USD**
+
+```json
+{
+  "country": "PE",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "DestinationCurrency":"USD",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Ornela",
+    "lastName": "Olivera",
+    "email": "ornelera@mail.com",
+    "phone": "099999999",
+    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
+    "document": {
+      "type": "DNI",
+      "number": "12345678"
+    },
+    "bankAccount": {
+      "number": "11487349",
+      "type": 1,
+      "codeBank": "2"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
 
 {{< /tab >}}
 
 {{< tab tabNum="7" >}}
 <br>
+
+**USD2L**
 
 ```json
 {
@@ -424,6 +695,38 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 1000,
   "currency": "USD",
   "reason": "string",
+  "reference": "PayOut34",
+  "type": 2,
+  "payee": {
+    "firstName": "Daniel",
+    "lastName": "Lorenzo",
+    "email": "danielzo@mail.com",
+    "phone": "999999999",
+    "address": "12900 Montevideo",
+    "document": {
+      "type": "CI",
+      "number": "38067788"
+    },
+    "bankAccount": {
+      "number": "12345678912345",
+      "type": 2,
+      "codeBank": "999",
+      "branch": "1"
+    }
+  },
+  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
+<br>
+
+**L2L**
+```json
+{
+  "country": "UY",
+  "amount": 1000,
+  "currency": "UYU",
+  "reason": "string",
+  "DestinationCurrency":"UYU",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -462,8 +765,7 @@ Message received correctly, at this point the Payout starts to be processed.
     "status": 5,
     "statusDescription": "Received",
     "reference": "PayOut34",
-    "errors": [],
-    "statusCode": 200
+    "errors": []
 }
 ```
 <br>
@@ -476,18 +778,6 @@ Where:
 | `statusDescription` | Current status of the Payout. Refer to [this article]({{< ref "Payout-Status.md" >}}) to learn more about Payout status. |
 | `reference` | Unique identifier of the Payout you defined when you requested the Payout. |
 | `errors` | Errors that may appear. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
-| `statusCode` | HTTP code of the response. |
-
-* `Unauthorized`: HttpCode `401`.<br>
-Authorization error.
-
-**Response body**
-```json
-{
-    "statusCode": 401
-}
-```
-<br>
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
 The validation of the message failed, and the Payout is **Declined**.
@@ -501,11 +791,13 @@ The validation of the message failed, and the Payout is **Declined**.
             "PropertyName": "Country",
             "Message": "'Country' must be 2 characters in length. You entered 1 characters."
         }
-    ],
-    "statusCode": 400
+    ]
 }
 ```
 <br>
+
+* `Unauthorized`: HttpCode `401`.<br>
+Authorization error.
 
 * `Conflict` - `Declined`: HttpCode `HttpCode 409`.<br>
 The validation of the message was successful, but the Payout is **Declined** due to business rules.
@@ -523,8 +815,7 @@ The validation of the message was successful, but the Payout is **Declined** due
             "PropertyName": "BankAccount",
             "Message": "BankAccount invalid"
         }
-    ],
-    "statusCode": 409
+    ]
 }
 ```
 

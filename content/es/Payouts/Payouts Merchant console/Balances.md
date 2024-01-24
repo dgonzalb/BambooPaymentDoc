@@ -12,20 +12,34 @@ Para navegar al Reporte de Payouts, abra su consola de Comercios y seleccione **
 
 ![PrintScreen](/assets/Payouts/Payouts9_es.png)
 
-En esta ventana, cuenta con dos secciones. La primera, muestra los tipos de saldos de su cuenta.
+Dispone de dos secciones en esta pantalla; la primera sección muestra los tipos de saldos. Para más información, consulte [Saldos de Payouts]({{< ref Payout-Balances.md>}}#balance-types).
+
+Como se menciona en la sección [Conceptos]({{< ref  Payout-Concepts.md >}}#payout-models), cada cuenta representa una moneda específica para realizar los pagos. Por lo tanto, debe elegir la cuenta seleccionando la moneda en la lista desplegable de la esquina superior derecha.
+
+![PrintScreen](/assets/Payouts/Payouts22_es.png)
+
+{{% alert title="Info" color="info"%}}
+El filtro _**Moneda**_ sólo está disponible cuando tiene varias cuentas.
+{{% /alert %}}
+
+A continuación, podrá ver el saldo de la moneda seleccionada.
 
 ![PrintScreen](/assets/Payouts/Payouts10_es.png)
 
-Para más información, consulte [Saldos de Payouts]({{< ref Payout-Balances.md>}}#balance-types).
+{{% alert title="Importante" color="warning"%}}
+El saldo de cada moneda es independiente. Al seleccionar una moneda, el saldo mostrado no es la cantidad exacta convertida a la misma. Por ejemplo, en su cuenta en _**UYU**_, el saldo podría ser _UYU 500_, mientras que la cuenta en _**USD**_ podría mostrar _USD 1000_.
+{{% /alert %}}
 
-La segunda sección muestra los movimientos de su balance. Donde encuentra las siguientes columnas:
+La segunda sección muestra los movimientos de su saldo. Por defecto, cuando no ha seleccionado la moneda, la lista muestra todos los movimientos de todas las cuentas (monedas).
+
+La lista muestra las siguientes columnas:
 
 | Columna | Descripción |
 |---|---|
 | **Payout ID** | Número único generado por Bamboo para identificar el Payout. |
 | **Fecha** |Fecha en la que el sistema creó el movimiento del Payout. |
 | **Tipo** | Tipo de movimiento aplicado en el payout. |
-| **Valor en USD** | Monto del movimiento.<br>El reporte muestra los movimientos crédito (como retiros, tasas, etc.) en rojo y los movimientos débito (como los depósitos) en verde. |
+| **Importe Origen** | Monto del movimiento.<br>El reporte muestra los movimientos crédito (como retiros, tasas, etc.) en rojo y los movimientos débito (como los depósitos) en verde. |
 | **Saldo Total** | Saldo resultado luego de que se aplica el movimiento. |
 
-Puede incluir filtros haciendo clic en el botón _**Filtros**_, donde podrá filtrar por el intervalo de fechas del movimiento o por cualquiera de sus parámetros.
+Puede incluir filtros haciendo clic en el botón _**Filtros**_, donde podrá filtrar por el identificador del Payour, por monto o por tipo de movimiento.

@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
 <meta itemprop="dateModified" content="2023-09-27T08:39:32-05:00" />
-<meta itemprop="wordCount" content="689">
+<meta itemprop="wordCount" content="771">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts exprés"/>
 <meta name="twitter:description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../en/payouts/payouts-merchant-console/express.html">English</a>
 	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/express.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../en/payouts/payouts-merchant-console/express.html">English</a>
+	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-merchant-console/express.html">Português</a>
 	
 </div>
     </div>
@@ -465,13 +469,19 @@
 <tr>
 <td><strong>Amount</strong></td>
 <td style="text-align:center">Sí</td>
-<td>Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo <em>100</em> =&gt; <em>USD 1,00</em>.</td>
+<td>Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo <em>100</em> =&gt; <em>$ 1,00</em>.</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Currency</strong></td>
 <td style="text-align:center">Sí</td>
-<td>Código ISO de la moneda.<br><em>Solo está disponible <strong>USD</strong></em>.</td>
+<td>Código ISO de la moneda de su cuenta, que corresponde a la moneda de origen.<br><a href="../payouts-api/variables.html#currencies">Consulte aquí la lista de monedas</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DestinationCurrency</strong></td>
+<td style="text-align:center">Sí</td>
+<td>Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al <a href="../../../es/payouts/overview/payout-concepts.html#payout-models">modelo</a> de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para <em><strong>USD2L</strong></em>, la columna <strong>Currency</strong> debe ser <em>USD</em>, y la columna <strong>DestinationCurrency</strong> debe ser la moneda del país seleccionado.</li><li>Para <em><strong>USD2USD</strong></em>, tanto <strong>Currency</strong> como <strong>DestinationCurrency</strong> deben ser <em>USD</em>.</li><li>Para <em><strong>L2L</strong></em>, <strong>Currency</strong> y <strong>DestinationCurrency</strong> deben ser la moneda del país elegido.</li></ul><br><a href="../payouts-api/variables.html#currencies">Consulte aquí la lista de monedas</a>.</td>
 <td></td>
 </tr>
 <tr>
@@ -610,7 +620,7 @@
     27 de septiembre de 2023
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>

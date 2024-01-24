@@ -19,7 +19,8 @@ Usted puede ver los siguientes saldos en la consola de Payouts:
 * **Saldo disponible**: Corresponde al monto de dinero que tiene disponible para procesar más Payouts, el cual es la diferencia entre el _**Saldo Total**_ y el _**Saldo para procesamiento**_.
 
 {{% alert title="Info" color="info"%}}
-Si el pagador asume la tasa, no se agrega la misma a ningún tipo de saldo.
+* Si el pagador asume la tasa, no se agrega la misma a ningún tipo de saldo.
+* El saldo está disponible en las monedas habilitadas en su cuenta.
 {{% /alert %}}
 
 <!--

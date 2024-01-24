@@ -777,6 +777,22 @@ The following tables show the document types you must configure in the parameter
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | |
 | RUT | Single Tax Role | Individuals | Numeric | 12 |
 
+## Currencies
+The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `DestinationCurrency` for request Payouts.
+
+<div id="shortTable"></div>
+
+| Currency | Description |
+|:-:|---|
+| `USD` | US Dollar |
+| `ARS` | Argentine Peso |
+| `BRL` | Brazilian Real |
+| `CLP` | Chilean Peso |
+| `COP` | Colombian Peso |
+| `MXN` | Mexican Peso |
+| `PEN` | Peruvian Sol |
+| `UYU` | Uruguayan Peso |
+
 ## Transfer types for Payouts
 The following table shows the transfer types you can configure in the parameter `type`.
 

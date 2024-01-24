@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payouts/payouts-api/payout-error-codes.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2023-09-26T17:21:07-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-01-22T14:36:19-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Códigos de error del API">
 <meta itemprop="description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2023-09-26T17:21:07-05:00" />
-<meta itemprop="wordCount" content="206">
+<meta itemprop="dateModified" content="2024-01-22T14:36:19-05:00" />
+<meta itemprop="wordCount" content="295">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Códigos de error del API"/>
 <meta name="twitter:description" content="Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
@@ -110,6 +110,8 @@
 	
 	<a class="dropdown-item" href="../../../en/payouts/payouts-api/payout-error-codes.html">English</a>
 	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-api/payout-error-codes.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -143,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0c6953c2a69876bb2f22b2f68a9fae4423b1f70be8c084445eb15d537671cd58360461a839dbb04e2876f2be7f0d81178d1f461c67b17142ba7675a99ef7d3d0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -178,6 +180,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../en/payouts/payouts-api/payout-error-codes.html">English</a>
+	
+	<a class="dropdown-item" href="../../../pt/payouts/payouts-api/payout-error-codes.html">Português</a>
 	
 </div>
     </div>
@@ -425,6 +429,16 @@
 </thead>
 <tbody>
 <tr>
+<td><code>000</code></td>
+<td>Códigos del Response</td>
+<td>Código inválido.</td>
+</tr>
+<tr>
+<td><code>200</code></td>
+<td>Códigos del Response</td>
+<td>Éxito.</td>
+</tr>
+<tr>
 <td><code>200</code></td>
 <td>Códigos del Response</td>
 <td>Éxito.</td>
@@ -455,9 +469,39 @@
 <td>Moneda de origen no válida.</td>
 </tr>
 <tr>
+<td><code>603</code></td>
+<td>Purchase Preview</td>
+<td>Monto invalido.</td>
+</tr>
+<tr>
+<td><code>604</code></td>
+<td>Purchase Preview</td>
+<td>Código ISO de moneda de destino inválido.</td>
+</tr>
+<tr>
 <td><code>699</code></td>
 <td>Purchase Preview</td>
 <td>Error genérico del Preview de Payouts.</td>
+</tr>
+<tr>
+<td><code>701</code></td>
+<td>Errores transaccionales</td>
+<td>Saldo insuficiente.</td>
+</tr>
+<tr>
+<td><code>702</code></td>
+<td>Errores transaccionales</td>
+<td>Rechazado por reglas de cumplimiento.</td>
+</tr>
+<tr>
+<td><code>703</code></td>
+<td>Errores transaccionales</td>
+<td>Error general en el balance de cuentas.</td>
+</tr>
+<tr>
+<td><code>704</code></td>
+<td>Errores transaccionales</td>
+<td>El monto mínimo del pago es inválido.</td>
 </tr>
 <tr>
 <td><code>812</code></td>
@@ -475,14 +519,14 @@
 <td>Declinado por validación del país.</td>
 </tr>
 <tr>
-<td><code>815</code></td>
-<td>Validación del API</td>
-<td>Declinado por cumplimiento.</td>
-</tr>
-<tr>
 <td><code>816</code></td>
 <td>Validación del API</td>
 <td>ID de referencia ya utilizado.<br>Este error no se muestra en la <a href="../payouts-merchant-console.html">Consola de Payouts</a> pero se devuelve a través de la API.</td>
+</tr>
+<tr>
+<td><code>817</code></td>
+<td>Validación del API</td>
+<td>Moneda de destino no soportada.</td>
 </tr>
 <tr>
 <td><code>901</code></td>
@@ -545,9 +589,29 @@
 <td>Saldo insuficiente.</td>
 </tr>
 <tr>
+<td><code>913</code></td>
+<td>Rechazos</td>
+<td>Fecha de proceso no válida.</td>
+</tr>
+<tr>
+<td><code>914</code></td>
+<td>Rechazos</td>
+<td>Saldo insuficiente en la integración.</td>
+</tr>
+<tr>
+<td><code>915</code></td>
+<td>Rechazos</td>
+<td>Error general en la integración.</td>
+</tr>
+<tr>
+<td><code>916</code></td>
+<td>Rechazos</td>
+<td>Rechazado por el banco.</td>
+</tr>
+<tr>
 <td><code>999</code></td>
 <td>Rechazos</td>
-<td>Error.</td>
+<td>Error general.</td>
 </tr>
 </tbody>
 </table>
@@ -561,10 +625,10 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    26 de septiembre de 2023
+    22 de enero de 2024
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2023</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
 </div>
 </div>
 </div>
