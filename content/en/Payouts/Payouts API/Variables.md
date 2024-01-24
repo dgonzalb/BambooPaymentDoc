@@ -11,10 +11,6 @@ weight: 30
 ## Bank codes
 The following tables show the bank code you can set in the parameter `payee.bankaccount.codebank` according to the country. 
 
-{{% alert title="Important" color="info"%}}
-Do not include zeros on the left in the bank code. For example, `017` > `17`.
-{{% /alert %}}
-
 ### Argentina
 
 <details>
@@ -778,7 +774,7 @@ The following tables show the document types you must configure in the parameter
 | RUT | Single Tax Role | Individuals | Numeric | 12 |
 
 ## Currencies
-The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `DestinationCurrency` for request Payouts.
+The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `destinationCurrency` for request Payouts.
 
 <div id="shortTable"></div>
 

@@ -19,7 +19,7 @@ Como se menciona en la sección [Conceptos]({{< ref  Payout-Concepts.md >}}#payo
 ![PrintScreen](/assets/Payouts/Payouts22_es.png)
 
 {{% alert title="Info" color="info"%}}
-El filtro _**Moneda**_ sólo está disponible cuando tiene varias cuentas.
+El filtro _**Moneda**_ sólo está disponible cuando tiene varias cuentas con diferentes monedas.
 {{% /alert %}}
 
 A continuación, podrá ver el saldo de la moneda seleccionada.
@@ -42,4 +42,4 @@ La lista muestra las siguientes columnas:
 | **Importe Origen** | Monto del movimiento.<br>El reporte muestra los movimientos crédito (como retiros, tasas, etc.) en rojo y los movimientos débito (como los depósitos) en verde. |
 | **Saldo Total** | Saldo resultado luego de que se aplica el movimiento. |
 
-Puede incluir filtros haciendo clic en el botón _**Filtros**_, donde podrá filtrar por el identificador del Payour, por monto o por tipo de movimiento.
+Puede incluir filtros haciendo clic en el botón _**Filtros**_, donde podrá filtrar por el identificador del Payout, por monto o por tipo de movimiento.

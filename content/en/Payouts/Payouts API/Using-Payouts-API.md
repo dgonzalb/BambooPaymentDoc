@@ -165,7 +165,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `amount` | `integer` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
 | `currency` | `string(3)` | Yes | ISO code of the origin currency. This currency must meet the one configured in your account.<br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reason` | `string` | No | Description of the Payout. |
-| `DestinationCurrency` | `string(3)` | No | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for **USD2L**_ and _**L2L**_ models, and the system will default to the currency of the destination country.<br>This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` parameter must be _USD_, and the `DestinationCurrency` parameter is not required.</li><li>For _**USD2USD**_, both `currency` and `DestinationCurrency` must be _USD_.</li><li>For _**L2L**_, `currency` and `DestinationCurrency` (if sent) must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
+| `destinationCurrency` | `string(3)` | Yes | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for **USD2L**_ and _**L2L**_ models, and the system will default to the currency of the destination country.<br>This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` parameter must be _USD_, and the `destinationCurrency` is optional.</li><li>For _**USD2USD**_, both `currency` and `destinationCurrency` must be _USD_.</li><li>For _**L2L**_, `currency` and `destinationCurrency` must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
 | `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
@@ -178,7 +178,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
 | `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](#get-bank-list). Alternatively, [find the bank list here](../payouts-api/variables.html#bank-codes).<br>Do not include zeros on the left in the bank code. |  
+| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](#get-bank-list). Alternatively, [find the bank list here](../payouts-api/variables.html#bank-codes). |  
 | `payee` → `bankaccount` → `branch` | `string` | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
 
@@ -200,6 +200,7 @@ Refer to the corresponding tab according to the payee's country.
   "country": "AR",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"ARS",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -232,7 +233,7 @@ Refer to the corresponding tab according to the payee's country.
   "amount": 1000,
   "currency": "ARS",
   "reason": "string",
-  "DestinationCurrency":"ARS",
+  "destinationCurrency":"ARS",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -269,6 +270,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
   "country": "BR",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
@@ -295,7 +297,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
   "country": "BR",
   "amount": 100,
   "currency": "BRL",
-  "DestinationCurrency":"BRL",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
@@ -324,6 +326,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "BR",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -356,7 +359,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "BR",
   "amount": 100,
   "currency": "BRL",
-  "DestinationCurrency":"BRL",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -394,6 +397,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "CL",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"CLP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -425,7 +429,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "CL",
   "amount": 1000,
   "currency": "CLP",
-  "DestinationCurrency":"CLP",
+  "destinationCurrency":"CLP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -461,6 +465,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "CO",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"COP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -493,7 +498,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 100,
   "currency": "COP",
   "reason": "string",
-  "DestinationCurrency":"COP",
+  "destinationCurrency":"COP",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -528,6 +533,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "MX",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"MXN",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -560,7 +566,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 1000,
   "currency": "MXN",
   "reason": "string",
-  "DestinationCurrency":"MXN",
+  "destinationCurrency":"MXN",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -595,6 +601,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "PE",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"PEN",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -627,7 +634,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 1000,
   "currency": "PEN",
   "reason": "string",
-  "DestinationCurrency":"PEN",
+  "destinationCurrency":"PEN",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -659,7 +666,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 1000,
   "currency": "USD",
   "reason": "string",
-  "DestinationCurrency":"USD",
+  "destinationCurrency":"USD",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -694,6 +701,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "country": "UY",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"UYU",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -726,7 +734,7 @@ When using _Bank transfer_ you need to send the request as follows:
   "amount": 1000,
   "currency": "UYU",
   "reason": "string",
-  "DestinationCurrency":"UYU",
+  "destinationCurrency":"UYU",
   "reference": "PayOut34",
   "type": 2,
   "payee": {

@@ -62,10 +62,10 @@ En la segunda sección, encontrará la lista de payouts solicitados. Por defecto
 ![PrintScreen](/assets/Payouts/Payouts21_es.png)
 
 {{% alert title="Info" color="info"%}}
-El filtro _**Cuenta**_ sólo está disponible cuando tiene varias cuentas.
+El filtro _**Cuenta**_ sólo está disponible cuando tiene varias cuentas con distintas monedas.
 {{% /alert %}}
 
-In this section you have the following columns:
+En esta sección, tiene las siguientes columnas:
 
 | Columna | Descripción |
 |---|---|

@@ -32,8 +32,8 @@ Puede configurar la tasa del Payout para que sea asumida por usted o por el bene
 ## Modelos de Payouts {#payout-models}
 Bamboo Payouts ofrece tres modelos que suponen una combinación de moneda de origen y destino.
 
-* **USD to Local (USD2L)**: el payout se solicita en moneda local y el beneficiario recibe los fondos en moneda local.
-* **Local to Local (L2L)**: el payout se solicita en moneda local y el beneficiario recibe los fondos en dólares estadounidenses.
+* **USD to Local (USD2L)**: el payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en moneda local.
+* **Local to Local (L2L)**: el payout se solicita en moneda local y el beneficiario recibe los fondos en moneda local. En este modelo, el país de origen y del destinatario deben ser el mismo.
 * **USD to USD (USD2USD)**: el payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en dólares estadounidenses. Actualmente, este modelo sólo está disponible en Perú.
 
 ## Cobertura {#coverage}

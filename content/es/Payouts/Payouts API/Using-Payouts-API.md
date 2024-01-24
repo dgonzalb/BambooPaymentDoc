@@ -108,8 +108,10 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para el Pre
 |---|---|:-:|---|---|
 | `amount` | `number` | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _$ 1,00_. |
 | `destinationCountryIsoCode` | `string(2)` | Sí | Código ISO del país en formato `ISO 3166-2`.<br>[Listado de países disponibles de Payouts](../overview.html#coverage). |
-| `destinationCurrencyIsoCode` | `string(3)` | No | Código ISO de la moneda de destino. Si no se proporciona el parámetro, el sistema utilizará por defecto la moneda del país de destino (parámetro `destinationCountryIsoCode`).<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies) |
+| `destinationCurrencyIsoCode` | `string(3)` | Sí <sup>*</sup> | Código ISO de la moneda de destino.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies) |
 | `originalCurrencyIsoCode` | `string(3)` | Sí | Código ISO de la moneda de origen.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies) |
+
+<sup>*</sup> _Si no se proporciona el parámetro, el sistema utilizará por defecto la moneda del país de destino (parámetro `destinationCountryIsoCode`)_
 
 #### Ejemplo del Request {#request-example-1}
 ```json
@@ -165,7 +167,7 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `amount` | `integer` | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _$ 1,00_. |
 | `currency` | `string(3)` | Sí | Código ISO de la moneda. Esta moneda debe coincidir con la configurada en su cuenta.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
 | `reason` | `string` | No | Descripción del Payout. |
-| `DestinationCurrency` | `string(3)` | No | Código ISO de la moneda en la que el beneficiario recibirá el pago. Este parámetro no es necesario para los modelos **USD2L**_ y _**L2L**_, y el sistema utilizará por defecto la moneda del país de destino cuando no se envíe.<br>Esta moneda debe cumplir el [modelo]({{< ref  Payout-Concepts.md >}}#payout-models) de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para _**USD2L**_, el parámetro `currency` debe ser _USD_, y el parámetro `DestinationCurrency` no es requerido.</li><li>Para _**USD2USD**_, tanto `currency` como `DestinationCurrency` deben ser _USD_.</li><li>Para _**L2L**_, `currency` y `DestinationCurrency` (si se envía) deben ser la moneda del país elegido.</li></ul><br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
+| `destinationCurrency` | `string(3)` | Sí | Código ISO de la moneda en la que el beneficiario recibirá el pago. Este parámetro no es necesario para el modelo _**USD2L**_, y el sistema utilizará por defecto la moneda del país de destino cuando no se envíe.<br>Esta moneda debe cumplir el [modelo]({{< ref  Payout-Concepts.md >}}#payout-models) de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para _**USD2L**_, el parámetro `currency` debe ser _USD_, y el parámetro `destinationCurrency` es optativo.</li><li>Para _**USD2USD**_, tanto `currency` como `destinationCurrency` deben ser _USD_.</li><li>Para _**L2L**_, `currency` y `destinationCurrency` deben ser la moneda del país elegido.</li></ul><br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Sí | Identificador único del Payout definido por usted.<br>_Asegúrese de que sea único_. |
 | `type` | `integer` | Sí | Tipo de Payout. Asigne cualquiera de los siguientes valores:<br><ul style="margin-bottom: initial;"><li>`1` para Efectivo</li><li>`2` para Transferencia Bancaria</li><li>`3` para Wallet</li><li>`4` para Transferencias Bancarias Instantáneas en Brasil</li></ul>|
 | `notification_Url` | `string` | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
@@ -178,7 +180,7 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `payee` → `document` → `number` | `string` | Sí | Número de documento del Beneficiario. | 
 | `payee` → `bankaccount` → `number` | `string` | Sí<sup>*</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Sí<sup>*</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>*</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](#get-bank-list). También, [puede encontrar el listado de bancos](../payouts-api/variables.html#bank-codes).<br>No incluya ceros a la izquierda en el código del banco. |  
+| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>*</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](#get-bank-list). También, [puede encontrar el listado de bancos](../payouts-api/variables.html#bank-codes). |  
 | `payee` → `bankaccount` → `branch` | `string` | No | Código de la sucursal del banco del Beneficiario. Este campo solo aplica para Brasil y es obligatorio cuando utilice transferencia bancaria como tipo de Payout. | 
 
 
@@ -201,6 +203,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
   "amount": 1000,
   "currency": "USD",
   "reason": "string",
+  "destinationCurrency": "ARS",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -232,7 +235,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
   "amount": 1000,
   "currency": "ARS",
   "reason": "string",
-  "DestinationCurrency":"ARS",
+  "destinationCurrency":"ARS",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -270,6 +273,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
   "country": "BR",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
@@ -296,7 +300,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
   "country": "BR",
   "amount": 100,
   "currency": "BRL",
-  "DestinationCurrency":"BRL",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
@@ -325,6 +329,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "BR",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -357,7 +362,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "BR",
   "amount": 100,
   "currency": "BRL",
-  "DestinationCurrency":"BRL",
+  "destinationCurrency":"BRL",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -395,6 +400,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "CL",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"CLP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -426,7 +432,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "CL",
   "amount": 1000,
   "currency": "CLP",
-  "DestinationCurrency":"CLP",
+  "destinationCurrency":"CLP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -462,6 +468,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "CO",
   "amount": 100,
   "currency": "USD",
+  "destinationCurrency":"COP",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -494,7 +501,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "amount": 100,
   "currency": "COP",
   "reason": "string",
-  "DestinationCurrency":"COP",
+  "destinationCurrency":"COP",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -528,6 +535,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "MX",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"MXN",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -560,7 +568,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "amount": 1000,
   "currency": "MXN",
   "reason": "string",
-  "DestinationCurrency":"MXN",
+  "destinationCurrency":"MXN",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -595,6 +603,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "PE",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"PEN",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -627,7 +636,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "amount": 1000,
   "currency": "PEN",
   "reason": "string",
-  "DestinationCurrency":"PEN",
+  "destinationCurrency":"PEN",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -659,7 +668,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "amount": 1000,
   "currency": "USD",
   "reason": "string",
-  "DestinationCurrency":"USD",
+  "destinationCurrency":"USD",
   "reference": "PayOut34",
   "type": 2,
   "payee": {
@@ -694,6 +703,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "country": "UY",
   "amount": 1000,
   "currency": "USD",
+  "destinationCurrency":"UYU",
   "reason": "string",
   "reference": "PayOut34",
   "type": 2,
@@ -726,7 +736,7 @@ Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
   "amount": 1000,
   "currency": "UYU",
   "reason": "string",
-  "DestinationCurrency":"UYU",
+  "destinationCurrency":"UYU",
   "reference": "PayOut34",
   "type": 2,
   "payee": {

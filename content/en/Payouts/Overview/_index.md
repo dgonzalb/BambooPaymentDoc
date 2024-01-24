@@ -32,8 +32,8 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 ## Payout models
 Bamboo Payouts offers three models that means a combination of origin and destination currency.
 
-* **USD to Local (USD2L)**: the payout is requested in local currency and the payee receives the funds in local currency.
-* **Local to Local (L2L)**: the payout is requested in local currency and the payee receives the funds in US Dollars.
+* **USD to Local (USD2L)**: the payout is requested in US Dollars and the payee receives the funds in local currency.
+* **Local to Local (L2L)**: the payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.
 * **USD to USD (USD2USD)**: the payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.
 
 ## Coverage

@@ -62,7 +62,7 @@ In the Second section, you find the list of payouts requested. By default, The P
 ![PrintScreen](/assets/Payouts/Payouts21_en.png)
 
 {{% alert title="Info" color="info"%}}
-The _**Account**_ filter is only available when you have multiple accounts.
+The _**Account**_ filter is only available when you have multiple accounts with different currencies.
 {{% /alert %}}
 
 In this section you have the following columns:

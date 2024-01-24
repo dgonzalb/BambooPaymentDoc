@@ -11,10 +11,6 @@ weight: 30
 ## Códigos de bancos {#bank-codes}
 Las siguientes tablas muestran el código bancario que puede asignar en el parámetro `payee.bankaccount.codebank` en función del país.
 
-{{% alert title="Importante" color="info"%}}
-No incluya ceros a la izquierda en el código del banco. Por ejemplo, `017` > `17`.
-{{% /alert %}}
-
 ### Argentina
 
 <details>
@@ -778,7 +774,7 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | RUT | Rol Único Tributario | Individuos | Numérico | 12 |
 
 ## Monedas {#currencies}
-La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `DestinationCurrency` para solicitud de Payouts.
+La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `destinationCurrency` para solicitud de Payouts.
 
 <div id="shortTable"></div>
 
