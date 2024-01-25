@@ -185,8 +185,8 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;destinationCurrencyIsoCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string(3)&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;ISO code of the destination currency. If the parameter is not provided, the system will default to the currency of the destination country (parameter &lt;code&gt;destinationCountryIsoCode&lt;/code&gt;).&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Find the currencies list here&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes &lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;ISO code of the destination currency.&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Find the currencies list here&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -198,6 +198,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;If the parameter is not provided, the system will default to the currency of the destination country (parameter &lt;code&gt;destinationCountryIsoCode&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;request-example-1&#34;&gt;Request example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;

@@ -31,7 +31,7 @@
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
 <meta itemprop="dateModified" content="2024-01-24T16:57:47-05:00" />
-<meta itemprop="wordCount" content="2556">
+<meta itemprop="wordCount" content="2558">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Payouts API"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.46ac5d7780009a5d0e1165c2e55209cb859075b8eb05cfeba4981a3163db86d52e6120a2f9439d9ef1469347415f9e05f7001fddecd13ff7486ca13c8999749b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f12d988ccf9a109739c54dd5143e4313ec88b36959a3a49a2493d7b6593a2b3a89a2aca17cba6d2218adeccc57ddaf58f48711998413297d4680c136a25c2681.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -595,8 +595,8 @@
 <tr>
 <td><code>destinationCurrencyIsoCode</code></td>
 <td><code>string(3)</code></td>
-<td style="text-align:center">No</td>
-<td>ISO code of the destination currency. If the parameter is not provided, the system will default to the currency of the destination country (parameter <code>destinationCountryIsoCode</code>).<br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a></td>
+<td style="text-align:center">Yes <sup>*</sup></td>
+<td>ISO code of the destination currency.<br><a href="../payouts-api/variables.html#currencies">Find the currencies list here</a></td>
 <td></td>
 </tr>
 <tr>
@@ -608,6 +608,7 @@
 </tr>
 </tbody>
 </table>
+<p><sup>*</sup> <em>If the parameter is not provided, the system will default to the currency of the destination country (parameter <code>destinationCountryIsoCode</code>).</em></p>
 <h4 id="request-example-1">Request example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>

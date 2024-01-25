@@ -108,8 +108,10 @@ The following table shows the mandatory and optional parameters for the Payout p
 |---|---|:-:|---|---|
 | `amount` | `number` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
 | `destinationCountryIsoCode` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
-| `destinationCurrencyIsoCode` | `string(3)` | No | ISO code of the destination currency. If the parameter is not provided, the system will default to the currency of the destination country (parameter `destinationCountryIsoCode`).<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
+| `destinationCurrencyIsoCode` | `string(3)` | Yes <sup>*</sup> | ISO code of the destination currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
 | `originalCurrencyIsoCode` | `string(3)` | Yes | ISO code of the origin currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
+
+<sup>*</sup> _If the parameter is not provided, the system will default to the currency of the destination country (parameter `destinationCountryIsoCode`)._
 
 #### Request example {#request-example-1}
 ```json
