@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/payment-methods/mexico/mx-apm.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2024-01-22T14:43:42-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-01-24T16:57:47-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Medios alternativos de pago">
 <meta itemprop="description" content="Aprenda cómo integrar su solución para procesar pagos en sucursales físicas de pago o utilizando transferencias bancarias.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2024-01-22T14:43:42-05:00" />
+<meta itemprop="dateModified" content="2024-01-24T16:57:47-05:00" />
 <meta itemprop="wordCount" content="2243">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medios alternativos de pago"/>
@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b329cd476226801c787b597b08abd59aafdeaa80ebec47bef4e8e218e0804e6bc5cce5f7dbcc88090a6d03f05f0b0a5a4854cb36c1dd20c0c6a70569ba1670a5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.46ac5d7780009a5d0e1165c2e55209cb859075b8eb05cfeba4981a3163db86d52e6120a2f9439d9ef1469347415f9e05f7001fddecd13ff7486ca13c8999749b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1091,7 +1091,7 @@
 <td>Número del código de barras generado por <strong>OXXO</strong>.</td>
 </tr>
 <tr>
-<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarCodeUrl</code></td>
+<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarcodeUrl</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td>URL del código de barras generado por <strong>OXXO</strong>.</td>
 </tr>
@@ -1217,7 +1217,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;810000011342193202310010005000&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentBarCodeUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://gateway.stage.bamboopayment.com/purchase-coupons/coupons-barcodes/OxxoBarcode/810000011342193202310010005000.jpeg&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentBarcodeUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://gateway.stage.bamboopayment.com/purchase-coupons/coupons-barcodes/OxxoBarcode/810000011342193202310010005000.jpeg&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1134219&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1379,7 +1379,7 @@
 <td>Referencia de pago generado por <strong>Paynet</strong>.</td>
 </tr>
 <tr>
-<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarCodeUrl</code></td>
+<td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarcodeUrl</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td>URL de la imagen del código de barras del pago.</td>
 </tr>
@@ -1504,7 +1504,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;9988780335829741&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentBarCodeUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://sandbox-api.openpay.mx/barcode/9988780335829741?width=1&amp;height=45&amp;text=false&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentBarcodeUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://sandbox-api.openpay.mx/barcode/9988780335829741?width=1&amp;height=45&amp;text=false&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://sandbox-dashboard.openpay.mx/paynet-pdf/m46uqwpxz7otrhsinbx1/9988780335829741&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1854,7 +1854,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 <div class="left-element">
     <b>Última modificación</b>
     
-    22 de enero de 2024
+    24 de enero de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
