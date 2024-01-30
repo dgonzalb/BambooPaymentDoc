@@ -3,19 +3,235 @@ title: "Medios alternativos de pago"
 linkTitle: "Medios alternativos de pago"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con efectivo y Nequi.
+  Aprenda a integrar su solución para procesar pagos con PSE, efectivo y Nequi.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago ya sea en Nequi o en una oficina física de pago.
+El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago ya sea en su apliación bancaria (PSE), Nequi o en una oficina física de pago.
 {{% /alert %}}
+
+## PSE
+PSE (Pagos Seguros en Línea) es un sistema de pago en línea muy utilizado en Colombia. Permite realizar transacciones electrónicas seguras al permitir a los usuarios efectuar pagos directamente desde sus cuentas bancarias.
+
+### Parámetros del Request {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**538**_. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
+| `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
+| `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
+| `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
+| `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
+
+#### Ejemplo del Request {#request-example}
+```json
+{
+    "PaymentMediaId": 538,
+    "Order": "QA245",
+    "Capture": "true",
+    "Amount": 1000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "CO"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "COL",
+            "State": "Antioquia",
+            "City": "Medellin",
+            "AddressDetail": "Cra 45 # 76B Sur - 57"
+        },
+        "FirstName": "Miguel",
+        "LastName": "Moreno",
+        "DocNumber": "52960268",
+        "DocumentTypeId": 11,
+        "PhoneNumber": "24022330",
+        "Email": "mmoreno@mail.com"
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Parámetros del Response {#response-parameters}
+Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `CommerceAction` con `ActionReason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `ActionURL` con la URL del servicio externo. Debe redirigir al cliente a esta URL para finalizar el pago siguiendo el flujo PSE. En este flujo, su pagador selecciona su banco, elige si es una persona física o jurídica y su tipo de documento.
+
+![PrintScreen](/assets/PSE.png)
+
+Según el resultado de la transacción, el pagador será dirigido a la URL definida en el objeto `Redirection`. Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+
+#### Ejemplo del Response {#response-example}
+```json
+{
+    "Response": {
+        "PurchaseId": 1266731,
+        "Created": "2024-01-30T12:58:38.498",
+        "TrxToken": null,
+        "Order": "QA245",
+        "Transaction": {
+            "TransactionID": 1287664,
+            "Created": "2024-01-30T12:58:38.498",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2024-01-30T15:58:38.498",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 3140600,
+        "OriginalAmount": 3140600,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "COP",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 269124,
+            "Created": "2024-01-30T12:58:38.197",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "mmoreno@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "COL",
+                "State": "Antioquia",
+                "AddressDetail": "Cra 45 # 76B Sur - 57",
+                "PostalCode": null,
+                "City": "Medellin"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 274300,
+                    "PaymentMediaId": 538,
+                    "Created": "2024-01-30T15:58:38.310",
+                    "LastUpdate": "2024-01-30T15:58:38.363",
+                    "Brand": "PseAvanza",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/269124",
+            "FirstName": "Miguel",
+            "LastName": "Moreno",
+            "DocNumber": "52960268",
+            "DocumentTypeId": 11,
+            "PhoneNumber": "24022330",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1266731",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 149,
+            "Name": "Pse Avanza Redirect",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_cc155768-74d9-4efd-8e55-42411b4dd3cf",
+            "ActionBody": null,
+            "ActionSessionId": "CA_cc155768-74d9-4efd-8e55-42411b4dd3cf"
+        },
+        "PurchasePaymentProfileId": 274300,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": null,
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "CO",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 10
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
 
 ## Efectivo {#cash}
 El método de pago en efectivo permite a sus clientes generar un cupón y completar el pago en una oficina de pago física.
 
-## Redes de pago en efectivo {#cash-acquirers}
+### Redes de pago en efectivo {#cash-acquirers}
 Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:
 
 <div id="shortTable"></div>
@@ -31,7 +247,7 @@ Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> | 43 | SuRed |
 | <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | 44 | SuSuerte |
 
-### Parámetros del Request {#request-parameters}
+### Parámetros del Request {#request-parameters-1}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -56,7 +272,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 * El valor `amount` debe incluir dos ceros como decimales. Ejemplo `COP 5.000` > `500000`.
 {{% /alert %}}
 
-#### Ejemplo del Request {#request-example}
+#### Ejemplo del Request {#request-example-1}
 ```json
 {
     "PaymentMediaId": 38,
@@ -87,7 +303,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters}
+### Parámetros del Response {#response-parameters-1}
 En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
@@ -99,7 +315,7 @@ En el Response, se encuentran los siguientes parámetros:
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
 
-#### Ejemplo del Response {#response-example} 
+#### Ejemplo del Response {#response-example-1} 
 ```json
 {
     "Response": {
@@ -249,7 +465,7 @@ Le permite a sus clientes pagar escaneando un código QR utilizando su aplicaci�
 
 El flujo de este medio de pago es _**Redirect**_, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1), puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
 
-### Parámetros del Request {#request-parameters-1}
+### Parámetros del Request {#request-parameters-2}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -269,7 +485,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
-#### Ejemplo del Request {#request-example-1}
+#### Ejemplo del Request {#request-example-2}
 ```json
 {
     "PaymentMediaId": 67,
@@ -300,7 +516,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters-1}
+### Parámetros del Response {#response-parameters-2}
 El siguiente ejemplo muestra la respuesta al request.
 
 ```json
@@ -469,7 +685,7 @@ Al utilizar este método de pago, su cliente recibirá una notificación para qu
 
 <img src="/assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
 
-### Parámetros del Request {#request-parameters-2}
+### Parámetros del Request {#request-parameters-3}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -489,7 +705,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
-#### Ejemplo del Request {#request-example-2}
+#### Ejemplo del Request {#request-example-3}
 ```json
 {
     "PaymentMediaId": 68,
@@ -520,7 +736,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 }
 ```
 
-### Parámetros del Response {#response-parameters-2}
+### Parámetros del Response {#response-parameters-3}
 _Nequi_ genera la orden de pago y envía una notificación push al pagador; luego, el pagador necesita ingresar a la aplicación de Nequi para aceptar o rechazar el pago.
 
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.

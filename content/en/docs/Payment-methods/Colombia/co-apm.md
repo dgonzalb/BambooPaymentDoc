@@ -3,14 +3,230 @@ title: "Alternative Payment Methods"
 linkTitle: "Alternative Payment Methods"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Cash and Nequi.
+  Learn how to integrate your solution to process payments with PSE, Cash and Nequi.
 weight: 20
 tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in Nequi or at a physical payment office.
+The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in their banking app (using PSE), Nequi or at a physical payment office.
 {{% /alert %}}
+
+## PSE
+PSE (Pagos Seguros en Línea) is a widely used online payment system in Colombia. It enables secure electronic transactions by allowing users to make payments directly from their bank accounts.
+
+### Request parameters
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**538**_. |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `Customer` → `FirstName` | `string` | No | Customer's first name. |
+| `Customer` → `LastName` | `string` | No | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
+| `Redirection` → `Url_Rejected` | `string` | No | Callback URL when the purchase status is `Rejected`. |
+| `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
+| `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
+| `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
+
+#### Request example
+```json
+{
+    "PaymentMediaId": 538,
+    "Order": "QA245",
+    "Capture": "true",
+    "Amount": 1000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "CO"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "COL",
+            "State": "Antioquia",
+            "City": "Medellin",
+            "AddressDetail": "Cra 45 # 76B Sur - 57"
+        },
+        "FirstName": "Miguel",
+        "LastName": "Moreno",
+        "DocNumber": "52960268",
+        "DocumentTypeId": 11,
+        "PhoneNumber": "24022330",
+        "Email": "mmoreno@mail.com"
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}
+```
+
+### Response parameters
+We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the external service URL. You must redirect the customer to this URL to finish the payment following the PSE flow. In this flow, your payer selects their bank, choose whether they are a Natural or Legal person and their document type.
+
+![PrintScreen](/assets/PSE.png)
+
+According to the result of the transaction, the payer will be directed to the URL defined in the `Redirection` object. For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+
+#### Response example 
+```json
+{
+    "Response": {
+        "PurchaseId": 1266731,
+        "Created": "2024-01-30T12:58:38.498",
+        "TrxToken": null,
+        "Order": "QA245",
+        "Transaction": {
+            "TransactionID": 1287664,
+            "Created": "2024-01-30T12:58:38.498",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2024-01-30T15:58:38.498",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 3140600,
+        "OriginalAmount": 3140600,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "COP",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 269124,
+            "Created": "2024-01-30T12:58:38.197",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "mmoreno@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "COL",
+                "State": "Antioquia",
+                "AddressDetail": "Cra 45 # 76B Sur - 57",
+                "PostalCode": null,
+                "City": "Medellin"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 274300,
+                    "PaymentMediaId": 538,
+                    "Created": "2024-01-30T15:58:38.310",
+                    "LastUpdate": "2024-01-30T15:58:38.363",
+                    "Brand": "PseAvanza",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/269124",
+            "FirstName": "Miguel",
+            "LastName": "Moreno",
+            "DocNumber": "52960268",
+            "DocumentTypeId": 11,
+            "PhoneNumber": "24022330",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1266731",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 149,
+            "Name": "Pse Avanza Redirect",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.stage.bamboopayment.com/CA_cc155768-74d9-4efd-8e55-42411b4dd3cf",
+            "ActionBody": null,
+            "ActionSessionId": "CA_cc155768-74d9-4efd-8e55-42411b4dd3cf"
+        },
+        "PurchasePaymentProfileId": 274300,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": null,
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "CO",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 10
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
 
 ## Cash
 The Cash payment method allows your customers to generate a coupon and complete the payment in a physical payment office.
