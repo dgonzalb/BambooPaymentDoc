@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.961ba3f39522334ee80a695177cf1e2252ef86041a0a69eb35d8fc2e791bcf2f3bb9454e0843939ef96150ecf153d42a112c6d1501c166549adc436619bc71fc.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.e700b23fef851d03b1926cb0b2c04517e5936293ecce5af8601e45c8f9ad5b641486b5e3cecd4f12989115665aa0830c5425b313f895c3ff9bb6f9a28534866d.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1358,8 +1358,7 @@ Example:
 </tr>
 </tbody>
 </table>
-<!--| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
-| `^601828` | Créditos Directos | Any card that starts with `601828` |
+<!--| `^601828` | Créditos Directos | Any card that starts with `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Any card that starts with `3` followed by `4` or `7`. |
 | `^628026` | Passcard | Any card that starts with `628026`. |
 | `^504736` | Club del Este | Any card that starts with `504736`. |
@@ -1530,18 +1529,6 @@ Example:
 		
 
 		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers3" role="tab"
-		   aria-controls="nav-home" aria-selected="false">Creditel</a>
-
-		
-		
-
-		
-		
-		
-
-		
-
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers4" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Anda</a>
 
 		
@@ -1553,7 +1540,7 @@ Example:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers5" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers4" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Créditos Directos</a>
 
 		
@@ -1565,7 +1552,7 @@ Example:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers6" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers5" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Mastercard</a>
 
 		
@@ -1577,8 +1564,20 @@ Example:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers7" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers6" role="tab"
 		   aria-controls="nav-home" aria-selected="false">AMEX (UY)</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers7" role="tab"
+		   aria-controls="nav-home" aria-selected="false"></a>
 
 		
 		
@@ -1853,37 +1852,27 @@ Example:
 <tr>
 <td>Buy</td>
 <td style="text-align:center"><code>0001</code></td>
-<td>Result: OK <br> Approved.</td>
+<td>Result: OK <br>Approved.</td>
 </tr>
 <tr>
 <td>Buy</td>
 <td style="text-align:center"><code>0002</code></td>
-<td>Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card.</td>
+<td>Result: OK <br>Approved.</td>
 </tr>
 <tr>
 <td>Buy</td>
 <td style="text-align:center"><code>0003</code></td>
-<td>Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer.</td>
+<td>Result: OK <br>Approved.</td>
 </tr>
 <tr>
-<td>Buy</td>
-<td style="text-align:center"><code>0004</code></td>
-<td>Result: Rejected <br> Error: TR012 <br> Credit limit exceeded.</td>
-</tr>
-<tr>
-<td>Buy</td>
-<td style="text-align:center"><code>0005</code></td>
-<td>Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment.</td>
-</tr>
-<tr>
-<td>Cancellation</td>
+<td>Refund</td>
 <td style="text-align:center"><code>0001</code></td>
-<td>Result: OK <br> Canceled.</td>
+<td>Result: OK.</td>
 </tr>
 <tr>
-<td>Cancellation</td>
-<td style="text-align:center"><code>0010</code></td>
-<td>Result: Rejected <br> Error: TR001 <br> Buyer communication error.</td>
+<td>Refund</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Result: OK.</td>
 </tr>
 </tbody>
 </table>
@@ -1901,59 +1890,6 @@ Example:
 
 
 <div class="tab-pane fade" id="tabacquirers4" role="tabpanel" aria-labelledby="nav-tabName4">
-
-	<br>
-<div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th style="text-align:center">Termination</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Buy</td>
-<td style="text-align:center"><code>0001</code></td>
-<td>Result: OK <br>Approved.</td>
-</tr>
-<tr>
-<td>Buy</td>
-<td style="text-align:center"><code>0002</code></td>
-<td>Result: OK <br>Approved.</td>
-</tr>
-<tr>
-<td>Buy</td>
-<td style="text-align:center"><code>0003</code></td>
-<td>Result: OK <br>Approved.</td>
-</tr>
-<tr>
-<td>Refund</td>
-<td style="text-align:center"><code>0001</code></td>
-<td>Result: OK.</td>
-</tr>
-<tr>
-<td>Refund</td>
-<td style="text-align:center"><code>0002</code></td>
-<td>Result: OK.</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="tab-pane fade" id="tabacquirers5" role="tabpanel" aria-labelledby="nav-tabName5">
 
 	<br>
 <div id="shortTable"></div>
@@ -2016,7 +1952,7 @@ Example:
 
 
 
-<div class="tab-pane fade" id="tabacquirers6" role="tabpanel" aria-labelledby="nav-tabName6">
+<div class="tab-pane fade" id="tabacquirers5" role="tabpanel" aria-labelledby="nav-tabName5">
 
 	<br>
 <div id="shortTable"></div>
@@ -2074,7 +2010,7 @@ Example:
 
 
 
-<div class="tab-pane fade" id="tabacquirers7" role="tabpanel" aria-labelledby="nav-tabName7">
+<div class="tab-pane fade" id="tabacquirers6" role="tabpanel" aria-labelledby="nav-tabName6">
 
 	<br>
 <div id="shortTable"></div>

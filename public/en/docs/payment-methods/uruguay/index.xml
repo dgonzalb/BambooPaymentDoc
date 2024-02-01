@@ -423,8 +423,7 @@ Example:
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;!--| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
-| `^601828` | Créditos Directos | Any card that starts with `601828` |
+&lt;!--| `^601828` | Créditos Directos | Any card that starts with `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Any card that starts with `3` followed by `4` or `7`. |
 | `^628026` | Passcard | Any card that starts with `628026`. |
 | `^504736` | Club del Este | Any card that starts with `504736`. |
@@ -595,18 +594,6 @@ Example:
 		
 
 		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers3&#34; role=&#34;tab&#34;
-		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;Creditel&lt;/a&gt;
-
-		
-		
-
-		
-		
-		
-
-		
-
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers4&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;Anda&lt;/a&gt;
 
 		
@@ -618,7 +605,7 @@ Example:
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers5&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers4&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;Créditos Directos&lt;/a&gt;
 
 		
@@ -630,7 +617,7 @@ Example:
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers6&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers5&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;Mastercard&lt;/a&gt;
 
 		
@@ -642,8 +629,20 @@ Example:
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers7&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers6&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;AMEX (UY)&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-acquirers&#34; data-toggle=&#34;tab&#34; href=&#34;#tabacquirers7&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;&lt;/a&gt;
 
 		
 		
@@ -918,37 +917,27 @@ Example:
 &lt;tr&gt;
 &lt;td&gt;Buy&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0001&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK &lt;br&gt; Approved.&lt;/td&gt;
+&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Buy&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0002&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: Rejected &lt;br&gt; Error: TR007 &lt;br&gt; Incorrect data associated with card.&lt;/td&gt;
+&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Buy&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0003&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: Rejected &lt;br&gt; Error: TR016 &lt;br&gt; Error in the parameters reported to the acquirer.&lt;/td&gt;
+&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Buy&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0004&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: Rejected &lt;br&gt; Error: TR012 &lt;br&gt; Credit limit exceeded.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Buy&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0005&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: Rejected &lt;br&gt; Error: TR997 &lt;br&gt; Acquirer error processing payment.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Cancellation&lt;/td&gt;
+&lt;td&gt;Refund&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0001&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK &lt;br&gt; Canceled.&lt;/td&gt;
+&lt;td&gt;Result: OK.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Cancellation&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0010&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: Rejected &lt;br&gt; Error: TR001 &lt;br&gt; Buyer communication error.&lt;/td&gt;
+&lt;td&gt;Refund&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0002&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Result: OK.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -966,59 +955,6 @@ Example:
 
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers4&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName4&#34;&gt;
-
-	&lt;br&gt;
-&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Operation&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Termination&lt;/th&gt;
-&lt;th&gt;Behavior&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Buy&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0001&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Buy&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0002&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Buy&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0003&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK &lt;br&gt;Approved.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Refund&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0001&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Refund&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;0002&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Result: OK.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers5&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName5&#34;&gt;
 
 	&lt;br&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
@@ -1081,7 +1017,7 @@ Example:
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers6&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName6&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers5&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName5&#34;&gt;
 
 	&lt;br&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
@@ -1139,7 +1075,7 @@ Example:
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers7&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName7&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tabacquirers6&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName6&#34;&gt;
 
 	&lt;br&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;

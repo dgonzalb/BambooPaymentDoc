@@ -260,8 +260,7 @@ Este formato significa que debe comenzar con el número **5**; el segundo númer
 | `^4\[0-9]*` | VISA | Cualquier tarjeta que empiece con `4`. |
 | `^5\[1-5]\[0-9]*`| MasterCard | Cualquier tarjeta que empiece con `51` hasta `5`. |
 | `^589892\|^542991`| OCA | Cualquier tarjeta que empiece con `589892` o `542991`. |
-<!--| `^601933\|^608700` | Creditel | Cualquier tarjeta que empiece con `601933` o `608700`. |
-| `^601828` | Créditos Directos | Cualquier tarjeta que empiece con `601828` |
+<!--| `^601828` | Créditos Directos | Cualquier tarjeta que empiece con `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Cualquier tarjeta que empiece con `3` seguido de `4` o `7`. |
 | `^628026` | Passcard | Cualquier tarjeta que empiece con `628026`. |
 | `^504736` | Club del Este | Cualquier tarjeta que empiece con `504736`. |
@@ -315,7 +314,7 @@ El comportamiento de la respuesta dependerá de la terminación de la tarjeta. G
 | `0002` | Resultado: Rechazado <br> Error: TR007 <br> Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración). |
 | `0013` | Resultado: Rechazado <br> Error: TR012 <br> Límite de crédito excedido. |
 
-<!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
+<!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Anda" tabName4="Créditos Directos" tabName5="Mastercard" tabName6="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -386,13 +385,10 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 | Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
 | Compra | `0001` | Resultado: OK <br> Aprobado. |
-| Compra | `0002` | Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta. |
-| Compra | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error en los parámetros informados al adquirente. |
-| Compra | `0004` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
-| Compra | `0005` | Resultado: Rejected <br> Error: TR997 <br> Error del adquirente procesando el pago. |
-| Anulación | `0001` | Resultado: OK <br> Anulado. |
-| Anulación | `0010` | Resultado: Rejected <br> Error: TR001 <br> Error de comunicación con el Adquirente. |
-
+| Compra | `0002` | Resultado: OK <br> Aprobado. |
+| Compra | `0003` | Resultado: OK <br> Aprobado. |
+| Reembolso | `0001` | Resultado: OK. |
+| Reembolso | `0002` | Resultado: OK. |
 
 {{< /tab >}}
 
@@ -404,21 +400,6 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 | Operación | Terminación | Comportamiento |
 |-----------|:-----------:|----------|
 | Compra | `0001` | Resultado: OK <br> Aprobado. |
-| Compra | `0002` | Resultado: OK <br> Aprobado. |
-| Compra | `0003` | Resultado: OK <br> Aprobado. |
-| Reembolso | `0001` | Resultado: OK. |
-| Reembolso | `0002` | Resultado: OK. |
-
-{{< /tab >}}
-
-{{< tab tabNum="5" >}}
-<br>
-
-<div id="shortTable"></div>
-
-| Operación | Terminación | Comportamiento |
-|-----------|:-----------:|----------|
-| Compra | `0001` | Resultado: OK <br> Aprobado. |
 | Compra | `0002` | Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta. |
 | Compra | `0003` | Resultado: Rejected <br> Error: TR016 <br> Error en los parámetros informados al adquirente. |
 | Compra | `0004` | Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido. |
@@ -428,7 +409,7 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 
 {{< /tab >}}
 
-{{< tab tabNum="6" >}}
+{{< tab tabNum="5" >}}
 <br>
 
 <div id="shortTable"></div>
@@ -444,7 +425,7 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 
 {{< /tab >}}
 
-{{< tab tabNum="7" >}}
+{{< tab tabNum="6" >}}
 <br>
 
 <div id="shortTable"></div>
