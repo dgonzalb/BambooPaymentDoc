@@ -78,7 +78,7 @@ En el Response, se encuentran los siguientes parámetros:
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentCode` | `string` | Código del pago generado por **PIX**. |
-| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Este código, que corresponde en Brasil al _copia e cola_, permite a los pagadores copiarlo en su app bancaria.<br>Este parámetro es útil para generar el código QR cuando crea su propio checkout. |
+| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Este código, que corresponde en Brasil al _copia e cola_, permite a los pagadores copiarlo en su app bancaria.<br>Este parámetro es útil para generar el código QR cuando cree su propio checkout. |
 | `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la página de pago. Esta página tiene el código QR generado en la cadena devuelta en el parámetro `PaymentBarCode`.<br>También puede redirigir al pagador a esta página para completar el pago. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA HH:MM:SS_. |
 
