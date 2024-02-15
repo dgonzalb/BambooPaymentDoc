@@ -208,7 +208,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
 ## Efectivo Paynet {#paynet-cash}
 **Paynet** le permite a sus clientes generar un cupón y realizar el pago en una tienda física.
 
-## Redes de pago en efectivo {#cash-acquirers}
+### Redes de pago en efectivo {#cash-acquirers}
 Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:
 
 * Farmacias Benavides
