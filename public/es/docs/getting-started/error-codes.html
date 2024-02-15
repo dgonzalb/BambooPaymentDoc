@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Este artículo brinda información sobre códigos de error y las posibles acciones que puede tomar.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
 <meta itemprop="dateModified" content="2023-11-20T13:01:19-05:00" />
-<meta itemprop="wordCount" content="2643">
+<meta itemprop="wordCount" content="2692">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Códigos de error y descripciones"/>
 <meta name="twitter:description" content="Este artículo brinda información sobre códigos de error y las posibles acciones que puede tomar.
@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e553461b782cf33a0eb088da566ea235391bc738fb04461daebc84e11636e1400fd4c331f8c0359aed5c429cbfeed6da8e61434ade9a81ef87e69ee421fd042d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f8dcda757d227c82e209e3c3afdcadbf99b136a33f6bf74f8e9ee142354c4f964872124b6182775760764977d62aa2ee29fc850987246b7c084279f6446f55cf.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -1333,13 +1333,19 @@
 <td><code>TR026</code></td>
 <td>INSUFFICIENT_AMOUNT</td>
 <td>Fondos insuficientes</td>
-<td>Tu cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles.</td>
+<td>Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles.</td>
 </tr>
 <tr>
 <td><code>TR027</code></td>
 <td>ACQUIRER_DENIED_TRANSACTION_AUTHENTICATION_REQUIRED</td>
 <td>La entidad adquirente ha rechazado la transacción y debe solicitar autorización.</td>
 <td>El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado <code>TR023</code></td>
+</tr>
+<tr>
+<td><code>TR028</code></td>
+<td>ACQUIRER_INVALID_AMOUNT</td>
+<td>La entidad adquirente denegó la transacción porque el monto pagado por el cliente no coincidía con el monto de la compra.<br>En este caso, el banco devuelve al cliente el monto pagado.</td>
+<td>El cliente debe reintentar el pago con el mismo valor del monto de la compra.</td>
 </tr>
 <tr>
 <td><code>TR075</code></td>
