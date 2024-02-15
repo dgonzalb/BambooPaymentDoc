@@ -459,7 +459,7 @@ In the response, you will find the following parameters:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `BankAccountLabel` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent. This number is dynamic and unique per transaction. |
+| `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent. This number is dynamic and unique per transaction. |
 | `Response` → `MetadataOut` → `Expiration` | `date` | Payment expiration date and time. |
 
 {{% alert title="Note" color="info"%}}
