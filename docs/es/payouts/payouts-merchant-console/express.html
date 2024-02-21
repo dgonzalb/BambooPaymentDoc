@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payouts/payouts-merchant-console/express.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-06-30T08:16:09-05:00" />
-<meta property="article:modified_time" content="2023-09-27T08:39:32-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-01-24T16:49:54-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Payouts exprés">
 <meta itemprop="description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
-<meta itemprop="dateModified" content="2023-09-27T08:39:32-05:00" />
-<meta itemprop="wordCount" content="771">
+<meta itemprop="dateModified" content="2024-01-24T16:49:54-05:00" />
+<meta itemprop="wordCount" content="948">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts exprés"/>
 <meta name="twitter:description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
@@ -145,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -481,7 +481,7 @@
 <tr>
 <td><strong>destinationCurrency</strong></td>
 <td style="text-align:center">Sí</td>
-<td>Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al <a href="../../../es/payouts/overview/payout-concepts.html#payout-models">modelo</a> de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para <em><strong>USD2L</strong></em>, la columna <strong>Currency</strong> debe ser <em>USD</em>, y la columna <strong>destinationCurrency</strong> debe ser la moneda del país seleccionado.</li><li>Para <em><strong>USD2USD</strong></em>, tanto <strong>Currency</strong> como <strong>destinationCurrency</strong> deben ser <em>USD</em>.</li><li>Para <em><strong>L2L</strong></em>, <strong>Currency</strong> y <strong>destinationCurrency</strong> deben ser la moneda del país elegido.</li></ul><br><a href="../payouts-api/variables.html#currencies">Consulte aquí la lista de monedas</a>.</td>
+<td>Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al <a href="../../../es/payouts/overview/payout-concepts.html#payout-models">modelo</a> de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para <em><strong>USD2L</strong></em>, la columna <strong>Currency</strong> debe ser <em>USD</em>, y la columna <strong>destinationCurrency</strong> es optativa.</li><li>Para <em><strong>USD2USD</strong></em>, tanto <strong>Currency</strong> como <strong>destinationCurrency</strong> deben ser <em>USD</em>.</li><li>Para <em><strong>L2L</strong></em>, <strong>Currency</strong> y <strong>destinationCurrency</strong> deben ser la moneda del país elegido.</li></ul><br><a href="../payouts-api/variables.html#currencies">Consulte aquí la lista de monedas</a>.</td>
 <td></td>
 </tr>
 <tr>
@@ -587,10 +587,22 @@
 <li>La funcionalidad soporta un máximo de <strong>100</strong> registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.</li>
 <li>Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.</li>
 <li>Puede guardar el archivo utilizando cualquier nombre.</li>
+<li>Cuando se utiliza PIX, es necesario configurar la clave PIX del beneficiario como se explica en la sección <a href="#additional-columns-for-pix">Campos adicionales para PIX</a>.</li>
 </ul>
 </p>
 </div>
 
+<h4 id="columnas-adicionales-para-pix">Columnas adicionales para PIX</h4>
+<p>Al configurar PIX como tipo de pago del Payout (columna <strong>Type</strong> con el valor <code>4</code>), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna <strong>Notification_Url</strong>, es decir, la columna <strong>T</strong> del archivo Excel:</p>
+<ul>
+<li><code>PixDocument</code>: agregue esta columna para configurar el número CPF/CNPJ del beneficiario.</li>
+<li><code>PixEmail</code>: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.</li>
+<li><code>PixPhone</code>: agregue esta columna para configurar el número de teléfono del beneficiario.</li>
+<li><code>PixRandom</code>: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.</li>
+</ul>
+<p>Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:</p>
+<p><img src="../../../assets/Payouts/Payouts23_en.png" alt="PrintScreen"></p>
+<p>No incluya una columna si no tiene un valor.</p>
 <h3 id="step2">2. Seleccionar la cuenta</h3>
 <p>El segundo paso involucra escoger la cuenta de la que se debitarán los montos de los Payouts. Asegúrese de que la cuenta seleccionada tenga saldo suficiente para procesarlos todos.</p>
 <p>Abra la lista desplegable <em><strong>Selecciona la cuenta</strong></em> y seleccione la cuenta que desea utilizar.</p>
@@ -617,7 +629,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    27 de septiembre de 2023
+    24 de enero de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

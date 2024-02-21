@@ -38,15 +38,15 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 
 ## Coverage
 
-| Country | ISO Code | Local Bank Transfer | Cash | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
-| Brazil | `BR` | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
-| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
-| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
-| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
-| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |   |   |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/>  |
-| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | |
+| Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Brazil | `BR` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 
 ## Cut-off Schedule
 Please consider the following schedule to receive the Payout on the same day; otherwise, we will process the Payout on the next business day.
@@ -56,7 +56,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 | Country | Maximum time<sup>*</sup> | Time zone |
 |---|---|---|
 | Argentina | 10:00 am. | **GMT-3** |
-| Brazil | 10:00 am. | **GMT-3** |
+| Brazil | Real time. | |
 | Chile  | Real time. | |
 | Colombia | Real time. | |
 | Mexico  | 10:00 am. | **GMT-6** |
@@ -66,7 +66,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 <sup>*</sup> _Time displayed in local time in Uruguay_.
 
 {{% alert title="Important" color="info"%}}
-When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Brazil and Mexico, where the console will display the status as _**Paid**_ on the same day.
+When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Mexico, where the console will display the status as _**Paid**_ on the same day.
 {{% /alert %}}
 
 ## Considerations

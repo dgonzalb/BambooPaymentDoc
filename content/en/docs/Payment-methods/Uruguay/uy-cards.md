@@ -259,8 +259,7 @@ This format means it must start with the number **5**; the second number must be
 | `^4\[0-9]*` | VISA | Any card that starts with `4`. |
 | `^5\[1-5]\[0-9]*`| MasterCard | Any card that starts with `51` through `5`. |
 | `^589892\|^542991`| OCA | Any card that starts with `589892` or `542991`. |
-<!--| `^601933\|^608700` | Creditel | Any card that starts with `601933` or `608700`. |
-| `^601828` | Créditos Directos | Any card that starts with `601828` |
+<!--| `^601828` | Créditos Directos | Any card that starts with `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Any card that starts with `3` followed by `4` or `7`. |
 | `^628026` | Passcard | Any card that starts with `628026`. |
 | `^504736` | Club del Este | Any card that starts with `504736`. |
@@ -314,7 +313,7 @@ The behavior of the response will depend on the termination of the card. Generat
 | `0002` | Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
 | `0013` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
 
-<!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Creditel" tabName4="Anda" tabName5="Créditos Directos" tabName6="Mastercard" tabName7="AMEX (UY)" >}}
+<!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Anda" tabName4="Créditos Directos" tabName5="Mastercard" tabName6="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -384,24 +383,6 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 | Operation | Termination | Behavior |
 |-----------|:-----------:|----------|
-| Buy | `0001` | Result: OK <br> Approved. |
-| Buy | `0002` | Result: Rejected <br> Error: TR007 <br> Incorrect data associated with card. |
-| Buy | `0003` | Result: Rejected <br> Error: TR016 <br> Error in the parameters reported to the acquirer. |
-| Buy | `0004` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
-| Buy | `0005` | Result: Rejected <br> Error: TR997 <br> Acquirer error processing payment. |
-| Cancellation | `0001` | Result: OK <br> Canceled. |
-| Cancellation | `0010` | Result: Rejected <br> Error: TR001 <br> Buyer communication error. |
-
-
-{{< /tab >}}
-
-{{< tab tabNum="4" >}}
-<br>
-
-<div id="shortTable"></div>
-
-| Operation | Termination | Behavior |
-|-----------|:-----------:|----------|
 | Buy | `0001` | Result: OK <br>Approved. |
 | Buy | `0002` | Result: OK <br>Approved. |
 | Buy | `0003` | Result: OK <br>Approved. |
@@ -410,7 +391,7 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 {{< /tab >}}
 
-{{< tab tabNum="5" >}}
+{{< tab tabNum="4" >}}
 <br>
 
 <div id="shortTable"></div>
@@ -427,7 +408,7 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 {{< /tab >}}
 
-{{< tab tabNum="6" >}}
+{{< tab tabNum="5" >}}
 <br>
 
 <div id="shortTable"></div>
@@ -443,7 +424,7 @@ Example of BIN (first 6 digits) for testing specific card types:
 
 {{< /tab >}}
 
-{{< tab tabNum="7" >}}
+{{< tab tabNum="6" >}}
 <br>
 
 <div id="shortTable"></div>

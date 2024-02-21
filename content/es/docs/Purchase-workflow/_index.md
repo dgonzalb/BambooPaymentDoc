@@ -16,7 +16,7 @@ Se puede utilizar dos tipos diferentes de flujos para autorizar una compra:
 * Redirect
 
 {{% alert title="Nota" color="info"%}}
-El tipo de flujo depende de cada medio de pago. Se especifica en la [tabla de medios de pago por país](/es/docs/getting-started/payment-methods.html) en la columna _**FLOW**_.
+El tipo de flujo depende de cada medio de pago. Se especifica en la [tabla de medios de pago por país](/es/docs/getting-started/payment-methods.html) en la columna _**FLUJO**_.
 {{% /alert %}}
 
 ### Flujo API {#api-flow}

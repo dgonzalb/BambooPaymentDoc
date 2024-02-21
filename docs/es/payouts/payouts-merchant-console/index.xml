@@ -70,10 +70,10 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas con distintas monedas.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;In this section you have the following columns:&lt;/p&gt;
+&lt;p&gt;En esta sección, tiene las siguientes columnas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -181,7 +181,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;destinationCurrency&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al &lt;a href=&#34;../../../es/payouts/overview/payout-concepts.html#payout-models&#34;&gt;modelo&lt;/a&gt; de su cuenta.&lt;br&gt;Por ejemplo:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2L&lt;/strong&gt;&lt;/em&gt;, la columna &lt;strong&gt;Currency&lt;/strong&gt; debe ser &lt;em&gt;USD&lt;/em&gt;, y la columna &lt;strong&gt;destinationCurrency&lt;/strong&gt; debe ser la moneda del país seleccionado.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2USD&lt;/strong&gt;&lt;/em&gt;, tanto &lt;strong&gt;Currency&lt;/strong&gt; como &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser &lt;em&gt;USD&lt;/em&gt;.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;L2L&lt;/strong&gt;&lt;/em&gt;, &lt;strong&gt;Currency&lt;/strong&gt; y &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser la moneda del país elegido.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Consulte aquí la lista de monedas&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Código ISO de la moneda en la que el beneficiario recibirá el pago. Esta moneda debe corresponder al &lt;a href=&#34;../../../es/payouts/overview/payout-concepts.html#payout-models&#34;&gt;modelo&lt;/a&gt; de su cuenta.&lt;br&gt;Por ejemplo:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2L&lt;/strong&gt;&lt;/em&gt;, la columna &lt;strong&gt;Currency&lt;/strong&gt; debe ser &lt;em&gt;USD&lt;/em&gt;, y la columna &lt;strong&gt;destinationCurrency&lt;/strong&gt; es optativa.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;USD2USD&lt;/strong&gt;&lt;/em&gt;, tanto &lt;strong&gt;Currency&lt;/strong&gt; como &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser &lt;em&gt;USD&lt;/em&gt;.&lt;/li&gt;&lt;li&gt;Para &lt;em&gt;&lt;strong&gt;L2L&lt;/strong&gt;&lt;/em&gt;, &lt;strong&gt;Currency&lt;/strong&gt; y &lt;strong&gt;destinationCurrency&lt;/strong&gt; deben ser la moneda del país elegido.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;a href=&#34;../payouts-api/variables.html#currencies&#34;&gt;Consulte aquí la lista de monedas&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -287,10 +287,22 @@
 &lt;li&gt;La funcionalidad soporta un máximo de &lt;strong&gt;100&lt;/strong&gt; registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.&lt;/li&gt;
 &lt;li&gt;Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.&lt;/li&gt;
 &lt;li&gt;Puede guardar el archivo utilizando cualquier nombre.&lt;/li&gt;
+&lt;li&gt;Cuando se utiliza PIX, es necesario configurar la clave PIX del beneficiario como se explica en la sección &lt;a href=&#34;#additional-columns-for-pix&#34;&gt;Campos adicionales para PIX&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
+&lt;h4 id=&#34;columnas-adicionales-para-pix&#34;&gt;Columnas adicionales para PIX&lt;/h4&gt;
+&lt;p&gt;Al configurar PIX como tipo de pago del Payout (columna &lt;strong&gt;Type&lt;/strong&gt; con el valor &lt;code&gt;4&lt;/code&gt;), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna &lt;strong&gt;Notification_Url&lt;/strong&gt;, es decir, la columna &lt;strong&gt;T&lt;/strong&gt; del archivo Excel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: agregue esta columna para configurar el número CPF/CNPJ del beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixEmail&lt;/code&gt;: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: agregue esta columna para configurar el número de teléfono del beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixRandom&lt;/code&gt;: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts23_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;No incluya una columna si no tiene un valor.&lt;/p&gt;
 &lt;h3 id=&#34;step2&#34;&gt;2. Seleccionar la cuenta&lt;/h3&gt;
 &lt;p&gt;El segundo paso involucra escoger la cuenta de la que se debitarán los montos de los Payouts. Asegúrese de que la cuenta seleccionada tenga saldo suficiente para procesarlos todos.&lt;/p&gt;
 &lt;p&gt;Abra la lista desplegable &lt;em&gt;&lt;strong&gt;Selecciona la cuenta&lt;/strong&gt;&lt;/em&gt; y seleccione la cuenta que desea utilizar.&lt;/p&gt;
@@ -330,7 +342,7 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
     Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Moneda&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas.&lt;/p&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El filtro &lt;em&gt;&lt;strong&gt;Moneda&lt;/strong&gt;&lt;/em&gt; sólo está disponible cuando tiene varias cuentas con diferentes monedas.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;A continuación, podrá ver el saldo de la moneda seleccionada.&lt;/p&gt;
@@ -375,7 +387,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Puede incluir filtros haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Filtros&lt;/strong&gt;&lt;/em&gt;, donde podrá filtrar por el identificador del Payour, por monto o por tipo de movimiento.&lt;/p&gt;
+&lt;p&gt;Puede incluir filtros haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Filtros&lt;/strong&gt;&lt;/em&gt;, donde podrá filtrar por el identificador del Payout, por monto o por tipo de movimiento.&lt;/p&gt;
 
       </description>
     </item>

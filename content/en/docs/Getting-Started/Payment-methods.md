@@ -94,7 +94,7 @@ weight: 30
 |  | Payment Method | Type | Flow |
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Cash Payment | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Stp_BankTransfer.png" width="52" style="" /> | SPEI | Bank Transfer | API |
+| <img src="/assets/SPEI.png" width="52" style="" /> | SPEI | Bank Transfer | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" width="52" style="" /> | Oxxo | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit & Debit Card | API & Redirect |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit & Debit Card | API & Redirect |
@@ -149,7 +149,6 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit, Debit & Prepaid Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png" width="52" style="" /> | OCA | Credit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png" width="52" style="" />  | Creditel | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/CreditosDirectos_CreditCard.png" width="52" style="" /> | Créditos Directos | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Passcard_CreditCard.png" width="52" style="" /> | PassCard | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Lider_CreditCard.png" width="52" style="" /> | Líder | Credit Card | API |

@@ -59,7 +59,7 @@ En el Response, se encuentran los siguientes parámetros:
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Número del código de barras generado por **OXXO**. |
-| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL del código de barras generado por **OXXO**. |
+| `Response` → `MetadataOut` → `PaymentBarcodeUrl` | `string` | URL del código de barras generado por **OXXO**. |
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL del cupón de pago. |
 
 Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl`, donde podrá imprimir el cupón y completar el pago en una tienda **OXXO**.
@@ -181,7 +181,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
         "MetadataOut": {
             "PaymentUrl": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html",
             "PaymentCode": "810000011342193202310010005000",
-            "PaymentBarCodeUrl": "https://gateway.stage.bamboopayment.com/purchase-coupons/coupons-barcodes/OxxoBarcode/810000011342193202310010005000.jpeg",
+            "PaymentBarcodeUrl": "https://gateway.stage.bamboopayment.com/purchase-coupons/coupons-barcodes/OxxoBarcode/810000011342193202310010005000.jpeg",
             "PaymentReference": "1134219"
         },
         "CrossBorderData": null,
@@ -208,7 +208,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
 ## Efectivo Paynet {#paynet-cash}
 **Paynet** le permite a sus clientes generar un cupón y realizar el pago en una tienda física.
 
-## Redes de pago en efectivo {#cash-acquirers}
+### Redes de pago en efectivo {#cash-acquirers}
 Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:
 
 * Farmacias Benavides
@@ -265,7 +265,7 @@ En el Response, se encuentran los siguientes parámetros:
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Referencia de pago generado por **Paynet**. |
-| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la imagen del código de barras del pago. |
+| `Response` → `MetadataOut` → `PaymentBarcodeUrl` | `string` | URL de la imagen del código de barras del pago. |
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL del cupón de pago en formato PDF. |
 
 Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl` para descargar el cupón y realizar el pago en una sucursal física de pago.
@@ -386,7 +386,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
         },
         "MetadataOut": {
             "PaymentCode": "9988780335829741",
-            "PaymentBarCodeUrl": "https://sandbox-api.openpay.mx/barcode/9988780335829741?width=1&height=45&text=false",
+            "PaymentBarcodeUrl": "https://sandbox-api.openpay.mx/barcode/9988780335829741?width=1&height=45&text=false",
             "PaymentUrl": "https://sandbox-dashboard.openpay.mx/paynet-pdf/m46uqwpxz7otrhsinbx1/9988780335829741"
         },
         "CrossBorderData": null,

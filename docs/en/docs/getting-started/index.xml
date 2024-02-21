@@ -644,7 +644,7 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;td&gt;API&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Stp_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/SPEI.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;SPEI&lt;/td&gt;
 &lt;td&gt;Bank Transfer&lt;/td&gt;
 &lt;td&gt;API&lt;/td&gt;
@@ -887,12 +887,6 @@ These fields are always expressed with the integer part plus two decimals withou
 &lt;tr&gt;
 &lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oca_CreditCard.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
 &lt;td&gt;OCA&lt;/td&gt;
-&lt;td&gt;Credit Card&lt;/td&gt;
-&lt;td&gt;API&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Creditel_CreditCard.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;Creditel&lt;/td&gt;
 &lt;td&gt;Credit Card&lt;/td&gt;
 &lt;td&gt;API&lt;/td&gt;
 &lt;/tr&gt;
@@ -1420,6 +1414,12 @@ data-postman-collection-url=&#34;entityId=25667318-ec85f9ca-5d5d-4eaa-8538-94f17
 &lt;td&gt;ACQUIRER_DENIED_TRANSACTION_AUTHENTICATION_REQUIRED&lt;/td&gt;
 &lt;td&gt;The acquirer denied the transaction and must request authorization.&lt;/td&gt;
 &lt;td&gt;The bank has rejected the online purchase. Your customer must contact the card issuer bank to authorize the purchase.&lt;br&gt;Related error &lt;code&gt;TR023&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TR028&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;ACQUIRER_INVALID_AMOUNT&lt;/td&gt;
+&lt;td&gt;The acquirer denied the transaction because the amount the customer paid did not match the purchase amount.&lt;br&gt;In this case, the bank returns the amount paid to the customer.&lt;/td&gt;
+&lt;td&gt;Your customer must retry the payment with the same value of the purchase amount.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TR075&lt;/code&gt;&lt;/td&gt;

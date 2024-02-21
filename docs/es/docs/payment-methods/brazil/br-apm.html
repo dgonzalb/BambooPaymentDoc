@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago como **PIX** y **Boleto Bancario**.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2023-12-01T09:23:26-05:00" />
-<meta itemprop="wordCount" content="1643">
+<meta itemprop="wordCount" content="1656">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medios alternativos de pago"/>
 <meta name="twitter:description" content="Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago como **PIX** y **Boleto Bancario**.
@@ -145,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1067,25 +1067,25 @@
 <tr>
 <td><code>MetaDataIn</code> → <code>PaymentExpirationInMinutes</code></td>
 <td style="text-align:center"><code>numeric</code></td>
-<td style="text-align:center">No</td>
-<td>Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.</td>
+<td style="text-align:center">Sí</td>
+<td>Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos.</td>
 </tr>
 <tr>
 <td><code>MetadataIn.</code> → <code>AddressStreet</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 <td>Calle de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>MetadataIn</code> → <code>AddressNumber</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 <td>Número, piso o apartamento de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>MetadataIn</code> → <code>AddressDistrict</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 <td>Distrito de la dirección del cliente.</td>
 </tr>
 </tbody>
@@ -1134,17 +1134,17 @@
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentCode</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Código del pago generado por <strong>PIX</strong></td>
+<td>Código del pago generado por <strong>PIX</strong>.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarCode</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Este código es conocido en Brasil como <em>copia e cola</em> y le permite a los pagadores copiarlo y pagarlo en su aplicación bancaria.</td>
+<td>Este código, que corresponde en Brasil al <em>copia e cola</em>, permite a los pagadores copiarlo en su app bancaria.<br>Este parámetro es útil para generar el código QR cuando cree su propio checkout.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentBarCodeUrl</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>URL de la página de pago. Usted puede redirigir al pagados a esta página para completar el pago.</td>
+<td>URL de la página de pago. Esta página tiene el código QR generado en la cadena devuelta en el parámetro <code>PaymentBarCode</code>.<br>También puede redirigir al pagador a esta página para completar el pago.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentExpirationDate</code></td>

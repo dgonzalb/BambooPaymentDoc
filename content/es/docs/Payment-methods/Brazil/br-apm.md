@@ -33,10 +33,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
-| `MetadataIn.` → `AddressStreet` | `string` | Sí | Calle de la dirección del cliente. |
-| `MetadataIn` → `AddressNumber` | `string` | Sí | Número, piso o apartamento de la dirección del cliente. |
-| `MetadataIn` → `AddressDistrict` | `string` | Sí | Distrito de la dirección del cliente. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | Sí | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. |
+| `MetadataIn.` → `AddressStreet` | `string` | No | Calle de la dirección del cliente. |
+| `MetadataIn` → `AddressNumber` | `string` | No | Número, piso o apartamento de la dirección del cliente. |
+| `MetadataIn` → `AddressDistrict` | `string` | No | Distrito de la dirección del cliente. |
 
 
 #### Ejemplo del Request {#request-example}
@@ -77,9 +77,9 @@ En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentCode` | `string` | Código del pago generado por **PIX** |
-| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Este código es conocido en Brasil como _copia e cola_ y le permite a los pagadores copiarlo y pagarlo en su aplicación bancaria. |
-| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la página de pago. Usted puede redirigir al pagados a esta página para completar el pago. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string` | Código del pago generado por **PIX**. |
+| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Este código, que corresponde en Brasil al _copia e cola_, permite a los pagadores copiarlo en su app bancaria.<br>Este parámetro es útil para generar el código QR cuando cree su propio checkout. |
+| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la página de pago. Esta página tiene el código QR generado en la cadena devuelta en el parámetro `PaymentBarCode`.<br>También puede redirigir al pagador a esta página para completar el pago. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA HH:MM:SS_. |
 
 #### Página de pago en PIX {#payment-page-in-pix}

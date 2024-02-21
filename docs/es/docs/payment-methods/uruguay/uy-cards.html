@@ -145,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3d2b9645c1c5b535b75a33544f7938e2119a2bfe7d72fb310605ff241188d72f8d4a4162693b0bb28e166a3ff649a297054a29789b021c473f29885e13baf152.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1374,8 +1374,7 @@ Ejemplo:
 </tr>
 </tbody>
 </table>
-<!--| `^601933\|^608700` | Creditel | Cualquier tarjeta que empiece con `601933` o `608700`. |
-| `^601828` | Créditos Directos | Cualquier tarjeta que empiece con `601828` |
+<!--| `^601828` | Créditos Directos | Cualquier tarjeta que empiece con `601828` |
 | `^3\[47\]\[0-9\]*` | American Express | Cualquier tarjeta que empiece con `3` seguido de `4` o `7`. |
 | `^628026` | Passcard | Cualquier tarjeta que empiece con `628026`. |
 | `^504736` | Club del Este | Cualquier tarjeta que empiece con `504736`. |
@@ -1513,18 +1512,6 @@ Ejemplo:
 		
 
 		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers3" role="tab"
-		   aria-controls="nav-home" aria-selected="false">Creditel</a>
-
-		
-		
-
-		
-		
-		
-
-		
-
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers4" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Anda</a>
 
 		
@@ -1536,7 +1523,7 @@ Ejemplo:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers5" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers4" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Créditos Directos</a>
 
 		
@@ -1548,7 +1535,7 @@ Ejemplo:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers6" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers5" role="tab"
 		   aria-controls="nav-home" aria-selected="false">Mastercard</a>
 
 		
@@ -1560,8 +1547,20 @@ Ejemplo:
 
 		
 
-		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers7" role="tab"
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers6" role="tab"
 		   aria-controls="nav-home" aria-selected="false">AMEX (UY)</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-acquirers" data-toggle="tab" href="#tabacquirers7" role="tab"
+		   aria-controls="nav-home" aria-selected="false"></a>
 
 		
 		
@@ -1841,32 +1840,22 @@ Ejemplo:
 <tr>
 <td>Compra</td>
 <td style="text-align:center"><code>0002</code></td>
-<td>Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta.</td>
+<td>Resultado: OK <br> Aprobado.</td>
 </tr>
 <tr>
 <td>Compra</td>
 <td style="text-align:center"><code>0003</code></td>
-<td>Resultado: Rejected <br> Error: TR016 <br> Error en los parámetros informados al adquirente.</td>
+<td>Resultado: OK <br> Aprobado.</td>
 </tr>
 <tr>
-<td>Compra</td>
-<td style="text-align:center"><code>0004</code></td>
-<td>Resultado: Rejected <br> Error: TR012 <br> Límite de crédito excedido.</td>
-</tr>
-<tr>
-<td>Compra</td>
-<td style="text-align:center"><code>0005</code></td>
-<td>Resultado: Rejected <br> Error: TR997 <br> Error del adquirente procesando el pago.</td>
-</tr>
-<tr>
-<td>Anulación</td>
+<td>Reembolso</td>
 <td style="text-align:center"><code>0001</code></td>
-<td>Resultado: OK <br> Anulado.</td>
+<td>Resultado: OK.</td>
 </tr>
 <tr>
-<td>Anulación</td>
-<td style="text-align:center"><code>0010</code></td>
-<td>Resultado: Rejected <br> Error: TR001 <br> Error de comunicación con el Adquirente.</td>
+<td>Reembolso</td>
+<td style="text-align:center"><code>0002</code></td>
+<td>Resultado: OK.</td>
 </tr>
 </tbody>
 </table>
@@ -1904,59 +1893,6 @@ Ejemplo:
 <tr>
 <td>Compra</td>
 <td style="text-align:center"><code>0002</code></td>
-<td>Resultado: OK <br> Aprobado.</td>
-</tr>
-<tr>
-<td>Compra</td>
-<td style="text-align:center"><code>0003</code></td>
-<td>Resultado: OK <br> Aprobado.</td>
-</tr>
-<tr>
-<td>Reembolso</td>
-<td style="text-align:center"><code>0001</code></td>
-<td>Resultado: OK.</td>
-</tr>
-<tr>
-<td>Reembolso</td>
-<td style="text-align:center"><code>0002</code></td>
-<td>Resultado: OK.</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="tab-pane fade" id="tabacquirers5" role="tabpanel" aria-labelledby="nav-tabName5">
-
-	<br>
-<div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th>Operación</th>
-<th style="text-align:center">Terminación</th>
-<th>Comportamiento</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Compra</td>
-<td style="text-align:center"><code>0001</code></td>
-<td>Resultado: OK <br> Aprobado.</td>
-</tr>
-<tr>
-<td>Compra</td>
-<td style="text-align:center"><code>0002</code></td>
 <td>Resultado: Rejected <br> Error: TR007 <br> Datos incorrectos asociados a tarjeta.</td>
 </tr>
 <tr>
@@ -1999,7 +1935,7 @@ Ejemplo:
 
 
 
-<div class="tab-pane fade" id="tabacquirers6" role="tabpanel" aria-labelledby="nav-tabName6">
+<div class="tab-pane fade" id="tabacquirers5" role="tabpanel" aria-labelledby="nav-tabName5">
 
 	<br>
 <div id="shortTable"></div>
@@ -2057,7 +1993,7 @@ Ejemplo:
 
 
 
-<div class="tab-pane fade" id="tabacquirers7" role="tabpanel" aria-labelledby="nav-tabName7">
+<div class="tab-pane fade" id="tabacquirers6" role="tabpanel" aria-labelledby="nav-tabName6">
 
 	<br>
 <div id="shortTable"></div>
