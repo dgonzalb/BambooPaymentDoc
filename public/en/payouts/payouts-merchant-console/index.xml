@@ -287,10 +287,22 @@
 &lt;li&gt;The feature supports a maximum of &lt;strong&gt;100&lt;/strong&gt; records per file. If you need to include more, repeat the procedure for the remaining payouts.&lt;/li&gt;
 &lt;li&gt;If you already have the template downloaded, it is not required to download it again.&lt;/li&gt;
 &lt;li&gt;You can save the file using any name of your choice.&lt;/li&gt;
+&lt;li&gt;When using PIX, you need to configure the PIX key of the payee as explained in the &lt;a href=&#34;#additional-columns-for-pix&#34;&gt;Additional fields for PIX&lt;/a&gt; section.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
+&lt;h4 id=&#34;additional-columns-for-pix&#34;&gt;Additional columns for PIX&lt;/h4&gt;
+&lt;p&gt;When configuring PIX as the transfer payout type (column &lt;strong&gt;Type&lt;/strong&gt; set as &lt;code&gt;4&lt;/code&gt;), you must include an additional column depending on the payee&amp;rsquo;s PIX key. You can configure any of the following columns, setting them next to the &lt;strong&gt;Notification_Url&lt;/strong&gt;, namely the &lt;strong&gt;T&lt;/strong&gt; column in the Excel file:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: add this column to configure the CPF/CNPJ number of the payee. The number of digits for &lt;strong&gt;CPF&lt;/strong&gt; must be 11, and &lt;strong&gt;CNPJ&lt;/strong&gt; must be 14.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixEmail&lt;/code&gt;: add this column to configure the email address of the payee.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: add this column to configure the phone number of the payee. The number must start with &lt;code&gt;+55&lt;/code&gt;, and the cell must be configured with text format to allow the use of the plus sign.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixRandom&lt;/code&gt;: add this column to configure the random key the payee generates.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You must add one column per different key in your payouts. For example, if you have five payees, one uses an email address, one uses the phone number, two use the CPF/CNPJ number, and one uses the random key, you need to include the columns as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts23_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Do not include a column if it doesn&amp;rsquo;t have a value.&lt;/p&gt;
 &lt;h3 id=&#34;step2&#34;&gt;2. Select the account&lt;/h3&gt;
 &lt;p&gt;The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.&lt;/p&gt;
 &lt;p&gt;Open the &lt;em&gt;&lt;strong&gt;Select the account&lt;/strong&gt;&lt;/em&gt; dropdown list and select the account you want to use.&lt;/p&gt;

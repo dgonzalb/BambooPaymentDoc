@@ -139,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.4a3d333410abbbafc02acf84114946e7fc6f600f35753b68c40c7649f78b76a55200dbda2174b070792da13ccfcdb5f1cb57b2a81bfeadfdd246005b4ed319e5.json"
+  data-offline-search-index-json-src="../../offline-search-index.a4e451601e6d90b78488f264eaea6ab372d647e293f5d5cf96156d263c5d033ad02c2df06eb1f1f61f31020f58ed5923c4a4b4c5be7f68372898d29ba200a303.json"
   data-offline-search-base-href="../../"
 >
 
@@ -376,7 +376,7 @@
     <li><a href="#considerations">Consideraciones</a>
       <ul>
         <li><a href="#argentina">Argentina</a></li>
-        <li><a href="#brasil">Brasil</a></li>
+        <li><a href="#brazil">Brasil</a></li>
         <li><a href="#chile">Chile</a></li>
         <li><a href="#colombia">Colombia</a></li>
         <li><a href="#Mexico">México</a></li>
@@ -475,7 +475,7 @@
 <tr>
 <td>Brasil</td>
 <td style="text-align:center"><code>BR</code></td>
-<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
@@ -553,8 +553,8 @@
 </tr>
 <tr>
 <td>Brasil</td>
-<td>10:00 am.</td>
-<td><strong>GMT-3</strong></td>
+<td>Real time.</td>
+<td></td>
 </tr>
 <tr>
 <td>Chile</td>
@@ -589,7 +589,7 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Importante</h4>
-<p class="alert-text">Cuando los Payouts ocurren en <strong>T+0</strong>, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como <em><strong>Pagado</strong></em> al día siguiente. Esto se aplica a todos los países excepto Brasil y México, donde la consola mostrará el estado como <em><strong>Pagado</strong></em> el mismo día.</p>
+<p class="alert-text">Cuando los Payouts ocurren en <strong>T+0</strong>, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como <em><strong>Pagado</strong></em> al día siguiente. Esto se aplica a todos los países excepto México, donde la consola mostrará el estado como <em><strong>Pagado</strong></em> el mismo día.</p>
 </div>
 
 <h2 id="considerations">Consideraciones</h2>
@@ -598,163 +598,18 @@
 <ul>
 <li>El CBU/CVU <strong>no puede</strong> exceder 22 caracteres.<br>Ejemplo: <code>0123456789012345678901</code>.</li>
 </ul>
-<h3 id="brasil">Brasil</h3>
+<h3 id="brazil">Brasil</h3>
 <ul>
-<li>La cuenta bancaria <strong>no puede</strong> exceder 15 caracteres.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Nombre del banco</th>
-<th>Código del banco</th>
-<th>Formato</th>
-<th>Ejemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Banco do Brasil</td>
-<td><code>001</code></td>
-<td><code>DDDDDDDDD-X</code> o <code>DDDDDDDDDX</code> donde <code>D</code> es un dígito y <code>X</code> es un dígito (número)  o una letra <code>X</code>. <br>El número de dígitos puede cambiar pero no puede exceder diez.</td>
-<td><code>1234567890</code><br><code>123456789-0</code><br><code>123456789-X</code><br><code>123456789X</code></td>
-</tr>
-<tr>
-<td>Santander</td>
-<td><code>033</code></td>
-<td><code>DDDDDDDD</code>, <code>DDDDDDDDD</code>, <code>DDDDDDDD-D</code>, donde <code>D</code> es un dígito.<br>El número de dígitos debe ser 8 o 9.</td>
-<td><code>12345678</code><br><code>12345678-9</code></td>
-</tr>
-<tr>
-<td>Banrisul</td>
-<td><code>041</code></td>
-<td><code>DDDDDDDDD-D</code> o <code>DDDDDDDDDD</code> donde <code>D</code> es un dígito.<br>El número de dígitos debe ser 10.</td>
-<td><code>1234567890</code><br><code>123456789-0</code></td>
-</tr>
-<tr>
-<td>Caixa</td>
-<td><code>104</code></td>
-<td><code>DDDDDDDDD-D</code> o <code>DDDDDDDDDDDDDD-D</code> donde <code>D</code> es un dígito.<br>El número de dígitos debe ser between 1 y 15.</td>
-<td><code>1234567890</code><br><code>123456789-0</code><br><code>12345678901234-5</code></td>
-</tr>
-<tr>
-<td>Bradesco</td>
-<td><code>237</code></td>
-<td><code>DDDDDDD-D</code> o <code>DDDDDDDD</code> donde <code>D</code> es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder ocho.</td>
-<td><code>12345678</code><br><code>1234567-8</code></td>
-</tr>
-<tr>
-<td>Mercado Pago</td>
-<td><code>323</code></td>
-<td><code>DDDDDDDDDD-D</code> o <code>DDDDDDDDDDD</code> donde <code>D</code> es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 11.</td>
-<td><code>12345678910</code><br><code>1234567891-0</code></td>
-</tr>
-<tr>
-<td>Itaú</td>
-<td><code>341</code></td>
-<td><code>DDDDD-D</code> o <code>DDDDDD</code> donde <code>D</code> es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 6.</td>
-<td><code>123456</code><br><code>12345-6</code></td>
-</tr>
-<tr>
-<td>Documento de Transferencias Bancarias Instantáneas (Llave Pix)</td>
-<td>-</td>
-<td><code>DDDDDDDDDDD</code> donde <code>D</code> es un dígito.<br>El número de dígitos para <strong>CPF</strong> debe ser 11 y para <strong>CNPJ</strong> debe ser 14.</td>
-<td><strong>CPF</strong><br><code>12345678912</code><br><code>123.456.789-01</code><br><strong>CNPJ</strong><br><code>12345678901234</code><br><code>12.345.678/9012-34</code></td>
-</tr>
-</tbody>
-</table>
+<li>
+<p>La llave Pix debe tener las siguientes características:</p>
 <ul>
-<li>La sucursal bancaria <strong>no puede</strong> exceder 4 dígitos. Excepto para Banco do Brasil.</li>
+<li>Cuando la llave Pix es el documento, el número de dígitos para <strong>CPF</strong> debe ser 11, y <strong>CNPJ</strong> debe ser 14. Ejemplo:<br><strong>CPF</strong>: <code>123.456.789-01</code> → <code>12345678901</code><br><strong>CNPJ</strong>: <code>12.345.678/9012-34</code> → <code>12345678901234</code>.</li>
+<li>Cuando la llave Pix es el correo electrónico, debe ser una dirección de correo electrónico válida.</li>
+<li>Cuando la llave Pix es el teléfono, el número de teléfono debe empezar por <code>+55</code>. Ejemplo: <code>+5521982485500</code>.</li>
+<li>Cuando la llave Pix es un número aleatorio, la llave debe ser un UUID generado aleatoriamente. Ejemplo: <code>123e4567-e89b-12d3-a456-426655440000</code>.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>Nombre del banco</th>
-<th>Código del banco</th>
-<th>Formato</th>
-<th>Excepciones</th>
-<th>Ejemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Banco do Brasil</td>
-<td><code>001</code></td>
-<td><code>DDDD-X </code> o <code>DDDDX</code> donde <code>D</code> es un dígito y <code>X</code> es un dígito (número)  o una letra <code>X</code>. <br>El número de dígitos puede cambiar pero no puede exceder cinco dígitos.</td>
-<td>No puede tener cuatros ceros y un dígito.</td>
-<td><code>1234-1</code><br><code>1234-X</code><br><code>12341</code><br><code>1234X</code></td>
-</tr>
-<tr>
-<td>Santander</td>
-<td><code>033</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>033</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banrisul</td>
-<td><code>041</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>-</td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Inter</td>
-<td><code>077</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>077</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Caixa</td>
-<td><code>104</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>001</code> / <code>013</code> / <code>023</code> / <code>104</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Original</td>
-<td><code>212</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>212</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Bradesco</td>
-<td><code>237</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>237</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Nu Pagamento</td>
-<td><code>260</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>260</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>PagSeguro</td>
-<td><code>290</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>290</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Itau</td>
-<td><code>341</code></td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>No puede ser <code>341</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Otros</td>
-<td>-</td>
-<td><code>DDDD</code> donde <code>D</code> es un dígito.</td>
-<td>-</td>
-<td><code>1234</code></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
 <h3 id="chile">Chile</h3>
 <ul>
 <li>La cuenta bancaria <strong>no puede</strong> exceder 16 caracteres. Formato: <code>DDDDDDDDDDDDDDDD</code> donde <code>D</code> es un dígito.

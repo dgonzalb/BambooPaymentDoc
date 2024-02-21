@@ -170,9 +170,9 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `destinationCurrency` | `string(3)` | Yes | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for **USD2L**_ and _**L2L**_ models, and the system will default to the currency of the destination country.<br>This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` parameter must be _USD_, and the `destinationCurrency` is optional.</li><li>For _**USD2USD**_, both `currency` and `destinationCurrency` must be _USD_.</li><li>For _**L2L**_, `currency` and `destinationCurrency` must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
-| `InstantPaymentData` → `PixDocument` | `string` | Yes<sup>1</sup> | The CPF/CNPJ number of the Payee configured as the PIX key.<br>_This parameter must have at least 11 characters._ |
+| `InstantPaymentData` → `PixDocument` | `string` | Yes<sup>1</sup> | The CPF/CNPJ number of the Payee configured as the PIX key.<br>_The number of digits for **CPF** must be 11, and **CNPJ** must be 14._ |
 | `InstantPaymentData` → `PixEmail` | `string` | Yes<sup>1</sup> | The email address of the Payee configured as the PIX key.<br>_This parameter must be a valid email address._ |
-| `InstantPaymentData` → `PixPhone` |`string` | Yes<sup>1</sup> | Phone number of the Payee configured as the PIX key. |
+| `InstantPaymentData` → `PixPhone` |`string` | Yes<sup>1</sup> | Phone number of the Payee configured as the PIX key.<br>_The phone number must start with `+55`._ |
 | `InstantPaymentData` → `PixRandom` | `string` | Yes<sup>1</sup> | The random key the Payee generated as the PIX key. |
 | `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
 | `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
@@ -322,74 +322,6 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
     "document": {
       "type": "CPF",
       "number": "54562271779"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
-<br>
-
-When using _Bank transfer_ you need to send the request as follows:
-
-**USD2L**
-
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "USD",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    },
-    "bankAccount": {
-      "number": "12345678901234-5",
-      "type": 1,
-      "codeBank": "104",
-      "branch": "1234"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
-<br>
-
-**L2L**
-
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "BRL",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    },
-    "bankAccount": {
-      "number": "12345678901234-5",
-      "type": 1,
-      "codeBank": "104",
-      "branch": "1234"
     }
   },
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"

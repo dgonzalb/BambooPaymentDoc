@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payouts/payouts-merchant-console/express.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-06-30T08:16:09-05:00" />
-<meta property="article:modified_time" content="2024-01-24T16:57:47-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-02-21T13:13:35-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Express Payouts">
 <meta itemprop="description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
-<meta itemprop="dateModified" content="2024-01-24T16:57:47-05:00" />
-<meta itemprop="wordCount" content="749">
+<meta itemprop="dateModified" content="2024-02-21T13:13:35-05:00" />
+<meta itemprop="wordCount" content="965">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Express Payouts"/>
 <meta name="twitter:description" content="With _**Express Payouts**_, you can effortlessly generate mass Payouts by simply uploading an Excel file containing your payout requests without API integration. This streamlined process allows you to send multiple payments with ease and accuracy efficiently.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.4a3d333410abbbafc02acf84114946e7fc6f600f35753b68c40c7649f78b76a55200dbda2174b070792da13ccfcdb5f1cb57b2a81bfeadfdd246005b4ed319e5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a4e451601e6d90b78488f264eaea6ab372d647e293f5d5cf96156d263c5d033ad02c2df06eb1f1f61f31020f58ed5923c4a4b4c5be7f68372898d29ba200a303.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -583,10 +583,22 @@
 <li>The feature supports a maximum of <strong>100</strong> records per file. If you need to include more, repeat the procedure for the remaining payouts.</li>
 <li>If you already have the template downloaded, it is not required to download it again.</li>
 <li>You can save the file using any name of your choice.</li>
+<li>When using PIX, you need to configure the PIX key of the payee as explained in the <a href="#additional-columns-for-pix">Additional fields for PIX</a> section.</li>
 </ul>
 </p>
 </div>
 
+<h4 id="additional-columns-for-pix">Additional columns for PIX</h4>
+<p>When configuring PIX as the transfer payout type (column <strong>Type</strong> set as <code>4</code>), you must include an additional column depending on the payee&rsquo;s PIX key. You can configure any of the following columns, setting them next to the <strong>Notification_Url</strong>, namely the <strong>T</strong> column in the Excel file:</p>
+<ul>
+<li><code>PixDocument</code>: add this column to configure the CPF/CNPJ number of the payee. The number of digits for <strong>CPF</strong> must be 11, and <strong>CNPJ</strong> must be 14.</li>
+<li><code>PixEmail</code>: add this column to configure the email address of the payee.</li>
+<li><code>PixPhone</code>: add this column to configure the phone number of the payee. The number must start with <code>+55</code>, and the cell must be configured with text format to allow the use of the plus sign.</li>
+<li><code>PixRandom</code>: add this column to configure the random key the payee generates.</li>
+</ul>
+<p>You must add one column per different key in your payouts. For example, if you have five payees, one uses an email address, one uses the phone number, two use the CPF/CNPJ number, and one uses the random key, you need to include the columns as follows:</p>
+<p><img src="../../../assets/Payouts/Payouts23_en.png" alt="PrintScreen"></p>
+<p>Do not include a column if it doesn&rsquo;t have a value.</p>
 <h3 id="step2">2. Select the account</h3>
 <p>The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.</p>
 <p>Open the <em><strong>Select the account</strong></em> dropdown list and select the account you want to use.</p>
@@ -613,7 +625,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    January 24, 2024
+    February 21, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
