@@ -41,7 +41,7 @@ Bamboo Payouts ofrece tres modelos que suponen una combinación de moneda de ori
 | País | Código ISO | Transferencia Local Bancaria | Transferencia instantánea | Billetera | USD2L | L2L | USD2USD |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Brasil | `BR` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Brasil | `BR` | | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | México  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
@@ -76,36 +76,14 @@ Cuando utilice Payouts, tenga en cuenta los requisitos específicos del país de
 
 * El CBU/CVU **no puede** exceder 22 caracteres.<br>Ejemplo: `0123456789012345678901`.
 
-### Brasil {#brasil}
+### Brasil {#brazil}
 
-* La cuenta bancaria **no puede** exceder 15 caracteres.
+* La llave Pix debe tener las siguientes características:
 
-| Nombre del banco | Código del banco | Formato | Ejemplo |
-|---|---|---|---|
-| Banco do Brasil | `001` | `DDDDDDDDD-X` o `DDDDDDDDDX` donde `D` es un dígito y `X` es un dígito (número)  o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder diez. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
-| Santander | `033` | `DDDDDDDD`, `DDDDDDDDD`, `DDDDDDDD-D`, donde `D` es un dígito.<br>El número de dígitos debe ser 8 o 9. | `12345678`<br>`12345678-9` |
-| Banrisul | `041` | `DDDDDDDDD-D` o `DDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos debe ser 10. | `1234567890`<br>`123456789-0` |
-| Caixa | `104` | `DDDDDDDDD-D` o `DDDDDDDDDDDDDD-D` donde `D` es un dígito.<br>El número de dígitos debe ser between 1 y 15. | `1234567890`<br>`123456789-0`<br>`12345678901234-5` |
-| Bradesco | `237` | `DDDDDDD-D` o `DDDDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder ocho. | `12345678`<br>`1234567-8` |
-| Mercado Pago | `323` | `DDDDDDDDDD-D` o `DDDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 11. | `12345678910`<br>`1234567891-0` |
-| Itaú | `341` | `DDDDD-D` o `DDDDDD` donde `D` es un dígito.<br>El número de dígitos puede cambiar pero no puede exceder 6. | `123456`<br>`12345-6` |
-| Documento de Transferencias Bancarias Instantáneas (Llave Pix) | - | `DDDDDDDDDDD` donde `D` es un dígito.<br>El número de dígitos para **CPF** debe ser 11 y para **CNPJ** debe ser 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
-
-* La sucursal bancaria **no puede** exceder 4 dígitos. Excepto para Banco do Brasil.
-
-| Nombre del banco | Código del banco | Formato | Excepciones | Ejemplo |
-|---|---|---|---|---|
-| Banco do Brasil | `001` | `DDDD-X ` o `DDDDX` donde `D` es un dígito y `X` es un dígito (número)  o una letra `X`. <br>El número de dígitos puede cambiar pero no puede exceder cinco dígitos. | No puede tener cuatros ceros y un dígito. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
-| Santander | `033` | `DDDD` donde `D` es un dígito. | No puede ser `033` | `1234` |
-| Banrisul | `041` | `DDDD` donde `D` es un dígito. | - | `1234` |
-| Banco Inter | `077` | `DDDD` donde `D` es un dígito. | No puede ser `077` | `1234` |
-| Caixa | `104` | `DDDD` donde `D` es un dígito. | No puede ser `001` / `013` / `023` / `104` | `1234` |
-| Banco Original | `212` | `DDDD` donde `D` es un dígito. | No puede ser `212` | `1234` |
-| Bradesco | `237` | `DDDD` donde `D` es un dígito. | No puede ser `237` | `1234` |
-| Banco Nu Pagamento | `260` | `DDDD` donde `D` es un dígito. | No puede ser `260` | `1234` |
-| PagSeguro | `290` | `DDDD` donde `D` es un dígito. | No puede ser `290` | `1234` |
-| Itau | `341` | `DDDD` donde `D` es un dígito. | No puede ser `341` | `1234` |
-| Otros | - | `DDDD` donde `D` es un dígito. | - | `1234` |
+  - Cuando la llave Pix es el documento, el número de dígitos para **CPF** debe ser 11, y **CNPJ** debe ser 14. Ejemplo:<br>**CPF**: `123.456.789-01` → `12345678901`<br>**CNPJ**: `12.345.678/9012-34` → `12345678901234`.
+  - Cuando la llave Pix es el correo electrónico, debe ser una dirección de correo electrónico válida.
+  - Cuando la llave Pix es el teléfono, el número de teléfono debe empezar por `+55`. Ejemplo: `+5521982485500`.
+  - Cuando la llave Pix es un número aleatorio, la llave debe ser un UUID generado aleatoriamente. Ejemplo: `123e4567-e89b-12d3-a456-426655440000`.
 
 ### Chile
 

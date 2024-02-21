@@ -41,7 +41,7 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 | Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Brazil | `BR` | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Brazil | `BR` | | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
@@ -78,34 +78,12 @@ When using the Payouts feature, consider the specific requirements for each paye
 
 ### Brazil
 
-* The bank account **cannot** exceed 15 characters.
+* The Pix Key must follow the following specifications:
 
-| Bank name | Bank code | Format | Example |
-|---|---|---|---|
-| Banco do Brasil | `001` | `DDDDDDDDD-X` or `DDDDDDDDDX` where `D` is a digit and `X` is a digit (number) or the letter `X`. <br>The number of digits may change, but it cannot exceed ten. | `1234567890`<br>`123456789-0`<br>`123456789-X`<br>`123456789X` |
-| Santander | `033` | `DDDDDDDD`, `DDDDDDDDD`, `DDDDDDDD-D`, where `D` is a digit.<br>The number of digits must be 8 or 9. | `12345678`<br>`12345678-9` |
-| Banrisul | `041` | `DDDDDDDDD-D` or `DDDDDDDDDD` where `D` is a digit.<br>The number of digits must be 10. | `1234567890`<br>`123456789-0` |
-| Caixa | `104` | `DDDDDDDDD-D` or `DDDDDDDDDDDDDD-D` where `D` is a digit.<br>The number of digits must be between 1 and 15. | `1234567890`<br>`123456789-0`<br>`12345678901234-5` |
-| Bradesco | `237` | `DDDDDDD-D` or `DDDDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed eight. | `12345678`<br>`1234567-8` |
-| Mercado Pago | `323` | `DDDDDDDDDD-D` or `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed 11. | `12345678910`<br>`1234567891-0` |
-| Itaú | `341` | `DDDDD-D` or `DDDDDD` where `D` is a digit.<br>The number of digits may change but cannot exceed 6. | `123456`<br>`12345-6` |
-| Instant Bank Transfer (Pix Key) Document | - | `DDDDDDDDDDD` where `D` is a digit.<br>The number of digits for **CPF** must be 11, and **CNPJ** must be 14. | **CPF**<br>`12345678912`<br>`123.456.789-01`<br>**CNPJ**<br>`12345678901234`<br>`12.345.678/9012-34` |
-
-* The bank branch **cannot** exceed 4 digits. Except for Banco do Brasil.
-
-| Bank name | Bank code | Format | Exceptions | Example |
-|---|---|---|---|---|
-| Banco do Brasil | `001` | `DDDD-X ` or `DDDDX` where `D` is a digit and `X` is a digit (number) or the letter `X`. <br>The number of digits may change, but cannot exceed five digits. | Can't have four zeros and a digit. | `1234-1`<br>`1234-X`<br>`12341`<br>`1234X` |
-| Santander | `033` | `DDDD` where `D` is a digit. | Cannot be `033` | `1234` |
-| Banrisul | `041` | `DDDD` where `D` is a digit. | - | `1234` |
-| Banco Inter | `077` | `DDDD` where `D` is a digit. | Cannot be `077` | `1234` |
-| Caixa | `104` | `DDDD` where `D` is a digit. | Cannot be `001` / `013` / `023` / `104` | `1234` |
-| Banco Original | `212` | `DDDD` where `D` is a digit. | Cannot be `212` | `1234` |
-| Bradesco | `237` | `DDDD` where `D` is a digit. | Cannot be `237` | `1234` |
-| Banco Nu Pagamento | `260` | `DDDD` where `D` is a digit. | Cannot be `260` | `1234` |
-| PagSeguro | `290` | `DDDD` where `D` is a digit. | Cannot be `290` | `1234` |
-| Itau | `341` | `DDDD` where `D` is a digit. | Cannot be `341` | `1234` |
-| Others | - | `DDDD` where `D` is a digit. | - | `1234` |
+  - When the Pix Key is the document, the number of digits for **CPF** must be 11, and **CNPJ** must be 14. Example:<br>**CPF**: `123.456.789-01` → `12345678901`<br>**CNPJ**: `12.345.678/9012-34` → `12345678901234`.
+  - When the Pix Key is the email, it must be a valid email address.
+  - When the Pix Key is the phone, the phone number must start with `+55`. Example: `+5521982485500`.
+  - When the Pix Key is a random number, the key must be a randomly generated UUID. Example: `123e4567-e89b-12d3-a456-426655440000`.
 
 ### Chile
 

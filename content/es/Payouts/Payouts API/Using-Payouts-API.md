@@ -170,9 +170,9 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `destinationCurrency` | `string(3)` | Sí | Código ISO de la moneda en la que el beneficiario recibirá el pago. Este parámetro no es necesario para el modelo _**USD2L**_, y el sistema utilizará por defecto la moneda del país de destino cuando no se envíe.<br>Esta moneda debe cumplir el [modelo]({{< ref  Payout-Concepts.md >}}#payout-models) de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para _**USD2L**_, el parámetro `currency` debe ser _USD_, y el parámetro `destinationCurrency` es optativo.</li><li>Para _**USD2USD**_, tanto `currency` como `destinationCurrency` deben ser _USD_.</li><li>Para _**L2L**_, `currency` y `destinationCurrency` deben ser la moneda del país elegido.</li></ul><br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Sí | Identificador único del Payout definido por usted.<br>_Asegúrese de que sea único_. |
 | `type` | `integer` | Sí | Tipo de Payout. Asigne cualquiera de los siguientes valores:<br><ul style="margin-bottom: initial;"><li>`1` para Efectivo</li><li>`2` para Transferencia Bancaria</li><li>`3` para Wallet</li><li>`4` para Transferencias Bancarias Instantáneas en Brasil</li></ul>|
-| `InstantPaymentData` → `PixDocument` | `string` | Sí<sup>1</sup> | El número CPF/CNPJ del beneficiario configurado como clave PIX.<br>_Este parámetro debe tener al menos 11 caracteres._ |
-| `InstantPaymentData` → `PixEmail` | `string` | Sí<sup>1</sup> | La dirección de correo electrónico del beneficiario configurado como clave PIX.<br>_This parameter must be a valid email address._ |
-| `InstantPaymentData` → `PixPhone` |`string` | Sí<sup>1</sup> | El número de teléfono del beneficiario configurado como clave PIX. |
+| `InstantPaymentData` → `PixDocument` | `string` | Sí<sup>1</sup> | El número CPF/CNPJ del beneficiario configurado como clave PIX.<br>_El número de dígitos para **CPF** debe ser 11 y **CNPJ** debe ser 14._ |
+| `InstantPaymentData` → `PixEmail` | `string` | Sí<sup>1</sup> | La dirección de correo electrónico del beneficiario configurado como clave PIX.<br>_Este parámetro debe ser una dirección de correo electrónico válida._ |
+| `InstantPaymentData` → `PixPhone` |`string` | Sí<sup>1</sup> | El número de teléfono del beneficiario configurado como clave PIX.<br>_El número debe empezar por `+55`._ |
 | `InstantPaymentData` → `PixRandom` | `string` | Sí<sup>1</sup> | La clave aleatoria que el beneficiario ha generado como clave PIX. |
 | `notification_Url` | `string` | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
 | `payee` → `FirstName` | `string` | Sí | Nombre del Beneficiario. | 
@@ -324,74 +324,6 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
     "document": {
       "type": "CPF",
       "number": "54562271779"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
-<br>
-
-Cuando utilice _Transferencias Bancarias_, debe enviar el request así:
-
-**USD2L**
-
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "USD",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    },
-    "bankAccount": {
-      "number": "12345678901234-5",
-      "type": 1,
-      "codeBank": "104",
-      "branch": "1234"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
-<br>
-
-**L2L**
-
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "BRL",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    },
-    "bankAccount": {
-      "number": "12345678901234-5",
-      "type": 1,
-      "codeBank": "104",
-      "branch": "1234"
     }
   },
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
