@@ -56,7 +56,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 | Country | Maximum time<sup>*</sup> | Time zone |
 |---|---|---|
 | Argentina | 10:00 am. | **GMT-3** |
-| Brazil | 10:00 am. | **GMT-3** |
+| Brazil | Real time. | |
 | Chile  | Real time. | |
 | Colombia | Real time. | |
 | Mexico  | 10:00 am. | **GMT-6** |
@@ -66,7 +66,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 <sup>*</sup> _Time displayed in local time in Uruguay_.
 
 {{% alert title="Important" color="info"%}}
-When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Brazil and Mexico, where the console will display the status as _**Paid**_ on the same day.
+When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Mexico, where the console will display the status as _**Paid**_ on the same day.
 {{% /alert %}}
 
 ## Considerations

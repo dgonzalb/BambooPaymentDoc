@@ -170,6 +170,10 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `destinationCurrency` | `string(3)` | Yes | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for **USD2L**_ and _**L2L**_ models, and the system will default to the currency of the destination country.<br>This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` parameter must be _USD_, and the `destinationCurrency` is optional.</li><li>For _**USD2USD**_, both `currency` and `destinationCurrency` must be _USD_.</li><li>For _**L2L**_, `currency` and `destinationCurrency` must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_It must be unique_. |
 | `type` | `integer` | Yes | Payout type. Set any of the following values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfer in Brazil</li></ul>|
+| `InstantPaymentData` → `PixDocument` | `string` | Yes<sup>1</sup> | The CPF/CNPJ number of the Payee configured as the PIX key.<br>_This parameter must have at least 11 characters._ |
+| `InstantPaymentData` → `PixEmail` | `string` | Yes<sup>1</sup> | The email address of the Payee configured as the PIX key.<br>_This parameter must be a valid email address._ |
+| `InstantPaymentData` → `PixPhone` |`string` | Yes<sup>1</sup> | Phone number of the Payee configured as the PIX key. |
+| `InstantPaymentData` → `PixRandom` | `string` | Yes<sup>1</sup> | The random key the Payee generated as the PIX key. |
 | `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
 | `payee` → `FirstName` | `string` | Yes | First Name of the Payee. | 
 | `payee` → `lastName `| `string` | Yes | Last Name of the Payee. | 
@@ -178,13 +182,13 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `address` | `string` | No | Address of the Payee. | 
 | `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](../payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
-| `payee` → `bankaccount` → `number` | `string` | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
-| `payee` → `bankaccount` → `type` | `integer` | Yes<sup>*</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>*</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](#get-bank-list). Alternatively, [find the bank list here](../payouts-api/variables.html#bank-codes). |  
+| `payee` → `bankaccount` → `number` | `string` | Yes<sup>2</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `type` | `integer` | Yes<sup>2</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
+| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>2</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](#get-bank-list). Alternatively, [find the bank list here](../payouts-api/variables.html#bank-codes). |  
 | `payee` → `bankaccount` → `branch` | `string` | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
 
-
-<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
+<sup>1</sup> _Applies only to Brazil using Instant Bank Transfer. Otherwise, the object_ `payee.InstantPaymentData` _and its parameters must not be present in the request._<br>
+<sup>2</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
 #### Request example
@@ -276,6 +280,9 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
+  "InstantPaymentData": {
+    "PixEmail":"tcosta@mail.com" // Can also be PixDocument, PixPhone, or PixRandom
+  },
   "payee": {
     "firstName": "Tiago",
     "lastName": "Costa",
@@ -303,6 +310,9 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
+  "InstantPaymentData": {
+    "PixEmail":"tcosta@mail.com" // Can also be PixDocument, PixPhone, or PixRandom
+  },
   "payee": {
     "firstName": "Tiago",
     "lastName": "Costa",

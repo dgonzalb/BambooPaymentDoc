@@ -170,6 +170,10 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `destinationCurrency` | `string(3)` | Sí | Código ISO de la moneda en la que el beneficiario recibirá el pago. Este parámetro no es necesario para el modelo _**USD2L**_, y el sistema utilizará por defecto la moneda del país de destino cuando no se envíe.<br>Esta moneda debe cumplir el [modelo]({{< ref  Payout-Concepts.md >}}#payout-models) de su cuenta.<br>Por ejemplo:<br><ul style="margin-bottom: initial;"><li>Para _**USD2L**_, el parámetro `currency` debe ser _USD_, y el parámetro `destinationCurrency` es optativo.</li><li>Para _**USD2USD**_, tanto `currency` como `destinationCurrency` deben ser _USD_.</li><li>Para _**L2L**_, `currency` y `destinationCurrency` deben ser la moneda del país elegido.</li></ul><br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Sí | Identificador único del Payout definido por usted.<br>_Asegúrese de que sea único_. |
 | `type` | `integer` | Sí | Tipo de Payout. Asigne cualquiera de los siguientes valores:<br><ul style="margin-bottom: initial;"><li>`1` para Efectivo</li><li>`2` para Transferencia Bancaria</li><li>`3` para Wallet</li><li>`4` para Transferencias Bancarias Instantáneas en Brasil</li></ul>|
+| `InstantPaymentData` → `PixDocument` | `string` | Sí<sup>1</sup> | El número CPF/CNPJ del beneficiario configurado como clave PIX.<br>_Este parámetro debe tener al menos 11 caracteres._ |
+| `InstantPaymentData` → `PixEmail` | `string` | Sí<sup>1</sup> | La dirección de correo electrónico del beneficiario configurado como clave PIX.<br>_This parameter must be a valid email address._ |
+| `InstantPaymentData` → `PixPhone` |`string` | Sí<sup>1</sup> | El número de teléfono del beneficiario configurado como clave PIX. |
+| `InstantPaymentData` → `PixRandom` | `string` | Sí<sup>1</sup> | La clave aleatoria que el beneficiario ha generado como clave PIX. |
 | `notification_Url` | `string` | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
 | `payee` → `FirstName` | `string` | Sí | Nombre del Beneficiario. | 
 | `payee` → `lastName `| `string` | Sí | Apellido del Beneficiario. | 
@@ -178,13 +182,14 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `payee` → `address` | `string` | No | Dirección del Beneficiario. | 
 | `payee` → `document` → `type` | `string` | Sí | Tipo de documento del Beneficiario.<br>[Encuentre la lista de documentos aquí](../payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Sí | Número de documento del Beneficiario. | 
-| `payee` → `bankaccount` → `number` | `string` | Sí<sup>*</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
-| `payee` → `bankaccount` → `type` | `integer` | Sí<sup>*</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>*</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](#get-bank-list). También, [puede encontrar el listado de bancos](../payouts-api/variables.html#bank-codes). |  
+| `payee` → `bankaccount` → `number` | `string` | Sí<sup>2</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
+| `payee` → `bankaccount` → `type` | `integer` | Sí<sup>2</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
+| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>2</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](#get-bank-list). También, [puede encontrar el listado de bancos](../payouts-api/variables.html#bank-codes). |  
 | `payee` → `bankaccount` → `branch` | `string` | No | Código de la sucursal del banco del Beneficiario. Este campo solo aplica para Brasil y es obligatorio cuando utilice transferencia bancaria como tipo de Payout. | 
 
 
-<sup>*</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, el objeto_ `payee.bankaccount` _y sus parámetros no deben estar presentes en el request._
+<sup>1</sup> _Sólo aplica para Brasil usando Transferencia Bancaria Instantánea. En caso contrario, el objeto_ `payee.InstantPaymentData` _y sus parámetros no deben estar presentes en el request._<br>
+<sup>2</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, el objeto_ `payee.bankaccount` _y sus parámetros no deben estar presentes en el request._
 
 
 #### Ejemplo del Request {#request-example}
@@ -277,6 +282,9 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
+  "InstantPaymentData": {
+    "PixEmail":"tcosta@mail.com" // También puede ser PixDocument, PixPhone o PixRandom
+  },
   "payee": {
     "firstName": "Tiago",
     "lastName": "Costa",
@@ -304,6 +312,9 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
   "reason": "string",
   "reference": "PayOut34",
   "type": 4,
+  "InstantPaymentData": {
+    "PixEmail":"tcosta@mail.com" // También puede ser PixDocument, PixPhone o PixRandom
+  },
   "payee": {
     "firstName": "Tiago",
     "lastName": "Costa",

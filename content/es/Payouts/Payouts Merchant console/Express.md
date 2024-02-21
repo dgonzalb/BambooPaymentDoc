@@ -62,7 +62,22 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 * La funcionalidad soporta un máximo de **100** registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.
 * Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.
 * Puede guardar el archivo utilizando cualquier nombre.
+* Cuando se utiliza PIX, es necesario configurar la clave PIX del beneficiario como se explica en la sección [Campos adicionales para PIX](#additional-columns-for-pix).
 {{% /alert %}}
+
+#### Columnas adicionales para PIX
+Al configurar PIX como tipo de pago del Payout (columna **Type** con el valor `4`), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna **Notification_Url**, es decir, la columna **T** del archivo Excel:
+
+* `PixDocument`: agregue esta columna para configurar el número CPF/CNPJ del beneficiario.
+* `PixEmail`: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.
+* `PixPhone`: agregue esta columna para configurar el número de teléfono del beneficiario.
+* `PixRandom`: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.
+
+Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:
+
+![PrintScreen](/assets/Payouts/Payouts23_en.png)
+
+No incluya una columna si no tiene un valor.
 
 ### 2. Seleccionar la cuenta {#step2}
 El segundo paso involucra escoger la cuenta de la que se debitarán los montos de los Payouts. Asegúrese de que la cuenta seleccionada tenga saldo suficiente para procesarlos todos.

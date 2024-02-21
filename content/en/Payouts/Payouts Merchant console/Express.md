@@ -62,7 +62,22 @@ Once you have the Excel file, you can fill it with the information of the Payout
 * The feature supports a maximum of **100** records per file. If you need to include more, repeat the procedure for the remaining payouts.
 * If you already have the template downloaded, it is not required to download it again.
 * You can save the file using any name of your choice.
+* When using PIX, you need to configure the PIX key of the payee as explained in the [Additional fields for PIX](#additional-columns-for-pix) section.
 {{% /alert %}}
+
+#### Additional columns for PIX
+When configuring PIX as the transfer payout type (column **Type** set as `4`), you must include an additional column depending on the payee's PIX key. You can configure any of the following columns, setting them next to the **Notification_Url**, namely the **T** column in the Excel file:
+
+* `PixDocument`: add this column to configure the CPF/CNPJ number of the payee.
+* `PixEmail`: add this column to configure the email address of the payee.
+* `PixPhone`: add this column to configure the phone number of the payee.
+* `PixRandom`: add this column to configure the random key the payee generates.
+
+You must add one column per different key in your payouts. For example, if you have five payees, one uses an email address, one uses the phone number, two use the CPF/CNPJ number, and one uses the random key, you need to include the columns as follows:
+
+![PrintScreen](/assets/Payouts/Payouts23_en.png)
+
+Do not include a column if it doesn't have a value.
 
 ### 2. Select the account {#step2}
 The second step involves choosing the account that will debit the Payout amounts. Ensure that the selected account has a sufficient balance to process all payouts.
