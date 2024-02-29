@@ -25,13 +25,14 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | Sí | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `AddressType` | `string` | Sí | Tipo de dirección. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |

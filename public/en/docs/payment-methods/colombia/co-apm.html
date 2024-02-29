@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with PSE, Cash and Nequi.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2024-01-30T14:27:59-05:00" />
-<meta itemprop="wordCount" content="2751">
+<meta itemprop="wordCount" content="2761">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with PSE, Cash and Nequi.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.a4e451601e6d90b78488f264eaea6ab372d647e293f5d5cf96156d263c5d033ad02c2df06eb1f1f61f31020f58ed5923c4a4b4c5be7f68372898d29ba200a303.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.38e545e9f8744997fa7e1daf3a9f93c29c7c48558875bb57150e4c23c70e48e18c3d4cfb45d4ae9082e2b883217e877381ea2a8d0fca4383c347ff65b2ca5422.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1017,44 +1017,50 @@
 <tr>
 <td><code>Customer</code> → <code>DocumentTypeId</code></td>
 <td style="text-align:center"><code>numeric</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../../en/docs/payment-methods/colombia.html#document-types">Document types table</a> to see the possible values.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocNumber</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s Document Number.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>PhoneNumber</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s phone number.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s Country.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s State.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s City.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 <td>Customer&rsquo;s Address Detail.</td>
+</tr>
+<tr>
+<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressType</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Type of address.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
