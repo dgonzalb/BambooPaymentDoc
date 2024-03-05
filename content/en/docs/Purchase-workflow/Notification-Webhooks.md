@@ -44,7 +44,6 @@ The WebHook service is a REST Service that must process a request with the follo
 }
 ```
 
-
 ## Technical requirements
 The implementation of this service depends on the platform and language chosen by the merchant.
 
