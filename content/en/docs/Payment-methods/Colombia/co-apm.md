@@ -25,13 +25,14 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | Yes | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `AddressType` | `string` | Yes | Type of address. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Callback URL when the purchase status is `Rejected`. |

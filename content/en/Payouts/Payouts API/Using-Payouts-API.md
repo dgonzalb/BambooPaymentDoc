@@ -32,7 +32,7 @@ var hash = hexHash.toString(CryptoJS.enc.Hex);
 ```
 
 ## API methods
-The Payouts API offers three primary methods that you can use when requesting Payouts.
+The Payouts API offers four primary methods that you can use when requesting Payouts.
 
 * [Get Bank list](#get-bank-list)
 * [Payout Preview](#payout-preview)

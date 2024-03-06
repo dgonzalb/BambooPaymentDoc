@@ -46,7 +46,7 @@ Bamboo Payouts ofrece tres modelos que suponen una combinación de moneda de ori
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | México  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Perú  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 
 ## Horarios de corte {#cut-off-schedule}
 Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de lo contrario, procesaremos el pago el siguiente día hábil.

@@ -24,27 +24,7 @@ El servicio WebHook es un servicio REST que debe procesar una solicitud con las 
 |**Authentication:** | Firma en el encabezado. |
 |**Response:** | Código HTTP. |
 
-### Ejemplo de notificación {#notification-example}
-
-```json
-{
-  "PurchaseId": 184098,
-  "UniqueId": null,
-  "Order": "3733689",
-  "Amount": 10000,
-  "Installments": 1,
-  "Currency": "COP",
-  "MetadataOut": {},
-  "Transaction": {
-    "TransactionStatusId": 3,
-    "Status": "Approved",
-    "Description": null,
-    "ApprovalCode": "Ok"
-  }
-}
-```
-
-## Requisitos técnicos {#technical-requirements}
+## Requerimientos técnicos {#technical-requirements}
 La implementación de este servicio depende de la plataforma y el lenguaje elegido por el comercio.
 
 Los únicos requisitos técnicos son:
@@ -112,3 +92,111 @@ El webhook utiliza una configuración de cinco reintentos para fallos espaciados
 * El quinto reintento se realiza después de seis horas.
 
 Para reintentos adicionales, póngase en contacto con nuestro equipo de asistencia.
+
+## Tipos de webhooks {#webhook-types}
+Nuestro servicio de webhooks le permite elegir entre dos tipos de webhooks, cada uno diseñado para atender necesidades específicas. En las secciones siguientes se ofrece información detallada sobre cada clase, lo que le permitirá elegir acertadamente.
+
+{{% alert title="Info" color="info"%}}
+Póngase en contacto con nosotros para activar el tipo de webhook que mejor se adapte a sus necesidades.
+{{% /alert %}}
+
+### Webhook de Compras {#purchase-webhook}
+El Webhook de Compras es el tipo más básico de nuestro servicio. A través de él, podemos notificar el estado final (_Aprobado_ o _Rechazado_) de las compras con información básica relacionada con las mismas.
+
+#### Parámetros de la notificación {#notification-parameters}
+
+| Parámetro | Tipo | Descripción |
+|---|---|---|
+| `PurchaseId` | `integer` | Identificador de la compra. |
+| `UniqueId` | `string` | [Identificador único]({{< ref "Concepts.md">}}#UniqueID) definido para la compra. |
+| `Order` | `string` | Número de orden generado por el comercio. |
+| `Amount` | `number` | Monto de la compra. |
+| `Installments` | `integer` | Este parámetro se refiere al número de pagos en que se divide una compra con tarjeta de crédito. |
+| `Currency` | `string` | Moneda de la compra, según el estándar ISO-4217. |
+| `MetadataOut` | `object` | Campos adicionales devueltos por cada método de pago o entidad adquirente. |
+| `Transaction` → `TransactionStatusId` | `integer` | Identificador interno del estado de la transacción. |
+| `Transaction` → `Status` | `string` | Estado actual de la transacción. |
+| `Transaction` → `Description` | `string` | Descripción del resultado de la transacción. |
+| `Transaction` → `ApprovalCode` | `string` | Código de aprobación devuelto por el método de pago. |
+
+#### Ejemplo de notificación {#notification-example}
+
+```json
+{
+  "PurchaseId": 184098,
+  "UniqueId": null,
+  "Order": "3733689",
+  "Amount": 10000,
+  "Installments": 1,
+  "Currency": "COP",
+  "MetadataOut": {},
+  "Transaction": {
+    "TransactionStatusId": 3,
+    "Status": "Approved",
+    "Description": null,
+    "ApprovalCode": "Ok"
+  }
+}
+```
+
+### Webhook de Transacciones {#transaction-webhook}
+El webhook de transacciones es un tipo de webhook más avanzado que no sólo puede notificarle las compras, sino también mantenerle informado sobre el estado final de cualquier transacción. Por ejemplo, si utiliza reembolsos asíncronos, podemos informarle si el reembolso ha sido aprobado o rechazado.
+
+#### Parámetros de la notificación {#notification-parameters-1}
+
+| Parámetro | Tipo | Descripción |
+|---|---|---|
+| `TransactionId` | `integer` | Identificador de la transacción. |
+| `TransactionType` | `string` | Tipo de transacción de la notificación. Valores posibles:<ul style="margin-bottom: initial;"><li>Purchase</li><li>Refund</li></ul> |
+| `TransactionStatusId` | `integer` | Identificador interno del estado de la transacción. |
+| `Status` | `string` | Estado actual de la transacción. |
+| `ErrorCode` | `string` | Posible código de error generado en la transacción. |
+| `Amount` | `number` | Monto de la transacción. |
+| `Currency` | `string` | Moneda de la compra, según el estándar ISO-4217. |
+| `Installments` | `integer` | Este parámetro se refiere al número de pagos en que se divide una compra con tarjeta de crédito. |
+| `UniqueId` | `string` | [Identificador único]({{< ref "Concepts.md">}}#UniqueID) definido para la compra. |
+| `Description` | `string` | Descripción del resultado de la transacción. |
+| `UrlNotify` | `string` | URL del Webhook. |
+| `TargetCountryIso` | `string` | Este parámetro indica el país donde se procesó la transacción en formato `ISO-3166-1`. |
+| `Created` | `date` | Fecha y hora de creación de la transacción.<br>Formato de fecha _**ISO-8601**_. |
+| `Customer` | `object` | Proporciona los datos de la persona que realizó la transacción.  |
+| `PaymentMedia` | `object` | Información sobre el medio de pago utilizado en la Compra. |
+
+#### Ejemplo de notificación {#notification-example-1}
+
+```json
+{
+  "TransactionId": 379245,
+  "TransactionType": "Purchase",
+  "TransactionStatusId": 4,
+  "Status": "Rejected",
+  "ErrorCode": "TR301",
+  "Amount": 5000,
+  "Currency": "UYU",
+  "Installments": "1",
+  "UniqueId": "",
+  "Order": "1",
+  "Description": "Description",
+  "UrlNotify": "https://dummystore.com/checkout/notifications",
+  "TargetCountryIso": "UY",
+  "Created": "2024-02-07T18:10:45.667",
+  "MetadataOut": { },
+  "Customer": {
+    "CustomerId": 321559,
+    "Email": "score-100@antifraud.bampoopayment.com",
+    "DocumentTypeId": 1,
+    "DocNumber": "52960268",
+    "LastName": "Cardenas Contreras",
+    "FirstName": "Rocio"
+  },
+  "PaymentMedia": {
+    "PaymentMediaId": 2,
+    "Brand": "MasterCard",
+    "PaymentMediaType": "CreditCard",
+    "IssuerBank": "ADMINISTRADORA DE TARJETAS DE CREDITO, (A.T.C.), S.A.",
+    "Bin": "558900",
+    "Last4": "0001",
+    "Owner": "JOHN DOE"
+  }
+}
+```
