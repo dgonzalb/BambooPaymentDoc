@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/notification-webhooks.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-08-02T08:41:05-05:00" />
-<meta property="article:modified_time" content="2023-09-08T15:36:53-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-03-06T15:26:08-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Webhooks">
 <meta itemprop="description" content="You can implement a service to receive and process notifications sent from the Bamboo Payment systems.
 "><meta itemprop="datePublished" content="2023-08-02T08:41:05-05:00" />
-<meta itemprop="dateModified" content="2023-09-08T15:36:53-05:00" />
-<meta itemprop="wordCount" content="461">
+<meta itemprop="dateModified" content="2024-03-06T15:26:08-05:00" />
+<meta itemprop="wordCount" content="918">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Webhooks"/>
 <meta name="twitter:description" content="You can implement a service to receive and process notifications sent from the Bamboo Payment systems.
@@ -145,7 +145,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e64b15498426e85054e23f833e3b10ace2e9e0c24b8a378d54ebfcc84eee429830ddb319c8099e87e312d103e2edb0534c9a7ea0c1b38a93ef7e3c80b72842ef.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -893,11 +893,7 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#webhook-service-specifications">WebHook Service specifications</a>
-      <ul>
-        <li><a href="#notification-example">Notification example</a></li>
-      </ul>
-    </li>
+    <li><a href="#webhook-service-specifications">WebHook Service specifications</a></li>
     <li><a href="#technical-requirements">Technical requirements</a></li>
     <li><a href="#signature-validation">Signature validation</a>
       <ul>
@@ -905,6 +901,12 @@
       </ul>
     </li>
     <li><a href="#retry-management-for-errors">Retry management for errors.</a></li>
+    <li><a href="#webhook-types">Webhook types</a>
+      <ul>
+        <li><a href="#purchase-webhook">Purchase Webhook</a></li>
+        <li><a href="#transaction-webhook">Transaction Webhook</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -989,23 +991,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="notification-example">Notification example</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">184098</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;UniqueId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;3733689&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Ok&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="technical-requirements">Technical requirements</h2>
+<h2 id="technical-requirements">Technical requirements</h2>
 <p>The implementation of this service depends on the platform and language chosen by the merchant.</p>
 <p>The only technical requirements are:</p>
 <ul>
@@ -1065,7 +1051,221 @@ The received signature in the webhook must match the signature generated with th
 <li>The fifth retry is attempted after six hours.</li>
 </ul>
 <p>For further retries, please get in touch with our support team.</p>
+<h2 id="webhook-types">Webhook types</h2>
+<p>Our webhook service allows you to choose from two types of webhooks, each designed to cater to specific needs. The following sections provide detailed information about each class, empowering you to choose wisely.</p>
 
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">Contact us to enable the webhook type that best suits your requirements.</p>
+</div>
+
+<h3 id="purchase-webhook">Purchase Webhook</h3>
+<p>The Purchase Webhook is the most basic type of our service. Through it, we can notify the final status (<em>Approved</em> or <em>Rejected</em>) of the purchases with basic information related to them.</p>
+<h4 id="notification-parameters">Notification parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PurchaseId</code></td>
+<td><code>integer</code></td>
+<td>Purchase identifier.</td>
+</tr>
+<tr>
+<td><code>UniqueId</code></td>
+<td><code>string</code></td>
+<td><a href="../../../en/docs/getting-started/concepts.html#UniqueID">Unique Identifier</a> defined for the Purchase.</td>
+</tr>
+<tr>
+<td><code>Order</code></td>
+<td><code>string</code></td>
+<td>Order number generated by the merchant.</td>
+</tr>
+<tr>
+<td><code>Amount</code></td>
+<td><code>number</code></td>
+<td>Amount of the purchase.</td>
+</tr>
+<tr>
+<td><code>Installments</code></td>
+<td><code>integer</code></td>
+<td>This parameter refers to the number of payments that a credit card purchase is divided into.</td>
+</tr>
+<tr>
+<td><code>Currency</code></td>
+<td><code>string</code></td>
+<td>Currency of the purchase, according to ISO-4217.</td>
+</tr>
+<tr>
+<td><code>MetadataOut</code></td>
+<td><code>object</code></td>
+<td>Additional fields returned by each payment method or acquirer.</td>
+</tr>
+<tr>
+<td><code>Transaction</code> → <code>TransactionStatusId</code></td>
+<td><code>integer</code></td>
+<td>Internal identifier of the transaction status.</td>
+</tr>
+<tr>
+<td><code>Transaction</code> → <code>Status</code></td>
+<td><code>string</code></td>
+<td>Current status of the transaction.</td>
+</tr>
+<tr>
+<td><code>Transaction</code> → <code>Description</code></td>
+<td><code>string</code></td>
+<td>Description of the outcome of the transaction.</td>
+</tr>
+<tr>
+<td><code>Transaction</code> → <code>ApprovalCode</code></td>
+<td><code>string</code></td>
+<td>Approval code returned by the payment method.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="notification-example">Notification example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">184098</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;UniqueId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;3733689&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Ok&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="transaction-webhook">Transaction Webhook</h3>
+<p>The transaction webhook is a more advanced type of webhook that can not only notify you about purchases but also keep you informed about the final status of any transaction. For instance, if you&rsquo;re using asynchronous refunds, we can let you know whether the refund was approved or rejected.</p>
+<h4 id="notification-parameters-1">Notification parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TransactionId</code></td>
+<td><code>integer</code></td>
+<td>Transaction identifier.</td>
+</tr>
+<tr>
+<td><code>TransactionType</code></td>
+<td><code>string</code></td>
+<td>Transaction type of the notification. Possible values:<ul style="margin-bottom: initial;"><li>Purchase</li><li>Refund</li></ul></td>
+</tr>
+<tr>
+<td><code>TransactionStatusId</code></td>
+<td><code>integer</code></td>
+<td>Internal identifier of the transaction status.</td>
+</tr>
+<tr>
+<td><code>Status</code></td>
+<td><code>string</code></td>
+<td>Current status of the transaction.</td>
+</tr>
+<tr>
+<td><code>ErrorCode</code></td>
+<td><code>string</code></td>
+<td>Possible Error code generated in the transaction.</td>
+</tr>
+<tr>
+<td><code>Amount</code></td>
+<td><code>number</code></td>
+<td>Amount of the transaction.</td>
+</tr>
+<tr>
+<td><code>Installments</code></td>
+<td><code>integer</code></td>
+<td>This parameter refers to the number of payments that a credit card purchase is divided into.</td>
+</tr>
+<tr>
+<td><code>UniqueId</code></td>
+<td><code>string</code></td>
+<td><a href="../../../en/docs/getting-started/concepts.html#UniqueID">Unique Identifier</a> defined for the Purchase.</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td><code>string</code></td>
+<td>Description of the outcome of the transaction.</td>
+</tr>
+<tr>
+<td><code>UrlNotify</code></td>
+<td><code>string</code></td>
+<td>URL of the Webhook.</td>
+</tr>
+<tr>
+<td><code>TargetCountryIso</code></td>
+<td><code>string</code></td>
+<td>This parameter indicates the country where the transaction was processed in <code>ISO-3166-1</code> format.</td>
+</tr>
+<tr>
+<td><code>Created</code></td>
+<td><code>date</code></td>
+<td>Date and time when the transaction was created.<br>Date format <em><strong>ISO-8601</strong></em>.</td>
+</tr>
+<tr>
+<td><code>Customer</code></td>
+<td><code>object</code></td>
+<td>Provides the data of the person who performed the transaction.</td>
+</tr>
+<tr>
+<td><code>PaymentMedia</code></td>
+<td><code>object</code></td>
+<td>Information on the payment method used in the Purchase.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="notification-example-1">Notification example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">379245</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TransactionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Purchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rejected&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;TR301&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">5000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;UniqueId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;UrlNotify&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/notifications&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;TargetCountryIso&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-02-07T18:10:45.667&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">321559</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;score-100@antifraud.bampoopayment.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;52960268&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cardenas Contreras&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rocio&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;PaymentMedia&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ADMINISTRADORA DE TARJETAS DE CREDITO, (A.T.C.), S.A.&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;558900&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;JOHN DOE&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1075,7 +1275,7 @@ The received signature in the webhook must match the signature generated with th
 <div class="left-element">
     <b>Last modified</b>
     
-    September 8, 2023
+    March 6, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

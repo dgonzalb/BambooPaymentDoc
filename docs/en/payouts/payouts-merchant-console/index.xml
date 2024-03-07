@@ -295,9 +295,9 @@
 &lt;h4 id=&#34;additional-columns-for-pix&#34;&gt;Additional columns for PIX&lt;/h4&gt;
 &lt;p&gt;When configuring PIX as the transfer payout type (column &lt;strong&gt;Type&lt;/strong&gt; set as &lt;code&gt;4&lt;/code&gt;), you must include an additional column depending on the payee&amp;rsquo;s PIX key. You can configure any of the following columns, setting them next to the &lt;strong&gt;Notification_Url&lt;/strong&gt;, namely the &lt;strong&gt;T&lt;/strong&gt; column in the Excel file:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: add this column to configure the CPF/CNPJ number of the payee.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: add this column to configure the CPF/CNPJ number of the payee. The number of digits for &lt;strong&gt;CPF&lt;/strong&gt; must be 11, and &lt;strong&gt;CNPJ&lt;/strong&gt; must be 14.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PixEmail&lt;/code&gt;: add this column to configure the email address of the payee.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: add this column to configure the phone number of the payee.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: add this column to configure the phone number of the payee. The number must start with &lt;code&gt;+55&lt;/code&gt;, and the cell must be configured with text format to allow the use of the plus sign.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PixRandom&lt;/code&gt;: add this column to configure the random key the payee generates.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You must add one column per different key in your payouts. For example, if you have five payees, one uses an email address, one uses the phone number, two use the CPF/CNPJ number, and one uses the random key, you need to include the columns as follows:&lt;/p&gt;

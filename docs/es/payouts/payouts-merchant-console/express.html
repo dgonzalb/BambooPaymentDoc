@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payouts/payouts-merchant-console/express.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-06-30T08:16:09-05:00" />
-<meta property="article:modified_time" content="2024-01-24T16:49:54-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-03-06T15:26:08-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Payouts exprés">
 <meta itemprop="description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 "><meta itemprop="datePublished" content="2023-06-30T08:16:09-05:00" />
-<meta itemprop="dateModified" content="2024-01-24T16:49:54-05:00" />
-<meta itemprop="wordCount" content="948">
+<meta itemprop="dateModified" content="2024-03-06T15:26:08-05:00" />
+<meta itemprop="wordCount" content="985">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts exprés"/>
 <meta name="twitter:description" content="Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
@@ -145,7 +145,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e64b15498426e85054e23f833e3b10ace2e9e0c24b8a378d54ebfcc84eee429830ddb319c8099e87e312d103e2edb0534c9a7ea0c1b38a93ef7e3c80b72842ef.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -592,12 +592,12 @@
 </p>
 </div>
 
-<h4 id="columnas-adicionales-para-pix">Columnas adicionales para PIX</h4>
+<h4 id="additional-columns-for-pix">Columnas adicionales para PIX</h4>
 <p>Al configurar PIX como tipo de pago del Payout (columna <strong>Type</strong> con el valor <code>4</code>), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna <strong>Notification_Url</strong>, es decir, la columna <strong>T</strong> del archivo Excel:</p>
 <ul>
-<li><code>PixDocument</code>: agregue esta columna para configurar el número CPF/CNPJ del beneficiario.</li>
+<li><code>PixDocument</code>: agregue esta columna para configurar el número CPF/CNPJ del beneficiario. El número de dígitos para <strong>CPF</strong> debe ser 11, y <strong>CNPJ</strong> debe ser 14.</li>
 <li><code>PixEmail</code>: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.</li>
-<li><code>PixPhone</code>: agregue esta columna para configurar el número de teléfono del beneficiario.</li>
+<li><code>PixPhone</code>: agregue esta columna para configurar el número de teléfono del beneficiario. El número debe empezar por <code>+55</code>, y la celda debe estar configurada con formato de texto para permitir el uso del signo más.</li>
 <li><code>PixRandom</code>: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.</li>
 </ul>
 <p>Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:</p>
@@ -629,7 +629,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    24 de enero de 2024
+    6 de marzo de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

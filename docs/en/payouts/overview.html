@@ -141,7 +141,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.c8198856ea473bd4f5abe7d7d769feae2fc83ab901cdba0a29f2befe0007be1d2bbb834cdbddf6abba34f555a1d403ca3accd4112b72109e1afebc1fd78b2433.json"
+  data-offline-search-index-json-src="../../offline-search-index.e64b15498426e85054e23f833e3b10ace2e9e0c24b8a378d54ebfcc84eee429830ddb319c8099e87e312d103e2edb0534c9a7ea0c1b38a93ef7e3c80b72842ef.json"
   data-offline-search-base-href="../../"
 >
 
@@ -479,7 +479,7 @@
 <tr>
 <td>Brazil</td>
 <td style="text-align:center"><code>BR</code></td>
-<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
@@ -531,7 +531,7 @@
 <td style="text-align:center"><code>UY</code></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"></td>
-<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
+<td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"></td>
@@ -604,161 +604,16 @@
 </ul>
 <h3 id="brazil">Brazil</h3>
 <ul>
-<li>The bank account <strong>cannot</strong> exceed 15 characters.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Bank name</th>
-<th>Bank code</th>
-<th>Format</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Banco do Brasil</td>
-<td><code>001</code></td>
-<td><code>DDDDDDDDD-X</code> or <code>DDDDDDDDDX</code> where <code>D</code> is a digit and <code>X</code> is a digit (number) or the letter <code>X</code>. <br>The number of digits may change, but it cannot exceed ten.</td>
-<td><code>1234567890</code><br><code>123456789-0</code><br><code>123456789-X</code><br><code>123456789X</code></td>
-</tr>
-<tr>
-<td>Santander</td>
-<td><code>033</code></td>
-<td><code>DDDDDDDD</code>, <code>DDDDDDDDD</code>, <code>DDDDDDDD-D</code>, where <code>D</code> is a digit.<br>The number of digits must be 8 or 9.</td>
-<td><code>12345678</code><br><code>12345678-9</code></td>
-</tr>
-<tr>
-<td>Banrisul</td>
-<td><code>041</code></td>
-<td><code>DDDDDDDDD-D</code> or <code>DDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits must be 10.</td>
-<td><code>1234567890</code><br><code>123456789-0</code></td>
-</tr>
-<tr>
-<td>Caixa</td>
-<td><code>104</code></td>
-<td><code>DDDDDDDDD-D</code> or <code>DDDDDDDDDDDDDD-D</code> where <code>D</code> is a digit.<br>The number of digits must be between 1 and 15.</td>
-<td><code>1234567890</code><br><code>123456789-0</code><br><code>12345678901234-5</code></td>
-</tr>
-<tr>
-<td>Bradesco</td>
-<td><code>237</code></td>
-<td><code>DDDDDDD-D</code> or <code>DDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change but cannot exceed eight.</td>
-<td><code>12345678</code><br><code>1234567-8</code></td>
-</tr>
-<tr>
-<td>Mercado Pago</td>
-<td><code>323</code></td>
-<td><code>DDDDDDDDDD-D</code> or <code>DDDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change but cannot exceed 11.</td>
-<td><code>12345678910</code><br><code>1234567891-0</code></td>
-</tr>
-<tr>
-<td>Itaú</td>
-<td><code>341</code></td>
-<td><code>DDDDD-D</code> or <code>DDDDDD</code> where <code>D</code> is a digit.<br>The number of digits may change but cannot exceed 6.</td>
-<td><code>123456</code><br><code>12345-6</code></td>
-</tr>
-<tr>
-<td>Instant Bank Transfer (Pix Key) Document</td>
-<td>-</td>
-<td><code>DDDDDDDDDDD</code> where <code>D</code> is a digit.<br>The number of digits for <strong>CPF</strong> must be 11, and <strong>CNPJ</strong> must be 14.</td>
-<td><strong>CPF</strong><br><code>12345678912</code><br><code>123.456.789-01</code><br><strong>CNPJ</strong><br><code>12345678901234</code><br><code>12.345.678/9012-34</code></td>
-</tr>
-</tbody>
-</table>
+<li>
+<p>The Pix Key must follow the following specifications:</p>
 <ul>
-<li>The bank branch <strong>cannot</strong> exceed 4 digits. Except for Banco do Brasil.</li>
+<li>When the Pix Key is the document, the number of digits for <strong>CPF</strong> must be 11, and <strong>CNPJ</strong> must be 14. Example:<br><strong>CPF</strong>: <code>123.456.789-01</code> → <code>12345678901</code><br><strong>CNPJ</strong>: <code>12.345.678/9012-34</code> → <code>12345678901234</code>.</li>
+<li>When the Pix Key is the email, it must be a valid email address.</li>
+<li>When the Pix Key is the phone, the phone number must start with <code>+55</code>. Example: <code>+5521982485500</code>.</li>
+<li>When the Pix Key is a random number, the key must be a randomly generated UUID. Example: <code>123e4567-e89b-12d3-a456-426655440000</code>.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>Bank name</th>
-<th>Bank code</th>
-<th>Format</th>
-<th>Exceptions</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Banco do Brasil</td>
-<td><code>001</code></td>
-<td><code>DDDD-X </code> or <code>DDDDX</code> where <code>D</code> is a digit and <code>X</code> is a digit (number) or the letter <code>X</code>. <br>The number of digits may change, but cannot exceed five digits.</td>
-<td>Can&rsquo;t have four zeros and a digit.</td>
-<td><code>1234-1</code><br><code>1234-X</code><br><code>12341</code><br><code>1234X</code></td>
-</tr>
-<tr>
-<td>Santander</td>
-<td><code>033</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>033</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banrisul</td>
-<td><code>041</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>-</td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Inter</td>
-<td><code>077</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>077</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Caixa</td>
-<td><code>104</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>001</code> / <code>013</code> / <code>023</code> / <code>104</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Original</td>
-<td><code>212</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>212</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Bradesco</td>
-<td><code>237</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>237</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Banco Nu Pagamento</td>
-<td><code>260</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>260</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>PagSeguro</td>
-<td><code>290</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>290</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Itau</td>
-<td><code>341</code></td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>Cannot be <code>341</code></td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>Others</td>
-<td>-</td>
-<td><code>DDDD</code> where <code>D</code> is a digit.</td>
-<td>-</td>
-<td><code>1234</code></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
 <h3 id="chile">Chile</h3>
 <ul>
 <li>The bank account <strong>cannot</strong> exceed 16 characters. Format: <code>DDDDDDDDDDDDDDDD</code> where <code>D</code> is a digit.
@@ -935,7 +790,7 @@ Example: <code>12345678901234567890</code>.</li>
 <div class="left-element">
     <b>Last modified</b>
     
-    January 24, 2024
+    March 6, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

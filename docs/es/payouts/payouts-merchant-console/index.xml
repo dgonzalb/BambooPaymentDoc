@@ -292,12 +292,12 @@
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&#34;columnas-adicionales-para-pix&#34;&gt;Columnas adicionales para PIX&lt;/h4&gt;
+&lt;h4 id=&#34;additional-columns-for-pix&#34;&gt;Columnas adicionales para PIX&lt;/h4&gt;
 &lt;p&gt;Al configurar PIX como tipo de pago del Payout (columna &lt;strong&gt;Type&lt;/strong&gt; con el valor &lt;code&gt;4&lt;/code&gt;), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna &lt;strong&gt;Notification_Url&lt;/strong&gt;, es decir, la columna &lt;strong&gt;T&lt;/strong&gt; del archivo Excel:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: agregue esta columna para configurar el número CPF/CNPJ del beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixDocument&lt;/code&gt;: agregue esta columna para configurar el número CPF/CNPJ del beneficiario. El número de dígitos para &lt;strong&gt;CPF&lt;/strong&gt; debe ser 11, y &lt;strong&gt;CNPJ&lt;/strong&gt; debe ser 14.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PixEmail&lt;/code&gt;: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: agregue esta columna para configurar el número de teléfono del beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PixPhone&lt;/code&gt;: agregue esta columna para configurar el número de teléfono del beneficiario. El número debe empezar por &lt;code&gt;+55&lt;/code&gt;, y la celda debe estar configurada con formato de texto para permitir el uso del signo más.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PixRandom&lt;/code&gt;: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:&lt;/p&gt;
