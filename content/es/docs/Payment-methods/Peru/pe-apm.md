@@ -9,7 +9,8 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago .
+* El estado de la compra para [_PagoEfectivo_](#pagoefectivo-perú) y [Redes de cobranza en efectivo](#cash-collection-networks) permanecerá en _Pending_ hasta que el cliente complete el pago.
+* El estado de la compra para [_Yape_](#Yape) será aprobado o rechazado en cuanto envíe la transacción.
 {{% /alert %}}
 
 ## PagoEfectivo Perú
@@ -418,6 +419,227 @@ Para más información sobre los parámetros del Response, consulte la [sección
             "TargetCountryISO": "PE",
             "TargetCurrencyISO": "USD",
             "TargetAmount": 1
+        },
+        "Redirection": null,
+        "IsFirstRecurrentPurchase": false,
+        "AntifraudData": {
+            "AntifraudFingerprintId": null,
+            "AntifraudMetadataIn": null
+        },
+        "PaymentMediaId": null,
+        "PurchaseType": 1,
+        "HasCvv": null,
+        "TargetCountryISO": null
+    },
+    "Errors": []
+}
+```
+
+## Yape
+_**Yape**_, un sistema de pago por móvil ampliamente adoptado en Perú, ofrece a los ciudadanos una forma cómoda de realizar transacciones a través del teléfono inteligente. Al vincular sin problemas sus cuentas bancarias a la aplicación _**Yape**_, los clientes pueden pagar productos y servicios sin esfuerzo.
+
+A diferencia de otros APM en Perú, el flujo de _**Yape**_ funciona de forma similar a las transacciones con tarjeta. Sin embargo, en lugar de compartir la información de la tarjeta, sólo es necesario proporcionar el número de teléfono y el código de autorización generado por el cliente en la aplicación de _**Yape**_.
+
+### Flujo de pago {#payment-flow}
+El siguiente diagrama presenta el flujo de pago utilizado para pagar con _**Yape**_.
+
+![PrintScreen](/assets/YapeFlow.png)
+
+1. El cliente selecciona _**Yape**_ como medio de pago.
+2. Usted debe mostrar el formulario para capturar el número de celular y el código de autorización.
+3. El cliente abre la app _**Yape**_ y genera un nuevo código de autorización.
+4. El cliente introduce su número de celular y el código de autorización generado previamente.
+5. Bamboo procesa la transacción y devuelve un estado _aprobado_ o _rechazado_.
+
+### Parámetros del Request {#request-parameters-2}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**540**_. |
+| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
+| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/peru.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+| `MetaDataIn` → `phoneNumber` | `numeric` | Sí | Número de celular del usuario de Yape. |
+| `MetaDataIn` → `otp` | `numeric` | Sí | Código de autorización generado por el usuario de Yape. |
+
+#### Ejemplo del Request {#request-example-2}
+```json
+{
+    "PaymentMediaId": 540,
+    "Order": "QA994",
+    "Capture": "true",
+    "Amount": 3000,
+    "Installments": 1,
+    "Currency": "USD",
+    "CrossBorderData": {
+        "TargetCountryISO": "PE"
+    },
+    "Description": "Compra de prueba",
+    "Customer": {
+        "Email": "rguerrero@mail.com",
+        "BillingAddress": {
+            "AddressType": 1,
+            "Country": "Peru",
+            "State": "Lima y Callao",
+            "City": "Lima",
+            "AddressDetail": "Avenida Jaime Bauzate Y Meza, 593"
+        },
+        "FirstName": "Rodrigo",
+        "LastName": "Guerrero",
+        "DocNumber": "46701208",
+        "DocumentTypeId": 6,
+        "PhoneNumber": "969929157"
+    },
+    "MetadataIn": {
+        "PaymentExpirationInMinutes": "1440",
+        "phoneNumber": "969929157",
+        "otp": "557454"
+    }
+}
+```
+        
+### Parámetros del Response {#response-parameters-2}
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+
+#### Ejemplo del Response {#response-example-2}
+
+```json
+{
+    "Response": {
+        "PurchaseId": 1276919,
+        "Created": "2024-03-11T13:48:24.296",
+        "TrxToken": null,
+        "Order": "QA994",
+        "Transaction": {
+            "TransactionID": 1297685,
+            "Created": "2024-03-11T13:48:24.296",
+            "AuthorizationDate": "2024-03-11T13:48:24.896",
+            "TransactionStatusId": 1,
+            "Status": "Approved",
+            "ErrorCode": null,
+            "Description": " ",
+            "ApprovalCode": "160105",
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2024-03-11T13:48:24.904",
+                    "Status": null,
+                    "ResponseCode": "000",
+                    "ResponseMessage": "Authorization Aprobado y completado con exito.",
+                    "Error": null,
+                    "AuthorizationCode": "160105",
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": "Authorization Aprobado y completado con exito."
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 13280,
+        "OriginalAmount": 13280,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "PEN",
+        "Description": "Compra de prueba",
+        "Customer": {
+            "CustomerId": 277774,
+            "Created": "2024-03-11T13:48:23.983",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "rguerrero@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 396672,
+                "AddressType": 2,
+                "Country": "Peru",
+                "State": "Lima y Callao",
+                "AddressDetail": "Avenida Jaime Bauzate Y Meza, 593",
+                "PostalCode": null,
+                "City": "Lima"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 283184,
+                    "PaymentMediaId": 540,
+                    "Created": "2024-03-11T13:48:24.113",
+                    "LastUpdate": "2024-03-11T13:48:24.147",
+                    "Brand": "Yape",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://api.stage.bamboopayment.com/Customer/277774",
+            "FirstName": "Rodrigo",
+            "LastName": "Guerrero",
+            "DocNumber": "46701208",
+            "DocumentTypeId": 6,
+            "PhoneNumber": "969929157",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1276919",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 153,
+            "Name": "Yape",
+            "CommerceNumber": null
+        },
+        "CommerceAction": null,
+        "PurchasePaymentProfileId": 283184,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {
+            "PaymentExpirationInMinutes": "1440",
+            "phoneNumber": "969929157",
+            "otp": "557454"
+        },
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "PE",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 30
         },
         "Redirection": null,
         "IsFirstRecurrentPurchase": false,
