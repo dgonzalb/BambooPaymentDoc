@@ -137,7 +137,7 @@ weight: 30
 | <img src="/assets/LogosCashPeru/interbank.png" width="52" /> | Interbank  | Cash Payment & Bank Transfer | API |
 | <img src="/assets/LogosCashPeru/westernunion.png" width="52" /> | Western Union  | Cash Payment & Bank Transfer | API |
 | <img src="/assets/LogosCashPeru/bbva.png" width="52" /> | BBVA  | Cash Payment & Bank Transfer | API |
-| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/yape.png" width="52" style="" /> | Yape | Wallet | API |
+| <img src="/assets/Yape.png" width="52" style="" /> | Yape | Wallet | API |
 <!--| <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.test.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | UnionPay | Credit Card | API |-->
