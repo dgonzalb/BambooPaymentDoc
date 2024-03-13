@@ -439,7 +439,7 @@ You need to include specific fields for this payment method to work correctly. C
 {
     "PaymentMediaId": 73,
     "Order": "ORD1012",
-    "Amount": 77000,
+    "Amount": 180,
     "Currency": "USD",
     "Description": "Test Order",
     "MetaDataIn": {
@@ -455,12 +455,17 @@ You need to include specific fields for this payment method to work correctly. C
 ```
 
 ### Response parameters
-In the response, you will find the following parameters:
+In the response, you will find the following parameters. You can use them to create your own confirmation page or use the coupon returned in the response:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponds to the _CLABE_ account number to which the funds will be sent. This number is dynamic and unique per transaction. |
+| `Response` → `MetadataOut` → `Clabe` | `string` | Corresponds to the _CLABE_ account number to which the funds will be sent. This number is dynamic and unique per transaction. |
 | `Response` → `MetadataOut` → `Expiration` | `date` | Payment expiration date and time. |
+| `Response` → `MetadataOut` → `Amount` | `numeric` | Amount to be entered by the payer when they make the payment. |
+| `Response` → `MetadataOut` → `BankBeneficiaryName` | `string` | Name of the _CLABE_ account owner. |
+| `Response` → `MetadataOut` → `BankConcept` | `string` | ID of the _CLABE_ account owner. |
+| `Response` → `MetadataOut` → `BankReference` | `string` | ID of the _CLABE_ account owner. |
+| `Response` → `MetadataOut` → `PaymentCouponUrl` | `string` | URL of the payment coupon. |
 
 {{% alert title="Note" color="info"%}}
 The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your customer must set up a wire transfer to this number from their banking application.
@@ -499,8 +504,8 @@ The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your cus
             ]
         },
         "Capture": true,
-        "Amount": 1104886,
-        "OriginalAmount": 1104886,
+        "Amount": 3000,
+        "OriginalAmount": 3000,
         "TaxableAmount": null,
         "Tip": 0,
         "Installments": 1,
@@ -580,13 +585,19 @@ The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your cus
         },
         "MetadataOut": {
             "Clabe": "646180366600000240",
-            "Expiration": "11/03/2023 13:43:00"
+            "Expiration": "11/03/2023 13:43:00",
+		    "Amount": "30",
+		    "BankBeneficiaryName": "Bamboo Payment Mexico SRL DE CV",
+		    "BankName": "STP",
+		    "BankConcept": "11285028",
+		    "BankReference": "11285028",
+		    "PaymentCouponUrl": "https://s3.amazonaws.com/gateway.prod.bamboopayment.com/purchase-coupons/11285028_0d941f46-1788-413b-b80b-ae269333e1c0_20240613.html"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "MX",
             "TargetCurrencyISO": "USD",
-            "TargetAmount": 770.0
+            "TargetAmount": 1.8
         },
         "Redirection": null,
         "AntifraudData": {

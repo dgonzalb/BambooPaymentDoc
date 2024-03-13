@@ -439,7 +439,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 {
     "PaymentMediaId": 73,
     "Order": "ORD1012",
-    "Amount": 77000,
+    "Amount": 180,
     "Currency": "USD",
     "Description": "Test Order",
     "MetaDataIn": {
@@ -461,6 +461,12 @@ En el Response, se encuentran los siguientes parámetros:
 |---|:-:|---|
 | `Response` → `MetadataOut` → `Clabe` | `string`  | Corresponde al número _CLABE_ de la cuenta a la que se enviarán los fondos. Este número es dinámico y único por transacción. |
 | `Response` → `MetadataOut` → `Expiration` | `date` | Fecha y hora de expiración del pago. |
+| `Response` → `MetadataOut` → `Amount` | `numeric` | Cantidad que debe introducir el pagador al efectuar el pago. |
+| `Response` → `MetadataOut` → `BankBeneficiaryName` | `string` | Nombre del dueño de la cuenta del número _CLABE_ |
+| `Response` → `MetadataOut` → `BankConcept` | `string` | ID del dueño de la cuenta del número _CLABE_ |
+| `Response` → `MetadataOut` → `BankReference` | `string` | ID del dueño de la cuenta del número _CLABE_ |
+| `Response` → `MetadataOut` → `PaymentCouponUrl` | `string` | URL del cupon de pago. |
+
 
 {{% alert title="Nota" color="info"%}}
 El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su cliente debe configurar una transferencia electrónica a este número desde su aplicación bancaria.
@@ -499,8 +505,8 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
             ]
         },
         "Capture": true,
-        "Amount": 1104886,
-        "OriginalAmount": 1104886,
+        "Amount": 3000,
+        "OriginalAmount": 3000,
         "TaxableAmount": null,
         "Tip": 0,
         "Installments": 1,
@@ -580,13 +586,19 @@ El número _CLABE_ en el Response pertenece a _Bamboo Payment Systems_, su clien
         },
         "MetadataOut": {
             "Clabe": "646180366600000240",
-            "Expiration": "11/03/2023 13:43:00"
+            "Expiration": "11/03/2023 13:43:00",
+		    "Amount": "30",
+		    "BankBeneficiaryName": "Bamboo Payment Mexico SRL DE CV",
+		    "BankName": "STP",
+		    "BankConcept": "11285028",
+		    "BankReference": "11285028",
+		    "PaymentCouponUrl": "https://s3.amazonaws.com/gateway.prod.bamboopayment.com/purchase-coupons/11285028_0d941f46-1788-413b-b80b-ae269333e1c0_20240613.html"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "MX",
             "TargetCurrencyISO": "USD",
-            "TargetAmount": 770.0
+            "TargetAmount": 1.8
         },
         "Redirection": null,
         "AntifraudData": {
