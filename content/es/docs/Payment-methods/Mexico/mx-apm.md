@@ -455,7 +455,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ```
 
 ### Parámetros del Response {#response-parameters-2}
-En la respuesta, encontrará los siguientes parámetros. Puede utilizarlos para crear su propia página de confirmación o utilizar el cupón devuelto en la respuesta:
+En el Response, encontrará los siguientes parámetros. Puede utilizarlos para crear su propia página de confirmación o utilizar el cupón devuelto en la respuesta:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
