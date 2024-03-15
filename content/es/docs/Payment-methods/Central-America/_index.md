@@ -14,7 +14,7 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 
 | | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="min-width: 40px;" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API | 
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="min-width: 40px;" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API | 
 
 ## Monedas {#currencies}
 
