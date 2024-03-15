@@ -586,12 +586,12 @@ The _CLABE_ number in the Response belongs to _Bamboo Payment Systems_, your cus
         "MetadataOut": {
             "Clabe": "646180366600000240",
             "Expiration": "11/03/2023 13:43:00",
-		    "Amount": "30",
-		    "BankBeneficiaryName": "Bamboo Payment Mexico SRL DE CV",
-		    "BankName": "STP",
-		    "BankConcept": "11285028",
-		    "BankReference": "11285028",
-		    "PaymentCouponUrl": "https://s3.amazonaws.com/gateway.prod.bamboopayment.com/purchase-coupons/11285028_0d941f46-1788-413b-b80b-ae269333e1c0_20240613.html"
+            "Amount": "30",
+            "BankBeneficiaryName": "Bamboo Payment Mexico SRL DE CV",
+            "BankName": "STP",
+            "BankConcept": "11285028",
+            "BankReference": "11285028",
+            "PaymentCouponUrl": "https://s3.amazonaws.com/gateway.prod.bamboopayment.com/purchase-coupons/11285028_0d941f46-1788-413b-b80b-ae269333e1c0_20240613.html"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
