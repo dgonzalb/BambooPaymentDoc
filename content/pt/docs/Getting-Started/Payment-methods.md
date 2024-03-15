@@ -22,7 +22,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/11_passcard_3.png" width="52" style="" /> | PassCard | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/17_cabal.png" width="52" style="" /> | Cabal | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" width="52" style="" />| Pago Fácil | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" />| Transferencias 3.0 | Transferencia Bancaria | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" />| Transferencias 3.0 | Transferencia Bancaria | API |
 <!--| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Tarjeta de crédito | API |-->
 
 ## Brasil {#brazil}
@@ -58,16 +58,16 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Tarjeta de crédito y débito | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" style="" /> | Apostar | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" style="" /> | Bancolombia | Pago en efectivo | API
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" style="" /> | Efecty | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" width="52" style="" /> | Gana | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" style="" /> | Puntored | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" style="" /> | Superpagos | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" style="" /> | SuSuerte | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" style="" /> | SuRed | Pago en efectivo | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/NequiQr_BankTransfer.png" width="52" style="" /> | Nequi QR | Transferencia Bancaria | API |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/NequiPush_BankTransfer.png" width="52" style="" /> | Nequi Push | Transferencia Bancaria | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" style="" /> | Apostar | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" style="" /> | Bancolombia | Pago en efectivo | API
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" style="" /> | Efecty | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" width="52" style="" /> | Gana | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" style="" /> | Puntored | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" style="" /> | Superpagos | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" style="" /> | SuSuerte | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" style="" /> | SuRed | Pago en efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/NequiQr_BankTransfer.png" width="52" style="" /> | Nequi QR | Transferencia Bancaria | API |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/NequiPush_BankTransfer.png" width="52" style="" /> | Nequi Push | Transferencia Bancaria | API |
 <!--| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Fasttrack_BankTransfer.png" width="52" style="" /> | PSE | Transferencia Bancaria | Redirect |-->
 
 ## Costa Rica
@@ -98,7 +98,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Tarjeta de crédito y débito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito y débito | API y Redirect |
 | <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API y Redirect |
-| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | API y Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | API y Redirect |
 
 
 ## Nicaragua

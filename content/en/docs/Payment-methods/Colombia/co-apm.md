@@ -239,14 +239,14 @@ You can offer your customer the possibility to pay using cash in the following n
 
 | | Payment MediaId| Description |
 |-----|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | 36 | Apostar |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | 37 | Bancolombia |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" /> | 38 | Efecty |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" alt="Diners" width="52" /> | 39 | Gana |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" /> | 40 | Puntored |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" /> | 42 | Superpagos |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> | 43 | SuRed |
-| <img src="https://s3.amazonaws.com/gateway.dev.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | 44 | SuSuerte |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | 36 | Apostar |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | 37 | Bancolombia |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" /> | 38 | Efecty |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" alt="Diners" width="52" /> | 39 | Gana |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" /> | 40 | Puntored |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" /> | 42 | Superpagos |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> | 43 | SuRed |
+| <img src="https://s3.amazonaws.com/gateway.stage.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | 44 | SuSuerte |
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
