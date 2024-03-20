@@ -128,7 +128,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit, Debit & Prepaid Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express |  Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Credit Card | API |
-| <img src="/assets/UnionPay.png" width="52" style="" /> | UnionPay | Credit Card | API |
+| <img src="/assets/unionpay.png" width="52" style="" /> | UnionPay | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Perú | Cash Payment & Bank Transfer | API |
 | <img src="/assets/LogosCashPeru/arequipa.png" width="52" /> | Caja Arequipa  | Cash Payment & Bank Transfer | API |
 | <img src="/assets/LogosCashPeru/cusco.png" width="52" /> | Caja Cusco  | Cash Payment & Bank Transfer | API |
