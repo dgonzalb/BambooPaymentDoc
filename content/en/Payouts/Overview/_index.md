@@ -63,7 +63,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 </thead>
 <tbody>
   <tr>
-    <td>Argentina</td>
+    <td style="border-right: 1px solid #dae0eb;">Argentina</td>
     <td rowspan="2" style="text-align: center;vertical-align: middle;">10:00 am.</td>
     <td rowspan="2" style="text-align: center;vertical-align: middle;">GMT-3</td>
   </tr>
@@ -71,12 +71,12 @@ Please consider the following schedule to receive the Payout on the same day; ot
     <td>Uruguay</td>
   </tr>
   <tr>
-    <td>Peru</td>
+    <td style="border-right: 1px solid #dae0eb;">Peru</td>
     <td style="text-align: center;">09:00 am.</td>
     <td style="text-align: center;">GMT-5</td>
   </tr>
   <tr>
-    <td>Brazil</td>
+    <td style="border-right: 1px solid #dae0eb;">Brazil</td>
     <td colspan="2" rowspan="4" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
   <tr>
@@ -94,7 +94,8 @@ Please consider the following schedule to receive the Payout on the same day; ot
 <sup>*</sup> _Time displayed in local time in Uruguay_.
 
 {{% alert title="Important" color="info"%}}
-When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day.
+* When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day.
+* In Mexico, payouts are processed in real-time, but final confirmation and notifications occur 5 minutes later.
 {{% /alert %}}
 
 ## Considerations
