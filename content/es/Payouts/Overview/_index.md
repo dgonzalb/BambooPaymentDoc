@@ -53,20 +53,48 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 
 <div id="shortTable"></div>
 
-| País | Hora máxima<sup>*</sup> | Zona horaria |
-|---|---|---|
-| Argentina | 10:00 am. | **GMT-3** |
-| Brasil | Real time. | |
-| Chile  | Real time. | |
-| Colombia |  Real time. | |
-| México  | 10:00 am. | **GMT-6** |
-| Perú | 09:00 am. | **GMT-5** |
-| Uruguay | 10:00 am. | **GMT-3** |
+<table>
+<thead>
+  <tr>
+    <th style="text-align: center;">País</th>
+    <th style="text-align: center;">Hora máxima<sup>*</sup></th>
+    <th style="text-align: center;">Zona horaria</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Argentina</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">10:00 am.</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">GMT-3</td>
+  </tr>
+  <tr>
+    <td>Uruguay</td>
+  </tr>
+  <tr>
+    <td>Perú</td>
+    <td style="text-align: center;">09:00 am.</td>
+    <td style="text-align: center;">GMT-5</td>
+  </tr>
+  <tr>
+    <td>Brasil</td>
+    <td colspan="2" rowspan="4" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+  </tr>
+  <tr>
+    <td>Colombia</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">México</td>
+  </tr>
+</tbody>
+</table>
 
 <sup>*</sup> _Hora indicada en hora local de Uruguay_.
 
 {{% alert title="Importante" color="info"%}}
-Cuando los Payouts ocurren en **T+0**, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como _**Pagado**_ al día siguiente. Esto se aplica a todos los países excepto México, donde la consola mostrará el estado como _**Pagado**_ el mismo día.
+Cuando los Payouts ocurren en **T+0**, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como _**Pagado**_ al día siguiente.
 {{% /alert %}}
 
 ## Consideraciones {#considerations}

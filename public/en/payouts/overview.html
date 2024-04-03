@@ -139,7 +139,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.7ab3625a77987f87c6cc60aa49b3d6c518c17af2e84da585823f0ec714a2945081b03beb77ff1eb1b0c0011f6e23756193dfaedd47fdbef0c26aa2ce32a50cb7.json"
+  data-offline-search-index-json-src="../../offline-search-index.2e301298be96ab7945ccfb5791f9054b564585fdf0ca46563c568526fc6b708f417b7be11391406f67c05c2431d01983828b2266d4cc3eaa87e2cda516903a3f.json"
   data-offline-search-base-href="../../"
 >
 
@@ -539,48 +539,39 @@
 <div id="shortTable"></div>
 <table>
 <thead>
-<tr>
-<th>Country</th>
-<th>Maximum time<sup>*</sup></th>
-<th>Time zone</th>
-</tr>
+  <tr>
+    <th style="text-align: center;">Country</th>
+    <th style="text-align: center;">Maximum time<sup>*</sup></th>
+    <th style="text-align: center;">Time zone</th>
+  </tr>
 </thead>
 <tbody>
-<tr>
-<td>Argentina</td>
-<td>10:00 am.</td>
-<td><strong>GMT-3</strong></td>
-</tr>
-<tr>
-<td>Brazil</td>
-<td>Real time.</td>
-<td></td>
-</tr>
-<tr>
-<td>Chile</td>
-<td>Real time.</td>
-<td></td>
-</tr>
-<tr>
-<td>Colombia</td>
-<td>Real time.</td>
-<td></td>
-</tr>
-<tr>
-<td>Mexico</td>
-<td>10:00 am.</td>
-<td><strong>GMT-6</strong></td>
-</tr>
-<tr>
-<td>Peru</td>
-<td>09:00 am.</td>
-<td><strong>GMT-5</strong></td>
-</tr>
-<tr>
-<td>Uruguay</td>
-<td>10:00 am.</td>
-<td><strong>GMT-3</strong></td>
-</tr>
+  <tr>
+    <td>Argentina</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">10:00 am.</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">GMT-3</td>
+  </tr>
+  <tr>
+    <td>Uruguay</td>
+  </tr>
+  <tr>
+    <td>Peru</td>
+    <td style="text-align: center;">09:00 am.</td>
+    <td style="text-align: center;">GMT-5</td>
+  </tr>
+  <tr>
+    <td>Brazil</td>
+    <td colspan="2" rowspan="4" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+  </tr>
+  <tr>
+    <td>Colombia</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Mexico</td>
+  </tr>
 </tbody>
 </table>
 <p><sup>*</sup> <em>Time displayed in local time in Uruguay</em>.</p>
@@ -589,7 +580,7 @@
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Important</h4>
-<p class="alert-text">When payouts occur on <strong>T+0</strong>, the payee receives the payment on the same day. However, the console will display the status as <em><strong>Paid</strong></em> the following day. This applies to all countries except Mexico, where the console will display the status as <em><strong>Paid</strong></em> on the same day.</p>
+<p class="alert-text">When payouts occur on <strong>T+0</strong>, the payee receives the payment on the same day. However, the console will display the status as <em><strong>Paid</strong></em> the following day.</p>
 </div>
 
 <h2 id="considerations">Considerations</h2>

@@ -53,20 +53,48 @@ Please consider the following schedule to receive the Payout on the same day; ot
 
 <div id="shortTable"></div>
 
-| Country | Maximum time<sup>*</sup> | Time zone |
-|---|---|---|
-| Argentina | 10:00 am. | **GMT-3** |
-| Brazil | Real time. | |
-| Chile  | Real time. | |
-| Colombia | Real time. | |
-| Mexico  | 10:00 am. | **GMT-6** |
-| Peru | 09:00 am. | **GMT-5** |
-| Uruguay | 10:00 am. | **GMT-3** |
+<table>
+<thead>
+  <tr>
+    <th style="text-align: center;">Country</th>
+    <th style="text-align: center;">Maximum time<sup>*</sup></th>
+    <th style="text-align: center;">Time zone</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Argentina</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">10:00 am.</td>
+    <td rowspan="2" style="text-align: center;vertical-align: middle;">GMT-3</td>
+  </tr>
+  <tr>
+    <td>Uruguay</td>
+  </tr>
+  <tr>
+    <td>Peru</td>
+    <td style="text-align: center;">09:00 am.</td>
+    <td style="text-align: center;">GMT-5</td>
+  </tr>
+  <tr>
+    <td>Brazil</td>
+    <td colspan="2" rowspan="4" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+  </tr>
+  <tr>
+    <td>Colombia</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Mexico</td>
+  </tr>
+</tbody>
+</table>
 
 <sup>*</sup> _Time displayed in local time in Uruguay_.
 
 {{% alert title="Important" color="info"%}}
-When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day. This applies to all countries except Mexico, where the console will display the status as _**Paid**_ on the same day.
+When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day.
 {{% /alert %}}
 
 ## Considerations
