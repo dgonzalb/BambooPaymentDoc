@@ -41,6 +41,7 @@ This section shows the available payment methods, currencies, and related inform
 * For **Visa** and **MasterCard**, the acquirer performs a void operation if you request a refund on the same day before 0:00. You can only process refunds for transactions that occurred more than 48 hours after the settlement.
 * You can perform zero authorization transactions to register or validate **Visa** and **MasterCard** cards.
 * Refunds for **UnionPay**, **Diners**, and **Amex** are not online; you must request them by contacting support. Refunds for **Amex** apply for transactions up to six months old and three months for **Diners**.
+* You can request refunds for **Yape** transactions made before 23:59 Lima time on the same day.
 
 
 ## Currencies
