@@ -41,6 +41,7 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 * Para **Visa** y **MasterCard**, la entidad adquirente realiza una operación de anulación si solicita un reembolso el mismo día antes de las 0:00. Sólo puede procesar reembolsos de transacciones después de 48 horas de la liquidación.
 * Puede realizar transacciones de autorización cero para registrar o validar tarjetas para **Visa** y **MasterCard**.
 * Los reembolsos para **UnionPay**, **Diners** y **Amex** no son en línea; debe solicitarlos poniéndose en contacto con soporte. Los reembolsos para **Amex** se aplican a transacciones de hasta seis meses de antigüedad y de tres meses para **Diners**.
+* Es posible solicitar el reembolso de las transacciones de **Yape** realizadas antes de las 23:59 hora de Lima del mismo día.
 
 ## Monedas {#currencies}
 
