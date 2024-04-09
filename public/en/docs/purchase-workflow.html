@@ -139,7 +139,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.6fbd3918363251eb555c40dac30bcca90dc39025e34b3548f3583943417e7764c2c9cff0348bbbb64b7f117132cd86683a32769c0abedc406bd968bf641a4878.json"
+  data-offline-search-index-json-src="../../offline-search-index.9fbb2b2836fdfb25b3435280ec00667413f79bf7918ebcaa7b741bd25c5ddf40888364959880e51c222cbf7bae5985dc33a6e0ad3161d7beced51a6912cd22e0.json"
   data-offline-search-base-href="../../"
 >
 
@@ -919,7 +919,9 @@
 	<h1>Purchase API</h1>
         <div class="lead">You can create a purchase using our API. <em>Customer Type</em> and <em>Flow Type</em> drive the purchase workflow.</div>
 	
-	<h2 id="customer-type">Customer Type</h2>
+	<p>We implemented The Bamboo Payment API using REST services and JSON format (Content-Type: <code>application/json</code>) for message exchange.</p>
+<p>You must make every API call using <code>HTTPS</code> (<code>TLS 1.3</code>) and handle each operation&rsquo;s HTTP response code to determine the processing status of the sent transaction.</p>
+<h2 id="customer-type">Customer Type</h2>
 <p>You can have either Anonymous or Registered customers regardless of the flow type. Anonymous customers are not registered on the site and make a one-time purchase. The registered customers are shoppers registered on the website, so they can be identified and have extra functionalities such as recurrences.</p>
 <h2 id="flow-type">Flow type</h2>
 <p>You can use two different workflows to authorize a purchase:</p>

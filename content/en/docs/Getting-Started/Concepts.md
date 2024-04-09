@@ -13,6 +13,12 @@ An acquirer is a payment facilitator that allows you to perform digital payments
 ## API
 An API (from the acronym **A**pplication **P**rogramming **I**nterface) is a set of methods and definitions that allows you to interact with a system through some input data. In our case, we developed an API to enable you to process a transaction's information to receive the related response.
 
+{{% alert title="Info" color="info"%}}
+We implemented The Bamboo Payment API using REST services and JSON format (Content-Type: `application/json`) for message exchange. 
+
+You must make every API call using `HTTPS` (`TLS 1.3`) and handle each operation's HTTP response code to determine the processing status of the sent transaction.
+{{% /alert %}}
+
 ## Authentication
 Authentication is the procedure to validate the identity of a merchant. All merchants integrated with our platform receive keys for each associated account, _Private Account Key_, and _Public Account Key_.
 

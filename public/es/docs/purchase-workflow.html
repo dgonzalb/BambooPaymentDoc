@@ -139,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.6fbd3918363251eb555c40dac30bcca90dc39025e34b3548f3583943417e7764c2c9cff0348bbbb64b7f117132cd86683a32769c0abedc406bd968bf641a4878.json"
+  data-offline-search-index-json-src="../../offline-search-index.9fbb2b2836fdfb25b3435280ec00667413f79bf7918ebcaa7b741bd25c5ddf40888364959880e51c222cbf7bae5985dc33a6e0ad3161d7beced51a6912cd22e0.json"
   data-offline-search-base-href="../../"
 >
 
@@ -919,7 +919,9 @@
 	<h1>API de compras</h1>
         <div class="lead">Es posible generar una compra utilizando nuestra API. El <em>tipo de cliente</em> y el <em>tipo de flujo</em> dirigen el flujo de trabajo de la compra.</div>
 	
-	<h2 id="customer-type">Tipo de cliente</h2>
+	<p>Implementamos la API de Bamboo Payment utilizando servicios REST y formato JSON (Content-Type: <code>application/json</code>) para el intercambio de mensajes.</p>
+<p>Debe realizar cada llamada a la API utilizando <code>HTTPS</code> (<code>TLS 1.3</code>) y manejar el código de respuesta HTTP de cada operación para determinar el estado de procesamiento de la transacción enviada.</p>
+<h2 id="customer-type">Tipo de cliente</h2>
 <p>Sin importar el tipo de flujo, puede tener clientes anónimos o registrados. Los clientes anónimos no están registrados en el sitio web y hacen una compra por única vez. Los clientes registrados son compradores registrados en el sitio web, de tal manera que pueden ser identificados y tener funcionalidades adicionales como recurrencias.</p>
 <h2 id="flow-type">Tipo de flujo</h2>
 <p>Se puede utilizar dos tipos diferentes de flujos para autorizar una compra:</p>

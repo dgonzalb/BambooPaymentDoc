@@ -6,6 +6,10 @@ Description: >
 weight: 40
 ---
 
+Implementamos la API de Bamboo Payment utilizando servicios REST y formato JSON (Content-Type: `application/json`) para el intercambio de mensajes. 
+
+Debe realizar cada llamada a la API utilizando `HTTPS` (`TLS 1.3`) y manejar el código de respuesta HTTP de cada operación para determinar el estado de procesamiento de la transacción enviada.
+
 ## Tipo de cliente {#customer-type}
 Sin importar el tipo de flujo, puede tener clientes anónimos o registrados. Los clientes anónimos no están registrados en el sitio web y hacen una compra por única vez. Los clientes registrados son compradores registrados en el sitio web, de tal manera que pueden ser identificados y tener funcionalidades adicionales como recurrencias.
 
