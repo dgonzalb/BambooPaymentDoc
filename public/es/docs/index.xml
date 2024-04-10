@@ -5576,6 +5576,16 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;p&gt;Un adquirente es un facilitador de pagos que le permite realizar pagos electrónicos. Además, el adquirente es responsable de las transacciones y maneja la liquidación a su cuenta bancaria.&lt;/p&gt;
 &lt;h2 id=&#34;api&#34;&gt;API&lt;/h2&gt;
 &lt;p&gt;Una API (del acrónimo en inglés &lt;strong&gt;A&lt;/strong&gt;pplication &lt;strong&gt;P&lt;/strong&gt;rogramming &lt;strong&gt;I&lt;/strong&gt;nterface, Interfaz de programación de aplicaciones) es un conjunto de métodos y definiciones que permite interactuar con un sistema a través de unos datos de entrada. En nuestro caso, desarrollamos una API para permitirle procesar la información de una transacción para recibir la respuesta relacionada.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Implementamos la API de Bamboo Payment utilizando servicios REST y formato JSON (Content-Type: &lt;code&gt;application/json&lt;/code&gt;) para el intercambio de mensajes.&lt;/p&gt;
+&lt;p&gt;Debe realizar cada llamada a la API utilizando &lt;code&gt;HTTPS&lt;/code&gt; (&lt;code&gt;TLS 1.3&lt;/code&gt;) y manejar el código de respuesta HTTP de cada operación para determinar el estado de procesamiento de la transacción enviada.&lt;/p&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;environment&#34;&gt;Ambiente&lt;/h2&gt;
 &lt;p&gt;El ambiente es un conjunto de software y recursos que le permite procesar las transacciones. El ambiente contiene información real o de prueba dependiendo de su tipo.&lt;/p&gt;
 &lt;p&gt;Nuestra plataforma tiene dos ambientes separados: &lt;code&gt;Stage&lt;/code&gt; y &lt;code&gt;Production&lt;/code&gt;.&lt;/p&gt;
@@ -21286,7 +21296,7 @@ data-postman-collection-url=&#34;entityId=25667318-ec85f9ca-5d5d-4eaa-8538-94f17
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PR003&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;PR_INVALID_AMOUNT&lt;/td&gt;
-&lt;td&gt;El monto a devolver no puede ser mayor al de la compra.&lt;/td&gt;
+&lt;td&gt;El monto proporcionado es inválido. Asegúrese de que no esté nulo o vacío y, en caso de reembolsos, de que no exceda el monto de la compra original.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PR004&lt;/code&gt;&lt;/td&gt;

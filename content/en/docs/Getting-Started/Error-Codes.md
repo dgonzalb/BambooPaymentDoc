@@ -123,7 +123,7 @@ Purchase errors always starts with `PR`.
 |---|---|---|
 | `PR001` | INVALID_TOKEN | The informed token is invalid, expired or does not correspond to the commerce. | 
 | `PR002` | INVALID_ORDER | The order number is invalid. |
-| `PR003` | PR_INVALID_AMOUNT | The amount to refund cannot be greater than the purchase amount.. |
+| `PR003` | PR_INVALID_AMOUNT | The provided amount is invalid. Ensure it is not null or empty, and in the case of refunds, ensure it does not exceed the original purchase amount. |
 | `PR004` | PR_INVALID_CURRENCY_PARAMETER | Invalid Currency parameter for the Purchase. |
 | `PR005` | INVALID_INVOICE | The invoice number is invalid (it must be numeric). |
 | `PR006` | PR_INVALID_PURCHASE_IDENTIFIER | Invalid Purchase Id for the Purchase. |

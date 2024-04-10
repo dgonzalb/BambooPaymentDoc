@@ -13,6 +13,12 @@ Un adquirente es un facilitador de pagos que le permite realizar pagos electrón
 ## API
 Una API (del acrónimo en inglés **A**pplication **P**rogramming **I**nterface, Interfaz de programación de aplicaciones) es un conjunto de métodos y definiciones que permite interactuar con un sistema a través de unos datos de entrada. En nuestro caso, desarrollamos una API para permitirle procesar la información de una transacción para recibir la respuesta relacionada.
 
+{{% alert title="Info" color="info"%}}
+Implementamos la API de Bamboo Payment utilizando servicios REST y formato JSON (Content-Type: `application/json`) para el intercambio de mensajes. 
+
+Debe realizar cada llamada a la API utilizando `HTTPS` (`TLS 1.3`) y manejar el código de respuesta HTTP de cada operación para determinar el estado de procesamiento de la transacción enviada.
+{{% /alert %}}
+
 ## Ambiente {#environment}
 El ambiente es un conjunto de software y recursos que le permite procesar las transacciones. El ambiente contiene información real o de prueba dependiendo de su tipo.
 
