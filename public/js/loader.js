@@ -35,8 +35,9 @@ function onPage404Load() {
             } 
             var hlhref = host + language;
             document.getElementById("404link").href = hlhref;
-            barLinks[0].href = hlhref + "/docs.html";
-            barLinks[1].href = hlhref + "/payouts.html";
+            homeLink.href = hlhref;
+            barLinks[0].href = hlhref + "docs.html";
+            barLinks[1].href = hlhref + "payouts.html";
         }
     }
 }
