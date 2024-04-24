@@ -10,7 +10,6 @@ weight: 20
 
 El API de Payouts solo envía notificaciones para los estados finales (**Pagado**, **Declinado** y **Rechazado**). Para los estados de los Payouts, revise nuestro [artículo de estados]({{< ref Payout-Status.md >}}).
 
-
 El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.
 
 ## Especificaciones del servicio WebHook {#webhook-service-specifications}
