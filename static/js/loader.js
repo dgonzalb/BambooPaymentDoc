@@ -2,11 +2,11 @@ function onPage404Load() {
     loadIcons();
     document.querySelector('h1').style.display = 'none';
     var currentUrl = window.location.href;
+    var pathName = window.location.pathname.substring(1);
+    var host = currentUrl.replace(pathName, ""); 
     if(!currentUrl.includes("/en/") && !currentUrl.includes("/es/") && !currentUrl.includes("/pt/")) {  
         var anchor = "";
         var newUrl = "";
-        var pathName = window.location.pathname.substring(1);
-        var host = currentUrl.replace(pathName, "");
         if(currentUrl.includes("#")) {
             anchor = "#" + currentUrl.split("#")[1];
             host = host.replace(anchor, "");
@@ -33,10 +33,10 @@ function onPage404Load() {
                 document.getElementById("404paragraph").innerText = "Desculpe, a página que você está procurando não existe.";
                 document.getElementById("404link").innerText = "Voltar para a página inicial";
             } 
-            homeLink.href = language;
-            document.getElementById("404link").href = homeLink.href;
-            barLinks[0].href = homeLink.href + "/docs.html";
-            barLinks[1].href = homeLink.href + "/payouts.html";
+            var hlhref = host + language;
+            document.getElementById("404link").href = hlhref;
+            barLinks[0].href = hlhref + "/docs.html";
+            barLinks[1].href = hlhref + "/payouts.html";
         }
     }
 }
