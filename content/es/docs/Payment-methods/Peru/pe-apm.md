@@ -463,7 +463,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/peru.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. <br>Max 9 caracteres |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |

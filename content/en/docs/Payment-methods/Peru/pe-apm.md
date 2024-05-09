@@ -463,7 +463,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/peru.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. <br>Max 9 characters. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
