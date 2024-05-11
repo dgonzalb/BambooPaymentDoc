@@ -6803,6 +6803,32 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
         
         
         &lt;p&gt;El API de Payouts solo envía notificaciones para los estados finales (&lt;strong&gt;pagado&lt;/strong&gt;, &lt;strong&gt;declinado&lt;/strong&gt; y &lt;strong&gt;rechazado&lt;/strong&gt;). Para los estados de los Payouts, revise nuestro &lt;a href=&#34;../../es/payouts/overview/payout-status.html&#34;&gt;artículo de estados&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ESTADO&lt;/th&gt;
+&lt;th&gt;Código&lt;/th&gt;
+&lt;th&gt;DESCRIPCIÓN&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Paid&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout ha sido realizado. Este es un estado final que indica la conclusión exitosa del pago.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Declined&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;8&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout fue declinado debido a validación estructural o reglas de Compliance.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Rejected&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout fue rechazado. Las posibles razones de rechazo incluyen problemas con la cuenta bancaria, límites mensuales excedidos, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.&lt;/p&gt;
 &lt;h2 id=&#34;webhook-service-specifications&#34;&gt;Especificaciones del servicio WebHook&lt;/h2&gt;
 &lt;p&gt;El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:&lt;/p&gt;
@@ -14242,7 +14268,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;p&gt;&lt;img src=&#34;../../assets/Payouts/Payouts2_es.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Recibido&lt;/strong&gt;: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la &lt;a href=&#34;../payouts-api.html&#34;&gt;API de Payouts&lt;/a&gt;.&lt;br&gt;Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Recibido&lt;/strong&gt;: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la &lt;a href=&#34;../payouts-api.html&#34;&gt;API de Payouts&lt;/a&gt;.&lt;br&gt;Adicionalmente, validamos que su cuenta tenga el suficiente saldo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Validado&lt;/strong&gt;: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt;.&lt;/p&gt;

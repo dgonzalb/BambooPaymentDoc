@@ -1305,6 +1305,32 @@ The validation of the message was successful, but the Payout is &lt;strong&gt;De
         
         
         &lt;p&gt;The Payout API only sends notifications for the final statuses (&lt;strong&gt;Paid&lt;/strong&gt;, &lt;strong&gt;Declined&lt;/strong&gt;, and &lt;strong&gt;Rejected&lt;/strong&gt;). For payout states, check our &lt;a href=&#34;../../../en/payouts/overview/payout-status.html&#34;&gt;status article&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;STATUS&lt;/th&gt;
+&lt;th&gt;Code&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Paid&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The payout has been paid. This is a final status indicating the successful completion of the payment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Declined&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;8&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The payout was declined due to structural validation or Compliance rules.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Rejected&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The payout was rejected. Possible reasons for rejection include bank account issues, monthly limits exceeded, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;The merchant must publish an HTTP/REST service to send the notifications generated.&lt;/p&gt;
 &lt;h2 id=&#34;webhook-service-specifications&#34;&gt;WebHook Service specifications&lt;/h2&gt;
 &lt;p&gt;The WebHook service is a REST Service that must process a request with the following characteristics:&lt;/p&gt;

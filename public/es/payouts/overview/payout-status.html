@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c0b5255f2c881a9494e5c221f8bd7aa8f22f126aa14207fca03d7628b263f63c0d667d977295e8d766fdbcbb626ca80c7cae8c6775083967897b687cee38ab8d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cc42cdac6db93d7354685d2f60faa003550eff78b5ab40ba163d740bb19aa627985541fb4e9c5f7a7416e3bed8aa5799c7d35fa0b5da0de25543fe7b8ac552b8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -419,7 +419,7 @@
 <p><img src="../../../assets/Payouts/Payouts2_es.png" alt=""></p>
 <ul>
 <li>
-<p><strong>Recibido</strong>: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la <a href="../payouts-api.html">API de Payouts</a>.<br>Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.</p>
+<p><strong>Recibido</strong>: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la <a href="../payouts-api.html">API de Payouts</a>.<br>Adicionalmente, validamos que su cuenta tenga el suficiente saldo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.</p>
 </li>
 <li>
 <p><strong>Validado</strong>: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de <a href="../overview/payout-concepts.html#sanction-screening">sanction screening</a>.</p>

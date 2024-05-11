@@ -10,6 +10,11 @@ weight: 20
 
 The Payout API only sends notifications for the final statuses (**Paid**, **Declined**, and **Rejected**). For payout states, check our [status article]({{< ref Payout-Status.md >}}).
 
+| STATUS    | Code | DESCRIPTION |
+|-----------|------|-------------|
+| `Paid`      | `1`    | The payout has been paid. This is a final status indicating the successful completion of the payment.  |
+| `Declined`  | `8`    | The payout was declined due to structural validation or Compliance rules. |
+| `Rejected`  | `4`    | The payout was rejected. Possible reasons for rejection include bank account issues, monthly limits exceeded, etc. |
 
 The merchant must publish an HTTP/REST service to send the notifications generated.
 

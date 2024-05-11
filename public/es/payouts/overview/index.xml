@@ -65,7 +65,7 @@
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payouts/Payouts2_es.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Recibido&lt;/strong&gt;: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la &lt;a href=&#34;../payouts-api.html&#34;&gt;API de Payouts&lt;/a&gt;.&lt;br&gt;Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Recibido&lt;/strong&gt;: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la &lt;a href=&#34;../payouts-api.html&#34;&gt;API de Payouts&lt;/a&gt;.&lt;br&gt;Adicionalmente, validamos que su cuenta tenga el suficiente saldo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Validado&lt;/strong&gt;: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de &lt;a href=&#34;../overview/payout-concepts.html#sanction-screening&#34;&gt;sanction screening&lt;/a&gt;.&lt;/p&gt;

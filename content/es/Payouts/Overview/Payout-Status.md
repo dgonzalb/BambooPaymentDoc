@@ -12,7 +12,7 @@ El siguiente diagrama representa los estados de un Payout:
 
 ![](/assets/Payouts/Payouts2_es.png)
 
-* **Recibido**: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la [API de Payouts](../payouts-api.html).<br>Adicionalmente, validamos que su cuenta tenga el suficiente salfo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.
+* **Recibido**: Este es el estado inicial. Una vez solicite un Payout, validamos su estructura (para Payouts solicitado a través del API) y lo creamos en nuestro sistema. Para más información sobre la estrucutra, consulte la [API de Payouts](../payouts-api.html).<br>Adicionalmente, validamos que su cuenta tenga el suficiente saldo antes de pasar al siguiente estado; en caso contrario, la solicitud será declinada.
 
 * **Validado**: Este estado indica que el Payout tiene una estructura válida y que su cuenta tiene fondos suficientes para cubrir el monto y la tasa (en caso de que usted la asuma). En este estado, definimos si el Payout necesita una revisión manual bajo dos criterios: primero, el límite de pagos recibidos por el beneficiario y segundo, el proceso de [sanction screening](../overview/payout-concepts.html#sanction-screening).
 
@@ -27,5 +27,3 @@ El siguiente diagrama representa los estados de un Payout:
 * **Rechazado**: La _Conexión bancaria_ ha procesado el Payout y no fue aprobado. En este estado, actualizamos su [saldo]({{< ref "Payout-Balances.md" >}}) con los valores de la transacción.
 
 * **Declinado**: El payout fue rechazado debido a una validación de estructura o debido a razones internas.
-
- 

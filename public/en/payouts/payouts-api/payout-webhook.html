@@ -31,7 +31,7 @@
 <meta itemprop="description" content="You can implement a service to receive and process notifications related to the Payout final status from the Bamboo Payment systems.
 "><meta itemprop="datePublished" content="2023-09-12T11:19:09-05:00" />
 <meta itemprop="dateModified" content="2023-09-22T14:41:51-05:00" />
-<meta itemprop="wordCount" content="282">
+<meta itemprop="wordCount" content="335">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Notification Webhook"/>
 <meta name="twitter:description" content="You can implement a service to receive and process notifications related to the Payout final status from the Bamboo Payment systems.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.c0b5255f2c881a9494e5c221f8bd7aa8f22f126aa14207fca03d7628b263f63c0d667d977295e8d766fdbcbb626ca80c7cae8c6775083967897b687cee38ab8d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cc42cdac6db93d7354685d2f60faa003550eff78b5ab40ba163d740bb19aa627985541fb4e9c5f7a7416e3bed8aa5799c7d35fa0b5da0de25543fe7b8ac552b8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -427,6 +427,32 @@
     <div class="lead">You can implement a service to receive and process notifications related to the Payout final status from the Bamboo Payment systems.</div>
 	       
 	<p>The Payout API only sends notifications for the final statuses (<strong>Paid</strong>, <strong>Declined</strong>, and <strong>Rejected</strong>). For payout states, check our <a href="../../../en/payouts/overview/payout-status.html">status article</a>.</p>
+<table>
+<thead>
+<tr>
+<th>STATUS</th>
+<th>Code</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Paid</code></td>
+<td><code>1</code></td>
+<td>The payout has been paid. This is a final status indicating the successful completion of the payment.</td>
+</tr>
+<tr>
+<td><code>Declined</code></td>
+<td><code>8</code></td>
+<td>The payout was declined due to structural validation or Compliance rules.</td>
+</tr>
+<tr>
+<td><code>Rejected</code></td>
+<td><code>4</code></td>
+<td>The payout was rejected. Possible reasons for rejection include bank account issues, monthly limits exceeded, etc.</td>
+</tr>
+</tbody>
+</table>
 <p>The merchant must publish an HTTP/REST service to send the notifications generated.</p>
 <h2 id="webhook-service-specifications">WebHook Service specifications</h2>
 <p>The WebHook service is a REST Service that must process a request with the following characteristics:</p>

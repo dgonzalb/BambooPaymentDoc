@@ -10,6 +10,12 @@ weight: 20
 
 El API de Payouts solo envía notificaciones para los estados finales (**pagado**, **declinado** y **rechazado**). Para los estados de los Payouts, revise nuestro [artículo de estados]({{< ref Payout-Status.md >}}).
 
+| ESTADO    | Código | DESCRIPCIÓN |
+|-----------|--------|-------------|
+| `Paid`    | `1`      | El payout ha sido realizado. Este es un estado final que indica la conclusión exitosa del pago. |
+| `Declined` | `8`      | El payout fue declinado debido a validación estructural o reglas de Compliance. |
+| `Rejected` | `4`      | El payout fue rechazado. Las posibles razones de rechazo incluyen problemas con la cuenta bancaria, límites mensuales excedidos, etc.
+
 El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.
 
 ## Especificaciones del servicio WebHook {#webhook-service-specifications}

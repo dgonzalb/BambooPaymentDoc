@@ -27,5 +27,3 @@ The following diagram represents the status of a payout:
 * **Rejected**: The _Banking Connection_ has processed the Payout and is not approved. In this status, we update your [balance]({{< ref "Payout-Balances.md" >}}) with the transaction values.
 
 * **Declined**: The payout was rejected due to structure validation or internal reasons.
-
- 

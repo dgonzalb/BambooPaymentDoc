@@ -1305,6 +1305,32 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
         
         
         &lt;p&gt;El API de Payouts solo envía notificaciones para los estados finales (&lt;strong&gt;pagado&lt;/strong&gt;, &lt;strong&gt;declinado&lt;/strong&gt; y &lt;strong&gt;rechazado&lt;/strong&gt;). Para los estados de los Payouts, revise nuestro &lt;a href=&#34;../../../es/payouts/overview/payout-status.html&#34;&gt;artículo de estados&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ESTADO&lt;/th&gt;
+&lt;th&gt;Código&lt;/th&gt;
+&lt;th&gt;DESCRIPCIÓN&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Paid&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout ha sido realizado. Este es un estado final que indica la conclusión exitosa del pago.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Declined&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;8&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout fue declinado debido a validación estructural o reglas de Compliance.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Rejected&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;4&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El payout fue rechazado. Las posibles razones de rechazo incluyen problemas con la cuenta bancaria, límites mensuales excedidos, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;El comercio debe publicar un servicio HTTP/REST al cual se enviarán las notificaciones generadas.&lt;/p&gt;
 &lt;h2 id=&#34;webhook-service-specifications&#34;&gt;Especificaciones del servicio WebHook&lt;/h2&gt;
 &lt;p&gt;El servicio WebHook es un servicio REST que debe procesar una solicitud con las siguientes características:&lt;/p&gt;
