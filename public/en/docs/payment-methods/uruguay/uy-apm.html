@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with cash and Bank transfers.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2024-03-15T10:19:23-05:00" />
-<meta itemprop="wordCount" content="2002">
+<meta itemprop="wordCount" content="1279">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with cash and Bank transfers.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.cc42cdac6db93d7354685d2f60faa003550eff78b5ab40ba163d740bb19aa627985541fb4e9c5f7a7416e3bed8aa5799c7d35fa0b5da0de25543fe7b8ac552b8.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.f44da9dc330dd32b68c368f838755d7e646a9923a831574f4b9942440bc4a0210db642217a4dd9805c6029f8d9e4b98d0d633e415d61e45bd17c1081d7f63773.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -884,17 +884,10 @@
         <li><a href="#response-parameters">Response parameters</a></li>
       </ul>
     </li>
-    <li><a href="#bank-transfers">Online Bank transfers</a>
+    <li><a href="#bank-transfers">Bank Transfers</a>
       <ul>
-        <li><a href="#supported-banks">Supported banks</a></li>
         <li><a href="#request-parameters-1">Request parameters</a></li>
         <li><a href="#response-parameters-1">Response parameters</a></li>
-      </ul>
-    </li>
-    <li><a href="#offline-bank-transfers">Offline Bank Transfers</a>
-      <ul>
-        <li><a href="#request-parameters-2">Request parameters</a></li>
-        <li><a href="#response-parameters-2">Response parameters</a></li>
         <li><a href="#payment-experience">Payment experience</a></li>
       </ul>
     </li>
@@ -1208,331 +1201,229 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="bank-transfers">Online Bank transfers</h2>
-<p>The flow of this payment method is <em><strong>Redirect</strong></em>, so the customer is required to be directed to another page where they will complete the payment. In the <a href="#response-parameters-1">Response parameters sections</a> you can find the parameter of the redirection URL. For more information refer to <a href="../../../../en/docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchase</a>.</p>
-<h3 id="supported-banks">Supported banks</h3>
-<p>You can offer to your customers the possibility to pay using bank transfers if the customer&rsquo;s account is in the following banks:</p>
+</span></span></code></pre></div><!--## Online Bank transfers {#bank-transfers}
+The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase](/en/docs/purchase-workflow/purchases/redirect-purchase.html).
+
+### Supported banks
+You can offer to your customers the possibility to pay using bank transfers if the customer's account is in the following banks:
+
 <div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Payment MediaId</th>
-<th>Bank</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /></td>
-<td>101</td>
-<td>E-Brou</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /></td>
-<td>102</td>
-<td>Santander</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /></td>
-<td>104</td>
-<td>Scotiabank</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /></td>
-<td>105</td>
-<td>Itau</td>
-</tr>
-</tbody>
-</table>
+
+| | Payment MediaId | Bank |
+|-----|-----|-----|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | 101 | E-Brou |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | 102 | Santander |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | 104 | Scotiabank |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | 105 | Itau |
+
+### Request parameters
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation](/en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+
+| Property | Type | Mandatory? | Description |
+|---|:-:|:-:|---|
+| `PaymentMediaId` | `numeric` | Yes | Send the `PaymentMediaId` according to the Customer's bank in the [Supported Banks table](#supported-banks). |
+| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Customer` → `Email` | `string` | Yes | Customer's email. |
+| `Customer` → `FirstName` | `string` | No | Customer's first name. |
+| `Customer` → `LastName` | `string` | No | Customer's last name. |
+| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/uruguay.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
+| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
+| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `MetaDataIn` → `sourceReference` | `string` | No | This field is used to configure a Bank reference for the customer. |
+| `MetaDataIn` → `destinationReference` | `string` | No | This field is used to configure a bank reference for the merchant. The API applies a default value if you don't provide this information. |
+| `MetaDataIn` → `externalReference` | `string` | No | This field is used to configure a external reference of the system who invokes the API. |
+
+#### Request example
+```json
+{
+    "PaymentMediaId": 105,
+    "Order":"QA464",
+    "Capture":"true",
+    "Amount":35,
+    "Installments":1,
+    "Currency":"USD",
+    "TargetCountryISO" : "UY",
+    "Description" : "Test Purchase",
+    "Customer": {
+        "Email": "testuser@mail.com",
+        "BillingAddress": {
+          "AddressType": 1,
+          "Country": "Uruguay",
+          "State": "Montevideo",
+          "City": "Montevideo",
+          "AddressDetail": "La Paz 1020"
+        },
+        "FirstName" : "Mark",
+        "LastName": "Doe",
+        "DocNumber" : "12345672",
+        "DocumentTypeId": 2,
+        "PhoneNumber" : "099111222"
+    },
+    "MetaDataIn" : {
+        "externalReference" : "External reference test",
+        "sourceReference": "Source reference test",
+        "destinationReference" : "Destination reference test"
+    }
+}
+```
+
+### Response parameters
+As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
+
+For more information on the response parameters, please refer to the [Response parameters section](/en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters) of the Purchase creation.
+
+#### Response example
+```json
+{
+    "Response": {
+        "PurchaseId": 141588,
+        "Created": "2023-05-26T16:56:23.456",
+        "TrxToken": null,
+        "Order": "QA464",
+        "Transaction": {
+            "TransactionID": 152261,
+            "Created": "2023-05-26T16:56:23.456",
+            "AuthorizationDate": "",
+            "TransactionStatusId": 2,
+            "Status": "Pending",
+            "ErrorCode": null,
+            "Description": "",
+            "ApprovalCode": null,
+            "Steps": [
+                {
+                    "Step": "Generic External",
+                    "Created": "2023-05-26T19:56:23.456",
+                    "Status": "Pending for Redirection",
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
+                    "Error": null,
+                    "AuthorizationCode": null,
+                    "UniqueID": null,
+                    "AcquirerResponseDetail": null
+                }
+            ]
+        },
+        "Capture": true,
+        "Amount": 1383,
+        "OriginalAmount": 1383,
+        "TaxableAmount": null,
+        "Tip": 0,
+        "Installments": 1,
+        "Currency": "UYU",
+        "Description": "Test Purchase",
+        "Customer": {
+            "CustomerId": 62928,
+            "Created": "2023-05-26T16:56:22.857",
+            "CommerceCustomerId": null,
+            "Owner": "Anonymous",
+            "Email": "testuser@mail.com",
+            "Enabled": true,
+            "ShippingAddress": null,
+            "BillingAddress": {
+                "AddressId": 0,
+                "AddressType": 1,
+                "Country": "Uruguay",
+                "State": "Montevideo",
+                "AddressDetail": "La Paz 1020",
+                "PostalCode": null,
+                "City": "Montevideo"
+            },
+            "Plans": null,
+            "AdditionalData": null,
+            "PaymentProfiles": [
+                {
+                    "PaymentProfileId": 64785,
+                    "PaymentMediaId": 105,
+                    "Created": "2023-05-26T19:56:22.880",
+                    "LastUpdate": "2023-05-26T19:56:22.927",
+                    "Brand": "Itau",
+                    "CardOwner": null,
+                    "Bin": null,
+                    "IssuerBank": null,
+                    "Installments": null,
+                    "Type": "BankTransfer",
+                    "IdCommerceToken": 0,
+                    "Token": null,
+                    "Expiration": null,
+                    "Last4": "",
+                    "Enabled": null,
+                    "DocumentNumber": null,
+                    "DocumentTypeId": null,
+                    "ExternalValue": null,
+                    "AffinityGroup": null
+                }
+            ],
+            "CaptureURL": null,
+            "UniqueID": null,
+            "URL": "https://devapi.siemprepago.com/v1/api/Customer/62928",
+            "FirstName": "Mark",
+            "LastName": "Doe",
+            "DocNumber": "12345672",
+            "DocumentTypeId": 2,
+            "PhoneNumber": "099111222",
+            "ExternalValue": null
+        },
+        "RefundList": null,
+        "PlanID": null,
+        "UniqueID": null,
+        "AdditionalData": null,
+        "CustomerUserAgent": null,
+        "CustomerIP": null,
+        "URL": "https://devapi.siemprepago.com/v1/api/Purchase/141588",
+        "DataUY": {
+            "IsFinalConsumer": false,
+            "Invoice": null,
+            "TaxableAmount": null
+        },
+        "DataDO": {
+            "Invoice": null,
+            "Tax": null
+        },
+        "Acquirer": {
+            "AcquirerID": 102,
+            "Name": "Infinia Redirect",
+            "CommerceNumber": null
+        },
+        "CommerceAction": {
+            "ActionType": 1,
+            "ActionReason": "REDIRECTION_NEEDED_EXTERNAL_SERVICE",
+            "ActionURL": "https://redirect.dev.bamboopayment.com/CA_04079e7b-8b27-45bb-8881-c940566fc9e6",
+            "ActionBody": null,
+            "ActionSessionId": "CA_04079e7b-8b27-45bb-8881-c940566fc9e6"
+        },
+        "PurchasePaymentProfileId": 64785,
+        "LoyaltyPlan": null,
+        "DeviceFingerprintId": null,
+        "MetadataIn": {
+            "externalReference": "External reference test",
+            "sourceReference": "Source reference test",
+            "destinationReference": "Destination reference test"
+        },
+        "MetadataOut": null,
+        "CrossBorderData": null,
+        "CrossBorderDataResponse": {
+            "TargetCountryISO": "UY",
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 0.35
+        },
+        "Redirection": null,
+        "AntifraudData": null,
+        "PaymentMediaId": null,
+        "TargetCountryISO": null,
+        "PurchaseType": 1,
+        "IsFirstRecurrentPurchase": false
+    },
+    "Errors": []
+}
+``` -->
+<h2 id="bank-transfers">Bank Transfers</h2>
+<p>With <strong>Bank Transfers</strong> allow your customers to make payments using bank transfers. Customers will need to transfer the purchase amount to the specified account details provided in the response using their home banking system. We accept payments from all banks.</p>
 <h3 id="request-parameters-1">Request parameters</h3>
-<p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PaymentMediaId</code></td>
-<td style="text-align:center"><code>numeric</code></td>
-<td style="text-align:center">Yes</td>
-<td>Send the <code>PaymentMediaId</code> according to the Customer&rsquo;s bank in the <a href="#supported-banks">Supported Banks table</a>.</td>
-</tr>
-<tr>
-<td><code>TargetCountryISO</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Indicate the destination country.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>Email</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Customer&rsquo;s email.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>FirstName</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s first name.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>LastName</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s last name.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>DocumentTypeId</code></td>
-<td style="text-align:center"><code>numeric</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s document type.<br>Refer to the <a href="../../../../en/docs/payment-methods/uruguay.html#document-types">Document types table</a> to see the possible values.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>DocNumber</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s Document Number.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>PhoneNumber</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Customer&rsquo;s phone number.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>BillingAddress</code> → <code>Country</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s Country.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>BillingAddress</code> → <code>State</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s State.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>BillingAddress</code> → <code>City</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s City.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>BillingAddress</code> → <code>AddressDetail</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s Address Detail.</td>
-</tr>
-<tr>
-<td><code>Customer</code> → <code>BillingAddress</code> → <code>PostalCode</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Customer&rsquo;s Postal Code.</td>
-</tr>
-<tr>
-<td><code>MetaDataIn</code> → <code>sourceReference</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>This field is used to configure a Bank reference for the customer.</td>
-</tr>
-<tr>
-<td><code>MetaDataIn</code> → <code>destinationReference</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>This field is used to configure a bank reference for the merchant. The API applies a default value if you don&rsquo;t provide this information.</td>
-</tr>
-<tr>
-<td><code>MetaDataIn</code> → <code>externalReference</code></td>
-<td style="text-align:center"><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>This field is used to configure a external reference of the system who invokes the API.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="request-example-1">Request example</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">105</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;QA464&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">35</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Test Purchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;testuser@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;La Paz 1020&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mark&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099111222&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetaDataIn&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;externalReference&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;External reference test&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;sourceReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Source reference test&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;destinationReference&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Destination reference test&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h3 id="response-parameters-1">Response parameters</h3>
-<p>As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the <code>MetadataOut.ActionURL</code> parameter.</p>
-<p>For more information on the response parameters, please refer to the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
-<h4 id="response-example-1">Response example</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">141588</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T16:56:23.456&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;QA464&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">152261</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T16:56:23.456&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TransactionStatusId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pending&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ApprovalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Steps&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Step&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Generic External&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T19:56:23.456&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pending for Redirection&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ResponseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AcquirerResponseDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">]</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1383</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;OriginalAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1383</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UYU&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Test Purchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">62928</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T16:56:22.857&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceCustomerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Owner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Anonymous&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;testuser@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BillingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Uruguay&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;La Paz 1020&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Montevideo&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Plans&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PaymentProfiles&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">64785</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">105</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T19:56:22.880&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;LastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-05-26T19:56:22.927&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Itau&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;IdCommerceToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Token&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;Enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;AffinityGroup&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">],</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CaptureURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://devapi.siemprepago.com/v1/api/Customer/62928&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mark&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345672&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099111222&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ExternalValue&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;RefundList&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PlanID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AdditionalData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerUserAgent&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CustomerIP&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://devapi.siemprepago.com/v1/api/Purchase/141588&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataUY&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;IsFinalConsumer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DataDO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Invoice&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Tax&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Acquirer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AcquirerID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">102</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Infinia Redirect&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;CommerceNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CommerceAction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ActionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ActionReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REDIRECTION_NEEDED_EXTERNAL_SERVICE&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ActionURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://redirect.dev.bamboopayment.com/CA_04079e7b-8b27-45bb-8881-c940566fc9e6&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ActionBody&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;ActionSessionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CA_04079e7b-8b27-45bb-8881-c940566fc9e6&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchasePaymentProfileId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">64785</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LoyaltyPlan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DeviceFingerprintId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;externalReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;External reference test&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;sourceReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Source reference test&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;destinationReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Destination reference test&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CrossBorderDataResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetCurrencyISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TargetAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.35</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Redirection&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;AntifraudData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IsFirstRecurrentPurchase&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="offline-bank-transfers">Offline Bank Transfers</h2>
-<p>With <strong>Offline Bank Transfers</strong>, you can let your customer pay using bank transfers using an E-Brou, Santander, Scotiabank, or Itau Bank account. Unlike the <a href="#bank-transfers">Online Bank Transfers</a> to complete the payment, your customer must transfer the purchase amount to the account details in the response using their home banking.</p>
-<h3 id="request-parameters-2">Request parameters</h3>
 <p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
 <table>
 <thead>
@@ -1630,7 +1521,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="request-example-2">Request example</h4>
+<h4 id="request-example-1">Request example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMediaId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">532</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;QA83&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1667,10 +1558,10 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Url_Pending&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/response&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h3 id="response-parameters-2">Response parameters</h3>
+</span></span></code></pre></div><h3 id="response-parameters-1">Response parameters</h3>
 <p>We return the <code>Purchase</code> with the status <em>Pending for Redirection</em> and a <code>CommerceAction</code> object with <code>ActionReason</code> as <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code> and the <code>ActionURL</code> parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the <a href="#payment-experience">Payment Experience</a> section to see the payment flow.</p>
 <p>For more information on the response parameters, please refer to the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
-<h4 id="response-example-2">Response example</h4>
+<h4 id="response-example-1">Response example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PurchaseId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1260840</span><span style="color:#000;font-weight:bold">,</span>

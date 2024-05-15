@@ -172,7 +172,7 @@ For more information on the response parameters, please refer to the [Response p
 }
 ```
 
-## Online Bank transfers {#bank-transfers}
+<!--## Online Bank transfers {#bank-transfers}
 The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
 
 ### Supported banks
@@ -391,10 +391,11 @@ For more information on the response parameters, please refer to the [Response p
     },
     "Errors": []
 }
-```
+``` -->
 
-## Offline Bank Transfers
-With **Offline Bank Transfers**, you can let your customer pay using bank transfers using an E-Brou, Santander, Scotiabank, or Itau Bank account. Unlike the [Online Bank Transfers](#bank-transfers) to complete the payment, your customer must transfer the purchase amount to the account details in the response using their home banking.
+## Bank Transfers {#bank-transfers}
+With **Bank Transfers** allow your customers to make payments using bank transfers. Customers will need to transfer the purchase amount to the specified account details provided in the response using their home banking system. We accept payments from all banks.
+
 
 ### Request parameters 
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
