@@ -613,10 +613,6 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ### Experiencia de pago {#payment-experience}
 Como se ha mencionado, debe redirigir a su cliente a la URL devuelta en la respuesta (parámetro `CommerceAction.ActionURL`).
 
-El primer paso que debe realizar su cliente es seleccionar el banco del pagador.
-
-<img src="/assets/InfiniaAR/InfiniaAR_04.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
-
 A continuación, mostramos a su cliente el cupón con la información bancaria a la que debe crear la transferencia.
 
 <img src="/assets/InfiniaAR/InfiniaAR_05.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>

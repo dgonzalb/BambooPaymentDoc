@@ -45,7 +45,7 @@ Todas las propiedades son opcionales, excepto la propiedad `form_id`. Por lo tan
 | **close_onclick** | Esta propiedad controla si el formulario de captura de la tarjeta puede cerrarse de forma automática cuando el usuario hace clic fuera del área del formulario. <br>Si se envía como `true`, el formulario se cierra cuando hace clic fuera del mismo. <br>Si se envía como `false`, el formulario no se cierra automáticamente y es necesario hacer clic en el botón de cierre. <br>El valor por defecto es `true`. | No |
 | **email_edit** | Define si el usuario puede modificar la dirección de correo electrónico.<br>El valor por defecto es `true`. | No |
 | **email_hide** | Define la visibilidad del campo `email` en el formulario de captura.<br>Si no se envía la propiedad `email`, esta se ignora y se muestra el campo.<br>El valor por defecto es `false`. | No |
-| **country_code** | Establece el país para el que vamos a tokenizar la tarjeta capturada. | No |
+| **country_code** | Establece el país para el que vamos a tokenizar la tarjeta capturada. | Si |
 
 Ejemplo:
 

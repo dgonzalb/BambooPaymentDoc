@@ -613,10 +613,6 @@ For more information on the response parameters, please refer to the [Response p
 ### Payment experience
 As mentioned, you must redirect your customer to the URL returned in the response (parameter `CommerceAction.ActionURL`).
 
-The first step your customer must take is to select the bank of the payer.
-
-<img src="/assets/InfiniaAR/InfiniaAR_04.png" alt="PrintScreen" style="width: 50%; height:auto;"><br>
-
 Then, we show your customer the coupon with the bank information to where they need to create the transfer.
 
 <img src="/assets/InfiniaAR/InfiniaAR_05.png" alt="PrintScreen" style="width: 70%; height:auto;"><br>

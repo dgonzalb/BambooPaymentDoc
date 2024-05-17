@@ -45,7 +45,7 @@ All properties are optional, except for the `form_id` property. So, the call to 
 | **close_onclick** | This property controls whether the Card Capture Form can be automatically closed when the user clicks outside the form’s area. <br>If it is set to `true`, the form will be closed when you click outside it. <br>If set to `false`, the form will not be closed automatically and it will be necessary to click on the close button. <br>The default value is `true`. | No |
 | **email_edit** | Defines whether the user can modify the e-mail address.<br>The default value is `true`. | No |
 | **email_hide** | Defines the visibility of the `email` field in the capture form.<br>If the `email` property is not set, this property is ignored and the field is displayed anyway.<br>The default value is `false`. | No |
-| **country_code** | Sets the country for which we will tokenize the captured card. | No |
+| **country_code** | Sets the country for which we will tokenize the captured card. | Yes |
 
 Example:
 
