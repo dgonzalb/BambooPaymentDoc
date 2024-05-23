@@ -516,7 +516,7 @@ The following tables show the bank code you can set in the parameter `payee.bank
 | FINANCIERA JURISCOOP S.A. COMP | `1121` |
 | GIROS Y FINANZAS CF | `1303` |
 | IRIS | `1637` |
-| ITAU | `1066` |
+| ITAU | `1006` |
 | JFK COOPERATIVA FINANCIERA | `1286` |
 | LULO BANK S.A. | `1070` |
 | MIBANCO S.A. | `1067` |
