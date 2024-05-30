@@ -732,7 +732,7 @@ Where:
 | `errors` | Errors that may appear. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-The validation of the message failed, and the Payout is **Declined**.
+The validation of the message failed, and the Payout **is not created**.
 
 **Response body**
 ```json
@@ -743,7 +743,8 @@ The validation of the message failed, and the Payout is **Declined**.
             "PropertyName": "Country",
             "Message": "'Country' must be 2 characters in length. You entered 1 characters."
         }
-    ]
+    ],
+    "statusCode": 400
 }
 ```
 <br>
@@ -757,17 +758,14 @@ The validation of the message was successful, but the Payout is **Declined** due
 **Response body**
 ```json
 {
-    "payoutId": 1,
+    "payoutId": 493945,
     "status": 8,
     "statusDescription": "Declined",
-    "reference": "PayOut567",
-    "errors": [
-        {
-            "ErrorCode": "B101",
-            "PropertyName": "BankAccount",
-            "Message": "BankAccount invalid"
-        }
-    ]
+    "reference": "QA-538",
+    "error": {
+        "errorCode": 812,
+        "message": "Declined by validation for document"
+    }
 }
 ```
 

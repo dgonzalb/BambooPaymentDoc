@@ -734,7 +734,7 @@ Donde:
 
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-Falló la validación del mensaje y el Payout queda en estado **Declinado**.
+Falló la validación del mensaje y el Payout queda en estado **is not created**.
 
 **Response body**
 ```json
@@ -743,9 +743,10 @@ Falló la validación del mensaje y el Payout queda en estado **Declinado**.
         {
             "ErrorCode": "ExactLengthValidator",
             "PropertyName": "Country",
-            "Message": "'Country' must be 2 characters in length. You entered 1 caracteres."
+            "Message": "'Country' must be 2 characters in length. You entered 1 characters."
         }
-    ]
+    ],
+    "statusCode": 400
 }
 ```
 <br>
@@ -759,17 +760,14 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado **Declina
 **Response body**
 ```json
 {
-    "payoutId": 1,
+    "payoutId": 493945,
     "status": 8,
     "statusDescription": "Declined",
-    "reference": "PayOut567",
-    "errors": [
-        {
-            "ErrorCode": "B101",
-            "PropertyName": "BankAccount",
-            "Message": "BankAccount invalid"
-        }
-    ]
+    "reference": "QA-538",
+    "error": {
+        "errorCode": 812,
+        "message": "Declined by validation for document"
+    }
 }
 ```
 
