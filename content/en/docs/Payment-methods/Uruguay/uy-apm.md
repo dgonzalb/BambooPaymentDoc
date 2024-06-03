@@ -404,6 +404,7 @@ You need to include specific fields for this payment method to work correctly. C
 |---|:-:|:-:|---|
 | `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**532**_. |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
+| `Description` | `string` | Yes | Purchase Description. This field is required for this payment method. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
@@ -420,32 +421,29 @@ You need to include specific fields for this payment method to work correctly. C
 #### Request example
 ```json
 {
-    "PaymentMediaId": 532,
-    "Order": "QA83",
-    "Capture": "true",
-    "Amount": 100000,
-    "Installments": 1,
-    "Currency": "USD",
-    "CrossBorderData": {
-        "TargetCountryISO": "UY"
-    },
-    "Description": "Compra de prueba",
+	"PaymentMediaId": 532,
+	"Order": "QA83",
+	"Amount": 100,
+	"Description" : "Test Purchase",
+    "Currency": "UYU",
+    "TargetCountryISO": "UY",
     "Customer": {
-        "Email": "testuser@mail.com",
+        "Email": "john@mail.com",
+        "FirstName": "John",
+        "LastName": "Smith",
+        "DocNumber": "12345672",
+        "DocumentTypeId": 2,
+        "PhoneNumber": "24022330",
         "BillingAddress": {
             "AddressType": 1,
             "Country": "Uruguay",
             "State": "Montevideo",
             "City": "Montevideo",
-            "AddressDetail": "La Paz 1020"
-        },
-        "FirstName": "Mark",
-        "LastName": "Doe",
-        "DocNumber": "12345672",
-        "DocumentTypeId": 2,
-        "PhoneNumber": "099111222"
+            "AddressDetail": "Av. Sarmiento 22",
+            "PostalCode": "150000"
+        }
     },
-    "MetaDataIn": {
+	"MetaDataIn": {
         "PaymentExpirationInMinutes": 60
     },
     "Redirection": {
