@@ -539,8 +539,6 @@ The following tables show the bank code you can set in the parameter `payee.bank
 
 | Bank Name | Bank Code |
 |---|:---:|
-| Bank name       | Bank code |
-|-----------------|------------|
 | ALTERNATIVOS    | `661`      |
 | ABC CAPITAL     | `138`      |
 | ACTINVER        | `133`      |
