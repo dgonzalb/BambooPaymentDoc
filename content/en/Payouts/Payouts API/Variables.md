@@ -539,97 +539,91 @@ The following tables show the bank code you can set in the parameter `payee.bank
 
 | Bank Name | Bank Code |
 |---|:---:|
-| ABC CAPITAL | `138` |
-| ACCIVAL | `614` |
-| ACTINVER | `133` |
-| AFIRME | `062` |
-| AKALA | `638` |
-| AMERICAN EXPRESS | `103` |
-| ASEA | `652` |
-| AUTOFIN | `128` |
-| AZTECA | `127` |
-| B&B | `610` |
-| BAJIO | `030` |
-| BAMSA | `106` |
-| BANAMEX | `002` |
-| BANCO FAMSA | `131` |
-| BANCOMEXT | `006` |
-| BANCOPPEL | `137` |
-| BANJERCITO | `019` |
-| BANOBRAS | `009` |
-| BANORTE | `072` |
-| BANREGIO | `058` |
-| BANSEFI | `166` |
-| BANSI | `060` |
-| BARCLAYS | `129` |
-| BBASE | `145` |
-| BBVA BANCOMER | `012` |
-| BMONEX | `112` |
-| BMULTIVA | `132` |
-| BULLTICK CB | `632` |
-| CB ACTINVER | `621` |
-| CB INTERCAM | `630` |
-| CB JPMORGAN | `640` |
-| CI BOLSA | `631` |
-| CIBANCO | `143` |
-| CLS | `901` |
-| COMPARTAMOS | `130` |
-| CONSUBANCO | `140` |
-| CREDIT SUISSE | `126` |
-| DEUTSCHE BANK | `124` |
-| ESTRUCTURADORES | `606` |
-| EVERCORE | `648` |
-| FINAMEX | `616` |
-| FINCOMUN | `634` |
-| GBM | `601` |
-| HDI SEGUROS | `636` |
-| HIPOTECARIA FEDERAL | `168` |
-| HSBC | `021` |
-| INBURSA | `036` |
-| INDEVAL | `902` |
-| ING | `116` |
-| INTERACCIONES | `037` |
-| INTERBANCO | `136` |
-| INVEX | `059` |
-| IXE | `032` |
-| JP MORGAN | `110` |
-| KUSPIT | `653` |
-| LIBERTAD | `670` |
-| MAPFRE | `619` |
-| MASARI | `602` |
-| MERRILL LYNCH | `615` |
-| MIFEL | `042` |
-| MONEXCB | `600` |
-| NAFIN | `135` |
-| OACTIN | `622` |
-| OPCIONES EMPRESARIALES DEL NOROESTE | `659` |
-| ORDER | `637` |
-| PROFUTURO | `620` |
-| REFORMA | `642` |
-| SANTANDER | `014` |
-| SCOTIABANK | `044` |
-| SEGMTY | `651` |
-| SKANDIA VIDA | `623` |
-| SKANDIA OPERADORA | `649` |
-| SOFIEXPRESS | `655` |
-| STERLING | `633` |
-| STP | `646` |
-| SU CASITA | `629` |
-| TELECOMM | `647` |
-| THE ROYAL BANK | `102` |
-| TIBER | `607` |
-| TOKYO | `108` |
-| UBS BANK | `139` |
-| UNAGRA | `656` |
-| UNICA | `618` |
-| VALMEX | `617` |
-| VALUE | `605` |
-| VE POR MAS | `113` |
-| VECTOR | `608` |
-| VOLKSWAGEN | `141` |
-| WALMART | `134` |
-| ZURICH | `627` |
-| ZURICHVI | `628` |
+| Bank name       | Bank code |
+|-----------------|------------|
+| ALTERNATIVOS    | `661`      |
+| ABC CAPITAL     | `138`      |
+| ACTINVER        | `133`      |
+| AFIRME          | `062`      |
+| ARCUS           | `706`      |
+| ASP INTEGRA OPC | `659`      |
+| AUTOFIN         | `128`      |
+| AZTECA          | `127`      |
+| BAJIO           | `030`      |
+| BANAMEX         | `002`      |
+| BANCO COVALTO   | `154`      |
+| BANCO S3        | `160`      |
+| BANCOMEXT       | `006`      |
+| BANCOPPEL       | `137`      |
+| BANCREA         | `152`      |
+| BANJERCITO      | `019`      |
+| BANK OF AMERICA | `106`      |
+| BANK OF CHINA   | `159`      |
+| BANKAOOL        | `147`      |
+| BANOBRAS        | `009`      |
+| BANORTE         | `072`      |
+| BANREGIO        | `058`      |
+| BANSI           | `060`      |
+| BANXICO         | `001`      |
+| BARCLAYS        | `129`      |
+| BBASE           | `145`      |
+| BBVA MEXICO     | `012`      |
+| BMONEX          | `112`      |
+| CAJA POP MEXICA | `677`      |
+| CAJA TELEFONIST | `683`      |
+| CB INTERCAM     | `630`      |
+| CI BOLSA        | `631`      |
+| CIBANCO         | `143`      |
+| COMPARTIMOS     | `130`      |
+| CONSUBANCO      | `140`      |
+| CREDICAPITAL    | `652`      |
+| CRISTOBAL COLON | `680`      |
+| CUENCA          | `723`      |
+| CoDi Valida     | `903`      |
+| DONDE           | `151`      |
+| FINAMEX         | `616`      |
+| FINCOMUN        | `634`      |
+| FOMPED          | `689`      |
+| FONDO (FIRA)    | `685`      |
+| GBM             | `601`      |
+| HIPOTECARIA     | `168`      |
+| HSBC            | `021`      |
+| ICBC            | `155`      |
+| INBURSA         | `036`      |
+| INDEVAL         | `902`      |
+| INMOBILIARIO    | `150`      |
+| INTERCAM BANCO  | `136`      |
+| INVERCAP        | `686`      |
+| INVEX           | `059`      |
+| JP MORGAN       | `110`      |
+| KUSPIT          | `653`      |
+| LIBERTAD        | `670`      |
+| MASARI          | `602`      |
+| MIFEL           | `042`      |
+| MIZUHO BANK     | `158`      |
+| MONEXCB         | `600`      |
+| MUFG            | `108`      |
+| MULTIVA BANCO   | `132`      |
+| Mercado Pago W  | `722`      |
+| NAFIN           | `135`      |
+| NU MEXICO       | `638`      |
+| NVIO            | `710`      |
+| PAGATODO        | `140`      |
+| PROFUTURO       | `620`      |
+| REFORMA         | `642`      |
+| SABADELL        | `156`      |
+| SANTANDER       | `014`      |
+| SCOTIABANK      | `044`      |
+| SHINHAN         | `157`      |
+| STP             | `646`      |
+| TESORED         | `703`      |
+| TRANSFER        | `684`      |
+| UNAGRA          | `656`      |
+| VALMEX          | `617`      |
+| VALUE           | `605`      |
+| VE POR MAS      | `113`      |
+| VECTOR          | `608`      |
+| VOLKSWAGEN      | `141`      |
 
 </div>
 </details>

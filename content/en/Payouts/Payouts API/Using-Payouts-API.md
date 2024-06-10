@@ -221,7 +221,7 @@ Refer to the corresponding tab according to the payee's country.
       "number": "12345678901"
     },
     "bankAccount": {
-      "number": "0071234567890123456789",
+      "number": "0000053600000000000566",
       "type": 1,
       "codeBank": "7"
     }
@@ -253,7 +253,7 @@ Refer to the corresponding tab according to the payee's country.
       "number": "12345678901"
     },
     "bankAccount": {
-      "number": "0071234567890123456789",
+      "number": "0000053600000000000566",
       "type": 1,
       "codeBank": "7"
     }

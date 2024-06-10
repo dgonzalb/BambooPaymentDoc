@@ -222,7 +222,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
       "number": "12345678901"
     },
     "bankAccount": {
-      "number": "0071234567890123456789",
+      "number": "0000053600000000000566",
       "type": 1,
       "codeBank": "7"
     }
@@ -254,7 +254,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
       "number": "12345678901"
     },
     "bankAccount": {
-      "number": "0071234567890123456789",
+      "number": "0000053600000000000566",
       "type": 1,
       "codeBank": "7"
     }
