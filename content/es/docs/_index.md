@@ -15,8 +15,6 @@ menu:
 * Pagos en efectivo
 * E-wallets (Billeteras electrónicas)
 
-<img src="https://bamboopaymentsystems.com/wp-content/themes/Bamboo_Theme/images/pci-logo.png" alt="Bamboo PCI certified by GMsectec" style="width: 20%; height:auto;">
-
 
 ## Países disponibles {#available-countries}
 <div id="countries">Maximice la cobertura de mercado con soluciones de pago locales en <strong>MM</strong> países de Latinoamérica.</div><br>

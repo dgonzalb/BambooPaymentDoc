@@ -787,7 +787,7 @@ To get the payout, include the following endpoints according to your needs.
 
 | Parameter | Format | Description |
 |---|:-:|---|
-| `payoutId` | `integer` | Internal identification of the Payout. |
+| `payoutId` | `long` | Internal identification of the Payout. (Max. 19 characters) |
 | `reference` | `string` | Unique identifier of the Payout you defined when you requested the Payout. |
 | `isoCountry` | `string` | ISO code of the country in format `ISO 3166-2`. |
 | `created` | `date` | Date and time when the Payout was requested. |

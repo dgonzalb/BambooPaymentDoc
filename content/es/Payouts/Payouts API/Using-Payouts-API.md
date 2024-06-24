@@ -789,7 +789,7 @@ Para obtener el Payout, incluya los siguientes endpoints de acuerdo con sus nece
 
 | Parámetro | Formato | Descripción |
 |---|:-:|---|
-| `payoutId` | `integer` | Identificador interno del Payout. |
+| `payoutId` | `long` | Identificador interno del Payout. (Máx. 19 caracteres) | |
 | `reference` | `string` | Identificador único del Payout definido por usted cuando solicitó el Payout. |
 | `isoCountry` | `string` | Código ISO del país en formato `ISO 3166-2`. |
 | `created` | `date` | Fecha y hora de la solicitud del Payout. |

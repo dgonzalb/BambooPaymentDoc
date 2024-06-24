@@ -15,7 +15,6 @@ menu:
 * Cash payments
 * E-wallets
 
-<img src="https://bamboopaymentsystems.com/wp-content/themes/Bamboo_Theme/images/pci-logo.png" alt="Bamboo PCI certified by GMsectec" style="width: 20%; height:auto;">
 
 
 ## Available countries
