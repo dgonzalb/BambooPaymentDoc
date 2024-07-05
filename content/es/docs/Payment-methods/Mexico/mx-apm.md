@@ -12,7 +12,7 @@ tags: ["subtopic"]
 El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago en una oficina física de pago, banca en línea o aplicación de banca móvil.
 {{% /alert %}}
 
-## OXXO
+## OXXOPay
 **OXXO**, la cadena de tiendas de autoservicio más grande de México, ofrece un servicio para que sus clientes paguen sus compras. Sus clientes deben entregar el cupón en la tienda y pueden pagar utilizando efectivo o tarjetas.
 
 ### Parámetros del Request {#request-parameters}
@@ -20,36 +20,42 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**35**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**90**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
-| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
-| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. Incluyendo el indicativo para México `+52` |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 #### Ejemplo del Request {#request-example}
 ```json
 {
-    "PaymentMediaId": 35,
-    "Amount": 5000,
-    "TargetCountryISO": "MX",
-    "MetadataIn": {
-        "PaymentExpirationInMinutes": "1440"
-    },
-    "Currency": "MXN",
-    "Capture": true,
-    "Customer": {
-        "FirstName": "Lorena",
-        "LastName": "Salas",
-        "Email": "lsalas@mail.com"
-    }
+	"PaymentMediaId": 90,
+	"Amount": 100,
+	"CrossBorderData": {
+		"TargetCountryISO": "MX"
+	},
+	"Currency": "USD",
+	"Customer": {
+		"Email": "lucia@test.com",
+		"FirstName": "Lucia",
+		"LastName": "Perez",
+		"PhoneNumber": "+525532100000",
+		"BillingAddress": {
+			"AddressType": 1,
+			"Country": "Mexico",
+			"State": "Ciudad de Mexico",
+			"City": "Coyoacan",
+			"AddressDetail": "Av Universidad 3000"
+		}
+	}
 }
 ```
 
@@ -58,13 +64,11 @@ En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentCode` | `string`  | Número del código de barras generado por **OXXO**. |
-| `Response` → `MetadataOut` → `PaymentBarcodeUrl` | `string` | URL del código de barras generado por **OXXO**. |
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL del cupón de pago. |
 
 Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl`, donde podrá imprimir el cupón y completar el pago en una tienda **OXXO**.
 
-<img src="/assets/OxxoVoucher.png" width="60%" alt="PrintScreen"/>
+<img src="/assets/OXXOPayVoucher.png" width="60%" alt="PrintScreen"/>
 
 #### Ejemplo del Response {#response-example}
 
@@ -111,7 +115,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "Created": "2023-09-01T16:56:07.713",
             "CommerceCustomerId": null,
             "Owner": "Anonymous",
-            "Email": "lsalas@mail.com",
+            "Email": "lucia@test.com",
             "Enabled": true,
             "ShippingAddress": null,
             "BillingAddress": null,
@@ -120,10 +124,10 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "PaymentProfiles": [
                 {
                     "PaymentProfileId": 255697,
-                    "PaymentMediaId": 35,
+                    "PaymentMediaId": 90,
                     "Created": "2023-09-01T16:56:07.863",
                     "LastUpdate": "2023-09-01T16:56:08.220",
-                    "Brand": "Oxxo",
+                    "Brand": "OxxoPay",
                     "CardOwner": null,
                     "Bin": null,
                     "IssuerBank": null,
@@ -143,8 +147,8 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "CaptureURL": null,
             "UniqueID": null,
             "URL": "https://api.stage.bamboopayment.com/Customer/250946",
-            "FirstName": "Lorena",
-            "LastName": "Salas",
+            "FirstName": "Lucia",
+            "LastName": "Perez",
             "DocNumber": null,
             "DocumentTypeId": 2,
             "PhoneNumber": null,
@@ -167,8 +171,8 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "Tax": 0
         },
         "Acquirer": {
-            "AcquirerID": 68,
-            "Name": "Oxxo",
+            "AcquirerID": 166,
+            "Name": "OxxoPay",
             "CommerceNumber": null
         },
         "CommerceAction": null,
@@ -179,10 +183,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "PaymentExpirationInMinutes": "1440"
         },
         "MetadataOut": {
-            "PaymentUrl": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html",
-            "PaymentCode": "810000011342193202310010005000",
-            "PaymentBarcodeUrl": "https://gateway.stage.bamboopayment.com/purchase-coupons/coupons-barcodes/OxxoBarcode/810000011342193202310010005000.jpeg",
-            "PaymentReference": "1134219"
+            "PaymentUrl": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
@@ -204,6 +205,10 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
     "Errors": []
 }
 ```
+
+{{% alert title="Info" color="info"%}}
+OXXOPay admite un rollback total de la transacción solo dentro de los 10 minutos posteriores a la generación de la compra.
+{{% /alert %}}
 
 ## Efectivo Paynet {#paynet-cash}
 **Paynet** le permite a sus clientes generar un cupón y realizar el pago en una tienda física.
