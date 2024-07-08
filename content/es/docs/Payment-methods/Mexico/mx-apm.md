@@ -26,7 +26,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. Incluyendo el indicativo para México `+52` |
+| `Customer` → `PhoneNumber` | `string` | Yes | Número de teléfono del cliente. Incluyendo el indicativo para México `+52` |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |

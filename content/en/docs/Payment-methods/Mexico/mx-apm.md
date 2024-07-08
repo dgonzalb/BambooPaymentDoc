@@ -208,11 +208,6 @@ You can redirect your customer to the URL displayed in the parameter `Response.M
 }
 ```
 
-{{% alert title="Info" color="info"%}}
-OXXOPay supports a full rollback of the transaction only within 10 minutes after the purchase is generated.
-{{% /alert %}}
-
-
 ## Paynet Cash
 **Paynet** allows your customers to generate a coupon and complete the payment in a physical payment office.
 
