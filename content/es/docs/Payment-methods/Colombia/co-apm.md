@@ -464,7 +464,9 @@ Para más información sobre los parámetros del Response, consulte la [sección
 ## Nequi QR
 Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.
 
-El flujo de este medio de pago es _**Redirect**_, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1), puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect]({{< ref Redirect-Purchase.md >}}).
+#### Flujo de Pago {#qr-code}
+<img src="/assets/NequiQRES.png" width="100%" alt="Nequi QR Payment Flow"/>
+
 
 ### Parámetros del Request {#request-parameters-2}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
@@ -679,19 +681,16 @@ Resultado:
 ## Nequi Push
 Al utilizar este método de pago, su cliente recibirá una notificación para que abra su aplicación _Nequi_ y acepte o rechace el pago.
 
-#### Notificación Push {#push-notification}
-<img src="/assets/NequiPush_01.jpg" width="40%" alt="PrintScreen"/>
+#### Payment Flow {#push-notification}
+<img src="/assets/NequiPushES.png" width="100%" alt="Nequi Flujo de Pago"/>
 
-#### Confirmación del pago {#payment-confirmation}
-
-<img src="/assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
 
 ### Parámetros del Request {#request-parameters-3}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**67**_. |
+| `PaymentMediaId` | `numeric` | Sí | El `PaymentMediaId` para este medio de pago es _**68**_. |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |

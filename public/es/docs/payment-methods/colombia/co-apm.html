@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Aprenda a integrar su solución para procesar pagos con PSE, efectivo y Nequi.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2024-03-15T10:19:23-05:00" />
-<meta itemprop="wordCount" content="2933">
+<meta itemprop="wordCount" content="2888">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medios alternativos de pago"/>
 <meta name="twitter:description" content="Aprenda a integrar su solución para procesar pagos con PSE, efectivo y Nequi.
@@ -143,7 +143,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e4697eaa121ff870099f22ec7dde9deafe7008883797d190ef967ecaea7cd3c62681bd28aee0156af2115bd609974c20fea6bb16f1a59510b40f4cceb2219a2f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.ec6c9b3796a9afb5fb01a9061f34174eda73beccbea613aca9b1518868022d750ab61940a3ffc5763129a128bfa62a605669485bf1a2881e5035344a741463a1.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -892,6 +892,7 @@
     </li>
     <li><a href="#nequi-qr">Nequi QR</a>
       <ul>
+        <li></li>
         <li><a href="#request-parameters-2">Parámetros del Request</a></li>
         <li><a href="#response-parameters-2">Parámetros del Response</a></li>
       </ul>
@@ -1652,7 +1653,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h2 id="nequi-qr">Nequi QR</h2>
 <p>Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.</p>
-<p>El flujo de este medio de pago es <em><strong>Redirect</strong></em>, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la <a href="#response-parameters-1">sección Parámetros del Response</a>, puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte <a href="../../../../es/docs/purchase-workflow/purchases/redirect-purchase.html">Compra Redirect</a>.</p>
+<h4 id="qr-code">Flujo de Pago</h4>
+<img src="../../../../assets/NequiQRES.png" width="100%" alt="Nequi QR Payment Flow"/>
 <h3 id="request-parameters-2">Parámetros del Request</h3>
 <p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
 <table>
@@ -1928,10 +1930,8 @@
 <img src="../../../../assets/QRNequi.png" width="40%" alt="PrintScreen"/>
 <h2 id="nequi-push">Nequi Push</h2>
 <p>Al utilizar este método de pago, su cliente recibirá una notificación para que abra su aplicación <em>Nequi</em> y acepte o rechace el pago.</p>
-<h4 id="push-notification">Notificación Push</h4>
-<img src="../../../../assets/NequiPush_01.jpg" width="40%" alt="PrintScreen"/>
-<h4 id="payment-confirmation">Confirmación del pago</h4>
-<img src="../../../../assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
+<h4 id="push-notification">Payment Flow</h4>
+<img src="../../../../assets/NequiPushES.png" width="100%" alt="Nequi Flujo de Pago"/>
 <h3 id="request-parameters-3">Parámetros del Request</h3>
 <p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
 <table>
@@ -1948,7 +1948,7 @@
 <td><code>PaymentMediaId</code></td>
 <td style="text-align:center"><code>numeric</code></td>
 <td style="text-align:center">Sí</td>
-<td>El <code>PaymentMediaId</code> para este medio de pago es <em><strong>67</strong></em>.</td>
+<td>El <code>PaymentMediaId</code> para este medio de pago es <em><strong>68</strong></em>.</td>
 </tr>
 <tr>
 <td><code>TargetCountryISO</code></td>

@@ -206,10 +206,6 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
 }
 ```
 
-{{% alert title="Info" color="info"%}}
-OXXOPay admite un rollback total de la transacción solo dentro de los 10 minutos posteriores a la generación de la compra.
-{{% /alert %}}
-
 ## Efectivo Paynet {#paynet-cash}
 **Paynet** le permite a sus clientes generar un cupón y realizar el pago en una tienda física.
 

@@ -10615,7 +10615,8 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nequi-qr&#34;&gt;Nequi QR&lt;/h2&gt;
 &lt;p&gt;Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.&lt;/p&gt;
-&lt;p&gt;El flujo de este medio de pago es &lt;em&gt;&lt;strong&gt;Redirect&lt;/strong&gt;&lt;/em&gt;, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la &lt;a href=&#34;#response-parameters-1&#34;&gt;sección Parámetros del Response&lt;/a&gt;, puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/redirect-purchase.html&#34;&gt;Compra Redirect&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;qr-code&#34;&gt;Flujo de Pago&lt;/h4&gt;
+&lt;img src=&#34;../../assets/NequiQRES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi QR Payment Flow&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
 &lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
@@ -10891,10 +10892,8 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;img src=&#34;../../assets/QRNequi.png&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
 &lt;h2 id=&#34;nequi-push&#34;&gt;Nequi Push&lt;/h2&gt;
 &lt;p&gt;Al utilizar este método de pago, su cliente recibirá una notificación para que abra su aplicación &lt;em&gt;Nequi&lt;/em&gt; y acepte o rechace el pago.&lt;/p&gt;
-&lt;h4 id=&#34;push-notification&#34;&gt;Notificación Push&lt;/h4&gt;
-&lt;img src=&#34;../../assets/NequiPush_01.jpg&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
-&lt;h4 id=&#34;payment-confirmation&#34;&gt;Confirmación del pago&lt;/h4&gt;
-&lt;img src=&#34;../../assets/NequiPush_02.jpg&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
+&lt;h4 id=&#34;push-notification&#34;&gt;Payment Flow&lt;/h4&gt;
+&lt;img src=&#34;../../assets/NequiPushES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi Flujo de Pago&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-3&#34;&gt;Parámetros del Request&lt;/h3&gt;
 &lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
@@ -10911,7 +10910,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;td&gt;&lt;code&gt;PaymentMediaId&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;numeric&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;El &lt;code&gt;PaymentMediaId&lt;/code&gt; para este medio de pago es &lt;em&gt;&lt;strong&gt;67&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;El &lt;code&gt;PaymentMediaId&lt;/code&gt; para este medio de pago es &lt;em&gt;&lt;strong&gt;68&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TargetCountryISO&lt;/code&gt;&lt;/td&gt;
@@ -11761,15 +11760,7 @@ La validación del mensaje fue exitosa pero, el Payout queda en estado &lt;stron
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;OXXOPay admite un rollback total de la transacción solo dentro de los 10 minutos posteriores a la generación de la compra.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;paynet-cash&#34;&gt;Efectivo Paynet&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;paynet-cash&#34;&gt;Efectivo Paynet&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Paynet&lt;/strong&gt; le permite a sus clientes generar un cupón y realizar el pago en una tienda física.&lt;/p&gt;
 &lt;h3 id=&#34;cash-acquirers&#34;&gt;Redes de pago en efectivo&lt;/h3&gt;
 &lt;p&gt;Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes:&lt;/p&gt;

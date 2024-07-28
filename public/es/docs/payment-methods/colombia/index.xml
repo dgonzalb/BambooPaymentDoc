@@ -1036,7 +1036,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nequi-qr&#34;&gt;Nequi QR&lt;/h2&gt;
 &lt;p&gt;Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.&lt;/p&gt;
-&lt;p&gt;El flujo de este medio de pago es &lt;em&gt;&lt;strong&gt;Redirect&lt;/strong&gt;&lt;/em&gt;, por lo que debe dirigir a su cliente a otra página donde completará el pago. En la &lt;a href=&#34;#response-parameters-1&#34;&gt;sección Parámetros del Response&lt;/a&gt;, puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/redirect-purchase.html&#34;&gt;Compra Redirect&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;qr-code&#34;&gt;Flujo de Pago&lt;/h4&gt;
+&lt;img src=&#34;../../../../assets/NequiQRES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi QR Payment Flow&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
 &lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
@@ -1312,10 +1313,8 @@
 &lt;img src=&#34;../../../../assets/QRNequi.png&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
 &lt;h2 id=&#34;nequi-push&#34;&gt;Nequi Push&lt;/h2&gt;
 &lt;p&gt;Al utilizar este método de pago, su cliente recibirá una notificación para que abra su aplicación &lt;em&gt;Nequi&lt;/em&gt; y acepte o rechace el pago.&lt;/p&gt;
-&lt;h4 id=&#34;push-notification&#34;&gt;Notificación Push&lt;/h4&gt;
-&lt;img src=&#34;../../../../assets/NequiPush_01.jpg&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
-&lt;h4 id=&#34;payment-confirmation&#34;&gt;Confirmación del pago&lt;/h4&gt;
-&lt;img src=&#34;../../../../assets/NequiPush_02.jpg&#34; width=&#34;40%&#34; alt=&#34;PrintScreen&#34;/&gt;
+&lt;h4 id=&#34;push-notification&#34;&gt;Payment Flow&lt;/h4&gt;
+&lt;img src=&#34;../../../../assets/NequiPushES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi Flujo de Pago&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-3&#34;&gt;Parámetros del Request&lt;/h3&gt;
 &lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
@@ -1332,7 +1331,7 @@
 &lt;td&gt;&lt;code&gt;PaymentMediaId&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;numeric&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;El &lt;code&gt;PaymentMediaId&lt;/code&gt; para este medio de pago es &lt;em&gt;&lt;strong&gt;67&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;El &lt;code&gt;PaymentMediaId&lt;/code&gt; para este medio de pago es &lt;em&gt;&lt;strong&gt;68&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TargetCountryISO&lt;/code&gt;&lt;/td&gt;

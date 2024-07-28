@@ -464,7 +464,8 @@ For more information on the response parameters, please refer to the [Response p
 ## Nequi QR
 Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo's Payment API generates the QR code in the response to the payment request.
 
-The flow of this payment method is _**Redirect**_, so you must direct your customer to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1), you can find the parameter of the redirection URL. For more information, refer to [Redirect purchase]({{< ref Redirect-Purchase.md >}}).
+#### Payment Flow {#qr-code}
+<img src="/assets/NequiQREN.png" width="100%" alt="Nequi QR Payment Flow"/>
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
@@ -679,19 +680,15 @@ Result:
 ## Nequi Push
 Using this payment method, your customer will receive a notification to open their _Nequi_ app to accept or reject the payment.
 
-#### Push notification
-<img src="/assets/NequiPush_01.jpg" width="40%" alt="PrintScreen"/>
-
-#### Payment confirmation
-
-<img src="/assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
+#### Payment Flow {#push-notification}
+<img src="/assets/NequiPushEN.png" width="100%" alt="Nequi Payment Flow"/>
 
 ### Request parameters
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**67**_. |
+| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**68**_. |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |

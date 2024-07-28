@@ -31,7 +31,7 @@
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with PSE, Cash and Nequi.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2024-03-15T10:19:23-05:00" />
-<meta itemprop="wordCount" content="2761">
+<meta itemprop="wordCount" content="2717">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alternative Payment Methods"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with PSE, Cash and Nequi.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e4697eaa121ff870099f22ec7dde9deafe7008883797d190ef967ecaea7cd3c62681bd28aee0156af2115bd609974c20fea6bb16f1a59510b40f4cceb2219a2f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.ec6c9b3796a9afb5fb01a9061f34174eda73beccbea613aca9b1518868022d750ab61940a3ffc5763129a128bfa62a605669485bf1a2881e5035344a741463a1.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -892,6 +892,7 @@
     </li>
     <li><a href="#nequi-qr">Nequi QR</a>
       <ul>
+        <li></li>
         <li><a href="#request-parameters-2">Request parameters</a></li>
         <li><a href="#response-parameters-2">Response parameters</a></li>
       </ul>
@@ -1652,7 +1653,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><h2 id="nequi-qr">Nequi QR</h2>
 <p>Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo&rsquo;s Payment API generates the QR code in the response to the payment request.</p>
-<p>The flow of this payment method is <em><strong>Redirect</strong></em>, so you must direct your customer to another page where they will complete the payment. In the <a href="#response-parameters-1">Response parameters sections</a>, you can find the parameter of the redirection URL. For more information, refer to <a href="../../../../en/docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchase</a>.</p>
+<h4 id="qr-code">Payment Flow</h4>
+<img src="../../../../assets/NequiQREN.png" width="100%" alt="Nequi QR Payment Flow"/>
 <h3 id="request-parameters-2">Request parameters</h3>
 <p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
 <table>
@@ -1928,10 +1930,8 @@
 <img src="../../../../assets/QRNequi.png" width="40%" alt="PrintScreen"/>
 <h2 id="nequi-push">Nequi Push</h2>
 <p>Using this payment method, your customer will receive a notification to open their <em>Nequi</em> app to accept or reject the payment.</p>
-<h4 id="push-notification">Push notification</h4>
-<img src="../../../../assets/NequiPush_01.jpg" width="40%" alt="PrintScreen"/>
-<h4 id="payment-confirmation">Payment confirmation</h4>
-<img src="../../../../assets/NequiPush_02.jpg" width="40%" alt="PrintScreen"/>
+<h4 id="push-notification">Payment Flow</h4>
+<img src="../../../../assets/NequiPushEN.png" width="100%" alt="Nequi Payment Flow"/>
 <h3 id="request-parameters-3">Request parameters</h3>
 <p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
 <table>
@@ -1948,7 +1948,7 @@
 <td><code>PaymentMediaId</code></td>
 <td style="text-align:center"><code>numeric</code></td>
 <td style="text-align:center">Yes</td>
-<td>The <code>PaymentMediaId</code> for this payment method is <em><strong>67</strong></em>.</td>
+<td>The <code>PaymentMediaId</code> for this payment method is <em><strong>68</strong></em>.</td>
 </tr>
 <tr>
 <td><code>TargetCountryISO</code></td>
