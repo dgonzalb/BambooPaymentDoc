@@ -49,7 +49,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
         "Email": "breno@mail.com.br",
         "FirstName": "Breno",
         "LastName": "Barbieri",
-        "DocNumber": "10058494715",
+        "DocNumber": "13394559358",
         "DocumentTypeId": 24,
         "PhoneNumber": "27998764488",
         "BillingAddress": {
@@ -224,7 +224,14 @@ Use the following cards to simulate the different status of the purchase.
 |---|---|---|---|
 | Mastercard | `5555666677778884` |  `123` | `12/29` |
 | Visa | `4984123412341234` |  `123` | `12/29` |
-| Diners | `30111122223331` |  `123` | `12/29` |
+<!--| Diners | `30111122223331` |  `123` | `12/29` |
 | Amex | `376411112222331` |  `1234` | `12/29` |
 | Hipercard | `6062111122223339` |  `123` | `12/29` |
-| Elo | `6362970000457013` |  `123` | `12/29` |
+| Elo | `6362970000457013` |  `123` | `12/29` |-->
+
+{{% alert title="Info" color="info"%}}
+
+To ensure successful testing, please use the following specific details: docNumber: “13394559358” and docType: “24” (CPF).
+Failure to use these details may result in unsuccessful transactions.
+
+{{% /alert %}}

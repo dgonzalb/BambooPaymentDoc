@@ -96,10 +96,10 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | Cash Payment | API |
 | <img src="/assets/SPEI.png" width="52" style="" /> | SPEI | Bank Transfer | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" width="52" style="" /> | Oxxo | Cash Payment | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit & Debit Card | API & Redirect |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit & Debit Card | API & Redirect |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API & Redirect |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Credit Card | API & Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | Credit & Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Credit & Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Debit Card | API |
 
 ## Nicaragua
