@@ -53,9 +53,9 @@ The following table describes the valid document types for Colombia:
 | 11   | Cédula de ciudadanía                 | CC           |
 | 12   | Cédula de extranjería                | CE           |
 | 13   | NIT                                  | NIT          |
-| 14   | Tarjeta de identidad                 | TI           |
+<!--| 14   | Tarjeta de identidad                 | TI           |
 | 15   | Pasaporte                            | PP           |
 | 16   | IDC (Identificador Único de cliente) | IDC          |
 | 17   | Celular                              | CEL          |
 | 18   | Registro civil de nacimiento         | RNC          |
-| 19   | Identificación extranjera            | IE           |
+| 19   | Identificación extranjera            | IE           |-->

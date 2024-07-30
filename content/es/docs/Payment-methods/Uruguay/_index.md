@@ -68,7 +68,7 @@ La siguiente tabla describe los tipos de documentos válidos para Uruguay:
 |:------:|----------------------|-------------|
 | 1      | RUT                  | RUT         |
 | 2      | Cédula de Identidad  | CI          |
-| 3      | Extrajero            | EXT         |
+| 3      | Extranjero            | EXT         |
 
 ## Tabla de bancos emisores {#issuer-banks-table}
 La siguiente tabla muestra el listado de bancos emisores configurados.

@@ -68,7 +68,7 @@ The following table describes the valid document types for Uruguay:
 |:----:|---------------------|--------------|
 | 1    | RUT                 | RUT          |
 | 2    | Cédula de Identidad | CI           |
-| 3    | Extrajero           | EXT          |
+| 3    | Foreigner           | EXT          |
 
 ## Issuer Banks Table
 The following table lists the configured Issuer Banks.
