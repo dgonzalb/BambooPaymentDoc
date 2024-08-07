@@ -17,7 +17,7 @@ weight: 50
 ### Julio
 | Página | Descripción |
 |---|---|
-| [Medios de Pago](/es/docs/getting-started/payment-methods.html#colombia) | Fix PSE in the Payment Methods List |
+| [Medios de Pago](/es/docs/getting-started/payment-methods.html#colombia) | PSE como medio de pago en la lista en Colombia. |
 | [Tarjetas - Brazil](/es/docs/payment-methods/brazil/br-cards.html#testing-cards) | Ajuste de las tarjetas de prueba para Brasil. |
 | [Colombia](/es/docs/payment-methods/colombia/co-apm.html#nequi-qr)| Nuevos Flujos de Pago para Nequi QR y Nequi Push en Colombia. |
 | [Mexico](/es/docs/payment-methods/mexico/mx-apm.html#oxxopay)| Nuevo Método de Pago para México: OXXOPay. No ofrecemos OXXO Batch como medio de pago. |
