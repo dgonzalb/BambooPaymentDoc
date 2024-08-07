@@ -8,7 +8,7 @@ weight: 50
 
 ---
 ## 2024
-### Agosto
+### August
 | Page | Description |
 |---|---|
 | [Change Log](/en/docs/getting-started/change-log.html) | The Change Log page has been added to the technical documentation. |
