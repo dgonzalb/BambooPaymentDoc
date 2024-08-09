@@ -11,6 +11,7 @@ weight: 50
 ### August
 | Page | Description |
 |---|---|
+| [Mexico - Alternative Payment Methods](/en/docs/payment-methods/mexico/mx-apm.html#response-parameters) | OxxoPay voucher image update. |
 | [Change Log](/en/docs/getting-started/change-log.html) | The Change Log page has been added to the technical documentation. |
 
 ### July
