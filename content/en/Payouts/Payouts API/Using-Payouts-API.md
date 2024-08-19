@@ -520,10 +520,10 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
       "type": "CI",
       "number": "38067788"
     },
-    "bankAccount": {
-      "number": "12345678912345",
+     "bankAccount": {
+      "number": "1234567",
       "type": 2,
-      "codeBank": "999",
+      "codeBank": "113",
       "branch": "1"
     }
   },
@@ -552,20 +552,56 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
       "type": "CI",
       "number": "38067788"
     },
-    "bankAccount": {
-      "number": "12345678912345",
+        "bankAccount": {
+      "number": "1234567",
       "type": 2,
-      "codeBank": "999",
+      "codeBank": "113",
       "branch": "1"
     }
   },
   "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
 }
 ```
+<br>
+
+**USD2USD**
+```json
+{
+    "country": "UY",
+    "amount": 1000,
+    "currency": "USD",
+    "destinationCurrency": "USD",
+    "reason": "string",
+    "reference": "PayOut34",
+    "type": 2,
+    "payee": {
+        "firstName": "Daniel",
+        "lastName": "Lorenzo",
+        "email": "danielzo@mail.com",
+        "phone": "999999999",
+        "address": "12900 Montevideo",
+        "document": {
+            "type": "CI",
+            "number": "38067788"
+        },
+        "bankAccount": {
+            "number": "1234567",
+            "type": 2,
+            "codeBank": "113",
+            "branch": "1"
+        }
+    },
+    "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
+}
+```
 
 {{< /tab >}}
 
 {{< /tabs >}}
+
+{{% alert title="Info" color="info"%}}
+For corporate payouts, use `companyName` instead of `firstName` and `lastName`.
+{{% /alert %}}
 
 ### Responses
 * `Ok`: HttpCode `200`.<br>

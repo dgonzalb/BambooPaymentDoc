@@ -46,7 +46,7 @@ Bamboo Payouts ofrece tres modelos que suponen una combinación de moneda de ori
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | México  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Perú  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 
 ## Horarios de corte {#cut-off-schedule}
 Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de lo contrario, procesaremos el pago el siguiente día hábil.
@@ -63,20 +63,15 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 </thead>
 <tbody>
   <tr>
-    <td style="border-right: 1px solid #dae0eb;">Uruguay</td>
-    <td style="text-align: center;">10:00 am.</td>
-    <td style="text-align: center;">GMT-3</td>
-  </tr>
-  <tr>
     <td style="border-right: 1px solid #dae0eb;">Perú</td>
     <td style="text-align: center;">09:00 am.</td>
     <td style="text-align: center;">GMT-5</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="5" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
-    <tr>
+  <tr>
     <td>Brasil</td>
   </tr>
   <tr>
@@ -86,7 +81,10 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
     <td>Colombia</td>
   </tr>
   <tr>
-    <td style="border-radius: 0 0 0 10px;">México</td>
+    <td>México</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Uruguay</td>
   </tr>
 </tbody>
 </table>
@@ -96,6 +94,7 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 {{% alert title="Importante" color="info"%}}
 * Cuando los Payouts ocurren en **T+0**, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como _**Pagado**_ al día siguiente.
 * En México, los Payouts se procesan en tiempo real, pero la confirmación final y las notificaciones se producen 5 minutos después.
+* En Uruguay, los Payouts son en tiempo real los días hábiles de 10:00 a 16:30hs.
 {{% /alert %}}
 
 ## Consideraciones {#considerations}

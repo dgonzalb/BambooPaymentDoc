@@ -667,27 +667,21 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 
 | Nombre del banco| Código del banco |
 |---|:---:|
-| BANCO BILBAO VIZCAYA ARGENTARIA (BBVA)| `153` |
+| BANCO BILBAO VIZCAYA ARGENTARIA (BBVA) | `153` |
 | BANCO DE LA NACION URUGUAY | `246` |
 | BANCO HIPOTECARIO DEL URUGUAY | `091` |
 | BANCO ITAU URUGUAY | `113` |
 | BANCO SANTANDER URUGUAY | `137` |
 | BANQUE HERITAGE | `162` |
-| BAPRO | `061` |
+| BANDES | `110` |
+| BAPRO | `361` |
 | BROU - BANCO DE LA REPUBLICA ORIENTAL DEL URUGUAY | `001` |
-| CAJA MUNICIPAL DE AHORRO Y CREDITO TRUJILLO | `802` |
 | CITIBANK N.A. SUCURSAL | `205` |
-| CITIBANK PERU | `007` |
-| CREDISCOTIA FINANCIERA | `043` |
 | HSBC BANK URUGUAY | `157` |
-| INTERBANK | `003` |
-| MI BANCO | `049` |
-| OCA BLUE | `999` |
+| OCA BLUE | `611` |
 | PREX | `603` |
-| REDPAGOS | `624` |
-| SANTANDER PERU | `056` |
+| REDPAGOS | `610` |
 | SCOTIABANK | `128` |
-| SCOTIABANK PERU | `009` |
 
 </div>
 </details>

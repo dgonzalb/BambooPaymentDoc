@@ -46,38 +46,32 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 
 ## Cut-off Schedule
 Please consider the following schedule to receive the Payout on the same day; otherwise, we will process the Payout on the next business day.
 
 <div id="shortTable"></div>
-
 <table>
 <thead>
   <tr>
-    <th style="text-align: center;">Country</th>
-    <th style="text-align: center;">Maximum time<sup>*</sup></th>
-    <th style="text-align: center;">Time zone</th>
+    <th style="text-align: center;">País</th>
+    <th style="text-align: center;">Hora máxima<sup>*</sup></th>
+    <th style="text-align: center;">Zona horaria</th>
   </tr>
 </thead>
 <tbody>
-    <tr>
-    <td style="border-right: 1px solid #dae0eb;">Uruguay</td>
-    <td style="text-align: center;">10:00 am.</td>
-    <td style="text-align: center;">GMT-3</td>
-  </tr>
   <tr>
-    <td style="border-right: 1px solid #dae0eb;">Peru</td>
+    <td style="border-right: 1px solid #dae0eb;">Perú</td>
     <td style="text-align: center;">09:00 am.</td>
     <td style="text-align: center;">GMT-5</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="5" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
-    <tr>
-    <td>Brazil</td>
+  <tr>
+    <td>Brasil</td>
   </tr>
   <tr>
     <td>Chile</td>
@@ -86,7 +80,10 @@ Please consider the following schedule to receive the Payout on the same day; ot
     <td>Colombia</td>
   </tr>
   <tr>
-    <td style="border-radius: 0 0 0 10px;">Mexico</td>
+    <td>México</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Uruguay</td>
   </tr>
 </tbody>
 </table>
@@ -96,6 +93,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
 {{% alert title="Important" color="info"%}}
 * When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day.
 * In Mexico, payouts are processed in real-time, but final confirmation and notifications occur 5 minutes later.
+* In Uruguay, payouts are in real time on business days from 10:00 to 16:30hs.
 {{% /alert %}}
 
 ## Considerations
