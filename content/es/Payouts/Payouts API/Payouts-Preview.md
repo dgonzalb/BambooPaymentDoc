@@ -14,7 +14,7 @@ El método de Preview del Payout le permite mostrar el valor final recibido por 
 ![PrintScreen](/assets/Payouts/Payouts12_es.png)
 
 {{% alert title="Advertencia" color="warning"%}}
-El Preview del Payout es meramente informativo y no congela el tipo de cambio, el cual se congela al [solicitar el Payout](#payout-request).
+El Preview del Payout es meramente informativo y no congela el tipo de cambio, el cual se congela al [solicitar el Payout](using-payouts-api.html).
 {{% /alert %}}
 
 #### URL del Request {#request-url-3}

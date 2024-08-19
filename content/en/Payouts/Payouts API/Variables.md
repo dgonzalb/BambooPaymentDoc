@@ -667,7 +667,6 @@ The following tables show the bank code you can set in the parameter `payee.bank
 
 | Bank Name | Bank Code |
 |---|:---:|
-|---|:---:|
 | BANCO BILBAO VIZCAYA ARGENTARIA (BBVA) | `153` |
 | BANCO DE LA NACION URUGUAY | `246` |
 | BANCO HIPOTECARIO DEL URUGUAY | `091` |

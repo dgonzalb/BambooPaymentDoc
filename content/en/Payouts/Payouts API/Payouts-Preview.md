@@ -14,7 +14,7 @@ The Payout preview method allows you to show the final value received by the pay
 ![PrintScreen](/assets/Payouts/Payouts12_en.png)
 
 {{% alert title="Warning" color="warning"%}}
-The Preview is for informational purposes only, and it does not freeze the exchange rate, which is frozen when you [request the Payout](#payout-request).
+The Preview is for informational purposes only, and it does not freeze the exchange rate, which is frozen when you [request the Payout](using-payouts-api.html).
 {{% /alert %}}
 
 ### Request URL {#request-url-3}
