@@ -44,6 +44,7 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
  | **Type** | Sí | Tipo de transferencia del Payout.<br>[Lista de tipos de transferencia para Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
  | **Payee.FirstName** | Sí | Nombre del Beneficiario. | 
  | **Payee.LastName** | Sí | Apellido del Beneficiario. | 
+ | **Payee.CompanyName** | Sí | Nombre de la persona jurídica (empresa). |
  | **Payee.Email** | No | Dirección de correo electrónico del Beneficiario. |
  | **Payee.Phone** | No |Número de teléfono del Beneficiario. | 
  | **Payee.Address** | No | Dirección del Beneficiario. | 

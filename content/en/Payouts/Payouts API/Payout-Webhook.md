@@ -83,3 +83,6 @@ The WebHook service is a REST Service that must process a request with the follo
   }
 }
 ```
+{{% alert title="Info" color="info"%}}
+In payout notifications for company, you will receive the field `companyName` instead of `firstName` and `lastName`.
+{{% /alert %}}

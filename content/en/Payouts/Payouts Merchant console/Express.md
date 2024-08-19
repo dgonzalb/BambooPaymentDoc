@@ -44,6 +44,7 @@ Once you have the Excel file, you can fill it with the information of the Payout
  | **Type** | Yes | Transfer Payout type.<br>[List of countries available for Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
  | **Payee.FirstName** | Yes | First Name of the Payee. | 
  | **Payee.LastName** | Yes | Last Name of the Payee. | 
+ | **Payee.CompanyName** | Yes | Name of the company. | 
  | **Payee.Email** | No | Email address of the Payee. | 
  | **Payee.Phone** | No | Phone number of the Payee. | 
  | **Payee.Address** | No | Address of the Payee. | 

@@ -84,3 +84,7 @@ El servicio WebHook es un servicio REST que debe procesar una solicitud con las 
   }
 }
 ```
+
+{{% alert title="Info" color="info"%}}
+En notificaciones de payout para persona jurídica, se recibirá el campo `companyName` en lugar de `firstName` y `lastName`.
+{{% /alert %}}
