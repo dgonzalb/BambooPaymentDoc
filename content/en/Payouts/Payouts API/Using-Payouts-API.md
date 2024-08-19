@@ -1,164 +1,25 @@
 ---
-title: "Using Payouts API"
-linkTitle: "Using Payouts API"
+title: "Payout Request"
+linkTitle: "Payout Request"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   The Payouts API allows you to request multiple payments using the balance available in your account.
-weight: 10
+weight: 30
 ---
 
 To learn more about Payouts, refer to this [article](../overview.html).
 
-## Configuring the authentication
-All methods used in Payouts API require the following authentication headers.
-
-| Key | Value | Comments |
-|---|---|---|
-| `Content-Type` | `application/json` | With this header, the request will be transmitted in _JSON_ format. |
-| `Authorization` | `Basic {{MerchantPrivateKey}}` | Send the `{{MerchantPrivateKey}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__` |
-| `DigitalSignature` | `{{DigitalSignature}}` | Signature to validate the transaction using the _HmacSHA256_ algorithm. This header is mandatory only for Payout creation. |
-
-### Signing the message
-Build the hash using the parameters `country`, `amount`, `currency`, `reference`, and `type` of the Request. When signing the onboarding contract with Bamboo, the `secret-key` and `MerchantPrivateKey` are provided to you.
-
-#### Signature sample code
-```javascript
-var json = JSON.parse(request.data);
-let signdata = {Country:json.country, Amount: json.amount,Currency:json.currency, Reference:json.reference, Type: json.type};
-var data = JSON.stringify(signdata);
-var hexHash = CryptoJS.HmacSHA256(data, secret-key);
-var hash = hexHash.toString(CryptoJS.enc.Hex);
-```
-
-## API methods
-The Payouts API offers four primary methods that you can use when requesting Payouts.
-
-* [Get Bank list](#get-bank-list)
-* [Payout Preview](#payout-preview)
-* [Payout request](#payout-request)
-* [Obtaining a Payout](#obtaining-a-payout)
-
-### Get Bank list
-This method lets you get the list of available banks in a country.
-
-#### Request URL
-You must invoke a **GET** request to the following URLs according to your needs.
-
-* **Production**: `https://payout-api.bamboopayment.com/api/bank/country/{{Country}}`
-* **Stage**: `https://payout-api.stage.bamboopayment.com/api/bank/country/{{Country}}`
-
-Where `{{Country}}` represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. [List of countries available for Payouts](../overview.html#coverage).
-
-#### Response parameters
-
-| Parameter | Format | Size | Description |
-|---|:-:|:-:|---|
-| `id` | `integer` | - | Internal identification of the bank. |
-| `countryIsoCode` | `string` | 2 | Country to which the bank belongs.  |
-| `bankCode` | `string` | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
-| `bankName` | `string` | - | Name of the bank. |
-
-#### Response example
-```json
-[
-  {
-    "id": 1,
-    "countryIsoCode": "CO",
-    "bankCode": "1002",
-    "bankName": "BANCO POPULAR"
-  },
-  {
-    "id": 3,
-    "countryIsoCode": "CO",
-    "bankCode": "1007",
-    "bankName": "BANCOLOMBIA"
-  },
-  {
-    "id": 4,
-    "countryIsoCode": "CO",
-    "bankCode": "1009",
-    "bankName": "CITIBANK"
-  },
-  {
-    ...
-  }
-]
-```
-
-### Payout Preview
-The Payout preview method allows you to show the final value received by the payee and the expected date when the payee will receive the money.
-
-![PrintScreen](/assets/Payouts/Payouts12_en.png)
-
-{{% alert title="Warning" color="warning"%}}
-The Preview is for informational purposes only, and it does not freeze the exchange rate, which is frozen when you [request the Payout](#payout-request).
-{{% /alert %}}
-
-#### Request URL {#request-url-3}
-You must invoke a **POST** request to the following URLs according to your needs.
-
-* **Production**: `https://payout-api.bamboopayment.com/api/payout/preview`
-* **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout/preview`
-
-#### Request parameters {#request-parameters-1}
-The following table shows the mandatory and optional parameters for the Payout preview.
-
-| Field | Type | Mandatory? | Description |
-|---|---|:-:|---|---|
-| `amount` | `number` | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
-| `destinationCountryIsoCode` | `string(2)` | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
-| `destinationCurrencyIsoCode` | `string(3)` | Yes <sup>*</sup> | ISO code of the destination currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
-| `originalCurrencyIsoCode` | `string(3)` | Yes | ISO code of the origin currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies) |
-
-<sup>*</sup> _If the parameter is not provided, the system will default to the currency of the destination country (parameter `destinationCountryIsoCode`)._
-
-#### Request example {#request-example-1}
-```json
-{
-  "amount": 1000,
-  "destinationCountryIsoCode": "CO",
-  "destinationCurrencyIsoCode": "COP",
-  "originalCurrencyIsoCode": "USD"
-}
-```
-#### Response parameters {#response-parameters-2}
-
-| Parameter | Format | Description |
-|---|:-:|---|
-| `amountInOrignalCurrency` | `number` | Value requested in the Payout preview. |
-| `fee` | `number` | Amount charged by Bamboo to process the Payout. You or the payee can assume the fee according to your contract. |
-| `amountToBeSentInOrignalCurrency` | `number` | The amount to be sent to the Payee, which is calculated as the difference between `amountInOrignalCurrency` and `fee`. |
-| `exchangeRate` | `number` | Conversion value between the origin and target currencies. This parameter includes up to `5` decimal places. |
-| `amountToBeSentInLocalCurrency` | `number` | The amount received by the payee, which is calculated by multiplying `amountToBeSentInOriginalCurrency` by `exchangeRate`.|
-| `errors` | `object` | Errors that may appear. The error codes for this method start with `6`.<br>Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
-| `errors` → `ErrorCode` | `string` | Internal code of the error. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
-| `errors` → `PropertyName` | `string` | Property that triggered the error. |
-| `errors` → `Message` | `string` | Error description. |
-
-#### Response example {#response-example-2}
-```json
-{
-    "amountInOrignalCurrency": 10,
-    "fee": 1.8369100168676186120617370001,
-    "amountToBeSentInOrignalCurrency": 8.163089983132381387938263000,
-    "exchangeRate": 3878.5558000000,
-    "amountToBeSentInLocalCurrency": 31661.0,
-    "expectedPaymentDate": "2024-01-26T00:00:00Z",
-    "error": null
-}
-```
-
-### Payout request
+## Payout request
 This method allows you to request one or more Payouts using the funds settled in your account.
 
-#### Request URL
+### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
 * **Production**: `https://payout-api.bamboopayment.com/api/payout`
 * **stage**: `https://payout-api.stage.bamboopayment.com/api/payout`
 
-#### Request parameters
+### Request parameters
 The following table shows the mandatory and optional parameters to create a Payout for all the countries.
 
 | Field | Type | Mandatory? | Description |
@@ -191,7 +52,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 <sup>2</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._
 
 
-#### Request example
+### Request example
 Refer to the corresponding tab according to the payee's country.
 
 
@@ -199,7 +60,7 @@ Refer to the corresponding tab according to the payee's country.
 {{< tab tabNum="1" >}}
 <br>
 
-**USD2L**
+**Argentina: USD to ARS**
 
 ```json
 {
@@ -231,7 +92,7 @@ Refer to the corresponding tab according to the payee's country.
 ```
 <br>
 
-**L2L**
+**Argentina: ARS to ARS**
 
 ```json
 {
@@ -269,7 +130,7 @@ Refer to the corresponding tab according to the payee's country.
 
 As mentioned before, the object `payee.bankaccount` must not be present in the request. Therefore, when using _Instant Bank Transfer_ you need to send the request as follows:
 
-**USD2L**
+**Brazil: USD to BRL**
 
 ```json
 {
@@ -299,7 +160,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Brazil: BRL to BRL**
 
 ```json
 {
@@ -334,7 +195,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 {{< tab tabNum="3" >}}
 <br>
 
-**USD2L**
+**Chile: USD to CLP**
 
 ```json
 {
@@ -366,7 +227,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Chile: CLP to CLP**
 
 ```json
 {
@@ -402,7 +263,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 {{< tab tabNum="4" >}}
 <br>
 
-**USD2L**
+**Colombia: USD to COP**
 
 ```json
 {
@@ -434,7 +295,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Colombia: COP to COP**
 
 ```json
 {
@@ -470,7 +331,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 {{< tab tabNum="5" >}}
 <br>
 
-**USD2L**
+**Mexico: USD to MXN**
 
 ```json
 {
@@ -502,7 +363,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Mexico: MXN to MXN**
 
 ```json
 {
@@ -538,7 +399,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 {{< tab tabNum="6" >}}
 <br>
 
-**USD2L**
+**Peru: USD to PEN**
 
 ```json
 {
@@ -570,7 +431,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Peru: PEN to PEN**
 
 ```json
 {
@@ -602,7 +463,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**USD2USD**
+**Peru: USD to USD**
 
 ```json
 {
@@ -638,7 +499,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 {{< tab tabNum="7" >}}
 <br>
 
-**USD2L**
+**Uruguay: USD to UYU**
 
 ```json
 {
@@ -671,7 +532,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**L2L**
+**Uruguay: UYU to UYU**
 ```json
 {
   "country": "UY",
@@ -706,7 +567,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 
 {{< /tabs >}}
 
-#### Responses
+### Responses
 * `Ok`: HttpCode `200`.<br>
 Message received correctly, at this point the Payout starts to be processed.
 
@@ -769,7 +630,7 @@ The validation of the message was successful, but the Payout is **Declined** due
 }
 ```
 
-### Obtaining a Payout
+## Obtaining a Payout
 This method allows you to retrieve the information of a Payout. You can retrieve the Payouts using the generated identifier (ID) or the reference you provided when requesting the Payout.
 
 #### Request URL
@@ -783,7 +644,7 @@ To get the payout, include the following endpoints according to your needs.
 * **Using Payout ID**: `{{URL}}/api/payout/{{PayoutID}}`
 * **Using Payout Reference**: `{{URL}}/api/payout/reference/{{PayoutReference}}`
 
-#### Response parameters
+### Response parameters
 
 | Parameter | Format | Description |
 |---|:-:|---|
@@ -802,7 +663,7 @@ To get the payout, include the following endpoints according to your needs.
 | `payee` | `object` | Information of the recipient or beneficiary of the Payout.  |
 
 
-#### Response example
+### Response example
 ```json
 {
     "payoutId": 1100,

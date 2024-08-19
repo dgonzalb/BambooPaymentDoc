@@ -1,6 +1,6 @@
 ---
-title: "Autenticación y Lista de Bancos"
-linkTitle: "Autenticación y Lista de Bancos"
+title: "Primeros pasos"
+linkTitle: "Primeros pasos"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
@@ -35,9 +35,9 @@ var hash = hexHash.toString(CryptoJS.enc.Hex);
 La API de Payouts ofrece cuatro métodos que puede utilizar cuando solicite Payouts.
 
 * [Obtener listado de bancos](#get-bank-list)
-* [Preview del Payout](#payout-preview)
-* [Solicitud del Payout](#payout-request)
-* [Obtener un Payout](#obtaining-a-payout)
+* [Preview del Payout](payouts-preview.html)
+* [Solicitud del Payout](using-payouts-api.html)
+* [Obtener un Payout](using-payouts-api.html#obtaining-a-payout)
 
 ### Obtener listado de bancos {#get-bank-list}
 Este método le permite obtener el listado de bancos disponibles en un país.

@@ -5,7 +5,7 @@ date: 2023-09-12T11:19:09-05:00
 type: docs
 Description: >
   You can implement a service to receive and process notifications related to the Payout final status from the Bamboo Payment systems.
-weight: 20
+weight: 40
 ---
 
 The Payout API only sends notifications for the final statuses (**Paid**, **Declined**, and **Rejected**). For payout states, check our [status article]({{< ref Payout-Status.md >}}).

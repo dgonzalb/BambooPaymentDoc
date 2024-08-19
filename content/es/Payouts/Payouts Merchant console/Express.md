@@ -4,7 +4,7 @@ linkTitle: "Payouts express"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >
- Con _**Payouts exprés**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
+ Con _**Payouts express**_, puede iniciar Payouts masivos sin esfuerzo y sin necesidad de integrarse mediante API, simplemente cargando un archivo Excel que contiene sus solicitudes de Payouts. Este proceso simplificado le permite enviar múltiples pagos con facilidad y precisión de forma eficiente.
 weight: 20
 ---
 
