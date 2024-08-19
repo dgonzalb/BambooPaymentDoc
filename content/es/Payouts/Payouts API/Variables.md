@@ -5,7 +5,7 @@ date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   Encuentre el listado de variables y códigos disponibles para la integración de Payouts.
-weight: 50
+weight: 60
 ---
 
 ## Códigos de bancos {#bank-codes}

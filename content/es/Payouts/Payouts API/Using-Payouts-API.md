@@ -1,153 +1,12 @@
 ---
-title: "Utilizar el API de Payouts"
-linkTitle: "Utilizar el API de Payouts"
+title: "Crear un Payout"
+linkTitle: "Crear un Payout"
 date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   El API de Payouts permite solicitar múltiples pagos utilizando el saldo disponible en su cuenta.
-weight: 30
+weight: 40
 ---
-
-Para saber más sobre Payouts, consulte este [artículo](../overview.html).
-
-## Configurar la autenticación {#configuring-the-authentication}
-Todos los métodos utilizados en la API de Compras requieren los siguientes encabezados de autenticación.
-
-| Llave | Valor | Comentarios |
-|---|---|---|
-| `Content-Type` | `application/json` | Con este encabezado, el request se transmite en formato _JSON_. |
-| `Authorization` | `Basic {{Merchant Private Key}}` | Envíe el `{{Merchant Private Key}}` (su identificador de comercio) y la palabra `Basic`.<br>Ejemplo: `Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__` |
-| `DigitalSignature` | `{{DigitalSignature}}` | Firma para validar la transacción utilizando el algoritmo _HmacSHA256_. Este encabezado es obligatorio únicamente para la creación del Payout. |
-
-### Firmar el mensaje {#signing-the-message}
-Construya el hash utilizando los parámetros `country`, `amount`, `currency`, `reference` y `type` del Request. Bamboo le envía `secret-key` y `MerchantPrivateKey` cuando firma el contrato de onboarding.
-
-#### Código de ejemplo de firma {#signature-sample-code}
-```javascript
-var json = JSON.parse(request.data);
-let signdata = {Country:json.country, Amount: json.amount,Currency:json.currency, Reference:json.reference, Type: json.type};
-var data = JSON.stringify(signdata);
-var hexHash = CryptoJS.HmacSHA256(data, secret-key);
-var hash = hexHash.toString(CryptoJS.enc.Hex);
-```
-
-## Métodos de la API {#api-methods}
-La API de Payouts ofrece cuatro métodos que puede utilizar cuando solicite Payouts.
-
-* [Obtener listado de bancos](#get-bank-list)
-* [Preview del Payout](#payout-preview)
-* [Solicitud del Payout](#payout-request)
-* [Obtener un Payout](#obtaining-a-payout)
-
-### Obtener listado de bancos {#get-bank-list}
-Este método le permite obtener el listado de bancos disponibles en un país.
-
-#### URL del Request {#request-url}
-Debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
-
-* **Producción**: `https://payout-api.bamboopayment.com/api/bank/country/{{Country}}`
-* **Stage**: `https://payout-api.stage.bamboopayment.com/api/bank/country/{{Country}}`
-
-Donde `{{Country}}` representa el código ISO del país que desea consultar, utilizando el formato ISO 3166-2. [Listado de países disponibles de Payouts](../overview.html#coverage).
-
-#### Parámetros del Response {#response-parameters}
-
-| Parámetro | Formato | Tamaño | Descripción |
-|---|:-:|:-:|---|
-| `id` | `integer` | - | Identificación interna del banco. |
-| `countryIsoCode` | `string` | 2 | País al que pertenece el banco. |
-| `bankCode` | `string` | 4 | Código interno del banco utilizado en el parámetro `payee.bankaccount.codebank` cuando solicite el Payout. |
-| `bankName` | `string` | - | Nombre del banco. |
-
-#### Ejemplo del Response {#response-example}
-```json
-[
-  {
-    "id": 1,
-    "countryIsoCode": "CO",
-    "bankCode": "1002",
-    "bankName": "BANCO POPULAR"
-  },
-  {
-    "id": 3,
-    "countryIsoCode": "CO",
-    "bankCode": "1007",
-    "bankName": "BANCOLOMBIA"
-  },
-  {
-    "id": 4,
-    "countryIsoCode": "CO",
-    "bankCode": "1009",
-    "bankName": "CITIBANK"
-  },
-  {
-    ...
-  }
-]
-```
-
-### Preview del Payout {#payout-preview}
-El método de Preview del Payout le permite mostrar el valor final recibido por el beneficiario y la fecha prevista en la que recibirá el dinero.
-
-![PrintScreen](/assets/Payouts/Payouts12_es.png)
-
-{{% alert title="Advertencia" color="warning"%}}
-El Preview del Payout es meramente informativo y no congela el tipo de cambio, el cual se congela al [solicitar el Payout](#payout-request).
-{{% /alert %}}
-
-#### URL del Request {#request-url-3}
-Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
-
-* **Producción**: `https://payout-api.bamboopayment.com/api/payout/preview`
-* **Stage**: `https://payout-api.stage.bamboopayment.com/api/payout/preview`
-
-#### Parámetros del Request {#request-parameters-1}
-La siguiente tabla muestra los parámetros obligatorios y opcionales para el Preview del Payout.
-
-| Campo | Tipo | ¿Obligatorio? | Descripción |
-|---|---|:-:|---|---|
-| `amount` | `number` | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _$ 1,00_. |
-| `destinationCountryIsoCode` | `string(2)` | Sí | Código ISO del país en formato `ISO 3166-2`.<br>[Listado de países disponibles de Payouts](../overview.html#coverage). |
-| `destinationCurrencyIsoCode` | `string(3)` | Sí <sup>*</sup> | Código ISO de la moneda de destino.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies) |
-| `originalCurrencyIsoCode` | `string(3)` | Sí | Código ISO de la moneda de origen.<br>[Consulte aquí la lista de monedas](../payouts-api/variables.html#currencies) |
-
-<sup>*</sup> _Si no se proporciona el parámetro, el sistema utilizará por defecto la moneda del país de destino (parámetro `destinationCountryIsoCode`)_
-
-#### Ejemplo del Request {#request-example-1}
-```json
-{
-  "amount": 1000,
-  "destinationCountryIsoCode": "CO",
-  "destinationCurrencyIsoCode": "COP",
-  "originalCurrencyIsoCode": "USD"
-}
-```
-#### Parámetros del Response {#response-parameters-2}
-
-| Parámetro | Formato | Descripción |
-|---|:-:|---|
-| `amountInOrignalCurrency` | `number` | Valor solicitado en el Preview del Payout. |
-| `fee` | `number` | Monto cobrado por Bamboo para porcesar el Payout. Usted o el beneficiario pueden asumir la tasa de acuerdo con su contrato. |
-| `amountToBeSentInOrignalCurrency` | `number` | Monto a ser enviado al Beneficiario, el cual se calcula como la diferencia entre `amountInOrignalCurrency` y `fee`. |
-| `exchangeRate` | `number` | Valor de conversión entre la moneda origen y destino. Este valor incluye hasta `5` dígitos decimales. |
-| `amountToBeSentInLocalCurrency` | `number` | Monto que va a recbir el Beneficiario, el cual se calcula multiplicando `amountToBeSentInOriginalCurrency` por `exchangeRate`. |
-| `errors` | `object` | Errores que pueden aparecer. Los códigos de error para este método empiezan por `6`.<br>Encuentre los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
-| `errors` → `ErrorCode` | `string` | Código interno del error. Encuentra los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
-| `errors` → `PropertyName` | `string` | Propiedad que provocó el error. |
-| `errors` → `Message` | `string` | Descripción del error. |
-
-#### Ejemplo del Response {#response-example-2}
-```json
-{
-    "amountInOrignalCurrency": 10,
-    "fee": 1.8369100168676186120617370001,
-    "amountToBeSentInOrignalCurrency": 8.163089983132381387938263000,
-    "exchangeRate": 3878.5558000000,
-    "amountToBeSentInLocalCurrency": 31661.0,
-    "expectedPaymentDate": "2024-01-26T00:00:00Z",
-    "error": null
-}
-```
 
 ### Solicitud del Payout {#payout-request}
 Este método le permite solicitar uno o más Payouts utilizando los fondos depositados en su cuenta.
@@ -200,7 +59,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
 {{< tab tabNum="1" >}}
 <br>
 
-**USD2L**
+**Argentina: De USD a ARS:**
 
 ```json
 {
@@ -232,7 +91,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
 ```
 <br>
 
-**L2L**
+**Argentina: De ARS a ARS:**
 
 ```json
 {
@@ -271,7 +130,7 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
 Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar presente en el request. Por lo tanto, al utilizar _Transferencias Bancarias Instantáneas_ es necesario enviarlo de la siguiente manera:
 
 
-**USD2L**
+**Brasil: De USD a BRL:**
 
 ```json
 {
@@ -301,7 +160,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**Brasil: BRL a BRL**
 
 ```json
 {
@@ -336,7 +195,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 {{< tab tabNum="3" >}}
 <br>
 
-**USD2L**
+**Chile: USD a CLP**
 
 ```json
 {
@@ -368,7 +227,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**Chile: CLP a CLP**
 
 ```json
 {
@@ -404,7 +263,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 {{< tab tabNum="4" >}}
 <br>
 
-**USD2L**
+**Colombia: USD a COP**
 
 ```json
 {
@@ -436,7 +295,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**Colombia: COP a COP**
 
 ```json
 {
@@ -471,7 +330,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 {{< tab tabNum="5" >}}
 <br>
 
-**USD2L**
+**México: USD a MXN**
 
 ```json
 {
@@ -503,7 +362,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**México: MXN a MXN**
 
 ```json
 {
@@ -539,7 +398,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 {{< tab tabNum="6" >}}
 <br>
 
-**USD2L**
+**Perú: USD a PEN**
 
 ```json
 {
@@ -571,7 +430,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**Perú: PEN a PEN**
 
 ```json
 {
@@ -603,7 +462,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**USD2USD**
+**Perú: USD a USD**
 
 ```json
 {
@@ -639,7 +498,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 {{< tab tabNum="7" >}}
 <br>
 
-**USD2L**
+**Uruguay: USD a UYU**
 
 ```json
 {
@@ -672,7 +531,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**L2L**
+**Uruguay: UYU a UYU**
 ```json
 {
   "country": "UY",
