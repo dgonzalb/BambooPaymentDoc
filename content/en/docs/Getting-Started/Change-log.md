@@ -11,6 +11,7 @@ weight: 50
 ### August
 | Page | Description |
 |---|---|
+| [Chile - Cards](/en/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | The credit card redirection flow has been deprecated. |
 | [Report API - Transactions](/en/docs/reporting/transactions-report.html) | New Reporting API for Transactions. |
 | [Mexico - Alternative Payment Methods](/en/docs/payment-methods/mexico/mx-apm.html#response-parameters) | OxxoPay voucher image update. |
 | [Change Log](/en/docs/getting-started/change-log.html) | The Change Log page has been added to the technical documentation. |

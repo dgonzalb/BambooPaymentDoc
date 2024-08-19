@@ -11,6 +11,7 @@ weight: 50
 ### Agosto
 | Página | Descripción |
 |---|---|
+| [Chile - Tarjetas](/es/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | El flujo de redirección de tarjetas de crédito está descontinuado. |
 | [API de Reportes - Transacciones](/es/docs/reporting/transactions-report.html) | Nueva API de reportes para transacciones. |
 | [México - Medios alternativos de pago](/es/docs/payment-methods/mexico/mx-apm.html#response-parameters) | Actualización de imagen de voucher OxxoPay. |
 | [Registro de Cambios](/es/docs/getting-started/change-log.html) | Se ha añadido la página de Registro de Cambios a la documentación técnica. |

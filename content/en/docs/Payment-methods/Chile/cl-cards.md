@@ -198,7 +198,7 @@ For more information on the response parameters, please refer to the [Response p
 }
 ```
 
-## Card payments using Redirection flow
+<!--## Card payments using Redirection flow
 Using this flow, the payer must be redirected to the _**webpay**_ page to complete the payment according to the selected payment method (debit, credit or prepaid card).
 
 The status for purchases with cards using redirection will remain _Pending_ until the customer completes the payment. Click [here]({{< ref Redirect-Purchase.md >}}) to learn more about redirect purchases.
@@ -455,7 +455,7 @@ For more information on the response parameters, please refer to the [Response p
     "Errors": []
 }
 ```
-
+-->
 ## Testing cards
 Use the following cards to simulate the different status of the purchase. These cards apply for both API and redirection flow.
 
@@ -466,8 +466,6 @@ Use the following cards to simulate the different status of the purchase. These 
 | Amex | `370000000002032` | `1234` | `10/29` | Credit |
 | Visa | `4051885600446623` | `123` | `10/29` | Credit |
 | Visa | `4051886000056590` | `123` | `10/29` | Prepaid |
-| Redcompra | `4051884239937763` | `123` | `10/29` | Debit |
-| Redcompra | `4511346660037060` | `123` | `10/29` | Debit |
 
 {{% alert title="Info note" color="info"%}}
 If the RUT and password are requested, please use a valid RUT (for example **11.111.111-1**) and password **123**.
@@ -478,5 +476,4 @@ If the RUT and password are requested, please use a valid RUT (for example **11.
 | Brand | PAN | CVV | Expiration Date | Type |
 |---|---|---|---|---|
 | MasterCard | `5186059559590568` | `123` | `10/29` | Credit |
-| Redcompra | `5186008541233829` | `123` | `10/29` | Debit |
-| MasterCard | `5186174110629480` | `123` | `10/29` | Prepaid |
+| MasterCard | `5186174110629480` | `123` | `10/29` | Prepaid | 

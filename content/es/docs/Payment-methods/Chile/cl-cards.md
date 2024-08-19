@@ -198,7 +198,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 }
 ```
 
-## Pagos con tarjeta mediante flujo Redirect {#card-payments-using-redirection-flow}
+<!--## Pagos con tarjeta mediante flujo Redirect {#card-payments-using-redirection-flow}
 Utilizando este flujo, el pagador debe ser redirigido a la página _**webpay**_ para completar el pago según el medio de pago seleccionado (tarjeta de débito, crédito o prepago).
 
 El estado de las compras con tarjeta mediante el flujo Redirect permanecerá _Pending_ hasta que el cliente complete el pago. Haga clic [aquí]({{< ref Redirect-Purchase.md >}}) para obtener más información sobre las compras con redirect.
@@ -455,7 +455,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
     "Errors": []
 }
 ```
-
+-->
 ## Tarjetas de prueba {#testing-cards}
 Utilice las siguientes tarjetas para simular los diferentes estados de la compra. Estas tarjetas aplican tanto para el flujo API como para el de Redirect.
 
@@ -466,8 +466,7 @@ Utilice las siguientes tarjetas para simular los diferentes estados de la compra
 | Amex | `370000000002032` | `1234` | `10/29` | Crédito |
 | Visa | `4051885600446623` | `123` | `10/29` | Crédito |
 | Visa | `4051886000056590` | `123` | `10/29` | Prepago |
-| Redcompra | `4051884239937763` | `123` | `10/29` | Débito |
-| Redcompra | `4511346660037060` | `123` | `10/29` | Débito |
+
 
 {{% alert title="Info note" color="info"%}}
 Si se solicitan RUT y contraseña, utilice un RUT válido (por ejemplo **11.111.111-1**) y contraseña **123**.
@@ -478,5 +477,4 @@ Si se solicitan RUT y contraseña, utilice un RUT válido (por ejemplo **11.111.
 | Marca | PAN | CVV | Fecha de Expiración | Tipo |
 |---|---|---|---|---|
 | MasterCard | `5186059559590568` | `123` | `10/29` | Crédito |
-| Redcompra | `5186008541233829` | `123` | `10/29` | Débito |
 | MasterCard | `5186174110629480` | `123` | `10/29` | Prepago |
