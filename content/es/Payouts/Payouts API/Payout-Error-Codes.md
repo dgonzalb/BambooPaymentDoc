@@ -5,7 +5,7 @@ date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   Este artículo muestra información sobre los códigos de error que puede encontrar al utilizar la integración de Payouts.
-weight: 40
+weight: 60
 ---
 
 | Código de error | Categoría | Descripción |

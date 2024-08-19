@@ -1,6 +1,6 @@
 ---
-title: "Payouts exprés"
-linkTitle: "Payouts exprés"
+title: "Payouts express"
+linkTitle: "Payouts express"
 date: 2023-06-30T08:16:09-05:00
 type: docs
 Description: >

@@ -5,7 +5,7 @@ date: 2023-03-22T15:30:03-05:00
 type: docs
 Description: >
   El API de Payouts permite solicitar múltiples pagos utilizando el saldo disponible en su cuenta.
-weight: 10
+weight: 30
 ---
 
 Para saber más sobre Payouts, consulte este [artículo](../overview.html).
