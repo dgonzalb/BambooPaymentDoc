@@ -34,9 +34,9 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `InstantPaymentData` → `PixPhone` |`string` | Sí<sup>1</sup> | El número de teléfono del beneficiario configurado como clave PIX.<br>_El número debe empezar por `+55`._ |
 | `InstantPaymentData` → `PixRandom` | `string` | Sí<sup>1</sup> | La clave aleatoria que el beneficiario ha generado como clave PIX. |
 | `notification_Url` | `string` | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
-| `payee` → `FirstName` | `string` | Sí<sup>1</sup> | Nombre del Beneficiario. | 
-| `payee` → `lastName `| `string` | Sí<sup>1</sup> | Apellido del Beneficiario. | 
-| `payee` → `companyName `| `string` | Sí<sup>1</sup> | Nombre de la empresa. | 
+| `payee` → `FirstName` | `string` | Sí<sup>3</sup> | Nombre del Beneficiario. | 
+| `payee` → `lastName `| `string` | Sí<sup>3</sup> | Apellido del Beneficiario. | 
+| `payee` → `companyName `| `string` | Sí<sup>3</sup> | Nombre de la empresa. | 
 | `payee` → `email` | `string` | No | Dirección de correo electrónico del Beneficiario. |  
 | `payee` → `phone` | `string` | No | Número de teléfono del Beneficiario. | 
 | `payee` → `address` | `string` | No | Dirección del Beneficiario. | 
@@ -50,7 +50,7 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 
 <sup>1</sup> _Sólo aplica para Brasil usando Transferencia Bancaria Instantánea. En caso contrario, el objeto_ `payee.InstantPaymentData` _y sus parámetros no deben estar presentes en el request._<br>
 <sup>2</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, el objeto_ `payee.bankaccount` _y sus parámetros no deben estar presentes en el request._<br>
-<sup>3</sup> Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`.
+<sup>3</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._
 
 
 #### Ejemplo del Request {#request-example}
@@ -565,7 +565,7 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 ```
 <br>
 
-**USD2USD**
+**Uruguay: USD a USD**
 ```json
 {
     "country": "UY",
@@ -738,3 +738,6 @@ Para obtener el Payout, incluya los siguientes endpoints de acuerdo con sus nece
     }
 }
 ```
+{{% alert title="Info" color="info"%}}
+En payouts para persona jurídica, se recibirá el campo `companyName` en lugar de `firstName` y `lastName`.
+{{% /alert %}}

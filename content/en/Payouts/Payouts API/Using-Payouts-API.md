@@ -36,9 +36,9 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `InstantPaymentData` → `PixPhone` |`string` | Yes<sup>1</sup> | Phone number of the Payee configured as the PIX key.<br>_The phone number must start with `+55`._ |
 | `InstantPaymentData` → `PixRandom` | `string` | Yes<sup>1</sup> | The random key the Payee generated as the PIX key. |
 | `notification_Url` | `string` | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
-| `payee` → `FirstName` | `string` | Yes<sup>1</sup> | First Name of the Payee. | 
-| `payee` → `lastName `| `string` | Yes<sup>1</sup> | Last Name of the Payee. | 
-| `payee` → `companyName `| `string` | Yes<sup>1</sup> | Name of the company. |
+| `payee` → `FirstName` | `string` | Yes<sup>3</sup> | First Name of the Payee. | 
+| `payee` → `lastName `| `string` | Yes<sup>3</sup> | Last Name of the Payee. | 
+| `payee` → `companyName `| `string` | Yes<sup>3</sup> | Name of the company. |
 | `payee` → `email` | `string` | No | Email address of the Payee. |  
 | `payee` → `phone` | `string` | No | Phone number of the Payee. | 
 | `payee` → `address` | `string` | No | Address of the Payee. | 
@@ -51,7 +51,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 <sup>1</sup> _Applies only to Brazil using Instant Bank Transfer. Otherwise, the object_ `payee.InstantPaymentData` _and its parameters must not be present in the request._<br>
 <sup>2</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._<br>
-<sup>3</sup> The fields `firstName` and `lastName` for an individual and `companyName` for a company are mandatory. If a payout is sent to a company, only the `companyName` field has to be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields have to be completed.
+<sup>3</sup> _The fields `firstName` and `lastName` for an individual and `companyName` for a company are mandatory. If a payout is sent to a company, only the `companyName` field has to be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields have to be completed._
 
 
 ### Request example
@@ -566,7 +566,7 @@ As mentioned before, the object `payee.bankaccount` must not be present in the r
 ```
 <br>
 
-**USD2USD**
+**Uruguay: USD to USD**
 ```json
 {
     "country": "UY",
@@ -736,3 +736,6 @@ To get the payout, include the following endpoints according to your needs.
     }
 }
 ```
+{{% alert title="Info" color="info"%}}
+In payout for company, you will receive the field `companyName` instead of `firstName` and `lastName`.
+{{% /alert %}}

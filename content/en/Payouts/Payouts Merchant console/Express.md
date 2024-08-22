@@ -42,21 +42,23 @@ Once you have the Excel file, you can fill it with the information of the Payout
  | **Reason** | No | Description of the Payout. |
  | **Reference** | Yes | Unique identifier of the Payout defined by you.<br>_This reference should not appear more than once in the file or exist in previous Payouts._. |
  | **Type** | Yes | Transfer Payout type.<br>[List of countries available for Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
- | **Payee.FirstName** | Yes | First Name of the Payee. | 
- | **Payee.LastName** | Yes | Last Name of the Payee. | 
- | **Payee.CompanyName** | Yes | Name of the company. | 
+ | **Payee.FirstName** | Yes<sup>2</sup> | First Name of the Payee. | 
+ | **Payee.LastName** | Yes<sup>2</sup> | Last Name of the Payee. | 
+ | **Payee.CompanyName** | Yes<sup>2</sup> | Name of the company. | 
  | **Payee.Email** | No | Email address of the Payee. | 
  | **Payee.Phone** | No | Phone number of the Payee. | 
  | **Payee.Address** | No | Address of the Payee. | 
  | **Payee.Document.Type** | Yes | Document type of the Payee.<br>[Find the document list here]({{< ref Variables.md >}}#document-types). | 
  | **Payee.Document.Number** | Yes | Document number of the Payee. | 
- | **Payee.BankAccount.Number** | Yes<sup>*</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
- | **Payee.BankAccount.Type** | Yes<sup>*</sup> | Account type of the Payee.<br>Set `1` for Checking and `2` for Savings. |
- | **Payee.BankAccount.CodeBank** | Yes<sup>*</sup> | Bank code of the Payee. | 
+ | **Payee.BankAccount.Number** | Yes<sup>1</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+ | **Payee.BankAccount.Type** | Yes<sup>1</sup> | Account type of the Payee.<br>Set `1` for Checking and `2` for Savings. |
+ | **Payee.BankAccount.CodeBank** | Yes<sup>1</sup> | Bank code of the Payee. | 
  | **Payee.BankAccount.Branch** | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
  | **Notification_Url** | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
 
-<sup>*</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the columns `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank`, and `Payee.BankAccount.Branch` must not be present in the request._
+<sup>1</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the columns `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank`, and `Payee.BankAccount.Branch` must not be present in the request._
+<br>
+<sup>2</sup> _The fields `firstName` and `lastName` for an individual and `companyName` for a legal person (company) are mandatory. If a payout is sent for a company only the `companyName` field has to be filled in, and if a payout is sent to a natural person only the `firstName` and `lastName` fields have to be filled in._
 
 {{% alert title="Important about Express Payouts" color="warning"%}}
 * Do **NOT** modify the downloaded file by adding new columns, sheets or changing the column names.
@@ -107,4 +109,4 @@ Refer to the last column in the file to know the Payout error.
 
 After fixing the error, save the file and upload it using the option in [step 3](#step3).
 
-Regardless if the Payout was successful or not, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status and failed Payouts have _Declined_ status. 
+Regardless if the Payout was successful or not, you can consult it in the [Payouts Report]({{< ref Reports.md>}}). Successful Payouts have _Pending_ status and failed Payouts have _Declined_ status.

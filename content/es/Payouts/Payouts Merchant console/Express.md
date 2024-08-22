@@ -42,21 +42,23 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
  | **Reason** | No | Descripción del Payout. |
  | **Reference** | Sí | Identificador único del Payout definido por usted.<br>_Esta referencia no debe aparecer más de una vez en el archivo ni existir en Payouts anteriores._ |
  | **Type** | Sí | Tipo de transferencia del Payout.<br>[Lista de tipos de transferencia para Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
- | **Payee.FirstName** | Sí | Nombre del Beneficiario. | 
- | **Payee.LastName** | Sí | Apellido del Beneficiario. | 
- | **Payee.CompanyName** | Sí | Nombre de la persona jurídica (empresa). |
+ | **Payee.FirstName** | Sí<sup>2</sup>| Nombre del Beneficiario. | 
+ | **Payee.LastName** | Sí<sup>2</sup> | Apellido del Beneficiario. | 
+ | **Payee.CompanyName** | Sí<sup>2</sup> | Nombre de la persona jurídica (empresa). |
  | **Payee.Email** | No | Dirección de correo electrónico del Beneficiario. |
  | **Payee.Phone** | No |Número de teléfono del Beneficiario. | 
  | **Payee.Address** | No | Dirección del Beneficiario. | 
  | **Payee.Document.Type** | Sí | Tipo de documento del Beneficiario.<br>[Encuentre la lista de documentos aquí]({{< ref Variables.md >}}#document-types). | 
  | **Payee.Document.Number** | Sí | Número de documento del Beneficiario. | 
- | **Payee.BankAccount.Number** | Sí<sup>*</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
- | **Payee.BankAccount.Type** | Sí<sup>*</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
- | **Payee.BankAccount.CodeBank** | Sí<sup>*</sup> | Código del banco del Beneficiario. | 
+ | **Payee.BankAccount.Number** | Sí<sup>1</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
+ | **Payee.BankAccount.Type** | Sí<sup>1</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
+ | **Payee.BankAccount.CodeBank** | Sí<sup>1</sup> | Código del banco del Beneficiario. | 
  | **Payee.BankAccount.Branch** | No | Código de la sucursal del banco del Beneficiario. Este campo solo aplica para Brasil y es obligatorio cuando utilice transferencia bancaria como tipo de Payout. | 
  | **Notification_Url** | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
 
-<sup>*</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank` y `Payee.BankAccount.Branch` no deben estar presentes en el request._
+<sup>1</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank` y `Payee.BankAccount.Branch` no deben estar presentes en el request._
+<br>
+<sup>2</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
 * **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.
