@@ -25,7 +25,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
@@ -270,7 +270,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
