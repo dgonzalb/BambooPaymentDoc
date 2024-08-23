@@ -1,6 +1,6 @@
 ---
-title: "VTEX"
-linkTitle: "VTEX"
+title: "VTEX Connector"
+linkTitle: "VTEX Connector"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Integrate Bamboo's payment services into your VTEX e-commerce store. Step-by-step guide for merchants in Uruguay to set up, configure, and optimize Bamboo payments in VTEX.

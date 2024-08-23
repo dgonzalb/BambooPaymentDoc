@@ -1,6 +1,6 @@
 ---
-title: "VTEX"
-linkTitle: "VTEX"
+title: "Conector VTEX"
+linkTitle: "Conector VTEX"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Integra los Bamboo como plataforma de pago en tu e-commerce. Esta guía es un paso a paso para configurar y gestionar los pagos en VTEX.
