@@ -1,5 +1,5 @@
 ---
-title: "API para saldos de cuentas"
+title: "API de saldos"
 date: 2023-05-08T07:28:16-05:00
 Description: >
   La API para saldos de cuenta permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo

@@ -1,6 +1,6 @@
 ---
-title: "Registro de Cambios"
-linkTitle: "Registro de Cambios"
+title: "Cambios en la versión"
+linkTitle: "Cambios en la versión"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Esta página proporciona un registro completo de todos los cambios significativos, actualizaciones y mejoras realizadas en la documentación técnica. Mantenemos este registro para mantener informada a nuestra comunidad de desarrolladores sobre la evolución de Bamboo.
@@ -11,6 +11,7 @@ weight: 50
 ### Agosto
 | Página | Descripción |
 |---|---|
+| [Plug-ins - VTEX](/es/docs/plugins/vtex.html) | Nueva sección para la documentación de Plug-ins que incluye la guía de configuración del conector VTEX de Bamboo. |
 | [Chile - Tarjetas](/es/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | El flujo de redirección de tarjetas de crédito está descontinuado. |
 | [API de Reportes - Transacciones](/es/docs/reporting/transactions-report.html) | Nueva API de reportes para transacciones. |
 | [México - Medios alternativos de pago](/es/docs/payment-methods/mexico/mx-apm.html#response-parameters) | Actualización de imagen de voucher OxxoPay. |

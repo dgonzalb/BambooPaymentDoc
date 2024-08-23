@@ -11,6 +11,7 @@ weight: 50
 ### August
 | Page | Description |
 |---|---|
+| [Plug-ins - VTEX](/en/docs/plugins/vtex.html) | New section added dedicated to plug-ins and VTEX Setup for Uruguay. |
 | [Chile - Cards](/en/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | The credit card redirection flow has been deprecated. |
 | [Report API - Transactions](/en/docs/reporting/transactions-report.html) | New Reporting API for Transactions. |
 | [Mexico - Alternative Payment Methods](/en/docs/payment-methods/mexico/mx-apm.html#response-parameters) | OxxoPay voucher image update. |

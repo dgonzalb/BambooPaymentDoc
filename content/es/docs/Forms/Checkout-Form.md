@@ -1,6 +1,6 @@
 ---
-title: "Formulario del Checkout"
-linkTitle: "Formulario del Checkout"
+title: "Checkout"
+linkTitle: "Checkout"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.

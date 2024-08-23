@@ -1,5 +1,5 @@
 ---
-title: "API para Reportes"
+title: "API de Reportes"
 date: 2023-05-08T07:28:16-05:00
 Description: >
   Nuestras APIs de reportes están diseñadas para proporcionar información completa y detallada de transacciones, movimientos y pagos. Estas APIs le permiten recuperar datos para análisis, conciliación y reportes.

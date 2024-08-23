@@ -1,6 +1,6 @@
 ---
-title: "Formulario del Checkout embebido"
-linkTitle: "Formulario del Checkout embebido"
+title: "Checkout embebido"
+linkTitle: "Checkout embebido"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Corresponde a un formulario de Checkout incrustado en su página, simplificando y asegurando la captura de datos sensibles para el procesamiento de pagos en línea.
