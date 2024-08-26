@@ -158,8 +158,8 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Anda_CreditCard.png" alt="anda" width="52" style="" /> | Anda | Credit & Debit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Abitab_PhysicalNetwork.png" width="52" style="" /> | Abitab | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/RedPagos_PhysicalNetwork.png" width="52" style="" /> | RedPagos | Cash Payment | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" />| Offline Bank Transfer | Bank Transfer | Redirect |
 <!--| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/E-Brou_BankTransfer.png" width="52" style="" /> | E-Brou | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Santander_BankTransfer.png" width="52" style="" /> | Santander | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | Scotiabank | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | Itaú | Bank Transfer | Redirect |-->
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" />| Offline Bank Transfer | Bank Transfer | Redirect |
