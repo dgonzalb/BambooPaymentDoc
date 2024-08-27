@@ -1,6 +1,6 @@
 ---
-title: "Anonymous users"
-linkTitle: "Anonymous users"
+title: "One-Time Token"
+linkTitle: "One-Time Token"
 date: 2023-07-17T07:28:16-05:00
 description: >
   An anonymous user is not registered on the site and makes a one-time purchase. In this case, you must always ask for the card data to complete the transaction.

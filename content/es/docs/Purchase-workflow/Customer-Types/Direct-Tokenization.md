@@ -1,6 +1,6 @@
 ---
-title: "Tokenización Directa"
-linkTitle: "Tokenización Directa"
+title: "Tokenización PCI"
+linkTitle: "Tokenización PCI"
 date: 2023-07-17T07:28:16-05:00
 description: >
   Si su comercio **cumple con la normativa PCI**, esta funcionalidad le permite crear los tokens para las tarjetas utilizadas en su Web vía API, de tal forma que no necesite invocar el [Formulario de Checkout]({{< ref "Checkout-Form.md" >}}). 

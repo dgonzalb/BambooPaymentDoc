@@ -1,6 +1,6 @@
 ---
-title: "Usuarios Registrados"
-linkTitle: "Usuarios Registrados"
+title: "Token de Uso Recurrente"
+linkTitle: "Token de Uso Recurrente"
 date: 2023-07-17T07:28:16-05:00
 description: >
   A diferencia de los [Usuarios Anónimos]({{< ref Anonymous-users.md>}}), estos usuarios están registrados en el sitio web por lo que puede identificarlos y la información de su tarjeta puede ser asociada para realizar otras compras sin tener que ingresar nuevamente la información.

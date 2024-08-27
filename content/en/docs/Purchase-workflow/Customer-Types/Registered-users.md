@@ -1,6 +1,6 @@
 ---
-title: "Registered users"
-linkTitle: "Registered users"
+title: "Recurring Use Token"
+linkTitle: "Recurring Use Token"
 date: 2023-07-17T07:28:16-05:00
 description: >
   Despite the [Anonymous users]({{< ref Anonymous-users.md>}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again.

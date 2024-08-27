@@ -1,6 +1,6 @@
 ---
-title: "Usuarios Anónimos"
-linkTitle: "Usuarios Anónimos"
+title: "Token de Uso Único"
+linkTitle: "Token de Uso Único"
 date: 2023-07-17T07:28:16-05:00
 description: >
   Un usuario anónimo no está registrado en el sitio web y hace una compra por única vez. En este caso, siempre debe pedir los datos de la tarjeta para poder completar la transacción..
