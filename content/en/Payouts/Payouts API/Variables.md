@@ -524,7 +524,7 @@ The following tables show the bank code you can set in the parameter `payee.bank
 | NEQUI | `1507` | `3` |
 | PIBANK | `1560` | `3` |
 | POWWI | `1803` | `3` |
-| RAPPIPAY | `1811` | `2` |
+| RAPPIPAY | `1811` | `2` or `3` |
 | SCOTIABANK COLPATRIA S.A | `1019` | `2` |
 | UALÁ | `1804` | `3` |
 

@@ -525,7 +525,7 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | NEQUI | `1507` | `3` |
 | PIBANK | `1560` | `3` |
 | POWWI | `1803` | `3` |
-| RAPPIPAY | `1811` | `2` |
+| RAPPIPAY | `1811` | `2` o `3` |
 | SCOTIABANK COLPATRIA S.A | `1019` | `2` |
 | UALÁ | `1804` | `3` |
 
