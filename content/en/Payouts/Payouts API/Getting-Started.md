@@ -58,30 +58,30 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 | `countryIsoCode` | `string` | 2 | Country to which the bank belongs.  |
 | `bankCode` | `string` | 4 | Internal code of the bank used in the parameter `payee.bankaccount.codebank` when requesting a Payout. |
 | `bankName` | `string` | - | Name of the bank. |
+| `payoutType` | `integer` | - | Payout type. Set any of the following values: <br> <ul style="list-style-type:disc;"><li>`1` for Cash.</li><li>`2` for Bank Transfer.</li><li>`3` for Wallet.</li><li>`4` for Instant Bank Transfer in Brazil.</li></ul> |
+
+{{% alert title="Nota" color="info"%}}
+For Colombia, in the request it must be differentiated whether the entity is bank or wallet and consequently whether the type is `3` (wallet) or `2` (bank transfer).
+In the response of the operation, `‘payoutType’: 3` or `‘payoutType’: 2` is returned as appropriate.
+{{% /alert %}}
 
 #### Response example
 ```json
-[
-  {
-    "id": 1,
-    "countryIsoCode": "CO",
-    "bankCode": "1002",
-    "bankName": "BANCO POPULAR"
-  },
-  {
-    "id": 3,
-    "countryIsoCode": "CO",
-    "bankCode": "1007",
-    "bankName": "BANCOLOMBIA"
-  },
-  {
-    "id": 4,
-    "countryIsoCode": "CO",
-    "bankCode": "1009",
-    "bankName": "CITIBANK"
-  },
+[ {
+        "id": 680,
+        "countryIsoCode": "CO",
+        "bankCode": "1507",
+        "bankName": "NEQUI",
+        "payoutType": 3
+    },
+    {
+        "id": 609,
+        "countryIsoCode": "CO",
+        "bankCode": "1058",
+        "bankName": "BANCO PROCREDIT COLOMBIA",
+        "payoutType": 2
+    },
   {
     ...
-  }
-]
+  } ]
 ```
