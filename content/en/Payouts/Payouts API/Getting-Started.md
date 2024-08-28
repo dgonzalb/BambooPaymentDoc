@@ -62,7 +62,7 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 
 {{% alert title="Info" color="info"%}}
 For Colombia, in the request it must be differentiated whether the entity is bank or wallet and consequently whether the type is `3` (wallet) or `2` (bank transfer).<br>
-In the response of the operation, `"payoutType": 3` or `"payoutType": 2` is returned as appropriate.
+In the response of the operation, `"payoutType": 3` or `"payoutType": 2` is returned as appropriate. [List of banks and wallets in Colombia](../payouts-api/variables.html#colombia).
 {{% /alert %}}
 
 #### Response example

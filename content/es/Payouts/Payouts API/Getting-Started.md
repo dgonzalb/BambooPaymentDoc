@@ -62,7 +62,7 @@ Donde `{{Country}}` representa el código ISO del país que desea consultar, uti
 
 {{% alert title="Info" color="info"%}}
 Para Colombia, en el request se debe diferenciar si la entidad es banco o billetera y en consecuencia si el type es `3` (billetera) o `2` (transferencia bancaria).<br>
-En la respuesta de la operación, se retorna `"payoutType": 3` o `"payoutType": 2` según corresponda.
+En la respuesta de la operación, se retorna `"payoutType": 3` o `"payoutType": 2` según corresponda. [Listado de bancos y billeteras en Colombia](../payouts-api/variables.html#colombia).
 {{% /alert %}}
 
 #### Ejemplo del Response {#response-example}
