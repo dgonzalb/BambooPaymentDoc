@@ -11,7 +11,7 @@ tags: ["subtopic"]
 Network Tokens replace sensitive card details during transaction processing, significantly enhancing security across the payment ecosystem. By substituting actual card numbers with secure tokens, this method reduces the risk of exposing financial information and minimizes the potential for fraud.
 
 
-## Request Fields
+## NetworkToken Object
 
 | Parameter | Type | Mandatory? | Description |
 |-----------|------|:----------:|-------------|

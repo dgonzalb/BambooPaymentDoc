@@ -1,6 +1,6 @@
 ---
-title: "Direct purchases"
-linkTitle: "Direct purchases"
+title: "Direct Purchase for PCI Merchants"
+linkTitle: "Direct Purchase for PCI Merchants"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{< ref "Purchase-Operations.md" >}}).

@@ -139,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.3c84d71a2736b9f637d9d65c698a16fdbffd7636ffc18bab0aef3d5dc40cf5b54b0e319c8dab25cd8fe7efd5522b56e5e3a3e92d68a5fe8ce51770a4acc32308.json"
+  data-offline-search-index-json-src="../../offline-search-index.ac996a6ff6214541a81ffd1a18362f8e77685c17f69f8bf59da75dbbe5699a38f3e957c9b4b3f8bd9516e387dd7766e2261f10b8bd6fa6f6b373fdfcd30f77a4.json"
   data-offline-search-base-href="../../"
 >
 
@@ -267,7 +267,7 @@
       
       
       
-        <a id="/es/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consoleexpresshtml" href="../../es/payouts/payouts-merchant-console/express.html">Payouts exprés</a>
+        <a id="/es/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consoleexpresshtml" href="../../es/payouts/payouts-merchant-console/express.html">Payouts express</a>
       
       
       
@@ -304,7 +304,19 @@
       
       
       
-        <a id="/es/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apiusing-payouts-apihtml" href="../../es/payouts/payouts-api/using-payouts-api.html">Utilizar el API de Payouts</a>
+        <a id="/es/payouts/payouts-api/getting-started.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apigetting-startedhtml" href="../../es/payouts/payouts-api/getting-started.html">Primeros pasos</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payouts-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apipayouts-previewhtml" href="../../es/payouts/payouts-api/payouts-preview.html">Preview del Payout</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apiusing-payouts-apihtml" href="../../es/payouts/payouts-api/using-payouts-api.html">Crear un Payout</a>
       
       
       
@@ -530,7 +542,7 @@
 <td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"></td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 </tr>
 </tbody>
 </table>
@@ -547,20 +559,15 @@
 </thead>
 <tbody>
   <tr>
-    <td style="border-right: 1px solid #dae0eb;">Uruguay</td>
-    <td style="text-align: center;">10:00 am.</td>
-    <td style="text-align: center;">GMT-3</td>
-  </tr>
-  <tr>
     <td style="border-right: 1px solid #dae0eb;">Perú</td>
     <td style="text-align: center;">09:00 am.</td>
     <td style="text-align: center;">GMT-5</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="5" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
-    <tr>
+  <tr>
     <td>Brasil</td>
   </tr>
   <tr>
@@ -570,7 +577,10 @@
     <td>Colombia</td>
   </tr>
   <tr>
-    <td style="border-radius: 0 0 0 10px;">México</td>
+    <td>México</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Uruguay</td>
   </tr>
 </tbody>
 </table>
@@ -583,6 +593,7 @@
 <p class="alert-text"><ul>
 <li>Cuando los Payouts ocurren en <strong>T+0</strong>, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como <em><strong>Pagado</strong></em> al día siguiente.</li>
 <li>En México, los Payouts se procesan en tiempo real, pero la confirmación final y las notificaciones se producen 5 minutos después.</li>
+<li>En Uruguay, los Payouts son en tiempo real los días hábiles de 10:00 a 16:30hs.</li>
 </ul>
 </p>
 </div>
@@ -728,8 +739,6 @@ Ejemplo: <code>12345678901234567890</code>.</li>
             
         
             
-        
-            
                 <div class="entry">
                     <h5>
                         <a href="../../es/payouts/overview/payout-concepts.html">Conceptos</a>
@@ -745,6 +754,8 @@ Ejemplo: <code>12345678901234567890</code>.</li>
                     </h5>
                     <p>Desde que solicita un Payout hasta que el beneficiario recibe el dinero, el Payout sigue un conjunto de estados. En esta sección, damos una explicación breve de los mismos.</p>
                 </div>
+            
+        
             
         
             
@@ -768,6 +779,10 @@ Ejemplo: <code>12345678901234567890</code>.</li>
         
             
         
+            
+        
+            
+        
     
 </div>
 
@@ -781,7 +796,7 @@ Ejemplo: <code>12345678901234567890</code>.</li>
 <div class="left-element">
     <b>Última modificación</b>
     
-    6 de mayo de 2024
+    19 de agosto de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Getting Started | Bamboo Payment</title><meta property="og:title" content="Getting Started" />
+<meta property="og:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/payouts/payouts-api/getting-started.html" /><meta property="article:section" content="Payouts" />
+<meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
+<meta property="article:modified_time" content="2024-08-28T14:43:32-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Getting Started">
+<meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
+"><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
+<meta itemprop="dateModified" content="2024-08-28T14:43:32-03:00" />
+<meta itemprop="wordCount" content="379">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started"/>
+<meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
+<link href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/payouts-api/getting-started.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.ac996a6ff6214541a81ffd1a18362f8e77685c17f69f8bf59da75dbbe5699a38f3e957c9b4b3f8bd9516e387dd7766e2261f10b8bd6fa6f6b373fdfcd30f77a4.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/payouts-api/getting-started.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts.html" href="../../../en/payouts.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/overview.html" href="../../../en/payouts/overview.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-conceptshtml" href="../../../en/payouts/overview/payout-concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-status.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-statushtml" href="../../../en/payouts/overview/payout-status.html">Payout status</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-merchant-console.html" href="../../../en/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts console</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolereportshtml" href="../../../en/payouts/payouts-merchant-console/reports.html">Payout Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consoleexpresshtml" href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolebalanceshtml" href="../../../en/payouts/payouts-merchant-console/balances.html">Payout Balance report</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-api.html" href="../../../en/payouts/payouts-api.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Payouts API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/getting-started.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-enpayoutspayouts-apigetting-startedhtml" href="../../../en/payouts/payouts-api/getting-started.html">Getting Started</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payouts-preview.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayouts-previewhtml" href="../../../en/payouts/payouts-api/payouts-preview.html">Payout Preview</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/using-payouts-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../../en/payouts/payouts-api/using-payouts-api.html">Payout Request</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-webhook.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-webhookhtml" href="../../../en/payouts/payouts-api/payout-webhook.html">Notification Webhook</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/variables.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apivariableshtml" href="../../../en/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-error-codes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-error-codeshtml" href="../../../en/payouts/payouts-api/payout-error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#configuring-the-authentication">Configuring the authentication</a>
+      <ul>
+        <li><a href="#signing-the-message">Signing the message</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-methods">API methods</a>
+      <ul>
+        <li><a href="#get-bank-list">Get Bank list</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts/payouts-api.html">Payouts API</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/payouts/payouts-api/getting-started.html">Getting Started</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Getting Started</h1>
+    <div class="lead">The Payouts API allows you to request multiple payments using the balance available in your account.</div>
+	       
+	<p>To learn more about Payouts, refer to this <a href="../overview.html">article</a>.</p>
+<h2 id="configuring-the-authentication">Configuring the authentication</h2>
+<p>All methods used in Payouts API require the following authentication headers.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Content-Type</code></td>
+<td><code>application/json</code></td>
+<td>With this header, the request will be transmitted in <em>JSON</em> format.</td>
+</tr>
+<tr>
+<td><code>Authorization</code></td>
+<td><code>Basic {{MerchantPrivateKey}}</code></td>
+<td>Send the <code>{{MerchantPrivateKey}}</code> (your merchant identifier) and the word <code>Basic</code>.<br>Example: <code>Basic RVkeL-s86_iTzSMLvDtuyQ-1zqIcsmF-coSzncn_uFvQnj7b-B3rtZg__</code></td>
+</tr>
+<tr>
+<td><code>DigitalSignature</code></td>
+<td><code>{{DigitalSignature}}</code></td>
+<td>Signature to validate the transaction using the <em>HmacSHA256</em> algorithm. This header is mandatory only for Payout creation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="signing-the-message">Signing the message</h3>
+<p>Build the hash using the parameters <code>country</code>, <code>amount</code>, <code>currency</code>, <code>reference</code>, and <code>type</code> of the Request. When signing the onboarding contract with Bamboo, the <code>secret-key</code> and <code>MerchantPrivateKey</code> are provided to you.</p>
+<h4 id="signature-sample-code">Signature sample code</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">json</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">signdata</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">Country</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">country</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Amount</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">amount</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">currency</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Reference</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reference</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Type</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">type</span><span style="color:#000;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">stringify</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">signdata</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">hexHash</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HmacSHA256</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">secret</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">key</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">hash</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">hexHash</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">toString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Hex</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><h2 id="api-methods">API methods</h2>
+<p>The Payouts API offers four primary methods that you can use when requesting Payouts.</p>
+<ul>
+<li><a href="#get-bank-list">Get Bank list</a></li>
+<li><a href="payouts-preview.html">Payouts Preview</a></li>
+<li><a href="using-payouts-api.html">Payout Request</a></li>
+<li><a href="using-payouts-api.html#obtaining-a-payout">Obtaining a Payout</a></li>
+</ul>
+<h3 id="get-bank-list">Get Bank list</h3>
+<p>This method lets you get the list of available banks in a country.</p>
+<h4 id="request-url">Request URL</h4>
+<p>You must invoke a <strong>GET</strong> request to the following URLs according to your needs.</p>
+<ul>
+<li><strong>Production</strong>: <code>https://payout-api.bamboopayment.com/api/bank/country/{{Country}}</code></li>
+<li><strong>Stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/bank/country/{{Country}}</code></li>
+</ul>
+<p>Where <code>{{Country}}</code> represents the ISO code of the country you wish to inquire about, using the ISO 3166-2 format. <a href="../overview.html#coverage">List of countries available for Payouts</a>.</p>
+<h4 id="response-parameters">Response parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Format</th>
+<th style="text-align:center">Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td style="text-align:center"><code>integer</code></td>
+<td style="text-align:center">-</td>
+<td>Internal identification of the bank.</td>
+</tr>
+<tr>
+<td><code>countryIsoCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">2</td>
+<td>Country to which the bank belongs.</td>
+</tr>
+<tr>
+<td><code>bankCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">4</td>
+<td>Internal code of the bank used in the parameter <code>payee.bankaccount.codebank</code> when requesting a Payout.</td>
+</tr>
+<tr>
+<td><code>bankName</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">-</td>
+<td>Name of the bank.</td>
+</tr>
+<tr>
+<td><code>payoutType</code></td>
+<td style="text-align:center"><code>integer</code></td>
+<td style="text-align:center">-</td>
+<td>Payout type. Set any of the following values: <br> <ul style="list-style-type:disc;"><li><code>1</code> for Cash.</li><li><code>2</code> for Bank Transfer.</li><li><code>3</code> for Wallet.</li><li><code>4</code> for Instant Bank Transfer in Brazil.</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">For Colombia, in the request it must be differentiated whether the entity is bank or wallet and consequently whether the type is <code>3</code> (wallet) or <code>2</code> (bank transfer).<br>
+In the response of the operation, <code>&quot;payoutType&quot;: 3</code> or <code>&quot;payoutType&quot;: 2</code> is returned as appropriate. <a href="../payouts-api/variables.html#colombia">List of banks and wallets in Colombia</a>.</p>
+</div>
+
+<h4 id="response-example">Response example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">680</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1507&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NEQUI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">609</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1058&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BANCO PROCREDIT COLOMBIA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">]</span>
+</span></span></code></pre></div>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Last modified</b>
+    
+    August 28, 2024
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

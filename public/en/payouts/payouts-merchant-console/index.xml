@@ -204,14 +204,20 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.FirstName&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;First Name of the Payee.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.LastName&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Last Name of the Payee.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.CompanyName&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Name of the company.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -246,19 +252,19 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.Number&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Bank account number of the Payee.&lt;br&gt;Take into account the following considerations:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For Argentina, set the CBU/CVU.&lt;/li&gt;&lt;li&gt;For Mexico, set the CLABE number.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.Type&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Account type of the Payee.&lt;br&gt;Set &lt;code&gt;1&lt;/code&gt; for Checking and &lt;code&gt;2&lt;/code&gt; for Savings.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.CodeBank&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Bank code of the Payee.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -276,7 +282,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;When using Bank transfer, these parameters are mandatory for&lt;/em&gt; &lt;em&gt;&lt;strong&gt;ALL&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;countries. For Instant Bank Transfer in Brazil, the columns &lt;code&gt;Payee.BankAccount.Type&lt;/code&gt;, &lt;code&gt;Payee.BankAccount.CodeBank&lt;/code&gt;, and &lt;code&gt;Payee.BankAccount.Branch&lt;/code&gt; must not be present in the request.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;em&gt;When using Bank transfer, these parameters are mandatory for&lt;/em&gt; &lt;em&gt;&lt;strong&gt;ALL&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;countries. For Instant Bank Transfer in Brazil, the columns &lt;code&gt;Payee.BankAccount.Type&lt;/code&gt;, &lt;code&gt;Payee.BankAccount.CodeBank&lt;/code&gt;, and &lt;code&gt;Payee.BankAccount.Branch&lt;/code&gt; must not be present in the request.&lt;/em&gt;
+&lt;br&gt;
+&lt;sup&gt;2&lt;/sup&gt; &lt;em&gt;The fields &lt;code&gt;firstName&lt;/code&gt; and &lt;code&gt;lastName&lt;/code&gt; for an individual and &lt;code&gt;companyName&lt;/code&gt; for a legal person (company) are mandatory. If a payout is sent for a company only the &lt;code&gt;companyName&lt;/code&gt; field has to be filled in, and if a payout is sent to a natural person only the &lt;code&gt;firstName&lt;/code&gt; and &lt;code&gt;lastName&lt;/code&gt; fields have to be filled in.&lt;/em&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;

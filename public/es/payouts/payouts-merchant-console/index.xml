@@ -125,7 +125,7 @@
     </item>
     
     <item>
-      <title>Payouts: Payouts exprés</title>
+      <title>Payouts: Payouts express</title>
       <link>/es/payouts/payouts-merchant-console/express.html</link>
       <pubDate>Fri, 30 Jun 2023 08:16:09 -0500</pubDate>
       
@@ -204,14 +204,20 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.FirstName&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Nombre del Beneficiario.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.LastName&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Apellido del Beneficiario.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Payee.CompanyName&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;Nombre de la persona jurídica (empresa).&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -246,19 +252,19 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.Number&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Número de cuenta del Beneficiario.&lt;br&gt;Tenga en cuenta las siguientes consideraciones:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para Argentina, configure the CBU/CVU.&lt;/li&gt;&lt;li&gt;Para México, configure el número CLABE.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.Type&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Tipo de cuenta del Beneficiario. Asigne &lt;code&gt;1&lt;/code&gt; para Cuenta corriente y &lt;code&gt;2&lt;/code&gt; para Cuenta de ahorros.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Payee.BankAccount.CodeBank&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;Código del banco del Beneficiario.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -276,7 +282,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para&lt;/em&gt; &lt;em&gt;&lt;strong&gt;TODOS&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas &lt;code&gt;Payee.BankAccount.Type&lt;/code&gt;, &lt;code&gt;Payee.BankAccount.CodeBank&lt;/code&gt; y &lt;code&gt;Payee.BankAccount.Branch&lt;/code&gt; no deben estar presentes en el request.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;em&gt;Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para&lt;/em&gt; &lt;em&gt;&lt;strong&gt;TODOS&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas &lt;code&gt;Payee.BankAccount.Type&lt;/code&gt;, &lt;code&gt;Payee.BankAccount.CodeBank&lt;/code&gt; y &lt;code&gt;Payee.BankAccount.Branch&lt;/code&gt; no deben estar presentes en el request.&lt;/em&gt;
+&lt;br&gt;
+&lt;sup&gt;2&lt;/sup&gt; &lt;em&gt;Son mandatorios los campos &lt;code&gt;firstName&lt;/code&gt; y &lt;code&gt;lastName&lt;/code&gt; para persona física y &lt;code&gt;companyName&lt;/code&gt; para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo &lt;code&gt;companyName&lt;/code&gt;, y si se envía un payout a una persona física solo se tienen que completar los campos &lt;code&gt;firstName&lt;/code&gt; y &lt;code&gt;lastName&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;

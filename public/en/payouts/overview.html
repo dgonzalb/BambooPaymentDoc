@@ -139,7 +139,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.3c84d71a2736b9f637d9d65c698a16fdbffd7636ffc18bab0aef3d5dc40cf5b54b0e319c8dab25cd8fe7efd5522b56e5e3a3e92d68a5fe8ce51770a4acc32308.json"
+  data-offline-search-index-json-src="../../offline-search-index.ac996a6ff6214541a81ffd1a18362f8e77685c17f69f8bf59da75dbbe5699a38f3e957c9b4b3f8bd9516e387dd7766e2261f10b8bd6fa6f6b373fdfcd30f77a4.json"
   data-offline-search-base-href="../../"
 >
 
@@ -304,7 +304,19 @@
       
       
       
-        <a id="/en/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../en/payouts/payouts-api/using-payouts-api.html">Using Payouts API</a>
+        <a id="/en/payouts/payouts-api/getting-started.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apigetting-startedhtml" href="../../en/payouts/payouts-api/getting-started.html">Getting Started</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payouts-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayouts-previewhtml" href="../../en/payouts/payouts-api/payouts-preview.html">Payout Preview</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../en/payouts/payouts-api/using-payouts-api.html">Payout Request</a>
       
       
       
@@ -530,7 +542,7 @@
 <td style="text-align:center"></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 <td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"></td>
+<td style="text-align:center"><img src="../../assets/check_mark_64.png" width="15px"/></td>
 </tr>
 </tbody>
 </table>
@@ -540,28 +552,23 @@
 <table>
 <thead>
   <tr>
-    <th style="text-align: center;">Country</th>
-    <th style="text-align: center;">Maximum time<sup>*</sup></th>
-    <th style="text-align: center;">Time zone</th>
+    <th style="text-align: center;">País</th>
+    <th style="text-align: center;">Hora máxima<sup>*</sup></th>
+    <th style="text-align: center;">Zona horaria</th>
   </tr>
 </thead>
 <tbody>
-    <tr>
-    <td style="border-right: 1px solid #dae0eb;">Uruguay</td>
-    <td style="text-align: center;">10:00 am.</td>
-    <td style="text-align: center;">GMT-3</td>
-  </tr>
   <tr>
-    <td style="border-right: 1px solid #dae0eb;">Peru</td>
+    <td style="border-right: 1px solid #dae0eb;">Perú</td>
     <td style="text-align: center;">09:00 am.</td>
     <td style="text-align: center;">GMT-5</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="5" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
+    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
-    <tr>
-    <td>Brazil</td>
+  <tr>
+    <td>Brasil</td>
   </tr>
   <tr>
     <td>Chile</td>
@@ -570,7 +577,10 @@
     <td>Colombia</td>
   </tr>
   <tr>
-    <td style="border-radius: 0 0 0 10px;">Mexico</td>
+    <td>México</td>
+  </tr>
+  <tr>
+    <td style="border-radius: 0 0 0 10px;">Uruguay</td>
   </tr>
 </tbody>
 </table>
@@ -583,6 +593,7 @@
 <p class="alert-text"><ul>
 <li>When payouts occur on <strong>T+0</strong>, the payee receives the payment on the same day. However, the console will display the status as <em><strong>Paid</strong></em> the following day.</li>
 <li>In Mexico, payouts are processed in real-time, but final confirmation and notifications occur 5 minutes later.</li>
+<li>In Uruguay, payouts are in real time on business days from 10:00 to 16:30hs.</li>
 </ul>
 </p>
 </div>
@@ -728,14 +739,14 @@ Example: <code>12345678901234567890</code>.</li>
             
         
             
-        
-            
                 <div class="entry">
                     <h5>
                         <a href="../../en/payouts/overview/payout-concepts.html">Concepts</a>
                     </h5>
                     <p>Please look at the concepts behind the <em><strong>Payouts</strong></em> feature so you can start using it easily!</p>
                 </div>
+            
+        
             
         
             
@@ -768,6 +779,10 @@ Example: <code>12345678901234567890</code>.</li>
         
             
         
+            
+        
+            
+        
     
 </div>
 
@@ -781,7 +796,7 @@ Example: <code>12345678901234567890</code>.</li>
 <div class="left-element">
     <b>Last modified</b>
     
-    May 6, 2024
+    August 19, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

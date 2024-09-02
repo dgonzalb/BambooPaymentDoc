@@ -1,0 +1,122 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – Plug-ins</title>
+    <link>/es/docs/plugins.html</link>
+    <description>Recent content in Plug-ins on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 May 2023 07:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/docs/plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Conector VTEX</title>
+      <link>/es/docs/plugins/vtex.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/es/docs/plugins/vtex.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Para integrar Bamboo como plataforma de pago en tu e-commerce de VTEX, es necesario contar con una cuenta de comercio. Nuestro plugin permite una conexión entre tu plataforma VTEX y los medios de pago que ofrecemos en Bamboo.&lt;/p&gt;
+&lt;h2 id=&#34;requisitos-previos&#34;&gt;Requisitos Previos&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Comercio en Bamboo&lt;/strong&gt;: Si aún no te has registrado con Bamboo, contacta a tu ejecutivo comercial para obtener las credenciales necesarias para la integración.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;e-commerce en VTEX&lt;/strong&gt;: Asegúrate de tener un e-commerce en VTEX activo donde quieras procesar con Bamboo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Esta documentación te guiará a través del proceso de configuración del plugin Bamboo para VTEX, permitiendo a tus clientes utilizar los servicios de pago de Bamboo en tu tienda en línea.&lt;/p&gt;
+&lt;h2 id=&#34;vtex-para-uruguay&#34;&gt;VTEX para Uruguay&lt;/h2&gt;
+&lt;h3 id=&#34;tarjeta-de-crédito-débito-y-pre-pago&#34;&gt;Tarjeta de Crédito, débito y pre-pago.&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Franquicia&lt;/th&gt;
+&lt;th&gt;Crédito&lt;/th&gt;
+&lt;th&gt;Débito&lt;/th&gt;
+&lt;th&gt;Prepago&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Visa&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OCA&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/check_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Créditos Directos&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PassCard&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Líder&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Club del Este&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cabal&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Anda&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/x_mark_64.png&#34; width=&#34;15px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Solo Visa y Mastercard ofrecen opciones de débito y prepago.&lt;/li&gt;
+&lt;li&gt;American Express y OCA son marcas disponibles de tarjetas de crédito.&lt;/li&gt;
+&lt;li&gt;Créditos Directos, PassCard, Líder, Club del Este, Cabal y Anda no están disponibles actualmente.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

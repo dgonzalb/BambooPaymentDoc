@@ -1,0 +1,264 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – Conector VTEX</title>
+    <link>/es/docs/plugins/vtex.html</link>
+    <description>Recent content in Conector VTEX on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 May 2023 07:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/docs/plugins/vtex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Guía de Integración</title>
+      <link>/es/docs/plugins/vtex/_vtex_setup.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/es/docs/plugins/vtex/_vtex_setup.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;En esta sección, encontrarás las instrucciones para configurar la autenticación, ajustar los medios de pago y establecer condiciones para pagos en cuotas y de contado con tarjetas de crédito o débito.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;configuración-general&#34;&gt;Configuración General&lt;/h2&gt;
+&lt;p&gt;Para configurar Bamboo como proveedor de pagos en tu tienda VTEX, sigue estos pasos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Inicia sesión en el panel de administración de VTEX con tus credenciales.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-000.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Ve a &amp;lsquo;Configuración de la tienda&amp;rsquo; &amp;gt; &amp;lsquo;Proveedores&amp;rsquo; &amp;gt; &amp;lsquo;Nuevo proveedor&amp;rsquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-001.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Busca &lt;strong&gt;Bamboo-Payments&lt;/strong&gt; en la lista de proveedores y selecciónalo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-002.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuración-del-plugin-de-bamboo&#34;&gt;Configuración del Plugin de Bamboo&lt;/h2&gt;
+&lt;h3 id=&#34;autenticación&#34;&gt;Autenticación&lt;/h3&gt;
+&lt;p&gt;Ingresa las credenciales de Bamboo en los campos designados. Para obtener información sobre cómo generar las claves de tu tienda, consulta la &lt;a href=&#34;https://help.vtex.com/es/tutorial/claves-de-aplicacion--2iffYzlvvz4BDMr6WGUtet#generar-claves-de-aplicacion-internas&#34; target=&#34;_blank&#34;&gt;documentación de Claves VTEX&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-003.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;opciones-adicionales&#34;&gt;Opciones adicionales&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Elige si deseas operar en modo prueba.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-004.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Selecciona el tipo de liquidación que prefieras.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Información&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;El modo prueba permite simular transacciones antes de ofrecerlo a tus clientes. Desactiva esta opción para procesar transacciones reales.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;configuraciones-de-procesamiento&#34;&gt;Configuraciones de Procesamiento&lt;/h3&gt;
+&lt;p&gt;Configura los siguientes ajustes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Llave Privada&lt;/strong&gt;: Ingresa tu Llave Privada de Bamboo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Habilitar Autorización y Captura&lt;/strong&gt;: Si está habilitado, deberás capturar manualmente los pagos realizados con Bamboo desde tu tienda.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;País de Operación&lt;/strong&gt;: Selecciona el país donde operará tu e-commerce.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-005.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Después de completar estos campos, haz clic en el botón &lt;strong&gt;&amp;lsquo;Guardar&amp;rsquo;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configuración-de-medios-de-pago&#34;&gt;Configuración de Medios de Pago&lt;/h2&gt;
+&lt;p&gt;Para configurar los métodos de pago:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ve a la sección &amp;lsquo;Condiciones de Pago&amp;rsquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-006.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Haz clic en el ícono &amp;lsquo;+&amp;rsquo; para agregar una nueva condición.&lt;/li&gt;
+&lt;li&gt;Configura el método de pago que deseas ofrecer a tus clientes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-007.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;pago-en-cuotas-para-tarjetas-de-crédito&#34;&gt;Pago en Cuotas para Tarjetas de Crédito&lt;/h3&gt;
+&lt;p&gt;Para configurar el pago en cuotas para tarjetas de crédito:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Selecciona la marca o franquicia de tarjeta en la lista.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-008.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Activa la condición.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-009.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Selecciona Bamboo-Payments como proveedor.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-010.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Ingresa un nombre para identificar la condición de pago.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-011.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Elige la opción &amp;lsquo;En cuotas&amp;rsquo; e ingresa los datos solicitados.&lt;/li&gt;
+&lt;li&gt;Configura las tasas de interés y/o intereses externos según sea necesario.&lt;/li&gt;
+&lt;li&gt;Guarda los cambios.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-013.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;pago-de-contado-para-tarjetas-de-crédito-y-débito&#34;&gt;Pago de Contado para Tarjetas de Crédito y Débito&lt;/h3&gt;
+&lt;p&gt;Para configurar pagos de contado o a una sola cuota:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Sigue el mismo proceso que para &amp;lsquo;Pago en Cuotas&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;En lugar de seleccionar &amp;lsquo;En cuotas&amp;rsquo;, elige la opción &amp;lsquo;Al contado&amp;rsquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-015.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Configura los detalles necesarios para pagos únicos.&lt;/li&gt;
+&lt;li&gt;Guarda los cambios.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-016.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Siguiendo estos pasos, habrás configurado Bamboo como plataforma de pago en tu tienda VTEX, incluyendo medios de pago en cuotas y de contado.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Información&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Los cambios en las condiciones de pago pueden tardar hasta &lt;strong&gt;10 minutos&lt;/strong&gt; en aplicarse en el checkout de tu tienda VTEX.&lt;/p&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Flujo de Pago</title>
+      <link>/es/docs/plugins/vtex/_vtex_payment_flow.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/es/docs/plugins/vtex/_vtex_payment_flow.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Los clientes pueden seleccionar Tarjetas de Crédito y Débito durante el proceso de compra con Bamboo integrado con tu tienda VTEX. Este es el paso a paso del flujo de pago desde la perspectiva del cliente.&lt;/p&gt;
+&lt;h2 id=&#34;experiencia-de-pago-del-cliente&#34;&gt;Experiencia de Pago del Cliente&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Agregar productos al carrito&lt;/li&gt;
+&lt;li&gt;Ingresar información de envío y facturación&lt;/li&gt;
+&lt;li&gt;Seleccionar &amp;lsquo;Tarjeta de Crédito&amp;rsquo; o &amp;lsquo;Tarjeta Débito&amp;rsquo; como método de pago. Revisa la &lt;a href=&#34;../../../../es/docs/plugins/vtex.html&#34;&gt;lista de Medios de Pago disponibles&lt;/a&gt; para Bamboo en VTEX.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-017.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Ingresar los detalles de la tarjeta y &lt;strong&gt;elegir las condiciones de pago&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Pago de contado&lt;/li&gt;
+&lt;li&gt;Pago en cuotas &lt;em&gt;(en caso de estar disponible)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-018.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Completar la transacción&lt;/li&gt;
+&lt;li&gt;El cliente volverá al sitio web para ver la confirmación de su pedido.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-019.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Panel de Control</title>
+      <link>/es/docs/plugins/vtex/_vtex_admin.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/es/docs/plugins/vtex/_vtex_admin.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;gestión-de-pedidos&#34;&gt;Gestión de Pedidos&lt;/h2&gt;
+&lt;h3 id=&#34;visualización-de-pedidos&#34;&gt;Visualización de Pedidos&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Accede al menú de administración de VTEX&lt;/li&gt;
+&lt;li&gt;Selecciona &amp;lsquo;Pedidos&amp;rsquo; &amp;gt; &amp;lsquo;Todos los Pedidos&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Verás una lista de todos los pedidos recibidos en tu tienda&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-020.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;detalles-del-pedido&#34;&gt;Detalles del Pedido&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Haz clic en un pedido específico para ver el detalle&lt;/li&gt;
+&lt;li&gt;Los detalles del pedido incluyen toda la información del pago procesado a través de Bamboo&lt;/li&gt;
+&lt;li&gt;Haz clic en &amp;lsquo;Ver Detalles&amp;rsquo; para ver la transacción asociada&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-021.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gestión-de-transacciones&#34;&gt;Gestión de Transacciones&lt;/h2&gt;
+&lt;h3 id=&#34;visualización-de-transacciones&#34;&gt;Visualización de Transacciones&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Desde el menú de administración de VTEX, selecciona &amp;lsquo;Pedidos&amp;rsquo; &amp;gt; &amp;lsquo;Transacciones&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Muestra todas las transacciones recibidas en tu tienda&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-022.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;detalle-de-la-transacción&#34;&gt;Detalle de la Transacción&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Haz clic en una transacción específica para ver sus detalles&lt;/li&gt;
+&lt;li&gt;Puedes ver la trazabilidad completa de los estados de pago procesados por Bamboo&lt;/li&gt;
+&lt;li&gt;En la esquina superior derecha, puedes acceder al pedido&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-023.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-024.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;operaciones-adicionales&#34;&gt;Operaciones Adicionales&lt;/h2&gt;
+&lt;h3 id=&#34;captura&#34;&gt;Captura&lt;/h3&gt;
+&lt;p&gt;Si la opción &lt;strong&gt;&amp;lsquo;Autorización y captura&amp;rsquo;&lt;/strong&gt; está activa, deberás cobrar los pagos de forma manual. Para esto solo debes facturar el pedido en VTEX. Esto implica comenzar la preparación del pedido y luego facturarlo.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Inicia la preparación del pedido&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-026.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Factura el pedido&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-027.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;reembolsos&#34;&gt;Reembolsos&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Información&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Los reembolsos se pueden realizar en transacciones cuando el estado del pedido es &lt;strong&gt;&amp;lsquo;Facturado&amp;rsquo;&lt;/strong&gt; en VTEX.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Si estado del pedido es &amp;lsquo;Facturado&amp;rsquo;, haz clic en el botón &lt;strong&gt;&amp;lsquo;Devolver ítems&amp;rsquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-028.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Puedes procesar reembolsos totales o parciales&lt;/li&gt;
+&lt;li&gt;Los detalles de la devolución serán visibles en la transacción asociada&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-029.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cancelaciones&#34;&gt;Cancelaciones&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Información&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Puedes cancelar transacciones para pedidos en estado &amp;lsquo;Listo para Preparación&amp;rsquo;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Localiza el pedido que deseas cancelar&lt;/li&gt;
+&lt;li&gt;Haz clic en el botón &amp;lsquo;Cancelar&amp;rsquo; en la página del pedido&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-030.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; La cancelación solo es posible para pedidos en estado &amp;lsquo;Listo para Preparación&amp;rsquo;, no en etapas posteriores&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-031.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Los detalles de la cancelación serán visibles en la transacción asociada&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-032.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;notas-importantes&#34;&gt;Notas Importantes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Asegúrate de que los pedidos estén en el estado correcto antes de intentar &lt;strong&gt;reembolsos&lt;/strong&gt; o &lt;strong&gt;cancelaciones&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Siempre verifica la transacción asociada para obtener la información de pago más actualizada&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

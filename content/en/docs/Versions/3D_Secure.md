@@ -15,7 +15,7 @@ tags: ["subtopic"]
 
 | Parameter | Type | Mandatory? | Description |
 |-----------|------|:----------:|-------------|
-| `ThreeDSAuthMethod` | `string` | No | 3D Secure authentication method used: `"EXTERNAL"`, `"INTERNAL"`, or `"DISABLED"`. |
+| `ThreeDSAuthMethod` | `string` | No | 3D Secure authentication method used: `"EXTERNAL"` or `"DISABLED"`. |
 | `ThreeDS` | `object` | Yes | 3D Secure information when `ThreeDSAuthMethod="EXTERNAL"`. |
 | `ThreeDS` → `Eci` | `string` | Yes | 3D Secure ECI code. |
 | `ThreeDS` → `Xid` | `string` | Yes | 3D Secure transaction identifier. |

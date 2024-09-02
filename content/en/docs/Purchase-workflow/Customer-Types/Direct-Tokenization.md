@@ -1,6 +1,6 @@
 ---
-title: "PCI Tokenization"
-linkTitle: "PCI Tokenization"
+title: "Direct Tokenization for PCI Merchants"
+linkTitle: "Direct Tokenization for PCI Merchants"
 date: 2023-07-17T07:28:16-05:00
 description: >
   If your commerce is **PCI-compliant**,  this functionality allows you to create the tokens for the cards used in your Web through API, so you don't need to invoke the [Checkout Form]({{< ref "Checkout-Form.md" >}}). 

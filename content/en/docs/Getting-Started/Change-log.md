@@ -1,22 +1,28 @@
 ---
 title: "Change Log"
 linkTitle: "Change Log"
-date: 2023-03-02T11:40:29-05:00
+date: 2024-08-10T11:40:29-05:00
 Description: >
   This page provides a comprehensive record of all significant changes, updates, and improvements made to the technical documentation. We maintain this log to keep our developer community informed about Bamboo's evolution.
 weight: 50
 
 ---
 ## 2024
+### September
+| Page | Description |
+|---|---|
+| **[Direct Purchase](/en/docs/versions.html)** | Adding Direct Purchase V3 for PCI Merchants in the next versions. |
+
+
 ### August
 | Page | Description |
 |---|---|
 | [Versions](/en/docs/versions.html) | New section added for versions and VNEXT in English. |
-| [Plug-ins - VTEX](/en/docs/plugins/vtex.html) | New section added dedicated to plug-ins and VTEX Setup for Uruguay. |
+| **[Plug-ins - VTEX](/en/docs/plugins/vtex.html)** | New section added dedicated to plug-ins and VTEX Setup for Uruguay. |
 | [Chile - Cards](/en/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | The credit card redirection flow has been deprecated. |
 | [Report API - Transactions](/en/docs/reporting/transactions-report.html) | New Reporting API for Transactions. |
 | [Mexico - OXXOPay](/en/docs/payment-methods/mexico/mx-apm.html#response-parameters) | OxxoPay voucher image update. |
-| [Change Log](/en/docs/getting-started/change-log.html) | The Change Log page has been added to the technical documentation. |
+| **[Change Log](/en/docs/getting-started/change-log.html)** | The Change Log page has been added to the technical documentation. |
 
 ### July
 | Page | Description |

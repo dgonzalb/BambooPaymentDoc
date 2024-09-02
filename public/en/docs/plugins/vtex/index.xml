@@ -1,0 +1,263 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bamboo Payment – VTEX Connector</title>
+    <link>/en/docs/plugins/vtex.html</link>
+    <description>Recent content in VTEX Connector on Bamboo Payment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 May 2023 07:28:16 -0500</lastBuildDate>
+    
+	  <atom:link href="/en/docs/plugins/vtex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Integration Guide</title>
+      <link>/en/docs/plugins/vtex/_vtex_setup.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/en/docs/plugins/vtex/_vtex_setup.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;You&amp;rsquo;ll find detailed instructions for setting up authentication, configuring payment settings, and establishing conditions for both installment and single payment options.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;general-setup&#34;&gt;General Setup&lt;/h2&gt;
+&lt;p&gt;To configure Bamboo as a payment provider in your VTEX store, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Log in to your VTEX admin panel using your credentials.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-000.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Navigate to &amp;lsquo;Store Configuration&amp;rsquo; &amp;gt; &amp;lsquo;Providers&amp;rsquo; &amp;gt; &amp;lsquo;New Provider&amp;rsquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-001.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Search for &lt;strong&gt;Bamboo-Payments&lt;/strong&gt; in the list of providers and select it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-002.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bamboo-plugin-configuration&#34;&gt;Bamboo Plugin Configuration&lt;/h2&gt;
+&lt;h3 id=&#34;authentication-setup&#34;&gt;Authentication Setup&lt;/h3&gt;
+&lt;p&gt;Enter your store credentials in the designated fields. For information on generating your store keys, refer to the &lt;a href=&#34;https://help.vtex.com/en/tutorial/claves-de-aplicacion--2iffYzlvvz4BDMr6WGUtet#generar-claves-de-aplicacion-internas&#34; target=&#34;_blank&#34;&gt;VTEX Keys documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-003.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;payment-control&#34;&gt;Payment Control&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Choose whether to operate in test mode.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-004.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Select your preferred type of settlement.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Test mode allows you to simulate Bamboo transactions in your store before offering it to customers. Deselect this option when you&amp;rsquo;re ready to process real transactions.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;provider-fields&#34;&gt;Provider Fields&lt;/h3&gt;
+&lt;p&gt;Configure the following settings:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Private Key&lt;/strong&gt;: Enter your Bamboo PrivateKey.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enable Authorization and Capture&lt;/strong&gt;: If enabled, you&amp;rsquo;ll need to manually capture payments made with Bamboo from your store.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operating Country&lt;/strong&gt;: Select the country where your store operates.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-005.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After completing these fields, click the &lt;strong&gt;&amp;lsquo;Save&amp;rsquo;&lt;/strong&gt; button.&lt;/p&gt;
+&lt;h2 id=&#34;payment-methods-configuration&#34;&gt;Payment Methods Configuration&lt;/h2&gt;
+&lt;p&gt;To set up payment methods:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the &amp;lsquo;Payment Conditions&amp;rsquo; tab.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-006.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Click the &amp;lsquo;+&amp;rsquo; icon to add a new condition.&lt;/li&gt;
+&lt;li&gt;Configure the payment method you want to offer to your customers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-007.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installments-for-credit-cards&#34;&gt;Installments for Credit Cards&lt;/h3&gt;
+&lt;p&gt;To set up installments for Credit Cards:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select the desired card brand from the list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-008.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Activate the condition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-009.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Select Bamboo-Payments as the provider.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-010.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Enter a name to identify the payment condition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-011.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Choose the &amp;lsquo;Installments&amp;rsquo; option and enter the requested data.&lt;/li&gt;
+&lt;li&gt;Configure interest rates and/or external interests as needed.&lt;/li&gt;
+&lt;li&gt;Save the changes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-013.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;single-payment-one-time-payment-for-credit-and-debit-cards&#34;&gt;Single Payment (One-time Payment) for Credit and Debit Cards&lt;/h3&gt;
+&lt;p&gt;To set up single payments (payments in one installment):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Follow the same process as &amp;lsquo;Installment Payments&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;Instead of selecting &amp;lsquo;Installments&amp;rsquo;, choose the &amp;lsquo;Single Payment&amp;rsquo; option.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-015.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Configure the necessary details for one-time payments.&lt;/li&gt;
+&lt;li&gt;Save the changes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-016.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;By following these steps, you&amp;rsquo;ll successfully offer Bamboo as a payment method to your customers in your VTEX store, including both installment plans and single payment options.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Changes to payment conditions may take up to &lt;strong&gt;10 minutes&lt;/strong&gt; to apply at your VTEX store&amp;rsquo;s checkout.&lt;/p&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Flow</title>
+      <link>/en/docs/plugins/vtex/_vtex_payment_flow.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/en/docs/plugins/vtex/_vtex_payment_flow.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;When Bamboo is integrated with your VTEX store, customers can select Credit and Debit Cards as a payment option during checkout. Here&amp;rsquo;s what the process looks like from the customer&amp;rsquo;s perspective.&lt;/p&gt;
+&lt;h2 id=&#34;payment-flow&#34;&gt;Payment Flow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Add products to cart&lt;/li&gt;
+&lt;li&gt;Enter shipping and billing information&lt;/li&gt;
+&lt;li&gt;Select &amp;lsquo;Credit Card&amp;rsquo; or &amp;lsquo;Debit Card&amp;rsquo; as the payment method. Review the &lt;a href=&#34;../../../../en/docs/plugins/vtex.html&#34;&gt;list of Payment Methods available&lt;/a&gt; for Bamboo in VTEX.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-017.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Enter card details and &lt;strong&gt;choose payment terms&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Single payment (one-time charge)&lt;/li&gt;
+&lt;li&gt;Installment plan &lt;em&gt;(if available)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-018.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Complete the transaction&lt;/li&gt;
+&lt;li&gt;View order confirmation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-019.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Store Management</title>
+      <link>/en/docs/plugins/vtex/_vtex_admin.html</link>
+      <pubDate>Mon, 08 May 2023 07:28:16 -0500</pubDate>
+      
+      <guid>/en/docs/plugins/vtex/_vtex_admin.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;order-management&#34;&gt;Order Management&lt;/h2&gt;
+&lt;h3 id=&#34;viewing-orders&#34;&gt;Viewing Orders&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Access the VTEX admin menu&lt;/li&gt;
+&lt;li&gt;Select &amp;lsquo;Orders&amp;rsquo; &amp;gt; &amp;lsquo;All Orders&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;You will see a list of all orders received in your store&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-020.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;order-details&#34;&gt;Order Details&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on a specific order to view its details&lt;/li&gt;
+&lt;li&gt;The order details include all payment information processed through Bamboo&lt;/li&gt;
+&lt;li&gt;Click &amp;lsquo;View Details&amp;rsquo; to see the associated transaction&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-021.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;transaction-management&#34;&gt;Transaction Management&lt;/h2&gt;
+&lt;h3 id=&#34;viewing-transactions&#34;&gt;Viewing Transactions&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;From the VTEX admin menu, select &amp;lsquo;Orders&amp;rsquo; &amp;gt; &amp;lsquo;Transactions&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;This displays all transactions received in your store&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-022.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;transaction-details&#34;&gt;Transaction Details&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on a specific transaction to view its details&lt;/li&gt;
+&lt;li&gt;You can see the full traceability of payment statuses processed by Bamboo&lt;/li&gt;
+&lt;li&gt;In the upper right corner, you can access the order&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-023.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-024.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;additional-actions&#34;&gt;Additional Actions&lt;/h2&gt;
+&lt;h3 id=&#34;capture&#34;&gt;Capture&lt;/h3&gt;
+&lt;p&gt;If the &lt;strong&gt;&amp;lsquo;Authorization and capture&amp;rsquo;&lt;/strong&gt; option is active, you will need to charge payments manually. To do this, you only need to invoice the order in VTEX. This involves starting the order preparation and then invoicing it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Begin order preparation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-026.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Invoice the order&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-027.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;refunds&#34;&gt;Refunds&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Refunds can be made on transactions when the order status is &lt;strong&gt;&amp;lsquo;Invoiced&amp;rsquo;&lt;/strong&gt; in VTEX.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If theorder status is &amp;lsquo;Invoiced&amp;rsquo;, click the &lt;strong&gt;&amp;lsquo;Return items&amp;rsquo;&lt;/strong&gt; button&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-028.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;You can process total or partial refunds&lt;/li&gt;
+&lt;li&gt;The return details will be visible in the associated transaction&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-029.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cancellations&#34;&gt;Cancellations&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Info&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;You can cancel transactions for orders in &amp;lsquo;Ready for Preparation&amp;rsquo; status.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Locate the order you wish to cancel&lt;/li&gt;
+&lt;li&gt;Click the &amp;lsquo;Cancel&amp;rsquo; button on the order page&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-030.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Cancellation is only possible for orders in &amp;lsquo;Ready for Preparation&amp;rsquo; status, not in later stages&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-031.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Cancellation details will be visible in the associated transaction&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/bamboo-vtex-032.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;important-notes&#34;&gt;Important Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure that orders are in the correct status before attempting &lt;strong&gt;refunds&lt;/strong&gt; or &lt;strong&gt;cancellations&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Always check the associated transaction for the most up-to-date payment information&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
