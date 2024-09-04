@@ -382,3 +382,7 @@ The PaymentMethod object contains detailed information about the payment method 
     "ErrorDescription": "The token sent is invalid, expired, or does not belong to the merchant."
 }
 ```
+{{< /tab >}}
+
+
+{{< /tabs >}}
