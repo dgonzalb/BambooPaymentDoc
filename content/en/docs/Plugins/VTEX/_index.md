@@ -22,21 +22,20 @@ This documentation will guide you through the process of setting up and configur
 
 ### Card Payment Methods
 
-| Franchise        | Credit | Debit | Prepaid |
-|------------------|--------|-------|---------|
-| Visa             | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Mastercard       | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| American Express | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
-| OCA              | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
-| Créditos Directos| <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
-| PassCard         | <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
-| Líder            | <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
-| Club del Este    | <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
-| Cabal            | <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
-| Anda             | <img src="/assets/x_mark_64.png" width="15px"/> | - | - |
+| Brand             | Credit | Debit | Prepaid |
+|-------------------|--------|-------|---------|
+| Visa              | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Mastercard        | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| American Express  | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
+| OCA               | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
+| Créditos Directos | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
+| PassCard          | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
+| Líder             | <img src="/assets/check_mark_64.png" width="15px"/> | - | - |
+| Club del Este     | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | - |
+| Cabal             | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | - |
+| Anda              | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | - |
 
 
 **Note:** 
 - Only Visa and Mastercard offer debit and prepaid options.
 - American Express and OCA are available for credit cards only.
-- Créditos Directos, PassCard, Líder, Club del Este, Cabal, and Anda are currently not available.
