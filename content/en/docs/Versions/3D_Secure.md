@@ -4,7 +4,7 @@ linkTitle: "3DS Pass-through"
 date: 2024-08-02T08:43:44-05:00
 Description: >
   Discover how Bamboo supports Network Tokens with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
-weight: 30
+weight: 40
 tags: ["subtopic"]
 ---
 
@@ -23,7 +23,7 @@ tags: ["subtopic"]
 | `ThreeDS` → `Version` | `string` | Yes | 3D Secure protocol version. |
 | `ThreeDS` → `TransactionId` | `string` | Yes | Transaction ID in 3D Secure. |
 
-### Request Example using the Direct Purchase V2
+### Request Example using the Purchase for PCI-Compliant Merchants
 ```json
 {
     "CardData": {

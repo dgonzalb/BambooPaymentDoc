@@ -72,17 +72,17 @@ You must invoke a **POST** request to the following URLs according to your needs
 | `Customer` → `DocNumber` | `string` | No | Customer's document number. |
 | `Customer` → `DocumentTypeId` | `integer` | No | Document type identifier. |
 | `Customer` → `Email` | `string` | No | Customer's email address. |
-| `ShippingAddress` | `object` | No | Customer's shipping address. |
+| `Address` | `object` | No | Customer's shipping address. |
 
-#### ShippingAddress Object
+#### Address Object
 
 | Parameter | Type | Mandatory? | Description |
 |-----------|------|:----------:|-------------|
-| `ShippingAddress` → `Country` | `string` | No | Country of the shipping address. |
-| `ShippingAddress` → `City` | `string` | No | City of the shipping address. |
-| `ShippingAddress` → `State` | `string` | No | State or region of the shipping address. |
-| `ShippingAddress` → `PostalCode` | `string` | No | Postal code of the shipping address. |
-| `ShippingAddress` → `AddressDetail` | `string` | No | Additional details of the shipping address. |
+| `Address` → `Country` | `string` | No | Country of the customer address. |
+| `Address` → `City` | `string` | No | City of the customer address. |
+| `Address` → `State` | `string` | No | State or region of the customer address. |
+| `Address` → `PostalCode` | `string` | No | Postal code of the customer address. |
+| `Address` → `AddressDetail` | `string` | No | Additional details of the customer address. |
 
 
 {{% alert title="Notes" color="info"%}}
@@ -117,7 +117,7 @@ You must invoke a **POST** request to the following URLs according to your needs
         "DocNumber": "12345678901",
         "DocumentTypeId": 4,
         "Email": "joao.silva@example.com",
-        "ShippingAddress": {
+        "Address": {
             "Country": "BR",
             "City": "São Paulo",
             "State": "SP",
@@ -186,7 +186,7 @@ You must invoke a **POST** request to the following URLs according to your needs
         "DocNumber": "12345678901",
         "DocumentTypeId": 4,
         "Email": "joao.silva@example.com",
-        "ShippingAddress": {
+        "Address": {
             "Country": "BR",
             "City": "São Paulo",
             "State": "SP",

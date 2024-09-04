@@ -36,7 +36,7 @@ The request body is optional to confirm a purchase. If you don’t send any requ
 
 The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.
 
-#### Request example
+#### Request example (Partial Capture)
 You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:
 
 ```json
@@ -44,6 +44,43 @@ You must include the new amount in the request to confirm a purchase with a lowe
   "Amount": 50
 }
 ``` 
+
+#### Response example (Partial Capture)
+You will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
+
+**Result:**`COMPLETED` - **Status:** `PREAUTHORIZED`
+
+```json
+{
+    "TransactionId": "79632697147789184",
+    "Result": "COMPLETED",
+    "Status": "PREAUTHORIZED",
+    "ErrorCode": null,
+    "ErrorDescription": null,
+    "Created": "2024-08-07T17:51:54.620",
+    "AuthorizationDate": "2024-08-07T17:51:56.879",
+    "AuthorizationCode": "839936",
+    "Amount": 5000,
+    "Currency": "BRL",
+    "Installments": 2,
+    "TaxableAmount": null,
+    "Tip": null,
+    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
+    "MetadataOut": null,
+    "Action": null,
+    "PaymentMethod": {
+        "Brand": "Visa",
+        "CardOwner": "João Silva",
+        "Bin": "450799",
+        "IssuerBank": "Banco do Brasil",
+        "Type": "CreditCard",
+        "Expiration": "203008",
+        "Last4": "4905",
+        "DocumentNumber": "12345678901",
+        "DocumentTypeId": 4
+    }
+}
+```
 
 
 ## Cancelling a purchase 
@@ -72,17 +109,57 @@ You must invoke a **POST** request to the following URLs according to your needs
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/cancel`
 
 ### Request parameters
-Request body is not required to rollback a purchase. If you don't send any request the purchase will be voided with its original amount. 
+Request body is not required to cancel a purchase. If you don't send any request the purchase will be voided with its original amount. 
 
 The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
 
-#### Request example
-To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:
+{{% alert title="Note" color="info"%}}
+The availability of **partial cancellation functionality may vary depending on the country**. For detailed information about this feature in your specific region, please consult with your Account Manager.
+{{% /alert %}}
+
+#### Request example (Partial Cancellation)
+To perform the cancel of the purchase  with a lower amount than the original, you need to include the new amount in the request. For example:
 
 ```json
 {
   "Amount": 50
 }
 ```
+
 ### Response parameters
-When you perform the cancel, you will get the same `Response` object for the [purchase object]({{< ref "purchase-operations.md" >}}#response-parameters).
+When you perform the cancel, you will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
+
+**Result:**`COMPLETED` - **Status:** `CANCELLED`
+
+```json
+{
+    "TransactionId": "79632697147789184",
+    "Result": "COMPLETED",
+    "Status": "CANCELLED",
+    "ErrorCode": null,
+    "ErrorDescription": null,
+    "Created": "2024-08-07T17:51:54.620",
+    "AuthorizationDate": "2024-08-07T17:51:56.879",
+    "AuthorizationCode": "839936",
+    "Amount": 5000,
+    "Currency": "BRL",
+    "Installments": 2,
+    "TaxableAmount": null,
+    "Tip": null,
+    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
+    "MetadataOut": null,
+    "Action": null,
+    "PaymentMethod": {
+        "Brand": "Visa",
+        "CardOwner": "João Silva",
+        "Bin": "450799",
+        "IssuerBank": "Banco do Brasil",
+        "Type": "CreditCard",
+        "Expiration": "203008",
+        "Last4": "4905",
+        "DocumentNumber": "12345678901",
+        "DocumentTypeId": 4
+    }
+}
+```
+
