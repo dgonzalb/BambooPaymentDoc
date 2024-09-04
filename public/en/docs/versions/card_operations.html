@@ -20,21 +20,21 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
-<title>Direct Purchase for PCI Merchants V3 | Bamboo Payment</title><meta property="og:title" content="Direct Purchase for PCI Merchants V3" />
-<meta property="og:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
+<title>Pre-authorized Purchases: Capture and Cancel | Bamboo Payment</title><meta property="og:title" content="Pre-authorized Purchases: Capture and Cancel" />
+<meta property="og:description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/en/docs/versions/direct-purchase-v3.html" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2024-08-22T10:30:29-05:00" />
-<meta property="article:modified_time" content="2024-08-22T10:30:29-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Direct Purchase for PCI Merchants V3">
-<meta itemprop="description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
-"><meta itemprop="datePublished" content="2024-08-22T10:30:29-05:00" />
-<meta itemprop="dateModified" content="2024-08-22T10:30:29-05:00" />
-<meta itemprop="wordCount" content="442">
+<meta property="og:url" content="/en/docs/versions/card_operations.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
+<meta property="article:modified_time" content="2024-08-22T11:40:29-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Pre-authorized Purchases: Capture and Cancel">
+<meta itemprop="description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
+"><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
+<meta itemprop="dateModified" content="2024-08-22T11:40:29-05:00" />
+<meta itemprop="wordCount" content="151">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Direct Purchase for PCI Merchants V3"/>
-<meta name="twitter:description" content="This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the [basic purchase]({{&lt; ref &#34;Purchase-Operations.md&#34; &gt;}}).
+<meta name="twitter:title" content="Pre-authorized Purchases: Capture and Cancel"/>
+<meta name="twitter:description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ac996a6ff6214541a81ffd1a18362f8e77685c17f69f8bf59da75dbbe5699a38f3e957c9b4b3f8bd9516e387dd7766e2261f10b8bd6fa6f6b373fdfcd30f77a4.json"
+  data-offline-search-index-json-src="../../../offline-search-index.ba4e5780e2ee92d26423d0cb39c383107d9e31a81b4a5d9e4f8ffc0b2c0da54d17fcd73cad822f3c66926142fd1a05258a51ff2daa7e848f0b6a219a2846d8f3.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -968,13 +968,13 @@
       
       
       
-        <a id="/en/docs/versions/purchase-operations-v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-operations-v3html" href="../../../en/docs/versions/purchase-operations-v3.html">Basic Operations V3</a>
+        <a id="/en/docs/versions/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase_v3html" href="../../../en/docs/versions/purchase_v3.html">Create a Purchase</a>
       
       
       
       
       
-        <a id="/en/docs/versions/direct-purchase-v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocsversionsdirect-purchase-v3html" href="../../../en/docs/versions/direct-purchase-v3.html">Direct Purchase for PCI Merchants V3</a>
+        <a id="/en/docs/versions/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocsversionscard_operationshtml" href="../../../en/docs/versions/card_operations.html">Capture and Cancel</a>
       
       
       
@@ -1029,18 +1029,6 @@
 <p> </p>
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#request-url">Request URL</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#request-example">Request example</a></li>
-    <li><a href="#response-example">Response Example</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -1076,7 +1064,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../en/docs/versions/direct-purchase-v3.html">Direct Purchase for PCI Merchants V3</a>
+	<a href="../../../en/docs/versions/card_operations.html">Capture and Cancel</a>
 </li>
 
 	</ol>
@@ -1084,154 +1072,39 @@
 
             
 <div class="td-content">
-	<h1>Direct Purchase for PCI Merchants V3</h1>
-    <div class="lead">This functionality allows the PCI merchants to make an authorization sending card data information in one step without the needed of an extra call for card tokenization unlike the <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html">basic purchase</a>.</div>
+	<h1>Pre-authorized Purchases: Capture and Cancel</h1>
+    <div class="lead">Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.</div>
 	       
-	<h2 id="request-url">Request URL</h2>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
-<ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v3/api/purchase</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/purchase</code></li>
-</ul>
-<h5 id="carddata-object">CardData Object</h5>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CardHolderName</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The name of the cardholder as it appears on the card.</td>
-</tr>
-<tr>
-<td><code>Pan</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The Primary Account Number (PAN) of the card.</td>
-</tr>
-<tr>
-<td><code>CVV</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The Card Verification Value (CVV) or Card Security Code.</td>
-</tr>
-<tr>
-<td><code>Expiration</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The expiration date of the card in the format &ldquo;MM/YY&rdquo;.</td>
-</tr>
-<tr>
-<td><code>Email</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The email associated with the cardholder.</td>
-</tr>
-<tr>
-<td><code>Document</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>The identification document number of the cardholder.</td>
-</tr>
-</tbody>
-</table>
+	<h2 id="capture-a-purchase">Capture a purchase</h2>
+<p>This method allows you to confirm a pre-authorized purchase. The capture process allows you to confirm and finalize a pre-authorized transaction, giving you the flexibility to adjust the amount if needed.</p>
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Info</h4>
-<p class="alert-text"><strong>Note:</strong> The CardData object should only be used for transactions with non-tokenized cards. Ensure that sensitive card data is handled securely and in compliance with PCI DSS standards.</p>
+    Note</h4>
+<p class="alert-text"><p>All payment methods may not support the pre-authorization feature, and it’s available for the following countries.</p>
+<div style="text-align: center;">
+<p><a href="../../../en/docs/payment-methods/brazil.html"><img src="../../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/chile.html"><img src="../../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/colombia.html"><img src="../../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/uruguay.html"><img src="../../../assets/Flags/FlagUY.png" width="30" /></a></p>
+</div>
+</p>
 </div>
 
-<h2 id="request-example">Request example</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardHolderName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Pan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4507990000004905&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CVV&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;08/30&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;paymentID3022&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CH2023-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Compra de teste&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;ReferenceCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;JS-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11987654321&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;ShippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;São Paulo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01310-200&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Avenida Paulista 1000&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
-<p>The fields <strong>CardData</strong>, <strong>PaymentMethodId</strong>, <strong>NetworkToken</strong> and <strong>TrxToken</strong> are not required; Nevertheless, one of them must be send depending of which flow to use.</p>
+<h4 id="request-url">Request URL</h4>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
-<li>
-<p><strong>CardData</strong>: Must be used for transactions using non-tokenized cards.</p>
-</li>
-<li>
-<p><strong>PaymentMediaId</strong>: Identifier of alternative payment method (Bank Transfer, cash or any flow needing a redirection of the client). This identifier can be found in the <a href="../../../en/docs/payment-methods.html">Payment Methods by Country</a> section.</p>
-</li>
-<li>
-<p><strong>TrxToken</strong>: The merchant can generate a token and use it to generate transactions if necessary.</p>
-</li>
-<li>
-<p><strong>NetworkToken</strong>: A secure token that replaces actual card details in the transaction process. These tokens are stored in vaults maintained by card networks. Currently, we support Network Tokens from Visa and Mastercard. <strong>PaymentMethodId</strong> is mandatory when sending a Network Token.</p>
-</li>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture</code></li>
 </ul>
-<h2 id="response-example">Response Example</h2>
-<p>The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.</p>
-<p>For a detailed breakdown of all possible fields in the response, including descriptions and data types, please refer to the <a href="../../../en/docs/versions/purchase-operations-v3.html#response-parameters">Basic Operations</a> section. All fields, statuses, and error codes described in the standard Purchase response apply equally to Direct Purchase transactions.</p>
+<h4 id="request-parameters">Request parameters</h4>
+<p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
+<p>The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.</p>
+<h5 id="request-example">Request example</h5>
+<p>You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COMPLETED&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-07T17:51:54.620&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-07T17:51:56.879&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;839936&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetadataOut&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Action&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Visa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;450799&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Banco do Brasil&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4905&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentTypeId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div>
 	

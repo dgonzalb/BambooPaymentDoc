@@ -1,6 +1,6 @@
 ---
-title: "Create a Purchase"
-linkTitle: "Create a Purchase"
+title: "Purchase"
+linkTitle: "Purchase"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Learn how to create a purchase using the API flow by providing its basic information. Furthermore, explore the various operations available for existing purchases.
