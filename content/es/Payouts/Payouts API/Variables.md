@@ -523,6 +523,7 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | MIBANCO S.A. | `1067` | `2` |
 | MOVII | `1801` | `3` |
 | NEQUI | `1507` | `3` |
+| NUBANK | `1809` | `2` |
 | PIBANK | `1560` | `3` |
 | POWWI | `1803` | `3` |
 | RAPPIPAY | `1811` | `2` o `3` |
