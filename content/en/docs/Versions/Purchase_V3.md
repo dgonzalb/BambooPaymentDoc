@@ -333,7 +333,7 @@ The PaymentMethod object contains detailed information about the payment method 
 
 <br>
 
-**Result:**`COMPLETED` - **Status:** `ACTION_REQUIRED`
+**Result:**`ACTION_REQUIRED` - **Status:** `PENDING`
 
 ```json
 {
