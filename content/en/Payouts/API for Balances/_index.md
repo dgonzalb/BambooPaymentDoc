@@ -3,7 +3,7 @@ title: "API for Balances"
 date: 2024-08-02T07:28:16-05:00
 type: docs
 Description: >
-  The API for Balances allows merchants to check their account balances without using Bamboo's merchant console.
+  The API for Balances allows merchants to check their account balances for payouts without using Bamboo's merchant console.
 weight: 40
 notopicssection: true
 ---
@@ -32,9 +32,9 @@ You don't need to configure a request to invoke this API.
         "Date": "2023-06-02T20:59:59-03:00",
         "CurrencyCode": "USD",
         "FinalAccountingBalance": 13670.0000,
-        "FinalAvailableBalance": 13670.0000,
+        "FinalAvailableBalance": 13170.0000,
         "FinalFeeBalance": 0.0,
-        "FinalProcessingBalance": 0.0
+        "FinalProcessingBalance": 500.0
     },
     "Errors": null
 }
@@ -49,6 +49,6 @@ Where:
 | `Response` → `CurrencyCode` | `string` | The currency code of the balance amounts. |
 | `Response` → `FinalAccountingBalance` | `number` | The total balance of the account. |
 | `Response` → `FinalAvailableBalance` | `number` | The final available balance for processing payouts. |
-| `Response` → `FinalFeeBalance` | `number` | The final balance of any pending fees. |
+| `Response` → `FinalFeeBalance` | `number` | The final balance for fees (in cases where the merchant assumes them independently of the account's total balance). If fees are automatically deducted from the main balance, this value is typically zero.  |
 | `Response` → `FinalProcessingBalance` | `number` | The final balance of any amounts in processing. |
 | `Errors` | `object` | Contains any error information. Will be `null` if the request was successful. |
