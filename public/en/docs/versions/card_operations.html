@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/versions/card_operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-08-22T11:40:29-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-09-04T00:25:02-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Pre-authorized Purchases: Capture and Cancel">
 <meta itemprop="description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="dateModified" content="2024-09-04T00:25:02-03:00" />
+<meta itemprop="wordCount" content="390">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-authorized Purchases: Capture and Cancel"/>
 <meta name="twitter:description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ba4e5780e2ee92d26423d0cb39c383107d9e31a81b4a5d9e4f8ffc0b2c0da54d17fcd73cad822f3c66926142fd1a05258a51ff2daa7e848f0b6a219a2846d8f3.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e995300af133fec6a89741ea0bec2b88b845a1d68b187c0ea28419bdd5c792ae2082eb063be324c646767a292ff94eb5d434d4048397ebba73972e3c346d602a.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -335,7 +335,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Create a Purchase</a>
+    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocspurchase-workflowpurchaseshtml">
@@ -1029,6 +1029,24 @@
 <p> </p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#capture-a-purchase">Capture a purchase</a>
+      <ul>
+        <li><a href="#request-url">Request URL</a></li>
+        <li><a href="#request-parameters">Request parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#cancelling-a-purchase">Cancelling a purchase</a>
+      <ul>
+        <li><a href="#request-url-1">Request URL</a></li>
+        <li><a href="#request-parameters-1">Request parameters</a></li>
+        <li><a href="#response-parameters">Response parameters</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1092,21 +1110,55 @@
 </p>
 </div>
 
-<h4 id="request-url">Request URL</h4>
+<h3 id="request-url">Request URL</h3>
 <p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
 <ul>
 <li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture</code></li>
 </ul>
-<h4 id="request-parameters">Request parameters</h4>
+<h3 id="request-parameters">Request parameters</h3>
 <p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
 <p>The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.</p>
-<h5 id="request-example">Request example</h5>
+<h4 id="request-example">Request example</h4>
 <p>You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="cancelling-a-purchase">Cancelling a purchase</h2>
+<p>A void (or cancel) is the act of canceling a pre-authorized transaction before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&rsquo;s payment method is not charged for the voided transaction.</p>
+<p>The <em><strong>cancel</strong></em> operation is only available for purchases previously <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase">authorized</a> with state <em>PreAuthorized</em>. If you’re interested in refunding a purchase that has already been captured, please refer to the <a href="../../../en/docs/purchase-workflow/refunds-and-voids.html">refunds</a> section for detailed instructions.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
+<div style="text-align: center;">
+<p><a href="../../../en/docs/payment-methods/brazil.html"><img src="../../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/chile.html"><img src="../../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/colombia.html"><img src="../../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../../en/docs/payment-methods/uruguay.html"><img src="../../../assets/Flags/FlagUY.png" width="30" /></a></p>
+</div>
+</p>
+</div>
+
+<h3 id="request-url-1">Request URL</h3>
+<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<ul>
+<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/cancel</code></li>
+<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/cancel</code></li>
+</ul>
+<h3 id="request-parameters-1">Request parameters</h3>
+<p>Request body is not required to rollback a purchase. If you don&rsquo;t send any request the purchase will be voided with its original amount.</p>
+<p>The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
+<h4 id="request-example-1">Request example</h4>
+<p>To perform the rollback of a purchase with a lower amount than the original, you need to include the new amount in the request. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="response-parameters">Response parameters</h3>
+<p>When you perform the cancel, you will get the same <code>Response</code> object for the <a href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters">purchase object</a>.</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1116,7 +1168,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    August 22, 2024
+    September 4, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
