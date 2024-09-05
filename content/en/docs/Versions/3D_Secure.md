@@ -4,7 +4,7 @@ linkTitle: "3DS Pass-through"
 date: 2024-08-02T08:43:44-05:00
 Description: >
   Discover how Bamboo supports Network Tokens with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
-weight: 40
+weight: 50
 tags: ["subtopic"]
 ---
 

@@ -4,7 +4,7 @@ linkTitle: "Refunds"
 date: 2024-08-02T08:46:32-05:00
 Description: >
   Refunds allow you to reverse a confirmed purchase, either partially or in full, accommodating various scenarios such as customer returns, order cancellations, or billing corrections.
-weight: 30
+weight: 40
 tags: ["subtopic"]
 ---
 
@@ -15,8 +15,8 @@ This endpoint allows you to process a refund for a previously completed purchase
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{PurchaseId}}/refund`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseId}}/refund`
+* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
+* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
 
 ### Request parameters
 Consider the following parameters when invoking a refund request.

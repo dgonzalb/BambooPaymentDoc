@@ -4,7 +4,7 @@ linkTitle: "Capture and Cancel"
 date: 2024-08-22T11:40:29-05:00
 Description: >
    Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
-weight: 20
+weight: 30
 tags: ["subtopic"]
 ---
 
@@ -28,8 +28,8 @@ All payment methods may not support the pre-authorization feature, and it’s av
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/capture`
+* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
+* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
 
 ### Request parameters
 The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.
@@ -105,8 +105,8 @@ Pre-authorization feature may not be supported by all payment methods and it's a
 ### Request URL
 You must invoke a **POST** request to the following URLs according to your needs.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/cancel`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{PurchaseID}}/cancel`
+* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
+* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
 
 ### Request parameters
 Request body is not required to cancel a purchase. If you don't send any request the purchase will be voided with its original amount. 
