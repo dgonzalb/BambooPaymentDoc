@@ -35,25 +35,27 @@ tags: ["subtopic"]
         "Document": "74857601"
     },
     "Capture": true,
-    "Amount": 15000,
-    "Currency": "USD",
-    "TargetCountryISO":"UY",
-    "Installments": 1,
-    "Description": "Description",
+    "TargetCountryISO": "BR",
+    "Currency": "BRL",
+    "Amount": 25000,
+    "Installments": 2,
+    "Order": "CH2023-001",
+    "Description": "Compra de teste",
     "Customer": {
-        "BillingAddress": {
-            "Country": "BRA",
+        "FirstName": "João",
+        "LastName": "Silva",
+        "ReferenceCode": "JS-001",
+        "PhoneNumber": "11987654321",
+        "DocumentNumber": "12345678901",
+        "DocumentType": "CPF.BR",
+        "Email": "joao.silva@example.com",
+        "Address": {
+            "Country": "BR",
             "City": "São Paulo",
             "State": "SP",
-            "PostalCode": "04538132",
-            "AddressDetail": "Brig. Faria Lima Avenue 10th Floor "
-        },
-        "Email": "john.dose@example.com",
-        "DocNumber": "74857601",
-        "PhoneNumber": "+5521987654321",
-        "FirstName": "John",
-        "LastName": "Doe",
-        "DocumentTypeId":4
+            "PostalCode": "01310-200",
+            "AddressDetail": "Avenida Paulista 1000"
+        }
     },
     "ThreeDSAuthMethod": "EXTERNAL",
     "ThreeDS": {

@@ -45,10 +45,11 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Argentina:
 
-| Code | Document name                          | Abbreviation |
-|:----:|----------------------------------------|--------------|
-| 4    | Documento Nacional de Identidad        | DNI          |
-| 5    | Código único de Identificación Laboral | CUIL         |
+| Code (V3 API) | Code (Previous API) | Document name                          | Abbreviation |
+|:-------------:|:-------------------:|----------------------------------------|--------------|
+| DNI.AR        | 4                   | Documento Nacional de Identidad        | DNI          |
+| CUIL.AR       | 5                   | Código único de Identificación Laboral | CUIL         |
+
 
 ## Argentina provinces
 When creating the Purchase in Argentina, and you want to include the province in the field `customer.state`, configure any of the following values:

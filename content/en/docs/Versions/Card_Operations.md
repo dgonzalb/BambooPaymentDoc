@@ -75,9 +75,7 @@ You will get the same `Response` object for the [purchase object]({{< ref "Purch
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```
@@ -156,9 +154,7 @@ When you perform the cancel, you will get the same `Response` object for the [pu
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```

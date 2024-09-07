@@ -70,9 +70,7 @@ The response structure for this operation is identical to the standard [purchase
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```

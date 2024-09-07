@@ -69,8 +69,8 @@ You must invoke a **POST** request to the following URLs according to your needs
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `ReferenceCode` | `string` | No | Reference code for the customer. |
 | `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `DocNumber` | `string` | No | Customer's document number. |
-| `Customer` → `DocumentTypeId` | `integer` | No | Document type identifier. |
+| `Customer` → `DocumentNumber` | `string` | No | Customer's document number. |
+| `Customer` → `DocumentType` | `string` | No | Document type. (Format `DOCUMENT`.`COUNTRY`)  |
 | `Customer` → `Email` | `string` | No | Customer's email address. |
 | `Address` | `object` | No | Customer's shipping address. |
 
@@ -114,8 +114,8 @@ You must invoke a **POST** request to the following URLs according to your needs
         "LastName": "Silva",
         "ReferenceCode": "JS-001",
         "PhoneNumber": "11987654321",
-        "DocNumber": "12345678901",
-        "DocumentTypeId": 4,
+        "DocumentNumber": "12345678901",
+        "DocumentType": "CPF.BR",
         "Email": "joao.silva@example.com",
         "Address": {
             "Country": "BR",
@@ -183,8 +183,8 @@ You must invoke a **POST** request to the following URLs according to your needs
         "LastName": "Silva",
         "ReferenceCode": "JS-001",
         "PhoneNumber": "11987654321",
-        "DocNumber": "12345678901",
-        "DocumentTypeId": 4,
+        "DocumentNumber": "12345678901",
+        "DocumentType": "CPF.BR",
         "Email": "joao.silva@example.com",
         "Address": {
             "Country": "BR",
@@ -250,9 +250,6 @@ The PaymentMethod object contains detailed information about the payment method 
 | `Type` | `string` | Type of payment method (e.g., CreditCard, DebitCard). |
 | `Expiration` | `string` | Card expiration date in yyyymm format. |
 | `Last4` | `string` | Last 4 digits of the card number. |
-| `DocumentNumber` | `string` | Document number of the cardholder. |
-| `DocumentTypeId` | `integer` | Identifier of the cardholder's document type. |
-
 
 ### Response examples
 <br>
@@ -289,9 +286,7 @@ The PaymentMethod object contains detailed information about the payment method 
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```
@@ -324,9 +319,7 @@ The PaymentMethod object contains detailed information about the payment method 
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```
@@ -364,9 +357,7 @@ The PaymentMethod object contains detailed information about the payment method 
         "IssuerBank": "Banco do Brasil",
         "Type": "CreditCard",
         "Expiration": "203008",
-        "Last4": "4905",
-        "DocumentNumber": "12345678901",
-        "DocumentTypeId": 4
+        "Last4": "4905"
     }
 }
 ```
