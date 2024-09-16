@@ -11,6 +11,7 @@ weight: 50
 ### September
 | Page | Description |
 |---|---|
+| [VTEX Antifraud Script](/en/docs/plugins/vtex/vtex_setup.html#antifraud-script) | Added the script for the antifraud for Payfac merchants using VTEX. |
 | **[Direct Purchase](/en/docs/versions.html)** | Adding Direct Purchase V3 for PCI Merchants in the next versions. |
 
 

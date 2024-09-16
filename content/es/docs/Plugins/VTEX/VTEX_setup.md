@@ -117,3 +117,72 @@ Siguiendo estos pasos, habrás configurado Bamboo como plataforma de pago en tu 
 {{% alert title="Información" color="info"%}}
 Los cambios en las condiciones de pago pueden tardar hasta **10 minutos** en aplicarse en el checkout de tu tienda VTEX.
 {{% /alert %}}
+
+
+## Script Antifraude
+
+Para garantizar el funcionamiento del módulo antifraude de Bamboo, es necesario hacer una configuración adicional para insertar el script del DeviceFingerPrint. Para configurarlo, sigue estos pasos:
+
+{{% alert title="Nota importante" color="info"%}}
+Esta configuración solo aplica para **comercios PayFac**. No es válida para la modalidad Gateway. Si tiene dudas, consulte con soporte técnico.
+{{% /alert %}}
+
+
+1. Ingresa al panel administrativo de VTEX.
+2. Ve a 'Configuración de tienda'.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-001.png)
+
+3. Navega hasta 'Storefront > Checkout'.
+4. Haz clic en el ícono de configuración de la opción 'Default'.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-002.png)
+
+5. Ingresa a 'Code > checkout-custom.js'.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-003.png)
+
+6. Inserta el siguiente bloque de código en el archivo y guarda los cambios:
+
+```javascript
+const API_Environment = "https://api.bamboopayment.com",
+    PublicAccountKey = "CT4XUYw10xDemA4UqCgU0m_I56ONV7HQ";
+
+async function getIp() {
+    return fetch("https://api.ipify.org/?format=json")
+}
+
+async function loadScript(e, t) {
+    if (!window.vtex || window.vtex.deviceFingerprint) {
+        console.debug(window.vtex ? `already deviceFingerprint: ${window.vtex.deviceFingerprint}` : "there is no VTEX");
+        return
+    }
+    let n = document.createElement("script");
+    n.src = e,
+    n.onload = t,
+    document.head.appendChild(n)
+}
+
+async function generateFingerPrint() {
+    if (!window.setSessionID) {
+        console.debug("SetSessionID not found");
+        await new Promise(e => setTimeout(() => e(!0), 1e3));
+        console.debug("Retrying...");
+        return generateFingerPrint();
+    }
+    let e = window.getSessionAntifraud(),
+        t = await getIp().then(e => e.json()).then(({ip: e}) => e),
+        n = JSON.stringify({
+            sessionId: e,
+            ip: t
+        });
+    window.vtex.deviceFingerprint = n
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    console.info("==== EJECUTANDO HUELLA DIGITAL ====");
+    loadScript(`${API_Environment}/v1/Scripts/Antifraud.js?key=${PublicAccountKey}`, generateFingerPrint)
+});
+```
+
+Este script asegura que el análisis antifraude se realice correctamente para las transacciones procesadas a través del plugin de VTEX.

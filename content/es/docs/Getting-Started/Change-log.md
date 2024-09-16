@@ -7,7 +7,15 @@ Description: >
 weight: 50
 
 ---
+
+
+
 ## 2024
+### Septiembre
+| Page | Description |
+|---|---|
+| [VTEX Script Antifraude](/es/docs/plugins/vtex/vtex_setup.html#antifraud-script) | Sección para configurar el módulo antifraude de Bamboo en el plugin de VTEX para merchants Payfac. |
+
 ### Agosto
 | Página | Descripción |
 |---|---|

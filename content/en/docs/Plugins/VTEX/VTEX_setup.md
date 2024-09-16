@@ -122,3 +122,71 @@ By following these steps, you'll successfully offer Bamboo as a payment method t
 {{% alert title="Info" color="info"%}}
 Changes to payment conditions may take up to **10 minutes** to apply at your VTEX store's checkout.
 {{% /alert %}}
+
+## Antifraud Script
+
+For the correct functioning of transactions made through Bamboo, an anti-fraud analysis script must be injected into the store. To configure it, follow the steps below:
+
+
+{{% alert title="Important note" color="info"%}}
+ This configuration only applies to **PayFac merchants.** It is not valid for the Gateway modality. If you have any doubts, please consult with support or your account manager.
+{{% /alert %}}
+
+
+1. Inside the VTEX administrative panel, go to 'Store Settings'.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-001.png)
+
+2. Navigate to 'Storefront > Checkout'.
+3. Click on the configuration icon for the 'Default' option.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-002.png)
+
+4. Enter 'Code > checkout-custom.js'.
+
+![PrintScreen](/assets/VTEX/bamboo-vtex-antifraud-003.png)
+
+5. Insert the following code block into the file and save:
+
+```javascript
+const API_Environment = "https://api.bamboopayment.com",
+    PublicAccountKey = "CT4XUYw10xDemA4UqCgU0m_I56ONV7HQ";
+
+async function getIp() {
+    return fetch("https://api.ipify.org/?format=json")
+}
+
+async function loadScript(e, t) {
+    if (!window.vtex || window.vtex.deviceFingerprint) {
+        console.debug(window.vtex ? `already deviceFingerprint: ${window.vtex.deviceFingerprint}` : "there is no VTEX");
+        return
+    }
+    let n = document.createElement("script");
+    n.src = e,
+    n.onload = t,
+    document.head.appendChild(n)
+}
+
+async function generateFingerPrint() {
+    if (!window.setSessionID) {
+        console.debug("SetSessionID not found");
+        await new Promise(e => setTimeout(() => e(!0), 1e3));
+        console.debug("Retrying...");
+        return generateFingerPrint();
+    }
+    let e = window.getSessionAntifraud(),
+        t = await getIp().then(e => e.json()).then(({ip: e}) => e),
+        n = JSON.stringify({
+            sessionId: e,
+            ip: t
+        });
+    window.vtex.deviceFingerprint = n
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    console.info("==== RUNNING FINGER PRINT ====");
+    loadScript(`${API_Environment}/v1/Scripts/Antifraud.js?key=${PublicAccountKey}`, generateFingerPrint)
+});
+```
+
+This script will ensure that the anti-fraud analysis is performed correctly for transactions processed through Bamboo.
