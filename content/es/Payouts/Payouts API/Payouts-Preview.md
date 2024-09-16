@@ -36,14 +36,11 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para el Pre
 <sup>*</sup> _Si no se proporciona el parámetro, el sistema utilizará por defecto la moneda del país de destino (parámetro `destinationCountryIsoCode`)_
 
 #### Ejemplo del Request {#request-example-1}
-```json
-{
-  "amount": 1000,
-  "destinationCountryIsoCode": "CO",
-  "destinationCurrencyIsoCode": "COP",
-  "originalCurrencyIsoCode": "USD"
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsPreview/request >}}
+{{< /highlight >}}
+
 #### Parámetros del Response {#response-parameters-2}
 
 | Parámetro | Formato | Descripción |
@@ -57,16 +54,11 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para el Pre
 | `errors` → `ErrorCode` | `string` | Código interno del error. Encuentra los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `PropertyName` | `string` | Propiedad que provocó el error. |
 | `errors` → `Message` | `string` | Descripción del error. |
+| `validUntil` | `datetime` | Indica la hora hasta que va estar fijo el tipo de cambio, luego de la hora indicada el tipo de cambio puede modificarse.<br> El horario que muestra es UTC-0.  |
+| `expectedPaymentDate` | `datetime` | Indica la fecha estimada de pago. |
 
 #### Ejemplo del Response {#response-example-2}
-```json
-{
-    "amountInOrignalCurrency": 10,
-    "fee": 1.8369100168676186120617370001,
-    "amountToBeSentInOrignalCurrency": 8.163089983132381387938263000,
-    "exchangeRate": 3878.5558000000,
-    "amountToBeSentInLocalCurrency": 31661.0,
-    "expectedPaymentDate": "2024-01-26T00:00:00Z",
-    "error": null
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsPreview/response >}}
+{{< /highlight >}}

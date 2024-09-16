@@ -36,14 +36,10 @@ The following table shows the mandatory and optional parameters for the Payout p
 <sup>*</sup> _If the parameter is not provided, the system will default to the currency of the destination country (parameter `destinationCountryIsoCode`)._
 
 ### Request example {#request-example-1}
-```json
-{
-  "amount": 1000,
-  "destinationCountryIsoCode": "CO",
-  "destinationCurrencyIsoCode": "COP",
-  "originalCurrencyIsoCode": "USD"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsPreview/request >}}
+{{< /highlight >}}
+
 ### Response parameters {#response-parameters-2}
 
 | Parameter | Format | Description |
@@ -57,16 +53,11 @@ The following table shows the mandatory and optional parameters for the Payout p
 | `errors` → `ErrorCode` | `string` | Internal code of the error. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `PropertyName` | `string` | Property that triggered the error. |
 | `errors` → `Message` | `string` | Error description. |
+| `validUntil` | `datetime` | Indicates the time until the exchange rate will be fixed, after the indicated time the exchange rate can be changed.<br> The time shown is UTC-0.  |
+| `expectedPaymentDate` | `datetime` | Indicates the estimated date of payment. |
 
 #### Response example {#response-example-2}
-```json
-{
-    "amountInOrignalCurrency": 10,
-    "fee": 1.8369100168676186120617370001,
-    "amountToBeSentInOrignalCurrency": 8.163089983132381387938263000,
-    "exchangeRate": 3878.5558000000,
-    "amountToBeSentInLocalCurrency": 31661.0,
-    "expectedPaymentDate": "2024-01-26T00:00:00Z",
-    "error": null
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsPreview/response >}}
+{{< /highlight >}}
