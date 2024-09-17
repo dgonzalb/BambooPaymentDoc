@@ -98,35 +98,9 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 ### Request example
 
-```json
-{
-    "TrxToken": "OT__6dHAgJo6qeg62qIroA7H7_f_NWZZ6IEx4jiYpVJ8SzQ_",
-    "UniqueID": "paymentID3022",
-    "Capture": true,
-    "TargetCountryISO": "BR",
-    "Currency": "BRL",
-    "Amount": 25000,
-    "Installments": 2,
-    "Order": "CH2023-001",
-    "Description": "Compra de teste",
-    "Customer": {
-        "FirstName": "João",
-        "LastName": "Silva",
-        "ReferenceCode": "JS-001",
-        "PhoneNumber": "11987654321",
-        "DocumentNumber": "12345678901",
-        "DocumentType": "CPF.BR",
-        "Email": "joao.silva@example.com",
-        "Address": {
-            "Country": "BR",
-            "City": "São Paulo",
-            "State": "SP",
-            "PostalCode": "01310-200",
-            "AddressDetail": "Avenida Paulista 1000"
-        }
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/requestPurchase >}}
+{{< /highlight >}} 
 
 ## Direct Purchase for PCI-Compliant Merchants
 For merchants who have achieved PCI DSS compliance, Bamboo offers enhanced flexibility through the Direct Purchase method. This advanced option allows PCI-compliant merchants to handle card data directly within their secure environments.
@@ -160,42 +134,10 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 
 ### Request example 
-```json
-{
-    "CardData": {
-        "CardHolderName": "João Silva",
-        "Pan": "4507990000004905",
-        "CVV": "123",
-        "Expiration": "08/30",
-        "Email": "joao.silva@example.com",
-        "Document": "12345678901"
-    },
-    "UniqueID": "paymentID3022",
-    "Capture": true,
-    "TargetCountryISO": "BR",
-    "Currency": "BRL",
-    "Amount": 25000,
-    "Installments": 2,
-    "Order": "CH2023-001",
-    "Description": "Compra de teste",
-    "Customer": {
-        "FirstName": "João",
-        "LastName": "Silva",
-        "ReferenceCode": "JS-001",
-        "PhoneNumber": "11987654321",
-        "DocumentNumber": "12345678901",
-        "DocumentType": "CPF.BR",
-        "Email": "joao.silva@example.com",
-        "Address": {
-            "Country": "BR",
-            "City": "São Paulo",
-            "State": "SP",
-            "PostalCode": "01310-200",
-            "AddressDetail": "Avenida Paulista 1000"
-        }
-    }
-}
-```
+
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/requestPurchase_DirectPurchase >}}
+{{< /highlight >}} 
 
 <br>
 
@@ -261,118 +203,34 @@ The PaymentMethod object contains detailed information about the payment method 
 
 **Result:**`COMPLETED` - **Status:** `APPROVED`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "APPROVED",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": "2024-08-07T17:51:56.879",
-    "AuthorizationCode": "839936",
-    "Amount": 25000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": null,
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_approved >}}
+{{< /highlight >}} 
 <br>
 
 **Result:**`COMPLETED` - **Status:** `REJECTED`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "REJECTED",
-    "ErrorCode": "LP042",
-    "ErrorDescription": "Insufficient balance.",
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": "2024-08-07T17:51:56.879",
-    "AuthorizationCode": "839936",
-    "Amount": 25000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": null,
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_rejected >}}
+{{< /highlight >}} 
 
 <br>
 
 **Result:**`ACTION_REQUIRED` - **Status:** `PENDING`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "ACTION_REQUIRED",
-    "Status": "PENDING",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": null,
-    "AuthorizationCode": null,
-    "Amount": 25000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": {
-        "SessionId": "CA_a4032a2a-25ae-4f5f-a8bb-fb2e5ab2ae3c",
-        "URL": "https://url_to_be_redirected.com/redirection_example",
-        "Reason": "VERIFICATION_CODE_NEEDED"
-    },
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_pending >}}
+{{< /highlight >}} 
 
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
 <br>
 
-```json
-{
-    "ErrorCode": "PR001",
-    "ErrorDescription": "The token sent is invalid, expired, or does not belong to the merchant."
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http400_409 >}}
+{{< /highlight >}} 
+
 {{< /tab >}}
 
 

@@ -69,7 +69,7 @@ Once you have the Excel file, you can fill it with the information of the Payout
 {{% /alert %}}
 
 #### Additional columns for PIX
-When configuring PIX as the transfer payout type (column **Type** set as `4`), you must include an additional column depending on the payee's PIX key. You can configure any of the following columns, setting them next to the **Notification_Url**, namely the **T** column in the Excel file:
+When configuring PIX as the transfer payout type (column **Type** set as `4`), you must include an additional column depending on the payee's PIX key. You can configure any of the following columns, setting them next to the **Notification_Url**, namely the **U** column in the Excel file:
 
 * `PixDocument`: add this column to configure the CPF/CNPJ number of the payee. The number of digits for **CPF** must be 11, and **CNPJ** must be 14.
 * `PixEmail`: add this column to configure the email address of the payee.

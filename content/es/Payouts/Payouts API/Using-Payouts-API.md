@@ -62,66 +62,16 @@ Consulte la pestaña correspondiente de acuerdo con el país del beneficiario.
 
 **Argentina: De USD a ARS:**
 
-```json
-{
-  "country": "AR",
-  "amount": 1000,
-  "currency": "USD",
-  "reason": "string",
-  "destinationCurrency": "ARS",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Sara",
-    "lastName": "Jáquez",
-    "email": "sarasouez@mail.com",
-    "phone": "099999999",
-    "address": "Francisco  51 Gral. Ximena, AR-H 0376",
-    "document": {
-      "type": "CUIL",
-      "number": "12345678901"
-    },
-    "bankAccount": {
-      "number": "0000053600000000000566",
-      "type": 1,
-      "codeBank": "7"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/AR/request_AR_USDtoARS >}}
+{{< /highlight >}}
 <br>
 
 **Argentina: De ARS a ARS:**
 
-```json
-{
-  "country": "AR",
-  "amount": 1000,
-  "currency": "ARS",
-  "reason": "string",
-  "destinationCurrency":"ARS",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Sara",
-    "lastName": "Jáquez",
-    "email": "sarasouez@mail.com",
-    "phone": "099999999",
-    "address": "Francisco  51 Gral. Ximena, AR-H 0376",
-    "document": {
-      "type": "CUIL",
-      "number": "12345678901"
-    },
-    "bankAccount": {
-      "number": "0000053600000000000566",
-      "type": 1,
-      "codeBank": "7"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/AR/request_AR_ARStoARS >}}
+{{< /highlight >}}
 
 {{< /tab >}}
 
@@ -132,132 +82,34 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 
 
 **Brasil: De USD a BRL:**
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/BR/request_BR_USDtoBRL >}}
+{{< /highlight >}}
 
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "USD",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 4,
-  "InstantPaymentData": {
-    "PixEmail":"tcosta@mail.com" // También puede ser PixDocument, PixPhone o PixRandom
-  },
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
 <br>
 
 **Brasil: BRL a BRL**
 
-```json
-{
-  "country": "BR",
-  "amount": 100,
-  "currency": "BRL",
-  "destinationCurrency":"BRL",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 4,
-  "InstantPaymentData": {
-    "PixEmail":"tcosta@mail.com" // También puede ser PixDocument, PixPhone o PixRandom
-  },
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "type": "CPF",
-      "number": "54562271779"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/BR/request_BR_BRLtoBRL >}}
+{{< /highlight >}}
 
 {{< /tab >}}
-
-
 {{< tab tabNum="3" >}}
 <br>
 
 **Chile: USD a CLP**
 
-```json
-{
-  "country": "CL",
-  "amount": 1000,
-  "currency": "USD",
-  "destinationCurrency":"CLP",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Mercedes",
-    "lastName": "Garrido",
-    "email": "merceddo@mail.com",
-    "phone": "099999999",
-    "address": "Camino Franco, 13, Atico 4, 93631, L Garay",
-    "document": {
-      "type": "CI",
-      "number": "26068762K"
-    },
-    "bankAccount": {
-      "number": "1234567890123450",
-      "type": 1,
-      "codeBank": "1"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/CL/request_CL_USDtoCLP >}}
+{{< /highlight >}}
 <br>
 
 **Chile: CLP a CLP**
 
-```json
-{
-  "country": "CL",
-  "amount": 1000,
-  "currency": "CLP",
-  "destinationCurrency":"CLP",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Mercedes",
-    "lastName": "Garrido",
-    "email": "merceddo@mail.com",
-    "phone": "099999999",
-    "address": "Camino Franco, 13, Atico 4, 93631, L Garay",
-    "document": {
-      "type": "CI",
-      "number": "26068762K"
-    },
-    "bankAccount": {
-      "number": "1234567890123450",
-      "type": 1,
-      "codeBank": "1"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/CL/request_CL_CLPtoCLP >}}
+{{< /highlight >}}
 
 {{< /tab >}}
 
@@ -266,66 +118,17 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 
 **Colombia: USD a COP**
 
-```json
-{
-  "country": "CO",
-  "amount": 100,
-  "currency": "USD",
-  "destinationCurrency":"COP",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Diego",
-    "lastName": "Silva",
-    "email": "dsilva@mail.com",
-    "phone": "099999999",
-    "address": "Cra 23 # 123-45 Apto 601",
-    "document": {
-      "type": "CC",
-      "number": "11111111"
-    },
-    "bankAccount": {
-      "number": "2288",
-      "type": 1,
-      "codeBank": "1007"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/CO/request_CO_USDtoCOP >}}
+{{< /highlight >}}
 <br>
 
 **Colombia: COP a COP**
 
-```json
-{
-  "country": "CO",
-  "amount": 100,
-  "currency": "COP",
-  "reason": "string",
-  "destinationCurrency":"COP",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Diego",
-    "lastName": "Silva",
-    "email": "dsilva@mail.com",
-    "phone": "099999999",
-    "address": "Cra 23 # 123-45 Apto 601",
-    "document": {
-      "type": "CC",
-      "number": "11111111"
-    },
-    "bankAccount": {
-      "number": "2288",
-      "type": 1,
-      "codeBank": "1007"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/CO/request_CO_COPtoCOP >}}
+{{< /highlight >}}
+
 {{< /tab >}}
 
 {{< tab tabNum="5" >}}
@@ -333,66 +136,16 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 
 **México: USD a MXN**
 
-```json
-{
-  "country": "MX",
-  "amount": 1000,
-  "currency": "USD",
-  "destinationCurrency":"MXN",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Rubén",
-    "lastName": "Torres",
-    "email": "rubentres@mail.com",
-    "phone": "01 55 5601 7965",
-    "address": "Coyoacan 2000",
-    "document": {
-      "type": "CURP",
-      "number": "OEAF771012HMCRGR09"
-    },
-    "bankAccount": {
-      "number": "123456789012345678",
-      "type": 1,
-      "codeBank": "2"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/MX/request_MX_USDtoMXN >}}
+{{< /highlight >}}
 <br>
 
 **México: MXN a MXN**
 
-```json
-{
-  "country": "MX",
-  "amount": 1000,
-  "currency": "MXN",
-  "reason": "string",
-  "destinationCurrency":"MXN",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Rubén",
-    "lastName": "Torres",
-    "email": "rubentres@mail.com",
-    "phone": "01 55 5601 7965",
-    "address": "Coyoacan 2000",
-    "document": {
-      "type": "CURP",
-      "number": "OEAF771012HMCRGR09"
-    },
-    "bankAccount": {
-      "number": "123456789012345678",
-      "type": 1,
-      "codeBank": "2"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/MX/request_MX_MXNtoMXN >}}
+{{< /highlight >}}
 
 {{< /tab >}}
 
@@ -401,98 +154,23 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 
 **Perú: USD a PEN**
 
-```json
-{
-  "country": "PE",
-  "amount": 1000,
-  "currency": "USD",
-  "destinationCurrency":"PEN",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Ornela",
-    "lastName": "Olivera",
-    "email": "ornelera@mail.com",
-    "phone": "099999999",
-    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
-    "document": {
-      "type": "DNI",
-      "number": "12345678"
-    },
-    "bankAccount": {
-      "number": "11487349",
-      "type": 1,
-      "codeBank": "2"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/PE/request_PE_USDtoPEN >}}
+{{< /highlight >}}
 <br>
 
 **Perú: PEN a PEN**
 
-```json
-{
-  "country": "PE",
-  "amount": 1000,
-  "currency": "PEN",
-  "reason": "string",
-  "destinationCurrency":"PEN",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Ornela",
-    "lastName": "Olivera",
-    "email": "ornelera@mail.com",
-    "phone": "099999999",
-    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
-    "document": {
-      "type": "DNI",
-      "number": "12345678"
-    },
-    "bankAccount": {
-      "number": "11487349",
-      "type": 1,
-      "codeBank": "2"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/PE/request_PE_PENtoPEN >}}
+{{< /highlight >}}
 <br>
 
 **Perú: USD a USD**
 
-```json
-{
-  "country": "PE",
-  "amount": 1000,
-  "currency": "USD",
-  "reason": "string",
-  "destinationCurrency":"USD",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Ornela",
-    "lastName": "Olivera",
-    "email": "ornelera@mail.com",
-    "phone": "099999999",
-    "address": "Cl. Jesús Bueno # 64 Dpto. 229",
-    "document": {
-      "type": "DNI",
-      "number": "12345678"
-    },
-    "bankAccount": {
-      "number": "11487349",
-      "type": 1,
-      "codeBank": "2"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/PE/request_PE_USDtoUSD >}}
+{{< /highlight >}}
 
 {{< /tab >}}
 
@@ -501,100 +179,24 @@ Como se mencionó anteriormente, el objeto `payee.bankaccount` no debe estar pre
 
 **Uruguay: USD a UYU**
 
-```json
-{
-  "country": "UY",
-  "amount": 1000,
-  "currency": "USD",
-  "destinationCurrency":"UYU",
-  "reason": "string",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Daniel",
-    "lastName": "Lorenzo",
-    "email": "danielzo@mail.com",
-    "phone": "999999999",
-    "address": "12900 Montevideo",
-    "document": {
-      "type": "CI",
-      "number": "38067788"
-    },
-     "bankAccount": {
-      "number": "1234567",
-      "type": 2,
-      "codeBank": "113",
-      "branch": "1"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/UY/request_UY_USDtoUYU >}}
+{{< /highlight >}}
 <br>
 
 **Uruguay: UYU a UYU**
-```json
-{
-  "country": "UY",
-  "amount": 1000,
-  "currency": "UYU",
-  "reason": "string",
-  "destinationCurrency":"UYU",
-  "reference": "PayOut34",
-  "type": 2,
-  "payee": {
-    "firstName": "Daniel",
-    "lastName": "Lorenzo",
-    "email": "danielzo@mail.com",
-    "phone": "999999999",
-    "address": "12900 Montevideo",
-    "document": {
-      "type": "CI",
-      "number": "38067788"
-    },
-    "bankAccount": {
-      "number": "1234567",
-      "type": 2,
-      "codeBank": "113",
-      "branch": "1"
-    }
-  },
-  "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/UY/request_UY_UYUtoUYU >}}
+{{< /highlight >}}
 <br>
 
 **Uruguay: USD a USD**
-```json
-{
-    "country": "UY",
-    "amount": 1000,
-    "currency": "USD",
-    "destinationCurrency": "USD",
-    "reason": "string",
-    "reference": "PayOut34",
-    "type": 2,
-    "payee": {
-        "firstName": "Daniel",
-        "lastName": "Lorenzo",
-        "email": "danielzo@mail.com",
-        "phone": "999999999",
-        "address": "12900 Montevideo",
-        "document": {
-            "type": "CI",
-            "number": "38067788"
-        },
-        "bankAccount": {
-            "number": "1234567",
-            "type": 2,
-            "codeBank": "113",
-            "branch": "1"
-        }
-    },
-    "notification_Url": "https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4"
-}
 
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/UY/request_UY_USDtoUSD >}}
+{{< /highlight >}}
+
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -611,16 +213,11 @@ Ejemplo `"companyName":"Google LLC"`
 Mensaje recibido correctamente, en este punto, el Payout empieza a ser procesado.
 
 **Response body**
-```json
-{
-    "payoutId": 145,
-    "status": 5,
-    "statusDescription": "Received",
-    "reference": "PayOut34",
-    "errors": []
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_http200 >}}
+{{< /highlight >}}
 <br>
+
 Donde:
 
 | Campo | Descripción |
@@ -636,18 +233,10 @@ Donde:
 Falló la validación del mensaje y el Payout queda en estado **is not created**.
 
 **Response body**
-```json
-{
-    "errors": [
-        {
-            "ErrorCode": "ExactLengthValidator",
-            "PropertyName": "Country",
-            "Message": "'Country' must be 2 characters in length. You entered 1 characters."
-        }
-    ],
-    "statusCode": 400
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_http400 >}}
+{{< /highlight >}}
 <br>
 
 * `Unauthorized`: HttpCode `401`.<br>
@@ -657,18 +246,9 @@ Error de autorización.
 La validación del mensaje fue exitosa pero, el Payout queda en estado **Declinado** debido a reglas de negocio.
 
 **Response body**
-```json
-{
-    "payoutId": 493945,
-    "status": 8,
-    "statusDescription": "Declined",
-    "reference": "QA-538",
-    "error": {
-        "errorCode": 812,
-        "message": "Declined by validation for document"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_http409 >}}
+{{< /highlight >}}
 
 ### Obtener un Payout {#obtaining-a-payout}
 Este método le permite traer la información de un Payout utilizando el identificador (ID) generado o la referencia que asignó cuando solicitó el Payout.
@@ -704,39 +284,11 @@ Para obtener el Payout, incluya los siguientes endpoints de acuerdo con sus nece
 
 
 #### Ejemplo del Response {#response-example-1}
-```json
-{
-    "payoutId": 1100,
-    "reference": "QA-545",
-    "isoCountry": "CO",
-    "created": "2023-06-02T15:15:34.475614Z",
-    "lastUpdate": "2023-06-02T15:20:18.1507484Z",
-    "status": 1,
-    "statusDescription": "Paid",
-    "errorCode": null,
-    "errorDescription": null,
-    "amount": {
-        "value": 10.0,
-        "isoCurrency": "USD"
-    },
-    "localAmount": {
-        "value": 42843.0,
-        "isoCurrency": "COP"
-    },
-    "exchangeRate": 4394.23,
-    "payee": {
-        "firstName": "Paul",
-        "lastName": "Doe",
-        "email": "pauld@test.com",
-        "phone": "099999999",
-        "address": "address",
-        "document": {
-            "number": "11111111",
-            "type": "CC"
-        }
-    }
-}
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_getPayout >}}
+{{< /highlight >}}
+
 {{% alert title="Info" color="info"%}}
 En payouts para persona jurídica, se recibirá el campo `companyName` en lugar de `firstName` y `lastName`.
 {{% /alert %}}

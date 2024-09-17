@@ -24,47 +24,7 @@ tags: ["subtopic"]
 | `ThreeDS` → `TransactionId` | `string` | Yes | Transaction ID in 3D Secure. |
 
 ### Request Example using the Purchase for PCI-Compliant Merchants
-```json
-{
-    "CardData": {
-        "CardHolderName": "John Doe",
-        "Pan": "4507990000004905",
-        "CVV": "123",
-        "Expiration": "08/30",
-        "Email": "john.doe@example.com",
-        "Document": "74857601"
-    },
-    "Capture": true,
-    "TargetCountryISO": "BR",
-    "Currency": "BRL",
-    "Amount": 25000,
-    "Installments": 2,
-    "Order": "CH2023-001",
-    "Description": "Compra de teste",
-    "Customer": {
-        "FirstName": "João",
-        "LastName": "Silva",
-        "ReferenceCode": "JS-001",
-        "PhoneNumber": "11987654321",
-        "DocumentNumber": "12345678901",
-        "DocumentType": "CPF.BR",
-        "Email": "joao.silva@example.com",
-        "Address": {
-            "Country": "BR",
-            "City": "São Paulo",
-            "State": "SP",
-            "PostalCode": "01310-200",
-            "AddressDetail": "Avenida Paulista 1000"
-        }
-    },
-    "ThreeDSAuthMethod": "EXTERNAL",
-    "ThreeDS": {
-        "Eci": "05",
-        "Xid": "MDAwMDAwMDAwMDAwMDAwMDAwMDE=",
-        "Cavv": "kBNcxqbmcXUxhAE1yKRHAAAAAAA=",
-        "Version": "2.2.0",
-        "TransactionId": "97267598-FAE6-48F2-8083-C23433990FBC"
-    }
-}
 
-```
+{{< highlight json >}}
+{{< Payins/V3/3DSecure/3ds_request >}}
+{{< /highlight >}}

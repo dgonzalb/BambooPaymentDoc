@@ -45,35 +45,10 @@ The response structure for this operation is identical to the standard [purchase
 
 ### Response example
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "APPROVED",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": "2024-08-07T17:51:56.879",
-    "AuthorizationCode": "839936",
-    "Amount": 25000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": null,
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/GetPurchase/requestGetPurchase >}}
+{{< /highlight >}} 
+
 
 {{% alert title="Note" color="info"%}}
 All fields, statuses, and error codes described in the [purchase response]({{< ref "Purchase_V3.md" >}}#response) apply equally to this Get Purchase Details response.

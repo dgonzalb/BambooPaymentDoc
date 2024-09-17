@@ -23,17 +23,8 @@ Network Tokens replace sensitive card details during transaction processing, sig
 
 ### Request Example
 Below is an example of a payment using a network token:
-```json
-{
-    "PaymentMethodId": 1,
-    "TargetCountryISO": "UY",
-    "Currency": "UYU",
-    "Amount": 10000,
-    "NetworkToken": {
-        "Token": "5165850000000008",
-        "Cryptogram": "ABCD1234EFGH5678IJKL91011MNOPQR",
-        "Expiration_Month": 5,
-        "Expiration_Year": 35,
-        "CardHolderName": "Martín Rodríguez"
-    }
-```
+
+{{< highlight json >}}
+{{< Payins/V3/NetworkTokens/networkToken_request >}}
+{{< /highlight >}} 
+

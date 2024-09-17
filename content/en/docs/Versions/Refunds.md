@@ -29,14 +29,10 @@ Consider the following parameters when invoking a refund request.
 
 #### Request example 
 
-```json
-{
-  "Amount":"2500",
-  "MetadataIn": {
-    "Description": "Refund description"
-  }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/Refunds/refund_request >}}
+{{< /highlight >}} 
+
 
 ### Response parameters
 
@@ -58,42 +54,19 @@ Consider the following parameters when invoking a refund request.
 
 **Result:**`COMPLETED` - **Status:** `APPROVED`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "APPROVED",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-09-02T15:58:13.078",
-    "AuthorizationDate": "2024-09-02T15:58:18.334",
-    "AuthorizationCode": "673531",
-    "Amount": 25000,
-    "Currency": "BRL",
-    "MetadataOut": null
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/Refunds/refundApproved_response >}}
+{{< /highlight >}} 
+
 <br>
 
 * **Pending Status:** A refund may remain in a pending status depending on the payment method and acquirer. This means that while the refund request has been initiated, it may not be processed immediately.
 
 **Result:**`COMPLETED` - **Status:** `PENDING`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "PENDING",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-09-02T15:58:13.078",
-    "AuthorizationDate": null,
-    "AuthorizationCode": null,
-    "Amount": 25000,
-    "Currency": "BRL",
-    "MetadataOut": null
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/Refunds/refundPending_response >}}
+{{< /highlight >}} 
 
 <br>
 

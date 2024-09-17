@@ -69,7 +69,7 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 {{% /alert %}}
 
 #### Columnas adicionales para PIX {#additional-columns-for-pix}
-Al configurar PIX como tipo de pago del Payout (columna **Type** con el valor `4`), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna **Notification_Url**, es decir, la columna **T** del archivo Excel:
+Al configurar PIX como tipo de pago del Payout (columna **Type** con el valor `4`), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna **Notification_Url**, es decir, la columna **U** del archivo Excel:
 
 * `PixDocument`: agregue esta columna para configurar el número CPF/CNPJ del beneficiario. El número de dígitos para **CPF** debe ser 11, y **CNPJ** debe ser 14.
 * `PixEmail`: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.

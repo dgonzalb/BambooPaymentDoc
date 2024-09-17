@@ -51,39 +51,9 @@ El servicio WebHook es un servicio REST que debe procesar una solicitud con las 
 
 
 ### Ejemplo de la notificación {#notification-example}
-```json
-{
-  "payoutId": 18009,
-  "reference": "PAB-3268",
-  "isoCountry": "BR",
-  "created": "2023-08-30T12:02:39.1987743+00:00",
-  "lastUpdate": "2023-08-30T12:06:26.9119828+00:00",
-  "status": 1,
-  "statusDescription": "Paid",
-  "errorCode": null,
-  "errorDescription": null,
-  "amount": {
-    "value": 10,
-    "isoCurrency": "USD"
-  },
-  "localAmount": {
-    "value": 47.31,
-    "isoCurrency": "BRL"
-  },
-  "exchangeRate": 4.851803,
-  "payee": {
-    "firstName": "Tiago",
-    "lastName": "Costa",
-    "email": "tcosta@mail.com",
-    "phone": "92799322",
-    "address": "55489-272, Travessa Eduardo, 90 Esteves do Norte - CE",
-    "document": {
-      "number": "54562271779",
-      "type": "CPF"
-    }
-  }
-}
-```
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsWebhook/notification >}}
+{{< /highlight >}}
 
 {{% alert title="Info" color="info"%}}
 En notificaciones de payout para persona jurídica, se recibirá el campo `companyName` en lugar de `firstName` y `lastName`.

@@ -25,19 +25,10 @@ En el header, debe configurar el parámetro `Authorization` concatenando la pala
 No es necesario configurar una solicitud para invocar esta API.
 {{% /alert %}}
 
-```json
-{
-    "Response": {
-        "Date": "2023-06-02T20:59:59-03:00",
-        "CurrencyCode": "USD",
-        "FinalAccountingBalance": 13670.0000,
-        "FinalAvailableBalance": 13170.0000,
-        "FinalFeeBalance": 0.0,
-        "FinalProcessingBalance": 500.0
-    },
-    "Errors": null
-}
-```
+{{< highlight json >}}
+{{< Payouts/ApiForBalance/response >}}
+{{< /highlight >}}
+
 <br>
 Donde:
 

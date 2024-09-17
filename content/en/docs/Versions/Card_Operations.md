@@ -39,46 +39,18 @@ The purchase amount may vary concerning the one sent in the initial purchase pro
 #### Request example (Partial Capture)
 You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:
 
-```json
-{
-  "Amount": 50
-}
-``` 
+{{< highlight json >}}
+{{< Payins/V3/CardOperations/partialCapture_request >}}
+{{< /highlight >}} 
 
 #### Response example (Partial Capture)
 You will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
 
 **Result:**`COMPLETED` - **Status:** `PREAUTHORIZED`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "PREAUTHORIZED",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": "2024-08-07T17:51:56.879",
-    "AuthorizationCode": "839936",
-    "Amount": 5000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": null,
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CardOperations/partialCapture_response >}}
+{{< /highlight >}} 
 
 
 ## Cancelling a purchase 
@@ -118,44 +90,16 @@ The availability of **partial cancellation functionality may vary depending on t
 #### Request example (Partial Cancellation)
 To perform the cancel of the purchase  with a lower amount than the original, you need to include the new amount in the request. For example:
 
-```json
-{
-  "Amount": 50
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CardOperations/partialCancellation_request >}}
+{{< /highlight >}} 
 
 ### Response parameters
 When you perform the cancel, you will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
 
 **Result:**`COMPLETED` - **Status:** `CANCELLED`
 
-```json
-{
-    "TransactionId": "79632697147789184",
-    "Result": "COMPLETED",
-    "Status": "CANCELLED",
-    "ErrorCode": null,
-    "ErrorDescription": null,
-    "Created": "2024-08-07T17:51:54.620",
-    "AuthorizationDate": "2024-08-07T17:51:56.879",
-    "AuthorizationCode": "839936",
-    "Amount": 5000,
-    "Currency": "BRL",
-    "Installments": 2,
-    "TaxableAmount": null,
-    "Tip": null,
-    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
-    "MetadataOut": null,
-    "Action": null,
-    "PaymentMethod": {
-        "Brand": "Visa",
-        "CardOwner": "João Silva",
-        "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
-        "Type": "CreditCard",
-        "Expiration": "203008",
-        "Last4": "4905"
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CardOperations/partialCancellation_response >}}
+{{< /highlight >}} 
 

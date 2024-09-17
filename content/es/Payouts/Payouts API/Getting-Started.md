@@ -66,22 +66,7 @@ En la respuesta de la operación, se retorna `"payoutType": 3` o `"payoutType": 
 {{% /alert %}}
 
 #### Ejemplo del Response {#response-example}
-```json
-[ {
-        "id": 680,
-        "countryIsoCode": "CO",
-        "bankCode": "1507",
-        "bankName": "NEQUI",
-        "payoutType": 3
-    },
-    {
-        "id": 609,
-        "countryIsoCode": "CO",
-        "bankCode": "1058",
-        "bankName": "BANCO PROCREDIT COLOMBIA",
-        "payoutType": 2
-    },
-  {
-    ...
-  } ]
-```
+
+{{< highlight json >}}
+{{< Payouts/Api/GettingStarted/response_getBankList >}}
+{{< /highlight >}}
