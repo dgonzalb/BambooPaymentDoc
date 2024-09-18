@@ -49,12 +49,12 @@ The following table shows the mandatory and optional parameters for the Payout p
 | `amountToBeSentInOrignalCurrency` | `number` | The amount to be sent to the Payee, which is calculated as the difference between `amountInOrignalCurrency` and `fee`. |
 | `exchangeRate` | `number` | Conversion value between the origin and target currencies. This parameter includes up to `5` decimal places. |
 | `amountToBeSentInLocalCurrency` | `number` | The amount received by the payee, which is calculated by multiplying `amountToBeSentInOriginalCurrency` by `exchangeRate`.|
+| `expectedPaymentDate` | `datetime` | Indicates the estimated date of payment. |
+| `validUntil` | `datetime` | Indicates the time until the exchange rate will be fixed, after the indicated time the exchange rate can be changed.<br> The time shown is UTC-0.  |
 | `errors` | `object` | Errors that may appear. The error codes for this method start with `6`.<br>Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `ErrorCode` | `string` | Internal code of the error. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `PropertyName` | `string` | Property that triggered the error. |
 | `errors` → `Message` | `string` | Error description. |
-| `validUntil` | `datetime` | Indicates the time until the exchange rate will be fixed, after the indicated time the exchange rate can be changed.<br> The time shown is UTC-0.  |
-| `expectedPaymentDate` | `datetime` | Indicates the estimated date of payment. |
 
 #### Response example {#response-example-2}
 

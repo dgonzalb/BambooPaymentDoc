@@ -50,12 +50,13 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para el Pre
 | `amountToBeSentInOrignalCurrency` | `number` | Monto a ser enviado al Beneficiario, el cual se calcula como la diferencia entre `amountInOrignalCurrency` y `fee`. |
 | `exchangeRate` | `number` | Valor de conversión entre la moneda origen y destino. Este valor incluye hasta `5` dígitos decimales. |
 | `amountToBeSentInLocalCurrency` | `number` | Monto que va a recbir el Beneficiario, el cual se calcula multiplicando `amountToBeSentInOriginalCurrency` por `exchangeRate`. |
+| `expectedPaymentDate` | `datetime` | Indica la fecha estimada de pago. |
+| `validUntil` | `datetime` | Indica la hora hasta que va estar fijo el tipo de cambio, luego de la hora indicada el tipo de cambio puede modificarse.<br> El horario que muestra es UTC-0.  |
 | `errors` | `object` | Errores que pueden aparecer. Los códigos de error para este método empiezan por `6`.<br>Encuentre los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `ErrorCode` | `string` | Código interno del error. Encuentra los posibles errores [aquí]({{< ref "Payout-Error-Codes.md">}}). |
 | `errors` → `PropertyName` | `string` | Propiedad que provocó el error. |
 | `errors` → `Message` | `string` | Descripción del error. |
-| `validUntil` | `datetime` | Indica la hora hasta que va estar fijo el tipo de cambio, luego de la hora indicada el tipo de cambio puede modificarse.<br> El horario que muestra es UTC-0.  |
-| `expectedPaymentDate` | `datetime` | Indica la fecha estimada de pago. |
+
 
 #### Ejemplo del Response {#response-example-2}
 
