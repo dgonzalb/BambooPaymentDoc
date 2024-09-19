@@ -75,58 +75,66 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
 ```json
 {
     "Response": {
-        "PurchaseId": 1134219,
-        "Created": "2023-09-01T16:56:08.496",
+        "PurchaseId": 1399000,
+        "Created": "2024-09-19T13:51:56.383",
         "TrxToken": null,
         "Order": null,
         "Transaction": {
-            "TransactionID": 1153111,
-            "Created": "2023-09-01T16:56:08.497",
-            "AuthorizationDate": "",
+            "TransactionID": 1420486,
+            "Created": "2024-09-19T13:51:56.383",
+            "AuthorizationDate": "2024-09-19T13:51:57.701",
             "TransactionStatusId": 2,
             "Status": "Pending",
             "ErrorCode": null,
-            "Description": "200 https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html",
-            "ApprovalCode": "Author",
+            "Description": " ",
+            "ApprovalCode": null,
             "Steps": [
                 {
                     "Step": "Generic External",
-                    "Created": "2023-09-01T16:56:09.437",
-                    "Status": "PhysicalNetwork Pending",
-                    "ResponseCode": "200",
-                    "ResponseMessage": "",
+                    "Created": "2024-09-19T13:51:57.711",
+                    "Status": null,
+                    "ResponseCode": null,
+                    "ResponseMessage": null,
                     "Error": null,
-                    "AuthorizationCode": "Author",
+                    "AuthorizationCode": null,
                     "UniqueID": null,
-                    "AcquirerResponseDetail": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html"
+                    "AcquirerResponseDetail": null
                 }
             ]
         },
         "Capture": true,
-        "Amount": 5000,
-        "OriginalAmount": 5000,
+        "Amount": 1974,
+        "OriginalAmount": 1974,
         "TaxableAmount": 0,
         "Tip": 0,
         "Installments": 1,
         "Currency": "MXN",
         "Description": null,
         "Customer": {
-            "CustomerId": 250946,
-            "Created": "2023-09-01T16:56:07.713",
+            "CustomerId": 371863,
+            "Created": "2024-09-19T13:51:55.943",
             "CommerceCustomerId": null,
             "Owner": "Anonymous",
             "Email": "lucia@test.com",
             "Enabled": true,
             "ShippingAddress": null,
-            "BillingAddress": null,
+            "BillingAddress": {
+                "AddressId": 521364,
+                "AddressType": 2,
+                "Country": "Mexico",
+                "State": "Ciudad de Mexico",
+                "AddressDetail": "Av Universidad 3000",
+                "PostalCode": null,
+                "City": "Coyoacan"
+            },
             "Plans": null,
             "AdditionalData": null,
             "PaymentProfiles": [
                 {
-                    "PaymentProfileId": 255697,
+                    "PaymentProfileId": 387572,
                     "PaymentMediaId": 90,
-                    "Created": "2023-09-01T16:56:07.863",
-                    "LastUpdate": "2023-09-01T16:56:08.220",
+                    "Created": "2024-09-19T13:51:56.063",
+                    "LastUpdate": "2024-09-19T13:51:56.270",
                     "Brand": "OxxoPay",
                     "CardOwner": null,
                     "Bin": null,
@@ -146,12 +154,12 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             ],
             "CaptureURL": null,
             "UniqueID": null,
-            "URL": "https://api.stage.bamboopayment.com/Customer/250946",
+            "URL": "https://api.stage.bamboopayment.com/Customer/371863",
             "FirstName": "Lucia",
             "LastName": "Perez",
             "DocNumber": null,
             "DocumentTypeId": 2,
-            "PhoneNumber": null,
+            "PhoneNumber": "+525532100000",
             "ExternalValue": null
         },
         "RefundList": null,
@@ -160,7 +168,7 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
         "AdditionalData": null,
         "CustomerUserAgent": null,
         "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1134219",
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1399000",
         "DataUY": {
             "IsFinalConsumer": false,
             "Invoice": null,
@@ -171,25 +179,25 @@ Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.Metada
             "Tax": 0
         },
         "Acquirer": {
-            "AcquirerID": 166,
+            "AcquirerID": 165,
             "Name": "OxxoPay",
             "CommerceNumber": null
         },
         "CommerceAction": null,
-        "PurchasePaymentProfileId": 255697,
+        "PurchasePaymentProfileId": 387572,
         "LoyaltyPlan": null,
         "DeviceFingerprintId": null,
-        "MetadataIn": {
-            "PaymentExpirationInMinutes": "1440"
-        },
+        "MetadataIn": null,
         "MetadataOut": {
-            "PaymentUrl": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1134219_7f597f55-1d3a-42ba-9bbb-883262cd6c03_20230902.html"
+            "PaymentUrl": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1399000_77f1b5ed-329a-4872-984d-d6490e2307ee_00010101.html",
+            "PaymentCode": "4300000013990006",
+            "PaymentBarcodeUrl": "https://gateway.stage.bamboopayment.com/integrations/oxxo/barcodes/NDMwMDAwMDAxMzk5MDAwNg==.jpeg"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {
             "TargetCountryISO": "MX",
-            "TargetCurrencyISO": "MXN",
-            "TargetAmount": 50
+            "TargetCurrencyISO": "USD",
+            "TargetAmount": 1
         },
         "Redirection": null,
         "IsFirstRecurrentPurchase": false,

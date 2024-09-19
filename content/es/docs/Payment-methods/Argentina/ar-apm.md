@@ -38,7 +38,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 #### Ejemplo del Request {#request-example}
 ```json
 {
-    "PaymentMediaId":72,
+    "PaymentMediaId":61,
     "Amount": 10000,
     "Currency": "ARS",
     "Capture": true,

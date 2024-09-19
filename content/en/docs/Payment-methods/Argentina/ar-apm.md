@@ -38,7 +38,7 @@ You need to include specific fields for this payment method to work correctly. C
 #### Request example
 ```json
 {
-    "PaymentMediaId":72,
+    "PaymentMediaId":61,
     "Amount": 10000,
     "Currency": "ARS",
     "Capture": true,
