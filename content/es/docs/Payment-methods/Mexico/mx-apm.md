@@ -65,6 +65,8 @@ En el Response, se encuentran los siguientes parámetros:
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL del cupón de pago. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string`  | Referencia de pago. |
+| `Response` → `MetadataOut` → `PaymentBarcodeUrl` | `string` | URL de la imagen del código de barras del pago. |
 
 Puede redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl`, donde podrá imprimir el cupón y completar el pago en una tienda **OXXO**.
 

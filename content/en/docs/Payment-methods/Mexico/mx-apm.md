@@ -67,6 +67,8 @@ In the response, you will find the following parameters:
 | Property | Type | Description |
 |---|:-:|---|
 | `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL of the payment coupon. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference. |
+| `Response` → `MetadataOut` → `PaymentBarcodeUrl` | `string` | Payment barcode image URL. |
 
 You can redirect your customer to the URL displayed in the parameter `Response.MetadataOut.PaymentUrl`, where they can use the voucher and complete the payment in an **OXXO** store.
 
