@@ -5,7 +5,6 @@ date: 2024-08-22T11:40:29-05:00
 Description: >
   Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
 weight: 10
-tags: ["subtopic"]
 ---
 
 ## Configuring the authentication

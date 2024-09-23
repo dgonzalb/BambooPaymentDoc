@@ -7,7 +7,7 @@ description: >
 menu:
   main:
     name: Payins
-    weight: 10     
+    weight: 10       
 ---
 
 * International and local credit/debit cards

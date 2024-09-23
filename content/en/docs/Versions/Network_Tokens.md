@@ -5,7 +5,6 @@ date: 2023-08-02T08:43:44-05:00
 Description: >
   Discover how Bamboo supports Network Tokens with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
 weight: 60
-tags: ["subtopic"]
 ---
 
 Network Tokens replace sensitive card details during transaction processing, significantly enhancing security across the payment ecosystem. By substituting actual card numbers with secure tokens, this method reduces the risk of exposing financial information and minimizes the potential for fraud.

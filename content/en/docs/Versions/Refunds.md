@@ -5,7 +5,6 @@ date: 2024-08-02T08:46:32-05:00
 Description: >
   Refunds allow you to reverse a confirmed purchase, either partially or in full, accommodating various scenarios such as customer returns, order cancellations, or billing corrections.
 weight: 40
-tags: ["subtopic"]
 ---
 
 ## Refund a purchase
