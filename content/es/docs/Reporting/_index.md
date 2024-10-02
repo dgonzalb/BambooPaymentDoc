@@ -10,13 +10,9 @@ weight: 70
 
 Actualmente, ofrecemos la siguiente API:
 
-- **[API de Transacciones](/es/docs/reporting/transactions-report.html):** Esta API proporciona informes detallados sobre transacciones, incluyendo detalles de compra, métodos de pago, información del comprador y estado de las transacciones. Permite un análisis en profundidad de datos transaccionales.
+- **[API de Transacciones]({{< ref Transactions-report.md >}}):** Esta API proporciona informes detallados sobre transacciones, incluyendo detalles de compra, métodos de pago, información del comprador y estado de las transacciones. Permite un análisis en profundidad de datos transaccionales.
 
-## Próximas APIs
-
-Continuamos trabajando para expandir nuestras capacidades de reportes. Las siguientes APIs están actualmente en desarrollo y estarán disponibles en un futuro próximo:
-
-- **API de Movimientos:** Esta API permite recuperar informes sobre movimientos de fondos dentro de su cuenta, proporcionando una imagen clara de los fondos entrantes y salientes.
+- **[API de Movimientos Financieros]({{< ref Statement-report.md >}}):** Esta API permite recuperar informes sobre movimientos de fondos dentro de su cuenta, proporcionando una imagen clara de los fondos entrantes y salientes.
 
 - **API de Payouts:** Esta API ofrecerá informes detallados sobre los payouts realizados, incluyendo valores de pago, estados e información de los beneficiarios.
 
