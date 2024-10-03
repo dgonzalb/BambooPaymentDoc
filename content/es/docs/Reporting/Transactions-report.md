@@ -10,8 +10,8 @@ weight: 10
 ## URL para el Request
 Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud **GET** a las siguientes URLs según el ambiente:
 
-* **Producción**: `https://api.bamboopayment.com/v1/transaction/get-payin-transaction`
-* **Stage**: `https://api.stage.bamboopayment.com/v1/transaction/get-payin-transaction`
+* **Producción**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions`
+* **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/payin-transactions`
 
 ## Authorization
 En el encabezado de la solicitud, el parámetro `Authorization` debe configurarse concatenando la palabra `Basic`, un espacio y la **Private Key** del merchant.
@@ -19,24 +19,20 @@ En el encabezado de la solicitud, el parámetro `Authorization` debe configurars
 ## Parámetros de la solicitud (Request)
 | Propiedad | Tipo | Obligatorio | Descripción |
 |-----------|------|-------------|-------------|
-| `merchantAccount` | `Integer` | Sí | El identificador único de la cuenta del merchant. |
 | `from` | `String` | Sí | Fecha de inicio para la consulta de transacciones (formato: YYYY-MM-DD) |
 | `to` | `String` | Sí | Fecha de fin para la consulta de transacciones (formato: YYYY-MM-DD) |
 | `page` | `Integer` | No | Número de página para paginación |
 | `pageSize` | `Integer` | No | Número de registros por página |
-| `columns` | `Array` | No | Array de columnas específicas a incluir en la respuesta (un array vacío devuelve todas las columnas) |
 
-### Ejemplo de la solicitud (Request)
-```json
-{
-    "merchantAccount": 1,
-    "from":"2021-01-01",
-    "to":"2021-01-31",
-    "page":1,
-    "pageSize":10,
-    "columns": []
-}
-```
+{{% alert title="Importante" color="info"%}}
+Los parámetros van en el request añadidos en la URL del endpoint, seguido de un `?` indicando el comienzo de los parámetros.
+{{% /alert %}}
+
+
+### Formato y ejemplo de la solicitud (Request)
+* **Formato**: `{endpoint}?From=YYYY-MM-DD&To=YYYY-MM-DD&Page=#&PageSize=#`
+
+* **Ejemplo**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions?From=2024-01-01&To=2024-01-31&Page=1&PageSize=10`
 
 ## Parámetros de la Respuesta (Response)
 

@@ -10,16 +10,11 @@ weight: 70
 
 Currently, we offer the following API:
 
-- **[Transaction Report API](/en/docs/reporting/transactions-report.html):** This API provides detailed reports on individual transactions, including purchase details, payment methods, customer information, and transaction statuses. It allows for in-depth analysis of your transactional data.
+- **[Transaction Report API]({{< ref Transactions-report.md >}}):** This API provides detailed reports on individual transactions, including purchase details, payment methods, customer information, and transaction statuses. It allows for in-depth analysis of your transactional data.
 
-## Upcoming APIs
-
-We are continuously working to expand our reporting capabilities. The following APIs are currently in development and will be available in the near future:
-
-- **Movements Report API:** This API will allow you to retrieve reports on fund movements within your account, providing a clear picture of incoming and outgoing funds.
+- **[Statement Report API]({{< ref Statement-report.md >}}):** This API will allow you to retrieve reports on fund movements within your account, providing a clear picture of incoming and outgoing funds.
 
 - **Payouts Report API:** This API will offer detailed reports on payouts made to merchants, including payout amounts, frequencies, and statuses.
-
 
 
 ## Key Features

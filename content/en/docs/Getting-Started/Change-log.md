@@ -3,11 +3,19 @@ title: "Change Log"
 linkTitle: "Change Log"
 date: 2024-08-10T11:40:29-05:00
 Description: >
-  This page provides a comprehensive record of all significant changes, updates, and improvements made to the technical documentation. We maintain this log to keep our developer community informed about Bamboo's evolution.
+  This page provides a record of all changes, updates, and improvements made to the technical documentation. We maintain this log to keep our developer community informed about Bamboo's evolution.
 weight: 50
 
 ---
 ## 2024
+
+### October
+| Page | Description |
+|---|---|
+| [Transaction Report API](/en/docs/reporting/transactions-report.html) | Changes in parameters and endpoints. |
+| **[Statement Report API]({{< ref Statement-report.md >}})** | New Reporting API for Financial Data. |
+
+
 ### September
 | Page | Description |
 |---|---|

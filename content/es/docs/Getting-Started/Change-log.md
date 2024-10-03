@@ -3,7 +3,7 @@ title: "Cambios en la versión"
 linkTitle: "Cambios en la versión"
 date: 2023-03-02T11:40:29-05:00
 Description: >
-  Esta página proporciona un registro completo de todos los cambios significativos, actualizaciones y mejoras realizadas en la documentación técnica. Mantenemos este registro para mantener informada a nuestra comunidad de desarrolladores sobre la evolución de Bamboo.
+  Esta página proporciona un registro completo de todos los cambios, actualizaciones y mejoras realizadas en la documentación técnica. Mantenemos este registro para mantener informada a nuestra comunidad de desarrolladores sobre la evolución de Bamboo.
 weight: 50
 
 ---
@@ -11,8 +11,16 @@ weight: 50
 
 
 ## 2024
+
+### Octubre
+| Página | Descripción |
+|---|---|
+| [API de Transacciones](/es/docs/reporting/transactions-report.html) | Cambios en los parámetros y endpoints. |
+| **[API de Movimientos Financieros]({{< ref Statement-report.md >}})** | Nueva API de reportes para movimientos financieros. |
+
+
 ### Septiembre
-| Page | Description |
+| Página | Descripción |
 |---|---|
 | [VTEX Script Antifraude](/es/docs/plugins/vtex/vtex_setup.html#antifraud-script) | Sección para configurar el módulo antifraude de Bamboo en el plugin de VTEX para merchants Payfac. |
 
