@@ -10,8 +10,8 @@ weight: 10
 ## Request URL
 You must invoke a **GET** request to the following URLs according to your needs.
 
-* **Production**: `https://api.bamboopayment.com/v1/transaction/get-payin-transaction`
-* **Stage**: `https://api.stage.bamboopayment.com/v1/transaction/get-payin-transaction`
+* **Production**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions`
+* **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/payin-transactions`
 
 ## Authorization
 In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the _**Private Key**_ of the merchant.
@@ -19,24 +19,19 @@ In the header, the `Authorization` parameter must be configured by concatenating
 ## Request parameters
 | Property | Type | Mandatory? | Description |
 |----------|------|------------|-------------|
-| `merchantAccount` | `Integer` | Yes | The unique identifier for the merchant account |
 | `from` | `String` | Yes | Start date for the transaction query (format: YYYY-MM-DD) |
 | `to` | `String` | Yes | End date for the transaction query (format: YYYY-MM-DD) |
 | `page` | `Integer` | Yes | Page number for pagination |
 | `pageSize` | `Integer` | Yes | Number of records per page |
-| `columns` | `Array` | No | Array of specific columns to include in the response (empty array returns all columns) |
 
-### Request example
-```json
-{
-    "merchantAccount": 1,
-    "from":"2021-01-01",
-    "to":"2021-01-31",
-    "page":1,
-    "pageSize":10,
-    "columns": []
-}
-```
+{{% alert title="Important" color="info"%}}
+The parameters go in the request appended to the endpoint URL, followed by a `?` indicating the start of the parameters.
+{{% /alert %}}
+
+### Format and example of the request (Request)
+* **Format**: `{endpoint}?From=YYYY-MM-DD&To=YYYY-MM-DD&Page=#&PageSize=#`
+
+* **Example**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions?From=2024-01-01&To=2024-01-31&Page=1&PageSize=10`
 
 ## Response Parameters
 
