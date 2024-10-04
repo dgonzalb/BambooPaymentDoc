@@ -46,7 +46,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
 | `payee` → `bankaccount` → `number` | `string` | Yes<sup>2</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>2</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>2</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](#get-bank-list). Alternatively, [find the bank list here](../payouts-api/variables.html#bank-codes). |  
+| `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>2</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](getting-started.html#get-bank-list). Alternatively, [find the bank list here](variables.html#bank-codes). |  
 
 <sup>1</sup> _Applies only to Brazil using Instant Bank Transfer. Otherwise, the object_ `payee.InstantPaymentData` _and its parameters must not be present in the request._<br>
 <sup>2</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._<br>
