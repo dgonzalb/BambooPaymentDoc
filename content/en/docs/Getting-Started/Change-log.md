@@ -12,6 +12,7 @@ weight: 50
 ### October
 | Page | Description |
 |---|---|
+| [Request a Withdrawal]({{< ref Request-withdrawal.md >}}) | New API for requesting a balance withdrawal. |
 | [Transaction Report API](/en/docs/reporting/transactions-report.html) | Changes in parameters and endpoints. |
 | **[Statement Report API]({{< ref Statement-report.md >}})** | New Reporting API for Financial Data. |
 

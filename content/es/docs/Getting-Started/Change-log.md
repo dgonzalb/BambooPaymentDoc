@@ -15,6 +15,7 @@ weight: 50
 ### Octubre
 | Página | Descripción |
 |---|---|
+| [Solicitar un retiro]({{< ref Request-withdrawal.md >}}) | Nueva API para solicitar un retiro de saldos. |
 | [API de Transacciones](/es/docs/reporting/transactions-report.html) | Cambios en los parámetros y endpoints. |
 | **[API de Movimientos Financieros]({{< ref Statement-report.md >}})** | Nueva API de reportes para movimientos financieros. |
 

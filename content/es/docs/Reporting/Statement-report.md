@@ -18,24 +18,20 @@ Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud 
 En el encabezado de la solicitud, el parámetro `Authorization` debe configurarse concatenando la palabra `Basic`, un espacio y la **Private Key** del merchant.
 
 ## Parámetros de la solicitud (Request)
-| Propiedad | Tipo | Obligatorio | Descripción |
-|-----------|------|-------------|-------------|
-| `merchantAccount` | `Integer` | Sí | El identificador único de la cuenta del merchant. |
-| `from` | `String` | Sí | Fecha de inicio para la consulta de transacciones (formato: YYYY-MM-DD) |
-| `to` | `String` | Sí | Fecha de fin para la consulta de transacciones (formato: YYYY-MM-DD) |
-| `page` | `Integer` | No | Número de página para paginación |
-| `pageSize` | `Integer` | No | Número de registros por página |
-| `columns` | `Array` | No | Array de columnas específicas a incluir en la respuesta (un array vacío devuelve todas las columnas) |
+| Campo | Tipo | Obligatorio | Descripción |
+|-------|------|-------------|-------------|
+| `ReferenceId` | string | Sí | Un identificador único para esta solicitud de retiro |
+| `CurrencyIsoCode` | string | Sí | El código ISO de la moneda para el retiro (por ejemplo, "USD") |
+| `Requester` | string | No | Identificador de la persona o sistema que solicita el retiro |
+| `TextNotes` | string | No | Notas o comentarios adicionales sobre el retiro |
 
-### Ejemplo de la solicitud (Request)
+### Ejemplo de solicitud
 ```json
 {
-    "merchantAccount": 1,
-    "from":"2021-01-01",
-    "to":"2021-01-31",
-    "page":1,
-    "pageSize":10,
-    "columns": []
+  "ReferenceId": "retiro-001",
+  "CurrencyIsoCode": "USD",
+  "Requester": "comerciante-001",
+  "TextNotes": "Retiro para gastos operativos mensuales"
 }
 ```
 
