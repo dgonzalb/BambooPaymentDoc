@@ -50,7 +50,8 @@ The following table shows the mandatory and optional parameters to create a Payo
 
 <sup>1</sup> _Applies only to Brazil using Instant Bank Transfer. Otherwise, the object_ `payee.InstantPaymentData` _and its parameters must not be present in the request._<br>
 <sup>2</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the object_ `payee.bankaccount` _and its parameters must not be present in the request._<br>
-<sup>3</sup> _The fields `firstName` and `lastName` for an individual and `companyName` for a company are mandatory. If a payout is sent to a company, only the `companyName` field has to be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields have to be completed._
+<sup>3</sup> _The fields `firstName` and `lastName` for an individual and `companyName` for a company are mandatory. If a payout is sent to a company, only the `companyName` field has to be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields have to be completed.<br>
+***Important:*** The `firstName` and `lastName` fields do not support numbers or special characters, only letters. The `companyName` field does accept all types of alphanumeric characters._
 
 
 ### Request example
