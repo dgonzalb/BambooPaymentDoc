@@ -13,7 +13,7 @@ tags: ["subtopic"]
 * **Purchases without CVV**: Allows tokenization and recurrence.<br>In the case of tokenization, the API generates a charge for a minimum of **ARS 3**, which is refunded to validate the cardholder data. With this token, it is possible to make purchases without CVV.
 
 ## Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -68,7 +68,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
 ```
 
 ## Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md>}}#response-parameters) of the Purchase creation.
 
 ### Response example
 

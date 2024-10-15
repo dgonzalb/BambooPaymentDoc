@@ -77,7 +77,7 @@ You need to include specific fields for this payment method to work correctly. C
 ```
 
 ## Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 ### Response example
 ```json

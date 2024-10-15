@@ -17,7 +17,7 @@ tags: ["subtopic"]
 **Khipu** allows payers to pay using transfers from their bank accounts using the _Khipu_ app. The payer can pay using bank accounts or through the **Khipu** app where the payment experience is better.
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -76,7 +76,7 @@ We return the `Purchase` with the status _Pending for Redirection_ and a `Commer
 If the RUT and password are requested during testing, please use a valid RUT (for example **11.111.111-1**) and password **123**.
 {{% /alert %}}
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 
@@ -269,7 +269,7 @@ We return the `Purchase` with the status _Pending for Redirection_ and a `Commer
 
 ![PrintScreen](/assets/Klap.png)
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 

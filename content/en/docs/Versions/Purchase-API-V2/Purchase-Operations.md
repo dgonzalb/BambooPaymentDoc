@@ -1,11 +1,11 @@
 ---
-title: "Basic Operations"
-linkTitle: "Basic Operations"
+title: "Purchase (Legacy)"
+linkTitle: "Purchase (Legacy)"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Create a purchase using the API flow providing its basic information. Furthermore, explore the different operations over existing purchases.
 weight: 10
-tags: ["subtopic"]
+tags: ["parenttopic"]
 ---
 
 ## Configuring the authentication

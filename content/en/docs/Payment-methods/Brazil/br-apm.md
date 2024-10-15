@@ -16,7 +16,7 @@ The purchase status for Alternative Payment methods will remain _Pending_ until 
 _PIX_ is an official Brazilian payment method launched by the local Central Bank. It allows for immediate payment confirmation and is available 24/7. To complete a payment, the payer can use any Home Banking or Wallet App by copying and pasting a Transaction ID or scanning a QR code.
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -261,7 +261,7 @@ In the response, you will find the following parameters:
 _Boleto Bancário_ is a popular payment method in Brazil that allows for paying bills and online purchases without a credit card. It generates a unique barcode that can be printed or accessed through a digital platform and paid at any bank or authorized payment center.
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|

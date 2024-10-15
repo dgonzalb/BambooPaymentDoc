@@ -4,7 +4,8 @@ linkTitle: "Embedded Checkout Form"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Corresponds to a payment form embedded on its page, simplifying and securing the capture of sensitive data for the processing of online payments.
-weight: 20
+weight: 70
+tags: ["subtopic"]
 ---
 
 The difference between this form, and [Checkout Form]({{< ref Checkout-Form.md >}}) mentioned before is that you must invoke this form inside a custom page.

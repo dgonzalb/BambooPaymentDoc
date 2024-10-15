@@ -83,7 +83,7 @@ Transaction errors always starts with `TR`.
 | `TR005` | ACQUIRER_PROBLEM | Acquirer’s internal error. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR006` | ACQUIRER_DUPLICATED_ORDER | Duplicate order number at the Acquirer. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR007` | INVALID_PAYMENT_MEDIA | Payment data errors (card number, verification code, or expiration date). | Ask your customer to verify the card information and retry the transaction. |
-| `TR008` | COMMIT_AMOUNT_GREATER_THAN_AUTHORIZED | The amount you intend to confirm is higher than previously authorized. | The [commit operation]({{< ref purchase-operations.md>}}#confirm-a-purchase) was requested for a higher amount than authorized. Send an equal or lower value than the original authorization. |
+| `TR008` | COMMIT_AMOUNT_GREATER_THAN_AUTHORIZED | The amount you intend to confirm is higher than previously authorized. | The [commit operation]({{< ref card_operations.md>}}#confirm-a-purchase) was requested for a higher amount than authorized. Send an equal or lower value than the original authorization. |
 | `TR009` | ACQUIRER_UNKNOWN_ERROR | Unknown Acquirer error. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 | `TR010` | ACQUIRER_INVALID_DOCUMENT | Invalid customer’s document number in the acquirer. | Your customer must check the document type and number provided and retry the transaction. Otherwise, they must contact their card issuer bank. |
 | `TR011` | BLOCKED_OR_LOST_CARD | Blocked or lost card. | Your customer must check the card used or contact the card issuer bank to unblock it before retry the transaction.  |

@@ -77,7 +77,7 @@ Se necesita incluir campos específicos para que este método de pago funcione c
 ```
 
 ## Parámetros del Response {#response-parameters}
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 ### Ejemplo del Response {#response-example}
 

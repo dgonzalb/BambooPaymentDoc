@@ -64,7 +64,7 @@ Remember that for the Anti-fraud system's correct functioning, we suggest sendin
 ```
 
 ### Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 
@@ -266,7 +266,7 @@ We return the `Purchase` with the status _Pending for Redirection_ and a `Commer
 
 ![PrintScreen](/assets/WebPay.png)
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 

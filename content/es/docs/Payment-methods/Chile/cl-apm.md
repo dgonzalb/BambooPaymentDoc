@@ -76,7 +76,7 @@ Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un obje
 Si se solicitan RUT y contraseña durante las pruebas, utilice un RUT válido (por ejemplo **11.111.111-1**) y contraseña **123**.
 {{% /alert %}}
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example}
 
@@ -269,7 +269,7 @@ Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un obje
 
 ![PrintScreen](/assets/Klap.png)
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1}
 

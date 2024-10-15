@@ -295,7 +295,7 @@ In the response, you will find the following parameters:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example 
 ```json
@@ -512,7 +512,7 @@ You need to include specific fields for this payment method to work correctly. C
         
 
 ### Response parameters
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 

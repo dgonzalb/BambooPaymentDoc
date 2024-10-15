@@ -1,189 +1,106 @@
 ---
-title: "Forms"
-date: 2023-03-02T08:28:16-05:00
+title: "Tokenization Form"
+linkTitle: "Tokenization Form"
+date: 2024-07-31T09:28:16-05:00
 Description: >
- A Form in Bamboo Payment allows customers to perform purchases or tokenization through a web interface.
+  The Tokenization Form securely captures the customer's credit or debit card information and converts sensitive data into a token. The **token** can then be used to process transactions without storing card information directly on the merchant's systems.
 weight: 50
+notopicssection: true
 ---
 
-## Methods supported
+**Use Case**: This form is used when a customer makes an online purchase, and their card information must be securely captured for payment processing. Instead of directly storing the card data, this form generates a token that can be sent to the merchant's server to complete the purchase process.
 
-### GetToken
+<div style="text-align: center"><img src="/assets/Tokenization_Form.png" alt="Tokenization Form" width="300"/></div>
 
-This method receives an object with the specific parameters for the desired payment method.
+## Importing the JavaScript Library
 
-#### Object tokenRequest:
-
-| Property | Description | | Mandatory? | |
-|-------------|--------------------|:-----------:|:------:|:------:|
-| | | **Physical Network** | **Cards** | **Redirect** |
-| **PaymentMediaId** <br> *numeric* | Payment media identifier. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| **PaymentMediaType** <br> *numeric* | Payment media type identifier (see [table](/en/docs/payment-methods.html#payment-method-types) Payment method types). | | | |
-| **IssuerBank** <br> *numeric* | Bank identifier (see [table](/en/docs/payment-methods/uruguay.html#issuer-banks-table) Issuer Bank). | | | 
-| **Email** <br> *string* | Email address of the Customer. | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| **DocumentNumber** <br> *string* | Customer document number. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
-| **DocumentType** <br> *numeric* | Customer document type. | <img src="/assets/check_mark_64.png" width="15px"/> | | |
-| **LoyaltyPlanId** <br> *numeric* | Loyalty Plan identifier. | | | |
-| **LoyaltyPlanUserIdentification** <br> *string*| Loyalty Plan user identifier. | | | |
-
-Examples:
-
-{{< tabs tabTotal="5" tabID="tabs" tabName1="Cash Payment" tabName2="MasterCard" tabName3="MasterCard (Santander)" tabName4="Only Credit or Debit Cards" tabName5="Redirect" >}}
-
-{{< tab tabNum="1" >}}
-<br>
-This example generates a token for _RedPagos_.<br>
+To integrate the Tokenization Form into your website, it's necessary to include a script that points to the form's URL. This allows access to the **BambooForm** object containing the methods needed to render Bamboo forms.
 
 ```javascript
-var tokenRequest = {
- PaymentMediaId: 5, 
- Email: "john@mail.com", 
- DocumentNumber: "12345672", 
- DocumentType: 2
- };
- 
-PWCheckout.Iframe.GetToken(tokenRequest);
-
+//STAGE - Test Environment:
+<script src="https://capture.stage.bamboopayment.com"></script>
 ```
 
-{{< /tab >}}
-{{< tab tabNum="2" >}}
-<br>
-
-This example opens the capture form only for _MasterCard_ cards.<br>
+<br/>
 
 ```javascript
-var tokenRequest = {
- PaymentMediaId: 2, 
- Email: "john@mail.com"
- };
- 
-PWCheckout.Iframe.GetToken(tokenRequest);
+//PRODUCTION:
+<script src="https://capture.bamboopayment.com"></script>
 ```
 
-{{< /tab >}}
-{{< tab tabNum="3" >}}
-<br>
+### **renderTokenizationForm** Method
 
-This example opens the capture form only for _MasterCard_ cards issued by _Santander_ Bank.<br>
+Once the Script pointing to Bamboo forms is imported, you'll have access to the **renderTokenizationForm** method that renders the **Tokenization Form** in your application, allowing your users to securely enter their cards.
 
 ```javascript
-var tokenRequest = {
- PaymentMediaId: 2, 
- IssuerBank: 1, 
- Email: "john@mail.com"
- };
- 
-PWCheckout.Iframe.GetToken(tokenRequest);
-
+BambooForm.renderTokenizationForm(configuration);
 ```
-{{< /tab >}}
-{{< tab tabNum="4" >}}
-<br>
 
-This example opens the capture form only for _Visa Debit_ cards.<br>
+### Configuration Parameters
+
+| Parameter | Type | Mandatory? | Description |
+|-----------|------|:----------:|-------------|
+| `containerId` | `string` | Yes | HTML container ID where the form will be displayed. |
+| `metadata` | `object` | Yes | Configures information related to the customer and transaction. |
+| `publicKey` | `string` | Yes | Merchant's public key, necessary for secure tokenization. |
+| `targetCountryISO` | `string` | Yes | ISO code of the country where the transaction will be processed. |
+| `customer` | `object` | No | Customer information. |
+| `uniqueId` | `string` | No | Unique customer identifier. Indicates if a single-use or recurring Token is generated [Token Types]({{< ref Anonymous-users.md >}}) |
+| `email` | `string` | No | Customer's email. It's pre-loaded in the form and allows editing if there are syntax errors that prevent token generation |
+| `cardHolderName` | `string` | No | Cardholder's name. It's pre-loaded in the form without editing option. |
+| `logoUrl` | `string` | No | URL of the logo that will appear on the form. If not defined, it's shown without a logo in the header |
+| `locale` | `string` | No | Form language, using ISO code Spanish: 'es' (default) English: 'en' |
+| `filters` | `object` | No | Allows restricting the card entered by the user to a specific issuing bank or card type |
+| `paymentMediaType` | `number` | No | Identifier of the payment method type (credit card, debit card, etc.). ([See payment methods](https://docs.bamboopayment.com/en/docs/payment-methods.html#payment-method-types)) |
+| `issuerBank` | `number` | No | Issuing bank identifier. ([See banks](https://docs.bamboopayment.com/en/docs/payment-methods/uruguay.html#issuer-banks-table)) |
+| `hooks` | `object` | Yes | Callback functions to handle form events. |
+| `onOperationSuccess` | `function` | Yes | Callback executed upon successful tokenization. Receives the token as a parameter. |
+| `onOperationFinalize` | `function` | No | Optional callback executed when the operation is finalized. |
+| `onOperationError` | `function` | No | Optional callback that handles errors during tokenization. |
+| `onApplicationLoaded` | `function` | No | Callback executed when the form has been loaded correctly. |
+
+### Example
 
 ```javascript
-var tokenRequest = {
- PaymentMediaId: 1, 
- PaymentMediaType: 2, 
- Email: "john@mail.com"
- };
- 
-PWCheckout.Iframe.GetToken(tokenRequest);
-
+<script> 
+BambooForm.renderTokenizationForm({
+  containerId: 'MERCHANT_PAGE_CONTAINER_ID',
+  metadata: {
+    publicKey: 'MERCHANT_PUBLIC_KEY',
+    targetCountryISO: 'UY',
+    customer: {
+      email: 'cliente@example.com',
+      cardHolderName: 'Juan Pérez'
+    },
+    locale: 'es',
+    logoUrl: '<https://mieshop.com/logo.png>'
+  },
+  hooks: {
+    onOperationSuccess: (token) => {
+      console.log('Token received:', token);
+    },
+    onOperationError: (error) => {
+      console.error('Error:', error);
+    }
+  }
+});
+</script>
 ```
-{{< /tab >}}
-{{< tab tabNum="5" >}}
-<br>
 
-This example generates a `OneTimeToken` for _Khipu_ payments.<br>
+## Token Object
 
-```javascript
-var tokenRequest = {
- PaymentMediaId: 110, 
- Email: "john@mail.com"
- };
- 
-PWCheckout.Iframe.GetToken(tokenRequest);
+The **token** object is returned in the **onOperationSuccess** hook executed upon successful tokenization and contains the following parameters.
 
- ```
-{{< /tab >}}
-{{< /tabs >}}
-
-<!--
-### GetCustomToken
-Use this method to get a **Token** without showing the capture form to the customer. This method is proper when you submit the Purchase transaction through a Cash Payment network.
-
-| Property | Description | Mandatory |
-|-------------|-----------|:-----:|
-| **paymentMediaId** <br> *numeric* | Identify the payment method (cash collection network) for which you require the Token.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>**5** – Abitab</li><li>**10** – Redpagos</li></ul> | Yes |
-| **email** <br> *string* | Customer’s email address | Yes |
-| **documentNumber** <br> *string* | Customer’s document number. | Yes |
-| **documentType** <br> *numeric* | Customer’s document type. <br>If it's not sent, the method considers the national document type (_Cédula de Identidad_ in Uruguay).<br>Possible values:<ul style="margin-bottom: initial;"><li>**1** – RUT</li><li>**2** – Cédula de identidad</li><li>**3** – Extranjero</li></ul> | No |
-
-Example:
-
-```javascript
- PWCheckout.GetCustomToken(5, "email@domain.com", "12345672");
- ```
-
-{{% alert title="Note" color="info"%}}
-The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
-{{% /alert %}}
-
-
-### GetCustomRedirectToken
-
-This method is used to get a **Token** for Redirect flow payments.
-
-| Property | Description | Mandatory |
-|-------------|-------------|:--------:|
-| **paymentMediaId** <br> *numeric* | Identifier of the payment methods for which they require the **token**.<br>Possible values:<br><ul style="margin-bottom: initial;"><li>All Redirect flow payments.</li></ul> | Yes |
-| **email** <br> *string* | Customer's email address. | Yes |
-
-Example:
-
-```javascript
- PWCheckout.GetCustomRedirectToken(106, "email@domain.com");
- ```
-
-{{% alert title="Note" color="info"%}}
-The method delivers the payment **token** in the same way as the other methods; it is included in the hidden text field `PWToken` and triggers the `tokenCreated` event like the other methods.
-{{% /alert %}}
--->
-
-## JavaScript Objects
-
-### CloseInfo
-The `CloseInfo` object is returned in the `closed` event, triggered when the user closes the card data capture form.
-
-| Field | Description | 
-| ------------- |-----------|
-| Reason <br> *string* | Description of the reason why the window was closed. The possible causes are the following: <br><ul style="margin-bottom: initial;"><li>**ESCAPE**: The user pressed the _**Esc**_ button.</li><li>**CLOSE_BUTTON**: The user pressed the closing button of the window.<li>**TIMEOUT**: The user has exceeded the maximum waiting time to enter the data.</li><li>**COMMERCE_ACTION**: The commerce needs to take an action.</li><li>**ERROR**: An error occurred.</li><li>**TOKEN_RECEIVED**: The generated token was received from the data entered by the user.</li><li>**NOTIFICATION_RECEIVED**: A notification has been received.</li><li>**PAGE_CLICK**: The user clicked the page outside the capture form, and the property `close_onclick` is `true`.</li></ul> | 
-
-### TokenInfo
-The `TokenInfo` object is returned in the `tokenCreated` event triggered by the card data capture form after processing the user's data.
-
-| Field <br> *Type* | Description | 
-| ------------- |-----------|
-| TokenId <br> *string* | Token identifier. |
-| Created <br> *timestamp* | Token creation date and time. |
-| Type <br> *string* | Token type, possible values: <br><ul style="margin-bottom: initial;"><li>`OneTime`</li><li>`Commerce`</li></ul> |
-| Brand <br> *string* | Brand of the card or payment method used. |
-| IssuerBank <br> *string* | Card issuer bank. |
-| Owner <br> *string* | Cardholder name. |
-| Bin <br> *numeric[6]* | Card identifier. |
-| Last4 <br> *numeric[4]* | The cards last four digits. |
-| CardType <br> *string* | Payment method (or card) type, possible values:<br><ul style="margin-bottom: initial;"><li>`CreditCard`</li><li>`DebitCard`</li><li>`PhysicalNetwork`</li><li>`PrePaid`</li></ul> |
-| CardExpMonth <br> *numeric[2]* | Card expiration month. |
-| CardExpYear <br> *numeric[2]*| Card expiration year. |
-
-### NotificationInfo
-
-The `NotificationInfo` object is returned in the `notificationReceived` event, which is triggered when the Verification Code Request Flow finishes.
-
-| Field <br> *Type* | Description | 
-| ------------- |-----------|
-|ProcessType <br>*string* | Defines the process type of the notification is being issued.<br>Possible values are:<br><ul style="margin-bottom: initial;"><li>`PURCHASE_PENDING` – process to authorize a pending purchase.</li></ul> |
-|ProcessStatus <br> *numeric[1]*| Possible statuses of a process are:<br><ul style="margin-bottom: initial;"><li>**1** – OK (the process completed successfully)</li><li>**2** – PENDING (the process is still pending)</li><li>**3** – ERROR (the process completed with error)</li></ul> |
+| Property | Type | Description |
+|---|:-:|---|
+| `TokenId` | `string` | Token identifier. |
+| `Created` | `timestamp` | Token creation date and time. |
+| `Type` | `string` | Token type, possible values: `OneTime`, `Commerce` |
+| `Brand` | `string` | Card brand or payment method used. |
+| `IssuerBank` | `string` | Card Issuing Bank. |
+| `Owner` | `string` | Cardholder's name. |
+| `Bin` | `numeric[6]` | Card identifier. |
+| `Last4` | `numeric[4]` | Last four digits of the card. |
+| `CardType` | `string` | Payment method or card type, possible values: `CreditCard`, `DebitCard`, `PhysicalNetwork`, `PrePaid` |
+| `CardExpMonth` | `numeric[2]` | Card expiration month. |
+| `CardExpYear` | `numeric[2]` | Card expiration year. |

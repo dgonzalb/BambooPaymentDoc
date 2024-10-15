@@ -64,7 +64,7 @@ Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos e
 ```
 
 ### Parámetros del Response {#response-parameters}
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example}
 
@@ -266,7 +266,7 @@ Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un obje
 
 ![PrintScreen](/assets/WebPay.png)
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1}
 

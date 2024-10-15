@@ -78,7 +78,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 In the `MetadataOut.PaymentBarcodeUrl` parameter, the response returns the coupon in _PDF_ format that the client must present in the agency to pay the generated debt.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example 
 ```json
@@ -246,7 +246,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 ```json
@@ -458,7 +458,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 We return the `Purchase` with the status _Pending for Redirection_ and a `CommerceAction` object with `ActionReason` as `REDIRECTION_NEEDED_EXTERNAL_SERVICE` and the `ActionURL` parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the [Payment Experience](#payment-experience) section to see the payment flow.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 

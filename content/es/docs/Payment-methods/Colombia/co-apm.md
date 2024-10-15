@@ -82,7 +82,7 @@ Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un obje
 
 ![PrintScreen](/assets/PSE.png)
 
-Según el resultado de la transacción, el pagador será dirigido a la URL definida en el objeto `Redirection`. Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Según el resultado de la transacción, el pagador será dirigido a la URL definida en el objeto `Redirection`. Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example}
 ```json
@@ -314,7 +314,7 @@ En el Response, se encuentran los siguientes parámetros:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Número de convenio entre el adquirente y la red física. |
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1} 
 ```json
@@ -739,7 +739,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Parámetros del Response {#response-parameters-3}
 _Nequi_ genera la orden de pago y envía una notificación push al pagador; luego, el pagador necesita ingresar a la aplicación de Nequi para aceptar o rechazar el pago.
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-2}
 
