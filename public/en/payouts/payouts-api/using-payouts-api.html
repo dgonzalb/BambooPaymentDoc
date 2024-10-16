@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payouts/payouts-api/using-payouts-api.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2024-08-22T18:08:04-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-10-14T15:14:12-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Payout Request">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2024-08-22T18:08:04-03:00" />
-<meta itemprop="wordCount" content="2119">
+<meta itemprop="dateModified" content="2024-10-14T15:14:12-03:00" />
+<meta itemprop="wordCount" content="2108">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payout Request"/>
 <meta name="twitter:description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
-<link href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.scss" as="style">
+<link href="../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1f1bbcc1a52798b37ab1a2789eb288833eec370e7572075a98d1ba5cd2f4e8aee561fecd21316028036a887113b4b7dd59b014b52825e802d8fa94df265dfbbf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b305341d91f36e174170f4a713078b749924b347964c3c7201f2d6773b991922468fce1ba8b75843e6bbec334b4e3d400ee6b7d4a0f5c72cb7c23f586348444b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -235,6 +235,12 @@
       
       
         <a id="/en/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewtest-our-serviceshtml" href="../../../en/payouts/overview/test-our-services.html">Test our services</a>
       
       
     </li>
@@ -652,21 +658,15 @@
 <td><code>payee</code> → <code>bankaccount</code> → <code>codebank</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">Yes<sup>2</sup></td>
-<td>Bank code of the Payee.<br>You can get the list of banks for a given country using the <a href="#get-bank-list"><em><strong>Get Bank list</strong></em> method</a>. Alternatively, <a href="../payouts-api/variables.html#bank-codes">find the bank list here</a>.</td>
-<td></td>
-</tr>
-<tr>
-<td><code>payee</code> → <code>bankaccount</code> → <code>branch</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No</td>
-<td>Branch code of the Payee&rsquo;s bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type.</td>
+<td>Bank code of the Payee.<br>You can get the list of banks for a given country using the <a href="getting-started.html#get-bank-list"><em><strong>Get Bank list</strong></em> method</a>. Alternatively, <a href="variables.html#bank-codes">find the bank list here</a>.</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p><sup>1</sup> <em>Applies only to Brazil using Instant Bank Transfer. Otherwise, the object</em> <code>payee.InstantPaymentData</code> <em>and its parameters must not be present in the request.</em><br>
 <sup>2</sup> <em>When using Bank transfer, these parameters are mandatory for</em> <em><strong>ALL</strong></em> <em>countries. For Instant Bank Transfer in Brazil, the object</em> <code>payee.bankaccount</code> <em>and its parameters must not be present in the request.</em><br>
-<sup>3</sup> <em>The fields <code>firstName</code> and <code>lastName</code> for an individual and <code>companyName</code> for a company are mandatory. If a payout is sent to a company, only the <code>companyName</code> field has to be completed, and if a payout is sent to an individual, only the <code>firstName</code> and <code>lastName</code> fields have to be completed.</em></p>
+<sup>3</sup> <em>The fields <code>firstName</code> and <code>lastName</code> for an individual and <code>companyName</code> for a company are mandatory. If a payout is sent to a company, only the <code>companyName</code> field has to be completed, and if a payout is sent to an individual, only the <code>firstName</code> and <code>lastName</code> fields have to be completed.<br>
+<em><strong>Important:</strong></em> The <code>firstName</code> and <code>lastName</code> fields do not support numbers or special characters, only letters. The <code>companyName</code> field does accept all types of alphanumeric characters.</em></p>
 <h3 id="request-example">Request example</h3>
 <p>Refer to the corresponding tab according to the payee&rsquo;s country.</p>
 <nav>
@@ -776,60 +776,60 @@
 	<br>
 <p><strong>Argentina: USD to ARS</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Sara&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jáquez&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;sarasouez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Francisco  51 Gral. Ximena, AR-H 0376&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CUIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Sara&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jáquez&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;sarasouez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Francisco  51 Gral. Ximena, AR-H 0376&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CUIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000053600000000000566&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000053600000000000566&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Argentina: ARS to ARS</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Sara&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jáquez&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;sarasouez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Francisco  51 Gral. Ximena, AR-H 0376&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CUIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;ARS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Sara&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jáquez&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;sarasouez@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Francisco  51 Gral. Ximena, AR-H 0376&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CUIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000053600000000000566&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000053600000000000566&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -848,59 +848,58 @@
 <p>As mentioned before, the object <code>payee.bankaccount</code> must not be present in the request. Therefore, when using <em>Instant Bank Transfer</em> you need to send the request as follows:</p>
 <p><strong>Brazil: USD to BRL</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;InstantPaymentData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span> <span style="color:#8f5902;font-style:italic">// Can also be PixDocument, PixPhone, or PixRandom
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Tiago&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Costa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;92799322&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;55489-272, Travessa Eduardo, 90 Esteves do Norte - CE&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;54562271779&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;InstantPaymentData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span> <span style="color:#8f5902;font-style:italic">// Can also be PixDocument, PixPhone, or PixRandom
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Tiago&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Costa&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;92799322&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;55489-272, Travessa Eduardo, 90 Esteves do Norte - CE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;54562271779&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Brazil: BRL to BRL</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;InstantPaymentData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span> <span style="color:#8f5902;font-style:italic">// Can also be PixDocument, PixPhone, or PixRandom
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Tiago&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Costa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;92799322&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;55489-272, Travessa Eduardo, 90 Esteves do Norte - CE&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;54562271779&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;InstantPaymentData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;PixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span> <span style="color:#8f5902;font-style:italic">// Can also be PixDocument, PixPhone, or PixRandom
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Tiago&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Costa&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;tcosta@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;92799322&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;55489-272, Travessa Eduardo, 90 Esteves do Norte - CE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;54562271779&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
-
 
 
 
@@ -916,60 +915,60 @@
 	<br>
 <p><strong>Chile: USD to CLP</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mercedes&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Garrido&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;merceddo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Camino Franco, 13, Atico 4, 93631, L Garay&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;26068762K&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mercedes&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Garrido&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;merceddo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Camino Franco, 13, Atico 4, 93631, L Garay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;26068762K&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567890123450&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567890123450&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Chile: CLP to CLP</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mercedes&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Garrido&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;merceddo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Camino Franco, 13, Atico 4, 93631, L Garay&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;26068762K&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mercedes&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Garrido&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;merceddo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Camino Franco, 13, Atico 4, 93631, L Garay&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;26068762K&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567890123450&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567890123450&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -987,32 +986,32 @@
 	<br>
 <p><strong>Colombia: USD to COP</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Diego&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;dsilva@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 23 # 123-45 Apto 601&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11111111&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Diego&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;dsilva@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 23 # 123-45 Apto 601&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11111111&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2288&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1007&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2288&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1007&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Colombia: COP to COP</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1039,8 +1038,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -1058,60 +1057,60 @@
 	<br>
 <p><strong>Mexico: USD to MXN</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rubén&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Torres&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rubentres@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01 55 5601 7965&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Coyoacan 2000&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CURP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OEAF771012HMCRGR09&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rubén&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Torres&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rubentres@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01 55 5601 7965&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Coyoacan 2000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CURP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OEAF771012HMCRGR09&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789012345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789012345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Mexico: MXN to MXN</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rubén&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Torres&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rubentres@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01 55 5601 7965&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Coyoacan 2000&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CURP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OEAF771012HMCRGR09&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;MXN&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rubén&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Torres&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;rubentres@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01 55 5601 7965&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Coyoacan 2000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CURP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OEAF771012HMCRGR09&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789012345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789012345678&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -1153,8 +1152,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Peru: PEN to PEN</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1182,35 +1181,36 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span>  </span></span></code></pre></div>
+<br>
 <p><strong>Peru: USD to USD</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Ornela&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Olivera&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ornelera@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cl. Jesús Bueno # 64 Dpto. 229&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DNI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Ornela&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Olivera&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ornelera@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;099999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cl. Jesús Bueno # 64 Dpto. 229&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DNI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11487349&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11487349&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -1248,13 +1248,12 @@
 </span></span><span style="display:flex;"><span>     <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;branch&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Uruguay: UYU to UYU</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1277,42 +1276,40 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;branch&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
 <p><strong>Uruguay: USD to USD</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Daniel&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Lorenzo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;danielzo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;999999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12900 Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;38067788&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;branch&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;destinationCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;string&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;payee&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;firstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Daniel&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;lastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Lorenzo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;danielzo@mail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;999999999&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12900 Montevideo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;38067788&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;bankAccount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1234567&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#204a87;font-weight:bold">&#34;codeBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;113&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;notification_Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://webhook.site/ebc46ace-94a1-4265-9d7f-d457d437a1b4&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 </div>
 
@@ -1336,16 +1333,16 @@ Example <code>&quot;companyName&quot;:&quot;Google LLC&quot;</code></p>
 <li><code>Ok</code>: HttpCode <code>200</code>.<br>
 Message received correctly, at this point the Payout starts to be processed.</li>
 </ul>
-<p><strong>Response body</strong></p>
+<p><strong>Response body</strong>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">145</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Received&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;reference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayOut34&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
-Where:
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
+Where:</p>
 <table>
 <thead>
 <tr>
@@ -1380,7 +1377,7 @@ Where:
 <li><code>BadRequest</code>: HttpCode <code>HttpCode 400</code>.<br>
 The validation of the message failed, and the Payout <strong>is not created</strong>.</li>
 </ul>
-<p><strong>Response body</strong></p>
+<p><strong>Response body</strong>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
@@ -1390,8 +1387,8 @@ The validation of the message failed, and the Payout <strong>is not created</str
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;statusCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">400</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><br>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br></p>
 <ul>
 <li>
 <p><code>Unauthorized</code>: HttpCode <code>401</code>.<br>
@@ -1402,7 +1399,7 @@ Authorization error.</p>
 The validation of the message was successful, but the Payout is <strong>Declined</strong> due to business rules.</p>
 </li>
 </ul>
-<p><strong>Response body</strong></p>
+<p><strong>Response body</strong>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">493945</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span>
@@ -1412,8 +1409,8 @@ The validation of the message was successful, but the Payout is <strong>Declined
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">812</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;message&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Declined by validation for document&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="obtaining-a-payout">Obtaining a Payout</h2>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div></p>
+<h2 id="obtaining-a-payout">Obtaining a Payout</h2>
 <p>This method allows you to retrieve the information of a Payout. You can retrieve the Payouts using the generated identifier (ID) or the reference you provided when requesting the Payout.</p>
 <h4 id="request-url-1">Request URL</h4>
 <p>You must invoke a <strong>GET</strong> request to the following URLs according to your needs.</p>
@@ -1534,8 +1531,8 @@ The validation of the message was successful, but the Payout is <strong>Declined
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
@@ -1553,7 +1550,7 @@ The validation of the message was successful, but the Payout is <strong>Declined
 <div class="left-element">
     <b>Last modified</b>
     
-    August 22, 2024
+    October 14, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

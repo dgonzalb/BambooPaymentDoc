@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Integration Guide | Bamboo Payment</title><meta property="og:title" content="Integration Guide" />
+<meta property="og:description" content="Learn how to integrate Bamboo&#39;s payment solutions into your VTEX e-commerce store. This guide provides step-by-step instructions for seamless setup and configuration.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/plugins/vtex/vtex_setup.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
+<meta property="article:modified_time" content="2024-09-16T10:29:33-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Integration Guide">
+<meta itemprop="description" content="Learn how to integrate Bamboo&#39;s payment solutions into your VTEX e-commerce store. This guide provides step-by-step instructions for seamless setup and configuration.
+"><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
+<meta itemprop="dateModified" content="2024-09-16T10:29:33-03:00" />
+<meta itemprop="wordCount" content="578">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Integration Guide"/>
+<meta name="twitter:description" content="Learn how to integrate Bamboo&#39;s payment solutions into your VTEX e-commerce store. This guide provides step-by-step instructions for seamless setup and configuration.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../en/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../en/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/plugins/vtex/vtex_setup.html">Español</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.b305341d91f36e174170f4a713078b749924b347964c3c7201f2d6773b991922468fce1ba8b75843e6bbec334b4e3d400ee6b7d4a0f5c72cb7c23f586348444b.json"
+  data-offline-search-base-href="../../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/plugins/vtex/vtex_setup.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedconceptshtml" href="../../../../en/docs/getting-started/concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddata-typeshtml" href="../../../../en/docs/getting-started/data-types.html">Data Types</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedpayment-methodshtml" href="../../../../en/docs/getting-started/payment-methods.html">Payment methods</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-our-serviceshtml" href="../../../../en/docs/getting-started/test-our-services.html">Test our services</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startederror-codeshtml" href="../../../../en/docs/getting-started/error-codes.html">Error Codes</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/change-log.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedchange-loghtml" href="../../../../en/docs/getting-started/change-log.html">Change Log</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/purchase-workflow.html" href="../../../../en/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/customer-types.html" href="../../../../en/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Tokenization</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../../en/docs/purchase-workflow/customer-types/anonymous-users.html">One-Time Token</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesregistered-usershtml" href="../../../../en/docs/purchase-workflow/customer-types/registered-users.html">Recurring Use Token</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../../en/docs/purchase-workflow/customer-types/direct-tokenization.html">Direct Tokenization for PCI Merchants</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase_v3html" href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/get-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget-purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_operationshtml" href="../../../../en/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchases3d_securehtml" href="../../../../en/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../en/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefundshtml" href="../../../../en/docs/purchase-workflow/refunds.html">Refunds</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowantifraudhtml" href="../../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflownotification-webhookshtml" href="../../../../en/docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/forms.html" href="../../../../en/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Tokenization Form</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsformshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/merchant-balances.html" href="../../../../en/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Account Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsmerchant-balanceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/merchant-balances/request-withdrawal.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsmerchant-balancesrequest-withdrawalhtml" href="../../../../en/docs/merchant-balances/request-withdrawal.html">Request a Withdrawal</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/reporting.html" href="../../../../en/docs/reporting.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Reports</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsreportinghtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/reporting/transactions-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsreportingtransactions-reporthtml" href="../../../../en/docs/reporting/transactions-report.html">Transaction Report API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/reporting/statement-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsreportingstatement-reporthtml" href="../../../../en/docs/reporting/statement-report.html">Statement Report API</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/payment-methods.html" href="../../../../en/docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Countries and payment methods</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/argentina.html" href="../../../../en/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-cardshtml" href="../../../../en/docs/payment-methods/argentina/ar-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-apmhtml" href="../../../../en/docs/payment-methods/argentina/ar-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/brazil.html" href="../../../../en/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brazil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-cardshtml" href="../../../../en/docs/payment-methods/brazil/br-cards.html">Credit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/central-america.html" href="../../../../en/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Central America</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscentral-americacam-apmhtml" href="../../../../en/docs/payment-methods/central-america/cam-apm.html">Cash</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/chile.html" href="../../../../en/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-cardshtml" href="../../../../en/docs/payment-methods/chile/cl-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodschilecl-apmhtml" href="../../../../en/docs/payment-methods/chile/cl-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/colombia.html" href="../../../../en/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-cardshtml" href="../../../../en/docs/payment-methods/colombia/co-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apmhtml" href="../../../../en/docs/payment-methods/colombia/co-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/ecuador.html" href="../../../../en/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsecuadorec-apmhtml" href="../../../../en/docs/payment-methods/ecuador/ec-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/mexico.html" href="../../../../en/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Mexico</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-cardshtml" href="../../../../en/docs/payment-methods/mexico/mx-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/paraguay.html" href="../../../../en/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-cardshtml" href="../../../../en/docs/payment-methods/paraguay/py-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsparaguaypy-apmhtml" href="../../../../en/docs/payment-methods/paraguay/py-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/peru.html" href="../../../../en/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Peru</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsperupe-cardshtml" href="../../../../en/docs/payment-methods/peru/pe-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsperupe-apmhtml" href="../../../../en/docs/payment-methods/peru/pe-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/payment-methods/uruguay.html" href="../../../../en/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-cardshtml" href="../../../../en/docs/payment-methods/uruguay/uy-cards.html">Credit and Debit cards</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../../en/docs/payment-methods/uruguay/uy-loyaltyplans.html">Loyalty plans</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsuruguayuy-apmhtml" href="../../../../en/docs/payment-methods/uruguay/uy-apm.html">Alternative Payment Methods</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/plugins.html" href="../../../../en/docs/plugins.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Plug-ins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspluginshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/plugins/vtex.html" href="../../../../en/docs/plugins/vtex.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">VTEX Connector</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocspluginsvtexhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/plugins/vtex/vtex_setup.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspluginsvtexvtex_setuphtml" href="../../../../en/docs/plugins/vtex/vtex_setup.html">Integration Guide</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/plugins/vtex/vtex_payment_flow.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_payment_flowhtml" href="../../../../en/docs/plugins/vtex/vtex_payment_flow.html">Payment Flow</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/plugins/vtex/vtex_admin.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_adminhtml" href="../../../../en/docs/plugins/vtex/vtex_admin.html">Store Management</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/versions.html" href="../../../../en/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsversionshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsversionspurchase-api-v2purchase-operationshtml" href="../../../../en/docs/versions/purchase-api-v2/purchase-operations.html">Purchase (Legacy)</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/purchase-api-v2/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2redirect-purchasehtml" href="../../../../en/docs/versions/purchase-api-v2/redirect-purchase.html">Redirect purchases</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2direct-purchasehtml" href="../../../../en/docs/versions/purchase-api-v2/direct-purchase.html">Direct Purchase for PCI Merchants</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../en/docs/versions/purchase-api-v2/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/versions/forms.html" href="../../../../en/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Capture Form (Legacy)</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsversionsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsformscheckout-formhtml" href="../../../../en/docs/versions/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsformsembedded-checkout-formhtml" href="../../../../en/docs/versions/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-setup">General Setup</a></li>
+    <li><a href="#bamboo-plugin-configuration">Bamboo Plugin Configuration</a>
+      <ul>
+        <li><a href="#authentication-setup">Authentication Setup</a></li>
+        <li><a href="#payment-control">Payment Control</a></li>
+        <li><a href="#provider-fields">Provider Fields</a></li>
+      </ul>
+    </li>
+    <li><a href="#payment-methods-configuration">Payment Methods Configuration</a>
+      <ul>
+        <li><a href="#installments-for-credit-cards">Installments for Credit Cards</a></li>
+        <li><a href="#single-payment-one-time-payment-for-credit-and-debit-cards">Single Payment (One-time Payment) for Credit and Debit Cards</a></li>
+      </ul>
+    </li>
+    <li><a href="#antifraud-script">Antifraud Script</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs.html">Payins Integration</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/plugins.html">Plug-ins</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/plugins/vtex.html">VTEX Connector</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../en/docs/plugins/vtex/vtex_setup.html">Integration Guide</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Integration Guide</h1>
+    <div class="lead">Learn how to integrate Bamboo&rsquo;s payment solutions into your VTEX e-commerce store. This guide provides step-by-step instructions for seamless setup and configuration.</div>
+	       
+	<p>You&rsquo;ll find detailed instructions for setting up authentication, configuring payment settings, and establishing conditions for both installment and single payment options.</p>
+<hr>
+<h2 id="general-setup">General Setup</h2>
+<p>To configure Bamboo as a payment provider in your VTEX store, follow these steps:</p>
+<ol>
+<li>Log in to your VTEX admin panel using your credentials.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-000.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Navigate to &lsquo;Store Configuration&rsquo; &gt; &lsquo;Providers&rsquo; &gt; &lsquo;New Provider&rsquo;.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-001.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Search for <strong>Bamboo-Payments</strong> in the list of providers and select it.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-002.png" alt="PrintScreen"></p>
+<h2 id="bamboo-plugin-configuration">Bamboo Plugin Configuration</h2>
+<h3 id="authentication-setup">Authentication Setup</h3>
+<p>Enter your store credentials in the designated fields. For information on generating your store keys, refer to the <a href="https://help.vtex.com/en/tutorial/claves-de-aplicacion--2iffYzlvvz4BDMr6WGUtet#generar-claves-de-aplicacion-internas" target="_blank">VTEX Keys documentation</a></p>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-003.png" alt="PrintScreen"></p>
+<h3 id="payment-control">Payment Control</h3>
+<ol>
+<li>Choose whether to operate in test mode.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-004.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Select your preferred type of settlement.</li>
+</ol>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">Test mode allows you to simulate Bamboo transactions in your store before offering it to customers. Deselect this option when you&rsquo;re ready to process real transactions.</p>
+</div>
+
+<h3 id="provider-fields">Provider Fields</h3>
+<p>Configure the following settings:</p>
+<ol>
+<li><strong>Private Key</strong>: Enter your Bamboo PrivateKey.</li>
+<li><strong>Enable Authorization and Capture</strong>: If enabled, you&rsquo;ll need to manually capture payments made with Bamboo from your store.</li>
+<li><strong>Operating Country</strong>: Select the country where your store operates.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-005.png" alt="PrintScreen"></p>
+<p>After completing these fields, click the <strong>&lsquo;Save&rsquo;</strong> button.</p>
+<h2 id="payment-methods-configuration">Payment Methods Configuration</h2>
+<p>To set up payment methods:</p>
+<ol>
+<li>Go to the &lsquo;Payment Conditions&rsquo; tab.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-006.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Click the &lsquo;+&rsquo; icon to add a new condition.</li>
+<li>Configure the payment method you want to offer to your customers.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-007.png" alt="PrintScreen"></p>
+<h3 id="installments-for-credit-cards">Installments for Credit Cards</h3>
+<p>To set up installments for Credit Cards:</p>
+<ol>
+<li>Select the desired card brand from the list.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-008.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Activate the condition.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-009.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Select Bamboo-Payments as the provider.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-010.png" alt="PrintScreen"></p>
+<ol start="4">
+<li>Enter a name to identify the payment condition.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-011.png" alt="PrintScreen"></p>
+<ol start="5">
+<li>Choose the &lsquo;Installments&rsquo; option and enter the requested data.</li>
+<li>Configure interest rates and/or external interests as needed.</li>
+<li>Save the changes.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-013.png" alt="PrintScreen"></p>
+<h3 id="single-payment-one-time-payment-for-credit-and-debit-cards">Single Payment (One-time Payment) for Credit and Debit Cards</h3>
+<p>To set up single payments (payments in one installment):</p>
+<ol>
+<li>Follow the same process as &lsquo;Installment Payments&rsquo;.</li>
+<li>Instead of selecting &lsquo;Installments&rsquo;, choose the &lsquo;Single Payment&rsquo; option.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-015.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Configure the necessary details for one-time payments.</li>
+<li>Save the changes.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-016.png" alt="PrintScreen"></p>
+<p>By following these steps, you&rsquo;ll successfully offer Bamboo as a payment method to your customers in your VTEX store, including both installment plans and single payment options.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Info</h4>
+<p class="alert-text">Changes to payment conditions may take up to <strong>10 minutes</strong> to apply at your VTEX store&rsquo;s checkout.</p>
+</div>
+
+<h2 id="antifraud-script">Antifraud Script</h2>
+<p>For the correct functioning of transactions made through Bamboo, an anti-fraud analysis script must be injected into the store. To configure it, follow the steps below:</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important note</h4>
+<p class="alert-text">This configuration only applies to <strong>PayFac merchants.</strong> It is not valid for the Gateway modality. If you have any doubts, please consult with support or your account manager.</p>
+</div>
+
+<ol>
+<li>Inside the VTEX administrative panel, go to &lsquo;Store Settings&rsquo;.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-antifraud-001.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Navigate to &lsquo;Storefront &gt; Checkout&rsquo;.</li>
+<li>Click on the configuration icon for the &lsquo;Default&rsquo; option.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-antifraud-002.png" alt="PrintScreen"></p>
+<ol start="4">
+<li>Enter &lsquo;Code &gt; checkout-custom.js&rsquo;.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/bamboo-vtex-antifraud-003.png" alt="PrintScreen"></p>
+<ol start="5">
+<li>Insert the following code block into the file and save:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">API_Environment</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;https://api.bamboopayment.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">PublicAccountKey</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;CT4XUYw10xDemA4UqCgU0m_I56ONV7HQ&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">getIp</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">fetch</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;https://api.ipify.org/?format=json&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">loadScript</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">t</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">vtex</span> <span style="color:#ce5c00;font-weight:bold">||</span> <span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">vtex</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">deviceFingerprint</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">debug</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">vtex</span> <span style="color:#ce5c00;font-weight:bold">?</span> <span style="color:#4e9a06">`already deviceFingerprint: </span><span style="color:#4e9a06">${</span><span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">vtex</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">deviceFingerprint</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">`</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;there is no VTEX&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">n</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">document</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createElement</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;script&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">n</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">src</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">n</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">onload</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">t</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87">document</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">head</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">appendChild</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">generateFingerPrint</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setSessionID</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">debug</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SetSessionID not found&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">await</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#204a87">Promise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000">setTimeout</span><span style="color:#000;font-weight:bold">(()</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#0000cf;font-weight:bold">1e3</span><span style="color:#000;font-weight:bold">));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">debug</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Retrying...&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">generateFingerPrint</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">e</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getSessionAntifraud</span><span style="color:#000;font-weight:bold">(),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">t</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">await</span> <span style="color:#000">getIp</span><span style="color:#000;font-weight:bold">().</span><span style="color:#000">then</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">json</span><span style="color:#000;font-weight:bold">()).</span><span style="color:#000">then</span><span style="color:#000;font-weight:bold">(({</span><span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">})</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">n</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">JSON</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">stringify</span><span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">sessionId</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">});</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">vtex</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">deviceFingerprint</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">n</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">window</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;DOMContentLoaded&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">info</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;==== RUNNING FINGER PRINT ====&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">loadScript</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">`</span><span style="color:#4e9a06">${</span><span style="color:#000">API_Environment</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">/v1/Scripts/Antifraud.js?key=</span><span style="color:#4e9a06">${</span><span style="color:#000">PublicAccountKey</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">`</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">generateFingerPrint</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div><p>This script will ensure that the anti-fraud analysis is performed correctly for transactions processed through Bamboo.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Last modified</b>
+    
+    September 16, 2024
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

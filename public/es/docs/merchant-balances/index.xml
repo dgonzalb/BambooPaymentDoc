@@ -14,5 +14,75 @@
       
     
     
+    <item>
+      <title>Docs: Solicitar un Retiro</title>
+      <link>/es/docs/merchant-balances/request-withdrawal.html</link>
+      <pubDate>Fri, 04 Oct 2024 08:40:29 -0300</pubDate>
+      
+      <guid>/es/docs/merchant-balances/request-withdrawal.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;url-del-request&#34;&gt;URL del Request&lt;/h2&gt;
+&lt;p&gt;Para solicitar un retiro de la cuenta Bamboo, debe realizar una solicitud &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URLs según el ambiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/merchant/withdrawal&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/merchant/withdrawal&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;authorization&#34;&gt;Authorization&lt;/h2&gt;
+&lt;p&gt;En el encabezado de la solicitud, el parámetro &lt;code&gt;Authorization&lt;/code&gt; debe configurarse concatenando la palabra &lt;code&gt;Basic&lt;/code&gt;, un espacio y la &lt;strong&gt;Private Key&lt;/strong&gt; del merchant.&lt;/p&gt;
+&lt;h2 id=&#34;parámetros-de-solicitud&#34;&gt;Parámetros de solicitud&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Obligatorio&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ReferenceId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Sí&lt;/td&gt;
+&lt;td&gt;Un identificador único para esta solicitud de retiro&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CurrencyIsoCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Sí&lt;/td&gt;
+&lt;td&gt;El código ISO de la moneda para el retiro (por ejemplo, &amp;ldquo;USD&amp;rdquo;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Requester&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Identificador de la persona o sistema que solicita el retiro&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TextNotes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Notas o comentarios adicionales sobre el retiro&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;ejemplo-de-solicitud&#34;&gt;Ejemplo de solicitud&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ReferenceId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;withdrawal-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CurrencyIsoCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;USD&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Requester&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;merchant-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TextNotes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Retiro para gastos operativos&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;respuesta&#34;&gt;Respuesta&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Ok&lt;/code&gt;: Código HTTP &lt;code&gt;200&lt;/code&gt;.&lt;br&gt;
+Mensaje recibido correctamente, en este punto la solicitud de retiro comienza a ser procesada.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BadRequest&lt;/code&gt;: Código HTTP &lt;code&gt;400&lt;/code&gt;.&lt;br&gt;
+La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>

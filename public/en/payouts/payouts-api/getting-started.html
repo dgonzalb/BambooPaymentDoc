@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payouts/payouts-api/getting-started.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2024-08-28T14:43:32-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-09-17T17:25:26-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Getting Started">
 <meta itemprop="description" content="The Payouts API allows you to request multiple payments using the balance available in your account.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2024-08-28T14:43:32-03:00" />
+<meta itemprop="dateModified" content="2024-09-17T17:25:26-03:00" />
 <meta itemprop="wordCount" content="379">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting Started"/>
@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
-<link href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.scss" as="style">
+<link href="../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1f1bbcc1a52798b37ab1a2789eb288833eec370e7572075a98d1ba5cd2f4e8aee561fecd21316028036a887113b4b7dd59b014b52825e802d8fa94df265dfbbf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b305341d91f36e174170f4a713078b749924b347964c3c7201f2d6773b991922468fce1ba8b75843e6bbec334b4e3d400ee6b7d4a0f5c72cb7c23f586348444b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -235,6 +235,12 @@
       
       
         <a id="/en/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewtest-our-serviceshtml" href="../../../en/payouts/overview/test-our-services.html">Test our services</a>
       
       
     </li>
@@ -575,23 +581,23 @@ In the response of the operation, <code>&quot;payoutType&quot;: 3</code> or <cod
 
 <h4 id="response-example">Response example</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">680</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1507&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NEQUI&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">609</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1058&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BANCO PROCREDIT COLOMBIA&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">]</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">680</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1507&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NEQUI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">609</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;countryIsoCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1058&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BANCO PROCREDIT COLOMBIA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;payoutType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">]</span></span></span></code></pre></div>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -601,7 +607,7 @@ In the response of the operation, <code>&quot;payoutType&quot;: 3</code> or <cod
 <div class="left-element">
     <b>Last modified</b>
     
-    August 28, 2024
+    September 17, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

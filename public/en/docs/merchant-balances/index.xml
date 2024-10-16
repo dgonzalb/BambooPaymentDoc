@@ -14,5 +14,75 @@
       
     
     
+    <item>
+      <title>Docs: Request a Withdrawal</title>
+      <link>/en/docs/merchant-balances/request-withdrawal.html</link>
+      <pubDate>Fri, 04 Oct 2024 08:40:29 -0300</pubDate>
+      
+      <guid>/en/docs/merchant-balances/request-withdrawal.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;request-url&#34;&gt;Request URL&lt;/h2&gt;
+&lt;p&gt;You must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/merchant/withdrawal&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/merchant/withdrawal&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;authorization&#34;&gt;Authorization&lt;/h2&gt;
+&lt;p&gt;In the header, the &lt;code&gt;Authorization&lt;/code&gt; parameter must be configured by concatenating the word &lt;code&gt;Basic&lt;/code&gt;, a space and the &lt;em&gt;&lt;strong&gt;Private Key&lt;/strong&gt;&lt;/em&gt; of the merchant.&lt;/p&gt;
+&lt;h2 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ReferenceId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;A unique identifier for this withdrawal request&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CurrencyIsoCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;The ISO code of the currency for the withdrawal (e.g., &amp;ldquo;USD&amp;rdquo;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Requester&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Identifier of the person or system requesting the withdrawal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TextNotes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Additional notes or comments about the withdrawal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;request-example&#34;&gt;Request example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ReferenceId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;withdrawal-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CurrencyIsoCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;USD&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Requester&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;merchant-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TextNotes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Monthly operational expenses withdrawal&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response&#34;&gt;Response&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Ok&lt;/code&gt;: HttpCode &lt;code&gt;200&lt;/code&gt;.&lt;br&gt;
+Message received correctly, at this point the Withdrawal request starts to be processed.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BadRequest&lt;/code&gt;: HttpCode HttpCode &lt;code&gt;400&lt;/code&gt;.&lt;br&gt;
+The validation of the message failed, and the Withdrawal request is not created.&lt;/p&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>

@@ -227,7 +227,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h2&gt;
-&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
+&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
 &lt;h3 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1517,7 +1517,7 @@ Ejemplo:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h3&gt;
 &lt;p&gt;En el parámetro &lt;code&gt;MetadataOut.PaymentBarcodeUrl&lt;/code&gt; de la respuesta, se retorna el cupon en formato &lt;em&gt;PDF&lt;/em&gt; que el cliente debe presentar en la agencia para pagar la deuda generada.&lt;/p&gt;
-&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
+&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
 &lt;h4 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1682,7 +1682,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Parámetros del Response {#response-parameters-1}
 Como necesita redirigir a su cliente a una página externa para completar el pago, puede encontrar la URL de redirección en el parámetro `MetadataOut.ActionURL`.
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros](/es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros](/es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1}
 ```json
@@ -1970,7 +1970,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-2&#34;&gt;Parámetros del Response&lt;/h3&gt;
 &lt;p&gt;Retornamos la compra (&lt;code&gt;Purchase&lt;/code&gt;) con estado &lt;em&gt;Pending for Redirection&lt;/em&gt; y un objeto &lt;code&gt;CommerceAction&lt;/code&gt; con &lt;code&gt;ActionReason&lt;/code&gt; como &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; y el parámetro &lt;code&gt;ActionURL&lt;/code&gt; con la URL del cupón. En esta URL, el pagador debe iniciar sesión en su aplicación de home banking y completar el pago. Consulte la sección &lt;a href=&#34;#payment-experience&#34;&gt;Experiencia de pago&lt;/a&gt; para ver el flujo de pago.&lt;/p&gt;
-&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
+&lt;p&gt;Para más información sobre los parámetros del Response, consulte la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;sección de parámetros&lt;/a&gt; de la creación de la compra.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-2&#34;&gt;Ejemplo del Response&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
