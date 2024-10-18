@@ -10,7 +10,7 @@ tags: ["subtopic"]
 
 Los clientes pueden seleccionar Tarjetas de Crédito y Débito durante el proceso de compra con Bamboo integrado con tu tienda VTEX. Este es el paso a paso del flujo de pago desde la perspectiva del cliente.
 
-## Experiencia de Pago del Cliente
+## Experiencia de Pago del Cliente {#payment-flow}
 
 1. Agregar productos al carrito
 2. Ingresar información de envío y facturación

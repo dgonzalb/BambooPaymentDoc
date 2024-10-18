@@ -12,7 +12,7 @@
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
    <a class="navbar-brand" href="#">
-   <span class="navbar-logo"><img src="/public/assets/BambooPayment.svg" style="height: 36px;"></span>
+   <span class="navbar-logo"><img src="/public/assets/BambooPayment.png" style="height: 36px;"></span>
    </a>
    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
       <ul class="navbar-nav mt-2 mt-lg-0">

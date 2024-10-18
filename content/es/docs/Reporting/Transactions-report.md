@@ -7,16 +7,16 @@ Description: >
 weight: 10
 ---
 
-## URL para el Request
+## URL para el Request {#request-url}
 Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud **GET** a las siguientes URLs según el ambiente:
 
 * **Producción**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/payin-transactions`
-
-## Authorization
+ 
+## Authorization {#authorization}
 En el encabezado de la solicitud, el parámetro `Authorization` debe configurarse concatenando la palabra `Basic`, un espacio y la **Private Key** del merchant.
 
-## Parámetros de la solicitud (Request)
+## Parámetros de la solicitud (Request) {#request-parameters}
 | Propiedad | Tipo | Obligatorio | Descripción |
 |-----------|------|-------------|-------------|
 | `from` | `String` | Sí | Fecha de inicio para la consulta de transacciones (formato: YYYY-MM-DD) |
@@ -29,12 +29,12 @@ Los parámetros van en el request añadidos en la URL del endpoint, seguido de u
 {{% /alert %}}
 
 
-### Formato y ejemplo de la solicitud (Request)
+### Formato y ejemplo de la solicitud (Request) {#format-and-example-of-the-request-request}
 * **Formato**: `{endpoint}?From=YYYY-MM-DD&To=YYYY-MM-DD&Page=#&PageSize=#`
 
 * **Ejemplo**: `https://api.bamboopayment.com/v2/api/Reporting/payin-transactions?From=2024-01-01&To=2024-01-31&Page=1&PageSize=10`
 
-## Parámetros de la Respuesta (Response)
+## Parámetros de la Respuesta (Response) {#response-parameters}
 
 {{% alert title="Note" color="info"%}}
 Al consultar datos recientes, tenga en cuenta que la información más actualizada disponible podría ser del día anterior (D-1). Esto implica que los datos más recientes disponibles a través de la API podrían ser del día anterior a la fecha actual. Tenga esto en cuenta al consultar transacciones recientes.
@@ -75,7 +75,7 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 | `pageSize` | `Integer` | Número de registros por página |
 | `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
 
-### Response example
+### Ejemplo del Response {#response-example}
 ```json
 {
   "Response": {

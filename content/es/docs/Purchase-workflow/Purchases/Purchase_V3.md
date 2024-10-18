@@ -1,139 +1,141 @@
 ---
-title: "Create a Purchase"
-linkTitle: "Create a Purchase"
+title: "Crear una compra"
+linkTitle: "Crear una compra"
 date: 2024-08-22T11:40:29-05:00
 Description: >
-  Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
+  Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 weight: 10
 tags: ["subtopic"]
 ---
 
-## Configuring the authentication
-All methods used in Purchase API require the following authentication headers.
+## Configuración de la autenticación {#configuring-the-authentication}
+Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:
 
-| Key | Value | Comments |
+| Llave | Valor | Comentarios |
 |---|---|---|
-| `Content-Type` | `application/json` | With this header, the request will be transmitted in _JSON_ format. |
-| `Authorization` | `Basic {{Merchant Private Key}}` | Send the `{{Merchant Private Key}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__` |
+| `Content-Type` | `application/json` | Indica que la solicitud se enviará en formato JSON. |
+| `Authorization` | `Basic {{Clave Privada del Comercio}}` | Incluya la palabra `Basic` seguida de su `{{Clave Privada del Comercio}}` (y el identificador como comercio).<br>Ejemplo: `Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__` |
 
-#### Setting the language of the response codes
-You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
+### Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
+Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado `lang`, utilizando uno de los siguientes códigos en formato **ISO 639-1**:
 
 <div id="shortTable"></div>
 
 | Code | Language |
 |:-:|---|
-| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
-| `es` | Spanish. |
-| `pt` | Portuguese. |
+| `en` | English.<br>_Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto._ |
+| `es` | Español. |
+| `pt` | Portugués. |
 
-## Create a Purchase
-After successfully [tokenizing a card]({{< ref "customer-types.md" >}}), you can proceed with generating a purchase using this method. The Purchase API is specifically designed for merchants who do not have PCI DSS certification, allowing them to process payments securely without handling sensitive card data directly.
+## Crear una compra {#create-a-purchase}
+Esta sección explica detalladamente cómo generar una Compra para comercios sin certificación PCI DSS, permitiendo procesar pagos sin manejar directamente datos sensibles de tarjetas.
 
-For alternative payment methods such as cash payments or bank transfers, you only need to provide the corresponding payment method ID to initiate the transaction.
+Una vez que haya [tokenizado una tarjeta]({{< ref "customer-types.md" >}}), es posible generar una compra usando este endpoint.
 
-### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
+Para medios de pago alternativos, como pagos en efectivo o transferencias bancarias, es necesario enviar el ID del medio de pago correspondiente para iniciar la transacción.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase`
-
-### Request parameters
-
-| Parameter | Type | Mandatory? | Description |
-|-----------|------|:----------:|-------------|
-| `TrxToken` | `string` | No<sup>1</sup> | Card token, previously generated through the tokenization flow. Used for card payment methods. |
-| `NetworkToken` | `object` | No<sup>1</sup> | Network token information used in the transaction. For more information, review the Network Tokenization Object. |
-| `PaymentMethodId` | `integer` | No<sup>1</sup> | Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.) |
-| `UniqueID` | `string` | No | Unique identifier of the purchase.<br>This optional value allows you to identify a unique purchase and avoid duplication of transactions in case of communication errors. For more information, refer to [Concepts]({{< ref "Concepts.md">}}#UniqueID). |
-| `Capture` | `boolean` | No | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the [capture and cancel]({{< ref "Card_Operations.md" >}}) calls.</li><li>If `true`, the transaction is authorized and captured.</li></ul><br>All [payment methods and countries](/en/docs/payment-methods.html) may not support the pre-authorization feature. |
-| `TargetCountryISO` | `string` | Yes | This parameter indicates the country where the payment will be processed.<br>Send the country using `ISO-3166-1` format. |
-| `Currency` | `string` | Yes | Currency of the purchase, according to ISO-4217. Find the possible values in the Currencies table of [each country](/en/docs/payment-methods.html). |
-| `Amount` | `integer` (64 bits) | Yes | Amount of the purchase. This value must be greater than zero.<br>If you must include decimals in the amount, concatenate the decimal places without the decimal point. Example `12,25` > `1225`. |
-| `Tip` | `integer` (64 bits) | No | Tip amount in the transaction. Value with two decimals, without points or commas. |
-| `TaxableAmount` | `integer` (64 bits) | No | Taxable amount of the transaction. Value with two decimals, without points or commas. |
-| `Installments` | `integer` | No | Number of installments. |
-| `Order` | `string` | Yes | Order number generated by the merchant. |
-| `InvoiceNumber` | `string` | No | Invoice number associated with the transaction. |
-| `Description` | `string` | No <sup>4</sup> | Optional description of the purchase. |
-| `AdditionalData` | `string` | No | Additional information that may be relevant to the transaction. |
-| `MetadataIn` | `object` | No | Additional transaction data in key-value format. |
-| `Customer` | `object` | Yes <sup>3</sup> | The `Customer` object provides the data of the person who performs the purchase. |
-
-
-#### Customer Object
-
-| Parameter | Type | Mandatory? | Description |
-|-----------|------|:----------:|-------------|
-| `Customer` → `FirstName` | `string` | No | Customer's first name. |
-| `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `ReferenceCode` | `string` | No | Reference code for the customer. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `DocumentNumber` | `string` | No | Customer's document number. |
-| `Customer` → `DocumentType` | `string` | No | Document type. (Format `DOCUMENT`.`COUNTRY`)  |
-| `Customer` → `Email` | `string` | No | Customer's email address. |
-| `Address` | `object` | No | Customer's shipping address. |
-
-#### Address Object
-
-| Parameter | Type | Mandatory? | Description |
-|-----------|------|:----------:|-------------|
-| `Address` → `Country` | `string` | No | Country of the customer address. |
-| `Address` → `City` | `string` | No | City of the customer address. |
-| `Address` → `State` | `string` | No | State or region of the customer address. |
-| `Address` → `PostalCode` | `string` | No | Postal code of the customer address. |
-| `Address` → `AddressDetail` | `string` | No | Additional details of the customer address. |
-
-
-{{% alert title="Notes" color="info"%}}
-* <sup>1</sup> The `PaymentMediaId` and `TrxToken` parameters are not required. Nevertheless, sending one of them is mandatory, depending on the flow you want to use.
-* <sup>2</sup> All the payment methods may not support the pre-authorization feature. Review the [Countries and payment methods](/en/docs/payment-methods.html) section to check availability.
-* <sup>3</sup> This object is not required if you create the purchase using [_CommerceToken_]({{< ref Registered-users.md >}}).
-* <sup>4</sup> When using [cards in Brazil]({{< ref br-cards.md>}}), the description is mandatory and must use a fixed format, as explained in the [request parameters]({{< ref br-cards.md>}}#request-parameters).
-* Keep in mind that for the Anti-fraud system's correct functioning, we suggest sending additional data described in the [Anti-fraud]({{< ref "Antifraud.md" >}}) section.
-* For detailed information about [3D Secure - 3DS]({{< ref "3D_Secure.md" >}}) and [Network Token]({{< ref "Network_Tokens.md" >}}) objects, please refer to their corresponding sections in this documentation. **PaymentMethodId** is mandatory when sending a Network Token.
-
-
+{{% alert title="Versiones anteriores de la API" color="info"%}}
+La documentación de la API versión V1 y V2 está disponible en la sección de [Legacy]({{< ref purchase-operations.md >}})
 {{% /alert %}}
 
-### Request example
+### URL de la solicitud {#request-url}
+Es necesario realizar una petición **POST** a las siguientes URLs según sus necesidades:
+
+* **Producción**: `https://api.bamboopayment.com/v3/api/purchase`
+* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase`
+
+### Parámetros de la solicitud {#request-parameters}
+
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|-----------|------|:------------:|-------------|
+| `TrxToken` | `string` | No<sup>1</sup> | Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas. |
+| `NetworkToken` | `object` | No<sup>1</sup> | Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red. |
+| `PaymentMethodId` | `integer` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.) |
+| `UniqueID` | `string` | No | Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
+| `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/en/docs/payment-methods.html) admitan la función de pre-autorización. |
+| `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato `ISO-3166-1`. |
+| `Currency` | `string` | Sí | Moneda de la compra, según ISO-4217. Encuentre los valores posibles en la tabla de Monedas de [cada país](/en/docs/payment-methods.html). |
+| `Amount` | `integer` (64 bits) | Sí | Monto de la compra. Es un valor mayor a cero.<br>Si debe incluir decimales en el monto, concatene los lugares decimales sin el punto decimal. Ejemplo `12,25` → `1225`. |
+| `Tip` | `integer` (64 bits) | No | Valor de la propina en la transacción. Valor con dos decimales, sin puntos ni comas. |
+| `TaxableAmount` | `integer` (64 bits) | No | Valor de los impuestos de la transacción. Valor con dos decimales, sin puntos ni comas. |
+| `Installments` | `integer` | No | Número de cuotas. |
+| `Order` | `string` | Sí | Número de orden generado por el comercio. |
+| `InvoiceNumber` | `string` | No | Número de factura asociado a la transacción. |
+| `Description` | `string` | No <sup>4</sup> | Descripción opcional de la compra. |
+| `AdditionalData` | `string` | No | Información adicional que pueda ser relevante para la transacción. |
+| `MetadataIn` | `object` | No | Datos adicionales de la transacción en formato clave-valor. |
+| `Customer` | `object` | Sí <sup>3</sup> | El objeto `Customer` proporciona los datos de la persona que realiza la compra. |
+
+#### Objeto Customer {#customer-object}
+
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|-----------|------|:------------:|-------------|
+| `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
+| `Customer` → `LastName` | `string` | No | Apellido del cliente. |
+| `Customer` → `ReferenceCode` | `string` | No | Código de referencia del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `DocumentType` | `string` | No | Tipo de documento. (Formato `DOCUMENTO`.`PAÍS`)  |
+| `Customer` → `Email` | `string` | No | Dirección de correo electrónico del cliente. |
+| `Address` | `object` | No | Dirección de envío del cliente. |
+
+#### Objeto Address {#address-object}
+
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|-----------|------|:------------:|-------------|
+| `Address` → `Country` | `string` | No | País de la dirección del cliente. |
+| `Address` → `City` | `string` | No | Ciudad de la dirección del cliente. |
+| `Address` → `State` | `string` | No | Estado o región de la dirección del cliente. |
+| `Address` → `PostalCode` | `string` | No | Código postal de la dirección del cliente. |
+| `Address` → `AddressDetail` | `string` | No | Detalles adicionales de la dirección del cliente. |
+
+{{% alert title="Notas" color="info"%}}
+* <sup>1</sup> Los parámetros `PaymentMethodId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.
+* <sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de [Países y medios de pago](/en/docs/payment-methods.html) para verificar la disponibilidad.
+* <sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
+* <sup>4</sup> Al utilizar [tarjetas en Brasil]({{< ref br-cards.md>}}), la descripción es obligatoria y debe usar un formato fijo, como se explica en los [parámetros de solicitud]({{< ref br-cards.md>}}#request-parameters).
+* Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de [Anti-fraude]({{< ref "Antifraud.md" >}}).
+* Para obtener información detallada sobre los objetos [3D Secure - 3DS]({{< ref "3D_Secure.md" >}}) y [Network Token]({{< ref "Network_Tokens.md" >}}), consulte sus secciones correspondientes en esta documentación. **PaymentMethodId** es obligatorio cuando se envía un Network Token.
+{{% /alert %}}
+
+### Ejemplo de solicitud {#request-example}
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/requestPurchase >}}
-{{< /highlight >}} 
+{{< /highlight >}}
 
-## Direct Purchase for PCI-Compliant Merchants
-For merchants who have achieved PCI DSS compliance, Bamboo offers enhanced flexibility through the Direct Purchase method. This advanced option allows PCI-compliant merchants to handle card data directly within their secure environments.
+## Compra para Comercios con Certificación PCI {#direct-purchase-for-pci-compliant-merchants}
+Para los comercios que tienen la certificación PCI-DSS, Bamboo ofrece una mayor flexibilidad a través del método de Compra Directa. Esta opción permite a los comercios con certificación PCI manejar los datos de las tarjetas directamente.
 
-### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
-
-* **Production**: `https://secure-api.bamboopayment.com/v3/api/purchase`
-* **Stage**: `https://secure-api.stage.bamboopayment.com/v3/api/purchase`
-
-### Request parameters
-
-##### CardData Object
-
-| Parameter | Type | Mandatory? | Description |
-|---|---|:---:|---|
-| `CardHolderName` | `string` | Yes | The name of the cardholder as it appears on the card. |
-| `Pan` | `string` | Yes | The Primary Account Number (PAN) of the card. |
-| `CVV` | `string` | Yes | The Card Verification Value (CVV) or Card Security Code. |
-| `Expiration` | `string` | Yes | The expiration date of the card in the format "MM/YY". |
-| `Email` | `string` | Yes | The email associated with the cardholder. |
-| `Document` | `string` | No | The identification document number of the cardholder. |
-
-
-
-{{% alert title="Info" color="info"%}}
-
-**Note:** The CardData object should only be used for transactions with non-tokenized cards. Ensure that sensitive card data is handled securely and in compliance with PCI DSS standards.
-
+{{% alert title="Versiones anteriores de la API" color="info"%}}
+La documentación de la API versión V1 y V2 está disponible en la sección de [Legacy]({{< ref direct-purchase.md >}})
 {{% /alert %}}
 
+### URL de la solicitud {#request-url-1}
+Debe realizar una petición **POST** a las siguientes URLs según sus necesidades:
 
-### Request example 
+* **Producción**: `https://secure-api.bamboopayment.com/v3/api/purchase`
+* **Pruebas**: `https://secure-api.stage.bamboopayment.com/v3/api/purchase`
+
+### Parámetros de la solicitud {#request-parameters-1}
+
+#### Objeto CardData {#carddata-object}
+
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|---|---|:---:|---|
+| `CardHolderName` | `string` | Sí | El nombre del titular tal como aparece en la tarjeta. |
+| `Pan` | `string` | Sí | El número de tarjeta (PAN). |
+| `CVV` | `string` | Sí | El código de verificación (CVV) o código de seguridad de la tarjeta. |
+| `Expiration` | `string` | Sí | La fecha de vencimiento de la tarjeta en el formato "MM/AA". |
+| `Email` | `string` | Sí | Correo electrónico asociado al titular de la tarjeta. |
+| `Document` | `string` | No | El número de documento de identidad del titular de la tarjeta. |
+
+{{% alert title="Información" color="info"%}}
+
+**Nota:** El objeto CardData solo debe utilizarse para transacciones con tarjetas no tokenizadas. Los datos sensibles de las tarjetas se deben manejar de forma segura y en cumplimiento con los estándares PCI DSS.
+{{% /alert %}}
+
+### Ejemplo de solicitud {#request-example-1}
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/requestPurchase_DirectPurchase >}}
@@ -141,74 +143,71 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 <br>
 
-The fields **CardData**, **PaymentMethodId**, **NetworkToken** and **TrxToken** are not required; Nevertheless, one of them must be send depending of which flow to use.
+Los campos **CardData**, **PaymentMethodId**, **NetworkToken** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.
 
-## Response
-The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.
+## Respuesta del Request. {#response}
+La respuesta para las operaciones de compra directa realizadas por comercios con certificación PCI es idéntica a la respuesta de la compra estándar. Esto asegura la consistencia entre los diferentes tipos de transacciones y simplifica los procesos de integración.
 
-All fields, statuses, and error codes described in the standard Purchase response apply equally to Direct Purchase transactions.
+Todos los campos, estados y códigos de error descritos en la respuesta de Compra estándar se aplican por igual a las transacciones de Compra Directa.
 
-
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|---|---|
-| `TransactionId` | `string` | Unique identifier for the transaction. A 19-digit number sent as a string for compatibility. |
-| `Result` | `string` | Outcome of the transaction. `COMPLETED` or `ACTION_REQUIRED`. See the "Action" object for instructions. |
-| `Status` | `string` | Current status of the transaction (e.g., Approved, Rejected). |
-| `ErrorCode` | `string` | Error code if the transaction was rejected. |
-| `ErrorDescription` | `string` | Detailed description of the error if the transaction was rejected. |
-| `Created` | `string` | Timestamp of when the transaction was created, in **ISO 8601** format. |
-| `AuthorizationDate` | `string` | Timestamp of when the transaction was authorized, in **ISO 8601** format. |
-| `AuthorizationCode` | `string` | Unique code provided by the issuer to confirm the transaction authorization. |
-| `Amount` | `integer` | Total transaction amount. |
-| `Currency` | `string` | Currency code used for the transaction. May differ from the request currency based on business agreements. |
-| `Installments` | `integer` | Number of payment installments for the transaction. |
-| `TaxableAmount` | `integer` | Amount subject to taxes. |
-| `Tip` | `integer` | Tip amount. |
-| `Url` | `string` | Link to access additional transaction details. |
-| `MetadataOut` | `object` | Additional metadata returned with the transaction response. |
-| `Action` | `object` | Details of required actions when Result is "ACTION_REQUIRED". |
-| `PaymentMethod` | `object` | Information about the payment method used for the transaction. |
+| `TransactionId` | `string` | Identificador único de la transacción. Un número de 19 dígitos. |
+| `Result` | `string` | Resultado de la transacción. `COMPLETED` o `ACTION_REQUIRED`. Para más detalles, consulte el objeto "Action". |
+| `Status` | `string` | Estado actual de la transacción (por ejemplo, APPROVED, REJECTED). |
+| `ErrorCode` | `string` | Código de error, si la transacción fue rechazada. |
+| `ErrorDescription` | `string` | Descripción detallada del error si la transacción fue rechazada. |
+| `Created` | `string` | Fecha / Hora en la que se creó la transacción, en formato **ISO 8601**. |
+| `AuthorizationDate` | `string` | Fecha / Hora en la que se autorizó la transacción, en formato **ISO 8601**. |
+| `AuthorizationCode` | `string` | Código único proporcionado por el adquirente / emisor para confirmar la autorización de la transacción. |
+| `Amount` | `integer` | Valor total de la transacción. |
+| `Currency` | `string` | Moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según el pricing configurado. |
+| `Installments` | `integer` | Número de cuotas. |
+| `TaxableAmount` | `integer` | Valor de los impuestos. |
+| `Tip` | `integer` | Valor de la propina. |
+| `Url` | `string` | URL con los detalles adicionales de la transacción. |
+| `MetadataOut` | `object` | Metadatos adicionales de la respuesta de la transacción. |
+| `Action` | `object` | Detalles de las acciones requeridas cuando el Resultado es "ACTION_REQUIRED". |
+| `PaymentMethod` | `object` | Medio de pago utilizado para la transacción. |
 
-#### Action Object
+#### Objeto Action {#action-object}
 
-The Action object provides information about additional steps required to complete a transaction. It is typically present when the transaction result is **"ACTION_REQUIRED"**, indicating that further action is needed from the user or merchant to finalize the payment process.
+El objeto Action contiene información sobre los pasos adicionales requeridos para completar una transacción. Normalmente se envía en la respuesta cuando el resultado de la transacción es **"ACTION_REQUIRED"**, indicando que se necesita una acción adicional del usuario o del comercio para finalizar el pago.
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|---|---|
-| `SessionId` | `string` | Session identifier related to the action. Informational value. |
-| `Reason` | `string` | Reason for the requested action. Possible values:<br>• `VERIFICATION_CODE_NEEDED:` Transaction pending CVV, redirection to "URL" required to display CVV input form.<br>• `REDIRECTION_NEEDED_EXTERNAL_SERVICE`: Redirection to "URL" required to complete transaction details. |
-| `URL` | `string` | Redirection URL to complete the required action. |
+| `SessionId` | `string` | ID de sesión relacionado con la acción. Valor informativo. |
+| `Reason` | `string` | Razón de la acción solicitada. Valores posibles:<br>• `VERIFICATION_CODE_NEEDED:` Transacción pendiente de CVV, se requiere redirección a la "URL" para mostrar el formulario de ingreso del CVV.<br>• `REDIRECTION_NEEDED_EXTERNAL_SERVICE`: Se requiere una redirección a la "URL" para completar los detalles de la transacción. |
+| `URL` | `string` | URL de redirección para completar la acción requerida. |
 
-#### PaymentMethod Object
+#### Objeto PaymentMethod {#paymentmethod-object}
 
-The PaymentMethod object contains detailed information about the payment method used in the transaction. This includes card details (for card transactions) or other relevant payment method information.
+El objeto PaymentMethod contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 |---|---|---|
-| `Brand` | `string` | Brand of the card used (e.g., MasterCard, Visa). |
-| `CardOwner` | `string` | Name of the cardholder. |
-| `Bin` | `string` | First 6 digits of the card number. |
-| `IssuerBank` | `string` | Issuing bank of the card. |
-| `Type` | `string` | Type of payment method (e.g., CreditCard, DebitCard). |
-| `Expiration` | `string` | Card expiration date in yyyymm format. |
-| `Last4` | `string` | Last 4 digits of the card number. |
+| `Brand` | `string` | Franquicia de la tarjeta utilizada (por ejemplo, MasterCard, Visa). |
+| `CardOwner` | `string` | Nombre del titular de la tarjeta. |
+| `Bin` | `string` | Primeros 6 dígitos del número de la tarjeta. |
+| `IssuerBank` | `string` | Banco emisor de la tarjeta. |
+| `Type` | `string` | Tipo de medio de pago (por ejemplo, CreditCard, DebitCard). |
+| `Expiration` | `string` | Fecha de vencimiento de la tarjeta en formato aaaaMM. |
+| `Last4` | `string` | Últimos 4 dígitos del número de la tarjeta. |
 
-### Response examples
-<br>
-
+### Ejemplos de respuesta {#response-examples}
 
 {{< tabs tabTotal="2" tabID="responses" tabName1="HTTP 200" tabName2="HTTP 400/409" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-**Result:**`COMPLETED` - **Status:** `APPROVED`
+**Resultado:** `COMPLETED` - **Estado:** `APPROVED`
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/http200_approved >}}
 {{< /highlight >}} 
 <br>
 
-**Result:**`COMPLETED` - **Status:** `REJECTED`
+**Resultado:** `COMPLETED` - **Estado:** `REJECTED`
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/http200_rejected >}}
@@ -216,7 +215,7 @@ The PaymentMethod object contains detailed information about the payment method 
 
 <br>
 
-**Result:**`ACTION_REQUIRED` - **Status:** `PENDING`
+**Resultado:** `ACTION_REQUIRED` - **Estado:** `PENDING`
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/http200_pending >}}
@@ -232,6 +231,5 @@ The PaymentMethod object contains detailed information about the payment method 
 {{< /highlight >}} 
 
 {{< /tab >}}
-
 
 {{< /tabs >}}

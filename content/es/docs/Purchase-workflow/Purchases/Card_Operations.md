@@ -1,105 +1,112 @@
 ---
-title: "Pre-authorized Purchases: Capture and Cancel"
-linkTitle: "Capture and Cancel"
+title: "Compras Autorizadas: Captura y Cancelación"
+linkTitle: "Captura y Cancel"
 date: 2024-08-22T11:40:29-05:00
 Description: >
-   Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
+    Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.
 weight: 30
 tags: ["subtopic"]
 ---
 
-## Capture a purchase
-This method allows you to confirm a pre-authorized purchase. The capture process allows you to confirm and finalize a pre-authorized transaction, giving you the flexibility to adjust the amount if needed. 
+{{% alert title="Versiones anteriores de la API" color="info"%}}
+La documentación de la API versión V1 está disponible en la sección de [Legacy]({{< ref purchase-operations.md >}}#confirm-a-purchase)
+{{% /alert %}}
 
-{{% alert title="Note" color="info"%}}
-All payment methods may not support the pre-authorization feature, and it’s available for the following countries.
+## Capturar una compra {#capture-a-purchase}
+Este método le permite confirmar una compra autorizada. El proceso de captura le da la flexibilidad de confirmar y finalizar una transacción preautorizada, permitiéndole ajustar el valor si es necesario.
+
+{{% alert title="Nota" color="info"%}}
+No todos los métodos de pago admiten la función de preautorización. Está disponible para los siguientes países:
 
 <div style="text-align: center;">
 
-<a href="/en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
-<a href="/en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
-<a href="/en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
-<a href="/en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+<a href="/es/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="/es/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/es/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
+<a href="/es/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
 
 {{% /alert %}}
 
-### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
+### URL de la solicitud {#request-url}
+Debe realizar una petición **POST** a las siguientes URLs según sus necesidades:
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
+* **Producción**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
+* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
 
-### Request parameters
-The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.
+### Parámetros de la solicitud {#request-parameters}
+El body en la solicitud es opcional para confirmar una compra. Si no envía ninguna solicitud, el método confirmará la compra preautorizada por su valor original.
 
-The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.
+El valor de la compra puede variar respecto al enviado en el proceso de compra inicial, pero el nuevo valor no puede ser mayor que el valor original.
 
-#### Request example (Partial Capture)
-You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:
+#### Ejemplo de solicitud (Captura Parcial) {#request-example-partial-capture}
+Debe incluir el nuevo valor en la solicitud para confirmar una compra con un valor menor al original. Por ejemplo:
 
 {{< highlight json >}}
 {{< Payins/V3/CardOperations/partialCapture_request >}}
 {{< /highlight >}} 
 
-#### Response example (Partial Capture)
-You will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
+#### Ejemplo de respuesta (Captura Parcial) {#response-example-partial-capture}
+Obtendrá el mismo objeto `Response` que para el [objeto de compra]({{< ref "Purchase_V3.md" >}}#response).
 
-**Result:**`COMPLETED` - **Status:** `PREAUTHORIZED`
+**Resultado:** `COMPLETED` - **Estado:** `PREAUTHORIZED`
 
 {{< highlight json >}}
 {{< Payins/V3/CardOperations/partialCapture_response >}}
 {{< /highlight >}} 
 
 
-## Cancelling a purchase 
-A void (or cancel) is the act of canceling a pre-authorized transaction before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer's payment method is not charged for the voided transaction.
+## Cancelar una compra {#cancelling-a-purchase}
+La anulación es el acto de cancelar una transacción preautorizada antes de que se finalice o liquide. Cuando se anula una transacción, es como si la compra nunca hubiera ocurrido y se libera el cupo del límite autorizado. Las anulaciones generalmente ocurren antes de que el pago se procese completamente, por lo que no se cobra al medio de pago del cliente por la transacción anulada.
 
-The _**cancel**_ operation is only available for purchases previously [authorized]({{< ref "purchase-operations.md" >}}#confirm-a-purchase) with state _PreAuthorized_. If you’re interested in refunding a purchase that has already been captured, please refer to the [refunds]({{< ref "Refunds-and-voids.md" >}}) section for detailed instructions. 
+{{% alert title="Versiones anteriores de la API" color="info"%}}
+La documentación de la API versión V1 está disponible en la sección de [Legacy]({{< ref refunds-and-voids.md >}}#rollback-a-purchase)
+{{% /alert %}}
 
-{{% alert title="Note" color="info"%}}
-Pre-authorization feature may not be supported by all payment methods and it's available for the following countries.
+La operación de _**cancelación**_ solo está disponible para compras previamente [autorizadas]({{< ref "Card_Operations.md" >}}#capturar-una-compra) con estado _PreAuthorized_. Si está interesado en reembolsar una compra que ya ha sido capturada, consulte la sección de [reembolsos]({{< ref "Refunds.md" >}}) para obtener instrucciones detalladas.
+
+{{% alert title="Nota" color="info"%}}
+La función de preautorización puede no estar soportada por todos los métodos de pago y está disponible para los siguientes países:
 
 <div style="text-align: center;">
 
-<a href="/en/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
-<a href="/en/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
-<a href="/en/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
-<a href="/en/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
+<a href="/es/docs/payment-methods/brazil.html"><img src="/assets/Flags/FlagBR.png" width="30" /></a>
+<a href="/es/docs/payment-methods/chile.html"><img src="/assets/Flags/FlagCL.png" width="30" /></a>
+<a href="/es/docs/payment-methods/colombia.html"><img src="/assets/Flags/FlagCO.png" width="30" /></a>
+<a href="/es/docs/payment-methods/uruguay.html"><img src="/assets/Flags/FlagUY.png" width="30" /></a>
 
 </div>
 
 {{% /alert %}}
 
-### Request URL
-You must invoke a **POST** request to the following URLs according to your needs.
+### URL de la solicitud {#request-url-1}
+Debe realizar una petición **POST** a las siguientes URLs según sus necesidades:
 
-* **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
+* **Producción**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
+* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
 
-### Request parameters
-Request body is not required to cancel a purchase. If you don't send any request the purchase will be voided with its original amount. 
+### Parámetros de la solicitud {#request-parameters-1}
+No se requiere el body en la solicitud para cancelar una compra. Si no envía ninguna solicitud, la compra se anulará con su valor original.
 
-The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.
+El valor a anular puede variar respecto al que se envió en el proceso de Compra inicial, pero el nuevo valor no puede ser mayor que el valor original.
 
-{{% alert title="Note" color="info"%}}
-The availability of **partial cancellation functionality may vary depending on the country**. For detailed information about this feature in your specific region, please consult with your Account Manager.
+{{% alert title="Nota" color="info"%}}
+La disponibilidad de la **funcionalidad de cancelación parcial puede variar según el país**. Para obtener información detallada sobre esta función en su región específica, consulte con su Account Manager.
 {{% /alert %}}
 
-#### Request example (Partial Cancellation)
-To perform the cancel of the purchase  with a lower amount than the original, you need to include the new amount in the request. For example:
+#### Ejemplo de solicitud (Cancelación Parcial) {#request-example-partial-cancellation}
+Para realizar la cancelación de la compra con un valor menor al original, debe incluir el nuevo valor en la solicitud. Por ejemplo:
 
 {{< highlight json >}}
 {{< Payins/V3/CardOperations/partialCancellation_request >}}
 {{< /highlight >}} 
 
-### Response parameters
-When you perform the cancel, you will get the same `Response` object for the [purchase object]({{< ref "Purchase_V3.md" >}}#response).
+### Parámetros de respuesta {#response-parameters}
+Cuando realiza la cancelación, obtendrá el mismo objeto `Response` que para el [objeto de compra]({{< ref "Purchase_V3.md" >}}#response).
 
-**Result:**`COMPLETED` - **Status:** `CANCELLED`
+**Resultado:** `COMPLETED` - **Estado:** `CANCELLED`
 
 {{< highlight json >}}
 {{< Payins/V3/CardOperations/partialCancellation_response >}}
-{{< /highlight >}} 
-
+{{< /highlight >}}

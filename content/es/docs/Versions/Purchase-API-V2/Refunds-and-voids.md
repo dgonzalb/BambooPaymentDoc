@@ -4,7 +4,8 @@ linkTitle: "Reembolsos y anulaciones"
 date: 2023-08-02T08:46:32-05:00
 Description: >
   Las operaciones de reembolso y anulación están relacionadas al proceso de reversar una compra ya confirmada o a cancelar una compra preautorizada.
-weight: 30
+weight: 40
+tags: ["subtopic"]
 ---
 
 Antes de empezar, revisemos algunos conceptos.

@@ -1,11 +1,11 @@
 ---
-title: "Operaciones"
-linkTitle: "Operaciones"
+title: "Compras"
+linkTitle: "Compras (Legacy)"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Cree una compra utilizando el utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
 weight: 10
-tags: ["subtopic"]
+tags: ["parenttopic"]
 ---
 
 ## Configurar la autenticación {#configuring-the-authentication}

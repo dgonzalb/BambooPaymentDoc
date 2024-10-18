@@ -874,7 +874,7 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
         
         &lt;p&gt;A continuación, describimos los pasos de cómo crear una compra con un usuario anónimo.&lt;/p&gt;
 &lt;h2 id=&#34;capture-the-card-data&#34;&gt;Capturar la información de la tarjeta&lt;/h2&gt;
-&lt;p&gt;El primer paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el &lt;a href=&#34;../../es/docs/forms/checkout-form.html&#34;&gt;Formulario de Checkout&lt;/a&gt; en el último paso del carrito de compras. Recuerde que tiene que obtener el &lt;em&gt;&lt;strong&gt;Formulario de Checkout&lt;/strong&gt;&lt;/em&gt; a través de la librería JavaScript de Bamboo Payment. De forma alternativa, peude utilizar la &lt;a href=&#34;../../es/docs/purchase-workflow/customer-types/direct-tokenization.html&#34;&gt;Tokenización Directa&lt;/a&gt; si su comercio cumple la con normativa PCI.&lt;/p&gt;
+&lt;p&gt;El primer paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el &lt;a href=&#34;../../es/docs/versions/forms/checkout-form.html&#34;&gt;Formulario de Checkout&lt;/a&gt; en el último paso del carrito de compras. Recuerde que tiene que obtener el &lt;em&gt;&lt;strong&gt;Formulario de Checkout&lt;/strong&gt;&lt;/em&gt; a través de la librería JavaScript de Bamboo Payment. De forma alternativa, peude utilizar la &lt;a href=&#34;../../es/docs/purchase-workflow/customer-types/direct-tokenization.html&#34;&gt;Tokenización Directa&lt;/a&gt; si su comercio cumple la con normativa PCI.&lt;/p&gt;
 &lt;p&gt;Este formulario se muestra dentro de un iframe en su página y solicita los datos de la tarjeta.&lt;/p&gt;
 
 
@@ -898,7 +898,7 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
 
 &lt;h2 id=&#34;using-direct-tokenization&#34;&gt;Crear una Compra Básica&lt;/h2&gt;
 &lt;p&gt;Debe enviar el token recién obtenido desde el navegador o la aplicación móvil al servidor de aplicaciones para crear la transacción de compra.&lt;/p&gt;
-&lt;p&gt;Desde el servidor, invoque el método &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#create-a-purchase&#34;&gt;Crear una Compra&lt;/a&gt;, incluyendo el objeto &lt;code&gt;Purchase&lt;/code&gt; con el token y los datos de la transacción adicionales.&lt;/p&gt;
+&lt;p&gt;Desde el servidor, invoque el método &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#create-a-purchase&#34;&gt;Crear una Compra&lt;/a&gt;, incluyendo el objeto &lt;code&gt;Purchase&lt;/code&gt; con el token y los datos de la transacción adicionales.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TrxToken&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;OT_01_kYv0qTHckRiZ4wjCz5NguZRuwFLSIrQc4jiYpVJ8SzQ_&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;17030613595101621fb&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -1120,7 +1120,7 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
         
         
         &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1457,7 +1457,7 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Compras sin CVV&lt;/strong&gt;: Permite tokenización y recurrencia.&lt;br&gt;En el caso de la tokenización, la API genera un cargo por un mínimo de &lt;strong&gt;ARS 3&lt;/strong&gt;, que se reembolsa para validar los datos del titular de la tarjeta. Con este token, es posible realizar compras sin CVV.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1803,7 +1803,7 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
 &lt;h2 id=&#34;card-payments-using-api-flow&#34;&gt;Pagos con tarjeta mediante flujo API&lt;/h2&gt;
 &lt;p&gt;Utilizando este flujo, puede ofrecer la posibilidad de recibir pagos con tarjetas sin la intervención del pagador.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2051,10 +2051,10 @@ La validación del mensaje falló y la solicitud de retiro no se crea.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--## Pagos con tarjeta mediante flujo Redirect {#card-payments-using-redirection-flow}
 Utilizando este flujo, el pagador debe ser redirigido a la página _**webpay**_ para completar el pago según el medio de pago seleccionado (tarjeta de débito, crédito o prepago).
 
-El estado de las compras con tarjeta mediante el flujo Redirect permanecerá _Pending_ hasta que el cliente complete el pago. Haga clic [aquí](/es/docs/purchase-workflow/purchases/redirect-purchase.html) para obtener más información sobre las compras con redirect.
+El estado de las compras con tarjeta mediante el flujo Redirect permanecerá _Pending_ hasta que el cliente complete el pago. Haga clic [aquí](/es/docs/versions/purchase-api-v2/redirect-purchase.html) para obtener más información sobre las compras con redirect.
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra](/es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra](/es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -2399,7 +2399,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
         
         
         &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2725,7 +2725,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 &lt;h2 id=&#34;card-payments-using-api-flow&#34;&gt;Pagos con tarjeta mediante flujo API&lt;/h2&gt;
 &lt;p&gt;Utilizando este flujo, puede ofrecer la posibilidad de recibir pagos con tarjetas sin la intervención del pagador.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3080,7 +3080,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 &lt;/div&gt;
 
 &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3375,7 +3375,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
         
         
         &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3678,7 +3678,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 &lt;/div&gt;
 
 &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Se necesita incluir campos específicos para que este método de pago funcione correctamente. Consulte la sección &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Parámetros del Request&lt;/a&gt; para obtener información detallada sobre los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Se necesita incluir campos específicos para que este método de pago funcione correctamente. Consulte la sección &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Parámetros del Request&lt;/a&gt; para obtener información detallada sobre los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -5326,10 +5326,10 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
     
     <item>
       <title>Docs: Checkout</title>
-      <link>/es/docs/forms/checkout-form.html</link>
+      <link>/es/docs/versions/forms/checkout-form.html</link>
       <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
       
-      <guid>/es/docs/forms/checkout-form.html</guid>
+      <guid>/es/docs/versions/forms/checkout-form.html</guid>
       <description>
         
         
@@ -5711,7 +5711,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;li&gt;Activa el evento &lt;code&gt;tokenCreated&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Enviar el formulario si la propiedad &lt;code&gt;autoSubmit&lt;/code&gt; es &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Debe procesar los datos del formulario del checkout, incluido el valor del campo &lt;code&gt;PWToken&lt;/code&gt;, y enviar la información relevante descrita en la sección &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html&#34;&gt;API de compras&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Debe procesar los datos del formulario del checkout, incluido el valor del campo &lt;code&gt;PWToken&lt;/code&gt;, y enviar la información relevante descrita en la sección &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html&#34;&gt;API de compras&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;invoking-the-form-with-validation-filters&#34;&gt;Invocación del formulario con filtros de validación&lt;/h2&gt;
 &lt;p&gt;Si necesita validar el ingreso de una determinada tarjeta, ya sea por la marca o por el banco emisor, debe proceder a la apertura personalizada del Formulario de Captura de Tarjetas. Utilice un método explícito para validar los datos.&lt;/p&gt;
 &lt;p&gt;El método a utilizar es el &lt;strong&gt;OpenIframeWithPaymentMediaOptions&lt;/strong&gt;, que recibe los siguientes parámetros:&lt;/p&gt;
@@ -5828,10 +5828,10 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
     
     <item>
       <title>Docs: Operaciones</title>
-      <link>/es/docs/purchase-workflow/purchases/purchase-operations.html</link>
+      <link>/es/docs/versions/purchase-api-v2/purchase-operations.html</link>
       <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
       
-      <guid>/es/docs/purchase-workflow/purchases/purchase-operations.html</guid>
+      <guid>/es/docs/versions/purchase-api-v2/purchase-operations.html</guid>
       <description>
         
         
@@ -7335,7 +7335,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 
 &lt;h2 id=&#34;using-direct-tokenization&#34;&gt;Crear una Compra Básica&lt;/h2&gt;
 &lt;p&gt;Debe enviar el token recién obtenido desde el navegador o la aplicación móvil al servidor de aplicaciones para crear la transacción de compra.&lt;/p&gt;
-&lt;p&gt;Desde el servidor, invoque el método &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#create-a-purchase&#34;&gt;Crear una Compra&lt;/a&gt;, incluyendo el objeto &lt;code&gt;Purchase&lt;/code&gt; con el token y los datos de la transacción adicionales.&lt;/p&gt;
+&lt;p&gt;Desde el servidor, invoque el método &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#create-a-purchase&#34;&gt;Crear una Compra&lt;/a&gt;, incluyendo el objeto &lt;code&gt;Purchase&lt;/code&gt; con el token y los datos de la transacción adicionales.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TrxToken&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CT_kYv0qTHckRiZ4wjCz5NguZRuwFLSIrQc4jiYpVJ8SzQ_&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;17030613595101621fb&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -7730,7 +7730,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;pago-fácil&#34;&gt;Pago Fácil&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Pago Fácil&lt;/strong&gt; proporciona una red de centros de pago físicos donde sus clientes pueden pagar sus compras en efectivo. Sus clientes deben facilitar los datos de pago y el monto que desean pagar, y el sistema se encarga del resto.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -8010,7 +8010,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;transferencias-30&#34;&gt;Transferencias 3.0&lt;/h2&gt;
 &lt;p&gt;Con &lt;strong&gt;Transferencias 3.0&lt;/strong&gt;, puede mostrar un código QR code generado por Bamboo que lo puede leer su cliente utilizando su wallet.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -8282,7 +8282,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;offline-bank-transfers&#34;&gt;Transferencias Bancarias Offline&lt;/h2&gt;
 &lt;p&gt;Con &lt;strong&gt;Transferencias bancarias offline&lt;/strong&gt;, puede permitir que su cliente pague mediante transferencias bancarias utilizando cualquier cuenta bancaria y monedero con &lt;em&gt;CVU&lt;/em&gt; (Clave Virtual Uniforme) o &lt;em&gt;CBU&lt;/em&gt; (Clave Bancaria Uniforme). Para completar el pago, su cliente debe transferir el importe de la compra a los datos de la cuenta que figuran en la respuesta.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -8601,7 +8601,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;pix&#34;&gt;PIX&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;PIX&lt;/em&gt; es un medio de pago oficial brasileño lanzado por el Banco Central local. Permite la confirmación inmediata del pago y está disponible 24 horas al día, 7 días a la semana. Para completar un pago, el pagador puede utilizar cualquier Home Banking o Wallet copiando y pegando el ID de transacción o escaneando el código QR.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -8951,7 +8951,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;boleto-bancario&#34;&gt;Boleto Bancario&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Boleto Bancário&lt;/em&gt; es un medio de pago popular en Brasil que permite pagar facturas y compras en línea sin necesidad de una tarjeta de crédito: Genera un código de barras único que puede ser imprimido o accedido a través de una plataforma digital y puede ser pagado en cualquier banco u oficina de pago autorizada.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -9325,7 +9325,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;khipu&#34;&gt;Khipu&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Khipu&lt;/strong&gt; permite a los clientes pagar utilizando transferencias desde sus cuentas bancarias utilizando la app de &lt;em&gt;Khipu&lt;/em&gt;. El pagador puede pagar usando cuentas bancarias o la app de &lt;strong&gt;Khipu&lt;/strong&gt; donde la experiencia de pago es mejor.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -9627,7 +9627,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;klap-efectivo&#34;&gt;Klap Efectivo&lt;/h2&gt;
 &lt;p&gt;Con &lt;strong&gt;Klap efectivo&lt;/strong&gt;, sus clientes pueden generar un cupón y completar el pago en una oficina de pago física.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -9978,7 +9978,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;pse&#34;&gt;PSE&lt;/h2&gt;
 &lt;p&gt;PSE (Pagos Seguros en Línea) es un sistema de pago en línea muy utilizado en Colombia. Permite realizar transacciones electrónicas seguras al permitir a los usuarios efectuar pagos directamente desde sus cuentas bancarias.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -10342,7 +10342,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -10660,7 +10660,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h4 id=&#34;qr-code&#34;&gt;Flujo de Pago&lt;/h4&gt;
 &lt;img src=&#34;../../assets/NequiQRES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi QR Payment Flow&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -10937,7 +10937,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h4 id=&#34;push-notification&#34;&gt;Payment Flow&lt;/h4&gt;
 &lt;img src=&#34;../../assets/NequiPushES.png&#34; width=&#34;100%&#34; alt=&#34;Nequi Flujo de Pago&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-3&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -11226,7 +11226,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;pagoefectivo-ecuador&#34;&gt;PagoEfectivo Ecuador&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;PagoEfectivo&lt;/strong&gt; provee una red de centros de pago físicos donde sus clientes pueden pagar las compras en efectivo o utilizando su aplicación bancaria. Su cliente puede pagar mostrando el identificador de la deuda (CIP) en una oficina o a través de su aplicación bancaria.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -11537,7 +11537,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;h2 id=&#34;oxxopay&#34;&gt;OXXOPay&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;OXXO&lt;/strong&gt;, la cadena de tiendas de autoservicio más grande de México, ofrece un servicio para que sus clientes paguen sus compras. Sus clientes deben entregar el cupón en la tienda y pueden pagar utilizando efectivo o tarjetas.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -11835,7 +11835,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;li&gt;Circle K&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -12111,7 +12111,7 @@ En la respuesta de la operación, se retorna &lt;code&gt;&amp;quot;payoutType&am
 &lt;p&gt;El &lt;strong&gt;SPEI&lt;/strong&gt; (Sistema de Pagos Electrónicos Interbancarios) es un sistema de pagos electrónicos en México que permite a sus clientes transferir fondos entre bancos al instante.&lt;/p&gt;
 &lt;p&gt;Para utilizar &lt;strong&gt;SPEI&lt;/strong&gt;, los clientes deben tener acceso a la banca en línea o a una aplicación de banca móvil ofrecida por su banco y luego iniciar una transferencia proporcionando el número CLABE (Clave Bancaria Estandarizada) retornado en el response.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -12480,7 +12480,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;h2 id=&#34;pago-express&#34;&gt;Pago Express&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Pago Express&lt;/em&gt; es un popular método de pago para pagar facturas y servicios en &lt;em&gt;&lt;strong&gt;Paraguay&lt;/strong&gt;&lt;/em&gt;, ofreciendo comodidad y accesibilidad en todo el país. El cliente necesita proporcionar el código de pago en una sucursal física de &lt;em&gt;Pago Express&lt;/em&gt; y completar el pago. Luego, &lt;em&gt;Pago Express&lt;/em&gt; nos notifica, y nosotros informamos al comercio.&lt;/p&gt;
 &lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h2&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -12783,7 +12783,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;h2 id=&#34;pagoefectivo-perú&#34;&gt;PagoEfectivo Perú&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;PagoEfectivo&lt;/strong&gt; provee una red de centros de pago físicos donde sus clientes pueden pagar las compras en efectivo o utilizando su aplicación bancaria. Su cliente puede pagar mostrando el identificador de la deuda (CIP) en una oficina o a través de su aplicación bancaria.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -13146,7 +13146,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -13447,7 +13447,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;li&gt;Bamboo procesa la transacción y devuelve un estado &lt;em&gt;aprobado&lt;/em&gt; o &lt;em&gt;rechazado&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -13747,7 +13747,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
         &lt;h2 id=&#34;puntoxpress&#34;&gt;PuntoXpress&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;PuntoXpress&lt;/em&gt; es una red de cobro en efectivo con cobertura regional en América Central. Cuando los clientes de las plataformas de comercio electrónico realizan compras en sus sitios web, el comercio nos solicita que generemos una deuda. Posteriormente, el cliente acude a un punto de cobro de &lt;em&gt;PuntoXpress&lt;/em&gt;, comprueba la deuda asociada a la referencia y realiza el pago. Luego, &lt;em&gt;PuntoXpress&lt;/em&gt; nos notifica y nosotros reportamos al comercio.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -14187,7 +14187,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Donde &lt;code&gt;{{LoyaltyPlan-ID}}&lt;/code&gt; es el identificador del plan de fidelización que desea consultar. Además, recuerde utilizar la autenticación mostrada en &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html&#34;&gt;operaciones de compra&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Donde &lt;code&gt;{{LoyaltyPlan-ID}}&lt;/code&gt; es el identificador del plan de fidelización que desea consultar. Además, recuerde utilizar la autenticación mostrada en &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html&#34;&gt;operaciones de compra&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h4&gt;
 &lt;p&gt;Incluya los siguientes parámetros en el request.&lt;/p&gt;
 &lt;table&gt;
@@ -14348,14 +14348,14 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
     
     <item>
       <title>Docs: Checkout embebido</title>
-      <link>/es/docs/forms/embedded-checkout-form.html</link>
+      <link>/es/docs/versions/forms/embedded-checkout-form.html</link>
       <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
       
-      <guid>/es/docs/forms/embedded-checkout-form.html</guid>
+      <guid>/es/docs/versions/forms/embedded-checkout-form.html</guid>
       <description>
         
         
-        &lt;p&gt;La diferencia entre este formulario, y &lt;a href=&#34;../../es/docs/forms/checkout-form.html&#34;&gt;el formulario de Checkout&lt;/a&gt; mencionado anteriormente es que debes invocar este formulario dentro de una página personalizada.&lt;/p&gt;
+        &lt;p&gt;La diferencia entre este formulario, y &lt;a href=&#34;../../es/docs/versions/forms/checkout-form.html&#34;&gt;el formulario de Checkout&lt;/a&gt; mencionado anteriormente es que debes invocar este formulario dentro de una página personalizada.&lt;/p&gt;
 &lt;p&gt;La integración de este formulario en su sitio o &lt;em&gt;app&lt;/em&gt; proporciona a los usuarios una experiencia de pago simplificada y receptiva adecuada para aplicaciones web y móviles.&lt;/p&gt;
 &lt;h2 id=&#34;import-of-the-javascript-library&#34;&gt;Importación de la Librería JavaScript&lt;/h2&gt;
 &lt;p&gt;Encuentre las funcionalidades del formulario de Checkout embebido en una librería JavaScript, que debe ser importada en el sitio web del cliente directamente desde una URL pública de nuestra plataforma.&lt;/p&gt;
@@ -14401,10 +14401,10 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
     
     <item>
       <title>Docs: Compra Redirect</title>
-      <link>/es/docs/purchase-workflow/purchases/redirect-purchase.html</link>
+      <link>/es/docs/versions/purchase-api-v2/redirect-purchase.html</link>
       <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
       
-      <guid>/es/docs/purchase-workflow/purchases/redirect-purchase.html</guid>
+      <guid>/es/docs/versions/purchase-api-v2/redirect-purchase.html</guid>
       <description>
         
         
@@ -14422,7 +14422,7 @@ Su cliente recibirá un mensaje de confirmación una vez que la transferencia ha
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;El comercio envía el &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#create-a-purchase&#34;&gt;request de la compra&lt;/a&gt; con el &lt;code&gt;PaymentMediaId&lt;/code&gt; del medio de pago correspondiente.&lt;/td&gt;
+&lt;td&gt;El comercio envía el &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#create-a-purchase&#34;&gt;request de la compra&lt;/a&gt; con el &lt;code&gt;PaymentMediaId&lt;/code&gt; del medio de pago correspondiente.&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;/purchase&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -14758,7 +14758,7 @@ Estos campos siempre están expresados como la parte entera más dos dígitos de
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;cancelling-a-purchase&#34;&gt;Cancelling a purchase&lt;/h2&gt;
 &lt;p&gt;A void (or cancel) is the act of canceling a pre-authorized transaction before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&amp;rsquo;s payment method is not charged for the voided transaction.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;cancel&lt;/strong&gt;&lt;/em&gt; operation is only available for purchases previously &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase&#34;&gt;authorized&lt;/a&gt; with state &lt;em&gt;PreAuthorized&lt;/em&gt;. If you’re interested in refunding a purchase that has already been captured, please refer to the &lt;a href=&#34;../../es/docs/purchase-workflow/refunds-and-voids.html&#34;&gt;refunds&lt;/a&gt; section for detailed instructions.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;cancel&lt;/strong&gt;&lt;/em&gt; operation is only available for purchases previously &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase&#34;&gt;authorized&lt;/a&gt; with state &lt;em&gt;PreAuthorized&lt;/em&gt;. If you’re interested in refunding a purchase that has already been captured, please refer to the &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/refunds-and-voids.html&#34;&gt;refunds&lt;/a&gt; section for detailed instructions.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -14832,10 +14832,10 @@ Estos campos siempre están expresados como la parte entera más dos dígitos de
     
     <item>
       <title>Docs: Reembolsos y anulaciones</title>
-      <link>/es/docs/purchase-workflow/refunds-and-voids.html</link>
+      <link>/es/docs/versions/purchase-api-v2/refunds-and-voids.html</link>
       <pubDate>Wed, 02 Aug 2023 08:46:32 -0500</pubDate>
       
-      <guid>/es/docs/purchase-workflow/refunds-and-voids.html</guid>
+      <guid>/es/docs/versions/purchase-api-v2/refunds-and-voids.html</guid>
       <description>
         
         
@@ -14874,7 +14874,7 @@ Estos campos siempre están expresados como la parte entera más dos dígitos de
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;rollback-a-purchase&#34;&gt;Anular una compra&lt;/h2&gt;
-&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;rollback&lt;/strong&gt;&lt;/em&gt; está disponible para compras previamente &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#confirm-a-purchase&#34;&gt;autorizadas&lt;/a&gt; con estado &lt;em&gt;PreAuthorized&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;rollback&lt;/strong&gt;&lt;/em&gt; está disponible para compras previamente &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase&#34;&gt;autorizadas&lt;/a&gt; con estado &lt;em&gt;PreAuthorized&lt;/em&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -14919,7 +14919,7 @@ Debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesid
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Parámetros del Response&lt;/h3&gt;
-&lt;p&gt;Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;retornado&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cuando realice la anulación o el reembolso de una compra, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#response-parameters&#34;&gt;retornado&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;refund-a-purchase&#34;&gt;Reembolsar una compra&lt;/h2&gt;
 &lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;reembolso&lt;/strong&gt;&lt;/em&gt; está disponible únicamente para compras con estado &lt;em&gt;Aprobado&lt;/em&gt;. Los reembolsos pueden ser totales o parciales.&lt;/p&gt;
 &lt;!--
@@ -15449,7 +15449,7 @@ _To be defined_
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -15668,7 +15668,7 @@ _To be defined_
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--
 ## Transferencias bancarias Online {#bank-transfers}
-El flujo de este medio de pago es _**Redirect**_, por lo que el cliente debe ser redireccionado a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1) puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect](/es/docs/purchase-workflow/purchases/redirect-purchase.html).
+El flujo de este medio de pago es _**Redirect**_, por lo que el cliente debe ser redireccionado a otra página donde completará el pago. En la [sección Parámetros del Response](#response-parameters-1) puede encontrar el parámetro de la URL de redirección. Para más infomración, consulte [Compra Redirect](/es/docs/versions/purchase-api-v2/redirect-purchase.html).
 
 ### Bancos soportados {#supported-banks}
 Puede ofrecer a sus clientes la posibilidad de pagar mediante transferencia bancaria si la cuenta del cliente está en los siguientes bancos:
@@ -15683,7 +15683,7 @@ Puede ofrecer a sus clientes la posibilidad de pagar mediante transferencia banc
 | &lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt; | 105 | Itau |
 
 ### Parámetros del Request {#request-parameters-1}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra](/es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra](/es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
@@ -15890,7 +15890,7 @@ Para más información sobre los parámetros del Response, consulte la [sección
 &lt;h2 id=&#34;bank-transfers&#34;&gt;Transferencias Bancarias&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Transferencias Bancarias&lt;/strong&gt; permiten que tus clientes realicen pagos utilizando transferencias bancarias. Los clientes deben transferir el monto de la compra a los detalles de la cuenta especificados en la respuesta utilizando su banco de preferencia. Aceptamos pagos de todos los bancos.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Parámetros del Request&lt;/h3&gt;
-&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
+&lt;p&gt;Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo &lt;a href=&#34;../../es/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;operación de compra&lt;/a&gt; para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -16778,10 +16778,10 @@ _Si el Payout es rechazado, la tasa de procesamiento no se reembolsa._
     
     <item>
       <title>Docs: Compra Directa</title>
-      <link>/es/docs/purchase-workflow/purchases/direct-purchase.html</link>
+      <link>/es/docs/versions/purchase-api-v2/direct-purchase.html</link>
       <pubDate>Thu, 02 Mar 2023 11:40:29 -0500</pubDate>
       
-      <guid>/es/docs/purchase-workflow/purchases/direct-purchase.html</guid>
+      <guid>/es/docs/versions/purchase-api-v2/direct-purchase.html</guid>
       <description>
         
         

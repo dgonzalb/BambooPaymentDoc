@@ -6,7 +6,7 @@ Description: >
 weight: 70
 ---
 
-## APIs Disponibles
+## APIs Disponibles {#available-apis}
 
 Actualmente, ofrecemos la siguiente API:
 
@@ -16,14 +16,14 @@ Actualmente, ofrecemos la siguiente API:
 
 - **API de Payouts:** Esta API ofrecerá informes detallados sobre los payouts realizados, incluyendo valores de pago, estados e información de los beneficiarios.
 
-## Características Principales
+## Características Principales {#key-features}
 
 - **Informes Completos:** Nuestras APIs proporcionan informes detallados, permitiendo un análisis en profundidad y una toma de decisiones informada.
 - **Consultas Flexibles:** Utilice varios parámetros para filtrar y recuperar exactamente los datos que necesita para reportes.
 - **Paginación:** Maneje grandes conjuntos de datos con nuestra función de paginación, ideal para generar reportes extensos.
 - **Información Actualizada:** Aunque la mayoría de los datos están disponibles en tiempo real, tenga en cuenta que algunas APIs pueden tener un ligero retraso (hasta D-1) para los datos más recientes.
 
-## Primeros Pasos
+## Primeros Pasos {#getting-started}
 Para comenzar a utilizar nuestras APIs de Reportes, es necesario:
 
 1. Obtener las credenciales de autenticación con su Technical Account Manager. 

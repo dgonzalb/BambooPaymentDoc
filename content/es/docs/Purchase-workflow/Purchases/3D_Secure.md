@@ -3,28 +3,30 @@ title: "3DS pass-through"
 linkTitle: "3DS Pass-through"
 date: 2024-08-02T08:43:44-05:00
 Description: >
-  Discover how Bamboo supports Network Tokens with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
+  Bamboo soporta 3D Secure (3DS) como un pass-through con los adquirentes en Latinoamérica enviando le resultado de la autenticación del titular de la tarjeta al completar el pago.
 weight: 50
 tags: ["subtopic"]
 ---
 
-3D Secure (3DS) is an authentication protocol designed to enhance the security of online transactions by verifying the cardholder before completing the payment. In Bamboo’s 3DS Pass-through flow, authentication is handled via an external authentication provider, known as an External MPI (Merchant Plug-In). This method allows merchants to use third-party authentication data to securely complete transactions without performing the authentication directly within Bamboo’s platform. It’s an ideal solution for merchants who prefer or require external control over the authentication process.
+3D Secure (3DS) es un protocolo de autenticación diseñado para aumentar la seguridad de las compras con tarjeta. En el flujo de 3DS Pass-through de Bamboo, la autenticación se maneja a través de un proveedor de autenticación externo, conocido como MPI Externo. Este método permite a los comercios utilizar los datos de autenticación de terceros y enviarlos directamente al adquirente. Es una solución ideal para comercios que prefieren y requieren un control total del proceso de autenticación.
 
-## ThreeDS Object
-### Request Fields
+## Objeto ThreeDS {#threeds-object}
+### Campos de la Solicitud {#request-fields}
 
-| Parameter | Type | Mandatory? | Description |
-|-----------|------|:----------:|-------------|
-| `ThreeDSAuthMethod` | `string` | No | 3D Secure authentication method used: `"EXTERNAL"` or `"DISABLED"`. |
-| `ThreeDS` | `object` | Yes | 3D Secure information when `ThreeDSAuthMethod="EXTERNAL"`. |
-| `ThreeDS` → `Eci` | `string` | Yes | 3D Secure ECI code. |
-| `ThreeDS` → `Xid` | `string` | Yes | 3D Secure transaction identifier. |
-| `ThreeDS` → `Cavv` | `string` | Yes | Cardholder Authentication Verification Value (CAVV) in 3D Secure. |
-| `ThreeDS` → `Version` | `string` | Yes | 3D Secure protocol version. |
-| `ThreeDS` → `TransactionId` | `string` | Yes | Transaction ID in 3D Secure. |
+| Parámetro | Tipo | ¿Obligatorio? | Descripción |
+|-----------|------|:-------------:|-------------|
+| `ThreeDSAuthMethod` | `string` | No | Método de autenticación 3D Secure utilizado: `"EXTERNAL"` o `"DISABLED"`. |
+| `ThreeDS` | `object` | Sí | Información de 3D Secure cuando `ThreeDSAuthMethod="EXTERNAL"`. |
+| `ThreeDS` → `Eci` | `string` | Sí | Código ECI de 3D Secure. |
+| `ThreeDS` → `Xid` | `string` | Sí | Identificador de transacción 3D Secure. |
+| `ThreeDS` → `Cavv` | `string` | Sí | Valor de Verificación de Autenticación del Titular de la Tarjeta (CAVV) en 3D Secure. |
+| `ThreeDS` → `Version` | `string` | Sí | Versión del protocolo 3D Secure. |
+| `ThreeDS` → `TransactionId` | `string` | Sí | ID de transacción en 3D Secure. |
 
-### Request Example using the Purchase for PCI-Compliant Merchants
+### Ejemplo de Solicitud utilizando la [Compra Directa]({{< ref "purchase_v3.html" >}}#direct-purchase-for-pci-compliant-merchants){#request-example-using-the-purchase-for-pci-compliant-merchants}
 
 {{< highlight json >}}
 {{< Payins/V3/3DSecure/3ds_request >}}
 {{< /highlight >}}
+
+

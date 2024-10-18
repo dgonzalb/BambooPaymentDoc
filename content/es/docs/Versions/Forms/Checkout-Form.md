@@ -4,7 +4,8 @@ linkTitle: "Checkout"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.
-weight: 10
+weight: 60
+tags: ["subtopic"]
 ---
 
 ## Importación de la Librería JavaScript {#import-of-the-javascript-library} 

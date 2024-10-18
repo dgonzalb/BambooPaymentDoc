@@ -15,6 +15,8 @@ weight: 50
 ### Octubre
 | Página | Descripción |
 |---|---|
+| **[Formulario de Tokenización](/es/docs/forms.html)** | Nuevo Formulario de Tokenización para Comercios sin Certificación PCI. |
+| **[Nueva API V3]({{< ref Purchase_V3.md >}})** | La API V3 es ahora nuestra versión oficial, ofreciendo mejor rendimiento y responses optimizados. Las versiones anteriores también están disponibles en la sección Legacy |
 | [Solicitar un retiro]({{< ref Request-withdrawal.md >}}) | Nueva API para solicitar un retiro de saldos. |
 | [API de Transacciones](/es/docs/reporting/transactions-report.html) | Cambios en los parámetros y endpoints. |
 | **[API de Movimientos Financieros]({{< ref Statement-report.md >}})** | Nueva API de reportes para movimientos financieros. |

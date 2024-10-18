@@ -77,5 +77,5 @@ Consider the following parameters when invoking a refund request.
 
 
 {{% alert title="Important" color="info"%}}
-Refund availability and processing times may vary depending on the payment method and the country. For more detailed information about refund capabilities for specific payment methods in your country, please refer to our Payment Methods by Country.
+Refund availability and processing times may vary depending on the payment method and the country. For more detailed information about refund capabilities for specific payment methods in your country, please refer to our section [Payment Methods by Country.]({{< ref "../Payment-methods/_index.md" >}})
 {{% /alert %}}
