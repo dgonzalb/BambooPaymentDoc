@@ -123,11 +123,9 @@ Transaction errors always starts with `TR`.
 ### Purchase service errors
 Purchase errors always starts with `PR`.
 
-<div id="cutMessage"></div>
-
-| Code  | Description |
+| Code | Description |
 |---|---|
-| `PR001` | The informed token is invalid, expired or does not correspond to the commerce. | 
+| `PR001` | The informed token is invalid, expired or does not correspond to the commerce. |
 | `PR002` | The order number is invalid. |
 | `PR003` | The provided amount is invalid. Ensure it is not null or empty, and in the case of refunds, ensure it does not exceed the original purchase amount. |
 | `PR004` | Invalid Currency parameter for the Purchase. |
@@ -153,21 +151,19 @@ Purchase errors always starts with `PR`.
 ### Customers service errors
 Customer always starts with `CS`.
 
-<div id="cutMessage"></div>
-
 | Code  | Description |
 |---|---|
-| `CS001` | Invalid e-mail address. |
-| `CS002` | Invalid address type. |
-| `CS003` | Invalid customer identifier. |
-| `CS004` | An error occurred in the token creation. |
-| `CS005` | E-mail already registered. |
-| `CS006` | The parameter `AdditionalData` was not sent correctly, it must be `key:value` separated by semicolon. |
-| `CS007` | Invalid customer document number. |
-| `CS008` | Invalid customer document type. |
-| `CS009` | There was already a `CommerceToken` for the card. |
-| `CS010` | Invalid Payment Profile. |
-| `CS011` | Invalid Payment Profile Identifier. |
+| `CS001`|Invalid e-mail address. |
+| `CS002`|Invalid address type. |
+| `CS003`|Invalid customer identifier. |
+| `CS004`|An error occurred in the token creation. |
+| `CS005`|E-mail already registered. |
+| `CS006`|The parameter `AdditionalData` was not sent correctly, it must be `key:value` separated by semicolon. |
+| `CS007`|Invalid customer document number. |
+| `CS008`|Invalid customer document type. |
+| `CS009`|There was already a `CommerceToken` for the card. |
+| `CS010`|Invalid Payment Profile. |
+| `CS011`|Invalid Payment Profile Identifier. |
 
 
 ### Loyalty Plan service errors

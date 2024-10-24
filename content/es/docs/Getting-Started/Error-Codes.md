@@ -76,8 +76,6 @@ Los errores del servicio Transactions empiezan por `TR`.
 
 | Código | Descripción | Posible solución |
 |---|---|---|
-| Código  | Descripción | Posible solución |
-|---|---|---|
 | `TR001` | Error de comunicación con el servicio de adquisición. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 | `TR002` | La transacción asociada a la compra se encuentra en un estado que no permite la ejecución de la operación actual. Este error se produce, por ejemplo, cuando se quiere realizar una operación _Commit_ sobre una Compra que ya está autorizada o rechazada. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 | `TR003` | Problemas con la cuenta de comercio en el Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
@@ -123,9 +121,7 @@ Los errores del servicio Transactions empiezan por `TR`.
 ### Errores del servicio Purchase {#purchase-service-errors}
 Los errores del servicio Purchase empiezan por `PR`.
 
-<div id="cutMessage"></div>
-
-| Código  | Descripción |
+| Código | Descripción |
 |---|---|
 | `PR001` | El token informado no es válido, ha caducado o no corresponde al comercio. |
 | `PR002` | El número de orden no es válido. |
@@ -153,9 +149,7 @@ Los errores del servicio Purchase empiezan por `PR`.
 ### Errores del servicio Customers {#customers-service-errors}
 Los errores del servicio Customer empiezan por `CS`.
 
-<div id="cutMessage"></div>
-
-| Código  | Descripción |
+| Código | Descripción |
 |---|---|
 | `CS001` | Dirección de correo electrónico no válida. |
 | `CS002` | Tipo de dirección no válida. |
