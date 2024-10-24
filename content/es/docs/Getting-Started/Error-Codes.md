@@ -46,121 +46,129 @@ Los errores del servicio Tokenization empiezan por `TK`.
 
 <div id="cutMessage"></div>
 
-| Código | Mensaje | Descripción | Posible solución |
-|---|---|---|---|
-| `TK001` | INVALID_CARD_PAN | El número de tarjeta introducido es incorrecto. | Pida a su cliente que compruebe el número de tarjeta y vuelva a intentar la transacción. |
-| `TK002` | INVALID_CVV | El número CVV introducido es incorrecto. | Pida a su cliente que compruebe el código de validación y vuelva a intentar la transacción. |
-| `TK003` | INVALID_EXPIRATION_DATE | La fecha de expiración de la tarjeta es incorrecta. | Pida a su cliente que compruebe la fecha de expiración y vuelva a intentar la transacción. |
-| `TK004` | INVALID_SESSION_IDENTIFIER | Se ha enviado un identificador de sesión no válido en una solicitud de token. | [Regenere el token](/es/es/docs/purchase-workflow/customer-types.html) y vuelva a intentar la transacción. |
-| `TK005` | INVALID_EMAIL | Se ha introducido un correo electrónico con formato incorrecto. | Pida a su cliente que compruebe la dirección de correo electrónico y vuelva a intentar la transacción.|
-| `TK006` | EXPIRED_TOKEN | El token (de tipo One-Time) ya se ha utilizado o ha caducado. | [Regenere el token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) y vuelva a intentar la transacción. |
-| `TK007` | INVALID_PAYMENT_MEDIA | Error con la información del medio de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del medio de pago en la [lista de países](/es/es/docs/payment-methods.html) correspondiente. |
-| `TK008` | ISSUER_BANK_NOT_MATCH |  El banco emisor no coincide con el esperado. | Valide el banco emisor de la tarjeta de su cliente. |
-| `TK009` | INVALID_ACTIVATION_CODE | El código de activación del token no es válido.| Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
-| `TK010` | INVALID_COMMERCE_TOKEN | El token de comercio no es válido. | [Regenere el token (CT)]({{< ref Registered-users.md >}}) y vuelva a intentar la transacción. |
-| `TK011` | CUSTOMER_NOT_FOUND | El cliente especificado no es válido. | El cliente utilizado para crear el token no se ha encontrado o no es válido. |
-| `TK012` | TOKEN_ACTIVATION_ERROR | Error al activar el código.  | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
-| `TK013` | TOKEN_REGISTRY_VOID_ERROR | Error en el proceso de registro. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
-| `TK014` | TOKEN_PAYMENT_MEDIA_DISABLED | Medio de pago deshabilitado. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
-| `TK015` | TOKEN_PAYMENT_MEDIA_UNAVAILABLE | El medio de pago no está disponible para el comercio. | Compruebe que haya habilitado el medio de pago seleccionado. |
-| `TK016` | PAYMENT_MEDIA_REGISTRY_FAILS | Se ha producido un error en el proceso de registro del medio de pago | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
-| `TK017` | INVALID_DOCUMENT_NUMBER | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
-| `TK018` | INVALID_DOCUMENT_TYPE | Tipo de documento no válido | El tipo de documento enviado no es válido o no pertenece al país. |
-| `TK019` | INVALID_PAYMENT_TYPE | Tipo de pago no válido | El tipo de pago enviado no es válido o no pertenece al país. |
-| `TK999` | UNKNOWN_ERROR | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
+| Código  | Descripción | Posible solución |
+|---|---|---|
+| `TK001` | El número de tarjeta introducido es incorrecto. | Pida a su cliente que compruebe el número de tarjeta y vuelva a intentar la transacción. |
+| `TK002` | El número CVV introducido es incorrecto. | Pida a su cliente que compruebe el código de validación y vuelva a intentar la transacción. |
+| `TK003` | La fecha de expiración de la tarjeta es incorrecta. | Pida a su cliente que compruebe la fecha de expiración y vuelva a intentar la transacción. |
+| `TK004` | Se ha enviado un identificador de sesión no válido en una solicitud de token. | [Regenere el token](/es/es/docs/purchase-workflow/customer-types.html) y vuelva a intentar la transacción. |
+| `TK005` | Se ha introducido un correo electrónico con formato incorrecto. | Pida a su cliente que compruebe la dirección de correo electrónico y vuelva a intentar la transacción. |
+| `TK006` | El token (de tipo One-Time) ya se ha utilizado o ha caducado. | [Regenere el token (OTT)]({{< ref anonymous-users.md >}}#capture-the-card-data) y vuelva a intentar la transacción. |
+| `TK007` | Error con la información del medio de pago. | El `PaymentMediaId` no es correcto. Compruebe el valor del medio de pago en la [lista de países](/es/es/docs/payment-methods.html) correspondiente. |
+| `TK008` | El banco emisor no coincide con el esperado. | Valide el banco emisor de la tarjeta de su cliente. |
+| `TK009` | El código de activación del token no es válido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK010` | El token de comercio no es válido. | [Regenere el token (CT)]({{< ref Registered-users.md >}}) y vuelva a intentar la transacción. |
+| `TK011` | El cliente especificado no es válido. | El cliente utilizado para crear el token no se ha encontrado o no es válido. |
+| `TK012` | Error al activar el código. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK013` | Error en el proceso de registro. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK014` | Medio de pago deshabilitado. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK015` | El medio de pago no está disponible para el comercio. | Compruebe que haya habilitado el medio de pago seleccionado. |
+| `TK016` | Se ha producido un error en el proceso de registro del medio de pago. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para activar el medio de pago. |
+| `TK017` | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
+| `TK018` | Tipo de documento no válido. | El tipo de documento enviado no es válido o no pertenece al país. |
+| `TK019` | Tipo de pago no válido. | El tipo de pago enviado no es válido o no pertenece al país. |
+| `TK999` | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 
 ### Errores del servicio Transactions {#transactions-service-errors}
 Los errores del servicio Transactions empiezan por `TR`.
 
 <div id="cutMessage"></div>
 
-| Código | Mensaje | Descripción | Posible solución |
-|---|---|---|---|
-| `TR001` | COMMUNICATION_ERROR | Error de comunicación con el servicio de adquisición. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR002` | INVALID_TRANSACTION_STATE | La transacción asociada a la compra se encuentra en un estado que no permite la ejecución de la operación actual. Este error se produce, por ejemplo, cuando se quiere realizar una operación _Commit_ sobre una Compra que ya está autorizada o rechazada. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR003` | ACQUIRER_ACCOUNT_PROBLEM | Problemas con la cuenta de comercio en el Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR004` | ACQUIRER_PROXY_ERROR | Error al enviar la transacción a la entidad adquirente a través del proxy. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR005` | ACQUIRER_PROBLEM | Error interno del Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR006` | ACQUIRER_DUPLICATED_ORDER | Número de orden duplicado en la Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR007` | INVALID_PAYMENT_MEDIA | Errores en los datos de pago (número de tarjeta, código de verificación o fecha de expiración). | Pida a su cliente que verifique la información de la tarjeta y vuelva a intentar la transacción. |
-| `TR008` | COMMIT_AMOUNT_GREATER_THAN_AUTHORIZED | El importe que pretende confirmar es superior al autorizado previamente. | La [operación de confirmación]({{< ref purchase_v3.md >}}#confirm-a-purchase) se solicitó por un monto superior al autorizado. Envíe un valor igual o inferior al de la autorización original. |
-| `TR009` | ACQUIRER_UNKNOWN_ERROR | Error de Adquirente Desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR010` | ACQUIRER_INVALID_DOCUMENT | Número de documento del cliente no válido en la entidad adquirente. | El cliente debe comprobar el tipo y número de documento facilitado y volver a intentar la transacción. En caso contrario, deberá ponerse en contacto con el banco emisor de su tarjeta. |
-| `TR011` | BLOCKED_OR_LOST_CARD | Tarjeta bloqueada o extraviada. | Su cliente debe comprobar la tarjeta utilizada o ponerse en contacto con el banco emisor de la tarjeta para desbloquearla antes de reintentar la transacción. |
-| `TR012` | ACQUIRER_LIMIT_EXCEEDED | Se ha superado el límite de crédito. | Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
-| `TR013` | ACQUIRER_DENIED_TRANSACTION | La entidad adquirente o el emisor han denegado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción. Este rechazo puede tener múltiples causas dependiendo de la entidad adquirente contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR014` | ACQUIRER_POSSIBLE_FRAUD | La Entidad Adquirente ha rechazado la operación por posible fraude. | La Adquirente ha rechazado la transacción basándose en su sistema antifraude.<br>Las normas antifraude de la Adquirente están asociadas al tipo de negocio del comercio (línea, categoría, productos) y al contrato firmado para el terminal de compra online solicitado.<br>Usted (como comercio) debe ponerse en contacto con la entidad adquirente para determinar si es necesario realizar un ajuste de las normas antifraude. |
-| `TR015` | ACQUIRER_REVIEW_NEEDED | El Adquirente sugiere la revisión manual de la transacción. Por ejemplo, en caso de sospecha de fraude. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR016` | ACQUIRER_INVALID_PARAMETER | Error en los parámetros comunicados a la entidad adquirente. | Algunos de los datos que proporciona el cliente al realizar la compra son incorrectos o incompletos.<br>El cliente debe verificar si ha facilitado la dirección (junto con ciudad y país), nombre y apellidos, y documento. Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) si no puede verificarlo. |
-| `TR017` | INVALID_TRANSACTION_TYPE | Tipo de transacción no válida. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR018` | REGISTRATION_DENIED | La entidad adquirente ha denegado el registro de la tarjeta. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR019` | ACQUIRER_TRANSACTION_REJECTED | La entidad adquirente o el procesador han rechazado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción.<br>Este rechazo puede tener múltiples causas dependiendo de la adquirencia contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR020` | ISSUER_DECLINE_CALL | El emisor ha rechazado la transacción, sin embargo, el emisor puede autorizarla verbalmente. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
-| `TR021` | ISSUER_EXPIRED_CARD | La fecha de expiración no coincide o tarjeta expirada. | La entidad adquirente indica que la tarjeta está caducada o que la fecha de caducidad facilitada por el cliente es incorrecta.<br>El cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
-| `TR022` | ISSUER_INVALID_CVV | El emisor indica que el CVV no es válido. | La entidad adquirente indica que el código de validación de la tarjeta (CVV) es incorrecto.<br>Su cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
-| `TR023` | ISSUER_RESTRICTED_CARD | La tarjeta está inactiva, o usted no está autorizado a realizar esta transacción. | La tarjeta utilizada por el cliente no está habilitada para realizar compras online.<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta y habilitar las compras en línea.<br>Si la tarjeta está autorizada para realizar compras en línea, verifique su autorización de uso dentro de la región geográfica de la tienda. |
-| `TR024` | ACQUIRER_FRECUENCY_EXCEEDED | Se ha superado la frecuencia de uso o el importe máximo. | La tarjeta del cliente ha sobrepasado la frecuencia de uso permitida o ha superado el límite de importe especificado en un periodo determinado.<br>El cliente debe ponerse en contacto con el banco emisor de su tarjeta para determinar el periodo de espera adecuado antes de volver a intentar la compra. |
-| `TR025` | ACQUIRER_INVALID_ADDRESS | Los datos de dirección no se pueden validar o son incorrectos. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR026` | INSUFFICIENT_AMOUNT | Fondos insuficientes | Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
-| `TR027` | ACQUIRER_DENIED_TRANSACTION_AUTHENTICATION_REQUIRED | La entidad adquirente ha rechazado la transacción y debe solicitar autorización. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
-| `TR028` | ACQUIRER_INVALID_AMOUNT | La entidad adquirente denegó la transacción porque el monto pagado por el cliente no coincidía con el monto de la compra.<br>En este caso, el banco devuelve al cliente el monto pagado. | El cliente debe reintentar el pago con el mismo valor del monto de la compra. |
-| `TR075` | PAYER_AUTHENTICATION_REQUIRED | La respuesta de 3DSecure indica que debe solicitar la validación del cliente. | Respuesta de la entidad adquirente indicando que se requiere la validación del cliente (**Verified by Visa** o HighProtection siendo _Santander_). |
-| `TR076` | PAYER_AUTHENTICATION_FAILED | La autenticación del pagador falla. | La entidad adquirente indica que ha fallado la verificación adicional (o verificación en dos pasos) (HighProtection para _Santander_ o **Verified By Visa** para otros bancos).<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta o con el home banking del banco para comprobar si el servicio está habilitado.<br>Si está habilitado, verifique qué configuración tiene (verificación por email, SMS, token, etc) y vuelva a intentar la compra. |
-| `TR100` | ACQUIRER_OTHER_REASONS | La entidad adquirente rechaza por muchos motivos. | Contacta a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR101` | ACQUIRER_REFUND_ERROR | La entidad adquirente no puede procesar el reembolso. Póngase en contacto con la entidad adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR301` | Antifraud_Reject | Rechazado por el sistema antifraude | Sistema antifraude de Bamboo.<br>Valide con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
-| `TR302` | Antifraud_Invalid_Parameter | Parámetros no válidos para el sistema antifraude de Bamboo.<br>Valide con [Soporte de Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
-| `TR996` | TR_BILLINGCORE_ERROR | Ocurrió un error interno ejecutando la solicitud. | Vuelva a intentarlo más tarde. Si el error persiste, contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR997` | TRANSACTION_STEP_ERROR | Se ha producido un error al ejecutar el proceso actual. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
-| `TR999` | UNKNOWN | Error indeterminado al ejecutar la transacción. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
+| Código | Descripción | Posible solución |
+|---|---|---|
+| Código  | Descripción | Posible solución |
+|---|---|---|
+| `TR001` | Error de comunicación con el servicio de adquisición. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR002` | La transacción asociada a la compra se encuentra en un estado que no permite la ejecución de la operación actual. Este error se produce, por ejemplo, cuando se quiere realizar una operación _Commit_ sobre una Compra que ya está autorizada o rechazada. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR003` | Problemas con la cuenta de comercio en el Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR004` | Error al enviar la transacción a la entidad adquirente a través del proxy. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR005` | Error interno del Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR006` | Número de orden duplicado en la Adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR007` | Errores en los datos de pago (número de tarjeta, código de verificación o fecha de expiración). | Pida a su cliente que verifique la información de la tarjeta y vuelva a intentar la transacción. |
+| `TR008` | El importe que pretende confirmar es superior al autorizado previamente. | La [operación de confirmación]({{< ref purchase_v3.md >}}#confirm-a-purchase) se solicitó por un monto superior al autorizado. Envíe un valor igual o inferior al de la autorización original. |
+| `TR009` | Error de Adquirente Desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR010` | Número de documento del cliente no válido en la entidad adquirente. | El cliente debe comprobar el tipo y número de documento facilitado y volver a intentar la transacción. En caso contrario, deberá ponerse en contacto con el banco emisor de su tarjeta. |
+| `TR011` | Tarjeta bloqueada o extraviada. | Su cliente debe comprobar la tarjeta utilizada o ponerse en contacto con el banco emisor de la tarjeta para desbloquearla antes de reintentar la transacción. |
+| `TR012` | Se ha superado el límite de crédito. | Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
+| `TR013` | La entidad adquirente o el emisor han denegado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción. Este rechazo puede tener múltiples causas dependiendo de la entidad adquirente contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR014` | La Entidad Adquirente ha rechazado la operación por posible fraude. | La Adquirente ha rechazado la transacción basándose en su sistema antifraude.<br>Las normas antifraude de la Adquirente están asociadas al tipo de negocio del comercio (línea, categoría, productos) y al contrato firmado para el terminal de compra online solicitado.<br>Usted (como comercio) debe ponerse en contacto con la entidad adquirente para determinar si es necesario realizar un ajuste de las normas antifraude. |
+| `TR015` | El Adquirente sugiere la revisión manual de la transacción. Por ejemplo, en caso de sospecha de fraude. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR016` | Error en los parámetros comunicados a la entidad adquirente. | Algunos de los datos que proporciona el cliente al realizar la compra son incorrectos o incompletos.<br>El cliente debe verificar si ha facilitado la dirección (junto con ciudad y país), nombre y apellidos, y documento. Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) si no puede verificarlo. |
+| `TR017` | Tipo de transacción no válida. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR018` | La entidad adquirente ha denegado el registro de la tarjeta. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR019` | La entidad adquirente o el procesador han rechazado la transacción. | La entidad adquirente o el banco emisor de la tarjeta ha rechazado la transacción.<br>Este rechazo puede tener múltiples causas dependiendo de la adquirencia contratada y configurada por usted. Contacta con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR020` | El emisor ha rechazado la transacción, sin embargo, el emisor puede autorizarla verbalmente. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
+| `TR021` | La fecha de expiración no coincide o tarjeta expirada. | La entidad adquirente indica que la tarjeta está caducada o que la fecha de caducidad facilitada por el cliente es incorrecta.<br>El cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
+| `TR022` | El emisor indica que el CVV no es válido. | La entidad adquirente indica que el código de validación de la tarjeta (CVV) es incorrecto.<br>Su cliente debe validar esta información en la tarjeta antes de reintentar la compra. |
+| `TR023` | La tarjeta está inactiva, o usted no está autorizado a realizar esta transacción. | La tarjeta utilizada por el cliente no está habilitada para realizar compras online.<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta y habilitar las compras en línea.<br>Si la tarjeta está autorizada para realizar compras en línea, verifique su autorización de uso dentro de la región geográfica de la tienda. |
+| `TR024` | Se ha superado la frecuencia de uso o el importe máximo. | La tarjeta del cliente ha sobrepasado la frecuencia de uso permitida o ha superado el límite de importe especificado en un periodo determinado.<br>El cliente debe ponerse en contacto con el banco emisor de su tarjeta para determinar el periodo de espera adecuado antes de volver a intentar la compra. |
+| `TR025` | Los datos de dirección no se pueden validar o son incorrectos. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR026` | Fondos insuficientes. | Su cliente debe intentar realizar la compra utilizando una tarjeta diferente, aumentar el límite de la tarjeta o liberar fondos disponibles. |
+| `TR027` | La entidad adquirente ha rechazado la transacción y debe solicitar autorización. | El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor de la tarjeta para autorizar la compra.<br>Error relacionado `TR023` |
+| `TR028` | La entidad adquirente denegó la transacción porque el monto pagado por el cliente no coincidía con el monto de la compra.<br>En este caso, el banco devuelve al cliente el monto pagado. | El cliente debe reintentar el pago con el mismo valor del monto de la compra. |
+| `TR030` |Se ha excedido el límite de intentos permitidos|El cliente debe utilizar otra tarjeta para realizar la compra, la tarjeta utilizada ha excedido la cantidad de compras permitidas en el mes, semana o día.|
+| `TR031` | Cuenta cerrada|El banco ha detectado que la cuenta asociada a la tarjeta, ha sido cerrada. El cliente debe contactarse con el banco de la tarjeta para habilitar la cuenta nuevamente o utilizar otra tarjeta.|
+| `TR032` | Declinada - contacte al banco emisor de su tarjeta| El banco ha rechazado la compra online. El cliente debe ponerse en contacto con el banco emisor.|
+| `TR033` | Cuotas no permitidas para tarjetas internacionales|El cliente debe utilizar una tarjeta no internacional para realizar la compra en cuotas|
+| `TR075` | La respuesta de 3DSecure indica que debe solicitar la validación del cliente. | Respuesta de la entidad adquirente indicando que se requiere la validación del cliente (**Verified by Visa** o HighProtection siendo _Santander_). |
+| `TR076` | La autenticación del pagador falla. | La entidad adquirente indica que ha fallado la verificación adicional (o verificación en dos pasos) (HighProtection para _Santander_ o **Verified By Visa** para otros bancos).<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta o con el home banking del banco para comprobar si el servicio está habilitado.<br>Si está habilitado, verifique qué configuración tiene (verificación por email, SMS, token, etc) y vuelva a intentar la compra. |
+| `TR100` | La entidad adquirente rechaza por muchos motivos. | Contacta a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR101` | La entidad adquirente no puede procesar el reembolso. Póngase en contacto con la entidad adquirente. | Contacte con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR301` | Rechazado por el sistema antifraude | Sistema antifraude de Bamboo.<br>Valide con [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
+| `TR302` | Parámetros no válidos para el sistema antifraude de Bamboo.<br>Valide con [Soporte de Bamboo](mailto:soportecomercios@bamboopayment.com) qué regla se vio afectada antes de que tu cliente reintente la compra. |
+| `TR996` | Ocurrió un error interno ejecutando la solicitud. | Vuelva a intentarlo más tarde. Si el error persiste, contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR997` | Se ha producido un error al ejecutar el proceso actual. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
+| `TR999` | Error indeterminado al ejecutar la transacción. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información . |
 
 ### Errores del servicio Purchase {#purchase-service-errors}
 Los errores del servicio Purchase empiezan por `PR`.
 
 <div id="cutMessage"></div>
 
-| Código | Mensaje | Descripción |
-|---|---|---|
-| `PR001` | INVALID_TOKEN | El token informado no es válido, ha caducado o no corresponde al comercio. |
-| `PR002` | INVALID_ORDER | El número de orden no es válido. |
-| `PR003` | PR_INVALID_AMOUNT | El monto proporcionado es inválido. Asegúrese de que no esté nulo o vacío y, en caso de reembolsos, de que no exceda el monto de la compra original. |
-| `PR004` | PR_INVALID_CURRENCY_PARAMETER | El parámetro de moneda de la compra es inválido. |
-| `PR005` | INVALID_INVOICE | El número de factura no es válido (debe ser numérico). |
-| `PR006` | PR_INVALID_PURCHASE_IDENTIFIER | Identificador inválido para la compra. |
-| `PR007` | PR_INVALID_TRANSACTION_IDENTIFIER | Identificador de transacción inválido |
-| `PR008` | PURCHASE_NOT_FOUND | No se encuentra la compra solicitada. |
-| `PR009` | INVALID_PURCHASE_STATE | El estado actual de la compra no permite la operación solicitada. |
-| `PR010` | TAXABLE_AMOUNT_REQUIRED | El campo `TaxableAmount` es obligatorio. |
-| `PR011` | INVOICE_REQUIRED | El campo `Invoice` es obligatorio. |
-| `PR012` | INVALID_CAPTURED_CVV_REQUIRED | Se requiere la captura del código de verificación de la tarjeta. |
-| `PR013` | INVALID_INSTALLMENTS | Los plazos seleccionados para la compra no son válidos para la tarjeta. |
-| `PR014` | INVALID_DESCRIPTION_LENGTH | Descripción de longitud de parámetro no válida. |
-| `PR015` | INVALID_CUSTOMER_USER_AGENT_EMPTY | El parámetro `UserAgent` está vacío. |
-| `PR016` | INVALID_CUSTOMER_IP_EMPTY | El parámetro `CustomerIP` está vacío. |
-| `PR017` | TAXABLE_AMOUNT_GREATER_THAN_AMOUNT | El campo `TaxableAmount` no puede ser mayor que el importe total de la compra. |
-| `PR018` | PR_DATE_NEEDED | Para filtrar por fechas, debe introducir el valor de los parámetros `From` y `To`. |
-| `PR019` | EXCEED_DATE_RANGE | El periodo de búsqueda excede el número máximo de días. |
-| `PR020` | INVALID_DOCUMENT_NUMBER | Documento registrado inválido.
-| `PR021` | NOT_ALLOW_PARTIAL_REFUND | No se permiten devoluciones parciales para el medio de pago utilizado. |
+| Código  | Descripción |
+|---|---|
+| `PR001` | El token informado no es válido, ha caducado o no corresponde al comercio. |
+| `PR002` | El número de orden no es válido. |
+| `PR003` | El monto proporcionado es inválido. Asegúrese de que no esté nulo o vacío y, en caso de reembolsos, de que no exceda el monto de la compra original. |
+| `PR004` | El parámetro de moneda de la compra es inválido. |
+| `PR005` | El número de factura no es válido (debe ser numérico). |
+| `PR006` | Identificador inválido para la compra. |
+| `PR007` | Identificador de transacción inválido. |
+| `PR008` | No se encuentra la compra solicitada. |
+| `PR009` | El estado actual de la compra no permite la operación solicitada. |
+| `PR010` | El campo `TaxableAmount` es obligatorio. |
+| `PR011` | El campo `Invoice` es obligatorio. |
+| `PR012` | Se requiere la captura del código de verificación de la tarjeta. |
+| `PR013` | Los plazos seleccionados para la compra no son válidos para la tarjeta. |
+| `PR014` | Descripción de longitud de parámetro no válida. |
+| `PR015` | El parámetro `UserAgent` está vacío. |
+| `PR016` | El parámetro `CustomerIP` está vacío. |
+| `PR017` | El campo `TaxableAmount` no puede ser mayor que el importe total de la compra. |
+| `PR018` | Para filtrar por fechas, debe introducir el valor de los parámetros `From` y `To`. |
+| `PR019` | El periodo de búsqueda excede el número máximo de días. |
+| `PR020` | Documento registrado inválido. |
+| `PR021` | No se permiten devoluciones parciales para el medio de pago utilizado. |
+| `PR034` | El valor del campo `TargetCountryISO` enviado en la compra es inválido. |
 
 ### Errores del servicio Customers {#customers-service-errors}
 Los errores del servicio Customer empiezan por `CS`.
 
 <div id="cutMessage"></div>
 
-| Código | Mensaje | Descripción |
-|---|---|---|
-| `CS001` | INVALID_EMAIL | Dirección de correo electrónico no válida. |
-| `CS002` | INVALID_ADDRESS_TYPE | Tipo de dirección no válida. |
-| `CS003` | INVALID_CUSTOMER_IDENTIFIER | Identificador de cliente no válido. |
-| `CS004` | TOKEN_CREATION_FAILED | Se ha producido un error en la creación del token. |
-| `CS005` | EMAIL_ALREADY_EXISTS | E-mail ya registrado. |
-| `CS006` | INVALID_ADDITIONAL_DATA | El parámetro `AdditionalData` no fue enviado correctamente, debe ser `key:value` separado por punto y coma. |
-| `CS007` | INVALID_CUSTOMER_DOCUMENT | Número de documento de cliente no válido. |
-| `CS008` | INVALID_CUSTOMER_DOCUMENT_TYPE | Tipo de documento de cliente inválido. |
-| `CS009` | TOKEN_ALREADY_EXISTS | Ya existía un `CommerceToken` para la tarjeta. |
-| `CS010` | INVALID_PAYMENT_PROFILE | Perfil de pago no válido. |
-| `CS011` | INVALID_PAYMENT_PROFILE_IDENTIFIER | Identificador de perfil de pago no válido. |
+| Código  | Descripción |
+|---|---|
+| `CS001` | Dirección de correo electrónico no válida. |
+| `CS002` | Tipo de dirección no válida. |
+| `CS003` | Identificador de cliente no válido. |
+| `CS004` | Se ha producido un error en la creación del token. |
+| `CS005` | E-mail ya registrado. |
+| `CS006` | El parámetro `AdditionalData` no fue enviado correctamente, debe ser `key:value` separado por punto y coma. |
+| `CS007` | Número de documento de cliente no válido. |
+| `CS008` | Tipo de documento de cliente inválido. |
+| `CS009` | Ya existía un `CommerceToken` para la tarjeta. |
+| `CS010` | Perfil de pago no válido. |
+| `CS011` | Identificador de perfil de pago no válido. |
+
 
 ### Errores del servicio Planes de fidelización {#loyalty-plan-service-errors}
 Los errores de Planes de fidelización empiezan por `LP`.
