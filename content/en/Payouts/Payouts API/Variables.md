@@ -734,9 +734,6 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | CURP | Unique Population Registry Key | Individuals | | Between 8 and 18 |
 | RFC | Federal Taxpayer Registry | Individuals and Companies | | Between 8 and 18 |
-| IFE | Federal Electoral Institute | Individuals | | Between 8 and 18 |
-| PASSPORT | International Travel Document | Individuals |  | Between 8 and 18 |
-| RESIDENCIA | Document of foreigner residing in the country | Individuals |  | Between 8 and 18 |
 
 <!--### Nicaragua
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
