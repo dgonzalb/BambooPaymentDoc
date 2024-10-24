@@ -40,7 +40,7 @@ Se necesita incluir campos específicos para que este método de pago funcione c
 | `DataUY` | `object` | No | Información específica para _Uruguay_.<br>En Uruguay, dos leyes promueven los medios de pago electrónicos mediante la devolución de puntos de IVA. Las leyes **19.210** (Ley de inclusión financiera) y **17.934** de servicios gastronómicos y afines regulan estos beneficios, y los datos presentados en este objeto son necesarios para su correcto uso.<br>Este campo es requerido para el modelo Gateway. |
 | `DataUY` → `IsFinalConsumer` | `boolean` | No | Indica si la venta se realiza a un consumidor final.<br>Este campo es requerido para el modelo Gateway. |
 | `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Número de factura asociado a la venta. Este parámetro solo acepta caracteres numéricos. |
-| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Importe gravado por IVA. |
+| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Importe gravado por IVA. En caso de no enviarse el valor, no se aplicará la devolución de puntos de IVA.|
 
 {{% alert title="Info" color="info"%}}
 * <sup>*</sup> Este parámetro es obligatorio cuando `DataUY.IsFinalConsumer` es `true`.
