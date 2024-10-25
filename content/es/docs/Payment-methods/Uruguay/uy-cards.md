@@ -285,14 +285,14 @@ El comportamiento de la respuesta dependerá del monto enviado. Utilice las sigu
 
 #### Tarjetas sin CVV
 
-| Marca | PAN | CVV | Fecha de Expiración |
+| Marca | PAN | Fecha de Expiración |
 |---|---|---|
-| Mastercard Crédito | `5101980000000000` | `12/29` |
+| Mastercard Crédito | `5101980000000000` |`12/29` |
 | Mastercard Prepago | `5599260000000006` | `12/29` |
-| Visa Crédito | `4103770000000006` | `12/29` |
-| Visa Débito | `4213000000000005` | `12/29` |
-| Visa Internacional Crédito | `4147960000000001` | `12/29` |
-| Visa Internacional Débito | `4345590000000006` | `12/29` |
+| Visa Crédito | `4103770000000006` |`12/29` |
+| Visa Débito | `4213000000000005` |`12/29` |
+| Visa Internacional Crédito | `4147960000000001` |`12/29` |
+| Visa Internacional Débito | `4345590000000006` |`12/29` |
 
 <div id="shortTable"></div>
 
