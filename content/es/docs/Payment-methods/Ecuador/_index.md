@@ -34,6 +34,6 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Ecuador:
 
-| Código | Nombre del documento | Abreviación  |
-|:------:|----------------------|--------------|
-| 10     | Other                | NAN          |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento | Abreviación  |
+|:-------------:|:-------------------:|----------------------|--------------|
+|  NAN.EC        | 10                  | Other                | NAN          |

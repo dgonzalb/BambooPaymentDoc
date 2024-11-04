@@ -34,6 +34,6 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Ecuador:
 
-| Code | Document name | Abbreviation |
-|:----:|---------------|--------------|
-| 10   | Other         | NAN          |
+| Code (V3 API) | Code (Previous API) | Document name | Abbreviation |
+|:-------------:|:-------------------:|---------------|--------------|
+|  NAN.EC        | 10                  | Other         | NAN          |
