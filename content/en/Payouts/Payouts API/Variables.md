@@ -693,7 +693,7 @@ The following tables show the document types you must configure in the parameter
 ### Argentina
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| CUIT | Unique Tax Identification Code | Companies | Numeric | 11 |
+| CUIT | Unique Tax Identification Code | Companies / Individuals | Numeric | 11 |
 | CUIL | Unique Labor Identification Code | Individuals | Numeric | 11 |
 
 ### Brazil

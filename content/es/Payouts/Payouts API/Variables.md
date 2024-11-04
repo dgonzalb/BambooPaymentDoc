@@ -695,7 +695,7 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 ### Argentina
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CUIT | Clave Única de Identificación Tributaria | Compañías | Numérico | 11 |
+| CUIT | Clave Única de Identificación Tributaria | Compañías / Individuos | Numérico | 11 |
 | CUIL | Código único de Identificación Laboral | Individuos | Numérico | 11 |
 
 ### Brasil {#brazil-1}
