@@ -8,8 +8,8 @@
     "AuthorizationDate": "2024-08-07T17:51:56.879",
     "AuthorizationCode": "839936",
     "Amount": 25000,
-    "Currency": "BRL",
-    "Installments": 2,
+    "Currency": "{{.Get "currency"}}",
+    "Installments": 1,
     "TaxableAmount": null,
     "Tip": null,
     "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
@@ -17,9 +17,9 @@
     "Action": null,
     "PaymentMethod": {
         "Brand": "Visa",
-        "CardOwner": "João Silva",
+        "CardOwner": "Joao Silva",
         "Bin": "450799",
-        "IssuerBank": "Banco do Brasil",
+        "IssuerBank": "Santander",
         "Type": "CreditCard",
         "Expiration": "203008",
         "Last4": "4905"

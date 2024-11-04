@@ -41,10 +41,10 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Brazil:
 
-| Code | Document name                          | Abbreviation |
-|:----:|----------------------------------------|--------------|
-| 24   | Cadastro de Pessoas Físicas            | CPF          |
-| 25   | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
+| Code (V3 API) | Code (Previous API) |  Document name                          | Abbreviation |
+|:-------------:|:-------------------:|----------------------------------------|--------------|
+|  CPF.BR       | 24                   |  Cadastro de Pessoas Físicas            | CPF          |
+|  CNPG.BR      | 25                   |  Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
 
 ## Customer's state of residence
 

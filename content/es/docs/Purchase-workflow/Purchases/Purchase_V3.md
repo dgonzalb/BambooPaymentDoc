@@ -203,7 +203,7 @@ El objeto PaymentMethod contiene información detallada sobre el medio de pago u
 **Resultado:** `COMPLETED` - **Estado:** `APPROVED`
 
 {{< highlight json >}}
-{{< Payins/V3/CreatePurchase/http200_approved >}}
+{{< Payins/V3/CreatePurchase/http200_approved currency="BRL">}}
 {{< /highlight >}} 
 <br>
 

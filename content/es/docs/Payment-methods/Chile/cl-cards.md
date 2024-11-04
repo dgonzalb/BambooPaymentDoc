@@ -29,14 +29,14 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/chile.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `DocumentType` | `string` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/chile.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Estado del cliente. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `Address` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
+| `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -45,158 +45,17 @@ Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos e
 {{% /alert %}}
 
 #### Ejemplo del Request {#request-example}
-```json
-{
-    "TrxToken": "OT__S5iqUBO8ZQCdfjtSIrTR_0-bknqY42K14jiYpVJ8SzQ_",
-    "Capture": "true",
-    "Amount": 100,
-    "Order": "ORD1233",
-    "Currency": "CLP",
-    "TargetCountryISO": "CL",
-    "Installments": 1,
-    "Customer": {
-        "Email": "jgonzalez@mail.com",
-        "FirstName": "Jaime",
-        "LastName": "Gonzalez"
-    },
-    "Description": "Prueba transaccion API"
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Chile/requestPurchase>}}
+{{< /highlight >}}
 
 ### Parámetros del Response {#response-parameters}
 Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example}
-
-```json
-{
-    "Response": {
-        "PurchaseId": 1133755,
-        "Created": "2023-08-31T20:05:27.780",
-        "TrxToken": null,
-        "Order": "ORD1233",
-        "Transaction": {
-            "TransactionID": 1152672,
-            "Created": "2023-08-31T20:05:27.780",
-            "AuthorizationDate": "",
-            "TransactionStatusId": 1,
-            "Status": "Approved",
-            "ErrorCode": "",
-            "Description": " ",
-            "ApprovalCode": null,
-            "Steps": [
-                {
-                    "Step": "Generic External",
-                    "Created": "",
-                    "Status": null,
-                    "ResponseCode": "",
-                    "ResponseMessage": "AUTHORIZED",
-                    "Error": "",
-                    "AuthorizationCode": "1213",
-                    "UniqueID": null,
-                    "AcquirerResponseDetail": "AUTHORIZED"
-                }
-            ]
-        },
-        "Capture": true,
-        "Amount": 100,
-        "OriginalAmount": 100,
-        "TaxableAmount": 0,
-        "Tip": 0,
-        "Installments": 1,
-        "Currency": "CLP",
-        "Description": "Prueba transaccion API",
-        "Customer": {
-            "CustomerId": 250623,
-            "Created": "2023-08-31T20:04:44.033",
-            "CommerceCustomerId": null,
-            "Owner": "Anonymous",
-            "Email": "jgonzalez@mail.com",
-            "Enabled": true,
-            "ShippingAddress": null,
-            "BillingAddress": null,
-            "Plans": null,
-            "AdditionalData": null,
-            "PaymentProfiles": [
-                {
-                    "PaymentProfileId": 255370,
-                    "PaymentMediaId": 1,
-                    "Created": "2023-08-31T20:04:44.033",
-                    "LastUpdate": "2023-08-31T20:04:50.143",
-                    "Brand": "VISA",
-                    "CardOwner": "Jhon Doe Chile",
-                    "Bin": "405188",
-                    "IssuerBank": "Visa",
-                    "Installments": "1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24",
-                    "Type": "CreditCard",
-                    "IdCommerceToken": 0,
-                    "Token": null,
-                    "Expiration": "202910",
-                    "Last4": "6623",
-                    "Enabled": null,
-                    "DocumentNumber": null,
-                    "DocumentTypeId": null,
-                    "ExternalValue": null,
-                    "AffinityGroup": null
-                }
-            ],
-            "CaptureURL": null,
-            "UniqueID": null,
-            "URL": "https://api.stage.bamboopayment.com/Customer/250623",
-            "FirstName": "Jaime",
-            "LastName": "Gonzalez",
-            "DocNumber": null,
-            "DocumentTypeId": null,
-            "PhoneNumber": null,
-            "ExternalValue": null
-        },
-        "RefundList": null,
-        "PlanID": null,
-        "UniqueID": null,
-        "AdditionalData": null,
-        "CustomerUserAgent": null,
-        "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1133755",
-        "DataUY": {
-            "IsFinalConsumer": false,
-            "Invoice": null,
-            "TaxableAmount": 0
-        },
-        "DataDO": {
-            "Invoice": null,
-            "Tax": 0
-        },
-        "Acquirer": {
-            "AcquirerID": 79,
-            "Name": "Transbank Api",
-            "CommerceNumber": null
-        },
-        "CommerceAction": null,
-        "PurchasePaymentProfileId": 255370,
-        "LoyaltyPlan": null,
-        "DeviceFingerprintId": null,
-        "MetadataIn": null,
-        "MetadataOut": null,
-        "CrossBorderData": null,
-        "CrossBorderDataResponse": {
-            "TargetCountryISO": "CL",
-            "TargetCurrencyISO": "CLP",
-            "TargetAmount": 1
-        },
-        "Redirection": null,
-        "IsFirstRecurrentPurchase": false,
-        "AntifraudData": {
-            "AntifraudFingerprintId": null,
-            "AntifraudMetadataIn": null
-        },
-        "PaymentMediaId": null,
-        "PurchaseType": 1,
-        "HasCvv": null,
-        "TargetCountryISO": null
-    },
-    "Errors": []
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_approved currency="CLP">}}
+{{< /highlight >}}
 
 <!--## Pagos con tarjeta mediante flujo Redirect {#card-payments-using-redirection-flow}
 Utilizando este flujo, el pagador debe ser redirigido a la página _**webpay**_ para completar el pago según el medio de pago seleccionado (tarjeta de débito, crédito o prepago).

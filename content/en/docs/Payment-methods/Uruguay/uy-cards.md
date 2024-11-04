@@ -23,19 +23,14 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/uruguay.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `DocumentType` | `string` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/uruguay.html#document-types) to see the possible values. |
+| `Customer` → `DocumentNumber` | `string` | No | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
-| `Customer` → `BillingAddress` → `Country` | `string` | Yes | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | Yes | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | Yes | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States and Canada. |
-| `Customer` → `ShippingAddress` → `Country` | `string` | No | Country of the Shipping Address. |
-| `Customer` → `ShippingAddress` → `State` | `string` | No | State of the Shipping Address. | 
-| `Customer` → `ShippingAddress` → `City` | `string` | No | City of the Shipping Address. |
-| `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Address Detail of the Shipping Address. | 
-| `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Postal Code of the Shipping Address. |
+| `Customer` → `Address` → `Country` | `string` | Yes | Customer's Country. |
+| `Customer` → `Address` → `State` | `string` | Yes | Customer's State. |
+| `Customer` → `Address` → `City` | `string` | Yes | Customer's City. |
+| `Customer` → `Address` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
+| `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code.<br>Postal code is mandatory for the United States and Canada. |
 | `CustomerIP` | `string` | No | IP of the customer that uses the service. |
 | `DataUY` | `object` | No | Specific data for _Uruguay_.<br>In Uruguay, two laws promote electronic payment methods by refunding VAT points. Law **19,210** (Financial inclusion law) and **17,934** for gastronomic and related services govern these benefits, and the data presented in this object is necessary for correct usage.<br>This parameter is required for the Gateway model. |
 | `DataUY` → `IsFinalConsumer` | `boolean` | No | Indicates if the sale is performed to a final consumer.<br>This parameter is required for the Gateway model. |
@@ -49,170 +44,19 @@ You need to include specific fields for this payment method to work correctly. C
 {{% /alert %}}
 
 ### Request example
-```json
-{
-  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
-  "Capture": true,
-  "Order": "20201229",
-  "Amount": "10000",
-  "Currency": "USD",
-  "TargetCountryISO": "UY",
-  "Installments": 1,
-  "Customer": {
-    "BillingAddress": {
-      "Country": "Uruguay",
-      "City": "Montevideo",
-      "State": "Montevideo",
-      "PostalCode": "150000",
-      "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-    },
-    "Email": "rserrano@mail.com",
-    "DocNumber": "47666489",
-    "DocumentTypeId": 2,
-    "PhoneNumber": "0930000111",
-    "FirstName": "Rodrigo",
-    "LastName": "Serrano"
-  }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Uruguay/requestPurchase>}}
+{{< /highlight >}}
+
 
 ## Response parameters
 For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 ### Response example
-```json
-{
-  "Response": {
-    "PurchaseId": 1248284,
-    "Created": "2023-09-29T15:34:10.012",
-    "TrxToken": null,
-    "Order": "20201229",
-    "Transaction": {
-      "TransactionID": 1267112,
-      "Created": "2023-09-29T15:34:10.012",
-      "AuthorizationDate": "",
-      "TransactionStatusId": 1,
-      "Status": "Approved",
-      "ErrorCode": "0",
-      "Description": "",
-      "ApprovalCode": null,
-      "Steps": [
-        {
-          "Step": "Generic External",
-          "Created": "",
-          "Status": null,
-          "ResponseCode": "00",
-          "ResponseMessage": "Authorization - Function performed error-free",
-          "Error": "0",
-          "AuthorizationCode": "586316",
-          "UniqueID": null,
-          "AcquirerResponseDetail": "{\"TransactionResult\":\"APPROVED\",\"ProcessorResponseCode\":\"00\",\"ProcessorResponseMessage\":\"Function performed error-free\",\"ApprovalCode\":\"Y:586316:4637904926:PPXX:5863160734\",\"OrderId\":\"A-79d7a01b-5b36-4326-b872-82c29f196ec0\",\"IpgTransactionId\":\"84637904926\",\"ProcessorApprovalCode\":\"586316\",\"ProcessorReceiptNumber\":\"0734\",\"ProcessorBatchNumber\":\"001\",\"ProcessorReferenceNumber\":\"586316586316\",\"ProcessorTraceNumber\":\"586316\"}"
-        }
-      ]
-    },
-    "Capture": true,
-    "Amount": 10000,
-    "OriginalAmount": 10000,
-    "TaxableAmount": 0,
-    "Tip": 0,
-    "Installments": 1,
-    "Currency": "USD",
-    "Description": null,
-    "Customer": {
-      "CustomerId": 254952,
-      "Created": "2023-09-29T15:34:05.713",
-      "CommerceCustomerId": null,
-      "Owner": "Anonymous",
-      "Email": "rserrano@mail.com",
-      "Enabled": true,
-      "ShippingAddress": null,
-      "BillingAddress": {
-        "AddressId": 377785,
-        "AddressType": 2,
-        "Country": "Uruguay",
-        "City": "Montevideo",
-        "State": "Montevideo",
-        "PostalCode": "150000",
-        "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-      },
-      "Plans": null,
-      "AdditionalData": null,
-      "PaymentProfiles": [
-        {
-          "PaymentProfileId": 259793,
-          "PaymentMediaId": 2,
-          "Created": "2023-09-29T15:34:05.713",
-          "LastUpdate": null,
-          "Brand": "MasterCard",
-          "CardOwner": "Rodrigo Serrano",
-          "Bin": null,
-          "IssuerBank": null,
-          "Installments": null,
-          "Type": "CreditCard",
-          "IdCommerceToken": 0,
-          "Token": null,
-          "Expiration": "202912",
-          "Last4": "0008",
-          "Enabled": null,
-          "DocumentNumber": null,
-          "DocumentTypeId": null,
-          "ExternalValue": null,
-          "AffinityGroup": null
-        }
-      ],
-      "CaptureURL": null,
-      "UniqueID": null,
-      "URL": "https://api.stage.bamboopayment.com/Customer/254952",
-      "FirstName": "Rodrigo",
-      "LastName": "Serrano",
-      "DocNumber": "47666489",
-      "DocumentTypeId": 2,
-      "PhoneNumber": "0930000111",
-      "ExternalValue": null
-    },
-    "RefundList": null,
-    "PlanID": null,
-    "UniqueID": null,
-    "AdditionalData": null,
-    "CustomerUserAgent": null,
-    "CustomerIP": null,
-    "URL": "https://api.stage.bamboopayment.com/Purchase/1248284",
-    "DataUY": {
-      "IsFinalConsumer": false,
-      "Invoice": null,
-      "TaxableAmount": 0
-    },
-    "DataDO": {
-      "Invoice": null,
-      "Tax": 0
-    },
-    "Acquirer": {
-      "AcquirerID": 73,
-      "Name": "FiservIPG",
-      "CommerceNumber": null
-    },
-    "CommerceAction": null,
-    "PurchasePaymentProfileId": 259793,
-    "LoyaltyPlan": null,
-    "DeviceFingerprintId": null,
-    "MetadataIn": null,
-    "MetadataOut": null,
-    "CrossBorderData": null,
-    "CrossBorderDataResponse": null,
-    "Redirection": null,
-    "IsFirstRecurrentPurchase": false,
-    "AntifraudData": {
-      "AntifraudFingerprintId": null,
-      "AntifraudMetadataIn": null
-    },
-    "PaymentMediaId": null,
-    "PurchaseType": 1,
-    "HasCvv": null,
-    "TargetCountryISO": null
-  },
-  "Errors": []
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_approved currency="UYU">}}
+{{< /highlight >}}
+
 <!--
 ### Response for AMEX
 When using AMEX, the response includes the object `AcquirerResponseDetail` inside the `Response.Transaction.Steps` object with the following information.

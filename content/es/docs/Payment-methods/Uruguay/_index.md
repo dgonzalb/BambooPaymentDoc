@@ -68,11 +68,11 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Uruguay:
 
-| Código | Nombre del documento | Abreviación |
-|:------:|----------------------|-------------|
-| 1      | RUT                  | RUT         |
-| 2      | Cédula de Identidad  | CI          |
-| 3      | Extranjero            | EXT         |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento | Abreviación |
+|:-------------:|:-------------------:|----------------------|-------------|
+| RUT.UY        | 1                   | RUT                  | RUT         |
+| CI.UY         | 2                   | Cédula de Identidad  | CI          |
+| EXT.UY        | 3                   | Extranjero            | EXT         |
 
 ## Tabla de bancos emisores {#issuer-banks-table}
 La siguiente tabla muestra el listado de bancos emisores configurados.

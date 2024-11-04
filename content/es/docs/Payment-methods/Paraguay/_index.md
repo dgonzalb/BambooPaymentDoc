@@ -37,9 +37,9 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Paraguay:
 
-| Código | Nombre del documento             | Abreviación |
-|:------:|----------------------------------|--------------|
-| 1      | Registro Único del Contribuyente | RUC          |
-| 2      | Cédula de Identidad              | CIC          |
-| 3      | Documento Extranjero             | DEX          |
-| 23     | Referencia genérica              | GEN          |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento             | Abreviación |
+|:-------------:|:-------------------:|----------------------------------|--------------|
+| RUC.PY        | 1                   | Registro Único del Contribuyente | RUC          |
+| CIC.PY       | 2                    | Cédula de Identidad              | CIC          |
+| DEX.PY       | 3                    | Documento Extranjero             | DEX          |
+| GEN.PY       | 23                   | Referencia genérica              | GEN          |
