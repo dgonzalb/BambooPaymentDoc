@@ -478,8 +478,8 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `DocumentTypeId` | `numeric` | No <sup>*</sup>| Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No <sup>*</sup>| Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
@@ -489,7 +489,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 {{% alert title="¡Importante!" color="danger"%}}
-<sup>*</sup> Si se desea operar con devoluciones, el parámetro `PhoneNumber` es obligatorio en el request. Caso contrario, no podrá realizarse una devolución si el dato no fue enviado.
+<sup>*</sup> Si se desea operar con reembolsos, los parámetros `PhoneNumber`, `DocumentTypeId` y `DocNumber` son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.
 {{% /alert %}}
 
 #### Ejemplo del Request {#request-example-2}
@@ -699,9 +699,9 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentTypeId` | `numeric` | No <sup>*</sup>| Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | Sí <sup>*</sup>| Número de teléfono del cliente. El número debe tener 10 dígitos y no debe tener prefijos. Ejemplo: _3188255555_. |
+| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. El número debe tener 10 dígitos y no debe tener prefijos. Ejemplo: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
@@ -710,7 +710,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 {{% alert title="¡Importante!" color="danger"%}}
-<sup>*</sup> Si se desea operar con devoluciones, el parámetro `DocNumber` es obligatorio en el request al igual que el `PhoneNumber`. Caso contrario, no podrá realizarse una devolución si el dato no fue enviado.
+<sup>*</sup> Si se desea operar con reembolsos, el parámetro `DocumentTypeId` y `DocNumber` son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.
 {{% /alert %}}
 
 #### Ejemplo del Request {#request-example-3}
