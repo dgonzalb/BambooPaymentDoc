@@ -1,6 +1,6 @@
 ---
 title: "Payins"
-linkTitle: "Guía de Integración de Payins"
+linkTitle: "Guía de Payins"
 date: 2023-03-02
 description: >
   Bamboo Payment ofrece a los comercios la posibilidad de aceptar pagos soportando todos los medios de pago disponibles en cada país.

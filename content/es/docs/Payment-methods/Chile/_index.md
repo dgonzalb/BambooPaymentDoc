@@ -39,7 +39,7 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Chile:
 
-| Código | Nombre del documento | Abreviación |
-|:------:|----------------------|-------------|
-| 20     | Rol Único Tributario | RUT         |
-| 21     | Cédula de Identidad  | CI          |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento | Abreviación |
+|:-------------:|:-------------------:|----------------------|-------------|
+| RUT.CL        | 20                  | Rol Único Tributario | RUT         |
+| CI.CL         | 21                  | Cédula de Identidad  | CI          |

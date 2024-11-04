@@ -8,9 +8,9 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-## Gestión de Pedidos
+## Gestión de Pedidos {#order-management}
 
-### Visualización de Pedidos
+### Visualización de Pedidos {#viewing-orders}
 
 1. Accede al menú de administración de VTEX
 2. Selecciona 'Pedidos' > 'Todos los Pedidos'
@@ -18,7 +18,7 @@ tags: ["subtopic"]
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-020.png)
 
-### Detalles del Pedido
+### Detalles del Pedido {#order-details}
 
 1. Haz clic en un pedido específico para ver el detalle
 2. Los detalles del pedido incluyen toda la información del pago procesado a través de Bamboo
@@ -26,16 +26,16 @@ tags: ["subtopic"]
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-021.png)
 
-## Gestión de Transacciones
+## Gestión de Transacciones {#transaction-management}
 
-### Visualización de Transacciones
+### Visualización de Transacciones {#viewing-transactions}
 
 1. Desde el menú de administración de VTEX, selecciona 'Pedidos' > 'Transacciones'
 2. Muestra todas las transacciones recibidas en tu tienda
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-022.png)
 
-### Detalle de la Transacción
+### Detalle de la Transacción {#transaction-details}
 
 1. Haz clic en una transacción específica para ver sus detalles
 2. Puedes ver la trazabilidad completa de los estados de pago procesados por Bamboo
@@ -45,9 +45,9 @@ tags: ["subtopic"]
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-024.png)
 
-## Operaciones Adicionales
+## Operaciones Adicionales {#additional-actions}
 
-### Captura
+### Captura {#capture}
 Si la opción **'Autorización y captura'** está activa, deberás cobrar los pagos de forma manual. Para esto solo debes facturar el pedido en VTEX. Esto implica comenzar la preparación del pedido y luego facturarlo.
 
 1. Inicia la preparación del pedido
@@ -59,7 +59,7 @@ Si la opción **'Autorización y captura'** está activa, deberás cobrar los pa
 ![PrintScreen](/assets/VTEX/bamboo-vtex-027.png)
 
 
-### Reembolsos
+### Reembolsos {#refunds}
 
 {{% alert title="Información" color="info"%}}
 Los reembolsos se pueden realizar en transacciones cuando el estado del pedido es **'Facturado'** en VTEX.
@@ -74,7 +74,7 @@ Los reembolsos se pueden realizar en transacciones cuando el estado del pedido e
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-029.png)
 
-### Cancelaciones
+### Cancelaciones {#cancellations}
 
 {{% alert title="Información" color="info"%}}
 Puedes cancelar transacciones para pedidos en estado 'Listo para Preparación'.
@@ -93,7 +93,7 @@ Puedes cancelar transacciones para pedidos en estado 'Listo para Preparación'.
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-032.png)
 
-## Notas Importantes
+## Notas Importantes {#important-notes}
 
 - Asegúrate de que los pedidos estén en el estado correcto antes de intentar **reembolsos** o **cancelaciones**.
 - Siempre verifica la transacción asociada para obtener la información de pago más actualizada

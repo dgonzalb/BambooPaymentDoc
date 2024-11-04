@@ -82,7 +82,7 @@ Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un obje
 
 ![PrintScreen](/assets/PSE.png)
 
-Según el resultado de la transacción, el pagador será dirigido a la URL definida en el objeto `Redirection`. Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Según el resultado de la transacción, el pagador será dirigido a la URL definida en el objeto `Redirection`. Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example}
 ```json
@@ -314,7 +314,7 @@ En el Response, se encuentran los siguientes parámetros:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Número de convenio entre el adquirente y la red física. |
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1} 
 ```json
@@ -480,13 +480,17 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No <sup>*</sup>| Número de teléfono del cliente. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+
+{{% alert title="¡Importante!" color="danger"%}}
+<sup>*</sup> Si se desea operar con devoluciones, el parámetro `PhoneNumber` es obligatorio en el request. Caso contrario, no podrá realizarse una devolución si el dato no fue enviado.
+{{% /alert %}}
 
 #### Ejemplo del Request {#request-example-2}
 ```json
@@ -696,14 +700,18 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. El número debe tener 10 dígitos y no debe tener prefijos. Ejemplo: _3188255555_. |
+| `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Número de documento del cliente. |
+| `Customer` → `PhoneNumber` | `string` | Sí <sup>*</sup>| Número de teléfono del cliente. El número debe tener 10 dígitos y no debe tener prefijos. Ejemplo: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Departamento del cliente. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+
+{{% alert title="¡Importante!" color="danger"%}}
+<sup>*</sup> Si se desea operar con devoluciones, el parámetro `DocNumber` es obligatorio en el request al igual que el `PhoneNumber`. Caso contrario, no podrá realizarse una devolución si el dato no fue enviado.
+{{% /alert %}}
 
 #### Ejemplo del Request {#request-example-3}
 ```json
@@ -739,7 +747,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Parámetros del Response {#response-parameters-3}
 _Nequi_ genera la orden de pago y envía una notificación push al pagador; luego, el pagador necesita ingresar a la aplicación de Nequi para aceptar o rechazar el pago.
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-2}
 

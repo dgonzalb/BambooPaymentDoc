@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Checkout | Bamboo Payment</title><meta property="og:title" content="Checkout" />
+<meta property="og:description" content="Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/docs/versions/forms/checkout-form.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
+<meta property="article:modified_time" content="2023-03-02T11:40:29-05:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Checkout">
+<meta itemprop="description" content="Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.
+"><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
+<meta itemprop="dateModified" content="2023-03-02T11:40:29-05:00" />
+<meta itemprop="wordCount" content="1571">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Checkout"/>
+<meta name="twitter:description" content="Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.png" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../es/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/versions/forms/checkout-form.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
+  data-offline-search-base-href="../../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/versions/forms/checkout-form.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs.html" href="../../../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Guía de Payins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/getting-started.html" href="../../../../es/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Primeros pasos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedconceptshtml" href="../../../../es/docs/getting-started/concepts.html">Conceptos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-starteddata-typeshtml" href="../../../../es/docs/getting-started/data-types.html">Tipos de datos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedpayment-methodshtml" href="../../../../es/docs/getting-started/payment-methods.html">Medios de pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Pruebe nuestros servicios</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startederror-codeshtml" href="../../../../es/docs/getting-started/error-codes.html">Códigos de error</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/change-log.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedchange-loghtml" href="../../../../es/docs/getting-started/change-log.html">Cambios en la versión</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/purchase-workflow.html" href="../../../../es/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Clientes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../../../es/docs/purchase-workflow/customer-types/anonymous-users.html">Token de Uso Único</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesregistered-usershtml" href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html">Token de Uso Recurrente</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../../../es/docs/purchase-workflow/customer-types/direct-tokenization.html">Tokenización PCI</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Operaciones de Compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../es/docs/purchase-workflow/purchases/purchase-preview.html">Preview de la compra</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchases3d_securehtml" href="../../../../es/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowantifraudhtml" href="../../../../es/docs/purchase-workflow/antifraud.html">Antifraude</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflownotification-webhookshtml" href="../../../../es/docs/purchase-workflow/notification-webhooks.html">Webhook</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/merchant-balances.html" href="../../../../es/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de saldos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsmerchant-balanceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/merchant-balances/request-withdrawal.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsmerchant-balancesrequest-withdrawalhtml" href="../../../../es/docs/merchant-balances/request-withdrawal.html">Solicitar un Retiro</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/reporting.html" href="../../../../es/docs/reporting.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de Reportes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsreportinghtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/reporting/transactions-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingtransactions-reporthtml" href="../../../../es/docs/reporting/transactions-report.html">API de Transacciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/reporting/statement-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingstatement-reporthtml" href="../../../../es/docs/reporting/statement-report.html">API de Movimientos Financieros</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/payment-methods.html" href="../../../../es/docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Países y medios de pago</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/argentina.html" href="../../../../es/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-cardshtml" href="../../../../es/docs/payment-methods/argentina/ar-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apmhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/brazil.html" href="../../../../es/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brasil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apmhtml" href="../../../../es/docs/payment-methods/brazil/br-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/central-america.html" href="../../../../es/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">América Central</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscentral-americacam-apmhtml" href="../../../../es/docs/payment-methods/central-america/cam-apm.html">Pagos en Efectivo</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/chile.html" href="../../../../es/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-cardshtml" href="../../../../es/docs/payment-methods/chile/cl-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-apmhtml" href="../../../../es/docs/payment-methods/chile/cl-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/colombia.html" href="../../../../es/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-cardshtml" href="../../../../es/docs/payment-methods/colombia/co-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apmhtml" href="../../../../es/docs/payment-methods/colombia/co-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/ecuador.html" href="../../../../es/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsecuadorec-apmhtml" href="../../../../es/docs/payment-methods/ecuador/ec-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/mexico.html" href="../../../../es/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">México</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-cardshtml" href="../../../../es/docs/payment-methods/mexico/mx-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apmhtml" href="../../../../es/docs/payment-methods/mexico/mx-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/paraguay.html" href="../../../../es/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-cardshtml" href="../../../../es/docs/payment-methods/paraguay/py-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-apmhtml" href="../../../../es/docs/payment-methods/paraguay/py-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/peru.html" href="../../../../es/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Perú</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/uruguay.html" href="../../../../es/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-cardshtml" href="../../../../es/docs/payment-methods/uruguay/uy-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../../../es/docs/payment-methods/uruguay/uy-loyaltyplans.html">Planes de Fidelización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-apmhtml" href="../../../../es/docs/payment-methods/uruguay/uy-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/plugins.html" href="../../../../es/docs/plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Plug-ins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspluginshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/plugins/vtex.html" href="../../../../es/docs/plugins/vtex.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Conector VTEX</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspluginsvtexhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_setuphtml" href="../../../../es/docs/plugins/vtex/vtex_setup.html">Guía de Integración</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_payment_flowhtml" href="../../../../es/docs/plugins/vtex/vtex_payment_flow.html">Flujo de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_adminhtml" href="../../../../es/docs/plugins/vtex/vtex_admin.html">Panel de Control</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/versions.html" href="../../../../es/docs/versions.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Operaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/redirect-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2redirect-purchasehtml" href="../../../../es/docs/versions/purchase-api-v2/redirect-purchase.html">Compra Redirect</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/direct-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2direct-purchasehtml" href="../../../../es/docs/versions/purchase-api-v2/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/versions/forms.html" href="../../../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Formularios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/checkout-form.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocsversionsformscheckout-formhtml" href="../../../../es/docs/versions/forms/checkout-form.html">Checkout</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/embedded-checkout-form.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionsformsembedded-checkout-formhtml" href="../../../../es/docs/versions/forms/embedded-checkout-form.html">Checkout embebido</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#import-of-the-javascript-library">Importación de la Librería JavaScript</a></li>
+    <li><a href="#methods">Métodos</a>
+      <ul>
+        <li><a href="#setproperties">SetProperties</a></li>
+        <li><a href="#setstyle">SetStyle</a></li>
+        <li><a href="#setstyleforvbv">SetStyleForVbV</a></li>
+        <li><a href="#bind">Bind</a></li>
+        <li><a href="#unbind">Unbind</a></li>
+      </ul>
+    </li>
+    <li><a href="#invoking-the-form">Invocación del formulario</a></li>
+    <li><a href="#invoking-the-form-with-validation-filters">Invocación del formulario con filtros de validación</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs.html">Guía de Payins</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/versions.html">Legacy Systems</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/versions/forms.html">Formularios</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../es/docs/versions/forms/checkout-form.html">Checkout</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Checkout</h1>
+    <div class="lead">Amplificado y con capacidad de respuesta adecuada para aplicaciones web y móviles.</div>
+	       
+	<h2 id="import-of-the-javascript-library">Importación de la Librería JavaScript</h2>
+<p>Las funcionalidades del formulario Checkout se encuentran en una librería JavaScript, que debe ser importada a la web del cliente directamente desde una URL pública de nuestra plataforma.</p>
+<p>La llamada a esta librería debe incluir (como parámetro) la llave pública de la cuenta de comercio (<code>PublicAccountKey</code>) que utilizará para las llamadas a la API REST desde esta biblioteca.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{api_environment}/v1/Scripts/PWCheckout.js?key={PublicAccountKey}&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div>
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Nota</h4>
+<p class="alert-text"><p>Se debe importar la librería a través de la URL pública entregada por Bamboo Payment. No debe descargarse y utilizarse localmente desde el servidor de un comercio o desde una URL de un tercero no autorizado por Bamboo Payment.</p>
+<p>Esto es importante por razones de seguridad y para mantenerse actualizado con las últimas modificaciones y correcciones.</p>
+</p>
+</div>
+
+<h2 id="methods">Métodos</h2>
+<h3 id="setproperties">SetProperties</h3>
+<p>Este método establece las propiedades visuales (textos e imágenes) utilizadas en la ventana de Checkout.</p>
+<p>Todas las propiedades son opcionales, excepto la propiedad <code>form_id</code>. Por lo tanto, la llamada al método <code>SetProperties</code> es obligatoria al menos para establecer esta propiedad, y debe ser invocada antes de la apertura del formulario del Checkout.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:center">¿Obligatorio?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>name</strong></td>
+<td style="text-align:left">Nombre que aparece como <em>Título</em> del Checkout.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>email</strong></td>
+<td style="text-align:left">Correo electrónico del cliente que se puede precargar.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>image</strong></td>
+<td style="text-align:left">URL absoluta de la imagen utilizada en el formulario del Checkout (formato fijo). Formatos de imagen aceptados: jpg, jpeg, png.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>button_label</strong></td>
+<td style="text-align:left">Texto para mostrar en el botón de pago (el valor del parámetro <code>amount</code> reemplaza el keyword <code>#amount#</code>).</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td style="text-align:left">Descripción del pago a realizarse.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>currency</strong></td>
+<td style="text-align:left">Moneda del pago.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>amount</strong></td>
+<td style="text-align:left">Monto del pago (solo para informar al usuario, el monto real se informa server to server en la operación Purchase).</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>lang</strong></td>
+<td style="text-align:left">Idioma de la interfaz en formato <strong>ISO 639-1</strong>. Si no se configura se obtiene de la configuración del browser.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>form_id</strong></td>
+<td style="text-align:left">Identificador del formulario web donde se manejan los datos de la compra actual. Este dato es requerido ya que se utilizará para informar el token generado por la aplicación a partir de la tarjeta o medio de pago ingresado por el usuario.</td>
+<td style="text-align:center">Sí</td>
+</tr>
+<tr>
+<td><strong>checkout_card</strong></td>
+<td style="text-align:left">Si se envía esta propiedad, el Checkout va directamente a la captura de la tarjeta.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>empty</strong></td>
+<td style="text-align:left">Si se envía esta propiedad como <code>true</code>, se oculta la imagen y el título de la ventana del formulario. El valor por defecto es <code>false</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>autoSubmit</strong></td>
+<td style="text-align:left">Propiedad que permite establecer el comportamiento de la librería <code>PWCheckout</code> cuando se recibe el token. <br>Si se envía como <code>true</code>, el formulario es enviado al servidor automáticamente luego de recibir el Token<br>Si se envía como <code>false</code> el formulario no se envía automáticamente al servidor.<br>El valor por defecto es <code>true</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>close_onclick</strong></td>
+<td style="text-align:left">Esta propiedad controla si el formulario de captura de la tarjeta puede cerrarse de forma automática cuando el usuario hace clic fuera del área del formulario. <br>Si se envía como <code>true</code>, el formulario se cierra cuando hace clic fuera del mismo. <br>Si se envía como <code>false</code>, el formulario no se cierra automáticamente y es necesario hacer clic en el botón de cierre. <br>El valor por defecto es <code>true</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>email_edit</strong></td>
+<td style="text-align:left">Define si el usuario puede modificar la dirección de correo electrónico.<br>El valor por defecto es <code>true</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>email_hide</strong></td>
+<td style="text-align:left">Define la visibilidad del campo <code>email</code> en el formulario de captura.<br>Si no se envía la propiedad <code>email</code>, esta se ignora y se muestra el campo.<br>El valor por defecto es <code>false</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><strong>country_code</strong></td>
+<td style="text-align:left">Establece el país para el que vamos a tokenizar la tarjeta capturada.</td>
+<td style="text-align:center">Si</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetProperties</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mi tienda&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;email&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;cliente@gmail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;image&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://mitienda.com/images/logocheckout.png&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;button_label&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Pagar #monto#&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;description&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Checkout de Mi tienda&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;currency&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;amount&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1843.21&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;lang&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ES&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;form_id&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;commerce_form&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;checkout_card&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;autoSubmit&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">`true`</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;email_edit&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">`false`</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;country_code&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;UY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div><h3 id="setstyle">SetStyle</h3>
+<p>Este método establece los colores de la ventana del Checkout. Todas las propiedades son opcionales, por lo que la llamada al método <code>SetStyle</code> es opcional. El formulario del Checkout utilizará los colores por defecto si no se llama a este método.</p>
+<p>Invoca el método antes de abrir el formulario del Checkout para establecer esas propiedades.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+<th style="text-align:center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>backgroundColor</strong></td>
+<td>Establece el color de fondo de la ventana.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#FFFFFF"></div> <code>#FFFFFF</code></td>
+</tr>
+<tr>
+<td><strong>buttonColor</strong></td>
+<td>Establece el color de fondo del botón de acciones en la ventana.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px;background-color:#286090"></div> <code>#286090</code></td>
+</tr>
+<tr>
+<td><strong>buttonHoverColor</strong></td>
+<td>Establece el color de fondo del botón de acciones en la ventana cuando se pasa el mouse por sobre el mismo.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px;background-color:#204d74"></div> <code>#204d74</code></td>
+</tr>
+<tr>
+<td><strong>buttonTextColor</strong></td>
+<td>Color del texto en el botón de acciones en la ventana.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#FFFFFF"></div> <code>#FFFFFF</code></td>
+</tr>
+<tr>
+<td><strong>buttonTextHoverColor</strong></td>
+<td>Establece el color del texto en el botón de acciones en la ventana cuando se pasa el mouse por sobre el mismo..</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#FFFFFF"></div> <code>#FFFFFF</code></td>
+</tr>
+<tr>
+<td><strong>inputBackgroundColor</strong></td>
+<td>Color de fondo de los campos de texto.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#FFFFFF"></div> <code>#FFFFFF</code></td>
+</tr>
+<tr>
+<td><strong>inputTextColor</strong></td>
+<td>Color de texto en los campos de texto.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#555555"></div> <code>#555555</code></td>
+</tr>
+<tr>
+<td><strong>inputErrorColor</strong></td>
+<td>Color de borde en los campos de texto cuando el mismo contiene un error.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#FF0000"></div> <code>#FF0000</code></td>
+</tr>
+<tr>
+<td><strong>inputAddonBackgroundColor</strong></td>
+<td>Color de fondo de la iconografía de los campos de texto.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#EEEEEE"></div> <code>#EEEEEE</code></td>
+</tr>
+<tr>
+<td><strong>labelColor</strong></td>
+<td>Color de texto en las etiquetas y en el título de la ventana.</td>
+<td style="text-align:center"><div style="width:0.9rem;height:0.9rem;border:1px black solid;background-color:#337AB7"></div> <code>#337AB7</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetStyle</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;backgroundColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;f2f2f2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;buttonColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;555555&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;buttonHoverColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;777777&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;buttonTextColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ffffff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;buttonTextHoverColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ffffff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;inputBackgroundColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ffffff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;inputTextColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;767676&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;inputErrorColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ff0000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;inputAddonBackgroundColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ffffff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;labelColor&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;494949&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div>
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Nota</h4>
+<p class="alert-text">Debe establecer los colores en formato hexadecimal RGB.</p>
+</div>
+
+<h3 id="setstyleforvbv">SetStyleForVbV</h3>
+<p>Este método describe parámetros configurables cuando se despliega la página <em>Verified By Visa</em>.</p>
+<p>Todas las propiedades son opcionales, por lo que la llamada al método <em>SetStyleForVbV</em> es opcional. Si no invoca este método, la página se mostrará en todo lo ancho de la pantalla.</p>
+<p>Para establecer estas propiedades, invoque el método antes de abrir el formulario del Checkout.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>width</strong></td>
+<td>Ancho del div que contiene el iframe con la página.</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>Altura del div que contiene el iframe con la página.</td>
+</tr>
+<tr>
+<td><strong>margin</strong></td>
+<td>Configure <code>auto</code>, para que quede centrado en la pantalla.</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetStyle</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;width&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1600px&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;height&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;800px&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;margin&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;auto&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><h3 id="bind">Bind</h3>
+<p>Utilice este método para suscribirse a los eventos que lanza la librería <code>PWCheckout</code>.</p>
+<p>Para recibir los eventos generados por este formulario, invoque el método antes de abrir la ventana del formulario Checkout.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+<th style="text-align:center">¿Obligatorio?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eventName (string)</strong></td>
+<td>Nombre del evento al que desea suscribirse (ver eventos <a href="#events">a continuación</a>).</td>
+<td style="text-align:center">Sí</td>
+</tr>
+<tr>
+<td><strong>callbackName (JavaScript Function)</strong></td>
+<td>Función JavaScript que procesará el evento.</td>
+<td style="text-align:center">Sí</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Nota</h4>
+<p class="alert-text">Debe implementar la función javascript que procesa el evento (si es necesario).</p>
+</div>
+
+<br>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">WindowIsOpen</span><span style="color:#000;font-weight:bold">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Checkout Window is Open&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Bind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;opened&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">WindowIsOpen</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><h4 id="events">Eventos</h4>
+<p>La librería <code>PWCheckout</code> expone los siguientes eventos javascript a los que se puede suscribir usando el método <a href="#bind">Bind</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Descripción</th>
+<th style="text-align:center">Parámetros</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>opened</strong></td>
+<td>El evento se lanza cuando se abre el formulario de captura de tarjeta.</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td><strong>closed</strong></td>
+<td>El evento se lanza cuando se cierra el formulario de captura de tarjeta.</td>
+<td style="text-align:center"><code>CloseInfo</code></td>
+</tr>
+<tr>
+<td><strong>tokenCreated</strong></td>
+<td>El evento se lanza al recibir el Token creado para la tarjeta de pago capturada.</td>
+<td style="text-align:center"><code>TokenInfo</code></td>
+</tr>
+<tr>
+<td><strong>notificationReceived</strong></td>
+<td>El evento se lanza cuando se ha completado el flujo de solicitud de código de verificación.</td>
+<td style="text-align:center"><code>NotificationInfo</code></td>
+</tr>
+<tr>
+<td><strong>onTokenCreateError</strong></td>
+<td>El evento se lanza cuando se genera un error al generar un Token.</td>
+<td style="text-align:center"><code>TokenInfo</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unbind">Unbind</h3>
+<p>Este método elimina la suscripción a un evento realizada previamente por el método <a href="#bind">Bind</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Descripción</th>
+<th style="text-align:center">¿Obligatorio?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eventName (string)</strong></td>
+<td>Nombre del evento del que desea eliminar la suscripción.</td>
+<td style="text-align:center">Sí</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Unbind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;opened&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">WindowIsOpen</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><h2 id="invoking-the-form">Invocación del formulario</h2>
+<p>La página web de invocación del formulario del checkout debe incluir un campo de entrada oculto llamado <code>PWToken</code>. La librería JavaScript establecerá el valor del campo después de obtener el Token.</p>
+<p>Cree el campo de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;PWToken&#34;</span> <span style="color:#c4a000">id</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;PWToken&#34;</span> <span style="color:#000;font-weight:bold">/&gt;</span>
+</span></span></code></pre></div><br>
+<p>Para iniciar el proceso de pago, debe enlazar el elemento de la página que realiza la llamada al Formulario de Captura de Tarjetas. Este elemento puede ser un botón, una imagen o cualquier elemento activo que desee vincular.</p>
+<p>Debe llamar al método <code>AddActionButton</code> de la librería <code>PWCheckout</code> de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">AddActionButton</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;buttonId&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
+<p>El parámetro <code>buttonId</code> hace referencia al identificador del elemento que lanza el proceso de pago.</p>
+<p>Se pueden asociar múltiples elementos en la misma llamada, identificando cada uno por su ID y separando cada identificador con una coma.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">AddActionButton</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;buttonId1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;buttonId2&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;buttonId3&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
+<p>Tras realizar este paso, el proceso de pago se invoca cuando el cliente hace clic en el elemento vinculado.</p>
+<p>La librería JavaScript gestiona el proceso, tan pronto finaliza esta invocación, mostrando al usuario el formulario donde se solicitan los datos de la tarjeta.</p>
+<p>Cuando el cliente ingresa los datos de su tarjeta, nuestros servidores tokenizan la información y envían el Token a la librería <code>PWCheckout</code>.</p>
+<p>El valor del Token generado se inserta automáticamente en el campo oculto <code>PWToken</code>, y finalmente, la librería JavaScript <code>PWCheckout</code> realiza las siguientes acciones:</p>
+<ol>
+<li>Activa el evento <code>tokenCreated</code>.</li>
+<li>Enviar el formulario si la propiedad <code>autoSubmit</code> es <code>true</code>.</li>
+</ol>
+<p>Debe procesar los datos del formulario del checkout, incluido el valor del campo <code>PWToken</code>, y enviar la información relevante descrita en la sección <a href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">API de compras</a>.</p>
+<h2 id="invoking-the-form-with-validation-filters">Invocación del formulario con filtros de validación</h2>
+<p>Si necesita validar el ingreso de una determinada tarjeta, ya sea por la marca o por el banco emisor, debe proceder a la apertura personalizada del Formulario de Captura de Tarjetas. Utilice un método explícito para validar los datos.</p>
+<p>El método a utilizar es el <strong>OpenIframeWithPaymentMediaOptions</strong>, que recibe los siguientes parámetros:</p>
+<ul>
+<li><strong>PaymentMediaId</strong>: Identificador del medio de pago en el gateway (consulte la <a href="../../../../es/docs/payment-methods.html#payment-method-types">tabla</a> tipos de medios de pago).</li>
+<li><strong>BankId</strong>: Identificador del banco en el gateway (consulte la <a href="../../../../es/docs/payment-methods/uruguay.html#issuer-banks-table">tabla</a> Banco Emisor).</li>
+<li><strong>PaymentMediaType</strong>: Identificador del tipo de medio de pago (consulte la <a href="../../../../es/docs/payment-methods/uruguay.html#payment-methods">tabla</a> medios de pago).</li>
+</ul>
+<p>Ejemplo de la invocación de <strong>OpenIframeWithPaymentMediaOptions</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">PWCheckout</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Iframe</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">OpenIframeWithPaymentMediaOptions</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">paymentMediaId</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">bankId</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">paymentMediaType</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    2 de marzo de 2023
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

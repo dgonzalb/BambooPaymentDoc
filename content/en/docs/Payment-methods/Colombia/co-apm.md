@@ -82,7 +82,7 @@ We return the `Purchase` with the status _Pending for Redirection_ and a `Commer
 
 ![PrintScreen](/assets/PSE.png)
 
-According to the result of the transaction, the payer will be directed to the URL defined in the `Redirection` object. For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+According to the result of the transaction, the payer will be directed to the URL defined in the `Redirection` object. For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example 
 ```json
@@ -314,7 +314,7 @@ In the response, you will find the following parameters:
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example 
 ```json
@@ -479,13 +479,17 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
+| `Customer` → `PhoneNumber` | `string` | No <sup>*</sup>| Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+
+{{% alert title="Important!" color="danger"%}}
+<sup>*</sup> To process refunds, the `PhoneNumber` parameter is required in the request. Otherwise, a refund cannot be processed if the data was not provided.
+{{% /alert %}}
 
 #### Request example
 ```json
@@ -694,14 +698,18 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
 | `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
+| `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Customer's Document Number. |
+| `Customer` → `PhoneNumber` | `string` | Yes <sup>*</sup>| Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
 | `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
+
+{{% alert title="Important!" color="danger"%}}
+<sup>*</sup> To process refunds, the `DocNumber` parameter like the `PhoneNumber` are required in the request. Otherwise, a refund cannot be processed if this information was not provided.
+{{% /alert %}}
 
 #### Request example
 ```json
@@ -737,7 +745,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 _Nequi_ generates the payment order and sends a push notification to the payer; then, the payer needs to log in Nequi app to accept or reject the payment.
 
-For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase-operations.md>}}#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section]({{< ref purchase_v3.md >}}#response-parameters) of the Purchase creation.
 
 #### Response example
 

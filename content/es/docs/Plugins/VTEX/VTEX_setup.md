@@ -11,7 +11,7 @@ tags: ["subtopic"]
 En esta sección, encontrarás las instrucciones para configurar la autenticación, ajustar los medios de pago y establecer condiciones para pagos en cuotas y de contado con tarjetas de crédito o débito. 
 
 ---
-## Configuración General
+## Configuración General {#general-setup}
 
 Para configurar Bamboo como proveedor de pagos en tu tienda VTEX, sigue estos pasos:
 
@@ -27,15 +27,15 @@ Para configurar Bamboo como proveedor de pagos en tu tienda VTEX, sigue estos pa
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-002.png)
 
-## Configuración del Plugin de Bamboo
+## Configuración del Plugin de Bamboo {#bamboo-plugin-configuration}
 
-### Autenticación
+### Autenticación {#authentication-setup}
 
 Ingresa las credenciales de Bamboo en los campos designados. Para obtener información sobre cómo generar las claves de tu tienda, consulta la <a href="https://help.vtex.com/es/tutorial/claves-de-aplicacion--2iffYzlvvz4BDMr6WGUtet#generar-claves-de-aplicacion-internas" target="_blank">documentación de Claves VTEX</a>
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-003.png)
 
-### Opciones adicionales
+### Opciones adicionales {#payment-control}
 
 1. Elige si deseas operar en modo prueba.
 
@@ -47,7 +47,7 @@ Ingresa las credenciales de Bamboo en los campos designados. Para obtener inform
 El modo prueba permite simular transacciones antes de ofrecerlo a tus clientes. Desactiva esta opción para procesar transacciones reales.
 {{% /alert %}}
 
-### Configuraciones de Procesamiento
+### Configuraciones de Procesamiento {#provider-fields}
 
 Configura los siguientes ajustes:
 
@@ -59,7 +59,7 @@ Configura los siguientes ajustes:
 
 Después de completar estos campos, haz clic en el botón **'Guardar'**.
 
-## Configuración de Medios de Pago
+## Configuración de Medios de Pago {#payment-methods-configuration}
 
 Para configurar los métodos de pago:
 
@@ -72,7 +72,7 @@ Para configurar los métodos de pago:
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-007.png)
 
-### Pago en Cuotas para Tarjetas de Crédito
+### Pago en Cuotas para Tarjetas de Crédito {#installments-for-credit-cards}
 
 Para configurar el pago en cuotas para tarjetas de crédito:
 
@@ -98,7 +98,7 @@ Para configurar el pago en cuotas para tarjetas de crédito:
 
 ![PrintScreen](/assets/VTEX/bamboo-vtex-013.png)
 
-### Pago de Contado para Tarjetas de Crédito y Débito
+### Pago de Contado para Tarjetas de Crédito y Débito {#single-payment-one-time-payment-for-credit-and-debit-cards}
 
 Para configurar pagos de contado o a una sola cuota:
 
@@ -119,7 +119,7 @@ Los cambios en las condiciones de pago pueden tardar hasta **10 minutos** en apl
 {{% /alert %}}
 
 
-## Script Antifraude
+## Script Antifraude {#antifraud-script}
 
 Para garantizar el funcionamiento del módulo antifraude de Bamboo, es necesario hacer una configuración adicional para insertar el script del DeviceFingerPrint. Para configurarlo, sigue estos pasos:
 

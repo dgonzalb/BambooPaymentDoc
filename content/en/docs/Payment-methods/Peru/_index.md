@@ -63,10 +63,10 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Peru:
 
-| Code | Document name                   | Abbreviation |
-|:----:|---------------------------------|--------------|
-| 6    | Documento Nacional de Identidad | DNI          |
-| 7    | Partida                         | PAR          |
-| 8    | Pasaporte                       | PAS          |
-| 9    | Libreta militar                 | LMI          |
-| 10   | Otro                            | NAN          |
+| Code (V3 API) | Code (Previous API) | Document name                   | Abbreviation |
+|:-------------:|:-------------------:|---------------------------------|--------------|
+| DNI.PE        | 6                   | Documento Nacional de Identidad | DNI          |
+| PAR.PE       | 7                   | Partida                         | PAR          |
+| PAS.PE       | 8                   | Pasaporte                       | PAS          |
+| LMI.PE       | 9                   | Libreta militar                 | LMI          |
+| NAN.PE       | 10                  | Otro                            | NAN          |

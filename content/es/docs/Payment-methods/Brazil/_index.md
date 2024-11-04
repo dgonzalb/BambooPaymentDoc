@@ -41,10 +41,10 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Brasil:
 
-| Código | Nombre del documento                   | Abreviación |
-|:------:|----------------------------------------|--------------|
-| 24     | Cadastro de Pessoas Físicas            | CPF          |
-| 25     | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento                   | Abreviación |
+|:-------------:|:-------------------:|----------------------------------------|--------------|
+| CPF.BR        | 24                  | Cadastro de Pessoas Físicas            | CPF          |
+| CNPG.BR       | 25                  | Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
 
 ## Estado de residencia del cliente {#customers-state-of-residence}
 

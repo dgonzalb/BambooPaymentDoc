@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="../../es/payouts/api-for-balances/index.xml">
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>API de Saldos | Bamboo Payment</title><meta property="og:title" content="API de Saldos" />
+<meta property="og:description" content="La API para saldos permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/es/payouts/api-for-balances.html" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="API de Saldos">
+<meta itemprop="description" content="La API para saldos permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="API de Saldos"/>
+<meta name="twitter:description" content="La API para saldos permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../assets/BambooPayment.png" style="height: 36px;"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../es/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/payouts/api-for-balances.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
+  data-offline-search-base-href="../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/payouts/api-for-balances.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts.html" href="../../es/payouts.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Inicio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/overview.html" href="../../es/payouts/overview.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-conceptshtml" href="../../es/payouts/overview/payout-concepts.html">Conceptos</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-status.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-statushtml" href="../../es/payouts/overview/payout-status.html">Estados de los Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewpayout-balanceshtml" href="../../es/payouts/overview/payout-balances.html">Saldos de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/overview/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutsoverviewtest-our-serviceshtml" href="../../es/payouts/overview/test-our-services.html">Pruebe nuestros servicios</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/payouts-merchant-console.html" href="../../es/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Consola de Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consolereportshtml" href="../../es/payouts/payouts-merchant-console/reports.html">Reporte de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consoleexpresshtml" href="../../es/payouts/payouts-merchant-console/express.html">Payouts express</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-merchant-consolebalanceshtml" href="../../es/payouts/payouts-merchant-console/balances.html">Reporte de Saldos de Payouts</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/payouts-api.html" href="../../es/payouts/payouts-api.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/getting-started.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apigetting-startedhtml" href="../../es/payouts/payouts-api/getting-started.html">Primeros pasos</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payouts-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apipayouts-previewhtml" href="../../es/payouts/payouts-api/payouts-preview.html">Preview del Payout</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apiusing-payouts-apihtml" href="../../es/payouts/payouts-api/using-payouts-api.html">Crear un Payout</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payout-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apipayout-webhookhtml" href="../../es/payouts/payouts-api/payout-webhook.html">Webhook de notificación</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apivariableshtml" href="../../es/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/es/payouts/payouts-api/payout-error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-espayoutspayouts-apipayout-error-codeshtml" href="../../es/payouts/payouts-api/payout-error-codes.html">Códigos de error</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/payouts/api-for-balances.html" href="../../es/payouts/api-for-balances.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">API de Saldos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espayoutsapi-for-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#url-del-request">URL del Request</a></li>
+    <li><a href="#autorización">Autorización</a></li>
+    <li><a href="#ejemplo-del-response">Ejemplo del Response</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../es/payouts.html">Inicio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../es/payouts/api-for-balances.html">API de Saldos</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>API de Saldos</h1>
+        <div class="lead">La API para saldos permite a los comercios comprobar los saldos de su cuenta sin utilizar la consola de Bamboo</div>
+	
+	<p>Este endpoint permite consultar el saldo disponible para procesar payouts. Proporciona información detallada sobre el estado financiero de la cuenta, incluyendo el saldo disponible, el saldo total y monto de payouts en procesamiento.</p>
+<h2 id="url-del-request">URL del Request</h2>
+<p>Debe realizar una petición <strong>GET</strong> a las siguientes URLs según el ambiente.</p>
+<ul>
+<li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v1/api/merchant/account/balance</code></li>
+<li><strong>Pruebas</strong>: <code>https://api.stage.bamboopayment.com/v1/api/merchant/account/balance</code></li>
+</ul>
+<h2 id="autorización">Autorización</h2>
+<p>En el header, debe configurar el parámetro <code>Authorization</code> concatenando la palabra <code>Basic</code>, un espacio y la <em><strong>Llave Privada</strong></em> del comercio.</p>
+<h2 id="ejemplo-del-response">Ejemplo del Response</h2>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Información</h4>
+<p class="alert-text">No es necesario configurar una solicitud para invocar esta API.</p>
+</div>
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;Date&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2023-06-02T20:59:59-03:00&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;CurrencyCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;FinalAccountingBalance&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">13670.0000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;FinalAvailableBalance&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">13170.0000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;FinalFeeBalance&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;FinalProcessingBalance&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">500.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<br>
+Donde:
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Response</code></td>
+<td><code>object</code></td>
+<td>Contiene la información del saldo.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>Date</code></td>
+<td><code>string</code></td>
+<td>Fecha y hora en que se obtuvo la información del saldo.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>CurrencyCode</code></td>
+<td><code>string</code></td>
+<td>Código de la moneda.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>FinalAccountingBalance</code></td>
+<td><code>number</code></td>
+<td>Saldo total de la cuenta.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>FinalAvailableBalance</code></td>
+<td><code>number</code></td>
+<td>Saldo disponible para procesar payouts.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>FinalFeeBalance</code></td>
+<td><code>number</code></td>
+<td>Saldo disponible para los fees y tarifas (en caso donde el comercio las asume de forma independiente al saldo total de la cuenta). Si las tarifas se deducen automáticamente del saldo principal, este valor es cero.</td>
+</tr>
+<tr>
+<td><code>Response</code> → <code>FinalProcessingBalance</code></td>
+<td><code>number</code></td>
+<td>Saldo final de payouts en procesamiento.</td>
+</tr>
+<tr>
+<td><code>Errors</code></td>
+<td><code>object</code></td>
+<td>Contiene información en caso de errores. Será <code>null</code> si la solicitud fue exitosa.</td>
+</tr>
+</tbody>
+</table>
+
+		
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    17 de septiembre de 2024
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../js/scrollspy.js"></script>
+<script src="../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

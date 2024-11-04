@@ -12,6 +12,10 @@ weight: 50
 ### October
 | Page | Description |
 |---|---|
+| **[Error Codes](/en/docs/getting-started/error-codes.html)** | New ErrorCodes added. |
+| **[Tokenization Form](/en/docs/forms.html)** | New Tokenization Form for Non-PCI Compliant Merchants. |
+| **[New API V3]({{< ref Purchase_V3.md >}})** | API V3 is now our official version, providing enhanced performance and optimized responses. Legacy versions are available too. |
+| [Request a Withdrawal]({{< ref Request-withdrawal.md >}}) | New API for requesting a balance withdrawal. |
 | [Transaction Report API](/en/docs/reporting/transactions-report.html) | Changes in parameters and endpoints. |
 | **[Statement Report API]({{< ref Statement-report.md >}})** | New Reporting API for Financial Data. |
 

@@ -7,39 +7,35 @@ Description: >
 weight: 20
 ---
 
-## URL para el Request
+## URL para el Request {#request-url}
 Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud **GET** a las siguientes URLs según el ambiente:
 
 * **Producción**: `https://api.bamboopayment.com/v2/api/Reporting/billing-movements`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/billing-movements`
 
 
-## Authorization
+## Authorization {#authorization}
 En el encabezado de la solicitud, el parámetro `Authorization` debe configurarse concatenando la palabra `Basic`, un espacio y la **Private Key** del merchant.
 
-## Parámetros de la solicitud (Request)
-| Propiedad | Tipo | Obligatorio | Descripción |
-|-----------|------|-------------|-------------|
-| `merchantAccount` | `Integer` | Sí | El identificador único de la cuenta del merchant. |
-| `from` | `String` | Sí | Fecha de inicio para la consulta de transacciones (formato: YYYY-MM-DD) |
-| `to` | `String` | Sí | Fecha de fin para la consulta de transacciones (formato: YYYY-MM-DD) |
-| `page` | `Integer` | No | Número de página para paginación |
-| `pageSize` | `Integer` | No | Número de registros por página |
-| `columns` | `Array` | No | Array de columnas específicas a incluir en la respuesta (un array vacío devuelve todas las columnas) |
+## Parámetros de la solicitud (Request) {#request-parameters}
+| Campo | Tipo | Obligatorio | Descripción |
+|-------|------|-------------|-------------|
+| `ReferenceId` | string | Sí | Un identificador único para esta solicitud de retiro |
+| `CurrencyIsoCode` | string | Sí | El código ISO de la moneda para el retiro (por ejemplo, "USD") |
+| `Requester` | string | No | Identificador de la persona o sistema que solicita el retiro |
+| `TextNotes` | string | No | Notas o comentarios adicionales sobre el retiro |
 
-### Ejemplo de la solicitud (Request)
+### Ejemplo de solicitud {#format-and-example-of-the-request-request}
 ```json
 {
-    "merchantAccount": 1,
-    "from":"2021-01-01",
-    "to":"2021-01-31",
-    "page":1,
-    "pageSize":10,
-    "columns": []
+  "ReferenceId": "retiro-001",
+  "CurrencyIsoCode": "USD",
+  "Requester": "comerciante-001",
+  "TextNotes": "Retiro para gastos operativos mensuales"
 }
 ```
 
-## Parámetros de la Respuesta (Response)
+## Parámetros de la Respuesta (Response) {#response-parameters}
 
 {{% alert title="Note" color="info"%}}
 Al consultar datos recientes, tenga en cuenta que la información más actualizada disponible podría ser del día anterior (D-1). Esto implica que los datos más recientes disponibles a través de la API podrían ser del día anterior a la fecha actual. Tenga esto en cuenta al consultar transacciones recientes.
@@ -76,7 +72,7 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 | `pageSize` | `Integer` | Número de registros por página |
 | `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
 
-### Response example
+### Ejemplo del Response {#response-example}
 ```json
 {
   "success": true,

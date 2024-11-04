@@ -39,7 +39,7 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Chile:
 
-| Code | Document name        | Abbreviation |
-|:----:|----------------------|--------------|
-| 20   | Rol Único Tributario | RUT          |
-| 21   | Cédula de Identidad  | CI           |
+| Code (V3 API) | Code (Previous API) | Document name        | Abbreviation |
+|:-------------:|:-------------------:|----------------------|--------------|
+| RUT.CL        | 20                  | Rol Único Tributario | RUT          |
+| CI.CL         | 21                  | Cédula de Identidad  | CI           |

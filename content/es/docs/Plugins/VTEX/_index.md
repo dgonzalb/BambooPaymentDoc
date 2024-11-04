@@ -10,7 +10,7 @@ tags: ["parenttopic"]
 
 Para integrar Bamboo como plataforma de pago en tu e-commerce de VTEX, es necesario contar con una cuenta de comercio. Nuestro plugin permite una conexión entre tu plataforma VTEX y los medios de pago que ofrecemos en Bamboo.
 
-## Requisitos Previos
+## Requisitos Previos {#prerequisites}
 
 1. **Comercio en Bamboo**: Si aún no te has registrado con Bamboo, contacta a tu ejecutivo comercial para obtener las credenciales necesarias para la integración.
 
@@ -18,9 +18,9 @@ Para integrar Bamboo como plataforma de pago en tu e-commerce de VTEX, es necesa
 
 Esta documentación te guiará a través del proceso de configuración del plugin Bamboo para VTEX, permitiendo a tus clientes utilizar los servicios de pago de Bamboo en tu tienda en línea.
 
-## VTEX para Uruguay
+## VTEX para Uruguay {#vtex-availability-in-uruguay}
 
-### Tarjeta de Crédito, débito y pre-pago.
+### Tarjeta de Crédito, débito y pre-pago. {#card-payment-methods}
 
 | Franquicia       | Crédito | Débito | Prepago |
 |------------------|---------|--------|---------|

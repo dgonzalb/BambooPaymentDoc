@@ -24,7 +24,7 @@
         
         
         &lt;h2 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h2&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -158,7 +158,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h2&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -357,7 +357,7 @@
 &lt;h2 id=&#34;pse&#34;&gt;PSE&lt;/h2&gt;
 &lt;p&gt;PSE (Pagos Seguros en Línea) is a widely used online payment system in Colombia. It enables secure electronic transactions by allowing users to make payments directly from their bank accounts.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -521,7 +521,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
 &lt;p&gt;We return the &lt;code&gt;Purchase&lt;/code&gt; with the status &lt;em&gt;Pending for Redirection&lt;/em&gt; and a &lt;code&gt;CommerceAction&lt;/code&gt; object with &lt;code&gt;ActionReason&lt;/code&gt; as &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; and the &lt;code&gt;ActionURL&lt;/code&gt; parameter with the external service URL. You must redirect the customer to this URL to finish the payment following the PSE flow. In this flow, your payer selects their bank, choose whether they are a Natural or Legal person and their document type.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/PSE.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;According to the result of the transaction, the payer will be directed to the URL defined in the &lt;code&gt;Redirection&lt;/code&gt; object. For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;According to the result of the transaction, the payer will be directed to the URL defined in the &lt;code&gt;Redirection&lt;/code&gt; object. For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -721,7 +721,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -891,7 +891,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-1&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1039,7 +1039,7 @@
 &lt;h4 id=&#34;qr-code&#34;&gt;Payment Flow&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/NequiQREN.png&#34; width=&#34;100%&#34; alt=&#34;Nequi QR Payment Flow&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1316,7 +1316,7 @@
 &lt;h4 id=&#34;push-notification&#34;&gt;Payment Flow&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/NequiPushEN.png&#34; width=&#34;100%&#34; alt=&#34;Nequi Payment Flow&#34;/&gt;
 &lt;h3 id=&#34;request-parameters-3&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1443,7 +1443,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-3&#34;&gt;Response parameters&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Nequi&lt;/em&gt; generates the payment order and sends a push notification to the payer; then, the payer needs to log in Nequi app to accept or reject the payment.&lt;/p&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-2&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;

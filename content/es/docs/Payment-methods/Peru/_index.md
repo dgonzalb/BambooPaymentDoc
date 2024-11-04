@@ -62,10 +62,10 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Perú:
 
-| Código | Nombre del documento            | Abreviación |
-|:------:|---------------------------------|-------------|
-| 6      | Documento Nacional de Identidad | DNI         |
-| 7      | Partida                         | PAR         |
-| 8      | Pasaporte                       | PAS         |
-| 9      | Libreta militar                 | LMI         |
-| 10     | Otro                            | NAN         |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento            | Abreviación |
+|:-------------:|:-------------------:|---------------------------------|-------------|
+| DNI.PE        | 6                   | Documento Nacional de Identidad | DNI         |
+| PAR.PE       | 7                    | Partida                         | PAR         |
+| PAS.PE       | 8                    | Pasaporte                       | PAS         |
+| LMI.PE       | 9                    | Libreta militar                 | LMI         |
+| NAN.PE       | 10                   | Otro                            | NAN         |

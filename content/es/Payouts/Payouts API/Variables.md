@@ -736,9 +736,6 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 |:-:|---|---|:-:|:-:|
 | CURP | Clave Única de Registro de Población | Individuos | | Entre 8 y 18 |
 | RFC | Registro Federal de Contribuyentes | Individuos y Compañías | | Entre 8 y 18 |
-| IFE | Instituto Federal Electoral | Individuos | | Entre 8 y 18 |
-| PASSPORT | Documento de Viaje Internacional | Individuos |  | Entre 8 y 18 |
-| RESIDENCIA | Documento de extranjero residente en el país | Individuos |  | Entre 8 y 18 |
 
 <!--### Nicaragua
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |

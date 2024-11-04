@@ -41,8 +41,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
-<link href="../../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.scss" as="style">
+<link href="../../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -67,7 +67,7 @@
         <a class="navbar-brand" href="../../../en/">
 			
 			
-			<span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+			<span class="navbar-logo"><img src="../../../assets/BambooPayment.png" style="height: 36px;"></span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -143,7 +143,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1f1bbcc1a52798b37ab1a2789eb288833eec370e7572075a98d1ba5cd2f4e8aee561fecd21316028036a887113b4b7dd59b014b52825e802d8fa94df265dfbbf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -193,7 +193,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs.html" href="../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration Guide</a>
+    <a id="/en/docs.html" href="../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Payins Integration</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocshtml">
@@ -345,25 +345,37 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-operationshtml" href="../../../en/docs/purchase-workflow/purchases/purchase-operations.html">Basic Operations</a>
+        <a id="/en/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase_v3html" href="../../../en/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesredirect-purchasehtml" href="../../../en/docs/purchase-workflow/purchases/redirect-purchase.html">Redirect purchases</a>
+        <a id="/en/docs/purchase-workflow/purchases/get-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget-purchasehtml" href="../../../en/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesdirect-purchasehtml" href="../../../en/docs/purchase-workflow/purchases/direct-purchase.html">Direct Purchase for PCI Merchants</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_operationshtml" href="../../../en/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
       
       
       
       
       
         <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchases3d_securehtml" href="../../../en/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../en/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
       
       
     </li>
@@ -375,7 +387,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/refunds-and-voids.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefunds-and-voidshtml" href="../../../en/docs/purchase-workflow/refunds-and-voids.html">Refunds and voids</a>
+        <a id="/en/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefundshtml" href="../../../en/docs/purchase-workflow/refunds.html">Refunds</a>
       
       
       
@@ -408,23 +420,11 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs/forms.html" href="../../../en/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Forms</a>
+    <a id="/en/docs/forms.html" href="../../../en/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Tokenization Form</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocsformshtml">
       
-      
-      
-      
-      
-      
-        <a id="/en/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformscheckout-formhtml" href="../../../en/docs/forms/checkout-form.html">Checkout Form</a>
-      
-      
-      
-      
-      
-        <a id="/en/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsformsembedded-checkout-formhtml" href="../../../en/docs/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
       
       
     </li>
@@ -450,6 +450,12 @@
   <ul class="side-main">
     <li class="" id="endocsmerchant-balanceshtml">
       
+      
+      
+      
+      
+      
+        <a id="/en/docs/merchant-balances/request-withdrawal.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsmerchant-balancesrequest-withdrawalhtml" href="../../../en/docs/merchant-balances/request-withdrawal.html">Request a Withdrawal</a>
       
       
     </li>
@@ -481,6 +487,12 @@
       
       
         <a id="/en/docs/reporting/transactions-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsreportingtransactions-reporthtml" href="../../../en/docs/reporting/transactions-report.html">Transaction Report API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/reporting/statement-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsreportingstatement-reporthtml" href="../../../en/docs/reporting/statement-report.html">Statement Report API</a>
       
       
     </li>
@@ -919,19 +931,19 @@
       
       
       
-        <a id="/en/docs/plugins/vtex/_vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtex_vtex_setuphtml" href="../../../en/docs/plugins/vtex/_vtex_setup.html">Integration Guide</a>
+        <a id="/en/docs/plugins/vtex/vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_setuphtml" href="../../../en/docs/plugins/vtex/vtex_setup.html">Integration Guide</a>
       
       
       
       
       
-        <a id="/en/docs/plugins/vtex/_vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtex_vtex_payment_flowhtml" href="../../../en/docs/plugins/vtex/_vtex_payment_flow.html">Payment Flow</a>
+        <a id="/en/docs/plugins/vtex/vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_payment_flowhtml" href="../../../en/docs/plugins/vtex/vtex_payment_flow.html">Payment Flow</a>
       
       
       
       
       
-        <a id="/en/docs/plugins/vtex/_vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtex_vtex_adminhtml" href="../../../en/docs/plugins/vtex/_vtex_admin.html">Store Management</a>
+        <a id="/en/docs/plugins/vtex/vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_adminhtml" href="../../../en/docs/plugins/vtex/vtex_admin.html">Store Management</a>
       
       
     </li>
@@ -958,7 +970,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs/versions.html" href="../../../en/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Next Versions</a>
+    <a id="/en/docs/versions.html" href="../../../en/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocsversionshtml">
@@ -968,31 +980,62 @@
       
       
       
-        <a id="/en/docs/versions/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase_v3html" href="../../../en/docs/versions/purchase_v3.html">Create a Purchase</a>
+        <a id="/en/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsversionspurchase-api-v2purchase-operationshtml" href="../../../en/docs/versions/purchase-api-v2/purchase-operations.html">Purchase (Legacy)</a>
       
       
       
       
       
-        <a id="/en/docs/versions/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionscard_operationshtml" href="../../../en/docs/versions/card_operations.html">Capture and Cancel</a>
+        <a id="/en/docs/versions/purchase-api-v2/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2redirect-purchasehtml" href="../../../en/docs/versions/purchase-api-v2/redirect-purchase.html">Redirect purchases</a>
       
       
       
       
       
-        <a id="/en/docs/versions/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsrefundshtml" href="../../../en/docs/versions/refunds.html">Refunds</a>
+        <a id="/en/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2direct-purchasehtml" href="../../../en/docs/versions/purchase-api-v2/direct-purchase.html">Direct Purchase for PCI Merchants</a>
       
       
       
       
       
-        <a id="/en/docs/versions/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversions3d_securehtml" href="../../../en/docs/versions/3d_secure.html">3DS Pass-through</a>
+        <a id="/en/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../en/docs/versions/purchase-api-v2/refunds-and-voids.html">Refunds and voids</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/versions/forms.html" href="../../../en/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Capture Form (Legacy)</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsversionsformshtml">
       
       
       
       
       
-        <a id="/en/docs/versions/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsnetwork_tokenshtml" href="../../../en/docs/versions/network_tokens.html">Network Tokens</a>
+      
+        <a id="/en/docs/versions/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsformscheckout-formhtml" href="../../../en/docs/versions/forms/checkout-form.html">Checkout Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/versions/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsversionsformsembedded-checkout-formhtml" href="../../../en/docs/versions/forms/embedded-checkout-form.html">Embedded Checkout Form</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
     </li>
@@ -1077,7 +1120,7 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="../../../en/docs.html">Payins Integration Guide</a>
+	<a href="../../../en/docs.html">Payins Integration</a>
 </li>
 
 

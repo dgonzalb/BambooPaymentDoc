@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" as="style">
-<link href="../../scss/main.min.54f18bd9c3365e27c9e6d4f3953b005937edf6642e486430333dae78147eb911.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
 
@@ -63,7 +63,7 @@
         <a class="navbar-brand" href="../../es/">
 			
 			
-			<span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+			<span class="navbar-logo"><img src="../../assets/BambooPayment.png" style="height: 36px;"></span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -139,7 +139,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1f1bbcc1a52798b37ab1a2789eb288833eec370e7572075a98d1ba5cd2f4e8aee561fecd21316028036a887113b4b7dd59b014b52825e802d8fa94df265dfbbf.json"
+  data-offline-search-index-json-src="../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -189,7 +189,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/es/docs.html" href="../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Guía de Integración de Payins</a>
+    <a id="/es/docs.html" href="../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Guía de Payins</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocshtml">
@@ -341,19 +341,19 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-operationshtml" href="../../es/docs/purchase-workflow/purchases/purchase-operations.html">Operaciones</a>
+        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../es/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesredirect-purchasehtml" href="../../es/docs/purchase-workflow/purchases/redirect-purchase.html">Compra Redirect</a>
+        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../es/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesdirect-purchasehtml" href="../../es/docs/purchase-workflow/purchases/direct-purchase.html">Compra Directa</a>
+        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../es/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
       
       
       
@@ -362,16 +362,22 @@
         <a id="/es/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-previewhtml" href="../../es/docs/purchase-workflow/purchases/purchase-preview.html">Preview de la compra</a>
       
       
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchases3d_securehtml" href="../../es/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
+      
+      
     </li>
   </ul>
   
 
-      
-      
-      
-      
-      
-        <a id="/es/docs/purchase-workflow/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefunds-and-voidshtml" href="../../es/docs/purchase-workflow/refunds-and-voids.html">Reembolsos y anulaciones</a>
       
       
       
@@ -404,48 +410,17 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/es/docs/forms.html" href="../../es/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Formularios</a>
-  </li>
-  <ul class="side-main">
-    <li class="" id="esdocsformshtml">
-      
-      
-      
-      
-      
-      
-        <a id="/es/docs/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsformscheckout-formhtml" href="../../es/docs/forms/checkout-form.html">Checkout</a>
-      
-      
-      
-      
-      
-        <a id="/es/docs/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsformsembedded-checkout-formhtml" href="../../es/docs/forms/embedded-checkout-form.html">Checkout embebido</a>
-      
-      
-    </li>
-  </ul>
-   </ul> 
-
-      
-      
-      
-      
-
-
-
-
-
-
-
-
- <ul class="td-sidebar-nav__section pr-md-3"> 
-<li class="  td-sidebar-nav__section-title ">
     <a id="/es/docs/merchant-balances.html" href="../../es/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de saldos</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocsmerchant-balanceshtml">
       
+      
+      
+      
+      
+      
+        <a id="/es/docs/merchant-balances/request-withdrawal.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsmerchant-balancesrequest-withdrawalhtml" href="../../es/docs/merchant-balances/request-withdrawal.html">Solicitar un Retiro</a>
       
       
     </li>
@@ -477,6 +452,12 @@
       
       
         <a id="/es/docs/reporting/transactions-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingtransactions-reporthtml" href="../../es/docs/reporting/transactions-report.html">API de Transacciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/reporting/statement-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingstatement-reporthtml" href="../../es/docs/reporting/statement-report.html">API de Movimientos Financieros</a>
       
       
     </li>
@@ -915,19 +896,105 @@
       
       
       
-        <a id="/es/docs/plugins/vtex/_vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtex_vtex_setuphtml" href="../../es/docs/plugins/vtex/_vtex_setup.html">Guía de Integración</a>
+        <a id="/es/docs/plugins/vtex/vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_setuphtml" href="../../es/docs/plugins/vtex/vtex_setup.html">Guía de Integración</a>
       
       
       
       
       
-        <a id="/es/docs/plugins/vtex/_vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtex_vtex_payment_flowhtml" href="../../es/docs/plugins/vtex/_vtex_payment_flow.html">Flujo de Pago</a>
+        <a id="/es/docs/plugins/vtex/vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_payment_flowhtml" href="../../es/docs/plugins/vtex/vtex_payment_flow.html">Flujo de Pago</a>
       
       
       
       
       
-        <a id="/es/docs/plugins/vtex/_vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtex_vtex_adminhtml" href="../../es/docs/plugins/vtex/_vtex_admin.html">Panel de Control</a>
+        <a id="/es/docs/plugins/vtex/vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_adminhtml" href="../../es/docs/plugins/vtex/vtex_admin.html">Panel de Control</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/versions.html" href="../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../es/docs/versions/purchase-api-v2/purchase-operations.html">Operaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2redirect-purchasehtml" href="../../es/docs/versions/purchase-api-v2/redirect-purchase.html">Compra Redirect</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2direct-purchasehtml" href="../../es/docs/versions/purchase-api-v2/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/versions/forms.html" href="../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionsformscheckout-formhtml" href="../../es/docs/versions/forms/checkout-form.html">Checkout</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionsformsembedded-checkout-formhtml" href="../../es/docs/versions/forms/embedded-checkout-form.html">Checkout embebido</a>
       
       
     </li>
@@ -1005,7 +1072,7 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="../../es/docs.html">Guía de Integración de Payins</a>
+	<a href="../../es/docs.html">Guía de Payins</a>
 </li>
 
 
@@ -1024,11 +1091,11 @@
         <div class="lead">Esta sección expone las funcionalidades de la API de Pagos de Bamboo para una segura integración con nuestra plataforma.</div>
 	
 	<h2 id="overview">Introducción</h2>
-<p>Utilizando nuestra plataforma, puede ofrecer a sus clientes una experiencia de pago mejorada, pudiendo obtener datos de tarjetas como si estuvieran en su página o aplicación móvil a través de nuestro <a href="../../es/docs/forms/checkout-form.html"><strong>Formulario de Checkout</strong></a>.</p>
+<p>Utilizando nuestra plataforma, puede ofrecer a sus clientes una experiencia de pago mejorada, pudiendo obtener datos de tarjetas como si estuvieran en su página o aplicación móvil a través de nuestro <a href="../../es/docs/versions/forms/checkout-form.html"><strong>Formulario de Checkout</strong></a>.</p>
 <p>Puede solicitar la información una sola vez y almacenar un <em><strong>token</strong></em> asociado con la tarjeta que el cliente ingresó de forma segura en nuestra plataforma.</p>
 <h3 id="pci-dss">PCI-DSS</h3>
 <p>Nuestra plataforma certificada <strong>PCI-DSS Nivel 1</strong> nos permite procesar números de tarjeta y otros datos confidenciales de autenticación de clientes.</p>
-<p>Puede incrustar el <a href="../../es/docs/forms/checkout-form.html">formulario de Checkout</a> en sus páginas o aplicaciones móviles; ahora puede aceptar pagos sin recibir información confidencial como datos de clientes, ofrecer seguridad a sus clientes y facilidad de uso.</p>
+<p>Puede incrustar el <a href="../../es/docs/versions/forms/checkout-form.html">formulario de Checkout</a> en sus páginas o aplicaciones móviles; ahora puede aceptar pagos sin recibir información confidencial como datos de clientes, ofrecer seguridad a sus clientes y facilidad de uso.</p>
 <h2 id="start-processing-with-bamboo">Empezar a procesar con Bamboo</h2>
 <p>Siga estos pasos para iniciar a procesar pagos con Bamboo Payment:</p>
 <ol>
@@ -1124,12 +1191,20 @@
             
         
             
+        
+            
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="../../es/docs/getting-started/concepts.html">Conceptos</a>
                     </h5>
                     <p>Entienda los conceptos detrás de cualquier integración con Bamboo Payment.</p>
                 </div>
+            
+        
+            
+        
             
         
             
@@ -1190,6 +1265,8 @@
             
         
             
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="../../es/docs/getting-started/payment-methods.html">Medios de pago</a>
@@ -1229,12 +1306,18 @@
             
         
             
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="../../es/docs/getting-started/change-log.html">Cambios en la versión</a>
                     </h5>
-                    <p>Esta página proporciona un registro completo de todos los cambios significativos, actualizaciones y mejoras realizadas en la documentación técnica. Mantenemos este registro para mantener informada a nuestra comunidad de desarrolladores sobre la evolución de Bamboo.</p>
+                    <p>Esta página proporciona un registro completo de todos los cambios, actualizaciones y mejoras realizadas en la documentación técnica. Mantenemos este registro para mantener informada a nuestra comunidad de desarrolladores sobre la evolución de Bamboo.</p>
                 </div>
+            
+        
+            
+        
             
         
             

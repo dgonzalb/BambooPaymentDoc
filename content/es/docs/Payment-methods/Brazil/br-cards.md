@@ -19,14 +19,14 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | Sí | Número de documento del cliente. |
+| `Customer` → `DocumentType` | `string` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/brazil.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente.<br>Consulte [estados de residencia](/es/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
-| `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | Sí | Código postal del cliente. No utilice guiones. |
+| `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `Address` → `State` | `string` | Sí | Estado del cliente.<br>Consulte [estados de residencia](/es/docs/payment-methods/brazil.html#customers-state-of-residence) to know its posibles valores. |
+| `Customer` → `Address` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `Address` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
+| `Customer` → `Address` → `PostalCode` | `string` | Sí | Código postal del cliente. No utilice guiones. |
 
 {{% alert title="Info" color="info"%}}
 
@@ -35,187 +35,19 @@ Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos e
 {{% /alert %}}
 
 ### Ejemplo del Request {#request-example}
-```json
-{
-    "TrxToken": "OT__xQytfkLJWa099yCweV_bB2710dGJ_JMB4jiYpVJ8SzQ_",
-    "Amount": 5000,
-    "Order": "2572023",
-    "Currency": "BRL",
-    "Capture": true,
-    "Installments": 0,
-    "TargetCountryISO" : "BR",
-    "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
-    "Customer": {
-        "Email": "breno@mail.com.br",
-        "FirstName": "Breno",
-        "LastName": "Barbieri",
-        "DocNumber": "13394559358",
-        "DocumentTypeId": 24,
-        "PhoneNumber": "27998764488",
-        "BillingAddress": {
-            "AddressDetail": "Avenida Anisio Fernandes Coelho, 661 ",
-            "PostalCode": "29060670",
-            "City": "Vitoria",
-            "State": "ES",
-            "Country": "Brasil"
-        }
-    }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Brasil/requestPurchase>}}
+{{< /highlight >}}
 
 ## Parámetros del Response {#response-parameters}
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 ### Ejemplo del Response {#response-example}
 
-```json
-{
-    "Response": {
-        "PurchaseId": 1133663,
-        "Created": "2023-08-31T15:42:31.105",
-        "TrxToken": null,
-        "Order": "2572023",
-        "Transaction": {
-            "TransactionID": 1152559,
-            "Created": "2023-08-31T15:42:31.107",
-            "AuthorizationDate": "2023-08-31T15:42:34.420",
-            "TransactionStatusId": 1,
-            "Status": "Approved",
-            "ErrorCode": null,
-            "Description": "200 PC",
-            "ApprovalCode": "12345",
-            "Steps": [
-                {
-                    "Step": "Generic External",
-                    "Created": "2023-08-31T15:42:32.250",
-                    "Status": "Antifraud Approved",
-                    "ResponseCode": null,
-                    "ResponseMessage": null,
-                    "Error": null,
-                    "AuthorizationCode": null,
-                    "UniqueID": null,
-                    "AcquirerResponseDetail": null
-                },
-                {
-                    "Step": "Generic step for microservices",
-                    "Created": "2023-08-31T15:42:34.380",
-                    "Status": "Authorization OK",
-                    "ResponseCode": "200",
-                    "ResponseMessage": "PC",
-                    "Error": null,
-                    "AuthorizationCode": "12345",
-                    "UniqueID": null,
-                    "AcquirerResponseDetail": "{\"order\":\"1133663\",\"order_status\":\"PC\",\"authorization_code\":\"12345\",\"error_code\":null}"
-                }
-            ]
-        },
-        "Capture": true,
-        "Amount": 5000,
-        "OriginalAmount": 5000,
-        "TaxableAmount": 0,
-        "Tip": 0,
-        "Installments": 1,
-        "Currency": "BRL",
-        "Description": "TestCommerce #order2572023, [testcommerce.com.br]",
-        "Customer": {
-            "CustomerId": 250580,
-            "Created": "2023-08-31T15:42:21.197",
-            "CommerceCustomerId": null,
-            "Owner": "Anonymous",
-            "Email": "breno@mail.com.br",
-            "Enabled": true,
-            "ShippingAddress": null,
-            "BillingAddress": {
-                "AddressId": 374311,
-                "AddressType": 2,
-                "Country": "Brasil",
-                "State": "ES",
-                "AddressDetail": "Avenida Anisio Fernandes Coelho, 661 ",
-                "PostalCode": "29060670",
-                "City": "Vitoria"
-            },
-            "Plans": null,
-            "AdditionalData": null,
-            "PaymentProfiles": [
-                {
-                    "PaymentProfileId": 255321,
-                    "PaymentMediaId": 1,
-                    "Created": "2023-08-31T15:42:21.197",
-                    "LastUpdate": null,
-                    "Brand": "VISA",
-                    "CardOwner": "Bruno Rugeiro",
-                    "Bin": "498412",
-                    "IssuerBank": "Visa",
-                    "Installments": "1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24",
-                    "Type": "CreditCard",
-                    "IdCommerceToken": 0,
-                    "Token": null,
-                    "Expiration": "202912",
-                    "Last4": "1234",
-                    "Enabled": null,
-                    "DocumentNumber": null,
-                    "DocumentTypeId": null,
-                    "ExternalValue": null,
-                    "AffinityGroup": null
-                }
-            ],
-            "CaptureURL": null,
-            "UniqueID": null,
-            "URL": "https://api.stage.bamboopayment.com/Customer/250580",
-            "FirstName": "Breno",
-            "LastName": "Barbieri",
-            "DocNumber": "10058494715",
-            "DocumentTypeId": 24,
-            "PhoneNumber": "27998764488",
-            "ExternalValue": null
-        },
-        "RefundList": null,
-        "PlanID": null,
-        "UniqueID": null,
-        "AdditionalData": null,
-        "CustomerUserAgent": null,
-        "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1133663",
-        "DataUY": {
-            "IsFinalConsumer": false,
-            "Invoice": null,
-            "TaxableAmount": 0
-        },
-        "DataDO": {
-            "Invoice": null,
-            "Tax": 0
-        },
-        "Acquirer": {
-            "AcquirerID": 70,
-            "Name": "PagBrasil",
-            "CommerceNumber": null
-        },
-        "CommerceAction": null,
-        "PurchasePaymentProfileId": 255321,
-        "LoyaltyPlan": null,
-        "DeviceFingerprintId": null,
-        "MetadataIn": null,
-        "MetadataOut": null,
-        "CrossBorderData": null,
-        "CrossBorderDataResponse": {
-            "TargetCountryISO": "BR",
-            "TargetCurrencyISO": "BRL",
-            "TargetAmount": 50
-        },
-        "Redirection": null,
-        "IsFirstRecurrentPurchase": false,
-        "AntifraudData": {
-            "AntifraudFingerprintId": null,
-            "AntifraudMetadataIn": null
-        },
-        "PaymentMediaId": null,
-        "PurchaseType": 1,
-        "HasCvv": null,
-        "TargetCountryISO": null
-    },
-    "Errors": []
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_approved currency="BRL">}}
+{{< /highlight >}}
+
 
 ## Tarjetas de prueba {#testing-cards}
 Utilice las siguientes tarjetas para simular los diferentes estados de la compra.

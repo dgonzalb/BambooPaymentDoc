@@ -78,7 +78,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Parámetros del Response {#response-parameters}
 En el parámetro `MetadataOut.PaymentBarcodeUrl` de la respuesta, se retorna el cupon en formato _PDF_ que el cliente debe presentar en la agencia para pagar la deuda generada.
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example} 
 ```json
@@ -246,7 +246,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Parámetros del Response {#response-parameters-1}
 As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
 
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 #### Ejemplo del Response {#response-example-1}
 ```json

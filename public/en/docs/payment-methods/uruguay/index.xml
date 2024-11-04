@@ -32,7 +32,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h2&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Request parameters&lt;/a&gt; section for details on basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Request parameters&lt;/a&gt; section for details on basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -227,7 +227,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h2&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1300,7 +1300,7 @@ Example:
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v1/api/LoyaltyPlan/{{LoyaltyPlan-ID}}/Balance&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Where &lt;code&gt;{{LoyaltyPlan-ID}}&lt;/code&gt; is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html&#34;&gt;Purchase operations&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;{{LoyaltyPlan-ID}}&lt;/code&gt; is the identifier of the Loyalty plan you want to consult. Furthermore, recall the usage of the Authentication as explained in &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html&#34;&gt;Purchase operations&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h4&gt;
 &lt;p&gt;Include the following parameters in the request.&lt;/p&gt;
 &lt;table&gt;
@@ -1423,7 +1423,7 @@ Example:
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1550,7 +1550,7 @@ Example:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
 &lt;p&gt;In the &lt;code&gt;MetadataOut.PaymentBarcodeUrl&lt;/code&gt; parameter, the response returns the coupon in &lt;em&gt;PDF&lt;/em&gt; format that the client must present in the agency to pay the generated debt.&lt;/p&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -1641,7 +1641,7 @@ Example:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Errors&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--## Online Bank transfers {#bank-transfers}
-The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase](/en/docs/purchase-workflow/purchases/redirect-purchase.html).
+The flow of this payment method is _**Redirect**_, so the customer is required to be directed to another page where they will complete the payment. In the [Response parameters sections](#response-parameters-1) you can find the parameter of the redirection URL. For more information refer to [Redirect purchase](/en/docs/versions/purchase-api-v2/redirect-purchase.html).
 
 ### Supported banks
 You can offer to your customers the possibility to pay using bank transfers if the customer&#39;s account is in the following banks:
@@ -1656,7 +1656,7 @@ You can offer to your customers the possibility to pay using bank transfers if t
 | &lt;img src=&#34;https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png&#34; width=&#34;52&#34; style=&#34;&#34; /&gt; | 105 | Itau |
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation](/en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation](/en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -1714,7 +1714,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Response parameters
 As you need to redirect your customer to an external page to complete the payment, you can find the redirection URL in the `MetadataOut.ActionURL` parameter.
 
-For more information on the response parameters, please refer to the [Response parameters section](/en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters) of the Purchase creation.
+For more information on the response parameters, please refer to the [Response parameters section](/en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters) of the Purchase creation.
 
 #### Response example
 ```json
@@ -1863,7 +1863,7 @@ For more information on the response parameters, please refer to the [Response p
 &lt;h2 id=&#34;bank-transfers&#34;&gt;Bank Transfers&lt;/h2&gt;
 &lt;p&gt;With &lt;strong&gt;Bank Transfers&lt;/strong&gt; allow your customers to make payments using bank transfers. Customers will need to transfer the purchase amount to the specified account details provided in the response using their home banking system. We accept payments from all banks.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/versions/purchase-api-v2/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2002,7 +2002,7 @@ For more information on the response parameters, please refer to the [Response p
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-1&#34;&gt;Response parameters&lt;/h3&gt;
 &lt;p&gt;We return the &lt;code&gt;Purchase&lt;/code&gt; with the status &lt;em&gt;Pending for Redirection&lt;/em&gt; and a &lt;code&gt;CommerceAction&lt;/code&gt; object with &lt;code&gt;ActionReason&lt;/code&gt; as &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; and the &lt;code&gt;ActionURL&lt;/code&gt; parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the &lt;a href=&#34;#payment-experience&#34;&gt;Payment Experience&lt;/a&gt; section to see the payment flow.&lt;/p&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-1&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;

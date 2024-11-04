@@ -12,7 +12,7 @@ tags: ["subtopic"]
 _PuntoXpress_ is a cash collection network with regional coverage in Central America. When the customers of e-commerce platforms make purchases on their websites, the merchant requests us to generate a debt. Subsequently, the customer goes to a _PuntoXpress_ collection point, checks the debt associated with a reference, and makes the payment. Then, _PuntoXpress_ notifies us, and we report to the merchant.
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|

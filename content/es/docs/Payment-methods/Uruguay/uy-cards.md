@@ -23,24 +23,19 @@ Se necesita incluir campos específicos para que este método de pago funcione c
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocNumber` | `string` | No | Número de documento del cliente. |
+| `Customer` → `DocumentType` | `string` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/uruguay.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
-| `Customer` → `BillingAddress` → `Country` | `string` | Sí | País del cliente. |
-| `Customer` → `BillingAddress` → `State` | `string` | Sí | Estado del cliente. |
-| `Customer` → `BillingAddress` → `City` | `string` | Sí | Ciudad del cliente. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Código postal del cliente.<br>El código postal es obligatorio para Estados Unidos y Canadá. |
-| `Customer` → `ShippingAddress` → `Country` | `string` | No | País de la dirección de envío. |
-| `Customer` → `ShippingAddress` → `State` | `string` | No | Estado de la dirección de envío. | 
-| `Customer` → `ShippingAddress` → `City` | `string` | No | Ciudad de la dirección de envío. |
-| `Customer` → `ShippingAddress` → `AddressDetail` | `string` | No | Detalle de la dirección de envío. | 
-| `Customer` → `ShippingAddress` → `PostalCode` | `string` | No | Código postal de la dirección de envío. |
+| `Customer` → `Address` → `Country` | `string` | Sí | País del cliente. |
+| `Customer` → `Address` → `State` | `string` | Sí | Estado del cliente. |
+| `Customer` → `Address` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `Address` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
+| `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente.<br>El código postal es obligatorio para Estados Unidos y Canadá. |
 | `CustomerIP` | `string` | No | IP del cliente que utiliza el servicio. |
 | `DataUY` | `object` | No | Información específica para _Uruguay_.<br>En Uruguay, dos leyes promueven los medios de pago electrónicos mediante la devolución de puntos de IVA. Las leyes **19.210** (Ley de inclusión financiera) y **17.934** de servicios gastronómicos y afines regulan estos beneficios, y los datos presentados en este objeto son necesarios para su correcto uso.<br>Este campo es requerido para el modelo Gateway. |
 | `DataUY` → `IsFinalConsumer` | `boolean` | No | Indica si la venta se realiza a un consumidor final.<br>Este campo es requerido para el modelo Gateway. |
 | `DataUY` → `Invoice` | `string` | No <sup>*</sup> | Número de factura asociado a la venta. Este parámetro solo acepta caracteres numéricos. |
-| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Importe gravado por IVA. |
+| `DataUY` → `TaxableAmount` | `number` | No <sup>*</sup> | Importe gravado por IVA. En caso de no enviarse el valor, no se aplicará la devolución de puntos de IVA.|
 
 {{% alert title="Info" color="info"%}}
 * <sup>*</sup> Este parámetro es obligatorio cuando `DataUY.IsFinalConsumer` es `true`.
@@ -49,171 +44,18 @@ Se necesita incluir campos específicos para que este método de pago funcione c
 {{% /alert %}}
 
 ### Ejemplo del Request {#request-example}
-```json
-{
-  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
-  "Capture": true,
-  "Order": "20201229",
-  "Amount": "10000",
-  "Currency": "USD",
-  "TargetCountryISO": "UY",
-  "Installments": 1,
-  "Customer": {
-    "BillingAddress": {
-      "Country": "Uruguay",
-      "City": "Montevideo",
-      "State": "Montevideo",
-      "PostalCode": "150000",
-      "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-    },
-    "Email": "rserrano@mail.com",
-    "DocNumber": "47666489",
-    "DocumentTypeId": 2,
-    "PhoneNumber": "0930000111",
-    "FirstName": "Rodrigo",
-    "LastName": "Serrano"
-  }
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Uruguay/requestPurchase>}}
+{{< /highlight >}}
 
 ## Parámetros del Response {#response-parameters}
-Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase-operations.md>}}#response-parameters) de la creación de la compra.
+Para más información sobre los parámetros del Response, consulte la [sección de parámetros]({{< ref purchase_v3.md >}}#response-parameters) de la creación de la compra.
 
 ### Ejemplo del Response {#response-example}
+{{< highlight json >}}
+{{< Payins/V3/CreatePurchase/http200_approved currency="UYU">}}
+{{< /highlight >}}
 
-```json
-{
-  "Response": {
-    "PurchaseId": 1248284,
-    "Created": "2023-09-29T15:34:10.012",
-    "TrxToken": null,
-    "Order": "20201229",
-    "Transaction": {
-      "TransactionID": 1267112,
-      "Created": "2023-09-29T15:34:10.012",
-      "AuthorizationDate": "",
-      "TransactionStatusId": 1,
-      "Status": "Approved",
-      "ErrorCode": "0",
-      "Description": "",
-      "ApprovalCode": null,
-      "Steps": [
-        {
-          "Step": "Generic External",
-          "Created": "",
-          "Status": null,
-          "ResponseCode": "00",
-          "ResponseMessage": "Authorization - Function performed error-free",
-          "Error": "0",
-          "AuthorizationCode": "586316",
-          "UniqueID": null,
-          "AcquirerResponseDetail": "{\"TransactionResult\":\"APPROVED\",\"ProcessorResponseCode\":\"00\",\"ProcessorResponseMessage\":\"Function performed error-free\",\"ApprovalCode\":\"Y:586316:4637904926:PPXX:5863160734\",\"OrderId\":\"A-79d7a01b-5b36-4326-b872-82c29f196ec0\",\"IpgTransactionId\":\"84637904926\",\"ProcessorApprovalCode\":\"586316\",\"ProcessorReceiptNumber\":\"0734\",\"ProcessorBatchNumber\":\"001\",\"ProcessorReferenceNumber\":\"586316586316\",\"ProcessorTraceNumber\":\"586316\"}"
-        }
-      ]
-    },
-    "Capture": true,
-    "Amount": 10000,
-    "OriginalAmount": 10000,
-    "TaxableAmount": 0,
-    "Tip": 0,
-    "Installments": 1,
-    "Currency": "USD",
-    "Description": null,
-    "Customer": {
-      "CustomerId": 254952,
-      "Created": "2023-09-29T15:34:05.713",
-      "CommerceCustomerId": null,
-      "Owner": "Anonymous",
-      "Email": "rserrano@mail.com",
-      "Enabled": true,
-      "ShippingAddress": null,
-      "BillingAddress": {
-        "AddressId": 377785,
-        "AddressType": 2,
-        "Country": "Uruguay",
-        "City": "Montevideo",
-        "State": "Montevideo",
-        "PostalCode": "150000",
-        "AddressDetail": "Calle falsa 4567/Depto/Provincia"
-      },
-      "Plans": null,
-      "AdditionalData": null,
-      "PaymentProfiles": [
-        {
-          "PaymentProfileId": 259793,
-          "PaymentMediaId": 2,
-          "Created": "2023-09-29T15:34:05.713",
-          "LastUpdate": null,
-          "Brand": "MasterCard",
-          "CardOwner": "Rodrigo Serrano",
-          "Bin": null,
-          "IssuerBank": null,
-          "Installments": null,
-          "Type": "CreditCard",
-          "IdCommerceToken": 0,
-          "Token": null,
-          "Expiration": "202912",
-          "Last4": "0008",
-          "Enabled": null,
-          "DocumentNumber": null,
-          "DocumentTypeId": null,
-          "ExternalValue": null,
-          "AffinityGroup": null
-        }
-      ],
-      "CaptureURL": null,
-      "UniqueID": null,
-      "URL": "https://api.stage.bamboopayment.com/Customer/254952",
-      "FirstName": "Rodrigo",
-      "LastName": "Serrano",
-      "DocNumber": "47666489",
-      "DocumentTypeId": 2,
-      "PhoneNumber": "0930000111",
-      "ExternalValue": null
-    },
-    "RefundList": null,
-    "PlanID": null,
-    "UniqueID": null,
-    "AdditionalData": null,
-    "CustomerUserAgent": null,
-    "CustomerIP": null,
-    "URL": "https://api.stage.bamboopayment.com/Purchase/1248284",
-    "DataUY": {
-      "IsFinalConsumer": false,
-      "Invoice": null,
-      "TaxableAmount": 0
-    },
-    "DataDO": {
-      "Invoice": null,
-      "Tax": 0
-    },
-    "Acquirer": {
-      "AcquirerID": 73,
-      "Name": "FiservIPG",
-      "CommerceNumber": null
-    },
-    "CommerceAction": null,
-    "PurchasePaymentProfileId": 259793,
-    "LoyaltyPlan": null,
-    "DeviceFingerprintId": null,
-    "MetadataIn": null,
-    "MetadataOut": null,
-    "CrossBorderData": null,
-    "CrossBorderDataResponse": null,
-    "Redirection": null,
-    "IsFirstRecurrentPurchase": false,
-    "AntifraudData": {
-      "AntifraudFingerprintId": null,
-      "AntifraudMetadataIn": null
-    },
-    "PaymentMediaId": null,
-    "PurchaseType": 1,
-    "HasCvv": null,
-    "TargetCountryISO": null
-  },
-  "Errors": []
-}
-```
 <!--
 ### Response para AMEX {#response-for-amex}
 Cuando utilice AMEX, la respuesta incluye el objeto `AcquirerResponseDetail` dentro del objeto `Response.Transaction.Steps` con la siguiente información.
@@ -285,14 +127,14 @@ El comportamiento de la respuesta dependerá del monto enviado. Utilice las sigu
 
 #### Tarjetas sin CVV
 
-| Marca | PAN | CVV | Fecha de Expiración |
+| Marca | PAN | Fecha de Expiración |
 |---|---|---|
-| Mastercard Crédito | `5101980000000000` | `12/29` |
+| Mastercard Crédito | `5101980000000000` |`12/29` |
 | Mastercard Prepago | `5599260000000006` | `12/29` |
-| Visa Crédito | `4103770000000006` | `12/29` |
-| Visa Débito | `4213000000000005` | `12/29` |
-| Visa Internacional Crédito | `4147960000000001` | `12/29` |
-| Visa Internacional Débito | `4345590000000006` | `12/29` |
+| Visa Crédito | `4103770000000006` |`12/29` |
+| Visa Débito | `4213000000000005` |`12/29` |
+| Visa Internacional Crédito | `4147960000000001` |`12/29` |
+| Visa Internacional Débito | `4345590000000006` |`12/29` |
 
 <div id="shortTable"></div>
 

@@ -48,11 +48,11 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Colombia:
 
-| Code | Document name                        | Abbreviation |
-|:----:|--------------------------------------|--------------|
-| 11   | Cédula de ciudadanía                 | CC           |
-| 12   | Cédula de extranjería                | CE           |
-| 13   | NIT                                  | NIT          |
+| Code (V3 API) | Code (Previous API) | Document name                        | Abbreviation |
+|:-------------:|:-------------------:|--------------------------------------|--------------|
+| CC.CO         | 11                  | Cédula de ciudadanía                 | CC           |
+| CE.CO         | 12                  | Cédula de extranjería                | CE           |
+| NIT.CO        | 13                  | NIT                                  | NIT          |
 <!--| 14   | Tarjeta de identidad                 | TI           |
 | 15   | Pasaporte                            | PP           |
 | 16   | IDC (Identificador Único de cliente) | IDC          |

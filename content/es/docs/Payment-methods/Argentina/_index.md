@@ -45,10 +45,10 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Argentina:
 
-| Código | Nombre del documento                   | Abreviación |
-|:------:|----------------------------------------|--------------|
-| 4      | Documento Nacional de Identidad        | DNI          |
-| 5      | Código único de Identificación Laboral | CUIL         |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento                   | Abreviación |
+|:-------------:|:-------------------:|----------------------------------------|--------------|
+| DNI.AR        | 4                   | Documento Nacional de Identidad        | DNI          |
+| CUIL.AR       | 5                   | Código único de Identificación Laboral | CUIL         |
 
 ## Provincias de Argentina {#argentina-provinces}
 Cuando cree la Compra en Argentina y quiera incluir la provincia en el campo `customer.state`, configure cualquiera de los siguientes valores:

@@ -44,12 +44,13 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `payee` → `document` → `number` | `string` | Sí | Número de documento del Beneficiario. | 
 | `payee` → `bankaccount` → `number` | `string` | Sí<sup>2</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Sí<sup>2</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
-| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>2</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](#get-bank-list). También, [puede encontrar el listado de bancos](../payouts-api/variables.html#bank-codes). |
+| `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>2</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](getting-started.html#get-bank-list). También, [puede encontrar el listado de bancos](variables.html#bank-codes). |
 
 
 <sup>1</sup> _Sólo aplica para Brasil usando Transferencia Bancaria Instantánea. En caso contrario, el objeto_ `payee.InstantPaymentData` _y sus parámetros no deben estar presentes en el request._<br>
 <sup>2</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, el objeto_ `payee.bankaccount` _y sus parámetros no deben estar presentes en el request._<br>
-<sup>3</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._
+<sup>3</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`.<br>
+***Importante:*** Los campos `firstName` y `lastName` no soportan ni números ni caracteres especiales, solo letras. El campo `companyName` sí acepta todo tipo de caracteres alfanuméricos._
 
 
 #### Ejemplo del Request {#request-example}

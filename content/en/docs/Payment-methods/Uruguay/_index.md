@@ -66,11 +66,11 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Uruguay:
 
-| Code | Document name       | Abbreviation |
-|:----:|---------------------|--------------|
-| 1    | RUT                 | RUT          |
-| 2    | Cédula de Identidad | CI           |
-| 3    | Foreigner           | EXT          |
+| Code (V3 API) | Code (Previous API) |Document name       | Abbreviation |
+|:-------------:|:-------------------:|--------------------|--------------|
+| RUT.UY        | 1                   |RUT                 | RUT          |
+| CI.UY         | 2                   |Cédula de Identidad | CI           |
+| EXT.UY        | 3                   |Foreigner           | EXT          |
 
 ## Issuer Banks Table
 The following table lists the configured Issuer Banks.

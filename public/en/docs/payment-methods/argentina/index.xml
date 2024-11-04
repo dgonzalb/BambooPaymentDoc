@@ -29,7 +29,7 @@
 &lt;li&gt;&lt;strong&gt;Purchases without CVV&lt;/strong&gt;: Allows tokenization and recurrence.&lt;br&gt;In the case of tokenization, the API generates a charge for a minimum of &lt;strong&gt;ARS 3&lt;/strong&gt;, which is refunded to validate the cardholder data. With this token, it is possible to make purchases without CVV.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h2&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -156,7 +156,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Description&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Compra de prueba&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h2&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -375,7 +375,7 @@
 &lt;h2 id=&#34;pago-fácil&#34;&gt;Pago Fácil&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Pago Fácil&lt;/strong&gt; provides a network of physical payment centers where your customers can pay their purchases in cash. Your customers must provide their payment information and the amount they wish to pay, and the system takes care of the rest.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -474,7 +474,7 @@
 &lt;/table&gt;
 &lt;h4 id=&#34;request-example&#34;&gt;Request example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMediaId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;72&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMediaId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;61&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ARS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Capture&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -655,7 +655,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;transferencias-30&#34;&gt;Transferencias 3.0&lt;/h2&gt;
 &lt;p&gt;With &lt;strong&gt;Transferencias 3.0&lt;/strong&gt;, you can show a QR code generated by Bamboo that your customer can read using their wallet.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-1&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -927,7 +927,7 @@
 &lt;h2 id=&#34;offline-bank-transfers&#34;&gt;Offline Bank transfers&lt;/h2&gt;
 &lt;p&gt;With &lt;strong&gt;Offline Bank transfers&lt;/strong&gt;, you can let your customer pay using bank transfers using any Bank account and wallet with &lt;em&gt;CVU&lt;/em&gt; (Clave Virtual Uniforme) or &lt;em&gt;CBU&lt;/em&gt; (Clave Bancaria Uniforme). To complete the payment, your customer must transfer the purchase amount to the account details in the response.&lt;/p&gt;
 &lt;h3 id=&#34;request-parameters-2&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
+&lt;p&gt;You need to include specific fields for this payment method to work correctly. Check the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters&#34;&gt;Purchase operation&lt;/a&gt; article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1064,7 +1064,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;response-parameters-2&#34;&gt;Response parameters&lt;/h3&gt;
 &lt;p&gt;We return the &lt;code&gt;Purchase&lt;/code&gt; with the status &lt;em&gt;Pending for Redirection&lt;/em&gt; and a &lt;code&gt;CommerceAction&lt;/code&gt; object with &lt;code&gt;ActionReason&lt;/code&gt; as &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt; and the &lt;code&gt;ActionURL&lt;/code&gt; parameter with the URL of the coupon. In this URL, the payer must log in to their home banking app and complete the payment. Refer to the &lt;a href=&#34;#payment-experience&#34;&gt;Payment Experience&lt;/a&gt; section to see the payment flow.&lt;/p&gt;
-&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase-operations.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
+&lt;p&gt;For more information on the response parameters, please refer to the &lt;a href=&#34;../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters&#34;&gt;Response parameters section&lt;/a&gt; of the Purchase creation.&lt;/p&gt;
 &lt;h4 id=&#34;response-example-1&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;

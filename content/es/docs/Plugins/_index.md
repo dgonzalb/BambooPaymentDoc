@@ -6,12 +6,12 @@ Description: >
 weight: 80
 ---
 
-## Integraciones Disponibles
+## Integraciones Disponibles {#available-integrations}
 
-### VTEX (Especializado para Uruguay)
+### VTEX (Especializado para Uruguay) {#vtex-specialized-for-uruguay}
 Activa Bamboo como tu Gateway de Pago en VTEX para comenzar a procesar transacciones. Nuestro **plug-in está optimizado para el mercado uruguayo**, ofreciendo medios de pago locales, a la vez que admite transacciones internacionales.
 
-#### Características Principales:
+#### Características Principales: {#key-features}
 - Soporte integral para métodos de pago uruguayos
 - Actualizaciones de transacciones en tiempo real
 - Opciones de pago en cuotas en Uruguay

@@ -30,15 +30,15 @@ Esta sección muestra los medios de pago disponibles, monedas e información rel
 La siguiente tabla describe los tipos de documentos válidos para América Central.
 
 
-| Código | Nombre del documento                              | Abreviación  | País        |
-|:------:|---------------------------------------------------|--------------|-------------|
-| 30     | Cédula de identidad                                | CI          | Costa Rica  |
-| 31     | Documento de Identidad Migratoria para Extranjeros | DIMEX       | Costa Rica  |
-| 32     | Pasaporte                                          | PA          | Costa Rica  |
-| 33     | Cédula de identidad                                | CI          | Nicaragua   |
-| 34     | Pasaporte                                          | PA          | Nicaragua   |
-| 35     | Registro Único de Contribuyente                    | RUC         | Nicaragua   |
-| 42     | Documento único de identidad                       | DUI         | El Salvador |
-| 43     | Pasaporte                                          | PA          | El Salvador |
-| 44     | Número de identificación tributaria                | NIT         | El Salvador |
-| 45     | Número de Registro de Contribuyente                | NRC         | El Salvador |
+| Código (V3 API) | Código (versión anterior API) | Nombre del documento                              | Abreviación  | País        |
+|:-------------:|:-------------------:|---------------------------------------------------|--------------|-------------|
+|  CI.CR        | 30                  | Cédula de identidad                                | CI          | Costa Rica  |
+|  DIMEX.CR     | 31                  | Documento de Identidad Migratoria para Extranjeros | DIMEX       | Costa Rica  |
+|  PA.CR        | 32                  | Pasaporte                                          | PA          | Costa Rica  |
+|  CI.CR        | 33                  | Cédula de identidad                                | CI          | Nicaragua   |
+|  PA.CR        | 34                  | Pasaporte                                          | PA          | Nicaragua   |
+|  RUC.CR       | 35                  | Registro Único de Contribuyente                    | RUC         | Nicaragua   |
+|  DUI.CR       | 42                  | Documento único de identidad                       | DUI         | El Salvador |
+|  PA.CR        | 43                  | Pasaporte                                          | PA          | El Salvador |
+|  NIT.CR       | 44                  | Número de identificación tributaria                | NIT         | El Salvador |
+|  NRC.CR       | 45                  | Número de Registro de Contribuyente                | NRC         | El Salvador |

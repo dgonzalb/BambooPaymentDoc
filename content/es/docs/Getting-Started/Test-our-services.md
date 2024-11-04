@@ -1,6 +1,6 @@
 ---
-title: "Pruebe nuestros servicios"
-linkTitle: "Pruebe nuestros servicios"
+title: "Probar la API"
+linkTitle: "Probar la API"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Antes de pasar a un ambiente de producción, pruebe nuestros servicios y vea cómo puede habilitarlos para satisfacer las necesidades de su negocio.
