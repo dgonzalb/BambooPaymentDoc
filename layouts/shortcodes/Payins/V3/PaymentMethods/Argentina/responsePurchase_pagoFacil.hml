@@ -1,0 +1,36 @@
+{
+    "TransactionId": "79632697147789184",
+    "Result": "ACTION_REQUIRED",
+    "Status": "PENDING",
+    "ErrorCode": null,
+    "ErrorDescription": null,
+    "Created": "2024-08-07T17:51:54.620",
+    "AuthorizationDate": null,
+    "AuthorizationCode": null,
+    "Amount": 100000,
+    "Currency": "ARS",
+    "Installments": 1,
+    "TaxableAmount": null,
+    "Tip": null,
+    "Url": "https://api.stage.bamboopayment.com/Purchase/79632697147789184",
+    "MetadataOut": 
+    {
+        "PaymentCode": "1130909", //A CHEQUEAR PORQUE NO ESTÁ EN LA V3
+        "PaymentExpirationDate": "20/08/2023" //A CHEQUEAR PORQUE NO ESTÁ EN LA V3
+    }
+    ,
+    "Action": {
+        "SessionId": "CA_a4032a2a-25ae-4f5f-a8bb-fb2e5ab2ae3c",
+        "URL": "https://s3.amazonaws.com/gateway.stage.bamboopayment.com/purchase-coupons/1130909_71afa71e-bb69-4f75-9ce7-666014f6c919_20231115.html",
+        "Reason": "VERIFICATION_CODE_NEEDED"
+    },
+     "PaymentMethod": {
+        "Brand": "PagoFacil",
+        "CardOwner": null,
+        "Bin": null,
+        "IssuerBank": null,
+        "Type": "PhysicalNetwork",
+        "Expiration": null,
+        "Last4": null
+    }
+}
