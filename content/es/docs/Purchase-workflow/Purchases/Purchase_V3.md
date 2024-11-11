@@ -50,11 +50,11 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 |-----------|------|:------------:|-------------|
 | `TrxToken` | `string` | No<sup>1</sup> | Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas. |
 | `NetworkToken` | `object` | No<sup>1</sup> | Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red. |
-| `PaymentMethod` | `integer` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto [PaymentMethod]({{< ref "Purchase_V3.md">}}#paymentmethod-object). |
+| `PaymentMethod` | `integer` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto [PaymentMethod](/es/docs/getting-started/payment-methods.html). |
 | `UniqueID` | `string` | No | Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
-| `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/en/docs/payment-methods.html) admitan la función de pre-autorización. |
+| `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/es/docs/payment-methods.html) admitan la función de pre-autorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato `ISO-3166-1`. |
-| `Currency` | `string` | Sí | Moneda de la compra, según ISO-4217. Encuentre los valores posibles en la tabla de Monedas de [cada país](/en/docs/payment-methods.html). |
+| `Currency` | `string` | Sí | Moneda de la compra, según ISO-4217. Encuentre los valores posibles en la tabla de Monedas de [cada país](/es/docs/payment-methods.html). |
 | `Amount` | `integer` (64 bits) | Sí | Monto de la compra. Es un valor mayor a cero.<br>Si debe incluir decimales en el monto, concatene los lugares decimales sin el punto decimal. Ejemplo `12,25` → `1225`. |
 | `Tip` | `integer` (64 bits) | No | Valor de la propina en la transacción. Valor con dos decimales, sin puntos ni comas. |
 | `TaxableAmount` | `integer` (64 bits) | No | Valor de los impuestos de la transacción. Valor con dos decimales, sin puntos ni comas. |
@@ -89,11 +89,11 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 | `Address` → `PostalCode` | `string` | No | Código postal de la dirección del cliente. |
 | `Address` → `AddressDetail` | `string` | No | Detalles adicionales de la dirección del cliente. |
 
-#### Objeto PaymentMethod {#paymentmethod-object}
+<!--#### Objeto PaymentMethod {#paymentmethod-object}
 El objeto PaymentMethod en los `Response` contiene información sobre el medio de pago utilizado en la transacción.
 <br>El mismo objeto en los `Request` se utiliza para los medios de pago alternativos.
-<!--* Para los medios de pago de tarjetas, se pueden utilizar dentro del parámetro `Type` del objeto `CardData`.
-* Para los medios de pago alternativos y **NetworkToken** del parámetro `PaymentMethod`.-->
+ Para los medios de pago de tarjetas, se pueden utilizar dentro del parámetro `Type` del objeto `CardData`.
+* Para los medios de pago alternativos y **NetworkToken** del parámetro `PaymentMethod`.
 
 | Código | Legacy Id  | Nombre                | Tipo            | Flujo       |
 |--------|-----|-----------------------|-----------------|-------------|
@@ -196,7 +196,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 | `YNQ`    | `539`| YunoNequi             | BankTransfer    | API      |
 | `YAP`    | `540`| Yape                  | PhysicalNetwork | API      |
 
-<!--
+
 | `?? `    | `25 `| PayOut                |                 | API      |
 | `?? `    | `32 `| Openpay Bank          | BankTransfer    | API      |
 | `?? `    | `34 `| Decidir Caja de Pagos | PhysicalNetwork | API      |

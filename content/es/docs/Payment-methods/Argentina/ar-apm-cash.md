@@ -1,6 +1,6 @@
 ---
 title: "Efectivo / Redes de cobranza"
-linkTitle: "Efectivo / Redes de cobranza"
+linkTitle: "Efectivo"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.
@@ -23,6 +23,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
+| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
@@ -37,7 +38,7 @@ En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentUrl` | `string` | URL a la que debe redirigir al cliente para obtener la información de pago. |
+| `Response` → `Action` → `URL` | `string` | URL a la que debe redirigir al cliente para obtener la información de pago. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string` | Referencia de pago generada por **Pago Fácil**. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha en la que caducará el pago.<br>Formato _DD/MM/AAAA_. |
 

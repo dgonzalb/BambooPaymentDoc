@@ -12,7 +12,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 
 ## Medios de pago {#payment-methods}
 
-|                                                            | Payment Method  | Lecagy - Payment MediaId | Name         | Purchase                                   | Pre-authorization                          | Full refund                                | Partial Refund                             | Type             |
+|                                                            | Payment Method  | Legacy - Payment MediaId | Name         | Purchase                                   | Pre-authorization                          | Full refund                                | Partial Refund                             | Type             |
 |------------------------------------------------------------|-------------|-----------------|------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|-------------------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" />                             | VSC | 1               | VISA                  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card      |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" />                       | MCC | 2               | MasterCard            | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card      |
@@ -47,7 +47,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 ## Tipos de documentos {#document-types}
 La siguiente tabla describe los tipos de documentos válidos para Argentina:
 
-| Código (V3 API) | Código (versión anterior API) | Nombre del documento                   | Abreviación |
+| DocumentType (V3 API) | DocumentType (legacy API) | Nombre del documento                   | Abreviación |
 |:-------------:|:-------------------:|----------------------------------------|--------------|
 | DNI.AR        | 4                   | Documento Nacional de Identidad        | DNI          |
 | CUIL.AR       | 5                   | Código único de Identificación Laboral | CUIL         |
