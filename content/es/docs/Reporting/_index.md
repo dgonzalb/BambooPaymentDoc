@@ -14,7 +14,7 @@ Actualmente, ofrecemos la siguiente API:
 
 - **[API de Movimientos Financieros]({{< ref Statement-report.md >}}):** Esta API permite recuperar informes sobre movimientos de fondos dentro de su cuenta, proporcionando una imagen clara de los fondos entrantes y salientes.
 
-- **API de Payouts:** Esta API ofrecerá informes detallados sobre los payouts realizados, incluyendo valores de pago, estados e información de los beneficiarios.
+<!--- **API de Payouts:** Esta API ofrecerá informes detallados sobre los payouts realizados, incluyendo valores de pago, estados e información de los beneficiarios.-->
 
 ## Características Principales {#key-features}
 

@@ -13,28 +13,20 @@ tags: ["subtopic"]
 * **Compras sin CVV**: Permite tokenización y recurrencia.<br>En el caso de la tokenización, la API genera un cargo por un mínimo de **ARS 3**, que se reembolsa para validar los datos del titular de la tarjeta. Con este token, es posible realizar compras sin CVV.
 
 ## Parámetros del Request {#request-parameters}
-Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref purchase-operations.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
+### Básicos {#request-parameters}
+Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref Purchase_V3.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los parámetros de la compra básica y los idiomas de la respuesta.
+
+### Obligatorios y condicionales {#request-parameters}
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Sí | Token que identifica la tarjeta del cliente.<br>Para más información sobre cómo crear el token, consulte [Clientes](/es/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Sí | Indica el país destino. |
-| `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
 | `Customer` → `DocumentType` | `string` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/argentina.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
-| `Customer` → `gAddress` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `gAddress` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_Este parámetro es requerido para calcular el impuesto de **II.BB**. Consulte [provincias](/es/docs/payment-methods/argentina.html#argentina-provinces) para saber sus posibles valores_. |
-| `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
-| `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
-| `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
+| `Customer` → `Address` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_Este parámetro es requerido para calcular el impuesto de **II.BB**. Consulte [provincias](/es/docs/payment-methods/argentina.html#argentina-provinces) para saber sus posibles valores_. |
 
 {{% alert title="Info" color="info"%}}
-
 Recuerde que para el correcto funcionamiento del sistema antifraude, sugerimos enviar la información adicional descrita en la sección [Antifraude]({{< ref Antifraud.md>}}).
-
 {{% /alert %}}
 
 
