@@ -477,8 +477,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | No | Customer's Document Number. |
+| `Customer` → `DocumentTypeId` | `numeric` | No <sup>*</sup>| Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | No <sup>*</sup>| Customer's phone number. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
@@ -488,7 +488,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Important!" color="danger"%}}
-<sup>*</sup> To process refunds, the `PhoneNumber` parameter is required in the request. Otherwise, a refund cannot be processed if the data was not provided.
+<sup>*</sup> If you wish to process refunds, the `PhoneNumber`, `DocumentTypeId` and `DocNumber` parameters are required in the request. Otherwise, a refund cannot be processed if the parameters were not sent.
 {{% /alert %}}
 
 #### Request example
@@ -697,9 +697,9 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |
 | `Customer` → `LastName` | `string` | No | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
+| `Customer` → `DocumentTypeId` | `numeric` | No <sup>*</sup>| Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocNumber` | `string` | No <sup>*</sup>| Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | Yes <sup>*</sup>| Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
+| `Customer` → `PhoneNumber` | `string` | Yes| Customer's phone number. The format number must be 10 digits long and must not have prefixes. Example: _3188255555_. |
 | `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
 | `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
@@ -708,7 +708,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Important!" color="danger"%}}
-<sup>*</sup> To process refunds, the `DocNumber` parameter like the `PhoneNumber` are required in the request. Otherwise, a refund cannot be processed if this information was not provided.
+<sup>*</sup> To process refunds, the `DocumentTypeId` and `DocNumber` parameters are required in the request.Otherwise, a refund cannot be processed if the parameters were not sent.
 {{% /alert %}}
 
 #### Request example
