@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="../../es/docs/forms/index.xml">
+
+
+<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
+<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
+<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
+
+<title>Formulario de Tokenización | Bamboo Payment</title><meta property="og:title" content="Formulario de Tokenización" />
+<meta property="og:description" content="El Formulario de Tokenización captura de forma segura la información de la tarjeta de crédito o débito del cliente y convierte los datos sensibles en un token. Este token puede utilizarse para procesar transacciones sin almacenar la información de la tarjeta directamente en los sistemas del comercio.
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/es/docs/forms.html" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Formulario de Tokenización">
+<meta itemprop="description" content="El Formulario de Tokenización captura de forma segura la información de la tarjeta de crédito o débito del cliente y convierte los datos sensibles en un token. Este token puede utilizarse para procesar transacciones sin almacenar la información de la tarjeta directamente en los sistemas del comercio.
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Formulario de Tokenización"/>
+<meta name="twitter:description" content="El Formulario de Tokenización captura de forma segura la información de la tarjeta de crédito o débito del cliente y convierte los datos sensibles en un token. Este token puede utilizarse para procesar transacciones sin almacenar la información de la tarjeta directamente en los sistemas del comercio.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+       
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="../../es/">
+        <span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../es/docs.html" ><span class="active">Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/docs/forms.html">English</a>
+	
+</div>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
+  data-offline-search-base-href="../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/docs/forms.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs.html" href="../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Guía de Payins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/getting-started.html" href="../../es/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Primeros pasos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedconceptshtml" href="../../es/docs/getting-started/concepts.html">Conceptos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/data-types.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-starteddata-typeshtml" href="../../es/docs/getting-started/data-types.html">Tipos de datos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/payment-methods.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedpayment-methodshtml" href="../../es/docs/getting-started/payment-methods.html">Medios de pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../es/docs/getting-started/test-our-services.html">Probar la API</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startederror-codeshtml" href="../../es/docs/getting-started/error-codes.html">Códigos de error</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/change-log.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedchange-loghtml" href="../../es/docs/getting-started/change-log.html">Cambios en la versión</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/purchase-workflow.html" href="../../es/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Tokenización</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowcustomer-typeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/anonymous-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesanonymous-usershtml" href="../../es/docs/purchase-workflow/customer-types/anonymous-users.html">Token de Uso Único</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/registered-users.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesregistered-usershtml" href="../../es/docs/purchase-workflow/customer-types/registered-users.html">Token de Uso Recurrente</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/customer-types/direct-tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowcustomer-typesdirect-tokenizationhtml" href="../../es/docs/purchase-workflow/customer-types/direct-tokenization.html">Tokenización PCI</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/purchase-workflow/purchases.html" href="../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspurchase-workflowpurchaseshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../es/docs/purchase-workflow/purchases/purchase_v3.html">Crear una compra</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../es/docs/purchase-workflow/purchases/get-purchase.html">Get de la Compra</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../es/docs/purchase-workflow/purchases/card_operations.html">Captura y Cancel</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase-previewhtml" href="../../es/docs/purchase-workflow/purchases/purchase-preview.html">Preview de la compra</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchases3d_securehtml" href="../../es/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../es/docs/purchase-workflow/purchases/network_tokens.html">Tokens de Red</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefundshtml" href="../../es/docs/purchase-workflow/refunds.html">Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowantifraudhtml" href="../../es/docs/purchase-workflow/antifraud.html">Antifraude</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflownotification-webhookshtml" href="../../es/docs/purchase-workflow/notification-webhooks.html">Webhook</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/forms.html" href="../../es/docs/forms.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">Formulario de Tokenización</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsformshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/merchant-balances.html" href="../../es/docs/merchant-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de saldos</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsmerchant-balanceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/merchant-balances/request-withdrawal.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsmerchant-balancesrequest-withdrawalhtml" href="../../es/docs/merchant-balances/request-withdrawal.html">Solicitar un Retiro</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/reporting.html" href="../../es/docs/reporting.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API de Reportes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsreportinghtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/reporting/transactions-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingtransactions-reporthtml" href="../../es/docs/reporting/transactions-report.html">API de Transacciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/reporting/statement-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsreportingstatement-reporthtml" href="../../es/docs/reporting/statement-report.html">API de Movimientos Financieros</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/payment-methods.html" href="../../es/docs/payment-methods.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Países y medios de pago</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/argentina.html" href="../../es/docs/payment-methods/argentina.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Argentina</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsargentinahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-cardshtml" href="../../es/docs/payment-methods/argentina/ar-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-cashhtml" href="../../es/docs/payment-methods/argentina/ar-apm-cash.html">Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-banktransferhtml" href="../../es/docs/payment-methods/argentina/ar-apm-banktransfer.html">Transferencias bancarias</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/brazil.html" href="../../es/docs/payment-methods/brazil.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Brasil</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsbrazilhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-cardshtml" href="../../es/docs/payment-methods/brazil/br-cards.html">Tarjetas crédito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apmhtml" href="../../es/docs/payment-methods/brazil/br-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/central-america.html" href="../../es/docs/payment-methods/central-america.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">América Central</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscentral-americahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/central-america/cam-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscentral-americacam-apmhtml" href="../../es/docs/payment-methods/central-america/cam-apm.html">Pagos en Efectivo</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/chile.html" href="../../es/docs/payment-methods/chile.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Chile</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodschilehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-cardshtml" href="../../es/docs/payment-methods/chile/cl-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/chile/cl-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodschilecl-apmhtml" href="../../es/docs/payment-methods/chile/cl-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/colombia.html" href="../../es/docs/payment-methods/colombia.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Colombia</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodscolombiahtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-cardshtml" href="../../es/docs/payment-methods/colombia/co-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apmhtml" href="../../es/docs/payment-methods/colombia/co-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/ecuador.html" href="../../es/docs/payment-methods/ecuador.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Ecuador</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsecuadorhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/ecuador/ec-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsecuadorec-apmhtml" href="../../es/docs/payment-methods/ecuador/ec-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/mexico.html" href="../../es/docs/payment-methods/mexico.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">México</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsmexicohtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-cardshtml" href="../../es/docs/payment-methods/mexico/mx-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apmhtml" href="../../es/docs/payment-methods/mexico/mx-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/paraguay.html" href="../../es/docs/payment-methods/paraguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Paraguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsparaguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-cardshtml" href="../../es/docs/payment-methods/paraguay/py-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/paraguay/py-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsparaguaypy-apmhtml" href="../../es/docs/payment-methods/paraguay/py-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/peru.html" href="../../es/docs/payment-methods/peru.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Perú</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsperuhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-cardshtml" href="../../es/docs/payment-methods/peru/pe-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/peru/pe-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsperupe-apmhtml" href="../../es/docs/payment-methods/peru/pe-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/payment-methods/uruguay.html" href="../../es/docs/payment-methods/uruguay.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Uruguay</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspayment-methodsuruguayhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-cards.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-cardshtml" href="../../es/docs/payment-methods/uruguay/uy-cards.html">Tarjetas crédito y débito</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-loyaltyplans.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-loyaltyplanshtml" href="../../es/docs/payment-methods/uruguay/uy-loyaltyplans.html">Planes de Fidelización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/uruguay/uy-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsuruguayuy-apmhtml" href="../../es/docs/payment-methods/uruguay/uy-apm.html">Medios alternativos de pago</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/plugins.html" href="../../es/docs/plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Plug-ins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspluginshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/plugins/vtex.html" href="../../es/docs/plugins/vtex.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Conector VTEX</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocspluginsvtexhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_setuphtml" href="../../es/docs/plugins/vtex/vtex_setup.html">Guía de Integración</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_payment_flowhtml" href="../../es/docs/plugins/vtex/vtex_payment_flow.html">Flujo de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/plugins/vtex/vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspluginsvtexvtex_adminhtml" href="../../es/docs/plugins/vtex/vtex_admin.html">Panel de Control</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/versions.html" href="../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../es/docs/versions/purchase-api-v2/purchase-operations.html">Compras (Legacy)</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/redirect-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2redirect-purchasehtml" href="../../es/docs/versions/purchase-api-v2/redirect-purchase.html">Compra Redirect</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2direct-purchasehtml" href="../../es/docs/versions/purchase-api-v2/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/versions/forms.html" href="../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios (Legacy)</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsversionsformshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionsformscheckout-formhtml" href="../../es/docs/versions/forms/checkout-form.html">Checkout</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/forms/embedded-checkout-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionsformsembedded-checkout-formhtml" href="../../es/docs/versions/forms/embedded-checkout-form.html">Checkout embebido</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#importing-the-javascript-library">Importando el JavaScript</a>
+      <ul>
+        <li><a href="#rendertokenizationform-method">Método <strong>renderTokenizationForm</strong></a></li>
+        <li><a href="#request-example">Ejemplo de Solicitud</a></li>
+        <li><a href="#configuration-parameters">Parámetros de Configuración</a></li>
+        <li><a href="#customize-your-tokenization-form--metadata-object">Personalice su Formulario de Tokenización | objeto metadata</a></li>
+        <li><a href="#gestione-la-interacción-de-su-cliente--objeto-hooks">Gestione la interacción de su cliente | objeto hooks</a></li>
+      </ul>
+    </li>
+    <li><a href="#successful-tokenization--token-object">Tokenización exitosa | objeto Token</a></li>
+    <li><a href="#formulario-cvv">Formulario CVV</a></li>
+    <li><a href="#método-rendercvvform">Método renderCVVForm</a>
+      <ul>
+        <li><a href="#parámetros-de-configuración">Parámetros de configuración</a></li>
+        <li><a href="#ejemplo-de-uso">Ejemplo de uso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../es/docs.html">Guía de Payins</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../es/docs/forms.html">Formulario de Tokenización</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Formulario de Tokenización</h1>
+        <div class="lead">El Formulario de Tokenización captura de forma segura la información de la tarjeta de crédito o débito del cliente y convierte los datos sensibles en un token. Este token puede utilizarse para procesar transacciones sin almacenar la información de la tarjeta directamente en los sistemas del comercio.</div>
+	
+	<p>El formulario de tokenización es una herramienta útíl cuando es necesario capturar de forma segura la información de tarjeta de los compradores para procesar el pago. En lugar de almacenar directamente los datos de la tarjeta, <strong>este formulario genera un token</strong> que puede enviarse al servidor del comercio para completar el proceso de compra.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Versiones Anteriores</h4>
+<p class="alert-text">En caso de requerir documentación técnica de las versiones anteriores del formulario de captura, consulte nuestra <a href="../../es/docs/versions/forms/checkout-form.html">sección Legacy</a></p>
+</div>
+
+<h2 id="importing-the-javascript-library">Importando el JavaScript</h2>
+<p>Para integrar el Formulario de Tokenización, es necesario incluir un script que apunte a la URL del formulario. Esto permite acceder al objeto <strong>BambooForm</strong> que contiene los métodos necesarios para renderizar los formularios de Bamboo.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">//STAGE - Ambiente de Pruebas:
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://capture.stage.bamboopayment.com&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">//PRODUCCIÓN:
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span> <span style="color:#000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://capture.bamboopayment.com&#34;</span><span style="color:#ce5c00;font-weight:bold">&gt;&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div><h3 id="rendertokenizationform-method">Método <strong>renderTokenizationForm</strong></h3>
+<p>Una vez importado el Script que apunta a los formularios de Bamboo, se puede invocar el método <strong>renderTokenizationForm</strong> que renderiza el <strong>Formulario de Tokenización</strong>, permitiendo a los compradores ingresar sus tarjetas de manera segura.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#000">BambooForm</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">renderTokenizationForm</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">configuration</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><br/>
+<div style="text-align: center"><img src="../../assets/Tokenization_Form.png" alt="Formulario de Tokenización" width="300"/></div>
+<h3 id="request-example">Ejemplo de Solicitud</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#000">BambooForm</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">renderTokenizationForm</span><span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">containerId</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;MERCHANT_PAGE_CONTAINER_ID&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">metadata</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">publicKey</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;MERCHANT_PUBLIC_KEY&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">targetCountryISO</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;UY&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">customer</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">email</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;cliente@example.com&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">cardHolderName</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;Juan Pérez&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">locale</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;es&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">logoUrl</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;&lt;https://mieshop.com/logo.png&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">hooks</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">onOperationSuccess</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">token</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Token recibido:&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">token</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">onOperationError</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">error</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">error</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Error:&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">error</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div><h3 id="configuration-parameters">Parámetros de Configuración</h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>containerId</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>ID del contenedor HTML donde se mostrará el formulario.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">Sí</td>
+<td>Configura información relacionada con el cliente y la transacción.</td>
+</tr>
+<tr>
+<td><code>hooks</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">Sí</td>
+<td>Funciones de callback para manejar los eventos del formulario.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customize-your-tokenization-form--metadata-object">Personalice su Formulario de Tokenización | objeto metadata</h3>
+<p>Puede personalizar el formulario de tokenización con su logo e idioma preferido, además de pre-llenar datos ya proporcionados por el comprador, o restringir la tokenización a tarjetas específicas.</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code> → <code>publicKey</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Clave pública del comercio.</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>targetCountryISO</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>Código ISO del país donde se procesará la transacción.</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>customer</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">No</td>
+<td>Información del cliente.</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>locale</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Idioma del formulario, usando código ISO Español: &rsquo;es&rsquo; (por defecto) Inglés: &rsquo;en'</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>logoUrl</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>URL del logo que aparecerá en el formulario. Si no se define, se muestra sin logo en el encabezado</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>filters</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">No</td>
+<td>Permite restringir la tarjeta ingresada por el usuario a un banco emisor o tipo de tarjeta específico</td>
+</tr>
+</tbody>
+</table>
+<h4 id="información-del-cliente">Información del Cliente</h4>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code> → <code>customer</code> → <code>uniqueId</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Identificador único del cliente. Indica si se genera un Token de uso único o recurrente <a href="https://docs.bamboopayment.com/en/docs/purchase-workflow/customer-types/anonymous-users.html">Tipos de Token</a></td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>customer</code> → <code>email</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Correo electrónico del cliente. Se precarga en el formulario y permite edición si hay errores de sintaxis que impidan generar el token</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>customer</code> → <code>cardHolderName</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Nombre del titular de la tarjeta. Se precarga en el formulario sin opción de edición.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokenización-restringida-a-tarjetas-específicas">Tokenización restringida a Tarjetas específicas</h4>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code> → <code>filters</code> → <code>paymentMediaType</code></td>
+<td><code>number</code></td>
+<td style="text-align:center">No</td>
+<td>Identificador del tipo de medio de pago (tarjeta de crédito, débito, etc.). (<a href="https://docs.bamboopayment.com/en/docs/payment-methods.html#payment-method-types">Ver medios de pago</a>)</td>
+</tr>
+<tr>
+<td><code>metadata</code> → <code>filters</code> → <code>issuerBank</code></td>
+<td><code>number</code></td>
+<td style="text-align:center">No</td>
+<td>Identificador del banco emisor. (<a href="https://docs.bamboopayment.com/en/docs/payment-methods/uruguay.html#issuer-banks-table">Ver bancos</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestione-la-interacción-de-su-cliente--objeto-hooks">Gestione la interacción de su cliente | objeto hooks</h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hooks</code> → <code>onOperationSuccess</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">Sí</td>
+<td>Callback ejecutado al completar exitosamente la tokenización. Recibe el token como parámetro.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onOperationFinalize</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback opcional ejecutado cuando se finaliza la operación.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onOperationError</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback de manejo de errores durante la tokenización.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onApplicationLoaded</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback ejecutado cuando el formulario ha sido cargado correctamente.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<div style="text-align: center"><img src="../../assets/Tokenization_Form_Details_ES.png" alt="Detalles del Formulario de Tokenización" width="500"/></div>
+<h2 id="successful-tokenization--token-object">Tokenización exitosa | objeto Token</h2>
+<p>El objeto <strong>token</strong> se devuelve en el hook <strong>onOperationSuccess</strong> ejecutado al completar exitosamente la tokenización y contiene los siguientes parámetros.</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th style="text-align:center">Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TokenId</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Identificador del token.</td>
+</tr>
+<tr>
+<td><code>Created</code></td>
+<td style="text-align:center"><code>timestamp</code></td>
+<td>Fecha y hora de creación del token.</td>
+</tr>
+<tr>
+<td><code>Type</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Tipo de token, valores posibles: <code>OneTime</code>, <code>Commerce</code></td>
+</tr>
+<tr>
+<td><code>Brand</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Franquicia de la tarjeta o medio de pago utilizado.</td>
+</tr>
+<tr>
+<td><code>IssuerBank</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Banco emisor de la tarjeta.</td>
+</tr>
+<tr>
+<td><code>Owner</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Nombre del titular de la tarjeta.</td>
+</tr>
+<tr>
+<td><code>Bin</code></td>
+<td style="text-align:center"><code>numeric[6]</code></td>
+<td>Identificador de la tarjeta.</td>
+</tr>
+<tr>
+<td><code>Last4</code></td>
+<td style="text-align:center"><code>numeric[4]</code></td>
+<td>Últimos cuatro dígitos de la tarjeta.</td>
+</tr>
+<tr>
+<td><code>CardType</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td>Tipo de medio de pago o tarjeta, valores posibles: <code>CreditCard</code>, <code>DebitCard</code>, <code>PhysicalNetwork</code>, <code>PrePaid</code></td>
+</tr>
+<tr>
+<td><code>CardExpMonth</code></td>
+<td style="text-align:center"><code>numeric[2]</code></td>
+<td>Mes de vencimiento de la tarjeta.</td>
+</tr>
+<tr>
+<td><code>CardExpYear</code></td>
+<td style="text-align:center"><code>numeric[2]</code></td>
+<td>Año de vencimiento de la tarjeta.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formulario-cvv">Formulario CVV</h2>
+<p>El <strong>Formulario CVV</strong> está diseñado específicamente para capturar el <strong>código de verificación de la tarjeta (CVV)</strong>, que se encuentra en el reverso de la tarjeta física. Este formulario se utiliza cuando se requiere validar una transacción con el CVV, generalmente en pagos recurrentes o en compras en las que la información de la tarjeta ya ha sido previamente tokenizada.
+Uso típico: Cuando un cliente ha almacenado previamente su tarjeta de crédito a través del proceso de tokenización, pero se le solicita que ingrese su CVV para validar o completar una transacción, proporcionando una capa adicional de seguridad.</p>
+<h2 id="método-rendercvvform">Método renderCVVForm</h2>
+<p>Una vez importado el Script que apunta a los formularios de Bamboo, tendrás acceso al método <strong>renderCVVForm</strong> que renderiza un formulario dedicado exclusivamente a la captura del CVV del cliente.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#000">BambooForm</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">renderCVVForm</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">url</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">configurationCVV</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><br/>
+<div style="text-align: center"><img src="../../assets/Formulario_cvv.png" alt="Formulario de CVV" width="300"/></div>
+<h3 id="parámetros-de-configuración">Parámetros de configuración</h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>La URL con los datos de la sesión y la información del perfil de pago del cliente. Incluye <code>key</code>, <code>session_id</code>, <code>paymentProfileId</code>, <code>brand</code>, y los últimos cuatro dígitos de la tarjeta. Esta URL se recibe como respuesta al querer ejecutar una compra si se le solicita verificación por CVV.</td>
+</tr>
+<tr>
+<td><code>containerId</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Sí</td>
+<td>ID del contenedor HTML donde se mostrará el formulario.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">Sí</td>
+<td>Configura la información relacionada con la sesión y la transacción.</td>
+</tr>
+<tr>
+<td><code>logoUrl</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>URL del logo que aparecerá en el formulario.</td>
+</tr>
+<tr>
+<td><code>locale</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Idioma del formulario, usando un código de locales ISO.</td>
+</tr>
+<tr>
+<td><code>hooks</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">Sí</td>
+<td>Funciones de callback para manejar eventos del formulario.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onOperationSuccess</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">Sí</td>
+<td>Callback ejecutado al completar exitosamente la validación del CVV. Recibe el token como parámetro.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onOperationFinalize</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback opcional ejecutado cuando se finaliza la operación.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onOperationError</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback opcional que maneja errores durante la validación del CVV.</td>
+</tr>
+<tr>
+<td><code>hooks</code> → <code>onApplicationLoaded</code></td>
+<td><code>function</code></td>
+<td style="text-align:center">No</td>
+<td>Callback ejecutado cuando el formulario ha sido cargado correctamente.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-de-uso">Ejemplo de uso</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">script</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">BambooForm</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">renderCVVForm</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#39;&lt;https://api.stage.bamboopayment.com/v1/Capture/?key=FEdJ84hzdIKBY0gyC7-NDG_I56ONV7HQ&amp;session_id=CA_51864eaf-1603-4fe8-8720-ae8c569ea702&amp;paymentProfileId=375108&amp;brand=MasterCard&amp;lastFour=4008&gt;&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">metadata</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">locale</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;es&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">logoUrl</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;&lt;http://www.example.com/&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">hooks</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#000">onOperationSuccess</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Operation successful&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">onOperationError</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">error</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">error</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Error in CVV validation:&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">error</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">/script&gt;</span>
+</span></span></code></pre></div>
+		
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    13 de noviembre de 2024
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../js/scrollspy.js"></script>
+<script src="../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

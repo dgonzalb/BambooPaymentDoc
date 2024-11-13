@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;url-para-el-request&#34;&gt;URL para el Request&lt;/h2&gt;
+        &lt;h2 id=&#34;request-url&#34;&gt;URL para el Request&lt;/h2&gt;
 &lt;p&gt;Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URLs según el ambiente:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v2/api/Reporting/payin-transactions&lt;/code&gt;&lt;/li&gt;
@@ -31,7 +31,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;authorization&#34;&gt;Authorization&lt;/h2&gt;
 &lt;p&gt;En el encabezado de la solicitud, el parámetro &lt;code&gt;Authorization&lt;/code&gt; debe configurarse concatenando la palabra &lt;code&gt;Basic&lt;/code&gt;, un espacio y la &lt;strong&gt;Private Key&lt;/strong&gt; del merchant.&lt;/p&gt;
-&lt;h2 id=&#34;parámetros-de-la-solicitud-request&#34;&gt;Parámetros de la solicitud (Request)&lt;/h2&gt;
+&lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros de la solicitud (Request)&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -76,7 +76,7 @@
 &lt;p class=&#34;alert-text&#34;&gt;Los parámetros van en el request añadidos en la URL del endpoint, seguido de un &lt;code&gt;?&lt;/code&gt; indicando el comienzo de los parámetros.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;formato-y-ejemplo-de-la-solicitud-request&#34;&gt;Formato y ejemplo de la solicitud (Request)&lt;/h3&gt;
+&lt;h3 id=&#34;format-and-example-of-the-request-request&#34;&gt;Formato y ejemplo de la solicitud (Request)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Formato&lt;/strong&gt;: &lt;code&gt;{endpoint}?From=YYYY-MM-DD&amp;amp;To=YYYY-MM-DD&amp;amp;Page=#&amp;amp;PageSize=#&lt;/code&gt;&lt;/p&gt;
@@ -85,7 +85,7 @@
 &lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v2/api/Reporting/payin-transactions?From=2024-01-01&amp;amp;To=2024-01-31&amp;amp;Page=1&amp;amp;PageSize=10&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;parámetros-de-la-respuesta-response&#34;&gt;Parámetros de la Respuesta (Response)&lt;/h2&gt;
+&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros de la Respuesta (Response)&lt;/h2&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -260,7 +260,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
+&lt;h3 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Response&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Data&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
@@ -335,7 +335,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;url-para-el-request&#34;&gt;URL para el Request&lt;/h2&gt;
+        &lt;h2 id=&#34;request-url&#34;&gt;URL para el Request&lt;/h2&gt;
 &lt;p&gt;Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URLs según el ambiente:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v2/api/Reporting/billing-movements&lt;/code&gt;&lt;/li&gt;
@@ -343,7 +343,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;authorization&#34;&gt;Authorization&lt;/h2&gt;
 &lt;p&gt;En el encabezado de la solicitud, el parámetro &lt;code&gt;Authorization&lt;/code&gt; debe configurarse concatenando la palabra &lt;code&gt;Basic&lt;/code&gt;, un espacio y la &lt;strong&gt;Private Key&lt;/strong&gt; del merchant.&lt;/p&gt;
-&lt;h2 id=&#34;parámetros-de-la-solicitud-request&#34;&gt;Parámetros de la solicitud (Request)&lt;/h2&gt;
+&lt;h2 id=&#34;request-parameters&#34;&gt;Parámetros de la solicitud (Request)&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -380,14 +380,14 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;ejemplo-de-solicitud&#34;&gt;Ejemplo de solicitud&lt;/h3&gt;
+&lt;h3 id=&#34;format-and-example-of-the-request-request&#34;&gt;Ejemplo de solicitud&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ReferenceId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;retiro-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CurrencyIsoCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;USD&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Requester&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;comerciante-001&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TextNotes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Retiro para gastos operativos mensuales&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;parámetros-de-la-respuesta-response&#34;&gt;Parámetros de la Respuesta (Response)&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros de la Respuesta (Response)&lt;/h2&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -542,7 +542,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
+&lt;h3 id=&#34;response-example&#34;&gt;Ejemplo del Response&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;

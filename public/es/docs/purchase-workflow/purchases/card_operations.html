@@ -20,21 +20,21 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
-<title>Pre-authorized Purchases: Capture and Cancel | Bamboo Payment</title><meta property="og:title" content="Pre-authorized Purchases: Capture and Cancel" />
-<meta property="og:description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
+<title>Compras Autorizadas: Captura y Cancelación | Bamboo Payment</title><meta property="og:title" content="Compras Autorizadas: Captura y Cancelación" />
+<meta property="og:description" content="Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/card_operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-10-15T12:43:53-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Pre-authorized Purchases: Capture and Cancel">
-<meta itemprop="description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
+<meta property="article:modified_time" content="2024-10-18T16:27:57-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Compras Autorizadas: Captura y Cancelación">
+<meta itemprop="description" content="Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-10-15T12:43:53-03:00" />
-<meta itemprop="wordCount" content="553">
+<meta itemprop="dateModified" content="2024-10-18T16:27:57-03:00" />
+<meta itemprop="wordCount" content="613">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pre-authorized Purchases: Capture and Cancel"/>
-<meta name="twitter:description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
+<meta name="twitter:title" content="Compras Autorizadas: Captura y Cancelación"/>
+<meta name="twitter:description" content="Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -62,14 +62,12 @@
   </head>
   <body class="td-page">
     <header>
-      
+       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="../../../../es/">
-			
-			
-			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.png" style="height: 36px;"></span>
-	</a>
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <a class="navbar-brand" href="../../../../es/">
+        <span class="navbar-logo"><img src="../../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
 			
@@ -97,10 +95,14 @@
 				</a>
 			</li>
 			
-			
-			
-			<li class="nav-item dropdown d-none d-lg-block">
-				
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	<div class="content-bar-menu"></div>
@@ -111,14 +113,11 @@
 	<a class="dropdown-item" href="../../../../en/docs/purchase-workflow/purchases/card_operations.html">English</a>
 	
 </div>
-			</li>
-			
-		</ul>
-	</div>
-	
-	
+            </li>
+            
+        </ul>
+    </div>
 </nav>
-
     </header>
     <div class="container-fluid td-outer">
       <div class="td-main">
@@ -143,7 +142,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -240,7 +239,7 @@
       
       
       
-        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Pruebe nuestros servicios</a>
+        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Probar la API</a>
       
       
       
@@ -292,7 +291,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Clientes</a>
+    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Tokenización</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocspurchase-workflowcustomer-typeshtml">
@@ -335,7 +334,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Operaciones de Compras</a>
+    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Compras</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocspurchase-workflowpurchaseshtml">
@@ -345,19 +344,19 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Crear una compra</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
+        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get de la Compra</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Captura y Cancel</a>
       
       
       
@@ -375,13 +374,19 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
+        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Tokens de Red</a>
       
       
     </li>
   </ul>
   
 
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefundshtml" href="../../../../es/docs/purchase-workflow/refunds.html">Reembolsos</a>
       
       
       
@@ -394,6 +399,31 @@
       
       
         <a id="/es/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflownotification-webhookshtml" href="../../../../es/docs/purchase-workflow/notification-webhooks.html">Webhook</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/forms.html" href="../../../../es/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Formulario de Tokenización</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsformshtml">
+      
       
       
     </li>
@@ -517,7 +547,13 @@
       
       
       
-        <a id="/es/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apmhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/argentina/ar-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-cashhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-cash.html">Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-banktransferhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-banktransfer.html">Transferencias bancarias</a>
       
       
     </li>
@@ -939,7 +975,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/es/docs/versions.html" href="../../../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
+    <a id="/es/docs/versions.html" href="../../../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocsversionshtml">
@@ -949,7 +985,7 @@
       
       
       
-        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Operaciones</a>
+        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Compras (Legacy)</a>
       
       
       
@@ -961,13 +997,13 @@
       
       
       
-        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
-      
-      
-      
-      
-      
         <a id="/es/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2direct-purchasehtml" href="../../../../es/docs/versions/purchase-api-v2/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
       
       
       
@@ -982,7 +1018,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/versions/forms.html" href="../../../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios</a>
+    <a id="/es/docs/versions/forms.html" href="../../../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios (Legacy)</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocsversionsformshtml">
@@ -1049,17 +1085,17 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#capture-a-purchase">Capture a purchase</a>
+    <li><a href="#capture-a-purchase">Capturar una compra</a>
       <ul>
-        <li><a href="#request-url">Request URL</a></li>
-        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#request-url">URL de la solicitud</a></li>
+        <li><a href="#request-parameters">Parámetros de la solicitud</a></li>
       </ul>
     </li>
-    <li><a href="#cancelling-a-purchase">Cancelling a purchase</a>
+    <li><a href="#cancelling-a-purchase">Cancelar una compra</a>
       <ul>
-        <li><a href="#request-url-1">Request URL</a></li>
-        <li><a href="#request-parameters-1">Request parameters</a></li>
-        <li><a href="#response-parameters">Response parameters</a></li>
+        <li><a href="#request-url-1">URL de la solicitud</a></li>
+        <li><a href="#request-parameters-1">Parámetros de la solicitud</a></li>
+        <li><a href="#response-parameters">Parámetros de respuesta</a></li>
       </ul>
     </li>
   </ul>
@@ -1103,14 +1139,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="../../../../es/docs/purchase-workflow/purchases.html">Operaciones de Compras</a>
+	<a href="../../../../es/docs/purchase-workflow/purchases.html">Compras</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+	<a href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Captura y Cancel</a>
 </li>
 
 	</ol>
@@ -1118,43 +1154,51 @@
 
             
 <div class="td-content">
-	<h1>Pre-authorized Purchases: Capture and Cancel</h1>
-    <div class="lead">Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.</div>
+	<h1>Compras Autorizadas: Captura y Cancelación</h1>
+    <div class="lead">Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.</div>
 	       
-	<h2 id="capture-a-purchase">Capture a purchase</h2>
-<p>This method allows you to confirm a pre-authorized purchase. The capture process allows you to confirm and finalize a pre-authorized transaction, giving you the flexibility to adjust the amount if needed.</p>
+	
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Versiones anteriores de la API</h4>
+<p class="alert-text">La documentación de la API versión V1 está disponible en la sección de <a href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase">Legacy</a></p>
+</div>
+
+<h2 id="capture-a-purchase">Capturar una compra</h2>
+<p>Este método le permite confirmar una compra autorizada. El proceso de captura le da la flexibilidad de confirmar y finalizar una transacción preautorizada, permitiéndole ajustar el valor si es necesario.</p>
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Note</h4>
-<p class="alert-text"><p>All payment methods may not support the pre-authorization feature, and it’s available for the following countries.</p>
+    Nota</h4>
+<p class="alert-text"><p>No todos los métodos de pago admiten la función de preautorización. Está disponible para los siguientes países:</p>
 <div style="text-align: center;">
-<p><a href="../../../../en/docs/payment-methods/brazil.html"><img src="../../../../assets/Flags/FlagBR.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/chile.html"><img src="../../../../assets/Flags/FlagCL.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/colombia.html"><img src="../../../../assets/Flags/FlagCO.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/uruguay.html"><img src="../../../../assets/Flags/FlagUY.png" width="30" /></a></p>
+<p><a href="../../../../es/docs/payment-methods/brazil.html"><img src="../../../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/chile.html"><img src="../../../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/colombia.html"><img src="../../../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/uruguay.html"><img src="../../../../assets/Flags/FlagUY.png" width="30" /></a></p>
 </div>
 </p>
 </div>
 
-<h3 id="request-url">Request URL</h3>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<h3 id="request-url">URL de la solicitud</h3>
+<p>Debe realizar una petición <strong>POST</strong> a las siguientes URLs según sus necesidades:</p>
 <ul>
-<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture</code></li>
-<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture</code></li>
+<li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture</code></li>
+<li><strong>Pruebas</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture</code></li>
 </ul>
-<h3 id="request-parameters">Request parameters</h3>
-<p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
-<p>The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.</p>
-<h4 id="request-example-partial-capture">Request example (Partial Capture)</h4>
-<p>You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:</p>
+<h3 id="request-parameters">Parámetros de la solicitud</h3>
+<p>El body en la solicitud es opcional para confirmar una compra. Si no envía ninguna solicitud, el método confirmará la compra preautorizada por su valor original.</p>
+<p>El valor de la compra puede variar respecto al enviado en el proceso de compra inicial, pero el nuevo valor no puede ser mayor que el valor original.</p>
+<h4 id="request-example-partial-capture">Ejemplo de solicitud (Captura Parcial)</h4>
+<p>Debe incluir el nuevo valor en la solicitud para confirmar una compra con un valor menor al original. Por ejemplo:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h4 id="response-example-partial-capture">Response example (Partial Capture)</h4>
-<p>You will get the same <code>Response</code> object for the <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response">purchase object</a>.</p>
-<p><strong>Result:</strong><code>COMPLETED</code> - <strong>Status:</strong> <code>PREAUTHORIZED</code></p>
+<h4 id="response-example-partial-capture">Ejemplo de respuesta (Captura Parcial)</h4>
+<p>Obtendrá el mismo objeto <code>Response</code> que para el <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response">objeto de compra</a>.</p>
+<p><strong>Resultado:</strong> <code>COMPLETED</code> - <strong>Estado:</strong> <code>PREAUTHORIZED</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COMPLETED&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1181,49 +1225,57 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4905&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h2 id="cancelling-a-purchase">Cancelling a purchase</h2>
-<p>A void (or cancel) is the act of canceling a pre-authorized transaction before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&rsquo;s payment method is not charged for the voided transaction.</p>
-<p>The <em><strong>cancel</strong></em> operation is only available for purchases previously <a href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase">authorized</a> with state <em>PreAuthorized</em>. If you’re interested in refunding a purchase that has already been captured, please refer to the <a href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">refunds</a> section for detailed instructions.</p>
+<h2 id="cancelling-a-purchase">Cancelar una compra</h2>
+<p>La anulación es el acto de cancelar una transacción preautorizada antes de que se finalice o liquide. Cuando se anula una transacción, es como si la compra nunca hubiera ocurrido y se libera el cupo del límite autorizado. Las anulaciones generalmente ocurren antes de que el pago se procese completamente, por lo que no se cobra al medio de pago del cliente por la transacción anulada.</p>
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Note</h4>
-<p class="alert-text"><p>Pre-authorization feature may not be supported by all payment methods and it&rsquo;s available for the following countries.</p>
+    Versiones anteriores de la API</h4>
+<p class="alert-text">La documentación de la API versión V1 está disponible en la sección de <a href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html#rollback-a-purchase">Legacy</a></p>
+</div>
+
+<p>La operación de <em><strong>cancelación</strong></em> solo está disponible para compras previamente <a href="../../../../es/docs/purchase-workflow/purchases/card_operations.html#capturar-una-compra">autorizadas</a> con estado <em>PreAuthorized</em>. Si está interesado en reembolsar una compra que ya ha sido capturada, consulte la sección de <a href="../../../../es/docs/purchase-workflow/refunds.html">reembolsos</a> para obtener instrucciones detalladas.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Nota</h4>
+<p class="alert-text"><p>La función de preautorización puede no estar soportada por todos los métodos de pago y está disponible para los siguientes países:</p>
 <div style="text-align: center;">
-<p><a href="../../../../en/docs/payment-methods/brazil.html"><img src="../../../../assets/Flags/FlagBR.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/chile.html"><img src="../../../../assets/Flags/FlagCL.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/colombia.html"><img src="../../../../assets/Flags/FlagCO.png" width="30" /></a>
-<a href="../../../../en/docs/payment-methods/uruguay.html"><img src="../../../../assets/Flags/FlagUY.png" width="30" /></a></p>
+<p><a href="../../../../es/docs/payment-methods/brazil.html"><img src="../../../../assets/Flags/FlagBR.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/chile.html"><img src="../../../../assets/Flags/FlagCL.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/colombia.html"><img src="../../../../assets/Flags/FlagCO.png" width="30" /></a>
+<a href="../../../../es/docs/payment-methods/uruguay.html"><img src="../../../../assets/Flags/FlagUY.png" width="30" /></a></p>
 </div>
 </p>
 </div>
 
-<h3 id="request-url-1">Request URL</h3>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<h3 id="request-url-1">URL de la solicitud</h3>
+<p>Debe realizar una petición <strong>POST</strong> a las siguientes URLs según sus necesidades:</p>
 <ul>
-<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel</code></li>
-<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel</code></li>
+<li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel</code></li>
+<li><strong>Pruebas</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel</code></li>
 </ul>
-<h3 id="request-parameters-1">Request parameters</h3>
-<p>Request body is not required to cancel a purchase. If you don&rsquo;t send any request the purchase will be voided with its original amount.</p>
-<p>The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.</p>
+<h3 id="request-parameters-1">Parámetros de la solicitud</h3>
+<p>No se requiere el body en la solicitud para cancelar una compra. Si no envía ninguna solicitud, la compra se anulará con su valor original.</p>
+<p>El valor a anular puede variar respecto al que se envió en el proceso de Compra inicial, pero el nuevo valor no puede ser mayor que el valor original.</p>
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Note</h4>
-<p class="alert-text">The availability of <strong>partial cancellation functionality may vary depending on the country</strong>. For detailed information about this feature in your specific region, please consult with your Account Manager.</p>
+    Nota</h4>
+<p class="alert-text">La disponibilidad de la <strong>funcionalidad de cancelación parcial puede variar según el país</strong>. Para obtener información detallada sobre esta función en su región específica, consulte con su Account Manager.</p>
 </div>
 
-<h4 id="request-example-partial-cancellation">Request example (Partial Cancellation)</h4>
-<p>To perform the cancel of the purchase  with a lower amount than the original, you need to include the new amount in the request. For example:</p>
+<h4 id="request-example-partial-cancellation">Ejemplo de solicitud (Cancelación Parcial)</h4>
+<p>Para realizar la cancelación de la compra con un valor menor al original, debe incluir el nuevo valor en la solicitud. Por ejemplo:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h3 id="response-parameters">Response parameters</h3>
-<p>When you perform the cancel, you will get the same <code>Response</code> object for the <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response">purchase object</a>.</p>
-<p><strong>Result:</strong><code>COMPLETED</code> - <strong>Status:</strong> <code>CANCELLED</code></p>
+<h3 id="response-parameters">Parámetros de respuesta</h3>
+<p>Cuando realiza la cancelación, obtendrá el mismo objeto <code>Response</code> que para el <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response">objeto de compra</a>.</p>
+<p><strong>Resultado:</strong> <code>COMPLETED</code> - <strong>Estado:</strong> <code>CANCELLED</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COMPLETED&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1261,7 +1313,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    15 de octubre de 2024
+    18 de octubre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

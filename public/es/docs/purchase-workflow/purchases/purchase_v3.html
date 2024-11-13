@@ -20,21 +20,21 @@
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
 <link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
-<title>Create a Purchase | Bamboo Payment</title><meta property="og:title" content="Create a Purchase" />
-<meta property="og:description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
+<title>Crear una compra | Bamboo Payment</title><meta property="og:title" content="Crear una compra" />
+<meta property="og:description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-10-15T12:43:53-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Create a Purchase">
-<meta itemprop="description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
+<meta property="article:modified_time" content="2024-11-11T18:39:56-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Crear una compra">
+<meta itemprop="description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-10-15T12:43:53-03:00" />
-<meta itemprop="wordCount" content="1739">
+<meta itemprop="dateModified" content="2024-11-11T18:39:56-03:00" />
+<meta itemprop="wordCount" content="1922">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Create a Purchase"/>
-<meta name="twitter:description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
+<meta name="twitter:title" content="Crear una compra"/>
+<meta name="twitter:description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -62,14 +62,12 @@
   </head>
   <body class="td-page">
     <header>
-      
+       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="../../../../es/">
-			
-			
-			<span class="navbar-logo"><img src="../../../../assets/BambooPayment.png" style="height: 36px;"></span>
-	</a>
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <a class="navbar-brand" href="../../../../es/">
+        <span class="navbar-logo"><img src="../../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			
 			
@@ -97,10 +95,14 @@
 				</a>
 			</li>
 			
-			
-			
-			<li class="nav-item dropdown d-none d-lg-block">
-				
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	<div class="content-bar-menu"></div>
@@ -111,14 +113,11 @@
 	<a class="dropdown-item" href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html">English</a>
 	
 </div>
-			</li>
-			
-		</ul>
-	</div>
-	
-	
+            </li>
+            
+        </ul>
+    </div>
 </nav>
-
     </header>
     <div class="container-fluid td-outer">
       <div class="td-main">
@@ -143,7 +142,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e3475075a959117b0a4a158c04f0b2a133b93f6b5f357f27672194a7d5266da3d0824b41f1d4ef39e740ab2a3c77d346ef3cb3f25ce563127d7b98e85577671d.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -240,7 +239,7 @@
       
       
       
-        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Pruebe nuestros servicios</a>
+        <a id="/es/docs/getting-started/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-our-serviceshtml" href="../../../../es/docs/getting-started/test-our-services.html">Probar la API</a>
       
       
       
@@ -292,7 +291,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Clientes</a>
+    <a id="/es/docs/purchase-workflow/customer-types.html" href="../../../../es/docs/purchase-workflow/customer-types.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Tokenización</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocspurchase-workflowcustomer-typeshtml">
@@ -335,7 +334,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Operaciones de Compras</a>
+    <a id="/es/docs/purchase-workflow/purchases.html" href="../../../../es/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Compras</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocspurchase-workflowpurchaseshtml">
@@ -345,19 +344,19 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+        <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Crear una compra</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
+        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get de la Compra</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+        <a id="/es/docs/purchase-workflow/purchases/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_operationshtml" href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">Captura y Cancel</a>
       
       
       
@@ -375,13 +374,19 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Tokens</a>
+        <a id="/es/docs/purchase-workflow/purchases/network_tokens.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesnetwork_tokenshtml" href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Tokens de Red</a>
       
       
     </li>
   </ul>
   
 
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefundshtml" href="../../../../es/docs/purchase-workflow/refunds.html">Reembolsos</a>
       
       
       
@@ -394,6 +399,31 @@
       
       
         <a id="/es/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflownotification-webhookshtml" href="../../../../es/docs/purchase-workflow/notification-webhooks.html">Webhook</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/forms.html" href="../../../../es/docs/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Formulario de Tokenización</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsformshtml">
+      
       
       
     </li>
@@ -517,7 +547,13 @@
       
       
       
-        <a id="/es/docs/payment-methods/argentina/ar-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apmhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/argentina/ar-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-cashhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-cash.html">Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/argentina/ar-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-banktransferhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-banktransfer.html">Transferencias bancarias</a>
       
       
     </li>
@@ -939,7 +975,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/es/docs/versions.html" href="../../../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy Systems</a>
+    <a id="/es/docs/versions.html" href="../../../../es/docs/versions.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Legacy</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocsversionshtml">
@@ -949,7 +985,7 @@
       
       
       
-        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Operaciones</a>
+        <a id="/es/docs/versions/purchase-api-v2/purchase-operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2purchase-operationshtml" href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Compras (Legacy)</a>
       
       
       
@@ -961,13 +997,13 @@
       
       
       
-        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
-      
-      
-      
-      
-      
         <a id="/es/docs/versions/purchase-api-v2/direct-purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2direct-purchasehtml" href="../../../../es/docs/versions/purchase-api-v2/direct-purchase.html">Compra Directa</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/versions/purchase-api-v2/refunds-and-voids.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsversionspurchase-api-v2refunds-and-voidshtml" href="../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html">Reembolsos y anulaciones</a>
       
       
       
@@ -982,7 +1018,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/es/docs/versions/forms.html" href="../../../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios</a>
+    <a id="/es/docs/versions/forms.html" href="../../../../es/docs/versions/forms.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Formularios (Legacy)</a>
   </li>
   <ul class="side-main">
     <li class="" id="esdocsversionsformshtml">
@@ -1049,29 +1085,29 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#configuring-the-authentication">Configuring the authentication</a>
+    <li><a href="#configuring-the-authentication">Configuración de la autenticación</a>
+      <ul>
+        <li><a href="#setting-the-language-of-the-response-codes">Configurar el idioma de los códigos de respuesta</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-a-purchase">Crear una compra</a>
+      <ul>
+        <li><a href="#request-url">URL de la solicitud</a></li>
+        <li><a href="#request-parameters">Parámetros de la solicitud</a></li>
+        <li><a href="#request-example">Ejemplo de solicitud</a></li>
+      </ul>
+    </li>
+    <li><a href="#direct-purchase-for-pci-compliant-merchants">Compra para Comercios con Certificación PCI</a>
+      <ul>
+        <li><a href="#request-url-1">URL de la solicitud</a></li>
+        <li><a href="#request-parameters-1">Parámetros de la solicitud</a></li>
+        <li><a href="#request-example-1">Ejemplo de solicitud</a></li>
+      </ul>
+    </li>
+    <li><a href="#response">Respuesta del Request.</a>
       <ul>
         <li></li>
-      </ul>
-    </li>
-    <li><a href="#create-a-purchase">Create a Purchase</a>
-      <ul>
-        <li><a href="#request-url">Request URL</a></li>
-        <li><a href="#request-parameters">Request parameters</a></li>
-        <li><a href="#request-example">Request example</a></li>
-      </ul>
-    </li>
-    <li><a href="#direct-purchase-for-pci-compliant-merchants">Direct Purchase for PCI-Compliant Merchants</a>
-      <ul>
-        <li><a href="#request-url-1">Request URL</a></li>
-        <li><a href="#request-parameters-1">Request parameters</a></li>
-        <li><a href="#request-example-1">Request example</a></li>
-      </ul>
-    </li>
-    <li><a href="#response">Response</a>
-      <ul>
-        <li></li>
-        <li><a href="#response-examples">Response examples</a></li>
+        <li><a href="#response-examples">Ejemplos de respuesta</a></li>
       </ul>
     </li>
   </ul>
@@ -1115,14 +1151,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="../../../../es/docs/purchase-workflow/purchases.html">Operaciones de Compras</a>
+	<a href="../../../../es/docs/purchase-workflow/purchases.html">Compras</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+	<a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Crear una compra</a>
 </li>
 
 	</ol>
@@ -1130,34 +1166,34 @@
 
             
 <div class="td-content">
-	<h1>Create a Purchase</h1>
-    <div class="lead">Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.</div>
+	<h1>Crear una compra</h1>
+    <div class="lead">Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.</div>
 	       
-	<h2 id="configuring-the-authentication">Configuring the authentication</h2>
-<p>All methods used in Purchase API require the following authentication headers.</p>
+	<h2 id="configuring-the-authentication">Configuración de la autenticación</h2>
+<p>Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:</p>
 <table>
 <thead>
 <tr>
-<th>Key</th>
-<th>Value</th>
-<th>Comments</th>
+<th>Llave</th>
+<th>Valor</th>
+<th>Comentarios</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Content-Type</code></td>
 <td><code>application/json</code></td>
-<td>With this header, the request will be transmitted in <em>JSON</em> format.</td>
+<td>Indica que la solicitud se enviará en formato JSON.</td>
 </tr>
 <tr>
 <td><code>Authorization</code></td>
-<td><code>Basic {{Merchant Private Key}}</code></td>
-<td>Send the <code>{{Merchant Private Key}}</code> (your merchant identifier) and the word <code>Basic</code>.<br>Example: <code>Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__</code></td>
+<td><code>Basic {{Clave Privada del Comercio}}</code></td>
+<td>Incluya la palabra <code>Basic</code> seguida de su <code>{{Clave Privada del Comercio}}</code> (y el identificador como comercio).<br>Ejemplo: <code>Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__</code></td>
 </tr>
 </tbody>
 </table>
-<h4 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h4>
-<p>You can receive the error description by relying on localization features. To do this, you need to send the <code>lang</code> header in your integration, using any of the following languages in <strong>ISO 639-1</strong> format.</p>
+<h3 id="setting-the-language-of-the-response-codes">Configurar el idioma de los códigos de respuesta</h3>
+<p>Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado <code>lang</code>, utilizando uno de los siguientes códigos en formato <strong>ISO 639-1</strong>:</p>
 <div id="shortTable"></div>
 <table>
 <thead>
@@ -1169,35 +1205,44 @@
 <tbody>
 <tr>
 <td style="text-align:center"><code>en</code></td>
-<td>English.<br><em>This is the default language. If you don&rsquo;t send this header or set a non-existent language, you will receive errors in this language.</em></td>
+<td>English.<br><em>Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto.</em></td>
 </tr>
 <tr>
 <td style="text-align:center"><code>es</code></td>
-<td>Spanish.</td>
+<td>Español.</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>pt</code></td>
-<td>Portuguese.</td>
+<td>Portugués.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="create-a-purchase">Create a Purchase</h2>
-<p>After successfully <a href="../../../../es/docs/purchase-workflow/customer-types.html">tokenizing a card</a>, you can proceed with generating a purchase using this method. The Purchase API is specifically designed for merchants who do not have PCI DSS certification, allowing them to process payments securely without handling sensitive card data directly.</p>
-<p>For alternative payment methods such as cash payments or bank transfers, you only need to provide the corresponding payment method ID to initiate the transaction.</p>
-<h3 id="request-url">Request URL</h3>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<h2 id="create-a-purchase">Crear una compra</h2>
+<p>Esta sección explica detalladamente cómo generar una Compra para comercios sin certificación PCI DSS, permitiendo procesar pagos sin manejar directamente datos sensibles de tarjetas.</p>
+<p>Una vez que haya <a href="../../../../es/docs/purchase-workflow/customer-types.html">tokenizado una tarjeta</a>, es posible generar una compra usando este endpoint.</p>
+<p>Para medios de pago alternativos, como pagos en efectivo o transferencias bancarias, es necesario enviar el ID del medio de pago correspondiente para iniciar la transacción.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Versiones anteriores de la API</h4>
+<p class="alert-text">La documentación de la API versión V1 y V2 está disponible en la sección de <a href="../../../../es/docs/versions/purchase-api-v2/purchase-operations.html">Legacy</a></p>
+</div>
+
+<h3 id="request-url">URL de la solicitud</h3>
+<p>Es necesario realizar una petición <strong>POST</strong> a las siguientes URLs según sus necesidades:</p>
 <ul>
-<li><strong>Production</strong>: <code>https://api.bamboopayment.com/v3/api/purchase</code></li>
-<li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase</code></li>
+<li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v3/api/purchase</code></li>
+<li><strong>Pruebas</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase</code></li>
 </ul>
-<h3 id="request-parameters">Request parameters</h3>
+<h3 id="request-parameters">Parámetros de la solicitud</h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1205,114 +1250,114 @@
 <td><code>TrxToken</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
-<td>Card token, previously generated through the tokenization flow. Used for card payment methods.</td>
+<td>Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas.</td>
 </tr>
 <tr>
 <td><code>NetworkToken</code></td>
 <td><code>object</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
-<td>Network token information used in the transaction. For more information, review the Network Tokenization Object.</td>
+<td>Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red.</td>
 </tr>
 <tr>
-<td><code>PaymentMethodId</code></td>
+<td><code>PaymentMethod</code></td>
 <td><code>integer</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
-<td>Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.)</td>
+<td>Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto <a href="../../../../es/docs/getting-started/payment-methods.html">PaymentMethod</a>.</td>
 </tr>
 <tr>
 <td><code>UniqueID</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Unique identifier of the purchase.<br>This optional value allows you to identify a unique purchase and avoid duplication of transactions in case of communication errors. For more information, refer to <a href="../../../../es/docs/getting-started/concepts.html#UniqueID">Concepts</a>.</td>
+<td>Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte <a href="../../../../es/docs/getting-started/concepts.html#UniqueID">Conceptos</a>.</td>
 </tr>
 <tr>
 <td><code>Capture</code></td>
 <td><code>boolean</code></td>
 <td style="text-align:center">No</td>
-<td>Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If <code>false</code>, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the <a href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">capture and cancel</a> calls.</li><li>If <code>true</code>, the transaction is authorized and captured.</li></ul><br>All <a href="../../../../en/docs/payment-methods.html">payment methods and countries</a> may not support the pre-authorization feature.</td>
+<td>Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es <code>false</code>, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de <a href="../../../../es/docs/purchase-workflow/purchases/card_operations.html">captura y cancelación</a>.</li><li>Si es <code>true</code>, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los <a href="../../../../es/docs/payment-methods.html">medios de pago y países</a> admitan la función de pre-autorización.</td>
 </tr>
 <tr>
 <td><code>TargetCountryISO</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>This parameter indicates the country where the payment will be processed.<br>Send the country using <code>ISO-3166-1</code> format.</td>
+<td style="text-align:center">Sí</td>
+<td>Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato <code>ISO-3166-1</code>.</td>
 </tr>
 <tr>
 <td><code>Currency</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Currency of the purchase, according to ISO-4217. Find the possible values in the Currencies table of <a href="../../../../en/docs/payment-methods.html">each country</a>.</td>
+<td style="text-align:center">Sí</td>
+<td>Moneda de la compra, según ISO-4217. Encuentre los valores posibles en la tabla de Monedas de <a href="../../../../es/docs/payment-methods.html">cada país</a>.</td>
 </tr>
 <tr>
 <td><code>Amount</code></td>
 <td><code>integer</code> (64 bits)</td>
-<td style="text-align:center">Yes</td>
-<td>Amount of the purchase. This value must be greater than zero.<br>If you must include decimals in the amount, concatenate the decimal places without the decimal point. Example <code>12,25</code> &gt; <code>1225</code>.</td>
+<td style="text-align:center">Sí</td>
+<td>Monto de la compra. Es un valor mayor a cero.<br>Si debe incluir decimales en el monto, concatene los lugares decimales sin el punto decimal. Ejemplo <code>12,25</code> → <code>1225</code>.</td>
 </tr>
 <tr>
 <td><code>Tip</code></td>
 <td><code>integer</code> (64 bits)</td>
 <td style="text-align:center">No</td>
-<td>Tip amount in the transaction. Value with two decimals, without points or commas.</td>
+<td>Valor de la propina en la transacción. Valor con dos decimales, sin puntos ni comas.</td>
 </tr>
 <tr>
 <td><code>TaxableAmount</code></td>
 <td><code>integer</code> (64 bits)</td>
 <td style="text-align:center">No</td>
-<td>Taxable amount of the transaction. Value with two decimals, without points or commas.</td>
+<td>Valor de los impuestos de la transacción. Valor con dos decimales, sin puntos ni comas.</td>
 </tr>
 <tr>
 <td><code>Installments</code></td>
 <td><code>integer</code></td>
 <td style="text-align:center">No</td>
-<td>Number of installments.</td>
+<td>Número de cuotas.</td>
 </tr>
 <tr>
 <td><code>Order</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Order number generated by the merchant.</td>
+<td style="text-align:center">Sí</td>
+<td>Número de orden generado por el comercio.</td>
 </tr>
 <tr>
 <td><code>InvoiceNumber</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Invoice number associated with the transaction.</td>
+<td>Número de factura asociado a la transacción.</td>
 </tr>
 <tr>
 <td><code>Description</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No <sup>4</sup></td>
-<td>Optional description of the purchase.</td>
+<td>Descripción opcional de la compra.</td>
 </tr>
 <tr>
 <td><code>AdditionalData</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Additional information that may be relevant to the transaction.</td>
+<td>Información adicional que pueda ser relevante para la transacción.</td>
 </tr>
 <tr>
 <td><code>MetadataIn</code></td>
 <td><code>object</code></td>
 <td style="text-align:center">No</td>
-<td>Additional transaction data in key-value format.</td>
+<td>Datos adicionales de la transacción en formato clave-valor.</td>
 </tr>
 <tr>
 <td><code>Customer</code></td>
 <td><code>object</code></td>
-<td style="text-align:center">Yes <sup>3</sup></td>
-<td>The <code>Customer</code> object provides the data of the person who performs the purchase.</td>
+<td style="text-align:center">Sí <sup>3</sup></td>
+<td>El objeto <code>Customer</code> proporciona los datos de la persona que realiza la compra.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="customer-object">Customer Object</h4>
+<h4 id="customer-object">Objeto Customer</h4>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1320,60 +1365,60 @@
 <td><code>Customer</code> → <code>FirstName</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s first name.</td>
+<td>Nombre del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>LastName</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s last name.</td>
+<td>Apellido del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>ReferenceCode</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Reference code for the customer.</td>
+<td>Código de referencia del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>PhoneNumber</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s phone number.</td>
+<td>Número de teléfono del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocumentNumber</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s document number.</td>
+<td>Número de documento del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocumentType</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Document type. (Format <code>DOCUMENT</code>.<code>COUNTRY</code>)</td>
+<td>Tipo de documento. (Formato <code>DOCUMENTO</code>.<code>PAÍS</code>)</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Email</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s email address.</td>
+<td>Dirección de correo electrónico del cliente.</td>
 </tr>
 <tr>
 <td><code>Address</code></td>
 <td><code>object</code></td>
 <td style="text-align:center">No</td>
-<td>Customer&rsquo;s shipping address.</td>
+<td>Dirección de envío del cliente.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="address-object">Address Object</h4>
+<h4 id="address-object">Objeto Address</h4>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1381,51 +1426,172 @@
 <td><code>Address</code> → <code>Country</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Country of the customer address.</td>
+<td>País de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>Address</code> → <code>City</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>City of the customer address.</td>
+<td>Ciudad de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>Address</code> → <code>State</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>State or region of the customer address.</td>
+<td>Estado o región de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>Address</code> → <code>PostalCode</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Postal code of the customer address.</td>
+<td>Código postal de la dirección del cliente.</td>
 </tr>
 <tr>
 <td><code>Address</code> → <code>AddressDetail</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Additional details of the customer address.</td>
+<td>Detalles adicionales de la dirección del cliente.</td>
 </tr>
 </tbody>
 </table>
+<!--#### Objeto PaymentMethod {#paymentmethod-object}
+El objeto PaymentMethod en los `Response` contiene información sobre el medio de pago utilizado en la transacción.
+<br>El mismo objeto en los `Request` se utiliza para los medios de pago alternativos.
+ Para los medios de pago de tarjetas, se pueden utilizar dentro del parámetro `Type` del objeto `CardData`.
+* Para los medios de pago alternativos y **NetworkToken** del parámetro `PaymentMethod`.
+
+| Código | Legacy Id  | Nombre                | Tipo            | Flujo       |
+|--------|-----|-----------------------|-----------------|-------------|
+| `VSC`    | `1  `| Visa                  | CreditCard      | API      |
+| `MCC`    | `2  `| Mastercard            | CreditCard      | API      |
+| `AMC`    | `3  `| American Express      | CreditCard      | API      |
+| `OCC`    | `4  `| Oca                   | CreditCard      | API      |
+| `ABT`    | `5  `| Abitab                | PhysicalNetwork | API      |
+| `VSD`    | `6  `| Visa Débito           | DebitCard       | API      |
+| `VSP`    | `7  `| Visa Prepago          | Prepaid         | API      |
+| `CRC`    | `8  `| Creditel              | CreditCard      | API      |
+| `CDC`    | `9  `| Creditos Directos     | CreditCard      | API      |
+| `RDP`    | `10 `| RedPagos              | PhysicalNetwork | API      |
+| `PSC`    | `11 `| PassCard              | CreditCard      | API      |
+| `DNC`    | `12 `| Diners                | CreditCard      | API      |
+| `MCD`    | `13 `| Mastercard Débito     | DebitCard       | API      |
+| `MCP`    | `14 `| Mastercard Prepago    | Prepaid         | API      |
+| `LDC`    | `15 `| Lider                 | CreditCard      | API      |
+| `CEC`    | `16 `| Club del Este         | CreditCard      | API      |
+| `CBC`    | `17 `| Cabal                 | CreditCard      | API      |
+| `EDC`    | `18 `| Edenred               | CreditCard      | API      |
+| `LYP`    | `19 `| LoyaltyPlan           | Loyalty         | API      |
+| `ANC`    | `20 `| Anda                  | CreditCard      | API      |
+| `BNC`    | `21 `| Bancard Check         | CreditCard      | API      |
+| `CFC`    | `22 `| Credifielco           | CreditCard      | API      |
+| `IND`    | `23 `| Infonet               | DebitCard       | API      |
+| `NJD`    | `24 `| Tarjeta Naranja       | DebitCard       | API      |
+| `PEC`    | `26 `| PagoEfectivo          | PhysicalNetwork | API      |
+| `PEX`    | `27 `| PagoExpress           | PhysicalNetwork | API      |
+| `PNX`    | `28 `| PuntoXpress           | PhysicalNetwork | API      |
+| `PEE`    | `29 `| Pago Efectivo Ecuador | PhysicalNetwork | API      |
+| `PYN`    | `30 `| OpenPay Paynet        | PhysicalNetwork | API      |
+| `PIX`    | `31 `| Pix                   | BankTransfer    | API      |
+| `OXX`    | `35 `| Oxxo                  | PhysicalNetwork | API      |
+| `APC`    | `36 `| Apostar               | PhysicalNetwork | API      |
+| `BCC`    | `37 `| Bancolombia           | PhysicalNetwork | API      |
+| `EFC`    | `38 `| Efecty                | PhysicalNetwork | API      |
+| `GNC`    | `39 `| Gana                  | PhysicalNetwork | API      |
+| `PNC`    | `40 `| Puntored              | PhysicalNetwork | API      |
+| `SGC`    | `41 `| Payvalida Supergros   | PhysicalNetwork | API      |
+| `SPC`    | `42 `| Superpagos            | PhysicalNetwork | API      |
+| `SRC`    | `43 `| Sured                 | PhysicalNetwork | API      |
+| `SSC`    | `44 `| Susuerte              | PhysicalNetwork | API      |
+| `PBC`    | `45 `| Payvalida BBVA        | PhysicalNetwork | API      |
+| `BCP`    | `46 `| Bcp                   | PhysicalNetwork | API      |
+| `ARC`    | `47 `| Arequipa              | PhysicalNetwork | API      |
+| `CSC`    | `48 `| Cusco                 | PhysicalNetwork | API      |
+| `HCC`    | `49 `| Huancayo              | PhysicalNetwork | API      |
+| `ICC`    | `50 `| Ica                   | PhysicalNetwork | API      |
+| `PIC`    | `51 `| Piura                 | PhysicalNetwork | API      |
+| `TNC`    | `52 `| Tacna                 | PhysicalNetwork | API      |
+| `TRC`    | `53 `| Trujillo              | PhysicalNetwork | API      |
+| `IBC`    | `54 `| Interbank             | PhysicalNetwork | API      |
+| `WUC`    | `55 `| Wu                    | PhysicalNetwork | API      |
+| `PCC`    | `56 `| Pichincha             | PhysicalNetwork | API      |
+| `BEC`    | `57 `| Bemovil               | PhysicalNetwork | API      |
+| `INC`    | `58 `| Internacional         | PhysicalNetwork | API      |
+| `PGC`    | `59 `| Pagament              | PhysicalNetwork | API      |
+| `PDC`    | `60 `| Produbanco            | PhysicalNetwork | API      |
+| `PFC`    | `61 `| Pago Fácil            | PhysicalNetwork | API      |
+| `HPC`    | `62 `| Hipercard             | CreditCard      | API      |
+| `ELC`    | `63 `| Elo                   | CreditCard      | API      |
+| `AUC`    | `64 `| Aura                  | CreditCard      | API      |
+| `BLT`    | `66 `| Boleto                | PhysicalNetwork | API      |
+| `NQQ`    | `67 `| Nequi Qr              | BankTransfer    | API      |
+| `NQP`    | `68 `| Nequi Push            | BankTransfer    | API      |
+| `QRA`    | `72 `| Transferencias 3.0    | BankTransfer    | API      |
+| `SPE`    | `73 `| STP                   | BankTransfer    | API      |
+| `RSC`    | `74 `| RedServi              | PhysicalNetwork | API      |
+| `DXC`    | `75 `| Dimonex               | PhysicalNetwork | API      |
+| `MVC`    | `76 `| Movilservicios        | PhysicalNetwork | API      |
+| `MGC`    | `77 `| Megared               | PhysicalNetwork | API      |
+| `PTC`    | `78 `| Practisistemas        | PhysicalNetwork | API      |
+| `BVC`    | `79 `| Bbolivariano          | PhysicalNetwork | API      |
+| `BPC`    | `80 `| Bpacifico             | PhysicalNetwork | API      |
+| `MNC`    | `81 `| Minegocioefectivo     | PhysicalNetwork | API      |
+| `DUC`    | `82 `| Deuna                 | PhysicalNetwork | API      |
+| `BBC`    | `83 `| BBVA Perú             | PhysicalNetwork | API      |
+| `KSC`    | `84 `| Kasnet                | PhysicalNetwork | API      |
+| `SCC`    | `85 `| ScotiabankPeru        | PhysicalNetwork | API      |
+| `UPC`    | `87 `| Unionpay              | CreditCard      | API      |
+| `UPD`    | `88 `| Unionpay Debit        | CreditCard      | API      |
+| `BXC`    | `89 `| Banamex               | CreditCard      | API      |
+| `OXP`    | `90 `| OxxoPay               | PhysicalNetwork | API      |
+| `BCA`    | `91 `| AllariaPlus           | BankTransfer    | API      |
+| `AND`    | `92 `| Anda Debito           | DebitCard       | API      |
+| `NJC`    | `93 `| Tarjeta Naranja Crédito | CreditCard    | API      |
+| `CBD`    | `94 `| Cabal Débito          | DebitCard       | API      |
+| `CED`    | `95 `| Club del Este Débito  | DebitCard       | API      |
+| `BRO`    | `101`| E-Brou                | Bank Transfer   | Redirect |
+| `SAN`    | `102`| Santander             | Bank Transfer   | Redirect |
+| `BBV`    | `103`| BBVA                  | Bank Transfer   | Redirect |
+| `SCO`    | `104`| Scotiabank            | Bank Transfer   | Redirect |
+| `ITA`    | `105`| Itaú                  | Bank Transfer   | Redirect |
+| `KHI`    | `106`| Khipu                 | Bank Transfer   | Redirect |
+| `MLC`    | `107`| Multicaja             | PhysicalNetwork | Redirect |
+| `OPC`    | `111`| OpenPay Card          | CreditCard      | Redirect |
+| `BTU`    | `532`| Infinia offline       | BankTransfer    | Redirect |
+| `PSE`    | `538`| Pse Avanza            | Bank Transfer   | Redirect |
+| `YNQ`    | `539`| YunoNequi             | BankTransfer    | API      |
+| `YAP`    | `540`| Yape                  | PhysicalNetwork | API      |
+
+
+| `?? `    | `25 `| PayOut                |                 | API      |
+| `?? `    | `32 `| Openpay Bank          | BankTransfer    | API      |
+| `?? `    | `34 `| Decidir Caja de Pagos | PhysicalNetwork | API      |
+| `?? `    | `69 `| Tarjeta de Credito    | CreditCard      | API      |
+| `?? `    | `70 `| Tarjeta de Debito     | DebitCard       | API      |
+| `?? `    | `71 `| Tarjeta Prepaga       | Prepaid         | API      |
+| `?? `    | `110`| FastTrack Efectivo    | PhysicalNetwork | Redirect |
+| `PSE`    | `108`| FastTrack PSE         | Bank Transfer   | Redirect |
+| `FTC`    | `109`| FastTrack TC          | CreditCard      | Redirect |
+| `TBK`    | `112`| Transbank             | CreditCard      | Redirect |
+| `CND`    | `113`| Carnet Débito         | DebitCard       |          |
+| `CNC`    | `114`| Carnet Crédito        | CreditCard      |          |
+-->
 
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Notes</h4>
+    Notas</h4>
 <p class="alert-text"><ul>
-<li><sup>1</sup> The <code>PaymentMediaId</code> and <code>TrxToken</code> parameters are not required. Nevertheless, sending one of them is mandatory, depending on the flow you want to use.</li>
-<li><sup>2</sup> All the payment methods may not support the pre-authorization feature. Review the <a href="../../../../en/docs/payment-methods.html">Countries and payment methods</a> section to check availability.</li>
-<li><sup>3</sup> This object is not required if you create the purchase using <a href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
-<li><sup>4</sup> When using <a href="../../../../es/docs/payment-methods/brazil/br-cards.html">cards in Brazil</a>, the description is mandatory and must use a fixed format, as explained in the <a href="../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters">request parameters</a>.</li>
-<li>Keep in mind that for the Anti-fraud system&rsquo;s correct functioning, we suggest sending additional data described in the <a href="../../../../es/docs/purchase-workflow/antifraud.html">Anti-fraud</a> section.</li>
-<li>For detailed information about <a href="../../../../es/docs/purchase-workflow/purchases/3d_secure.html">3D Secure - 3DS</a> and <a href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Token</a> objects, please refer to their corresponding sections in this documentation. <strong>PaymentMethodId</strong> is mandatory when sending a Network Token.</li>
+<li><sup>1</sup> Los parámetros <code>PaymentMethod</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.</li>
+<li><sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de <a href="../../../../en/docs/payment-methods.html">Países y medios de pago</a> para verificar la disponibilidad.</li>
+<li><sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando <a href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
+<li><sup>4</sup> Al utilizar <a href="../../../../es/docs/payment-methods/brazil/br-cards.html">tarjetas en Brasil</a>, la descripción es obligatoria y debe usar un formato fijo, como se explica en los <a href="../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters">parámetros de solicitud</a>.</li>
+<li>Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de <a href="../../../../es/docs/purchase-workflow/antifraud.html">Anti-fraude</a>.</li>
+<li>Para obtener información detallada sobre los objetos <a href="../../../../es/docs/purchase-workflow/purchases/3d_secure.html">3D Secure - 3DS</a> y <a href="../../../../es/docs/purchase-workflow/purchases/network_tokens.html">Network Token</a>, consulte sus secciones correspondientes en esta documentación. <strong>PaymentMethod</strong> es obligatorio cuando se envía un Network Token.</li>
 </ul>
 </p>
 </div>
 
-<h3 id="request-example">Request example</h3>
+<h3 id="request-example">Ejemplo de solicitud</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TrxToken&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OT__6dHAgJo6qeg62qIroA7H7_f_NWZZ6IEx4jiYpVJ8SzQ_&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;UniqueID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;paymentID3022&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1453,61 +1619,69 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h2 id="direct-purchase-for-pci-compliant-merchants">Direct Purchase for PCI-Compliant Merchants</h2>
-<p>For merchants who have achieved PCI DSS compliance, Bamboo offers enhanced flexibility through the Direct Purchase method. This advanced option allows PCI-compliant merchants to handle card data directly within their secure environments.</p>
-<h3 id="request-url-1">Request URL</h3>
-<p>You must invoke a <strong>POST</strong> request to the following URLs according to your needs.</p>
+<h2 id="direct-purchase-for-pci-compliant-merchants">Compra para Comercios con Certificación PCI</h2>
+<p>Para los comercios que tienen la certificación PCI-DSS, Bamboo ofrece una mayor flexibilidad a través del método de Compra Directa. Esta opción permite a los comercios con certificación PCI manejar los datos de las tarjetas directamente.</p>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Versiones anteriores de la API</h4>
+<p class="alert-text">La documentación de la API versión V1 y V2 está disponible en la sección de <a href="../../../../es/docs/versions/purchase-api-v2/direct-purchase.html">Legacy</a></p>
+</div>
+
+<h3 id="request-url-1">URL de la solicitud</h3>
+<p>Debe realizar una petición <strong>POST</strong> a las siguientes URLs según sus necesidades:</p>
 <ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v3/api/purchase</code></li>
-<li><strong>Stage</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/purchase</code></li>
+<li><strong>Producción</strong>: <code>https://secure-api.bamboopayment.com/v3/api/purchase</code></li>
+<li><strong>Pruebas</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/purchase</code></li>
 </ul>
-<h3 id="request-parameters-1">Request parameters</h3>
-<h5 id="carddata-object">CardData Object</h5>
+<h3 id="request-parameters-1">Parámetros de la solicitud</h3>
+<h4 id="carddata-object">Objeto CardData</h4>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Mandatory?</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th style="text-align:center">¿Obligatorio?</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>CardHolderName</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The name of the cardholder as it appears on the card.</td>
+<td style="text-align:center">Sí</td>
+<td>El nombre del titular tal como aparece en la tarjeta.</td>
 </tr>
 <tr>
 <td><code>Pan</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The Primary Account Number (PAN) of the card.</td>
+<td style="text-align:center">Sí</td>
+<td>El número de tarjeta (PAN).</td>
 </tr>
 <tr>
 <td><code>CVV</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The Card Verification Value (CVV) or Card Security Code.</td>
+<td style="text-align:center">Sí</td>
+<td>El código de verificación (CVV) o código de seguridad de la tarjeta.</td>
 </tr>
 <tr>
 <td><code>Expiration</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The expiration date of the card in the format &ldquo;MM/YY&rdquo;.</td>
+<td style="text-align:center">Sí</td>
+<td>La fecha de vencimiento de la tarjeta en el formato &ldquo;MM/AA&rdquo;.</td>
 </tr>
 <tr>
 <td><code>Email</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>The email associated with the cardholder.</td>
+<td style="text-align:center">Sí</td>
+<td>Correo electrónico asociado al titular de la tarjeta.</td>
 </tr>
 <tr>
 <td><code>Document</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>The identification document number of the cardholder.</td>
+<td>El número de documento de identidad del titular de la tarjeta.</td>
 </tr>
 </tbody>
 </table>
@@ -1515,11 +1689,11 @@
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Info</h4>
-<p class="alert-text"><strong>Note:</strong> The CardData object should only be used for transactions with non-tokenized cards. Ensure that sensitive card data is handled securely and in compliance with PCI DSS standards.</p>
+    Información</h4>
+<p class="alert-text"><strong>Nota:</strong> El objeto CardData solo debe utilizarse para transacciones con tarjetas no tokenizadas. Los datos sensibles de las tarjetas se deben manejar de forma segura y en cumplimiento con los estándares PCI DSS.</p>
 </div>
 
-<h3 id="request-example-1">Request example</h3>
+<h3 id="request-example-1">Ejemplo de solicitud</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardHolderName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1555,184 +1729,183 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
 <br>
-<p>The fields <strong>CardData</strong>, <strong>PaymentMethodId</strong>, <strong>NetworkToken</strong> and <strong>TrxToken</strong> are not required; Nevertheless, one of them must be send depending of which flow to use.</p>
-<h2 id="response">Response</h2>
-<p>The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.</p>
-<p>All fields, statuses, and error codes described in the standard Purchase response apply equally to Direct Purchase transactions.</p>
+<p>Los campos <strong>CardData</strong>, <strong>PaymentMethod</strong>, <strong>NetworkToken</strong> y <strong>TrxToken</strong> no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.</p>
+<h2 id="response">Respuesta del Request.</h2>
+<p>La respuesta para las operaciones de compra directa realizadas por comercios con certificación PCI es idéntica a la respuesta de la compra estándar. Esto asegura la consistencia entre los diferentes tipos de transacciones y simplifica los procesos de integración.</p>
+<p>Todos los campos, estados y códigos de error descritos en la respuesta de Compra estándar se aplican por igual a las transacciones de Compra Directa.</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>TransactionId</code></td>
 <td><code>string</code></td>
-<td>Unique identifier for the transaction. A 19-digit number sent as a string for compatibility.</td>
+<td>Identificador único de la transacción. Un número de 19 dígitos.</td>
 </tr>
 <tr>
 <td><code>Result</code></td>
 <td><code>string</code></td>
-<td>Outcome of the transaction. <code>COMPLETED</code> or <code>ACTION_REQUIRED</code>. See the &ldquo;Action&rdquo; object for instructions.</td>
+<td>Resultado de la transacción. <code>COMPLETED</code> o <code>ACTION_REQUIRED</code>. Para más detalles, consulte el objeto &ldquo;Action&rdquo;.</td>
 </tr>
 <tr>
 <td><code>Status</code></td>
 <td><code>string</code></td>
-<td>Current status of the transaction (e.g., Approved, Rejected).</td>
+<td>Estado actual de la transacción (por ejemplo, APPROVED, REJECTED).</td>
 </tr>
 <tr>
 <td><code>ErrorCode</code></td>
 <td><code>string</code></td>
-<td>Error code if the transaction was rejected.</td>
+<td>Código de error, si la transacción fue rechazada.</td>
 </tr>
 <tr>
 <td><code>ErrorDescription</code></td>
 <td><code>string</code></td>
-<td>Detailed description of the error if the transaction was rejected.</td>
+<td>Descripción detallada del error si la transacción fue rechazada.</td>
 </tr>
 <tr>
 <td><code>Created</code></td>
 <td><code>string</code></td>
-<td>Timestamp of when the transaction was created, in <strong>ISO 8601</strong> format.</td>
+<td>Fecha / Hora en la que se creó la transacción, en formato <strong>ISO 8601</strong>.</td>
 </tr>
 <tr>
 <td><code>AuthorizationDate</code></td>
 <td><code>string</code></td>
-<td>Timestamp of when the transaction was authorized, in <strong>ISO 8601</strong> format.</td>
+<td>Fecha / Hora en la que se autorizó la transacción, en formato <strong>ISO 8601</strong>.</td>
 </tr>
 <tr>
 <td><code>AuthorizationCode</code></td>
 <td><code>string</code></td>
-<td>Unique code provided by the issuer to confirm the transaction authorization.</td>
+<td>Código único proporcionado por el adquirente / emisor para confirmar la autorización de la transacción.</td>
 </tr>
 <tr>
 <td><code>Amount</code></td>
 <td><code>integer</code></td>
-<td>Total transaction amount.</td>
+<td>Valor total de la transacción.</td>
 </tr>
 <tr>
 <td><code>Currency</code></td>
 <td><code>string</code></td>
-<td>Currency code used for the transaction. May differ from the request currency based on business agreements.</td>
+<td>Moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según el pricing configurado.</td>
 </tr>
 <tr>
 <td><code>Installments</code></td>
 <td><code>integer</code></td>
-<td>Number of payment installments for the transaction.</td>
+<td>Número de cuotas.</td>
 </tr>
 <tr>
 <td><code>TaxableAmount</code></td>
 <td><code>integer</code></td>
-<td>Amount subject to taxes.</td>
+<td>Valor de los impuestos.</td>
 </tr>
 <tr>
 <td><code>Tip</code></td>
 <td><code>integer</code></td>
-<td>Tip amount.</td>
+<td>Valor de la propina.</td>
 </tr>
 <tr>
 <td><code>Url</code></td>
 <td><code>string</code></td>
-<td>Link to access additional transaction details.</td>
+<td>URL con los detalles adicionales de la transacción.</td>
 </tr>
 <tr>
 <td><code>MetadataOut</code></td>
 <td><code>object</code></td>
-<td>Additional metadata returned with the transaction response.</td>
+<td>Metadatos adicionales de la respuesta de la transacción.</td>
 </tr>
 <tr>
 <td><code>Action</code></td>
 <td><code>object</code></td>
-<td>Details of required actions when Result is &ldquo;ACTION_REQUIRED&rdquo;.</td>
+<td>Detalles de las acciones requeridas cuando el Resultado es &ldquo;ACTION_REQUIRED&rdquo;.</td>
 </tr>
 <tr>
 <td><code>PaymentMethod</code></td>
 <td><code>object</code></td>
-<td>Information about the payment method used for the transaction.</td>
+<td>Medio de pago utilizado para la transacción.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="action-object">Action Object</h4>
-<p>The Action object provides information about additional steps required to complete a transaction. It is typically present when the transaction result is <strong>&ldquo;ACTION_REQUIRED&rdquo;</strong>, indicating that further action is needed from the user or merchant to finalize the payment process.</p>
+<h4 id="action-object">Objeto Action</h4>
+<p>El objeto Action contiene información sobre los pasos adicionales requeridos para completar una transacción. Normalmente se envía en la respuesta cuando el resultado de la transacción es <strong>&ldquo;ACTION_REQUIRED&rdquo;</strong>, indicando que se necesita una acción adicional del usuario o del comercio para finalizar el pago.</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>SessionId</code></td>
 <td><code>string</code></td>
-<td>Session identifier related to the action. Informational value.</td>
+<td>ID de sesión relacionado con la acción. Valor informativo.</td>
 </tr>
 <tr>
 <td><code>Reason</code></td>
 <td><code>string</code></td>
-<td>Reason for the requested action. Possible values:<br>• <code>VERIFICATION_CODE_NEEDED:</code> Transaction pending CVV, redirection to &ldquo;URL&rdquo; required to display CVV input form.<br>• <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code>: Redirection to &ldquo;URL&rdquo; required to complete transaction details.</td>
+<td>Razón de la acción solicitada. Valores posibles:<br>• <code>VERIFICATION_CODE_NEEDED:</code> Transacción pendiente de CVV, se requiere redirección a la &ldquo;URL&rdquo; para mostrar el formulario de ingreso del CVV.<br>• <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code>: Se requiere una redirección a la &ldquo;URL&rdquo; para completar los detalles de la transacción.</td>
 </tr>
 <tr>
 <td><code>URL</code></td>
 <td><code>string</code></td>
-<td>Redirection URL to complete the required action.</td>
+<td>URL de redirección para completar la acción requerida.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="paymentmethod-object">PaymentMethod Object</h4>
-<p>The PaymentMethod object contains detailed information about the payment method used in the transaction. This includes card details (for card transactions) or other relevant payment method information.</p>
+<h4 id="carddata-object">Objeto CardData</h4>
+<p>El objeto CardData contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Brand</code></td>
 <td><code>string</code></td>
-<td>Brand of the card used (e.g., MasterCard, Visa).</td>
+<td>Franquicia de la tarjeta utilizada (por ejemplo, MasterCard, Visa).</td>
 </tr>
 <tr>
 <td><code>CardOwner</code></td>
 <td><code>string</code></td>
-<td>Name of the cardholder.</td>
+<td>Nombre del titular de la tarjeta.</td>
 </tr>
 <tr>
 <td><code>Bin</code></td>
 <td><code>string</code></td>
-<td>First 6 digits of the card number.</td>
+<td>Primeros 6 dígitos del número de la tarjeta.</td>
 </tr>
 <tr>
 <td><code>IssuerBank</code></td>
 <td><code>string</code></td>
-<td>Issuing bank of the card.</td>
+<td>Banco emisor de la tarjeta.</td>
 </tr>
 <tr>
 <td><code>Type</code></td>
 <td><code>string</code></td>
-<td>Type of payment method (e.g., CreditCard, DebitCard).</td>
+<td>Tipo de medio de pago (por ejemplo, CreditCard, DebitCard).</td>
 </tr>
 <tr>
 <td><code>Expiration</code></td>
 <td><code>string</code></td>
-<td>Card expiration date in yyyymm format.</td>
+<td>Fecha de vencimiento de la tarjeta en formato aaaaMM.</td>
 </tr>
 <tr>
 <td><code>Last4</code></td>
 <td><code>string</code></td>
-<td>Last 4 digits of the card number.</td>
+<td>Últimos 4 dígitos del número de la tarjeta.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="response-examples">Response examples</h3>
-<br>
+<h3 id="response-examples">Ejemplos de respuesta</h3>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1778,7 +1951,7 @@
 <div class="tab-pane fade show active" id="tabresponses1" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p><strong>Result:</strong><code>COMPLETED</code> - <strong>Status:</strong> <code>APPROVED</code></p>
+<p><strong>Resultado:</strong> <code>COMPLETED</code> - <strong>Estado:</strong> <code>APPROVED</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COMPLETED&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1790,7 +1963,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;839936&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25000</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Url&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://api.stage.bamboopayment.com/Purchase/79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1798,27 +1971,27 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Action&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Visa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joao Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;450799&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Banco do Brasil&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Santander&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4905&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div> 
 <br>
-<p><strong>Result:</strong><code>COMPLETED</code> - <strong>Status:</strong> <code>REJECTED</code></p>
+<p><strong>Resultado:</strong> <code>COMPLETED</code> - <strong>Estado:</strong> <code>REJECTED</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COMPLETED&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REJECTED&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;LP042&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Insufficient balance.&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;TR026&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Insufficient Funds&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-07T17:51:54.620&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-07T17:51:56.879&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;AuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;839936&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25000</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TaxableAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Tip&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1827,16 +2000,16 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Action&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Visa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joao Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;450799&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Banco do Brasil&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Santander&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4905&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div> 
 <br>
-<p><strong>Result:</strong><code>ACTION_REQUIRED</code> - <strong>Status:</strong> <code>PENDING</code></p>
+<p><strong>Resultado:</strong> <code>ACTION_REQUIRED</code> - <strong>Estado:</strong> <code>PENDING</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ACTION_REQUIRED&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1860,9 +2033,9 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Visa&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardOwner&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Joao Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;450799&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Banco do Brasil&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Santander&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;203008&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4905&#34;</span>
@@ -1897,7 +2070,6 @@
 
 
 
-
 </div>
 
 	
@@ -1909,7 +2081,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    15 de octubre de 2024
+    11 de noviembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

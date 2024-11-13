@@ -15039,3 +15039,63 @@ header {
     align-items: center;
     flex-direction: column;
 }
+
+/* Estilo para el dropdown para que coincida mejor con tu paleta de colores */
+.navbar .dropdown-menu {
+    background-color: var(--white); /* Fondo blanco */
+    border: 1px solid var(--gray); /* Borde gris */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir una sombra suave */
+    min-width: auto; /* Permite que el dropdown se ajuste al contenido */
+    width: auto; /* Permite que el ancho se ajuste dinámicamente */
+    max-width: 100%; /* Evita que el menú se desborde fuera del viewport */
+}
+
+.navbar .dropdown-menu a.dropdown-item {
+    color: var(--gray-dark); /* Color del texto */
+    padding: 10px 20px;
+    font-size: 0.7rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suave transición al hover */
+    white-space: normal; /* Permite que el texto ocupe varias líneas si es necesario */
+}
+
+.navbar .dropdown-menu a.dropdown-item:hover {
+    background-color: var(--gray); /* Fondo gris claro al pasar el mouse */
+    color: var(--white); /* Cambia el texto a blanco */
+}
+
+.navbar .dropdown-toggle::after {
+    margin-left: .1rem;
+    vertical-align: 0.1rem;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.navbar .dropdown-toggle {
+    color: var(--gray-dark); /* Color del enlace de dropdown */
+}
+
+.navbar .dropdown-toggle:hover {
+    color: var(--info); /* Cambia a un color de info cuando se hace hover */
+}
+
+.dropdown-item {
+    display: block; /* Cambia a block para permitir que se ajuste al contenido */
+    padding: 10px 15px; /* Asegura un buen espacio alrededor del contenido */
+    white-space: normal; /* Permite que el texto ocupe varias líneas si es necesario */
+    text-overflow: ellipsis; /* Añade elipsis si el texto es demasiado largo */
+}
+
+.dropdown-item span {
+    display: inline-block; /* Asegura que el span ocupe solo el espacio necesario */
+    flex-grow: 1; /* Permite que el span ocupe el espacio restante en su contenedor */
+    white-space: normal; /* Asegura que el texto no se rompa en varias líneas */
+    overflow: hidden; /* Oculta el desbordamiento de texto */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+.dropdown-item a {
+    padding: 10px 15px;
+    text-align: left; /* Alinea el texto a la izquierda dentro del item */
+}

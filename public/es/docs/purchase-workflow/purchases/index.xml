@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bamboo Payment – Operaciones de Compras</title>
+    <title>Bamboo Payment – Compras</title>
     <link>/es/docs/purchase-workflow/purchases.html</link>
-    <description>Recent content in Operaciones de Compras on Bamboo Payment</description>
+    <description>Recent content in Compras on Bamboo Payment</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 02 Mar 2023 11:40:29 -0500</lastBuildDate>
     
@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>Docs: Create a Purchase</title>
+      <title>Docs: Crear una compra</title>
       <link>/es/docs/purchase-workflow/purchases/purchase_v3.html</link>
       <pubDate>Thu, 22 Aug 2024 11:40:29 -0500</pubDate>
       
@@ -23,31 +23,31 @@
       <description>
         
         
-        &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
-&lt;p&gt;All methods used in Purchase API require the following authentication headers.&lt;/p&gt;
+        &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuración de la autenticación&lt;/h2&gt;
+&lt;p&gt;Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Key&lt;/th&gt;
-&lt;th&gt;Value&lt;/th&gt;
-&lt;th&gt;Comments&lt;/th&gt;
+&lt;th&gt;Llave&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;th&gt;Comentarios&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;With this header, the request will be transmitted in &lt;em&gt;JSON&lt;/em&gt; format.&lt;/td&gt;
+&lt;td&gt;Indica que la solicitud se enviará en formato JSON.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Basic {{Merchant Private Key}}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Send the &lt;code&gt;{{Merchant Private Key}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Basic {{Clave Privada del Comercio}}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Incluya la palabra &lt;code&gt;Basic&lt;/code&gt; seguida de su &lt;code&gt;{{Clave Privada del Comercio}}&lt;/code&gt; (y el identificador como comercio).&lt;br&gt;Ejemplo: &lt;code&gt;Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Setting the language of the response codes&lt;/h4&gt;
-&lt;p&gt;You can receive the error description by relying on localization features. To do this, you need to send the &lt;code&gt;lang&lt;/code&gt; header in your integration, using any of the following languages in &lt;strong&gt;ISO 639-1&lt;/strong&gt; format.&lt;/p&gt;
+&lt;h3 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Configurar el idioma de los códigos de respuesta&lt;/h3&gt;
+&lt;p&gt;Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado &lt;code&gt;lang&lt;/code&gt;, utilizando uno de los siguientes códigos en formato &lt;strong&gt;ISO 639-1&lt;/strong&gt;:&lt;/p&gt;
 &lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -59,35 +59,44 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;en&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;English.&lt;br&gt;&lt;em&gt;This is the default language. If you don&amp;rsquo;t send this header or set a non-existent language, you will receive errors in this language.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;English.&lt;br&gt;&lt;em&gt;Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto.&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;es&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Spanish.&lt;/td&gt;
+&lt;td&gt;Español.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;pt&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Portuguese.&lt;/td&gt;
+&lt;td&gt;Portugués.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;create-a-purchase&#34;&gt;Create a Purchase&lt;/h2&gt;
-&lt;p&gt;After successfully &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types.html&#34;&gt;tokenizing a card&lt;/a&gt;, you can proceed with generating a purchase using this method. The Purchase API is specifically designed for merchants who do not have PCI DSS certification, allowing them to process payments securely without handling sensitive card data directly.&lt;/p&gt;
-&lt;p&gt;For alternative payment methods such as cash payments or bank transfers, you only need to provide the corresponding payment method ID to initiate the transaction.&lt;/p&gt;
-&lt;h3 id=&#34;request-url&#34;&gt;Request URL&lt;/h3&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;h2 id=&#34;create-a-purchase&#34;&gt;Crear una compra&lt;/h2&gt;
+&lt;p&gt;Esta sección explica detalladamente cómo generar una Compra para comercios sin certificación PCI DSS, permitiendo procesar pagos sin manejar directamente datos sensibles de tarjetas.&lt;/p&gt;
+&lt;p&gt;Una vez que haya &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types.html&#34;&gt;tokenizado una tarjeta&lt;/a&gt;, es posible generar una compra usando este endpoint.&lt;/p&gt;
+&lt;p&gt;Para medios de pago alternativos, como pagos en efectivo o transferencias bancarias, es necesario enviar el ID del medio de pago correspondiente para iniciar la transacción.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Versiones anteriores de la API&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La documentación de la API versión V1 y V2 está disponible en la sección de &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/purchase-operations.html&#34;&gt;Legacy&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;request-url&#34;&gt;URL de la solicitud&lt;/h3&gt;
+&lt;p&gt;Es necesario realizar una petición &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
+&lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros de la solicitud&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -95,114 +104,114 @@
 &lt;td&gt;&lt;code&gt;TrxToken&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Card token, previously generated through the tokenization flow. Used for card payment methods.&lt;/td&gt;
+&lt;td&gt;Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;NetworkToken&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Network token information used in the transaction. For more information, review the Network Tokenization Object.&lt;/td&gt;
+&lt;td&gt;Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;PaymentMethodId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PaymentMethod&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.)&lt;/td&gt;
+&lt;td&gt;Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto &lt;a href=&#34;../../../../es/docs/getting-started/payment-methods.html&#34;&gt;PaymentMethod&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;UniqueID&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Unique identifier of the purchase.&lt;br&gt;This optional value allows you to identify a unique purchase and avoid duplication of transactions in case of communication errors. For more information, refer to &lt;a href=&#34;../../../../es/docs/getting-started/concepts.html#UniqueID&#34;&gt;Concepts&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identificador único de la compra del lado del comercio. &lt;br&gt;Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte &lt;a href=&#34;../../../../es/docs/getting-started/concepts.html#UniqueID&#34;&gt;Conceptos&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Capture&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Defines whether the purchase should be performed in one or two steps.&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;If &lt;code&gt;false&lt;/code&gt;, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/card_operations.html&#34;&gt;capture and cancel&lt;/a&gt; calls.&lt;/li&gt;&lt;li&gt;If &lt;code&gt;true&lt;/code&gt;, the transaction is authorized and captured.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;All &lt;a href=&#34;../../../../en/docs/payment-methods.html&#34;&gt;payment methods and countries&lt;/a&gt; may not support the pre-authorization feature.&lt;/td&gt;
+&lt;td&gt;Define si la compra debe realizarse en uno o dos pasos.&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Si es &lt;code&gt;false&lt;/code&gt;, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/card_operations.html&#34;&gt;captura y cancelación&lt;/a&gt;.&lt;/li&gt;&lt;li&gt;Si es &lt;code&gt;true&lt;/code&gt;, la transacción se autoriza y captura.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Es posible que no todos los &lt;a href=&#34;../../../../es/docs/payment-methods.html&#34;&gt;medios de pago y países&lt;/a&gt; admitan la función de pre-autorización.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TargetCountryISO&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;This parameter indicates the country where the payment will be processed.&lt;br&gt;Send the country using &lt;code&gt;ISO-3166-1&lt;/code&gt; format.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Este parámetro indica el país donde se procesará el pago.&lt;br&gt;Envíe el país usando el formato &lt;code&gt;ISO-3166-1&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Currency&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Currency of the purchase, according to ISO-4217. Find the possible values in the Currencies table of &lt;a href=&#34;../../../../en/docs/payment-methods.html&#34;&gt;each country&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Moneda de la compra, según ISO-4217. Encuentre los valores posibles en la tabla de Monedas de &lt;a href=&#34;../../../../es/docs/payment-methods.html&#34;&gt;cada país&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt; (64 bits)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Amount of the purchase. This value must be greater than zero.&lt;br&gt;If you must include decimals in the amount, concatenate the decimal places without the decimal point. Example &lt;code&gt;12,25&lt;/code&gt; &amp;gt; &lt;code&gt;1225&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Monto de la compra. Es un valor mayor a cero.&lt;br&gt;Si debe incluir decimales en el monto, concatene los lugares decimales sin el punto decimal. Ejemplo &lt;code&gt;12,25&lt;/code&gt; → &lt;code&gt;1225&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Tip&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt; (64 bits)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Tip amount in the transaction. Value with two decimals, without points or commas.&lt;/td&gt;
+&lt;td&gt;Valor de la propina en la transacción. Valor con dos decimales, sin puntos ni comas.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TaxableAmount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt; (64 bits)&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Taxable amount of the transaction. Value with two decimals, without points or commas.&lt;/td&gt;
+&lt;td&gt;Valor de los impuestos de la transacción. Valor con dos decimales, sin puntos ni comas.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Installments&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Number of installments.&lt;/td&gt;
+&lt;td&gt;Número de cuotas.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Order&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Order number generated by the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Número de orden generado por el comercio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;InvoiceNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Invoice number associated with the transaction.&lt;/td&gt;
+&lt;td&gt;Número de factura asociado a la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Description&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No &lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;Optional description of the purchase.&lt;/td&gt;
+&lt;td&gt;Descripción opcional de la compra.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AdditionalData&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Additional information that may be relevant to the transaction.&lt;/td&gt;
+&lt;td&gt;Información adicional que pueda ser relevante para la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MetadataIn&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Additional transaction data in key-value format.&lt;/td&gt;
+&lt;td&gt;Datos adicionales de la transacción en formato clave-valor.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes &lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;The &lt;code&gt;Customer&lt;/code&gt; object provides the data of the person who performs the purchase.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí &lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;El objeto &lt;code&gt;Customer&lt;/code&gt; proporciona los datos de la persona que realiza la compra.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;customer-object&#34;&gt;Customer Object&lt;/h4&gt;
+&lt;h4 id=&#34;customer-object&#34;&gt;Objeto Customer&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -210,60 +219,60 @@
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;FirstName&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s first name.&lt;/td&gt;
+&lt;td&gt;Nombre del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;LastName&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s last name.&lt;/td&gt;
+&lt;td&gt;Apellido del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;ReferenceCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Reference code for the customer.&lt;/td&gt;
+&lt;td&gt;Código de referencia del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;PhoneNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s phone number.&lt;/td&gt;
+&lt;td&gt;Número de teléfono del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;DocumentNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s document number.&lt;/td&gt;
+&lt;td&gt;Número de documento del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;DocumentType&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Document type. (Format &lt;code&gt;DOCUMENT&lt;/code&gt;.&lt;code&gt;COUNTRY&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;Tipo de documento. (Formato &lt;code&gt;DOCUMENTO&lt;/code&gt;.&lt;code&gt;PAÍS&lt;/code&gt;)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s email address.&lt;/td&gt;
+&lt;td&gt;Dirección de correo electrónico del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Customer&amp;rsquo;s shipping address.&lt;/td&gt;
+&lt;td&gt;Dirección de envío del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;address-object&#34;&gt;Address Object&lt;/h4&gt;
+&lt;h4 id=&#34;address-object&#34;&gt;Objeto Address&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -271,51 +280,172 @@
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt; → &lt;code&gt;Country&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Country of the customer address.&lt;/td&gt;
+&lt;td&gt;País de la dirección del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt; → &lt;code&gt;City&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;City of the customer address.&lt;/td&gt;
+&lt;td&gt;Ciudad de la dirección del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt; → &lt;code&gt;State&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;State or region of the customer address.&lt;/td&gt;
+&lt;td&gt;Estado o región de la dirección del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt; → &lt;code&gt;PostalCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Postal code of the customer address.&lt;/td&gt;
+&lt;td&gt;Código postal de la dirección del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Address&lt;/code&gt; → &lt;code&gt;AddressDetail&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;Additional details of the customer address.&lt;/td&gt;
+&lt;td&gt;Detalles adicionales de la dirección del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;!--#### Objeto PaymentMethod {#paymentmethod-object}
+El objeto PaymentMethod en los `Response` contiene información sobre el medio de pago utilizado en la transacción.
+&lt;br&gt;El mismo objeto en los `Request` se utiliza para los medios de pago alternativos.
+ Para los medios de pago de tarjetas, se pueden utilizar dentro del parámetro `Type` del objeto `CardData`.
+* Para los medios de pago alternativos y **NetworkToken** del parámetro `PaymentMethod`.
+
+| Código | Legacy Id  | Nombre                | Tipo            | Flujo       |
+|--------|-----|-----------------------|-----------------|-------------|
+| `VSC`    | `1  `| Visa                  | CreditCard      | API      |
+| `MCC`    | `2  `| Mastercard            | CreditCard      | API      |
+| `AMC`    | `3  `| American Express      | CreditCard      | API      |
+| `OCC`    | `4  `| Oca                   | CreditCard      | API      |
+| `ABT`    | `5  `| Abitab                | PhysicalNetwork | API      |
+| `VSD`    | `6  `| Visa Débito           | DebitCard       | API      |
+| `VSP`    | `7  `| Visa Prepago          | Prepaid         | API      |
+| `CRC`    | `8  `| Creditel              | CreditCard      | API      |
+| `CDC`    | `9  `| Creditos Directos     | CreditCard      | API      |
+| `RDP`    | `10 `| RedPagos              | PhysicalNetwork | API      |
+| `PSC`    | `11 `| PassCard              | CreditCard      | API      |
+| `DNC`    | `12 `| Diners                | CreditCard      | API      |
+| `MCD`    | `13 `| Mastercard Débito     | DebitCard       | API      |
+| `MCP`    | `14 `| Mastercard Prepago    | Prepaid         | API      |
+| `LDC`    | `15 `| Lider                 | CreditCard      | API      |
+| `CEC`    | `16 `| Club del Este         | CreditCard      | API      |
+| `CBC`    | `17 `| Cabal                 | CreditCard      | API      |
+| `EDC`    | `18 `| Edenred               | CreditCard      | API      |
+| `LYP`    | `19 `| LoyaltyPlan           | Loyalty         | API      |
+| `ANC`    | `20 `| Anda                  | CreditCard      | API      |
+| `BNC`    | `21 `| Bancard Check         | CreditCard      | API      |
+| `CFC`    | `22 `| Credifielco           | CreditCard      | API      |
+| `IND`    | `23 `| Infonet               | DebitCard       | API      |
+| `NJD`    | `24 `| Tarjeta Naranja       | DebitCard       | API      |
+| `PEC`    | `26 `| PagoEfectivo          | PhysicalNetwork | API      |
+| `PEX`    | `27 `| PagoExpress           | PhysicalNetwork | API      |
+| `PNX`    | `28 `| PuntoXpress           | PhysicalNetwork | API      |
+| `PEE`    | `29 `| Pago Efectivo Ecuador | PhysicalNetwork | API      |
+| `PYN`    | `30 `| OpenPay Paynet        | PhysicalNetwork | API      |
+| `PIX`    | `31 `| Pix                   | BankTransfer    | API      |
+| `OXX`    | `35 `| Oxxo                  | PhysicalNetwork | API      |
+| `APC`    | `36 `| Apostar               | PhysicalNetwork | API      |
+| `BCC`    | `37 `| Bancolombia           | PhysicalNetwork | API      |
+| `EFC`    | `38 `| Efecty                | PhysicalNetwork | API      |
+| `GNC`    | `39 `| Gana                  | PhysicalNetwork | API      |
+| `PNC`    | `40 `| Puntored              | PhysicalNetwork | API      |
+| `SGC`    | `41 `| Payvalida Supergros   | PhysicalNetwork | API      |
+| `SPC`    | `42 `| Superpagos            | PhysicalNetwork | API      |
+| `SRC`    | `43 `| Sured                 | PhysicalNetwork | API      |
+| `SSC`    | `44 `| Susuerte              | PhysicalNetwork | API      |
+| `PBC`    | `45 `| Payvalida BBVA        | PhysicalNetwork | API      |
+| `BCP`    | `46 `| Bcp                   | PhysicalNetwork | API      |
+| `ARC`    | `47 `| Arequipa              | PhysicalNetwork | API      |
+| `CSC`    | `48 `| Cusco                 | PhysicalNetwork | API      |
+| `HCC`    | `49 `| Huancayo              | PhysicalNetwork | API      |
+| `ICC`    | `50 `| Ica                   | PhysicalNetwork | API      |
+| `PIC`    | `51 `| Piura                 | PhysicalNetwork | API      |
+| `TNC`    | `52 `| Tacna                 | PhysicalNetwork | API      |
+| `TRC`    | `53 `| Trujillo              | PhysicalNetwork | API      |
+| `IBC`    | `54 `| Interbank             | PhysicalNetwork | API      |
+| `WUC`    | `55 `| Wu                    | PhysicalNetwork | API      |
+| `PCC`    | `56 `| Pichincha             | PhysicalNetwork | API      |
+| `BEC`    | `57 `| Bemovil               | PhysicalNetwork | API      |
+| `INC`    | `58 `| Internacional         | PhysicalNetwork | API      |
+| `PGC`    | `59 `| Pagament              | PhysicalNetwork | API      |
+| `PDC`    | `60 `| Produbanco            | PhysicalNetwork | API      |
+| `PFC`    | `61 `| Pago Fácil            | PhysicalNetwork | API      |
+| `HPC`    | `62 `| Hipercard             | CreditCard      | API      |
+| `ELC`    | `63 `| Elo                   | CreditCard      | API      |
+| `AUC`    | `64 `| Aura                  | CreditCard      | API      |
+| `BLT`    | `66 `| Boleto                | PhysicalNetwork | API      |
+| `NQQ`    | `67 `| Nequi Qr              | BankTransfer    | API      |
+| `NQP`    | `68 `| Nequi Push            | BankTransfer    | API      |
+| `QRA`    | `72 `| Transferencias 3.0    | BankTransfer    | API      |
+| `SPE`    | `73 `| STP                   | BankTransfer    | API      |
+| `RSC`    | `74 `| RedServi              | PhysicalNetwork | API      |
+| `DXC`    | `75 `| Dimonex               | PhysicalNetwork | API      |
+| `MVC`    | `76 `| Movilservicios        | PhysicalNetwork | API      |
+| `MGC`    | `77 `| Megared               | PhysicalNetwork | API      |
+| `PTC`    | `78 `| Practisistemas        | PhysicalNetwork | API      |
+| `BVC`    | `79 `| Bbolivariano          | PhysicalNetwork | API      |
+| `BPC`    | `80 `| Bpacifico             | PhysicalNetwork | API      |
+| `MNC`    | `81 `| Minegocioefectivo     | PhysicalNetwork | API      |
+| `DUC`    | `82 `| Deuna                 | PhysicalNetwork | API      |
+| `BBC`    | `83 `| BBVA Perú             | PhysicalNetwork | API      |
+| `KSC`    | `84 `| Kasnet                | PhysicalNetwork | API      |
+| `SCC`    | `85 `| ScotiabankPeru        | PhysicalNetwork | API      |
+| `UPC`    | `87 `| Unionpay              | CreditCard      | API      |
+| `UPD`    | `88 `| Unionpay Debit        | CreditCard      | API      |
+| `BXC`    | `89 `| Banamex               | CreditCard      | API      |
+| `OXP`    | `90 `| OxxoPay               | PhysicalNetwork | API      |
+| `BCA`    | `91 `| AllariaPlus           | BankTransfer    | API      |
+| `AND`    | `92 `| Anda Debito           | DebitCard       | API      |
+| `NJC`    | `93 `| Tarjeta Naranja Crédito | CreditCard    | API      |
+| `CBD`    | `94 `| Cabal Débito          | DebitCard       | API      |
+| `CED`    | `95 `| Club del Este Débito  | DebitCard       | API      |
+| `BRO`    | `101`| E-Brou                | Bank Transfer   | Redirect |
+| `SAN`    | `102`| Santander             | Bank Transfer   | Redirect |
+| `BBV`    | `103`| BBVA                  | Bank Transfer   | Redirect |
+| `SCO`    | `104`| Scotiabank            | Bank Transfer   | Redirect |
+| `ITA`    | `105`| Itaú                  | Bank Transfer   | Redirect |
+| `KHI`    | `106`| Khipu                 | Bank Transfer   | Redirect |
+| `MLC`    | `107`| Multicaja             | PhysicalNetwork | Redirect |
+| `OPC`    | `111`| OpenPay Card          | CreditCard      | Redirect |
+| `BTU`    | `532`| Infinia offline       | BankTransfer    | Redirect |
+| `PSE`    | `538`| Pse Avanza            | Bank Transfer   | Redirect |
+| `YNQ`    | `539`| YunoNequi             | BankTransfer    | API      |
+| `YAP`    | `540`| Yape                  | PhysicalNetwork | API      |
+
+
+| `?? `    | `25 `| PayOut                |                 | API      |
+| `?? `    | `32 `| Openpay Bank          | BankTransfer    | API      |
+| `?? `    | `34 `| Decidir Caja de Pagos | PhysicalNetwork | API      |
+| `?? `    | `69 `| Tarjeta de Credito    | CreditCard      | API      |
+| `?? `    | `70 `| Tarjeta de Debito     | DebitCard       | API      |
+| `?? `    | `71 `| Tarjeta Prepaga       | Prepaid         | API      |
+| `?? `    | `110`| FastTrack Efectivo    | PhysicalNetwork | Redirect |
+| `PSE`    | `108`| FastTrack PSE         | Bank Transfer   | Redirect |
+| `FTC`    | `109`| FastTrack TC          | CreditCard      | Redirect |
+| `TBK`    | `112`| Transbank             | CreditCard      | Redirect |
+| `CND`    | `113`| Carnet Débito         | DebitCard       |          |
+| `CNC`    | `114`| Carnet Crédito        | CreditCard      |          |
+--&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Notes&lt;/h4&gt;
+    Notas&lt;/h4&gt;
 &lt;p class=&#34;alert-text&#34;&gt;&lt;ul&gt;
-&lt;li&gt;&lt;sup&gt;1&lt;/sup&gt; The &lt;code&gt;PaymentMediaId&lt;/code&gt; and &lt;code&gt;TrxToken&lt;/code&gt; parameters are not required. Nevertheless, sending one of them is mandatory, depending on the flow you want to use.&lt;/li&gt;
-&lt;li&gt;&lt;sup&gt;2&lt;/sup&gt; All the payment methods may not support the pre-authorization feature. Review the &lt;a href=&#34;../../../../en/docs/payment-methods.html&#34;&gt;Countries and payment methods&lt;/a&gt; section to check availability.&lt;/li&gt;
-&lt;li&gt;&lt;sup&gt;3&lt;/sup&gt; This object is not required if you create the purchase using &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types/registered-users.html&#34;&gt;&lt;em&gt;CommerceToken&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;sup&gt;4&lt;/sup&gt; When using &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html&#34;&gt;cards in Brazil&lt;/a&gt;, the description is mandatory and must use a fixed format, as explained in the &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters&#34;&gt;request parameters&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Keep in mind that for the Anti-fraud system&amp;rsquo;s correct functioning, we suggest sending additional data described in the &lt;a href=&#34;../../../../es/docs/purchase-workflow/antifraud.html&#34;&gt;Anti-fraud&lt;/a&gt; section.&lt;/li&gt;
-&lt;li&gt;For detailed information about &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/3d_secure.html&#34;&gt;3D Secure - 3DS&lt;/a&gt; and &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/network_tokens.html&#34;&gt;Network Token&lt;/a&gt; objects, please refer to their corresponding sections in this documentation. &lt;strong&gt;PaymentMethodId&lt;/strong&gt; is mandatory when sending a Network Token.&lt;/li&gt;
+&lt;li&gt;&lt;sup&gt;1&lt;/sup&gt; Los parámetros &lt;code&gt;PaymentMethod&lt;/code&gt; y &lt;code&gt;TrxToken&lt;/code&gt; no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.&lt;/li&gt;
+&lt;li&gt;&lt;sup&gt;2&lt;/sup&gt; Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de &lt;a href=&#34;../../../../en/docs/payment-methods.html&#34;&gt;Países y medios de pago&lt;/a&gt; para verificar la disponibilidad.&lt;/li&gt;
+&lt;li&gt;&lt;sup&gt;3&lt;/sup&gt; Este objeto no es obligatorio si crea la compra utilizando &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types/registered-users.html&#34;&gt;&lt;em&gt;CommerceToken&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;sup&gt;4&lt;/sup&gt; Al utilizar &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html&#34;&gt;tarjetas en Brasil&lt;/a&gt;, la descripción es obligatoria y debe usar un formato fijo, como se explica en los &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters&#34;&gt;parámetros de solicitud&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de &lt;a href=&#34;../../../../es/docs/purchase-workflow/antifraud.html&#34;&gt;Anti-fraude&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Para obtener información detallada sobre los objetos &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/3d_secure.html&#34;&gt;3D Secure - 3DS&lt;/a&gt; y &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/network_tokens.html&#34;&gt;Network Token&lt;/a&gt;, consulte sus secciones correspondientes en esta documentación. &lt;strong&gt;PaymentMethod&lt;/strong&gt; es obligatorio cuando se envía un Network Token.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;request-example&#34;&gt;Request example&lt;/h3&gt;
+&lt;h3 id=&#34;request-example&#34;&gt;Ejemplo de solicitud&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TrxToken&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;OT__6dHAgJo6qeg62qIroA7H7_f_NWZZ6IEx4jiYpVJ8SzQ_&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;UniqueID&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;paymentID3022&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -343,61 +473,69 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;direct-purchase-for-pci-compliant-merchants&#34;&gt;Direct Purchase for PCI-Compliant Merchants&lt;/h2&gt;
-&lt;p&gt;For merchants who have achieved PCI DSS compliance, Bamboo offers enhanced flexibility through the Direct Purchase method. This advanced option allows PCI-compliant merchants to handle card data directly within their secure environments.&lt;/p&gt;
-&lt;h3 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h3&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;h2 id=&#34;direct-purchase-for-pci-compliant-merchants&#34;&gt;Compra para Comercios con Certificación PCI&lt;/h2&gt;
+&lt;p&gt;Para los comercios que tienen la certificación PCI-DSS, Bamboo ofrece una mayor flexibilidad a través del método de Compra Directa. Esta opción permite a los comercios con certificación PCI manejar los datos de las tarjetas directamente.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Versiones anteriores de la API&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La documentación de la API versión V1 y V2 está disponible en la sección de &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/direct-purchase.html&#34;&gt;Legacy&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;request-url-1&#34;&gt;URL de la solicitud&lt;/h3&gt;
+&lt;p&gt;Debe realizar una petición &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://secure-api.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://secure-api.stage.bamboopayment.com/v3/api/purchase&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;request-parameters-1&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;h5 id=&#34;carddata-object&#34;&gt;CardData Object&lt;/h5&gt;
+&lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros de la solicitud&lt;/h3&gt;
+&lt;h4 id=&#34;carddata-object&#34;&gt;Objeto CardData&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;CardHolderName&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The name of the cardholder as it appears on the card.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;El nombre del titular tal como aparece en la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Pan&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The Primary Account Number (PAN) of the card.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;El número de tarjeta (PAN).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;CVV&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The Card Verification Value (CVV) or Card Security Code.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;El código de verificación (CVV) o código de seguridad de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Expiration&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The expiration date of the card in the format &amp;ldquo;MM/YY&amp;rdquo;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;La fecha de vencimiento de la tarjeta en el formato &amp;ldquo;MM/AA&amp;rdquo;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The email associated with the cardholder.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Correo electrónico asociado al titular de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Document&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;The identification document number of the cardholder.&lt;/td&gt;
+&lt;td&gt;El número de documento de identidad del titular de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -405,11 +543,11 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Info&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;strong&gt;Note:&lt;/strong&gt; The CardData object should only be used for transactions with non-tokenized cards. Ensure that sensitive card data is handled securely and in compliance with PCI DSS standards.&lt;/p&gt;
+    Información&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;strong&gt;Nota:&lt;/strong&gt; El objeto CardData solo debe utilizarse para transacciones con tarjetas no tokenizadas. Los datos sensibles de las tarjetas se deben manejar de forma segura y en cumplimiento con los estándares PCI DSS.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;request-example-1&#34;&gt;Request example&lt;/h3&gt;
+&lt;h3 id=&#34;request-example-1&#34;&gt;Ejemplo de solicitud&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardHolderName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;João Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -445,184 +583,183 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;br&gt;
-&lt;p&gt;The fields &lt;strong&gt;CardData&lt;/strong&gt;, &lt;strong&gt;PaymentMethodId&lt;/strong&gt;, &lt;strong&gt;NetworkToken&lt;/strong&gt; and &lt;strong&gt;TrxToken&lt;/strong&gt; are not required; Nevertheless, one of them must be send depending of which flow to use.&lt;/p&gt;
-&lt;h2 id=&#34;response&#34;&gt;Response&lt;/h2&gt;
-&lt;p&gt;The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.&lt;/p&gt;
-&lt;p&gt;All fields, statuses, and error codes described in the standard Purchase response apply equally to Direct Purchase transactions.&lt;/p&gt;
+&lt;p&gt;Los campos &lt;strong&gt;CardData&lt;/strong&gt;, &lt;strong&gt;PaymentMethod&lt;/strong&gt;, &lt;strong&gt;NetworkToken&lt;/strong&gt; y &lt;strong&gt;TrxToken&lt;/strong&gt; no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.&lt;/p&gt;
+&lt;h2 id=&#34;response&#34;&gt;Respuesta del Request.&lt;/h2&gt;
+&lt;p&gt;La respuesta para las operaciones de compra directa realizadas por comercios con certificación PCI es idéntica a la respuesta de la compra estándar. Esto asegura la consistencia entre los diferentes tipos de transacciones y simplifica los procesos de integración.&lt;/p&gt;
+&lt;p&gt;Todos los campos, estados y códigos de error descritos en la respuesta de Compra estándar se aplican por igual a las transacciones de Compra Directa.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TransactionId&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique identifier for the transaction. A 19-digit number sent as a string for compatibility.&lt;/td&gt;
+&lt;td&gt;Identificador único de la transacción. Un número de 19 dígitos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Result&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Outcome of the transaction. &lt;code&gt;COMPLETED&lt;/code&gt; or &lt;code&gt;ACTION_REQUIRED&lt;/code&gt;. See the &amp;ldquo;Action&amp;rdquo; object for instructions.&lt;/td&gt;
+&lt;td&gt;Resultado de la transacción. &lt;code&gt;COMPLETED&lt;/code&gt; o &lt;code&gt;ACTION_REQUIRED&lt;/code&gt;. Para más detalles, consulte el objeto &amp;ldquo;Action&amp;rdquo;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Status&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Current status of the transaction (e.g., Approved, Rejected).&lt;/td&gt;
+&lt;td&gt;Estado actual de la transacción (por ejemplo, APPROVED, REJECTED).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ErrorCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Error code if the transaction was rejected.&lt;/td&gt;
+&lt;td&gt;Código de error, si la transacción fue rechazada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ErrorDescription&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Detailed description of the error if the transaction was rejected.&lt;/td&gt;
+&lt;td&gt;Descripción detallada del error si la transacción fue rechazada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Created&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Timestamp of when the transaction was created, in &lt;strong&gt;ISO 8601&lt;/strong&gt; format.&lt;/td&gt;
+&lt;td&gt;Fecha / Hora en la que se creó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AuthorizationDate&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Timestamp of when the transaction was authorized, in &lt;strong&gt;ISO 8601&lt;/strong&gt; format.&lt;/td&gt;
+&lt;td&gt;Fecha / Hora en la que se autorizó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AuthorizationCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique code provided by the issuer to confirm the transaction authorization.&lt;/td&gt;
+&lt;td&gt;Código único proporcionado por el adquirente / emisor para confirmar la autorización de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Total transaction amount.&lt;/td&gt;
+&lt;td&gt;Valor total de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Currency&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Currency code used for the transaction. May differ from the request currency based on business agreements.&lt;/td&gt;
+&lt;td&gt;Moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según el pricing configurado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Installments&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Number of payment installments for the transaction.&lt;/td&gt;
+&lt;td&gt;Número de cuotas.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TaxableAmount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Amount subject to taxes.&lt;/td&gt;
+&lt;td&gt;Valor de los impuestos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Tip&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Tip amount.&lt;/td&gt;
+&lt;td&gt;Valor de la propina.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Url&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Link to access additional transaction details.&lt;/td&gt;
+&lt;td&gt;URL con los detalles adicionales de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MetadataOut&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Additional metadata returned with the transaction response.&lt;/td&gt;
+&lt;td&gt;Metadatos adicionales de la respuesta de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Action&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Details of required actions when Result is &amp;ldquo;ACTION_REQUIRED&amp;rdquo;.&lt;/td&gt;
+&lt;td&gt;Detalles de las acciones requeridas cuando el Resultado es &amp;ldquo;ACTION_REQUIRED&amp;rdquo;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PaymentMethod&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Information about the payment method used for the transaction.&lt;/td&gt;
+&lt;td&gt;Medio de pago utilizado para la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;action-object&#34;&gt;Action Object&lt;/h4&gt;
-&lt;p&gt;The Action object provides information about additional steps required to complete a transaction. It is typically present when the transaction result is &lt;strong&gt;&amp;ldquo;ACTION_REQUIRED&amp;rdquo;&lt;/strong&gt;, indicating that further action is needed from the user or merchant to finalize the payment process.&lt;/p&gt;
+&lt;h4 id=&#34;action-object&#34;&gt;Objeto Action&lt;/h4&gt;
+&lt;p&gt;El objeto Action contiene información sobre los pasos adicionales requeridos para completar una transacción. Normalmente se envía en la respuesta cuando el resultado de la transacción es &lt;strong&gt;&amp;ldquo;ACTION_REQUIRED&amp;rdquo;&lt;/strong&gt;, indicando que se necesita una acción adicional del usuario o del comercio para finalizar el pago.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SessionId&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Session identifier related to the action. Informational value.&lt;/td&gt;
+&lt;td&gt;ID de sesión relacionado con la acción. Valor informativo.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Reason&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Reason for the requested action. Possible values:&lt;br&gt;• &lt;code&gt;VERIFICATION_CODE_NEEDED:&lt;/code&gt; Transaction pending CVV, redirection to &amp;ldquo;URL&amp;rdquo; required to display CVV input form.&lt;br&gt;• &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt;: Redirection to &amp;ldquo;URL&amp;rdquo; required to complete transaction details.&lt;/td&gt;
+&lt;td&gt;Razón de la acción solicitada. Valores posibles:&lt;br&gt;• &lt;code&gt;VERIFICATION_CODE_NEEDED:&lt;/code&gt; Transacción pendiente de CVV, se requiere redirección a la &amp;ldquo;URL&amp;rdquo; para mostrar el formulario de ingreso del CVV.&lt;br&gt;• &lt;code&gt;REDIRECTION_NEEDED_EXTERNAL_SERVICE&lt;/code&gt;: Se requiere una redirección a la &amp;ldquo;URL&amp;rdquo; para completar los detalles de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;URL&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Redirection URL to complete the required action.&lt;/td&gt;
+&lt;td&gt;URL de redirección para completar la acción requerida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;paymentmethod-object&#34;&gt;PaymentMethod Object&lt;/h4&gt;
-&lt;p&gt;The PaymentMethod object contains detailed information about the payment method used in the transaction. This includes card details (for card transactions) or other relevant payment method information.&lt;/p&gt;
+&lt;h4 id=&#34;carddata-object&#34;&gt;Objeto CardData&lt;/h4&gt;
+&lt;p&gt;El objeto CardData contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Brand&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Brand of the card used (e.g., MasterCard, Visa).&lt;/td&gt;
+&lt;td&gt;Franquicia de la tarjeta utilizada (por ejemplo, MasterCard, Visa).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;CardOwner&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Name of the cardholder.&lt;/td&gt;
+&lt;td&gt;Nombre del titular de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Bin&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;First 6 digits of the card number.&lt;/td&gt;
+&lt;td&gt;Primeros 6 dígitos del número de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;IssuerBank&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Issuing bank of the card.&lt;/td&gt;
+&lt;td&gt;Banco emisor de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Type&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Type of payment method (e.g., CreditCard, DebitCard).&lt;/td&gt;
+&lt;td&gt;Tipo de medio de pago (por ejemplo, CreditCard, DebitCard).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Expiration&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Card expiration date in yyyymm format.&lt;/td&gt;
+&lt;td&gt;Fecha de vencimiento de la tarjeta en formato aaaaMM.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Last4&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Last 4 digits of the card number.&lt;/td&gt;
+&lt;td&gt;Últimos 4 dígitos del número de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;response-examples&#34;&gt;Response examples&lt;/h3&gt;
-&lt;br&gt;
+&lt;h3 id=&#34;response-examples&#34;&gt;Ejemplos de respuesta&lt;/h3&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -668,7 +805,7 @@
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tabresponses1&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Status:&lt;/strong&gt; &lt;code&gt;APPROVED&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Estado:&lt;/strong&gt; &lt;code&gt;APPROVED&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -680,7 +817,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;839936&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BRL&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Installments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Installments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TaxableAmount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Tip&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Url&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.stage.bamboopayment.com/Purchase/79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -688,27 +825,27 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Action&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Brand&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Visa&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;João Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Joao Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Bin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;450799&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Banco do Brasil&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Santander&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;203008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Last4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4905&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; 
 &lt;br&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Status:&lt;/strong&gt; &lt;code&gt;REJECTED&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Estado:&lt;/strong&gt; &lt;code&gt;REJECTED&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;REJECTED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;LP042&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorDescription&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Insufficient balance.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TR026&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorDescription&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Insufficient Funds&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2024-08-07T17:51:54.620&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2024-08-07T17:51:56.879&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;839936&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BRL&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;USD&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Installments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TaxableAmount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Tip&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -717,16 +854,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Action&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Brand&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Visa&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;João Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Joao Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Bin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;450799&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Banco do Brasil&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Santander&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;203008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Last4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4905&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; 
 &lt;br&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;code&gt;ACTION_REQUIRED&lt;/code&gt; - &lt;strong&gt;Status:&lt;/strong&gt; &lt;code&gt;PENDING&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;code&gt;ACTION_REQUIRED&lt;/code&gt; - &lt;strong&gt;Estado:&lt;/strong&gt; &lt;code&gt;PENDING&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ACTION_REQUIRED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -750,9 +887,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Brand&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Visa&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;João Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Joao Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Bin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;450799&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Banco do Brasil&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Santander&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;203008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Last4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4905&amp;#34;&lt;/span&gt;
@@ -787,14 +924,13 @@
 
 
 
-
 &lt;/div&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: Get a Purchase</title>
+      <title>Docs: Get de la Compra</title>
       <link>/es/docs/purchase-workflow/purchases/get-purchase.html</link>
       <pubDate>Fri, 02 Aug 2024 08:46:32 -0500</pubDate>
       
@@ -802,120 +938,120 @@
       <description>
         
         
-        &lt;h3 id=&#34;request-url&#34;&gt;Request URL&lt;/h3&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;GET&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+        &lt;h2 id=&#34;request-url&#34;&gt;URL de la solicitud&lt;/h2&gt;
+&lt;p&gt;Se requiere hacer una petición &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Where &lt;code&gt;{{TransactionId}}&lt;/code&gt; is the identifier of the transaction you want to retrieve.&lt;/p&gt;
+&lt;p&gt;Donde &lt;code&gt;{{TransactionId}}&lt;/code&gt; es el identificador de la transacción que desea consultar.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Using Reporting API&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;For bulk transaction analysis and reporting needs, please refer to our &lt;a href=&#34;../../../../es/docs/reporting/transactions-report.html&#34;&gt;Transaction Report API&lt;/a&gt;, which is optimized for handling large datasets and generating reports.&lt;/p&gt;
+    Uso de la API de Reportes&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Para análisis de transacciones en masa y generación de informes, consulte nuestra &lt;a href=&#34;../../../../es/docs/reporting/transactions-report.html&#34;&gt;API de Reporte de Transacciones&lt;/a&gt;, optimizada para manejar grandes volúmenes de datos y generar informes detallados.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
-&lt;p&gt;The response structure for this operation is identical to the standard &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;purchase response&lt;/a&gt;. This ensures consistency across different transaction types and simplifies integration processes.&lt;/p&gt;
+&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros de respuesta&lt;/h2&gt;
+&lt;p&gt;La estructura de respuesta para esta operación es idéntica a la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;respuesta estándar de compra&lt;/a&gt;. Esto garantiza consistencia entre diferentes tipos de transacciones y simplifica los procesos de integración.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TransactionId&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique identifier for the transaction. A 19-digit number sent as a string for compatibility.&lt;/td&gt;
+&lt;td&gt;Identificador único de la transacción. Un número de 19 dígitos enviado como cadena por compatibilidad.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Result&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Outcome of the transaction. &lt;code&gt;COMPLETED&lt;/code&gt; or &lt;code&gt;ACTION_REQUIRED&lt;/code&gt;. See the &amp;ldquo;Action&amp;rdquo; object for instructions.&lt;/td&gt;
+&lt;td&gt;Resultado de la transacción. &lt;code&gt;COMPLETED&lt;/code&gt; o &lt;code&gt;ACTION_REQUIRED&lt;/code&gt;. Consulte el objeto &amp;ldquo;Action&amp;rdquo; para obtener instrucciones.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Status&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Current status of the transaction (e.g., Approved, Rejected).&lt;/td&gt;
+&lt;td&gt;Estado actual de la transacción (por ejemplo, Aprobada, Rechazada).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ErrorCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Error code if the transaction was rejected.&lt;/td&gt;
+&lt;td&gt;Código de error si la transacción fue rechazada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ErrorDescription&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Detailed description of the error if the transaction was rejected.&lt;/td&gt;
+&lt;td&gt;Descripción detallada del error si la transacción fue rechazada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Created&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Timestamp of when the transaction was created, in &lt;strong&gt;ISO 8601&lt;/strong&gt; format.&lt;/td&gt;
+&lt;td&gt;Marca de tiempo de cuándo se creó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AuthorizationDate&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Timestamp of when the transaction was authorized, in &lt;strong&gt;ISO 8601&lt;/strong&gt; format.&lt;/td&gt;
+&lt;td&gt;Marca de tiempo de cuándo se autorizó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;AuthorizationCode&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Unique code provided by the issuer to confirm the transaction authorization.&lt;/td&gt;
+&lt;td&gt;Código único proporcionado por el emisor para confirmar la autorización de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Total transaction amount.&lt;/td&gt;
+&lt;td&gt;Monto total de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Currency&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Currency code used for the transaction. May differ from the request currency based on business agreements.&lt;/td&gt;
+&lt;td&gt;Código de la moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según los acuerdos comerciales.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Installments&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Number of payment installments for the transaction.&lt;/td&gt;
+&lt;td&gt;Número de cuotas de pago para la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;TaxableAmount&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Amount subject to taxes.&lt;/td&gt;
+&lt;td&gt;Monto sujeto a impuestos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Tip&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Tip amount.&lt;/td&gt;
+&lt;td&gt;Monto de la propina.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Url&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Link to access additional transaction details.&lt;/td&gt;
+&lt;td&gt;Enlace para acceder a detalles adicionales de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MetadataOut&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Additional metadata returned with the transaction response.&lt;/td&gt;
+&lt;td&gt;Metadatos adicionales devueltos con la respuesta de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Action&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Details of required actions when Result is &amp;ldquo;ACTION_REQUIRED&amp;rdquo;.&lt;/td&gt;
+&lt;td&gt;Detalles de las acciones requeridas cuando el Resultado es &amp;ldquo;ACTION_REQUIRED&amp;rdquo;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PaymentMethod&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Information about the payment method used for the transaction.&lt;/td&gt;
+&lt;td&gt;Información del medio de pago utilizado&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;response-example&#34;&gt;Response example&lt;/h3&gt;
+&lt;h2 id=&#34;response-example&#34;&gt;Ejemplo de respuesta&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -947,8 +1083,8 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Note&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;All fields, statuses, and error codes described in the &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;purchase response&lt;/a&gt; apply equally to this Get Purchase Details response.&lt;/p&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Todos los campos, estados y códigos de error descritos en la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;respuesta de compra&lt;/a&gt; se aplican igualmente al GET de la compra.&lt;/p&gt;
 &lt;/div&gt;
 
 
@@ -956,7 +1092,7 @@
     </item>
     
     <item>
-      <title>Docs: Pre-authorized Purchases: Capture and Cancel</title>
+      <title>Docs: Compras Autorizadas: Captura y Cancelación</title>
       <link>/es/docs/purchase-workflow/purchases/card_operations.html</link>
       <pubDate>Thu, 22 Aug 2024 11:40:29 -0500</pubDate>
       
@@ -964,40 +1100,48 @@
       <description>
         
         
-        &lt;h2 id=&#34;capture-a-purchase&#34;&gt;Capture a purchase&lt;/h2&gt;
-&lt;p&gt;This method allows you to confirm a pre-authorized purchase. The capture process allows you to confirm and finalize a pre-authorized transaction, giving you the flexibility to adjust the amount if needed.&lt;/p&gt;
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Versiones anteriores de la API&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La documentación de la API versión V1 está disponible en la sección de &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase&#34;&gt;Legacy&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;capture-a-purchase&#34;&gt;Capturar una compra&lt;/h2&gt;
+&lt;p&gt;Este método le permite confirmar una compra autorizada. El proceso de captura le da la flexibilidad de confirmar y finalizar una transacción preautorizada, permitiéndole ajustar el valor si es necesario.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Note&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;All payment methods may not support the pre-authorization feature, and it’s available for the following countries.&lt;/p&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;No todos los métodos de pago admiten la función de preautorización. Está disponible para los siguientes países:&lt;/p&gt;
 &lt;div style=&#34;text-align: center;&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;../../../../en/docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../es/docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;request-url&#34;&gt;Request URL&lt;/h3&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;h3 id=&#34;request-url&#34;&gt;URL de la solicitud&lt;/h3&gt;
+&lt;p&gt;Debe realizar una petición &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;request-parameters&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.&lt;/p&gt;
-&lt;p&gt;The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.&lt;/p&gt;
-&lt;h4 id=&#34;request-example-partial-capture&#34;&gt;Request example (Partial Capture)&lt;/h4&gt;
-&lt;p&gt;You must include the new amount in the request to confirm a purchase with a lower amount than the original. For example:&lt;/p&gt;
+&lt;h3 id=&#34;request-parameters&#34;&gt;Parámetros de la solicitud&lt;/h3&gt;
+&lt;p&gt;El body en la solicitud es opcional para confirmar una compra. Si no envía ninguna solicitud, el método confirmará la compra preautorizada por su valor original.&lt;/p&gt;
+&lt;p&gt;El valor de la compra puede variar respecto al enviado en el proceso de compra inicial, pero el nuevo valor no puede ser mayor que el valor original.&lt;/p&gt;
+&lt;h4 id=&#34;request-example-partial-capture&#34;&gt;Ejemplo de solicitud (Captura Parcial)&lt;/h4&gt;
+&lt;p&gt;Debe incluir el nuevo valor en la solicitud para confirmar una compra con un valor menor al original. Por ejemplo:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;response-example-partial-capture&#34;&gt;Response example (Partial Capture)&lt;/h4&gt;
-&lt;p&gt;You will get the same &lt;code&gt;Response&lt;/code&gt; object for the &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;purchase object&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Status:&lt;/strong&gt; &lt;code&gt;PREAUTHORIZED&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;response-example-partial-capture&#34;&gt;Ejemplo de respuesta (Captura Parcial)&lt;/h4&gt;
+&lt;p&gt;Obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; que para el &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;objeto de compra&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Estado:&lt;/strong&gt; &lt;code&gt;PREAUTHORIZED&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -1024,49 +1168,57 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;203008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Last4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4905&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;cancelling-a-purchase&#34;&gt;Cancelling a purchase&lt;/h2&gt;
-&lt;p&gt;A void (or cancel) is the act of canceling a pre-authorized transaction before it is finalized or settled. When a transaction is voided, it is as if the purchase never occurred, and no money is transferred. Voids usually occur before the payment is fully processed, so the customer&amp;rsquo;s payment method is not charged for the voided transaction.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;cancel&lt;/strong&gt;&lt;/em&gt; operation is only available for purchases previously &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/purchase-operations.html#confirm-a-purchase&#34;&gt;authorized&lt;/a&gt; with state &lt;em&gt;PreAuthorized&lt;/em&gt;. If you’re interested in refunding a purchase that has already been captured, please refer to the &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html&#34;&gt;refunds&lt;/a&gt; section for detailed instructions.&lt;/p&gt;
+&lt;h2 id=&#34;cancelling-a-purchase&#34;&gt;Cancelar una compra&lt;/h2&gt;
+&lt;p&gt;La anulación es el acto de cancelar una transacción preautorizada antes de que se finalice o liquide. Cuando se anula una transacción, es como si la compra nunca hubiera ocurrido y se libera el cupo del límite autorizado. Las anulaciones generalmente ocurren antes de que el pago se procese completamente, por lo que no se cobra al medio de pago del cliente por la transacción anulada.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Note&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Pre-authorization feature may not be supported by all payment methods and it&amp;rsquo;s available for the following countries.&lt;/p&gt;
+    Versiones anteriores de la API&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La documentación de la API versión V1 está disponible en la sección de &lt;a href=&#34;../../../../es/docs/versions/purchase-api-v2/refunds-and-voids.html#rollback-a-purchase&#34;&gt;Legacy&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;La operación de &lt;em&gt;&lt;strong&gt;cancelación&lt;/strong&gt;&lt;/em&gt; solo está disponible para compras previamente &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/card_operations.html#capturar-una-compra&#34;&gt;autorizadas&lt;/a&gt; con estado &lt;em&gt;PreAuthorized&lt;/em&gt;. Si está interesado en reembolsar una compra que ya ha sido capturada, consulte la sección de &lt;a href=&#34;../../../../es/docs/purchase-workflow/refunds.html&#34;&gt;reembolsos&lt;/a&gt; para obtener instrucciones detalladas.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;La función de preautorización puede no estar soportada por todos los métodos de pago y está disponible para los siguientes países:&lt;/p&gt;
 &lt;div style=&#34;text-align: center;&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;../../../../en/docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;../../../../en/docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../../../es/docs/payment-methods/brazil.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagBR.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/chile.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCL.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/colombia.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagCO.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;../../../../es/docs/payment-methods/uruguay.html&#34;&gt;&lt;img src=&#34;../../../../assets/Flags/FlagUY.png&#34; width=&#34;30&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;request-url-1&#34;&gt;Request URL&lt;/h3&gt;
-&lt;p&gt;You must invoke a &lt;strong&gt;POST&lt;/strong&gt; request to the following URLs according to your needs.&lt;/p&gt;
+&lt;h3 id=&#34;request-url-1&#34;&gt;URL de la solicitud&lt;/h3&gt;
+&lt;p&gt;Debe realizar una petición &lt;strong&gt;POST&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;request-parameters-1&#34;&gt;Request parameters&lt;/h3&gt;
-&lt;p&gt;Request body is not required to cancel a purchase. If you don&amp;rsquo;t send any request the purchase will be voided with its original amount.&lt;/p&gt;
-&lt;p&gt;The amount to be void may vary with respect to the one that was sent in the initial Purchase process, but the new amount cannot be higher than the original amount.&lt;/p&gt;
+&lt;h3 id=&#34;request-parameters-1&#34;&gt;Parámetros de la solicitud&lt;/h3&gt;
+&lt;p&gt;No se requiere el body en la solicitud para cancelar una compra. Si no envía ninguna solicitud, la compra se anulará con su valor original.&lt;/p&gt;
+&lt;p&gt;El valor a anular puede variar respecto al que se envió en el proceso de Compra inicial, pero el nuevo valor no puede ser mayor que el valor original.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Note&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;The availability of &lt;strong&gt;partial cancellation functionality may vary depending on the country&lt;/strong&gt;. For detailed information about this feature in your specific region, please consult with your Account Manager.&lt;/p&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;La disponibilidad de la &lt;strong&gt;funcionalidad de cancelación parcial puede variar según el país&lt;/strong&gt;. Para obtener información detallada sobre esta función en su región específica, consulte con su Account Manager.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&#34;request-example-partial-cancellation&#34;&gt;Request example (Partial Cancellation)&lt;/h4&gt;
-&lt;p&gt;To perform the cancel of the purchase  with a lower amount than the original, you need to include the new amount in the request. For example:&lt;/p&gt;
+&lt;h4 id=&#34;request-example-partial-cancellation&#34;&gt;Ejemplo de solicitud (Cancelación Parcial)&lt;/h4&gt;
+&lt;p&gt;Para realizar la cancelación de la compra con un valor menor al original, debe incluir el nuevo valor en la solicitud. Por ejemplo:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;response-parameters&#34;&gt;Response parameters&lt;/h3&gt;
-&lt;p&gt;When you perform the cancel, you will get the same &lt;code&gt;Response&lt;/code&gt; object for the &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;purchase object&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Status:&lt;/strong&gt; &lt;code&gt;CANCELLED&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;response-parameters&#34;&gt;Parámetros de respuesta&lt;/h3&gt;
+&lt;p&gt;Cuando realiza la cancelación, obtendrá el mismo objeto &lt;code&gt;Response&lt;/code&gt; que para el &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;objeto de compra&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;code&gt;COMPLETED&lt;/code&gt; - &lt;strong&gt;Estado:&lt;/strong&gt; &lt;code&gt;CANCELLED&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -1421,16 +1573,16 @@ Donde:
       <description>
         
         
-        &lt;p&gt;3D Secure (3DS) is an authentication protocol designed to enhance the security of online transactions by verifying the cardholder before completing the payment. In Bamboo’s 3DS Pass-through flow, authentication is handled via an external authentication provider, known as an External MPI (Merchant Plug-In). This method allows merchants to use third-party authentication data to securely complete transactions without performing the authentication directly within Bamboo’s platform. It’s an ideal solution for merchants who prefer or require external control over the authentication process.&lt;/p&gt;
-&lt;h2 id=&#34;threeds-object&#34;&gt;ThreeDS Object&lt;/h2&gt;
-&lt;h3 id=&#34;request-fields&#34;&gt;Request Fields&lt;/h3&gt;
+        &lt;p&gt;3D Secure (3DS) es un protocolo de autenticación diseñado para aumentar la seguridad de las compras con tarjeta. En el flujo de 3DS Pass-through de Bamboo, la autenticación se maneja a través de un proveedor de autenticación externo, conocido como MPI Externo. Este método permite a los comercios utilizar los datos de autenticación de terceros y enviarlos directamente al adquirente. Es una solución ideal para comercios que prefieren y requieren un control total del proceso de autenticación.&lt;/p&gt;
+&lt;h2 id=&#34;threeds-object&#34;&gt;Objeto ThreeDS&lt;/h2&gt;
+&lt;h3 id=&#34;request-fields&#34;&gt;Campos de la Solicitud&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -1438,47 +1590,47 @@ Donde:
 &lt;td&gt;&lt;code&gt;ThreeDSAuthMethod&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;td&gt;3D Secure authentication method used: &lt;code&gt;&amp;quot;EXTERNAL&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;DISABLED&amp;quot;&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Método de autenticación 3D Secure utilizado: &lt;code&gt;&amp;quot;EXTERNAL&amp;quot;&lt;/code&gt; o &lt;code&gt;&amp;quot;DISABLED&amp;quot;&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;3D Secure information when &lt;code&gt;ThreeDSAuthMethod=&amp;quot;EXTERNAL&amp;quot;&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Información de 3D Secure cuando &lt;code&gt;ThreeDSAuthMethod=&amp;quot;EXTERNAL&amp;quot;&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt; → &lt;code&gt;Eci&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;3D Secure ECI code.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Código ECI de 3D Secure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt; → &lt;code&gt;Xid&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;3D Secure transaction identifier.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Identificador de transacción 3D Secure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt; → &lt;code&gt;Cavv&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Cardholder Authentication Verification Value (CAVV) in 3D Secure.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Valor de Verificación de Autenticación del Titular de la Tarjeta (CAVV) en 3D Secure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt; → &lt;code&gt;Version&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;3D Secure protocol version.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Versión del protocolo 3D Secure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ThreeDS&lt;/code&gt; → &lt;code&gt;TransactionId&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Transaction ID in 3D Secure.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;ID de transacción en 3D Secure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;request-example-using-the-purchase-for-pci-compliant-merchants&#34;&gt;Request Example using the Purchase for PCI-Compliant Merchants&lt;/h3&gt;
+&lt;h3 id=&#34;request-example-using-the-purchase-for-pci-compliant-merchants&#34;&gt;Ejemplo de Solicitud utilizando la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#direct-purchase-for-pci-compliant-merchants&#34;&gt;Compra Directa&lt;/a&gt;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardHolderName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;John Doe&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -1525,7 +1677,7 @@ Donde:
     </item>
     
     <item>
-      <title>Docs: Network Tokens</title>
+      <title>Docs: Tokens de Red</title>
       <link>/es/docs/purchase-workflow/purchases/network_tokens.html</link>
       <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
       
@@ -1533,54 +1685,54 @@ Donde:
       <description>
         
         
-        &lt;p&gt;Network Tokens replace sensitive card details during transaction processing, significantly enhancing security across the payment ecosystem. By substituting actual card numbers with secure tokens, this method reduces the risk of exposing financial information and minimizes the potential for fraud.&lt;/p&gt;
-&lt;h2 id=&#34;networktoken-object&#34;&gt;NetworkToken Object&lt;/h2&gt;
+        &lt;p&gt;Los Tokens de Red reemplazan la información sensible de las tarjetas durante el procesamiento de transacciones, lo que mejora significativamente la seguridad en todo el ecosistema de pagos. Al sustituir los números reales de las tarjetas por tokens seguros, este método reduce el riesgo de exponer información financiera y minimiza las posibilidades de fraude. En lugar de utilizar los números reales de las tarjetas, Bamboo soporta el envío de Tokens de Red al adquirente.&lt;/p&gt;
+&lt;h2 id=&#34;networktoken-object&#34;&gt;Objeto NetworkToken&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Mandatory?&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Token&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Card network token.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Token de red de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Cryptogram&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;The unique cryptogram generated by the issuer for the network token used in the transaction.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;El criptograma único generado por el emisor para el token de red utilizado en la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Expiration_Month&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Two-Digits number representing the network token expiration month.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Número de dos dígitos que representa el mes de vencimiento del token de red.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Expiration_Year&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Two-Digits number representing the network token expiration year.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Número de dos dígitos que representa el año de vencimiento del token de red.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;CardHolderName&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
-&lt;td&gt;Cardholder&amp;rsquo;s name.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
+&lt;td&gt;Nombre del titular de la tarjeta.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;request-example&#34;&gt;Request Example&lt;/h3&gt;
-&lt;p&gt;Below is an example of a payment using a network token:&lt;/p&gt;
+&lt;h3 id=&#34;request-example&#34;&gt;Ejemplo de Solicitud&lt;/h3&gt;
+&lt;p&gt;A continuación se muestra un ejemplo de un request usando la Direct Purchase con un token de red:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethodId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;VSC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TargetCountryISO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UYU&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
