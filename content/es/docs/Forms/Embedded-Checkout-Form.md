@@ -41,9 +41,9 @@ var main_iframe = document.createElement("iframe");
 var iframeDiv = $("#iframeDiv");
 main_iframe.id = "custom_iframe";
 
-// Append iframe to div
+// Append iframe to div_
 iframeDiv.append(main_iframe);
-```
+``` 
 <br>
 
 O cree el iframe directamente en `HTML`:
