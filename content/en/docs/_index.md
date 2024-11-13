@@ -3,7 +3,7 @@ title: "Payins"
 linkTitle: "Payins Integration Guide"
 date: 2023-03-02
 description: >
-  Bamboo Payment lets merchants accept payments by supporting all the payment methods available in each country.
+  Bamboo Payment lets merchants accept payments by supporting all the payment methods available in each country. 
 menu:
   main:
     name: Payins
