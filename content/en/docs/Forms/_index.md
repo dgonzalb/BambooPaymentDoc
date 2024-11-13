@@ -136,3 +136,58 @@ The **token** object is returned in the **onOperationSuccess** hook executed upo
 | `CardType` | `string` | Payment method or card type, possible values: `CreditCard`, `DebitCard`, `PhysicalNetwork`, `PrePaid` |
 | `CardExpMonth` | `numeric[2]` | Card expiration month. |
 | `CardExpYear` | `numeric[2]` | Card expiration year. |
+
+## CVV Form
+
+The **CVV Form** is specifically designed to capture the **Card Verification Value (CVV)** found on the back of the physical card. This form is used when it's necessary to validate a transaction with the CVV, generally in recurring payments or purchases where the card information has already been previously tokenized.
+
+Typical use: When a customer has previously stored their credit card through the tokenization process but is asked to enter their CVV to validate or complete a transaction, providing an additional layer of security.
+
+## Method renderCVVForm
+
+Once you've imported the script that points to the Bamboo forms, you'll have access to the **renderCVVForm** method, which renders a form dedicated exclusively to capturing the customer's CVV.
+
+```javascript
+BambooForm.renderCVVForm(url, configurationCVV);
+```
+<br/> 
+<div style="text-align: center"><img src="/assets/Formulario_cvv.png" alt="CVV Form" width="300"/></div>
+
+### Configuration Parameters
+
+| Parameter                        | Type       | Mandatory?   | Description                                                                                                                     |
+|----------------------------------|------------|:-----------:|---------------------------------------------------------------------------------------------------------------------------------|
+| `url`                            | `string`   | Yes         | The URL containing the session data and the customer's payment profile information. Includes `key`, `session_id`, `paymentProfileId`, `brand`, and the last four digits of the card. This URL is received as a response when attempting to execute a purchase if CVV verification is required. |
+| `containerId`                    | `string`   | Yes         | ID of the HTML container where the form will be displayed.                                                                     |
+| `metadata`                       | `object`   | Yes         | Configures information related to the session and the transaction.                                                             |
+| `logoUrl`                        | `string`   | No          | URL of the logo that will appear on the form.                                                                                  |
+| `locale`                         | `string`   | No          | Language of the form, using an ISO locale code.                                                                                |
+| `hooks`                          | `object`   | Yes         | Callback functions to handle form events.                                                                                      |
+| `hooks` → `onOperationSuccess`   | `function` | Yes         | Callback executed upon successful CVV validation. Receives the token as a parameter.                                           |
+| `hooks` → `onOperationFinalize`  | `function` | No          | Optional callback executed when the operation is finalized.                                                                    |
+| `hooks` → `onOperationError`     | `function` | No          | Optional callback that handles errors during CVV validation.                                                                   |
+| `hooks` → `onApplicationLoaded`  | `function` | No          | Callback executed when the form has been loaded correctly.                                                                     |
+
+
+### Usage Example
+```javascript
+<script>
+BambooForm.renderCVVForm(
+  '<https://api.stage.bamboopayment.com/v1/Capture/?key=FEdJ84hzdIKBY0gyC7-NDG_I56ONV7HQ&session_id=CA_51864eaf-1603-4fe8-8720-ae8c569ea702&paymentProfileId=375108&brand=MasterCard&lastFour=4008>',
+  {
+    metadata: {
+      locale: 'es',
+      logoUrl: '<http://www.example.com/>'
+    },
+    hooks: {
+      onOperationSuccess: () => {
+        console.log('Operation successful');
+      },
+      onOperationError: (error) => {
+        console.error('Error in CVV validation:', error);
+      }
+    }
+  }
+);
+</script>
+```

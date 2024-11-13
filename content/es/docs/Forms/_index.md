@@ -132,3 +132,57 @@ El objeto **token** se devuelve en el hook **onOperationSuccess** ejecutado al c
 | `CardType` | `string` | Tipo de medio de pago o tarjeta, valores posibles: `CreditCard`, `DebitCard`, `PhysicalNetwork`, `PrePaid` |
 | `CardExpMonth` | `numeric[2]` | Mes de vencimiento de la tarjeta. |
 | `CardExpYear` | `numeric[2]` | Año de vencimiento de la tarjeta. |
+
+
+## Formulario CVV
+
+El **Formulario CVV** está diseñado específicamente para capturar el **código de verificación de la tarjeta (CVV)**, que se encuentra en el reverso de la tarjeta física. Este formulario se utiliza cuando se requiere validar una transacción con el CVV, generalmente en pagos recurrentes o en compras en las que la información de la tarjeta ya ha sido previamente tokenizada.
+Uso típico: Cuando un cliente ha almacenado previamente su tarjeta de crédito a través del proceso de tokenización, pero se le solicita que ingrese su CVV para validar o completar una transacción, proporcionando una capa adicional de seguridad.
+
+## Método renderCVVForm
+
+Una vez importado el Script que apunta a los formularios de Bamboo, tendrás acceso al método **renderCVVForm** que renderiza un formulario dedicado exclusivamente a la captura del CVV del cliente.
+
+```javascript
+BambooForm.renderCVVForm(url, configurationCVV);
+```
+<br/>
+<div style="text-align: center"><img src="/assets/Formulario_cvv.png" alt="Formulario de CVV" width="300"/></div>
+
+### Parámetros de configuración
+
+| Parámetro               | Tipo       | ¿Obligatorio? | Descripción                                                                                                                     |
+|-------------------------|------------|:-------------:|---------------------------------------------------------------------------------------------------------------------------------|
+| `url`                   | `string`   | Sí            | La URL con los datos de la sesión y la información del perfil de pago del cliente. Incluye `key`, `session_id`, `paymentProfileId`, `brand`, y los últimos cuatro dígitos de la tarjeta. Esta URL se recibe como respuesta al querer ejecutar una compra si se le solicita verificación por CVV. |
+| `containerId`           | `string`   | Sí            | ID del contenedor HTML donde se mostrará el formulario.                                                                         |
+| `metadata`              | `object`   | Sí            | Configura la información relacionada con la sesión y la transacción.                                                            |
+| `logoUrl`               | `string`   | No            | URL del logo que aparecerá en el formulario.                                                                                    |
+| `locale`                | `string`   | No            | Idioma del formulario, usando un código de locales ISO.                                                                         |
+| `hooks`                 | `object`   | Sí            | Funciones de callback para manejar eventos del formulario.                                                                      |
+| `hooks` → `onOperationSuccess`    | `function` | Sí            | Callback ejecutado al completar exitosamente la validación del CVV. Recibe el token como parámetro.                             |
+| `hooks` → `onOperationFinalize`   | `function` | No            | Callback opcional ejecutado cuando se finaliza la operación.                                                                    |
+| `hooks` → `onOperationError`      | `function` | No            | Callback opcional que maneja errores durante la validación del CVV.                                                             |
+| `hooks` → `onApplicationLoaded`   | `function` | No            | Callback ejecutado cuando el formulario ha sido cargado correctamente.                                                          |
+
+### Ejemplo de uso
+```javascript
+<script>
+BambooForm.renderCVVForm(
+  '<https://api.stage.bamboopayment.com/v1/Capture/?key=FEdJ84hzdIKBY0gyC7-NDG_I56ONV7HQ&session_id=CA_51864eaf-1603-4fe8-8720-ae8c569ea702&paymentProfileId=375108&brand=MasterCard&lastFour=4008>',
+  {
+    metadata: {
+      locale: 'es',
+      logoUrl: '<http://www.example.com/>'
+    },
+    hooks: {
+       onOperationSuccess: () => {
+        console.log('Operation successful');
+      },
+      onOperationError: (error) => {
+        console.error('Error in CVV validation:', error);
+      }
+    }
+  }
+);
+</script>
+```
