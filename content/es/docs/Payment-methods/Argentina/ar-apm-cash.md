@@ -1,5 +1,5 @@
 ---
-title: "Efectivo / Redes de cobranza"
+title: "Efectivo"
 linkTitle: "Efectivo"
 date: 2023-05-08T07:28:16-05:00
 description: >

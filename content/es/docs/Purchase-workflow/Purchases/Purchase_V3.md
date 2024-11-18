@@ -50,7 +50,7 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 |-----------|------|:------------:|-------------|
 | `TrxToken` | `string` | No<sup>1</sup> | Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas. |
 | `NetworkToken` | `object` | No<sup>1</sup> | Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red. |
-| `PaymentMethodId` | `string` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto [PaymentMethodId](/es/docs/getting-started/payment-methods.html). |
+| `PaymentMethodId` | `string` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla [medios de pago](/es/docs/getting-started/payment-methods.html). |
 | `UniqueID` | `string` | No | Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
 | `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/es/docs/payment-methods.html) admitan la función de pre-autorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato `ISO-3166-1`. |
@@ -76,7 +76,7 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `DocumentType` | `string` | No | Tipo de documento. (Formato `DOCUMENTO`.`PAÍS`)  |
-| `Customer` → `Email` | `string` | No | Dirección de correo electrónico del cliente. |
+| `Customer` → `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 | `Address` | `object` | No | Dirección de envío del cliente. |
 
 #### Objeto Address {#address-object}
@@ -266,7 +266,7 @@ Debe realizar una petición **POST** a las siguientes URLs según sus necesidade
 
 <br>
 
-Los campos **CardData**, **PaymentMethod**, **NetworkToken** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.
+Los campos **CardData**, **PaymentMethodId**, **NetworkToken** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.
 
 
 ## Respuesta del Request. {#response}
