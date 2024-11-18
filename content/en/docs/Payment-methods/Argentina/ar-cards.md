@@ -13,23 +13,18 @@ tags: ["subtopic"]
 * **Purchases without CVV**: Allows tokenization and recurrence.<br>In the case of tokenization, the API generates a charge for a minimum of **ARS 3**, which is refunded to validate the cardholder data. With this token, it is possible to make purchases without CVV.
 
 ## Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
+### Basics {#request-parameters}
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#request-parameters) article for detailed information on authentication, basic purchase parameters, and response languages.
+
+### Mandatory and conditional {#request-parameters}
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
-| `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
 | `Customer` → `DocumentType` | `string` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/argentina.html#document-types) to see the possible values. |
-| `Customer` → `DocumentNumber` | `string` | No | Customer's Document Number. |
-| `Customer` → `PhoneNumber` | `string` | No | Customer's phone number. |
-| `Customer` → `Address` → `Country` | `string` | No | Customer's Country. |
 | `Customer` → `Address` → `State` | `string` | No<sup>*</sup> | Customer's State.<br><sup>*</sup>_This parameter is required to calculate **II.BB** Tax. Refer to [provinces](/en/docs/payment-methods/argentina.html#argentina-provinces) to know its possible values_. |
-| `Customer` → `Address` → `City` | `string` | No | Customer's City. |
-| `Customer` → `Address` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 
 {{% alert title="Info" color="info"%}}
 

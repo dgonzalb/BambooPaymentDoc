@@ -23,10 +23,12 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
+| `PaymentMethodId` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |
+| `Customer` → `Address` → `State` | `string` | No<sup>*</sup> | Estado del cliente.<br><sup>*</sup>_Este parámetro es requerido para calcular el impuesto de **II.BB**. Consulte [provincias](/es/docs/payment-methods/argentina.html#argentina-provinces) para saber sus posibles valores_. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. **Si no envía este campo, la API asignará un valor por defecto.** |
 
 #### Ejemplo del Request {#request-example}
 {{< highlight json >}}
@@ -42,7 +44,7 @@ En el Response, se encuentran los siguientes parámetros:
 | `Response` → `MetadataOut` → `PaymentCode` | `string` | Referencia de pago generada por **Pago Fácil**. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha en la que caducará el pago.<br>Formato _DD/MM/AAAA_. |
 
-Debe redirigir a su cliente a la URL mostrada en el parámetro `Response.MetadataOut.PaymentUrl`, donde podrá imprimir el comprobante y completar el pago en una oficina de **Pago Fácil**.
+Debe redirigir a su cliente a la URL mostrada en el parámetro `Response.Action.URL`, donde podrá imprimir el comprobante y completar el pago en una oficina de **Pago Fácil**.
 
 <img src="/assets/PagoFacilVoucher.png" width="60%" alt="PrintScreen"/>
 
