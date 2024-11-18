@@ -50,7 +50,7 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 |-----------|------|:------------:|-------------|
 | `TrxToken` | `string` | No<sup>1</sup> | Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas. |
 | `NetworkToken` | `object` | No<sup>1</sup> | Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red. |
-| `PaymentMethod` | `integer` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto [PaymentMethod](/es/docs/getting-started/payment-methods.html). |
+| `PaymentMethodId` | `string` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto [PaymentMethodId](/es/docs/getting-started/payment-methods.html). |
 | `UniqueID` | `string` | No | Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
 | `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/es/docs/payment-methods.html) admitan la función de pre-autorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato `ISO-3166-1`. |
@@ -213,8 +213,8 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 
 
 {{% alert title="Notas" color="info"%}}
-* <sup>1</sup> Los parámetros `PaymentMethod` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.
-* <sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de [Países y medios de pago](/en/docs/payment-methods.html) para verificar la disponibilidad.
+* <sup>1</sup> Los parámetros `PaymentMethodId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.
+* <sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de [Países y medios de pago](/es/docs/payment-methods.html) para verificar la disponibilidad.
 * <sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
 * <sup>4</sup> Al utilizar [tarjetas en Brasil]({{< ref br-cards.md>}}), la descripción es obligatoria y debe usar un formato fijo, como se explica en los [parámetros de solicitud]({{< ref br-cards.md>}}#request-parameters).
 * Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de [Anti-fraude]({{< ref "Antifraud.md" >}}).
@@ -304,9 +304,8 @@ El objeto Action contiene información sobre los pasos adicionales requeridos pa
 | `Reason` | `string` | Razón de la acción solicitada. Valores posibles:<br>• `VERIFICATION_CODE_NEEDED:` Transacción pendiente de CVV, se requiere redirección a la "URL" para mostrar el formulario de ingreso del CVV.<br>• `REDIRECTION_NEEDED_EXTERNAL_SERVICE`: Se requiere una redirección a la "URL" para completar los detalles de la transacción. |
 | `URL` | `string` | URL de redirección para completar la acción requerida. |
 
-#### Objeto CardData {#carddata-object}
-
-El objeto CardData contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.
+#### Objeto PaymentMethod {#paymentmethod-object}
+El objeto PaymentMethod contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.
 
 | Parámetro | Tipo | Descripción |
 |---|---|---|
@@ -317,6 +316,7 @@ El objeto CardData contiene información detallada sobre el medio de pago utiliz
 | `Type` | `string` | Tipo de medio de pago (por ejemplo, CreditCard, DebitCard). |
 | `Expiration` | `string` | Fecha de vencimiento de la tarjeta en formato aaaaMM. |
 | `Last4` | `string` | Últimos 4 dígitos del número de la tarjeta. |
+
 
 ### Ejemplos de respuesta {#response-examples}
 

@@ -4,7 +4,7 @@ linkTitle: "Tokens de Red"
 date: 2023-08-02T08:43:44-05:00
 Description: >
   Bamboo soporta Tokens de Red para mejorar la seguridad de los pagos con tarjetas. Esta tecnología reemplaza la información sensible de las tarjetas por tokens seguros, reduciendo significativamente el riesgo de filtraciones de datos sensibles en el ecosistema de pagos.
-weight: 60
+weight: 70
 tags: ["subtopic"]
 ---
 Los Tokens de Red reemplazan la información sensible de las tarjetas durante el procesamiento de transacciones, lo que mejora significativamente la seguridad en todo el ecosistema de pagos. Al sustituir los números reales de las tarjetas por tokens seguros, este método reduce el riesgo de exponer información financiera y minimiza las posibilidades de fraude. En lugar de utilizar los números reales de las tarjetas, Bamboo soporta el envío de Tokens de Red al adquirente. 

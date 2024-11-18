@@ -4,7 +4,7 @@ linkTitle: "3DS Pass-through"
 date: 2024-08-02T08:43:44-05:00
 Description: >
   Bamboo soporta 3D Secure (3DS) como un pass-through con los adquirentes en Latinoamérica enviando le resultado de la autenticación del titular de la tarjeta al completar el pago.
-weight: 50
+weight: 60
 tags: ["subtopic"]
 ---
 
