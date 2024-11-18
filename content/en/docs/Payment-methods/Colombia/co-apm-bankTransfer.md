@@ -32,7 +32,6 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `State` | `string` | Yes | Customer's State. |
 | `Customer` → `Address` → `City` | `string` | Yes | Customer's City. |
 | `Customer` → `Address` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
-| `Customer` → `Address` → `AddressType` | `string` | Yes | Type of address. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Callback URL when the purchase status is `Rejected`. |

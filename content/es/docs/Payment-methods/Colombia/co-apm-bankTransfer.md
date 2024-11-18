@@ -32,7 +32,6 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `State` | `string` | Sí | Estado del cliente. |
 | `Customer` → `Address` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `Address` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
-| `Customer` → `Address` → `AddressType` | `string` | Sí | Tipo de dirección. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |
 | `Redirection` → `Url_Rejected` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Rejected`. |
