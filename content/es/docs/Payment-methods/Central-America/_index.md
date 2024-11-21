@@ -35,10 +35,10 @@ La siguiente tabla describe los tipos de documentos válidos para América Centr
 |  CI.CR        | 30                  | Cédula de identidad                                | CI          | Costa Rica  |
 |  DIMEX.CR     | 31                  | Documento de Identidad Migratoria para Extranjeros | DIMEX       | Costa Rica  |
 |  PA.CR        | 32                  | Pasaporte                                          | PA          | Costa Rica  |
-|  CI.CR        | 33                  | Cédula de identidad                                | CI          | Nicaragua   |
-|  PA.CR        | 34                  | Pasaporte                                          | PA          | Nicaragua   |
-|  RUC.CR       | 35                  | Registro Único de Contribuyente                    | RUC         | Nicaragua   |
-|  DUI.CR       | 42                  | Documento único de identidad                       | DUI         | El Salvador |
-|  PA.CR        | 43                  | Pasaporte                                          | PA          | El Salvador |
-|  NIT.CR       | 44                  | Número de identificación tributaria                | NIT         | El Salvador |
-|  NRC.CR       | 45                  | Número de Registro de Contribuyente                | NRC         | El Salvador |
+|  CI.NI        | 33                  | Cédula de identidad                                | CI          | Nicaragua   |
+|  PA.NI        | 34                  | Pasaporte                                          | PA          | Nicaragua   |
+|  RUC.NI       | 35                  | Registro Único de Contribuyente                    | RUC         | Nicaragua   |
+|  DUI.SV       | 42                  | Documento único de identidad                       | DUI         | El Salvador |
+|  PA.SV        | 43                  | Pasaporte                                          | PA          | El Salvador |
+|  NIT.SV       | 44                  | Número de identificación tributaria                | NIT         | El Salvador |
+|  NRC.SV       | 45                  | Número de Registro de Contribuyente                | NRC         | El Salvador |
