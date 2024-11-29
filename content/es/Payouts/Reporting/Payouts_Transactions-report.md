@@ -43,101 +43,51 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 {{% /alert %}}
 
 
-| Propiedad | Tipo | Descripción |
-|-----------|------|-------------|
-| `success` | `Boolean` | Indica si la solicitud fue exitosa |
-| `message` | `String` | Proporciona información adicional sobre la respuesta |
-| `data` | `Array` | Array de objetos de transacción que contienen los siguientes campos: |
-| `data` → `TransactionId` | `Integer` | Identificador único de la transacción |
-| `data` → `Type` | `String` | Tipo de transacción (ej. "Purchase", "Refund") |
-| `data` → `Created` | `Date-time` | Fecha y hora en que se creó la transacción |
-| `data` → `Status` | `String` | Estado de la transacción (ej. "Approved", "Rejected") |
-| `data` → `Error_code` | `String` | Código de error (si es aplicable) |
-| `data` → `Amount` | `Decimal` | Monto de la transacción |
-| `data` → `Currency` | `String` | Moneda de la transacción |
-| `data` → `Country` | `String` | País de la transacción |
-| `data` → `Transaction_source` | `String` | Fuente de la transacción |
-| `data` → `Tenant` | `String` | Nombre del tenant |
-| `data` → `Merchant_account` | `String` | Nombre de la cuenta del merchant |
-| `data` → `Payment_method_type` | `String` | Tipo de método de pago utilizado |
-| `data` → `Payment_method` | `String` | Medio de pago específico utilizado |
-| `data` → `Card_bin` | `String` | Número de Identificación Bancaria (BIN) en caso de que sea una tarjeta de crédito (6 dígitos). |
-| `data` → `Card_last4` | `String` | Últimos 4 dígitos de la tarjeta |
-| `data` → `Order` | `String` | Identificador de la orden |
-| `data` → `Unique_id` | `String` | Identificador único de la transacción |
-| `data` → `Authorization_code` | `String` | Código de autorización de la transacción en el adquirente |
-| `data` → `Installments` | `Integer` | Número de cuotas (si es aplicable) |
-| `data` → `Issuer` | `String` | Nombre del banco emisor |
-| `data` → `Customer_name` | `String` | Nombre completo del cliente |
-| `data` → `Customer_document_type` | `String` | Tipo de documento de identificación |
-| `data` → `Customer_document_number` | `String` | Número de documento de identificación |
-| `data` → `Customer_email` | `String` | Dirección de correo electrónico del cliente |
-| `total` | `Integer` | Número total de registros que coinciden con la consulta |
-| `page` | `Integer` | Número de página |
-| `pageSize` | `Integer` | Número de registros por página |
-| `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
+| Propiedad                               | Tipo          | Descripción                                                                                                          |
+|-------------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------|
+| `data`                              | `array`       | Lista de objetos que representan detalles del Payout.                                                               |
+| `data` → `payoutId`                 | `integer`     | Identificador único del Payout.                                                                                     |
+| `data` → `created`                  | `datetime`    | Fecha y hora de creación del Payout en formato ISO 8601.                                                            |
+| `data` → `lastUpdate`               | `datetime`    | Fecha y hora de la última actualización del Payout en formato ISO 8601.                                             |
+| `data` → `status`                   | `string`      | Estado del Payout. Ejemplo: `Rejected`.                                                                             |
+| `data` → `merchantId`               | `integer`     | Identificador único del comercio asociado.                                                                          |
+| `data` → `merchantName`             | `string`      | Nombre del comercio asociado.                                                                                       |
+| `data` → `merchantAccountId`        | `integer`     | Identificador único de la cuenta del comercio.                                                                      |
+| `data` → `merchantAccountName`      | `string`      | Nombre de la cuenta del comercio.                                                                                   |
+| `data` → `inputCurrency`            | `string(3)`   | Código ISO de la moneda de entrada. Ejemplo: `USD`.                                                                 |
+| `data` → `inputAmount`              | `decimal`     | Monto del Payout en la moneda de entrada.                                                                           |
+| `data` → `exchangeRate`             | `decimal`     | Tasa de cambio aplicada al Payout.                                                                                  |
+| `data` → `currency`                 | `string(3)`   | Código ISO de la moneda de salida. Ejemplo: `PEN`.                                                                  |
+| `data` → `amount`                   | `decimal`     | Monto del Payout en la moneda de salida.                                                                            |
+| `data` → `merchantReference`        | `string`      | Referencia única proporcionada por el cliente para identificar el Payout.                                           |
+| `data` → `customerFirstName`        | `string`      | Nombre del beneficiario.                                                                                            |
+| `data` → `customerLastName`         | `string`      | Apellido del beneficiario.                                                                                          |
+| `data` → `customerDocumentType`     | `string`      | Tipo de documento del beneficiario. Ejemplo: `CC`.                                                                  |
+| `data` → `customerDocumentNumber`   | `string`      | Número del documento del beneficiario.                                                                              |
+| `data` → `customerEmail`            | `string`      | Correo electrónico del beneficiario. Ejemplo: `Santa.Wiegand@gmail.com`.                                            |
+| `data` → `customerPhone`            | `string`      | Teléfono del beneficiario. Ejemplo: `850.622.3790 x003`.                                                            |
+| `data` → `customerAddress`          | `string`      | Dirección del beneficiario.                                                                                         |
+| `data` → `bankCode`                 | `string`      | Código del banco asociado al Payout. Ejemplo: `885`.                                                                |
+| `data` → `bankName`                 | `string`      | Nombre del banco asociado al Payout.                                                                                |
+| `data` → `bankType`                 | `string`      | Tipo de cuenta bancaria. Ejemplo: `2` para cuenta de ahorros.                                                       |
+| `data` → `bankBranch`               | `string`      | Sucursal bancaria asociada.                                                                                         |
+| `data` → `bankNumber`               | `string`      | Número de cuenta bancaria.                                                                                          |
+| `data` → `bankCountry`              | `string(2)`   | Código ISO del país del banco. Ejemplo: `US`.                                                                       |
+| `data` → `errorCode`                | `string`      | Código del error en caso de fallo. Ejemplo: `902`.                                                                  |
+| `data` → `errorDescription`         | `string`      | Descripción del error en caso de fallo. Ejemplo: `Invalid bank account`.                                             |
+| `data` → `paymentMethodType`        | `string`      | Tipo de método de pago. Ejemplo: `BankTransfer`.                                                                    |
+| `data` → `paymentMethod`            | `string`      | Método de pago utilizado. Ejemplo: `Payout`.                                                                        |
+| `data` → `pixRandom`                | `string`      | Clave aleatoria para el pago mediante PIX.                                                                          |
+| `data` → `pixPhone`                 | `string`      | Número de teléfono para el pago mediante PIX.                                                                       |
+| `data` → `pixDocument`              | `string`      | Documento asociado al pago mediante PIX.                                                                            |
+| `data` → `pixEmail`                 | `string`      | Correo electrónico asociado al pago mediante PIX.                                                                   |
+| `total`                             | `integer`     | Número total de registros en la respuesta.                                                                          |
+| `page`                              | `integer`     | Página actual en los resultados paginados.                                                                          |
+| `pageSize`                          | `integer`     | Tamaño de la página actual en los resultados paginados.                                                             |
+| `errors`                            | `object`      | Detalles de errores si los hubiera.                                                                                 |
+
 
 ### Ejemplo del Response {#response-example}
-```json
-{
-  "Response": {
-    "Data": [
-      {
-        "TransactionId": 15660802,
-        "Type": "Purchase",
-        "Created": "2024-08-01T21:34:34.1308881",
-        "Status": "Approved",
-        "Amount": 4279,
-        "Currency": "BRL",
-        "Country": "BR",
-        "Transaction_source": "DirectPurchase",
-        "Tenant": "Bamboo.BR",
-        "Merchant_account": "Loja Virtual BR",
-        "Payment_method_type": "PrePaid",
-        "Payment_method": "VISA",
-        "Card_bin": "426717",
-        "Card_last4": "5636",
-        "Order": "f4bb4b41-2476-41ce-ac7a-ad3e6e50d77e",
-        "Unique_id": "f922b26e-76af-476d-aada-502a46e3c365",
-        "Authorization_code": "202597",
-        "Installments": 1,
-        "Issuer": "VISA",
-        "Customer_name": "Maria Silva",
-        "Customer_document_type": "24",
-        "Customer_document_number": "12345678900",
-        "Customer_email": "maria.silva@mail.com"
-      },
-      {
-        "TransactionId": 15919451,
-        "Type": "Refund",
-        "Created": "2024-08-04T14:22:43.4766824",
-        "Status": "Rejected",
-        "Error_code": "TR019",
-        "Amount": 8560,
-        "Currency": "BRL",
-        "Country": "BR",
-        "Transaction_source": "DirectPurchase",
-        "Tenant": "Bamboo.BR",
-        "Merchant_account": "Loja Online BR",
-        "Payment_method_type": "PrePaid",
-        "Payment_method": "MasterCard",
-        "Card_bin": "569130",
-        "Card_last4": "8461",
-        "Order": "9cdc4d58-3aa9-4f2c-b204-8c2c96ab6bd7",
-        "Unique_id": "b5caf213-d76e-4d15-b691-6b0fccb16e86",
-        "Authorization_code": "526661",
-        "Installments": 1,
-        "Issuer": "MasterCard",
-        "Customer_name": "João Santos",
-        "Customer_document_type": "24",
-        "Customer_document_number": "98765432100",
-        "Customer_email": "joao.santos@mail.com"
-      }
-    ],
-    "Page": 2,
-    "PageSize": 2,
-    "Total": 4
-  },
-  "Errors": []
-}
-```
+{{< highlight json >}}
+{{< Payouts/Reporting/reportingPayouts_response >}}
+{{< /highlight >}}
