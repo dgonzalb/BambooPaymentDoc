@@ -4,7 +4,7 @@ linkTitle: "Get a Purchase"
 date: 2024-08-02T08:46:32-05:00
 Description: >
    GET Purchase allows merchants to promptly address transaction discrepancies and retrieve the details of a specific purchase transaction.
-weight: 20
+weight: 30
 tags: ["subtopic"]
 ---
 

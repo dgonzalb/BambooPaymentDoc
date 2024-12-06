@@ -440,7 +440,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 &lt;li&gt;&lt;sup&gt;3&lt;/sup&gt; Este objeto no es obligatorio si crea la compra utilizando &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types/registered-users.html&#34;&gt;&lt;em&gt;CommerceToken&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;sup&gt;4&lt;/sup&gt; Al utilizar &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html&#34;&gt;tarjetas en Brasil&lt;/a&gt;, la descripción es obligatoria y debe usar un formato fijo, como se explica en los &lt;a href=&#34;../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters&#34;&gt;parámetros de solicitud&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de &lt;a href=&#34;../../../../es/docs/purchase-workflow/antifraud.html&#34;&gt;Anti-fraude&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Para obtener información detallada sobre los objetos &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/3d_secure.html&#34;&gt;3D Secure - 3DS&lt;/a&gt; y &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/network_tokens.html&#34;&gt;Network Token&lt;/a&gt;, consulte sus secciones correspondientes en esta documentación. &lt;strong&gt;PaymentMethod&lt;/strong&gt; es obligatorio cuando se envía un Network Token.&lt;/li&gt;
+&lt;li&gt;Para obtener información detallada sobre los objetos &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/3d_secure.html&#34;&gt;3D Secure - 3DS&lt;/a&gt; y &lt;a href=&#34;../../../../es/docs/purchase-workflow/customer-types/network_tokens.html&#34;&gt;Network Token&lt;/a&gt;, consulte sus secciones correspondientes en esta documentación. &lt;strong&gt;PaymentMethod&lt;/strong&gt; es obligatorio cuando se envía un Network Token.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;
 &lt;/div&gt;
@@ -925,6 +925,168 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 
 
 &lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Get de la Compra</title>
+      <link>/es/docs/purchase-workflow/purchases/card_validation.html</link>
+      <pubDate>Fri, 02 Aug 2024 08:46:32 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/purchases/card_validation.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;request-url&#34;&gt;URL de la solicitud&lt;/h2&gt;
+&lt;p&gt;Se requiere hacer una petición &lt;strong&gt;GET&lt;/strong&gt; a las siguientes URLs según sus necesidades:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Donde &lt;code&gt;{{TransactionId}}&lt;/code&gt; es el identificador de la transacción que desea consultar.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Uso de la API de Reportes&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Para análisis de transacciones en masa y generación de informes, consulte nuestra &lt;a href=&#34;../../../../es/docs/reporting/transactions-report.html&#34;&gt;API de Reporte de Transacciones&lt;/a&gt;, optimizada para manejar grandes volúmenes de datos y generar informes detallados.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;response-parameters&#34;&gt;Parámetros de respuesta&lt;/h2&gt;
+&lt;p&gt;La estructura de respuesta para esta operación es idéntica a la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;respuesta estándar de compra&lt;/a&gt;. Esto garantiza consistencia entre diferentes tipos de transacciones y simplifica los procesos de integración.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TransactionId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Identificador único de la transacción. Un número de 19 dígitos enviado como cadena por compatibilidad.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Result&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Resultado de la transacción. &lt;code&gt;COMPLETED&lt;/code&gt; o &lt;code&gt;ACTION_REQUIRED&lt;/code&gt;. Consulte el objeto &amp;ldquo;Action&amp;rdquo; para obtener instrucciones.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Estado actual de la transacción (por ejemplo, Aprobada, Rechazada).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ErrorCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código de error si la transacción fue rechazada.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ErrorDescription&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Descripción detallada del error si la transacción fue rechazada.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Created&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Marca de tiempo de cuándo se creó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AuthorizationDate&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Marca de tiempo de cuándo se autorizó la transacción, en formato &lt;strong&gt;ISO 8601&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AuthorizationCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código único proporcionado por el emisor para confirmar la autorización de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Amount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto total de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Currency&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Código de la moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según los acuerdos comerciales.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Installments&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Número de cuotas de pago para la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TaxableAmount&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto sujeto a impuestos.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Tip&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Monto de la propina.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Enlace para acceder a detalles adicionales de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;MetadataOut&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Metadatos adicionales devueltos con la respuesta de la transacción.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Action&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Detalles de las acciones requeridas cuando el Resultado es &amp;ldquo;ACTION_REQUIRED&amp;rdquo;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PaymentMethod&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;object&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Información del medio de pago utilizado&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;response-example&#34;&gt;Ejemplo de respuesta&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COMPLETED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;APPROVED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ErrorDescription&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2024-08-07T17:51:54.620&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2024-08-07T17:51:56.879&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;AuthorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;839936&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BRL&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Installments&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TaxableAmount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Tip&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Url&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.stage.bamboopayment.com/Purchase/79632697147789184&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;MetadataOut&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Action&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Brand&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Visa&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardOwner&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;João Silva&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Bin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;450799&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;IssuerBank&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Banco do Brasil&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;203008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Last4&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4905&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;Todos los campos, estados y códigos de error descritos en la &lt;a href=&#34;../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response&#34;&gt;respuesta de compra&lt;/a&gt; se aplican igualmente al GET de la compra.&lt;/p&gt;
+&lt;/div&gt;
+
 
       </description>
     </item>
@@ -1670,78 +1832,6 @@ Donde:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Cavv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kBNcxqbmcXUxhAE1yKRHAAAAAAA=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Version&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2.2.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;97267598-FAE6-48F2-8083-C23433990FBC&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Tokens de Red</title>
-      <link>/es/docs/purchase-workflow/purchases/network_tokens.html</link>
-      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
-      
-      <guid>/es/docs/purchase-workflow/purchases/network_tokens.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;Los Tokens de Red reemplazan la información sensible de las tarjetas durante el procesamiento de transacciones, lo que mejora significativamente la seguridad en todo el ecosistema de pagos. Al sustituir los números reales de las tarjetas por tokens seguros, este método reduce el riesgo de exponer información financiera y minimiza las posibilidades de fraude. En lugar de utilizar los números reales de las tarjetas, Bamboo soporta el envío de Tokens de Red al adquirente.&lt;/p&gt;
-&lt;h2 id=&#34;networktoken-object&#34;&gt;Objeto NetworkToken&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parámetro&lt;/th&gt;
-&lt;th&gt;Tipo&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;¿Obligatorio?&lt;/th&gt;
-&lt;th&gt;Descripción&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Token&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Token de red de la tarjeta.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Cryptogram&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;El criptograma único generado por el emisor para el token de red utilizado en la transacción.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Expiration_Month&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Número de dos dígitos que representa el mes de vencimiento del token de red.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Expiration_Year&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;integer&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Número de dos dígitos que representa el año de vencimiento del token de red.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;CardHolderName&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
-&lt;td&gt;Nombre del titular de la tarjeta.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;request-example&#34;&gt;Ejemplo de Solicitud&lt;/h3&gt;
-&lt;p&gt;A continuación se muestra un ejemplo de un request usando la Direct Purchase con un token de red:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;PaymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;VSC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TargetCountryISO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UYU&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Amount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;NetworkToken&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5165850000000008&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Cryptogram&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ABCD1234EFGH5678IJKL91011MNOPQR&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration_Month&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Expiration_Year&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;35&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CardHolderName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Martín Rodríguez&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 

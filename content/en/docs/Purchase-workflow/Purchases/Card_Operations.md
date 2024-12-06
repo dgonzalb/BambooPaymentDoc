@@ -4,7 +4,7 @@ linkTitle: "Capture and Cancel"
 date: 2024-08-22T11:40:29-05:00
 Description: >
    Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
-weight: 30
+weight: 40
 tags: ["subtopic"]
 ---
 

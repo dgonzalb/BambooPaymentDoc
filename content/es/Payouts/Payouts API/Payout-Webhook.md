@@ -4,7 +4,7 @@ linkTitle: "Webhook de notificación"
 date: 2023-09-12T11:19:09-05:00
 type: docs
 Description: >
-  Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo Payment systems.
+  Usted puede implementar un servicio para recibir y procesar notificaciones relacionadas con los estados finales del Payout desde Bamboo.
 weight: 50
 ---
 

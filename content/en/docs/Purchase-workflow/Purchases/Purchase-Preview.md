@@ -4,7 +4,7 @@ linkTitle: "Purchase Preview"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   This functionality allows merchants to show the values that may affect the final amount of a purchase transaction.
-weight: 40
+weight: 50
 tags: ["subtopic"]
 ---
 
