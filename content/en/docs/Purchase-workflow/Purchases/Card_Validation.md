@@ -102,7 +102,7 @@ The validation can return the following status values:
 | `APPROVED` | Card successfully validated |
 | `REJECTED` | Card validation failed. Check `ErrorCode` and `ErrorDescription` for details |
 
-When the status is `REJECTED`, the `ErrorCode` and `ErrorDescription` fields will provide specific information about why the validation failed.
+When the status is `REJECTED`, the `ErrorCode` and `ErrorDescription` fields will provide specific information about why the validation failed. For more information about error codes, check our [Error Guide]({{< ref "Error-Codes.md" >}}).
 
 {{% alert title="Important" color="warning"%}}
 An small amount may be temporarily held on the card and automatically refunded. This amount varies by acquirer but is typically less than $1 USD.

@@ -4,7 +4,7 @@ linkTitle: "Captura y Cancel"
 date: 2024-08-22T11:40:29-05:00
 Description: >
     Gestione los pagos con tarjetas crédito y débito a través de las API de captura y cancelación de compras autorizadas.
-weight: 30
+weight: 40
 tags: ["subtopic"]
 ---
 

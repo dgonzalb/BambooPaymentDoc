@@ -4,7 +4,7 @@ linkTitle: "Crear una compra"
 date: 2024-08-22T11:40:29-05:00
 Description: >
   Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
-weight: 10
+weight: 20
 tags: ["subtopic"]
 ---
 

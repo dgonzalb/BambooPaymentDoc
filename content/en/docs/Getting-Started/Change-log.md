@@ -9,6 +9,11 @@ weight: 50
 ---
 ## 2024
 
+### December
+| Page | Description |
+|---|---|
+| **[Card Validator]({{< ref Card_Validation.md >}})** | Release of Card Validation endpoint |
+
 ### October
 | Page | Description |
 |---|---|

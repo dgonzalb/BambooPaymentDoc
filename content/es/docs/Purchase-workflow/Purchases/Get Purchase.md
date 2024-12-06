@@ -4,7 +4,7 @@ linkTitle: "Get de la Compra"
 date: 2024-08-02T08:46:32-05:00
 Description: >
    El Get de la Compra permite a los comercios resolver incosistencias en las transacciones y recuperar la información detallada de una compra específica.
-weight: 20
+weight: 30
 tags: ["subtopic"]
 ---
 

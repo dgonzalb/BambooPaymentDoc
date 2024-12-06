@@ -1,54 +1,107 @@
 ---
-title: "Get de la Compra"
-linkTitle: "Get de la Compra"
-date: 2024-08-02T08:46:32-05:00
+title: "Validación de Tarjeta"
+linkTitle: "Validación de Tarjeta"
+date: 2024-12-06T08:43:44-05:00
 Description: >
-   El Get de la Compra permite a los comercios resolver incosistencias en las transacciones y recuperar la información detallada de una compra específica.
-weight: 20
+  El endpoint de Validación de Tarjeta permite a los comercios verificar la validez de las tarjetas a través de distintos adquirentes en Latinoamérica, ya sea mediante operaciones Zero Auth o simulando compras de monto mínimo con reembolso automático.
+weight: 10
 tags: ["subtopic"]
 ---
 
-## URL de la solicitud {#request-url}
-Se requiere hacer una petición **GET** a las siguientes URLs según sus necesidades:
+## URL del Endpoint
+Para usar este servicio, envíe una petición **POST** a alguna de las siguientes URLs según el ambiente correspondiente:
 
-* **Producción**: `https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
-* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
+* **Producción**: `https://secure-api.bamboopayment.com/v3/api/card/validate`
+* **Pruebas**: `https://secure-api.stage.bamboopayment.com/v3/api/card/validate`
 
-Donde `{{TransactionId}}` es el identificador de la transacción que desea consultar.
-
-{{% alert title="Uso de la API de Reportes" color="info"%}}
-Para análisis de transacciones en masa y generación de informes, consulte nuestra [API de Reporte de Transacciones]({{< ref "Transactions-report.md" >}}), optimizada para manejar grandes volúmenes de datos y generar informes detallados.
+{{% alert title="Autenticación Requerida" color="info"%}}
+Es necesario incluir el Merchant Private Key en los encabezados de la petición. Para más información sobre la autenticación, consulta nuestra [Guía de Autenticación]({{< ref "Purchase_V3.md" >}}).
 {{% /alert %}}
 
-## Parámetros de respuesta {#response-parameters}
-La estructura de respuesta para esta operación es idéntica a la [respuesta estándar de compra]({{< ref "Purchase_V3.md" >}}#response). Esto garantiza consistencia entre diferentes tipos de transacciones y simplifica los procesos de integración.
+## Parámetros de la Petición {#request-parameters}
+La petición se compone de dos objetos principales: `CardData` que contiene la información de la tarjeta y `Customer` con los datos del tarjetahabiente.
+
+### Objeto CardData
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|---|---|:---:|---|
+| `CardHolderName` | `string` | Sí | Nombre completo como aparece en la tarjeta |
+| `Pan` | `string` | Sí | Número de tarjeta sin espacios ni separadores |
+| `CVV` | `string` | Sí | Código de seguridad de la tarjeta (3-4 dígitos) |
+| `Expiration` | `string` | Sí | Fecha de vencimiento en formato MM/AA |
+| `Email` | `string` | Sí | Correo electrónico del tarjetahabiente |
+| `Document` | `string` | No* | Número de documento del tarjetahabiente (*Requerido para algunos países) |
+| `TargetCountryISO` | `string` | Sí | Código ISO de dos letras del país donde se procesará la tarjeta. Envía el país usando el formato `ISO-3166-1` |
+
+### Objeto Customer
+
+{{% alert title="Requisitos por País" color="warning"%}}
+Para Argentina y Brasil, los campos de Customer y Address son obligatorios. Estos mercados exigen información completa del cliente para la validación de tarjetas.
+{{% /alert %}}
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|---|---|:---:|---|
+| `FirstName` | `string` | No¹ | Nombre del cliente |
+| `LastName` | `string` | No¹ | Apellido del cliente |
+| `Email` | `string` | No¹ | Correo electrónico del cliente |
+| `DocumentNumber` | `string` | No¹ | Número de identificación. Usa CPF para Brasil o DNI para Argentina |
+| `DocumentType` | `string` | No¹ | Tipo de documento. Usa "CPF.BR" para Brasil o "DNI.AR" para Argentina |
+| `Address` | `object` | No¹ | Información de dirección del cliente |
+
+¹ Obligatorio para Argentina y Brasil.
+
+#### Objeto Address
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|---|---|:---:|---|
+| `Country` | `string` | No¹ | Código ISO de dos letras del país (BR o AR) |
+| `State` | `string` | No¹ | Código de estado o provincia (ej: "SP" para São Paulo, "BA" para Buenos Aires) |
+| `City` | `string` | No¹ | Nombre de la ciudad |
+| `PostalCode` | `string` | No¹ | Código postal |
+| `AddressDetail` | `string` | No¹ | Dirección completa con número |
+
+¹ Obligatorio para Argentina y Brasil.
+
+### Ejemplo de Petición
+
+{{< highlight json >}}
+{{< Payins/V3/CardValidation/CardValidation >}}
+{{< /highlight >}} 
+
+## Parámetros de la Respuesta {#response-parameters}
+La respuesta incluye información sobre el resultado de la validación y detalles del método de pago.
 
 | Parámetro | Tipo | Descripción |
 |---|---|---|
-| `TransactionId` | `string` | Identificador único de la transacción. Un número de 19 dígitos enviado como cadena por compatibilidad. |
-| `Result` | `string` | Resultado de la transacción. `COMPLETED` o `ACTION_REQUIRED`. Consulte el objeto "Action" para obtener instrucciones. |
-| `Status` | `string` | Estado actual de la transacción (por ejemplo, Aprobada, Rechazada). |
-| `ErrorCode` | `string` | Código de error si la transacción fue rechazada. |
-| `ErrorDescription` | `string` | Descripción detallada del error si la transacción fue rechazada. |
-| `Created` | `string` | Marca de tiempo de cuándo se creó la transacción, en formato **ISO 8601**. |
-| `AuthorizationDate` | `string` | Marca de tiempo de cuándo se autorizó la transacción, en formato **ISO 8601**. |
-| `AuthorizationCode` | `string` | Código único proporcionado por el emisor para confirmar la autorización de la transacción. |
-| `Amount` | `integer` | Monto total de la transacción. |
-| `Currency` | `string` | Código de la moneda utilizada para la transacción. Puede diferir de la moneda de la solicitud según los acuerdos comerciales. |
-| `Installments` | `integer` | Número de cuotas de pago para la transacción. |
-| `TaxableAmount` | `integer` | Monto sujeto a impuestos. |
-| `Tip` | `integer` | Monto de la propina. |
-| `Url` | `string` | Enlace para acceder a detalles adicionales de la transacción. |
-| `MetadataOut` | `object` | Metadatos adicionales devueltos con la respuesta de la transacción. |
-| `Action` | `object` | Detalles de las acciones requeridas cuando el Resultado es "ACTION_REQUIRED". |
-| `PaymentMethod` | `object` | Información del medio de pago utilizado |
+| `Status` | `string` | Resultado de la validación. Los valores posibles son `APPROVED` o `REJECTED` |
+| `ErrorCode` | `string` | Código de error si la validación fue rechazada. `null` si fue aprobada |
+| `ErrorDescription` | `string` | Descripción detallada del error si la validación fue rechazada. `null` si fue aprobada |
+| `PaymentMethod` | `object` | Información sobre la tarjeta validada |
 
-## Ejemplo de respuesta {#response-example}
+### Objeto PaymentMethod
+
+| Parámetro | Tipo | Descripción |
+|---|---|---|
+| `Brand` | `string` | Marca de la tarjeta (ej: "MasterCard", "Visa") |
+| `IssuerBank` | `string` | Nombre del banco emisor |
+| `Type` | `string` | Tipo de tarjeta (ej: "CreditCard", "DebitCard") |
+
+## Ejemplo de Respuesta {#response-example}
 
 {{< highlight json >}}
-{{< Payins/V3/GetPurchase/requestGetPurchase >}}
+{{< Payins/V3/CardValidation/CardValidationResponse >}}
 {{< /highlight >}} 
 
-{{% alert title="Nota" color="info"%}}
-Todos los campos, estados y códigos de error descritos en la [respuesta de compra]({{< ref "Purchase_V3.md" >}}#response) se aplican igualmente al GET de la compra.
+## Posibles status {#status-values}
+La validación puede devolver los siguientes valores de estado:
+
+| Status | Descripción |
+|---|---|
+| `APPROVED` | Tarjeta validada exitosamente |
+| `REJECTED` | La validación de la tarjeta falló. Consulta `ErrorCode` y `ErrorDescription` para más detalles |
+
+Cuando el status es `REJECTED`, los campos `ErrorCode` y `ErrorDescription` proporcionarán información específica sobre el motivo del rechazo. Para más información sobre los códigos de error, consulta nuestra [Guía de Errores]({{< ref "Error-Codes.md" >}}).
+
+{{% alert title="Importante" color="warning"%}}
+Es posible que se reserve temporalmente un monto pequeño en la tarjeta que será reembolsado automáticamente. Este monto varía según el adquirente pero típicamente es menor a $1 USD.
 {{% /alert %}}

@@ -4,7 +4,7 @@ linkTitle: "Preview de la compra"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Esta funcionalidad le permite a los comercios mostrar los valores que pueden afectar el monto final de una transacción de compra.
-weight: 40
+weight: 50
 tags: ["subtopic"]
 ---
 
