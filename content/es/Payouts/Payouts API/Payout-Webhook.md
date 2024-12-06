@@ -8,10 +8,11 @@ Description: >
 weight: 50
 ---
 
-El API de Payouts solo envía notificaciones para los estados finales (**pagado**, **declinado** y **rechazado**). Para los estados de los Payouts, revise nuestro [artículo de estados]({{< ref Payout-Status.md >}}).
+El API de Payouts solo envía notificaciones para los siguientes estados (**held**, **pagado**, **declinado** y **rechazado**). Para los estados de los Payouts, revise nuestro [artículo de estados]({{< ref Payout-Status.md >}}).
 
 | ESTADO    | Código | DESCRIPCIÓN |
 |-----------|--------|-------------|
+| `Held`    | `7`      | El payout está en revisión por nuestro Equipo de Cumplimiento. |
 | `Paid`    | `1`      | El payout ha sido realizado. Este es un estado final que indica la conclusión exitosa del pago. |
 | `Declined` | `8`      | El payout fue declinado debido a validación estructural o reglas de Compliance. |
 | `Rejected` | `4`      | El payout fue rechazado. Las posibles razones de rechazo incluyen problemas con la cuenta bancaria, límites mensuales excedidos, etc.
@@ -54,6 +55,14 @@ El servicio WebHook es un servicio REST que debe procesar una solicitud con las 
 {{< highlight json >}}
 {{< Payouts/Api/PayoutsWebhook/notification >}}
 {{< /highlight >}}
+
+<br />
+
+**Estado:** `Held`
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsWebhook/notification_held >}}
+{{< /highlight >}}
+
 
 {{% alert title="Info" color="info"%}}
 En notificaciones de payout para persona jurídica, se recibirá el campo `companyName` en lugar de `firstName` y `lastName`.

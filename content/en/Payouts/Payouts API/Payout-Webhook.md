@@ -8,10 +8,11 @@ Description: >
 weight: 40
 ---
 
-The Payout API only sends notifications for the final statuses (**Paid**, **Declined**, and **Rejected**). For payout states, check our [status article]({{< ref Payout-Status.md >}}).
+The Payout API only sends notifications for the following statuses (**Held**, **Paid**, **Declined**, and **Rejected**). For payout states, check our [status article]({{< ref Payout-Status.md >}}).
 
 | STATUS    | Code | DESCRIPTION |
 |-----------|------|-------------|
+| `Held`    | `7`      | The payout is under review from our Compliance Team |
 | `Paid`      | `1`    | The payout has been paid. This is a final status indicating the successful completion of the payment.  |
 | `Declined`  | `8`    | The payout was declined due to structural validation or Compliance rules. |
 | `Rejected`  | `4`    | The payout was rejected. Possible reasons for rejection include bank account issues, monthly limits exceeded, etc. |
@@ -53,6 +54,15 @@ The WebHook service is a REST Service that must process a request with the follo
 {{< highlight json >}}
 {{< Payouts/Api/PayoutsWebhook/notification >}}
 {{< /highlight >}}
+
+<br />
+
+**Status:** `Held`
+{{< highlight json >}}
+{{< Payouts/Api/PayoutsWebhook/notification_held >}}
+{{< /highlight >}}
+
+
 
 {{% alert title="Info" color="info"%}}
 In payout notifications for company, you will receive the field `companyName` instead of `firstName` and `lastName`.

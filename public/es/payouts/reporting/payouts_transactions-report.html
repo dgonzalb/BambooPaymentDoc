@@ -10,28 +10,20 @@
 
 
 
-<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
-<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
+<link rel="icon" type="image/x-icon" href="../../../assets/bamboo.ico" sizes="32x32">
 <title>API DE REPORTES | Bamboo Payment</title><meta property="og:title" content="API DE REPORTES" />
 <meta property="og:description" content="La API de Reporte de Payouts de Bamboo da información detallada de datos transaccionales. Permite acceder a información de payouts realizados para un periodo de tiempo específico, seleccionar columnas de datos para informes personalizados y obtener detalles de los payouts, incluyendo información sobre la moneda de instrucción, país, datos del usuario final, método de pago, entre otros.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payouts/reporting/payouts_transactions-report.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-11-11T18:39:56-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-11-28T21:33:39-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="API DE REPORTES">
 <meta itemprop="description" content="La API de Reporte de Payouts de Bamboo da información detallada de datos transaccionales. Permite acceder a información de payouts realizados para un periodo de tiempo específico, seleccionar columnas de datos para informes personalizados y obtener detalles de los payouts, incluyendo información sobre la moneda de instrucción, país, datos del usuario final, método de pago, entre otros.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-11-11T18:39:56-03:00" />
-<meta itemprop="wordCount" content="662">
+<meta itemprop="dateModified" content="2024-11-28T21:33:39-03:00" />
+<meta itemprop="wordCount" content="760">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API DE REPORTES"/>
 <meta name="twitter:description" content="La API de Reporte de Payouts de Bamboo da información detallada de datos transaccionales. Permite acceder a información de payouts realizados para un periodo de tiempo específico, seleccionar columnas de datos para informes personalizados y obtener detalles de los payouts, incluyendo información sobre la moneda de instrucción, país, datos del usuario final, método de pago, entre otros.
@@ -110,7 +102,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../en/">English</a>
+	<a class="dropdown-item" href="../../../en/payouts/reporting/payouts_transactions-report.html">English</a>
 	
 </div>
             </li>
@@ -142,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4f1c4e4d287b46b3113a39ec927938fa44498e485a5b189a968e9749b99c8d9d5f31df91a4449917d0b72781cf92c3cb87fc1ec01411b4d87129618af6261fc0.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -176,7 +168,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../en/">English</a>
+	<a class="dropdown-item" href="../../../en/payouts/reporting/payouts_transactions-report.html">English</a>
 	
 </div>
     </div>
@@ -558,225 +550,254 @@
 </thead>
 <tbody>
 <tr>
-<td><code>success</code></td>
-<td><code>Boolean</code></td>
-<td>Indica si la solicitud fue exitosa</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td><code>String</code></td>
-<td>Proporciona información adicional sobre la respuesta</td>
-</tr>
-<tr>
 <td><code>data</code></td>
-<td><code>Array</code></td>
-<td>Array de objetos de transacción que contienen los siguientes campos:</td>
+<td><code>array</code></td>
+<td>Lista de objetos que representan detalles del Payout.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>TransactionId</code></td>
-<td><code>Integer</code></td>
-<td>Identificador único de la transacción</td>
+<td><code>data</code> → <code>payoutId</code></td>
+<td><code>integer</code></td>
+<td>Identificador único del Payout.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Type</code></td>
-<td><code>String</code></td>
-<td>Tipo de transacción (ej. &ldquo;Purchase&rdquo;, &ldquo;Refund&rdquo;)</td>
+<td><code>data</code> → <code>created</code></td>
+<td><code>datetime</code></td>
+<td>Fecha y hora de creación del Payout en formato ISO 8601.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Created</code></td>
-<td><code>Date-time</code></td>
-<td>Fecha y hora en que se creó la transacción</td>
+<td><code>data</code> → <code>lastUpdate</code></td>
+<td><code>datetime</code></td>
+<td>Fecha y hora de la última actualización del Payout en formato ISO 8601.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Status</code></td>
-<td><code>String</code></td>
-<td>Estado de la transacción (ej. &ldquo;Approved&rdquo;, &ldquo;Rejected&rdquo;)</td>
+<td><code>data</code> → <code>status</code></td>
+<td><code>string</code></td>
+<td>Estado del Payout. Ejemplo: <code>Rejected</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Error_code</code></td>
-<td><code>String</code></td>
-<td>Código de error (si es aplicable)</td>
+<td><code>data</code> → <code>merchantId</code></td>
+<td><code>integer</code></td>
+<td>Identificador único del comercio asociado.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Amount</code></td>
-<td><code>Decimal</code></td>
-<td>Monto de la transacción</td>
+<td><code>data</code> → <code>merchantName</code></td>
+<td><code>string</code></td>
+<td>Nombre del comercio asociado.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Currency</code></td>
-<td><code>String</code></td>
-<td>Moneda de la transacción</td>
+<td><code>data</code> → <code>merchantAccountId</code></td>
+<td><code>integer</code></td>
+<td>Identificador único de la cuenta del comercio.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Country</code></td>
-<td><code>String</code></td>
-<td>País de la transacción</td>
+<td><code>data</code> → <code>merchantAccountName</code></td>
+<td><code>string</code></td>
+<td>Nombre de la cuenta del comercio.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Transaction_source</code></td>
-<td><code>String</code></td>
-<td>Fuente de la transacción</td>
+<td><code>data</code> → <code>inputCurrency</code></td>
+<td><code>string(3)</code></td>
+<td>Código ISO de la moneda de entrada. Ejemplo: <code>USD</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Tenant</code></td>
-<td><code>String</code></td>
-<td>Nombre del tenant</td>
+<td><code>data</code> → <code>inputAmount</code></td>
+<td><code>decimal</code></td>
+<td>Monto del Payout en la moneda de entrada.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Merchant_account</code></td>
-<td><code>String</code></td>
-<td>Nombre de la cuenta del merchant</td>
+<td><code>data</code> → <code>exchangeRate</code></td>
+<td><code>decimal</code></td>
+<td>Tasa de cambio aplicada al Payout.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Payment_method_type</code></td>
-<td><code>String</code></td>
-<td>Tipo de método de pago utilizado</td>
+<td><code>data</code> → <code>currency</code></td>
+<td><code>string(3)</code></td>
+<td>Código ISO de la moneda de salida. Ejemplo: <code>PEN</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Payment_method</code></td>
-<td><code>String</code></td>
-<td>Medio de pago específico utilizado</td>
+<td><code>data</code> → <code>amount</code></td>
+<td><code>decimal</code></td>
+<td>Monto del Payout en la moneda de salida.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Card_bin</code></td>
-<td><code>String</code></td>
-<td>Número de Identificación Bancaria (BIN) en caso de que sea una tarjeta de crédito (6 dígitos).</td>
+<td><code>data</code> → <code>merchantReference</code></td>
+<td><code>string</code></td>
+<td>Referencia única proporcionada por el cliente para identificar el Payout.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Card_last4</code></td>
-<td><code>String</code></td>
-<td>Últimos 4 dígitos de la tarjeta</td>
+<td><code>data</code> → <code>customerFirstName</code></td>
+<td><code>string</code></td>
+<td>Nombre del beneficiario.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Order</code></td>
-<td><code>String</code></td>
-<td>Identificador de la orden</td>
+<td><code>data</code> → <code>customerLastName</code></td>
+<td><code>string</code></td>
+<td>Apellido del beneficiario.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Unique_id</code></td>
-<td><code>String</code></td>
-<td>Identificador único de la transacción</td>
+<td><code>data</code> → <code>customerDocumentType</code></td>
+<td><code>string</code></td>
+<td>Tipo de documento del beneficiario. Ejemplo: <code>CC</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Authorization_code</code></td>
-<td><code>String</code></td>
-<td>Código de autorización de la transacción en el adquirente</td>
+<td><code>data</code> → <code>customerDocumentNumber</code></td>
+<td><code>string</code></td>
+<td>Número del documento del beneficiario.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Installments</code></td>
-<td><code>Integer</code></td>
-<td>Número de cuotas (si es aplicable)</td>
+<td><code>data</code> → <code>customerEmail</code></td>
+<td><code>string</code></td>
+<td>Correo electrónico del beneficiario. Ejemplo: <code>Santa.Wiegand@gmail.com</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Issuer</code></td>
-<td><code>String</code></td>
-<td>Nombre del banco emisor</td>
+<td><code>data</code> → <code>customerPhone</code></td>
+<td><code>string</code></td>
+<td>Teléfono del beneficiario. Ejemplo: <code>850.622.3790 x003</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_name</code></td>
-<td><code>String</code></td>
-<td>Nombre completo del cliente</td>
+<td><code>data</code> → <code>customerAddress</code></td>
+<td><code>string</code></td>
+<td>Dirección del beneficiario.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_document_type</code></td>
-<td><code>String</code></td>
-<td>Tipo de documento de identificación</td>
+<td><code>data</code> → <code>bankCode</code></td>
+<td><code>string</code></td>
+<td>Código del banco asociado al Payout. Ejemplo: <code>885</code>.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_document_number</code></td>
-<td><code>String</code></td>
-<td>Número de documento de identificación</td>
+<td><code>data</code> → <code>bankName</code></td>
+<td><code>string</code></td>
+<td>Nombre del banco asociado al Payout.</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_email</code></td>
-<td><code>String</code></td>
-<td>Dirección de correo electrónico del cliente</td>
+<td><code>data</code> → <code>bankType</code></td>
+<td><code>string</code></td>
+<td>Tipo de cuenta bancaria. Ejemplo: <code>2</code> para cuenta de ahorros.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankBranch</code></td>
+<td><code>string</code></td>
+<td>Sucursal bancaria asociada.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankNumber</code></td>
+<td><code>string</code></td>
+<td>Número de cuenta bancaria.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankCountry</code></td>
+<td><code>string(2)</code></td>
+<td>Código ISO del país del banco. Ejemplo: <code>US</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>errorCode</code></td>
+<td><code>string</code></td>
+<td>Código del error en caso de fallo. Ejemplo: <code>902</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>errorDescription</code></td>
+<td><code>string</code></td>
+<td>Descripción del error en caso de fallo. Ejemplo: <code>Invalid bank account</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>paymentMethodType</code></td>
+<td><code>string</code></td>
+<td>Tipo de método de pago. Ejemplo: <code>BankTransfer</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>paymentMethod</code></td>
+<td><code>string</code></td>
+<td>Método de pago utilizado. Ejemplo: <code>Payout</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixRandom</code></td>
+<td><code>string</code></td>
+<td>Clave aleatoria para el pago mediante PIX.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixPhone</code></td>
+<td><code>string</code></td>
+<td>Número de teléfono para el pago mediante PIX.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixDocument</code></td>
+<td><code>string</code></td>
+<td>Documento asociado al pago mediante PIX.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixEmail</code></td>
+<td><code>string</code></td>
+<td>Correo electrónico asociado al pago mediante PIX.</td>
 </tr>
 <tr>
 <td><code>total</code></td>
-<td><code>Integer</code></td>
-<td>Número total de registros que coinciden con la consulta</td>
+<td><code>integer</code></td>
+<td>Número total de registros en la respuesta.</td>
 </tr>
 <tr>
 <td><code>page</code></td>
-<td><code>Integer</code></td>
-<td>Número de página</td>
+<td><code>integer</code></td>
+<td>Página actual en los resultados paginados.</td>
 </tr>
 <tr>
 <td><code>pageSize</code></td>
-<td><code>Integer</code></td>
-<td>Número de registros por página</td>
+<td><code>integer</code></td>
+<td>Tamaño de la página actual en los resultados paginados.</td>
 </tr>
 <tr>
 <td><code>errors</code></td>
-<td><code>Array</code></td>
-<td>Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud</td>
+<td><code>object</code></td>
+<td>Detalles de errores si los hubiera.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="response-example">Ejemplo del Response</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">15660802</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Purchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-01T21:34:34.1308881&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Approved&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4279</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction_source&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DirectPurchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tenant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bamboo.BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Merchant_account&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Loja Virtual BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PrePaid&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;426717&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5636&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;f4bb4b41-2476-41ce-ac7a-ad3e6e50d77e&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Unique_id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;f922b26e-76af-476d-aada-502a46e3c365&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Authorization_code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;202597&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Issuer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Maria Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;24&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678900&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;maria.silva@mail.com&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">15919451</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-04T14:22:43.4766824&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rejected&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Error_code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;TR019&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">8560</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction_source&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DirectPurchase&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tenant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bamboo.BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Merchant_account&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Loja Online BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PrePaid&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;569130&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;8461&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;9cdc4d58-3aa9-4f2c-b204-8c2c96ab6bd7&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Unique_id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;b5caf213-d76e-4d15-b691-6b0fccb16e86&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Authorization_code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;526661&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Issuer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Santos&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;24&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;98765432100&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.santos@mail.com&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">15913224</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-10-02T11:44:18.8403663&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;lastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-10-02T12:44:18.8403663&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rejected&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantAccountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2948</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantAccountName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;inputCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;inputAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">6440.66</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;exchangeRate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PEN&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">24088.07</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;da53fd00-aa30-54aa-eff7-898eb1f41542&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerFirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jhon&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerLastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerDocumentType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerDocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;32509767&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerEmail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jhon.doe@gmail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;850.622.3790 x003&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;10516 Auer Highway, East Meggieland, Antigua and Barbuda&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;885&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankBranch&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;902&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;errorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Invalid bank account&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentMethodType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Payout&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixRandom&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixDocument&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Page&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PageSize&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;page&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;pageSize&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -786,7 +807,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    11 de noviembre de 2024
+    28 de noviembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

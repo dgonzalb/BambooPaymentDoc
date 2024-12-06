@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+
+<link rel="icon" type="image/x-icon" href="../../../assets/bamboo.ico" sizes="32x32">
+<title>REPORTS API | Bamboo Payment</title><meta property="og:title" content="REPORTS API" />
+<meta property="og:description" content="The Bamboo Payouts Report API provides detailed information about transactional data. It allows access to information on payouts made for a specific time period, selecting data columns for custom reports, and obtaining payout details, including instruction currency, country, end-user data, payment method, and more.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/payouts/reporting/payouts_transactions-report.html" /><meta property="article:section" content="Payouts" />
+<meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
+<meta property="article:modified_time" content="2024-11-28T21:33:39-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="REPORTS API">
+<meta itemprop="description" content="The Bamboo Payouts Report API provides detailed information about transactional data. It allows access to information on payouts made for a specific time period, selecting data columns for custom reports, and obtaining payout details, including instruction currency, country, end-user data, payment method, and more.
+"><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
+<meta itemprop="dateModified" content="2024-11-28T21:33:39-03:00" />
+<meta itemprop="wordCount" content="713">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="REPORTS API"/>
+<meta name="twitter:description" content="The Bamboo Payouts Report API provides detailed information about transactional data. It allows access to information on payouts made for a specific time period, selecting data columns for custom reports, and obtaining payout details, including instruction currency, country, end-user data, payment method, and more.
+"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../../scss/main.scss" as="style">
+<link href="../../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+       
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="../../../en/">
+        <span class="navbar-logo"><img src="../../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/payouts.html" ><span class="active">Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/reporting/payouts_transactions-report.html">Español</a>
+	
+</div>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Search …"
+  aria-label="Search …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.4f1c4e4d287b46b3113a39ec927938fa44498e485a5b189a968e9749b99c8d9d5f31df91a4449917d0b72781cf92c3cb87fc1ec01411b4d87129618af6261fc0.json"
+  data-offline-search-base-href="../../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payouts/reporting/payouts_transactions-report.html">Español</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts.html" href="../../../en/payouts.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/overview.html" href="../../../en/payouts/overview.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Bamboo Payouts</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutsoverviewhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-concepts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-conceptshtml" href="../../../en/payouts/overview/payout-concepts.html">Concepts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-status.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-statushtml" href="../../../en/payouts/overview/payout-status.html">Payout status</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/payout-balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewpayout-balanceshtml" href="../../../en/payouts/overview/payout-balances.html">Payout balances</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/overview/test-our-services.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutsoverviewtest-our-serviceshtml" href="../../../en/payouts/overview/test-our-services.html">Test our services</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-merchant-console.html" href="../../../en/payouts/payouts-merchant-console.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts console</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-merchant-consolehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolereportshtml" href="../../../en/payouts/payouts-merchant-console/reports.html">Payout Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/express.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consoleexpresshtml" href="../../../en/payouts/payouts-merchant-console/express.html">Express Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-merchant-console/balances.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-merchant-consolebalanceshtml" href="../../../en/payouts/payouts-merchant-console/balances.html">Payout Balance report</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/payouts-api.html" href="../../../en/payouts/payouts-api.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Payouts API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutspayouts-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/getting-started.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apigetting-startedhtml" href="../../../en/payouts/payouts-api/getting-started.html">Getting Started</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payouts-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayouts-previewhtml" href="../../../en/payouts/payouts-api/payouts-preview.html">Payout Preview</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/using-payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apiusing-payouts-apihtml" href="../../../en/payouts/payouts-api/using-payouts-api.html">Payout Request</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-webhookhtml" href="../../../en/payouts/payouts-api/payout-webhook.html">Notification Webhook</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apivariableshtml" href="../../../en/payouts/payouts-api/variables.html">Variables</a>
+      
+      
+      
+      
+      
+        <a id="/en/payouts/payouts-api/payout-error-codes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayoutspayouts-apipayout-error-codeshtml" href="../../../en/payouts/payouts-api/payout-error-codes.html">Error Codes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payouts/api-for-balances.html" href="../../../en/payouts/api-for-balances.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">API for Balances</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayoutsapi-for-balanceshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+      
+        <a id="/en/payouts/reporting/payouts_transactions-report.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-enpayoutsreportingpayouts_transactions-reporthtml" href="../../../en/payouts/reporting/payouts_transactions-report.html">REPORTS API</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#request-url">URL for the Request</a></li>
+    <li><a href="#authorization">Authorization</a></li>
+    <li><a href="#request-parameters">Request Parameters</a>
+      <ul>
+        <li><a href="#format-and-example-of-the-request-request">Request Format and Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#response-parameters">Response Parameters</a>
+      <ul>
+        <li><a href="#response-example">Response Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payouts.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/payouts/reporting/payouts_transactions-report.html">REPORTS API</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>REPORTS API</h1>
+    <div class="lead">The Bamboo Payouts Report API provides detailed information about transactional data. It allows access to information on payouts made for a specific time period, selecting data columns for custom reports, and obtaining payout details, including instruction currency, country, end-user data, payment method, and more.</div>
+	       
+	<h2 id="request-url">URL for the Request</h2>
+<p>To access the Bamboo Payouts Report API, make a <strong>GET</strong> request to the following URLs depending on the environment:</p>
+<ul>
+<li><strong>Production</strong>: <code>https://payout-api.prod.bamboopayment.com/api/Payout/getreport</code></li>
+<li><strong>Stage</strong>: <code>https://payout-api.stage.bamboopayment.com/api/Payout/getreport</code></li>
+</ul>
+<h2 id="authorization">Authorization</h2>
+<p>In the request header, the <code>Authorization</code> parameter must be configured by concatenating the word <code>Basic</code>, a space, and the <strong>Private Key</strong> of the merchant.</p>
+<h2 id="request-parameters">Request Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>merchantAccount</code></td>
+<td><code>Integer</code></td>
+<td>Merchant account ID in Bamboo&rsquo;s production environment. Contact <a href="mailto:support@bamboopayment.com">support@bamboopayment.com</a> for details.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><code>String</code></td>
+<td>Start date for the transaction query (format: YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>String</code></td>
+<td>End date for the transaction query (format: YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>Integer</code></td>
+<td>Page number for pagination. The value must be greater than 0.</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td><code>Integer</code></td>
+<td>Number of records per page. The value must be greater than 0.</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important</h4>
+<p class="alert-text">Parameters should be added to the request URL of the endpoint, followed by a <code>?</code> to indicate the beginning of the parameters.
+<br> Each parameter must be separated by <code>&amp;</code>.</p>
+</div>
+
+<h3 id="format-and-example-of-the-request-request">Request Format and Example</h3>
+<ul>
+<li>
+<p><strong>Format</strong>: <code>{endpoint}?merchantAccount#&amp;from=YYYY-MM-DD&amp;To=YYYY-MM-DD&amp;Page=#&amp;PageSize=#</code></p>
+</li>
+<li>
+<p><strong>Example</strong>: <code>https://payout-api.prod.bamboopayment.com/api/Payout/getreport?merchantAccount=1234&amp;from=2024-01-01&amp;To=2024-01-31&amp;Page=1&amp;PageSize=10</code></p>
+</li>
+</ul>
+<h2 id="response-parameters">Response Parameters</h2>
+
+
+<div class="alert alert-info" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Note</h4>
+<p class="alert-text">When querying recent data, note that the most up-to-date information available might be from the previous day (D-1). This means that the latest data available via the API could be from the day before the current date. Keep this in mind when querying recent payouts.</p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>array</code></td>
+<td>List of objects representing payout details.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>payoutId</code></td>
+<td><code>integer</code></td>
+<td>Unique identifier for the payout.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>created</code></td>
+<td><code>datetime</code></td>
+<td>Date and time the payout was created in ISO 8601 format.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>lastUpdate</code></td>
+<td><code>datetime</code></td>
+<td>Date and time the payout was last updated in ISO 8601 format.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>status</code></td>
+<td><code>string</code></td>
+<td>Status of the payout. Example: <code>Rejected</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>merchantId</code></td>
+<td><code>integer</code></td>
+<td>Unique identifier for the associated merchant.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>merchantName</code></td>
+<td><code>string</code></td>
+<td>Name of the associated merchant.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>merchantAccountId</code></td>
+<td><code>integer</code></td>
+<td>Unique identifier for the merchant account.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>merchantAccountName</code></td>
+<td><code>string</code></td>
+<td>Name of the merchant account.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>inputCurrency</code></td>
+<td><code>string(3)</code></td>
+<td>ISO code of the input currency. Example: <code>USD</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>inputAmount</code></td>
+<td><code>decimal</code></td>
+<td>Amount of the payout in the input currency.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>exchangeRate</code></td>
+<td><code>decimal</code></td>
+<td>Exchange rate applied to the payout.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>currency</code></td>
+<td><code>string(3)</code></td>
+<td>ISO code of the output currency. Example: <code>PEN</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>amount</code></td>
+<td><code>decimal</code></td>
+<td>Amount of the payout in the output currency.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>merchantReference</code></td>
+<td><code>string</code></td>
+<td>Unique reference provided by the client to identify the payout.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerFirstName</code></td>
+<td><code>string</code></td>
+<td>First name of the beneficiary.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerLastName</code></td>
+<td><code>string</code></td>
+<td>Last name of the beneficiary.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerDocumentType</code></td>
+<td><code>string</code></td>
+<td>Type of the beneficiary&rsquo;s document. Example: <code>CC</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerDocumentNumber</code></td>
+<td><code>string</code></td>
+<td>Beneficiary&rsquo;s document number.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerEmail</code></td>
+<td><code>string</code></td>
+<td>Beneficiary&rsquo;s email address. Example: <code>Santa.Wiegand@gmail.com</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerPhone</code></td>
+<td><code>string</code></td>
+<td>Beneficiary&rsquo;s phone number. Example: <code>850.622.3790 x003</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>customerAddress</code></td>
+<td><code>string</code></td>
+<td>Beneficiary&rsquo;s address.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankCode</code></td>
+<td><code>string</code></td>
+<td>Bank code associated with the payout. Example: <code>885</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankName</code></td>
+<td><code>string</code></td>
+<td>Name of the bank associated with the payout.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankType</code></td>
+<td><code>string</code></td>
+<td>Type of bank account. Example: <code>2</code> for savings account.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankBranch</code></td>
+<td><code>string</code></td>
+<td>Associated bank branch.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankNumber</code></td>
+<td><code>string</code></td>
+<td>Bank account number.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>bankCountry</code></td>
+<td><code>string(2)</code></td>
+<td>ISO code of the bank&rsquo;s country. Example: <code>US</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>errorCode</code></td>
+<td><code>string</code></td>
+<td>Error code in case of failure. Example: <code>902</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>errorDescription</code></td>
+<td><code>string</code></td>
+<td>Description of the error in case of failure. Example: <code>Invalid bank account</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>paymentMethodType</code></td>
+<td><code>string</code></td>
+<td>Type of payment method. Example: <code>BankTransfer</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>paymentMethod</code></td>
+<td><code>string</code></td>
+<td>Payment method used. Example: <code>Payout</code>.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixRandom</code></td>
+<td><code>string</code></td>
+<td>Random key for PIX payment.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixPhone</code></td>
+<td><code>string</code></td>
+<td>Phone number for PIX payment.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixDocument</code></td>
+<td><code>string</code></td>
+<td>Document associated with PIX payment.</td>
+</tr>
+<tr>
+<td><code>data</code> → <code>pixEmail</code></td>
+<td><code>string</code></td>
+<td>Email associated with PIX payment.</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>integer</code></td>
+<td>Total number of records in the response.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>integer</code></td>
+<td>Current page in the paginated results.</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td><code>integer</code></td>
+<td>Size of the current page in the paginated results.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>object</code></td>
+<td>Details of errors, if any.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-example">Response Example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;payoutId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">15913224</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-10-02T11:44:18.8403663&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;lastUpdate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-10-02T12:44:18.8403663&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rejected&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantAccountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2948</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantAccountName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;inputCurrency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;inputAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">6440.66</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;exchangeRate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PEN&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">24088.07</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;da53fd00-aa30-54aa-eff7-898eb1f41542&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerFirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Jhon&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerLastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerDocumentType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerDocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;32509767&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerEmail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;jhon.doe@gmail.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;850.622.3790 x003&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;customerAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;10516 Auer Highway, East Meggieland, Antigua and Barbuda&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;885&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankBranch&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;bankCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;902&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;errorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Invalid bank account&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentMethodType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Payout&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixRandom&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixDocument&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;pixEmail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;page&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;pageSize&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Last modified</b>
+    
+    November 28, 2024
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

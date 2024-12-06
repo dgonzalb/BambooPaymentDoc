@@ -11,16 +11,8 @@
 <link rel="alternate" type="application/rss&#43;xml" href="../../../es/docs/payment-methods/argentina/index.xml">
 
 
-<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
-<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
+<link rel="icon" type="image/x-icon" href="../../../assets/bamboo.ico" sizes="32x32">
 <title>Argentina | Bamboo Payment</title><meta property="og:title" content="Argentina" />
 <meta property="og:description" content="Con una población conocedora de la tecnología y un elevado PIB per cápita, _**Argentina**_ ofrece una inmensa oportunidad a los comercios de todo el mundo a pesar de las restricciones normativas.
 " />
@@ -138,7 +130,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
+  data-offline-search-index-json-src="../../../offline-search-index.4f1c4e4d287b46b3113a39ec927938fa44498e485a5b189a968e9749b99c8d9d5f31df91a4449917d0b72781cf92c3cb87fc1ec01411b4d87129618af6261fc0.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -691,7 +683,19 @@
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apmhtml" href="../../../es/docs/payment-methods/colombia/co-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-banktransferhtml" href="../../../es/docs/payment-methods/colombia/co-apm-banktransfer.html">Transferencias bancarias - PSE</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../es/docs/payment-methods/colombia/co-apm-cash.html">Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm-wallet.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-wallethtml" href="../../../es/docs/payment-methods/colombia/co-apm-wallet.html">Nequi</a>
       
       
     </li>
@@ -1141,20 +1145,20 @@
 <thead>
 <tr>
 <th></th>
-<th>Payment Method</th>
-<th>Legacy - Payment MediaId</th>
-<th>Name</th>
-<th>Purchase</th>
-<th>Pre-authorization</th>
-<th>Full refund</th>
-<th>Partial Refund</th>
-<th>Type</th>
+<th>PaymentMethodId</th>
+<th>Legacy - PaymentMediaId</th>
+<th>Nombre</th>
+<th>Compra</th>
+<th>Preautorización</th>
+<th>Reembolso total</th>
+<th>Reembolso parcial</th>
+<th>Tipo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>VSC</td>
+<td><code>VSC</code></td>
 <td>1</td>
 <td>VISA</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1165,7 +1169,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>MCC</td>
+<td><code>MCC</code></td>
 <td>2</td>
 <td>MasterCard</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1176,7 +1180,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>VSC</td>
+<td><code>VSC</code></td>
 <td>3</td>
 <td>American Express</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1187,7 +1191,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>VSD</td>
+<td><code>VSD</code></td>
 <td>6</td>
 <td>Visa Débito</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1198,7 +1202,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>VSP</td>
+<td><code>VSP</code></td>
 <td>7</td>
 <td>Visa Prepago</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1209,7 +1213,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/11_passcard_3.png" alt="visa" style="min-width: 40px;" /></td>
-<td>PSC</td>
+<td><code>PSC</code></td>
 <td>11</td>
 <td>PassCard</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1220,7 +1224,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>MCD</td>
+<td><code>MCD</code></td>
 <td>13</td>
 <td>MasterCard Débito</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1231,7 +1235,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
-<td>MCP</td>
+<td><code>MCP</code></td>
 <td>14</td>
 <td>MasterCard Prepago</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1242,7 +1246,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/17_cabal.png" alt="Cabal" style="min-width: 40px;" /></td>
-<td>CBC</td>
+<td><code>CBC</code></td>
 <td>17</td>
 <td>Cabal</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1253,7 +1257,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" alt="PagoFacil" style="min-width: 40px;" /></td>
-<td>PFC</td>
+<td><code>PFC</code></td>
 <td>61</td>
 <td>Pago Fácil</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1264,7 +1268,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" alt="Transferencias30" style="min-width: 40px;" /></td>
-<td>QRA</td>
+<td><code>QRA</code></td>
 <td>72</td>
 <td>QR Code - Transferencias 3.0</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1275,7 +1279,7 @@
 </tr>
 <tr>
 <td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" alt="BankTransfer" style="min-width: 40px;" /></td>
-<td>BTU</td>
+<td><code>BTU</code></td>
 <td>532</td>
 <td>Bank Transfer</td>
 <td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
@@ -1339,7 +1343,7 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">DocumentType (V3 API)</th>
+<th style="text-align:center">DocumentType</th>
 <th style="text-align:center">DocumentType (legacy API)</th>
 <th>Nombre del documento</th>
 <th>Abreviación</th>
@@ -1535,10 +1539,28 @@
             
                 <div class="entry">
                     <h5>
-                        <a href="../../../es/docs/payment-methods/argentina/ar-apm-cash.html">Efectivo / Redes de cobranza</a>
+                        <a href="../../../es/docs/payment-methods/argentina/ar-apm-cash.html">Efectivo</a>
                     </h5>
                     <p>Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.</p>
                 </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
             
         
             
@@ -1632,20 +1654,6 @@
         
             
         
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
     
 </div>
 
@@ -1659,7 +1667,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    11 de noviembre de 2024
+    18 de noviembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

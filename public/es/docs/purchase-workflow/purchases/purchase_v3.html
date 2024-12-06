@@ -10,27 +10,19 @@
 
 
 
-<link rel="shortcut icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" >
-<link rel="apple-touch-icon" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="180x180">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="36x36">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="48x48">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="72x72">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="96x96">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="144x144">
-<link rel="icon" type="image/png" href="https://bamboopaymentsystems.com/wp-content/uploads/2021/10/cropped-favicon-32x32.png" sizes="192x192">
 
+<link rel="icon" type="image/x-icon" href="../../../../assets/bamboo.ico" sizes="32x32">
 <title>Crear una compra | Bamboo Payment</title><meta property="og:title" content="Crear una compra" />
 <meta property="og:description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-11-11T18:39:56-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-11-18T17:52:47-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Crear una compra">
 <meta itemprop="description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-11-11T18:39:56-03:00" />
+<meta itemprop="dateModified" content="2024-11-18T17:52:47-03:00" />
 <meta itemprop="wordCount" content="1922">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Crear una compra"/>
@@ -142,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3aea8c6fa18a61880c68f2de48f275a04d4a12f008f9df25c65b423d9d2cf27e9fdbadf1bfec0b2afdb68f879d57bfc5c72f63d4502060a7a302347edbcf9b71.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.4f1c4e4d287b46b3113a39ec927938fa44498e485a5b189a968e9749b99c8d9d5f31df91a4449917d0b72781cf92c3cb87fc1ec01411b4d87129618af6261fc0.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -695,7 +687,19 @@
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apmhtml" href="../../../../es/docs/payment-methods/colombia/co-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-banktransferhtml" href="../../../../es/docs/payment-methods/colombia/co-apm-banktransfer.html">Transferencias bancarias - PSE</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../../es/docs/payment-methods/colombia/co-apm-cash.html">Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/colombia/co-apm-wallet.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-wallethtml" href="../../../../es/docs/payment-methods/colombia/co-apm-wallet.html">Nequi</a>
       
       
     </li>
@@ -1259,10 +1263,10 @@
 <td>Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red.</td>
 </tr>
 <tr>
-<td><code>PaymentMethod</code></td>
-<td><code>integer</code></td>
+<td><code>PaymentMethodId</code></td>
+<td><code>string</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
-<td>Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla del objeto <a href="../../../../es/docs/getting-started/payment-methods.html">PaymentMethod</a>.</td>
+<td>Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla <a href="../../../../es/docs/getting-started/payment-methods.html">medios de pago</a>.</td>
 </tr>
 <tr>
 <td><code>UniqueID</code></td>
@@ -1400,7 +1404,7 @@
 <tr>
 <td><code>Customer</code> → <code>Email</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Sí</td>
 <td>Dirección de correo electrónico del cliente.</td>
 </tr>
 <tr>
@@ -1581,8 +1585,8 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Notas</h4>
 <p class="alert-text"><ul>
-<li><sup>1</sup> Los parámetros <code>PaymentMethod</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.</li>
-<li><sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de <a href="../../../../en/docs/payment-methods.html">Países y medios de pago</a> para verificar la disponibilidad.</li>
+<li><sup>1</sup> Los parámetros <code>PaymentMethodId</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.</li>
+<li><sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de <a href="../../../../es/docs/payment-methods.html">Países y medios de pago</a> para verificar la disponibilidad.</li>
 <li><sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando <a href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
 <li><sup>4</sup> Al utilizar <a href="../../../../es/docs/payment-methods/brazil/br-cards.html">tarjetas en Brasil</a>, la descripción es obligatoria y debe usar un formato fijo, como se explica en los <a href="../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters">parámetros de solicitud</a>.</li>
 <li>Tenga en cuenta que para el correcto funcionamiento del sistema Anti-fraude, le sugerimos enviar los datos adicionales descritos en la sección de <a href="../../../../es/docs/purchase-workflow/antifraud.html">Anti-fraude</a>.</li>
@@ -1729,7 +1733,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
 <br>
-<p>Los campos <strong>CardData</strong>, <strong>PaymentMethod</strong>, <strong>NetworkToken</strong> y <strong>TrxToken</strong> no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.</p>
+<p>Los campos <strong>CardData</strong>, <strong>PaymentMethodId</strong>, <strong>NetworkToken</strong> y <strong>TrxToken</strong> no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.</p>
 <h2 id="response">Respuesta del Request.</h2>
 <p>La respuesta para las operaciones de compra directa realizadas por comercios con certificación PCI es idéntica a la respuesta de la compra estándar. Esto asegura la consistencia entre los diferentes tipos de transacciones y simplifica los procesos de integración.</p>
 <p>Todos los campos, estados y códigos de error descritos en la respuesta de Compra estándar se aplican por igual a las transacciones de Compra Directa.</p>
@@ -1857,8 +1861,8 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 </tr>
 </tbody>
 </table>
-<h4 id="carddata-object">Objeto CardData</h4>
-<p>El objeto CardData contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.</p>
+<h4 id="paymentmethod-object">Objeto PaymentMethod</h4>
+<p>El objeto PaymentMethod contiene información detallada sobre el medio de pago utilizado en la transacción. Esto incluye detalles de la tarjeta (para transacciones con tarjeta) u otra información relevante del medio de pago.</p>
 <table>
 <thead>
 <tr>
@@ -2081,7 +2085,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 <div class="left-element">
     <b>Última modificación</b>
     
-    11 de noviembre de 2024
+    18 de noviembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
