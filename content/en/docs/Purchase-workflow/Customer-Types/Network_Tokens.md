@@ -3,8 +3,8 @@ title: "Network Tokens"
 linkTitle: "Network Tokens"
 date: 2023-08-02T08:43:44-05:00
 Description: >
-  Discover how Bamboo supports Network Tokens with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
-weight: 60
+  Discover how Bamboo supports Network Tokens for Visa and Mastercard with pass-through capabilities to enhance digital payment security and reduce fraud by replacing sensitive card data with secure tokens.
+weight: 40
 tags: ["subtopic"]
 ---
 

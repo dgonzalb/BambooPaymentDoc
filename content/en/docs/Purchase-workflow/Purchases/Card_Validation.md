@@ -49,7 +49,7 @@ For Argentina and Brazil, Customer and Address fields are mandatory. These marke
 | `DocumentType` | `string` | No¹ | Type of document. Use "CPF.BR" for Brazil or "DNI.AR" for Argentina |
 | `Address` | `object` | No¹ | Customer's address information |
 
-¹ It should required for Argentina and Brazil
+¹ It should be required for Argentina and Brazil.
 
 #### Address Object
 
@@ -61,10 +61,9 @@ For Argentina and Brazil, Customer and Address fields are mandatory. These marke
 | `PostalCode` | `string` | No | Postal or ZIP code |
 | `AddressDetail` | `string` | Yes¹ | Street address with number |
 
-¹ It should required for Argentina and Brazil
+¹ It should be required for Argentina and Brazil.
 
-
-### Request exampleas
+### Request example
 
 {{< highlight json >}}
 {{< Payins/V3/CardValidation/CardValidation >}}
