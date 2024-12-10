@@ -17,6 +17,10 @@ You must invoke a **POST** request to the following URLs according to your needs
 * **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
 
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
+
 {{% alert title="Looking for previous API versions?" color="info"%}}
 If you're searching for documentation on earlier API versions (V1 and V2), please refer to our [Legacy Systems section]({{< ref Refunds-and-voids.md >}})
 {{% /alert %}}

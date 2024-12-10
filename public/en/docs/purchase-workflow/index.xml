@@ -15,6 +15,67 @@
     
     
     <item>
+      <title>Docs: Authentication</title>
+      <link>/en/docs/purchase-workflow/authentication.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
+      
+      <guid>/en/docs/purchase-workflow/authentication.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
+&lt;p&gt;All methods used in Purchase API require the following authentication headers.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;With this header, the request will be transmitted in &lt;em&gt;JSON&lt;/em&gt; format.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Basic {{Merchant Private Key}}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Send the &lt;code&gt;{{Merchant Private Key}}&lt;/code&gt; (your merchant identifier) and the word &lt;code&gt;Basic&lt;/code&gt;.&lt;br&gt;Example: &lt;code&gt;Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Setting the language of the response codes&lt;/h4&gt;
+&lt;p&gt;You can receive the error description by relying on localization features. To do this, you need to send the &lt;code&gt;lang&lt;/code&gt; header in your integration, using any of the following languages in &lt;strong&gt;ISO 639-1&lt;/strong&gt; format.&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Code&lt;/th&gt;
+&lt;th&gt;Language&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;en&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;English.&lt;br&gt;&lt;em&gt;This is the default language. If you don&amp;rsquo;t send this header or set a non-existent language, you will receive errors in this language.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;es&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Spanish.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;pt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Portuguese.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Tokenization</title>
       <link>/en/docs/purchase-workflow/customer-types.html</link>
       <pubDate>Mon, 17 Jul 2023 07:28:16 -0500</pubDate>
@@ -63,6 +124,7 @@
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;In the header, the &lt;code&gt;Authorization&lt;/code&gt; parameter must be configured by concatenating the word &lt;code&gt;Basic&lt;/code&gt;, a space and the &lt;strong&gt;Private Key&lt;/strong&gt; of the merchant. For more information about authentication, check our &lt;a href=&#34;../../../en/docs/purchase-workflow/purchases/purchase_v3.html&#34;&gt;Authentication Guide&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

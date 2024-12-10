@@ -15,6 +15,67 @@
     
     
     <item>
+      <title>Docs: Autenticación</title>
+      <link>/es/docs/purchase-workflow/authentication.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/authentication.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuración de la autenticación&lt;/h2&gt;
+&lt;p&gt;Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Llave&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;th&gt;Comentarios&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Content-Type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Indica que la solicitud se enviará en formato JSON.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Basic {{Clave Privada del Comercio}}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Incluya la palabra &lt;code&gt;Basic&lt;/code&gt; seguida de su &lt;code&gt;{{Clave Privada del Comercio}}&lt;/code&gt; (y el identificador como comercio).&lt;br&gt;Ejemplo: &lt;code&gt;Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;setting-the-language-of-the-response-codes&#34;&gt;Configurar el idioma de los códigos de respuesta&lt;/h3&gt;
+&lt;p&gt;Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado &lt;code&gt;lang&lt;/code&gt;, utilizando uno de los siguientes códigos en formato &lt;strong&gt;ISO 639-1&lt;/strong&gt;:&lt;/p&gt;
+&lt;div id=&#34;shortTable&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Code&lt;/th&gt;
+&lt;th&gt;Language&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;en&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;English.&lt;br&gt;&lt;em&gt;Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;es&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Español.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;pt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Portugués.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Tokenización</title>
       <link>/es/docs/purchase-workflow/customer-types.html</link>
       <pubDate>Mon, 17 Jul 2023 07:28:16 -0500</pubDate>
@@ -47,6 +108,91 @@
     </item>
     
     <item>
+      <title>Docs: Sistema de información de antifraude</title>
+      <link>/es/docs/purchase-workflow/antifraud.html</link>
+      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
+      
+      <guid>/es/docs/purchase-workflow/antifraud.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;parameters-to-send-when-making-a-purchase&#34;&gt;Parámetros a enviar al realizar una compra&lt;/h2&gt;
+&lt;p&gt;A continuación se listan los parámetros requeridos y sugeridos (opcionales) que deben ser enviados al momento de generar una compra en función del flujo de autorización.&lt;/p&gt;
+&lt;h3 id=&#34;authorization-flow-by-api&#34;&gt;Flujo de autorización por API&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}&lt;/code&gt;&lt;br&gt;Nombre, apellido y correo electrónico correspondientes al cliente conectado al sitio web del comercio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{&amp;quot;AntifraudFingerprintId&amp;quot;:&amp;quot;&amp;quot;}}&lt;/code&gt;&lt;br&gt;SessionId (&lt;code&gt;AntifraudFingerprintId&lt;/code&gt;) que se obtiene por medio de la función JavaScript &lt;a href=&#34;#getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;CustomerIP&amp;quot;:&amp;quot;&amp;quot;&lt;/code&gt;&lt;br&gt;IP correspondiente al cliente conectado al sitio web del comercio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{“ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Dirección de envío proporcionada por el cliente. Si envía este parámetro, todas sus propiedades son obligatorias.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}&lt;/code&gt;&lt;br&gt;Documento del cliente.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt; que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;authorization-flow-by-redirection&#34;&gt;Flujo de autorización por Redirección&lt;/h3&gt;
+&lt;p&gt;Para el caso del flujo de autorización por redirección, los parámetros requeridos y sug&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Todos los de la columna A y al menos uno de la columna B&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Columna A - Obligatorios&lt;/th&gt;
+&lt;th&gt;Columna B - Al menos un dato es obligatorio&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AntifraudData&lt;/code&gt; → &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CustomerIp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FirstName&lt;/code&gt; - &lt;code&gt;LastName&lt;/code&gt;&lt;br&gt;&lt;code&gt;DocumentTypeId&lt;/code&gt; - &lt;code&gt;DocNumber&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Teléfono y dirección de envío proporcionada por el cliente.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;, diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Phone, and Shipping address provided by the customer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;  que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;device-fingerprint&#34;&gt;Device Fingerprint&lt;/h2&gt;
+&lt;h3 id=&#34;javascript-library-import&#34;&gt;Importación de la Librería JavaScript&lt;/h3&gt;
+&lt;p&gt;La invocación al servicio de fingerprint se encuentra en una librería JavaScript, que debe ser importada en la página web del cliente directamente desde una URL pública de nuestra plataforma.&lt;/p&gt;
+&lt;p&gt;El fragmento de JavaScript registra las interacciones del usuario con su sitio web y recopila información del dispositivo.&lt;/p&gt;
+&lt;p&gt;En la llamada a dicha librería se debe incluir (como parámetro) la llave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia la API REST desde esta librería.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Nota&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Usted debe importar la librería a través de la URL pública dispuesta por Bamboo Payment. No debe ser descargada y usada localmente desde un servidor propio del comercio o desde una URL de un tercero no autorizado por Bamboo Payment.&lt;/p&gt;
+&lt;p&gt;Esto es importante por motivos de seguridad y para mantenerse siempre actualizados con las últimas modificaciones y correcciones realizadas sobre la misma.&lt;/p&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;methods&#34;&gt;Métodos&lt;/h2&gt;
+&lt;h3 id=&#34;getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/h3&gt;
+&lt;p&gt;Este método retorna el &lt;code&gt;SessionId&lt;/code&gt; del fingerprint (string). El &lt;code&gt;SessionId&lt;/code&gt; es el dato que se debe enviar en la invocación de la API al momento de la compra en el parámetro &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/getSessionAntifraudFlow_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Reembolsos</title>
       <link>/es/docs/purchase-workflow/refunds.html</link>
       <pubDate>Fri, 02 Aug 2024 08:46:32 -0500</pubDate>
@@ -63,6 +209,10 @@
 &lt;li&gt;&lt;strong&gt;Producción&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Pruebas&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;br /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recuerda incluir la &lt;strong&gt;Clave Privada&lt;/strong&gt; del comercio en los encabezados de la petición. &lt;br /&gt; Para más detalles, consulta nuestra &lt;a href=&#34;../../../es/docs/purchase-workflow/authentication.html&#34;&gt;Guía de Autenticación&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -220,91 +370,6 @@
 &lt;p class=&#34;alert-text&#34;&gt;La disponibilidad y los tiempos de procesamiento de los reembolsos pueden variar según el medio de pago y el país. Para obtener información más detallada, consulte la sección &lt;a href=&#34;../../../es/docs/payment-methods.html&#34;&gt;medios de pago por país&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Sistema de información de antifraude</title>
-      <link>/es/docs/purchase-workflow/antifraud.html</link>
-      <pubDate>Wed, 02 Aug 2023 08:43:44 -0500</pubDate>
-      
-      <guid>/es/docs/purchase-workflow/antifraud.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;parameters-to-send-when-making-a-purchase&#34;&gt;Parámetros a enviar al realizar una compra&lt;/h2&gt;
-&lt;p&gt;A continuación se listan los parámetros requeridos y sugeridos (opcionales) que deben ser enviados al momento de generar una compra en función del flujo de autorización.&lt;/p&gt;
-&lt;h3 id=&#34;authorization-flow-by-api&#34;&gt;Flujo de autorización por API&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}&lt;/code&gt;&lt;br&gt;Nombre, apellido y correo electrónico correspondientes al cliente conectado al sitio web del comercio.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{&amp;quot;AntifraudFingerprintId&amp;quot;:&amp;quot;&amp;quot;}}&lt;/code&gt;&lt;br&gt;SessionId (&lt;code&gt;AntifraudFingerprintId&lt;/code&gt;) que se obtiene por medio de la función JavaScript &lt;a href=&#34;#getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;quot;CustomerIP&amp;quot;:&amp;quot;&amp;quot;&lt;/code&gt;&lt;br&gt;IP correspondiente al cliente conectado al sitio web del comercio.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;{“Customer”:{“ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Dirección de envío proporcionada por el cliente. Si envía este parámetro, todas sus propiedades son obligatorias.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{“Customer”:{DocumentTypeId:””,”DocNumber”:””}}&lt;/code&gt;&lt;br&gt;Documento del cliente.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt; que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;authorization-flow-by-redirection&#34;&gt;Flujo de autorización por Redirección&lt;/h3&gt;
-&lt;p&gt;Para el caso del flujo de autorización por redirección, los parámetros requeridos y sug&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Parámetros Obligatorios:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Todos los de la columna A y al menos uno de la columna B&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Columna A - Obligatorios&lt;/th&gt;
-&lt;th&gt;Columna B - Al menos un dato es obligatorio&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;AntifraudData&lt;/code&gt; → &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Email&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;CustomerIp&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;FirstName&lt;/code&gt; - &lt;code&gt;LastName&lt;/code&gt;&lt;br&gt;&lt;code&gt;DocumentTypeId&lt;/code&gt; - &lt;code&gt;DocNumber&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Parámetros sugeridos:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Teléfono y dirección de envío proporcionada por el cliente.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;, diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;{“Customer”:{“Phone”: “”, “ShippingAddress”:{}}}&lt;/code&gt;&lt;br&gt;Phone, and Shipping address provided by the customer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;{&amp;quot;AntifraudData&amp;quot;:{“AntifraudMetadataIn”:{“key1”:”data1”,”key2”:”data2”}}}&lt;/code&gt;&lt;br&gt;&lt;code&gt;AntifraudMetadataIn&lt;/code&gt;  que es un diccionario de datos a definir, para ajustar el sistema antifraude a las necesidades particulares de cada comercio.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;device-fingerprint&#34;&gt;Device Fingerprint&lt;/h2&gt;
-&lt;h3 id=&#34;javascript-library-import&#34;&gt;Importación de la Librería JavaScript&lt;/h3&gt;
-&lt;p&gt;La invocación al servicio de fingerprint se encuentra en una librería JavaScript, que debe ser importada en la página web del cliente directamente desde una URL pública de nuestra plataforma.&lt;/p&gt;
-&lt;p&gt;El fragmento de JavaScript registra las interacciones del usuario con su sitio web y recopila información del dispositivo.&lt;/p&gt;
-&lt;p&gt;En la llamada a dicha librería se debe incluir (como parámetro) la llave pública de la cuenta de comercio (PublicAccountKey), la cual será utilizada para las llamadas hacia la API REST desde esta librería.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{API_Environment}/v1/Scripts/Antifraud.js?key={PublicAccountKey}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    Nota&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;p&gt;Usted debe importar la librería a través de la URL pública dispuesta por Bamboo Payment. No debe ser descargada y usada localmente desde un servidor propio del comercio o desde una URL de un tercero no autorizado por Bamboo Payment.&lt;/p&gt;
-&lt;p&gt;Esto es importante por motivos de seguridad y para mantenerse siempre actualizados con las últimas modificaciones y correcciones realizadas sobre la misma.&lt;/p&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;methods&#34;&gt;Métodos&lt;/h2&gt;
-&lt;h3 id=&#34;getsessionantifraud&#34;&gt;getSessionAntifraud&lt;/h3&gt;
-&lt;p&gt;Este método retorna el &lt;code&gt;SessionId&lt;/code&gt; del fingerprint (string). El &lt;code&gt;SessionId&lt;/code&gt; es el dato que se debe enviar en la invocación de la API al momento de la compra en el parámetro &lt;code&gt;AntifraudFingerprintId&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/getSessionAntifraudFlow_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

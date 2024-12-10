@@ -29,11 +29,16 @@ No todos los métodos de pago admiten la función de preautorización. Está dis
 
 {{% /alert %}}
 
+
 ### URL de la solicitud {#request-url}
 Debe realizar una petición **POST** a las siguientes URLs según sus necesidades:
 
 * **Producción**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ### Parámetros de la solicitud {#request-parameters}
 El body en la solicitud es opcional para confirmar una compra. Si no envía ninguna solicitud, el método confirmará la compra preautorizada por su valor original.
@@ -80,11 +85,16 @@ La función de preautorización puede no estar soportada por todos los métodos 
 
 {{% /alert %}}
 
+
 ### URL de la solicitud {#request-url-1}
 Debe realizar una petición **POST** a las siguientes URLs según sus necesidades:
 
 * **Producción**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ### Parámetros de la solicitud {#request-parameters-1}
 No se requiere el body en la solicitud para cancelar una compra. Si no envía ninguna solicitud, la compra se anulará con su valor original.

@@ -28,7 +28,10 @@ Para hacer uso del preview de la compra, se debe apuntar al siguiente endpoint:
 
 `GET https://api.stage.bamboopayment.com/v1/api/purchase/preview`
 
-En el encabezado, se debe configurar el parámetro `Authorization` concatenando la palabra `Basic`, un espacio y la ***Private Key*** del comercio.
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
+
 
 ### Ejemplo del Response {#response-example}
 

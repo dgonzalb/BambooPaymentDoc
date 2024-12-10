@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-11-18T17:52:47-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-06T16:46:37-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Create a Purchase">
 <meta itemprop="description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-11-18T17:52:47-03:00" />
-<meta itemprop="wordCount" content="1786">
+<meta itemprop="dateModified" content="2024-12-06T16:46:37-03:00" />
+<meta itemprop="wordCount" content="1664">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a Purchase"/>
 <meta name="twitter:description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.55f7529219cef72ff6b6ea4efa22ad63233776544f48437ece22b067c6cb7c45bb12535c46811eb1e2dd54d0be11a995abf7837bbeea60e9cabafeaf4ba40bbc.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.d60c6dffe3fa27034b4e27216ff4528d3a9da9ee9dbd3f83fc958bfe406dcf93f3ef2ac5fd08d5be0e053232b8f1064e48a3768fe5eb112be4f8091ecca70db5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -273,6 +273,12 @@
       
       
       
+      
+        <a id="/en/docs/purchase-workflow/authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowauthenticationhtml" href="../../../../en/docs/purchase-workflow/authentication.html">Authentication</a>
+      
+      
+      
+      
 
 
 
@@ -342,7 +348,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Validation</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Verification</a>
       
       
       
@@ -354,7 +360,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget-purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/get-purchase.html">Get a Purchase</a>
+        <a id="/en/docs/purchase-workflow/purchases/get_purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget_purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/get_purchase.html">Get a Purchase</a>
       
       
       
@@ -1095,11 +1101,6 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#configuring-the-authentication">Configuring the authentication</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
     <li><a href="#create-a-purchase">Create a Purchase</a>
       <ul>
         <li><a href="#request-url">Request URL</a></li>
@@ -1179,55 +1180,7 @@
 	<h1>Create a Purchase</h1>
     <div class="lead">Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.</div>
 	       
-	<h2 id="configuring-the-authentication">Configuring the authentication</h2>
-<p>All methods used in Purchase API require the following authentication headers.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Content-Type</code></td>
-<td><code>application/json</code></td>
-<td>With this header, the request will be transmitted in <em>JSON</em> format.</td>
-</tr>
-<tr>
-<td><code>Authorization</code></td>
-<td><code>Basic {{Merchant Private Key}}</code></td>
-<td>Send the <code>{{Merchant Private Key}}</code> (your merchant identifier) and the word <code>Basic</code>.<br>Example: <code>Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="setting-the-language-of-the-response-codes">Setting the language of the response codes</h4>
-<p>You can receive the error description by relying on localization features. To do this, you need to send the <code>lang</code> header in your integration, using any of the following languages in <strong>ISO 639-1</strong> format.</p>
-<div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Code</th>
-<th>Language</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>en</code></td>
-<td>English.<br><em>This is the default language. If you don&rsquo;t send this header or set a non-existent language, you will receive errors in this language.</em></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>es</code></td>
-<td>Spanish.</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>pt</code></td>
-<td>Portuguese.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="create-a-purchase">Create a Purchase</h2>
+	<h2 id="create-a-purchase">Create a Purchase</h2>
 <p>After successfully <a href="../../../../en/docs/purchase-workflow/customer-types.html">tokenizing a card</a>, you can proceed with generating a purchase using this method. The Purchase API is specifically designed for merchants who do not have PCI DSS certification, allowing them to process payments securely without handling sensitive card data directly.</p>
 <p>For alternative payment methods such as cash payments or bank transfers, you only need to provide the corresponding payment method ID to initiate the transaction.</p>
 
@@ -1971,7 +1924,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    November 18, 2024
+    December 6, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

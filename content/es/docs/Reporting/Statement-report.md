@@ -13,9 +13,9 @@ Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud 
 * **Producción**: `https://api.bamboopayment.com/v2/api/Reporting/billing-movements`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/billing-movements`
 
+<br />
 
-## Authorization {#authorization}
-En el encabezado de la solicitud, el parámetro `Authorization` debe configurarse concatenando la palabra `Basic`, un espacio y la **Private Key** del merchant.
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ## Parámetros de la solicitud (Request) {#request-parameters}
 | Campo | Tipo | Obligatorio | Descripción |

@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-11-18T17:52:47-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-06T17:30:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Crear una compra">
 <meta itemprop="description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-11-18T17:52:47-03:00" />
-<meta itemprop="wordCount" content="1922">
+<meta itemprop="dateModified" content="2024-12-06T17:30:15-03:00" />
+<meta itemprop="wordCount" content="1846">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Crear una compra"/>
 <meta name="twitter:description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
@@ -134,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.55f7529219cef72ff6b6ea4efa22ad63233776544f48437ece22b067c6cb7c45bb12535c46811eb1e2dd54d0be11a995abf7837bbeea60e9cabafeaf4ba40bbc.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.d60c6dffe3fa27034b4e27216ff4528d3a9da9ee9dbd3f83fc958bfe406dcf93f3ef2ac5fd08d5be0e053232b8f1064e48a3768fe5eb112be4f8091ecca70db5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -273,6 +273,12 @@
       
       
       
+      
+        <a id="/es/docs/purchase-workflow/authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowauthenticationhtml" href="../../../../es/docs/purchase-workflow/authentication.html">Autenticación</a>
+      
+      
+      
+      
 
 
 
@@ -342,19 +348,19 @@
       
       
       
+        <a id="/es/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_validationhtml" href="../../../../es/docs/purchase-workflow/purchases/card_validation.html">Validar Tarjeta</a>
+      
+      
+      
+      
+      
         <a id="/es/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspurchase-workflowpurchasespurchase_v3html" href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html">Crear una compra</a>
       
       
       
       
       
-        <a id="/es/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasescard_validationhtml" href="../../../../es/docs/purchase-workflow/purchases/card_validation.html">Get de la Compra</a>
-      
-      
-      
-      
-      
-        <a id="/es/docs/purchase-workflow/purchases/get-purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget-purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get-purchase.html">Get de la Compra</a>
+        <a id="/es/docs/purchase-workflow/purchases/get_purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspurchase-workflowpurchasesget_purchasehtml" href="../../../../es/docs/purchase-workflow/purchases/get_purchase.html">Get de la Compra</a>
       
       
       
@@ -384,13 +390,13 @@
       
       
       
-        <a id="/es/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefundshtml" href="../../../../es/docs/purchase-workflow/refunds.html">Reembolsos</a>
-      
-      
-      
-      
-      
         <a id="/es/docs/purchase-workflow/antifraud.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowantifraudhtml" href="../../../../es/docs/purchase-workflow/antifraud.html">Antifraude</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocspurchase-workflowrefundshtml" href="../../../../es/docs/purchase-workflow/refunds.html">Reembolsos</a>
       
       
       
@@ -1095,11 +1101,6 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#configuring-the-authentication">Configuración de la autenticación</a>
-      <ul>
-        <li><a href="#setting-the-language-of-the-response-codes">Configurar el idioma de los códigos de respuesta</a></li>
-      </ul>
-    </li>
     <li><a href="#create-a-purchase">Crear una compra</a>
       <ul>
         <li><a href="#request-url">URL de la solicitud</a></li>
@@ -1179,55 +1180,7 @@
 	<h1>Crear una compra</h1>
     <div class="lead">Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.</div>
 	       
-	<h2 id="configuring-the-authentication">Configuración de la autenticación</h2>
-<p>Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:</p>
-<table>
-<thead>
-<tr>
-<th>Llave</th>
-<th>Valor</th>
-<th>Comentarios</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Content-Type</code></td>
-<td><code>application/json</code></td>
-<td>Indica que la solicitud se enviará en formato JSON.</td>
-</tr>
-<tr>
-<td><code>Authorization</code></td>
-<td><code>Basic {{Clave Privada del Comercio}}</code></td>
-<td>Incluya la palabra <code>Basic</code> seguida de su <code>{{Clave Privada del Comercio}}</code> (y el identificador como comercio).<br>Ejemplo: <code>Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="setting-the-language-of-the-response-codes">Configurar el idioma de los códigos de respuesta</h3>
-<p>Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado <code>lang</code>, utilizando uno de los siguientes códigos en formato <strong>ISO 639-1</strong>:</p>
-<div id="shortTable"></div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Code</th>
-<th>Language</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>en</code></td>
-<td>English.<br><em>Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto.</em></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>es</code></td>
-<td>Español.</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>pt</code></td>
-<td>Portugués.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="create-a-purchase">Crear una compra</h2>
+	<h2 id="create-a-purchase">Crear una compra</h2>
 <p>Esta sección explica detalladamente cómo generar una Compra para comercios sin certificación PCI DSS, permitiendo procesar pagos sin manejar directamente datos sensibles de tarjetas.</p>
 <p>Una vez que haya <a href="../../../../es/docs/purchase-workflow/customer-types.html">tokenizado una tarjeta</a>, es posible generar una compra usando este endpoint.</p>
 <p>Para medios de pago alternativos, como pagos en efectivo o transferencias bancarias, es necesario enviar el ID del medio de pago correspondiente para iniciar la transacción.</p>
@@ -1245,6 +1198,10 @@
 <li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v3/api/purchase</code></li>
 <li><strong>Pruebas</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase</code></li>
 </ul>
+<br />
+<blockquote>
+<p>Recuerda incluir la <strong>Clave Privada</strong> del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra <a href="../../../../es/docs/purchase-workflow/authentication.html">Guía de Autenticación</a>.</p>
+</blockquote>
 <h3 id="request-parameters">Parámetros de la solicitud</h3>
 <table>
 <thead>
@@ -1645,6 +1602,10 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 <li><strong>Producción</strong>: <code>https://secure-api.bamboopayment.com/v3/api/purchase</code></li>
 <li><strong>Pruebas</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/purchase</code></li>
 </ul>
+<br />
+<blockquote>
+<p>Recuerda incluir la <strong>Clave Privada</strong> del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra <a href="../../../../es/docs/purchase-workflow/authentication.html">Guía de Autenticación</a>.</p>
+</blockquote>
 <h3 id="request-parameters-1">Parámetros de la solicitud</h3>
 <h4 id="carddata-object">Objeto CardData</h4>
 <table>
@@ -2091,7 +2052,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 <div class="left-element">
     <b>Última modificación</b>
     
-    18 de noviembre de 2024
+    6 de diciembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

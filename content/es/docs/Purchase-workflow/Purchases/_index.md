@@ -4,7 +4,7 @@ linkTitle: "Compras"
 date: 2023-03-02T11:40:29-05:00
 Description: >
   Aprenda a crear una compra utilizando el flujo API proporcionando su información básica. Además, explore las distintas operaciones disponibles para las compras existentes.
-weight: 20
+weight: 30
 tags: ["parenttopic"]
 ---
 

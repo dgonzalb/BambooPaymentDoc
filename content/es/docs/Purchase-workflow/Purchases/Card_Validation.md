@@ -1,6 +1,6 @@
 ---
-title: "Validación de Tarjeta"
-linkTitle: "Validación de Tarjeta"
+title: "Validar Tarjeta"
+linkTitle: "Validar Tarjeta"
 date: 2024-12-06T08:43:44-05:00
 Description: >
   El endpoint de Validación de Tarjeta permite a los comercios verificar la validez de las tarjetas a través de distintos adquirentes en Latinoamérica, ya sea mediante operaciones Zero Auth o simulando compras de monto mínimo con reembolso automático.
@@ -14,11 +14,12 @@ Para usar este servicio, envíe una petición **POST** a alguna de las siguiente
 * **Producción**: `https://secure-api.bamboopayment.com/v3/api/card/validate`
 * **Pruebas**: `https://secure-api.stage.bamboopayment.com/v3/api/card/validate`
 
-{{% alert title="Autenticación Requerida" color="info"%}}
-Es necesario incluir el Merchant Private Key en los encabezados de la petición. Para más información sobre la autenticación, consulta nuestra [Guía de Autenticación]({{< ref "Purchase_V3.md" >}}).
-{{% /alert %}}
+<br />
 
-## Parámetros de la Petición {#request-parameters}
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
+
+
+## Parámetros de la Solicitud {#request-parameters}
 La petición se compone de dos objetos principales: `CardData` que contiene la información de la tarjeta y `Customer` con los datos del tarjetahabiente.
 
 ### Objeto CardData
@@ -62,7 +63,7 @@ Para Argentina y Brasil, los campos de Customer y Address son obligatorios. Esto
 
 ¹ Obligatorio para Argentina y Brasil.
 
-### Ejemplo de Petición
+### Ejemplo de la Solicitud
 
 {{< highlight json >}}
 {{< Payins/V3/CardValidation/CardValidation >}}

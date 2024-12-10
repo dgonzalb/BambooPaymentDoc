@@ -8,25 +8,6 @@ weight: 20
 tags: ["subtopic"]
 ---
 
-## Configuring the authentication
-All methods used in Purchase API require the following authentication headers.
-
-| Key | Value | Comments |
-|---|---|---|
-| `Content-Type` | `application/json` | With this header, the request will be transmitted in _JSON_ format. |
-| `Authorization` | `Basic {{Merchant Private Key}}` | Send the `{{Merchant Private Key}}` (your merchant identifier) and the word `Basic`.<br>Example: `Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__` |
-
-#### Setting the language of the response codes
-You can receive the error description by relying on localization features. To do this, you need to send the `lang` header in your integration, using any of the following languages in **ISO 639-1** format.
-
-<div id="shortTable"></div>
-
-| Code | Language |
-|:-:|---|
-| `en` | English.<br>_This is the default language. If you don't send this header or set a non-existent language, you will receive errors in this language._ |
-| `es` | Spanish. |
-| `pt` | Portuguese. |
-
 ## Create a Purchase
 After successfully [tokenizing a card]({{< ref "customer-types.md" >}}), you can proceed with generating a purchase using this method. The Purchase API is specifically designed for merchants who do not have PCI DSS certification, allowing them to process payments securely without handling sensitive card data directly.
 
@@ -42,6 +23,10 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 * **Production**: `https://api.bamboopayment.com/v3/api/purchase`
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase`
+
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 ### Request parameters
 
@@ -119,6 +104,10 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 * **Production**: `https://secure-api.bamboopayment.com/v3/api/purchase`
 * **Stage**: `https://secure-api.stage.bamboopayment.com/v3/api/purchase`
+
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 ### Request parameters
 

@@ -12,7 +12,6 @@ tags: ["subtopic"]
 If you're searching for documentation on earlier API versions (V2), please refer to our [Legacy Systems section]({{< ref Purchase-Operations.md >}}#get-purchases)
 {{% /alert %}}
 
-
 ## Get Purchase by Transaction ID {#get-transactionID}
 You must invoke a **GET** request to the following URLs according to your needs.
 
@@ -22,6 +21,10 @@ You must invoke a **GET** request to the following URLs according to your needs.
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
 
 Where `{{TransactionId}}` is the identifier of the transaction you want to retrieve.
+
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 {{% alert title="Using Reporting API" color="info"%}}
 For bulk transaction analysis and reporting needs, please refer to our [Transaction Report API]({{< ref "Transactions-report.md" >}}), which is optimized for handling large datasets and generating reports.
@@ -39,6 +42,10 @@ You must invoke a **GET** request to the following URLs according to your needs.
 
 Where `{{Order}}` is the merchant order identifier for the transaction you want to retrieve.
 
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
+
 
 ## Get Purchase by Unique ID {#get-uniqueID}
 You can retrieve transaction details using a custom unique identifier by making a GET request to the following endpoints.
@@ -50,6 +57,10 @@ You must invoke a **GET** request to the following URLs according to your needs.
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
 
 Where `{{UniqueID}}` is the custom unique identifier for the transaction you want to retrieve.
+
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 
 ## Response parameters

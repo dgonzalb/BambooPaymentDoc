@@ -1,9 +1,9 @@
 ---
-title: "Card Validation"
-linkTitle: "Card Validation"
+title: "Card Verification"
+linkTitle: "Card Verification"
 date: 2024-12-06T08:43:44-05:00
 Description: >
-  The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
+  The Card Verification endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -14,10 +14,9 @@ Send a **POST** request to the following URLs according to your needs:
 * **Production**: `https://secure-api.bamboopayment.com/v3/api/card/validate`
 * **Testing**: `https://secure-api.stage.bamboopayment.com/v3/api/card/validate`
 
-{{% alert title="Authentication Required" color="info"%}}
-Remember to include your Merchant Private Key in the request headers. For more information about authentication, check our [Authentication Guide]({{< ref "Purchase_V3.md" >}}).
-{{% /alert %}}
+<br />
 
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 ## Request Parameters {#request-parameters}
 The request consists of two main objects: `CardData` containing the card information and `Customer` with the cardholder's details.

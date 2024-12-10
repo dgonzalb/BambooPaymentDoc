@@ -28,7 +28,9 @@ To use the purchase preview, you must point to the following endpoint:
 
 `GET https://api.stage.bamboopayment.com/v1/api/purchase/preview`
 
-In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the **Private Key** of the merchant.
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
 
 ### Example of the request
 

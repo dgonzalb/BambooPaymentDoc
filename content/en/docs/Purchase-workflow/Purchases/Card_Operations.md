@@ -36,6 +36,10 @@ You must invoke a **POST** request to the following URLs according to your needs
 * **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture`
 
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
+
 ### Request parameters
 The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.
 
@@ -82,6 +86,11 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 * **Production**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/cancel`
+
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
+
 
 ### Request parameters
 Request body is not required to cancel a purchase. If you don't send any request the purchase will be voided with its original amount. 

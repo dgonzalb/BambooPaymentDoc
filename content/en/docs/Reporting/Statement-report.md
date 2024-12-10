@@ -13,8 +13,10 @@ You must invoke a **GET** request to the following URLs according to your needs.
 * **Production**: `https://api.bamboopayment.com/v2/api/Reporting/billing-movements`
 * **Stage**: `https://api.stage.bamboopayment.com/v2/api/Reporting/billing-movements`
 
-## Authorization
-In the header, the `Authorization` parameter must be configured by concatenating the word `Basic`, a space and the _**Private Key**_ of the merchant.
+<br />
+
+> Remember to include your **merchant's Private Key** in the request headers. <br /> For more details, check our [Authentication Guide]({{< ref "Authentication.md" >}}).
+
 
 ## Request parameters
 | Property | Type | Mandatory? | Description |

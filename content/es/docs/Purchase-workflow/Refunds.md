@@ -4,7 +4,7 @@ linkTitle: "Reembolsos"
 date: 2024-08-02T08:46:32-05:00
 Description: >
   Los reembolsos permiten devolver una compra confirmada, ya sea de forma parcial o total.
-weight: 40
+weight: 50
 ---
 
 ## ¿Cómo reembolsar una compra? {#refund-a-purchase}
@@ -15,6 +15,10 @@ Se requiere hacer una petición **POST** a las siguientes URLs según sus necesi
 
 * **Producción**: `https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund`
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 {{% alert title="Versiones anteriores" color="info"%}}
 En caso de requerir información sobre la V2 de Refunds, consulte nuestra [sección Legacy]({{< ref Refunds-and-voids.md >}})

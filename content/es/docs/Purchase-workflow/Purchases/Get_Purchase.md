@@ -8,7 +8,6 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-
 ## Consulta por ID de Transacción {#get-transactionID}
 Para obtener información detallada de una transacción específica, debes realizar una petición **GET** a nuestros endpoints.
 
@@ -18,6 +17,11 @@ Para obtener información detallada de una transacción específica, debes reali
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
 
 Donde `{{TransactionId}}` es el identificador de la transacción que desea consultar.
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
+
 
 {{% alert title="Uso de la API de Reportes" color="info"%}}
 Para análisis de transacciones en masa y generación de informes, consulte nuestra [API de Reporte de Transacciones]({{< ref "Transactions-report.md" >}}), optimizada para manejar grandes volúmenes de datos y generar informes detallados.
@@ -34,6 +38,10 @@ Realiza una petición **GET** a cualquiera de las siguientes URLs según tu ambi
 
 Donde `{{Order}}` es el número de orden que asignaste a la transacción que deseas consultar.
 
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
+
 ## Consulta por ID Único {#get-uniqueID}
 También puedes consultar una transacción utilizando un identificador único personalizado.
 
@@ -43,7 +51,11 @@ Realiza una petición **GET** a cualquiera de las siguientes URLs según tu ambi
 * **Producción**: `https://api.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
 
-Donde `{{UniqueId}}` es el identificador único personalizado que asignaste a la transacción.
+Donde `{{UniqueId}}` es el identificador único personalizado asignado a la transacción.
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ## Parámetros de respuesta {#response-parameters}
 La estructura de respuesta para esta operación es idéntica a la [respuesta estándar de compra]({{< ref "Purchase_V3.md" >}}#response). Esto garantiza consistencia entre diferentes tipos de transacciones y simplifica los procesos de integración.

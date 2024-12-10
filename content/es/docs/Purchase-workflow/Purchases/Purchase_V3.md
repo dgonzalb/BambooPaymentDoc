@@ -8,25 +8,6 @@ weight: 20
 tags: ["subtopic"]
 ---
 
-## Configuración de la autenticación {#configuring-the-authentication}
-Todos los métodos de la API de Compras requieren los siguientes encabezados de autenticación:
-
-| Llave | Valor | Comentarios |
-|---|---|---|
-| `Content-Type` | `application/json` | Indica que la solicitud se enviará en formato JSON. |
-| `Authorization` | `Basic {{Clave Privada del Comercio}}` | Incluya la palabra `Basic` seguida de su `{{Clave Privada del Comercio}}` (y el identificador como comercio).<br>Ejemplo: `Basic RVkeLr-86_iTzSMLvDtuyQ-1zqIcsmFG-oSzncn_uFv-nj7bhB3rtZg__` |
-
-### Configurar el idioma de los códigos de respuesta {#setting-the-language-of-the-response-codes}
-Es posible recibir la descripción de errores en un idioma preferido. Para esto, envíe el encabezado `lang`, utilizando uno de los siguientes códigos en formato **ISO 639-1**:
-
-<div id="shortTable"></div>
-
-| Code | Language |
-|:-:|---|
-| `en` | English.<br>_Si no envía este encabezado o especifica un idioma no existente, recibirá los errores en inglés por defecto._ |
-| `es` | Español. |
-| `pt` | Portugués. |
-
 ## Crear una compra {#create-a-purchase}
 Esta sección explica detalladamente cómo generar una Compra para comercios sin certificación PCI DSS, permitiendo procesar pagos sin manejar directamente datos sensibles de tarjetas.
 
@@ -43,6 +24,10 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 
 * **Producción**: `https://api.bamboopayment.com/v3/api/purchase`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/purchase`
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ### Parámetros de la solicitud {#request-parameters}
 
@@ -239,6 +224,10 @@ Debe realizar una petición **POST** a las siguientes URLs según sus necesidade
 
 * **Producción**: `https://secure-api.bamboopayment.com/v3/api/purchase`
 * **Pruebas**: `https://secure-api.stage.bamboopayment.com/v3/api/purchase`
+
+<br />
+
+> Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ### Parámetros de la solicitud {#request-parameters-1}
 
