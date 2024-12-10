@@ -1,9 +1,9 @@
 ---
-title: "Card Verification"
-linkTitle: "Card Verification"
+title: "Card Validation"
+linkTitle: "Card Validation"
 date: 2024-12-06T08:43:44-05:00
 Description: >
-  The Card Verification endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
+  The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -30,7 +30,7 @@ The request consists of two main objects: `CardData` containing the card informa
 | `CVV` | `string` | Yes | Card security code (3-4 digits) |
 | `Expiration` | `string` | Yes | Card expiration date in format MM/YY |
 | `Email` | `string` | Yes | Cardholder's email address |
-| `Document` | `string` | No* | Cardholder's document number (*Required for some countries) |
+| `Document` | `string` | Yes* | Cardholder's document number (*Required for some countries) |
 | `TargetCountryISO` | `string` | Yes | Two-letter ISO country code where the card will be processed. Send the country using `ISO-3166-1` format.|
 
 ### Customer Object
