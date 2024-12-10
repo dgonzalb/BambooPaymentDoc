@@ -13,19 +13,20 @@ weight: 50
 ## 2024
 
 ### Diciembre
-| Page | Description |
+| Página | Descripción |
 |---|---|
-| **[Card Validator]({{< ref Card_Validation.md >}})** | Lanzamiento del endpoint de Validación de Tarjeta |
+| [GET Purchase]({{< ref Get_Purchase.md >}}) | Adicionamos nuevos parámetros de búsqueda de transacciones por Order y UniqueID. |
+| [Card Validator]({{< ref Card_Validation.md >}}) | Lanzamiento del endpoint de Validación de Tarjeta |
 
 ### Octubre
 | Página | Descripción |
 |---|---|
-| **[Error Codes](/es/docs/getting-started/error-codes.html)** | Nuevos ErrorCodes agregados. |
-| **[Formulario de Tokenización](/es/docs/forms.html)** | Nuevo Formulario de Tokenización para Comercios sin Certificación PCI. |
-| **[Nueva API V3]({{< ref Purchase_V3.md >}})** | La API V3 es ahora nuestra versión oficial, ofreciendo mejor rendimiento y responses optimizados. Las versiones anteriores también están disponibles en la sección Legacy. |
+| [Error Codes](/es/docs/getting-started/error-codes.html) | Nuevos ErrorCodes agregados. |
+| [Formulario de Tokenización](/es/docs/forms.html) | Nuevo Formulario de Tokenización para Comercios sin Certificación PCI. |
+| [Nueva API V3]({{< ref Purchase_V3.md >}}) | La API V3 es ahora nuestra versión oficial, ofreciendo mejor rendimiento y responses optimizados. Las versiones anteriores también están disponibles en la sección Legacy. |
 | [Solicitar un retiro]({{< ref Request-withdrawal.md >}}) | Nueva API para solicitar un retiro de saldos. |
 | [API de Transacciones](/es/docs/reporting/transactions-report.html) | Cambios en los parámetros y endpoints. |
-| **[API de Movimientos Financieros]({{< ref Statement-report.md >}})** | Nueva API de reportes para movimientos financieros. |
+| [API de Movimientos Financieros]({{< ref Statement-report.md >}}) | Nueva API de reportes para movimientos financieros. |
 
 
 ### Septiembre

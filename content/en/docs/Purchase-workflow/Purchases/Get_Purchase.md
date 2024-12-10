@@ -13,8 +13,10 @@ If you're searching for documentation on earlier API versions (V2), please refer
 {{% /alert %}}
 
 
-### Request URL
+## Get Purchase by Transaction ID {#get-transactionID}
 You must invoke a **GET** request to the following URLs according to your needs.
+
+### Request URL {#request-url-transactionID}
 
 * **Production**: `https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
 * **Stage**: `https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
@@ -25,7 +27,32 @@ Where `{{TransactionId}}` is the identifier of the transaction you want to retri
 For bulk transaction analysis and reporting needs, please refer to our [Transaction Report API]({{< ref "Transactions-report.md" >}}), which is optimized for handling large datasets and generating reports.
 {{% /alert %}}
 
-### Response parameters
+
+## Get Purchase by Order {#get-Order}
+You can retrieve transaction details using the merchant's order identifier by making a GET request to the following endpoints.
+
+### Request URL {#request-url-Order}
+You must invoke a **GET** request to the following URLs according to your needs.
+
+* **Production**: `https://api.bamboopayment.com/v3/api/Purchase/order/{{Order}}`
+* **Stage**: `https://api.stage.bamboopayment.com/v3/api/Purchase/order/{{Order}}`
+
+Where `{{Order}}` is the merchant order identifier for the transaction you want to retrieve.
+
+
+## Get Purchase by Unique ID {#get-uniqueID}
+You can retrieve transaction details using a custom unique identifier by making a GET request to the following endpoints.
+
+### Request URL {#request-url-uniqueID}
+You must invoke a **GET** request to the following URLs according to your needs.
+
+* **Production**: `https://api.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
+* **Stage**: `https://api.stage.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
+
+Where `{{UniqueID}}` is the custom unique identifier for the transaction you want to retrieve.
+
+
+## Response parameters
 The response structure for this operation is identical to the standard [purchase response]({{< ref "Purchase_V3.md" >}}#response). This ensures consistency across different transaction types and simplifies integration processes.
 
 | Parameter | Type | Description |

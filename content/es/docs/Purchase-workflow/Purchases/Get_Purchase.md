@@ -8,8 +8,11 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-## URL de la solicitud {#request-url}
-Se requiere hacer una petición **GET** a las siguientes URLs según sus necesidades:
+
+## Consulta por ID de Transacción {#get-transactionID}
+Para obtener información detallada de una transacción específica, debes realizar una petición **GET** a nuestros endpoints.
+
+### URL de la solicitud {#request-url-transactionID}
 
 * **Producción**: `https://api.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
 * **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/{{TransactionId}}`
@@ -19,6 +22,28 @@ Donde `{{TransactionId}}` es el identificador de la transacción que desea consu
 {{% alert title="Uso de la API de Reportes" color="info"%}}
 Para análisis de transacciones en masa y generación de informes, consulte nuestra [API de Reporte de Transacciones]({{< ref "Transactions-report.md" >}}), optimizada para manejar grandes volúmenes de datos y generar informes detallados.
 {{% /alert %}}
+
+## Consulta por Número de Orden {#get-Order}
+Puedes obtener los detalles de una transacción utilizando el número de orden asignado por tu comercio.
+
+### URL de la solicitud {#request-url-Order}
+Realiza una petición **GET** a cualquiera de las siguientes URLs según tu ambiente:
+
+* **Producción**: `https://api.bamboopayment.com/v3/api/Purchase/order/{{Order}}`
+* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/order/{{Order}}`
+
+Donde `{{Order}}` es el número de orden que asignaste a la transacción que deseas consultar.
+
+## Consulta por ID Único {#get-uniqueID}
+También puedes consultar una transacción utilizando un identificador único personalizado.
+
+### URL de la solicitud {#request-url-uniqueID}
+Realiza una petición **GET** a cualquiera de las siguientes URLs según tu ambiente:
+
+* **Producción**: `https://api.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
+* **Pruebas**: `https://api.stage.bamboopayment.com/v3/api/Purchase/uniqueId/{{UniqueId}}`
+
+Donde `{{UniqueId}}` es el identificador único personalizado que asignaste a la transacción.
 
 ## Parámetros de respuesta {#response-parameters}
 La estructura de respuesta para esta operación es idéntica a la [respuesta estándar de compra]({{< ref "Purchase_V3.md" >}}#response). Esto garantiza consistencia entre diferentes tipos de transacciones y simplifica los procesos de integración.

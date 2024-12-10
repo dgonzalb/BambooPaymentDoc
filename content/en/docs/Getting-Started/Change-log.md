@@ -12,35 +12,36 @@ weight: 50
 ### December
 | Page | Description |
 |---|---|
-| **[Card Validator]({{< ref Card_Validation.md >}})** | Release of Card Validation endpoint |
+| [GET Purchase]({{< ref Get_Purchase.md >}}) | Adding new capabilities to GET transactions using UniqueID and Order. |
+| [Card Validator]({{< ref Card_Validation.md >}}) | Release of Card Validation endpoint |
 
 ### October
 | Page | Description |
 |---|---|
-| **[Error Codes](/en/docs/getting-started/error-codes.html)** | New ErrorCodes added. |
-| **[Tokenization Form](/en/docs/forms.html)** | New Tokenization Form for Non-PCI Compliant Merchants. |
-| **[New API V3]({{< ref Purchase_V3.md >}})** | API V3 is now our official version, providing enhanced performance and optimized responses. Legacy versions are available too. |
+| [Error Codes](/en/docs/getting-started/error-codes.html) | New ErrorCodes added. |
+| [Tokenization Form](/en/docs/forms.html) | New Tokenization Form for Non-PCI Compliant Merchants. |
+| [New API V3]({{< ref Purchase_V3.md >}}) | API V3 is now our official version, providing enhanced performance and optimized responses. Legacy versions are available too. |
 | [Request a Withdrawal]({{< ref Request-withdrawal.md >}}) | New API for requesting a balance withdrawal. |
 | [Transaction Report API](/en/docs/reporting/transactions-report.html) | Changes in parameters and endpoints. |
-| **[Statement Report API]({{< ref Statement-report.md >}})** | New Reporting API for Financial Data. |
+| [Statement Report API]({{< ref Statement-report.md >}}) | New Reporting API for Financial Data. |
 
 
 ### September
 | Page | Description |
 |---|---|
 | [VTEX Antifraud Script](/en/docs/plugins/vtex/vtex_setup.html#antifraud-script) | Added the script for the antifraud for Payfac merchants using VTEX. |
-| **[Direct Purchase](/en/docs/versions.html)** | Adding Direct Purchase V3 for PCI Merchants in the next versions. |
+| [Direct Purchase](/en/docs/versions.html) | Adding Direct Purchase V3 for PCI Merchants in the next versions. |
 
 
 ### August
 | Page | Description |
 |---|---|
 | [Versions](/en/docs/versions.html) | New section added for versions and VNEXT in English. |
-| **[Plug-ins - VTEX](/en/docs/plugins/vtex.html)** | New section added dedicated to plug-ins and VTEX Setup for Uruguay. |
+| [Plug-ins - VTEX](/en/docs/plugins/vtex.html) | New section added dedicated to plug-ins and VTEX Setup for Uruguay. |
 | [Chile - Cards](/en/docs/payment-methods/chile/cl-cards.html#card-payments-using-api-flow) | The credit card redirection flow has been deprecated. |
 | [Report API - Transactions](/en/docs/reporting/transactions-report.html) | New Reporting API for Transactions. |
 | [Mexico - OXXOPay](/en/docs/payment-methods/mexico/mx-apm.html#response-parameters) | OxxoPay voucher image update. |
-| **[Change Log](/en/docs/getting-started/change-log.html)** | The Change Log page has been added to the technical documentation. |
+| [Change Log](/en/docs/getting-started/change-log.html) | The Change Log page has been added to the technical documentation. |
 
 ### July
 | Page | Description |
