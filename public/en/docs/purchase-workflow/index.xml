@@ -124,7 +124,10 @@
 &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt;: &lt;code&gt;https://api.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/refund&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In the header, the &lt;code&gt;Authorization&lt;/code&gt; parameter must be configured by concatenating the word &lt;code&gt;Basic&lt;/code&gt;, a space and the &lt;strong&gt;Private Key&lt;/strong&gt; of the merchant. For more information about authentication, check our &lt;a href=&#34;../../../en/docs/purchase-workflow/purchases/purchase_v3.html&#34;&gt;Authentication Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;br /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remember to include your &lt;strong&gt;merchant&amp;rsquo;s Private Key&lt;/strong&gt; in the request headers. &lt;br /&gt; For more details, check our &lt;a href=&#34;../../../en/docs/purchase-workflow/authentication.html&#34;&gt;Authentication Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

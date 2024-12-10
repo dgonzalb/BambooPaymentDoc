@@ -1,18 +1,14 @@
 ---
-title: "Transferencias bancarias - PSE"
-linkTitle: "Transferencias bancarias - PSE"
+title: "PSE"
+linkTitle: "PSE"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con PSE.
+  Aprenda a integrar su solución para procesar pagos con PSE en Colombia.
 weight: 20
 tags: ["subtopic"]
 ---
 
-{{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago.
-{{% /alert %}}
-
-## PSE
+## Transferencia Bancaria - PSE
 PSE (Pagos Seguros en Línea) es un sistema de pago en línea muy utilizado en Colombia. Permite realizar transacciones electrónicas seguras al permitir a los usuarios efectuar pagos directamente desde sus cuentas bancarias.
 
 ### Parámetros del Request {#request-parameters}
@@ -38,6 +34,8 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Canceled` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
+
+> _El estado de la compra para Medios de Pago Alternativos permanecerá en **Pending** hasta que el cliente complete el pago_
 
 #### Ejemplo del Request {#request-example}
 {{< highlight json >}}

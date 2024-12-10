@@ -12,21 +12,21 @@
 
 
 <link rel="icon" type="image/x-icon" href="../../../../assets/bamboo.ico" sizes="32x32">
-<title>Efectivo | Bamboo Payment</title><meta property="og:title" content="Efectivo" />
-<meta property="og:description" content="Aprenda a integrar su solución para procesar pagos con efectivo.
+<title>Pagos en Efectivo | Bamboo Payment</title><meta property="og:title" content="Pagos en Efectivo" />
+<meta property="og:description" content="Aprende a integrar pagos en efectivo para Colombia.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/payment-methods/colombia/co-apm-cash.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
 <meta property="article:modified_time" content="2024-11-18T17:52:47-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Efectivo">
-<meta itemprop="description" content="Aprenda a integrar su solución para procesar pagos con efectivo.
+<meta itemprop="name" content="Pagos en Efectivo">
+<meta itemprop="description" content="Aprende a integrar pagos en efectivo para Colombia.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
 <meta itemprop="dateModified" content="2024-11-18T17:52:47-03:00" />
-<meta itemprop="wordCount" content="526">
+<meta itemprop="wordCount" content="493">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Efectivo"/>
-<meta name="twitter:description" content="Aprenda a integrar su solución para procesar pagos con efectivo.
+<meta name="twitter:title" content="Pagos en Efectivo"/>
+<meta name="twitter:description" content="Aprende a integrar pagos en efectivo para Colombia.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -134,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d60c6dffe3fa27034b4e27216ff4528d3a9da9ee9dbd3f83fc958bfe406dcf93f3ef2ac5fd08d5be0e053232b8f1064e48a3768fe5eb112be4f8091ecca70db5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.cfd10b50322f8dfebae5f67f46499c796dbfe79094caaec0297f4b1ba097f855930e466f0a7313983cb1493ddb171f78f6a4f90433f52232b667c57dad98fea6.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -699,19 +699,19 @@
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-banktransfer.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-banktransferhtml" href="../../../../es/docs/payment-methods/colombia/co-apm-banktransfer.html">Transferencias bancarias - PSE</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-pse.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-psehtml" href="../../../../es/docs/payment-methods/colombia/co-apm-pse.html">PSE</a>
       
       
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../../es/docs/payment-methods/colombia/co-apm-cash.html">Efectivo</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../../es/docs/payment-methods/colombia/co-apm-cash.html">Pagos en Efectivo</a>
       
       
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-wallet.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-wallethtml" href="../../../../es/docs/payment-methods/colombia/co-apm-wallet.html">Nequi</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-nequi.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-nequihtml" href="../../../../es/docs/payment-methods/colombia/co-apm-nequi.html">Nequi</a>
       
       
     </li>
@@ -1101,11 +1101,10 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#cash">Efectivo</a>
+    <li><a href="#cash-acquirers">Puntos de pago disponibles</a>
       <ul>
-        <li><a href="#cash-acquirers">Redes de pago en efectivo</a></li>
-        <li><a href="#request-parameters-1">Parámetros del Request</a></li>
-        <li><a href="#response-parameters-1">Parámetros del Response</a></li>
+        <li><a href="#request-parameters-1">Parámetros de la petición</a></li>
+        <li><a href="#response-parameters-1">Parámetros de respuesta</a></li>
       </ul>
     </li>
   </ul>
@@ -1156,7 +1155,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../es/docs/payment-methods/colombia/co-apm-cash.html">Efectivo</a>
+	<a href="../../../../es/docs/payment-methods/colombia/co-apm-cash.html">Pagos en Efectivo</a>
 </li>
 
 	</ol>
@@ -1164,66 +1163,66 @@
 
             
 <div class="td-content">
-	<h1>Efectivo</h1>
-    <div class="lead">Aprenda a integrar su solución para procesar pagos con efectivo.</div>
+	<h1>Pagos en Efectivo</h1>
+    <div class="lead">Aprende a integrar pagos en efectivo para Colombia.</div>
 	       
-	
-
-<div class="alert alert-info" role="alert">
-</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Info</h4>
-<p class="alert-text">El estado de la compra para Medios Alternativos de Pago permanecerá en <em>Pending</em> hasta que el cliente complete el pago.</p>
-</div>
-
-<h2 id="cash">Efectivo</h2>
-<p>El método de pago en efectivo permite a sus clientes generar un cupón y completar el pago en una oficina de pago física.</p>
-<h3 id="cash-acquirers">Redes de pago en efectivo</h3>
-<p>Puede ofrecer a su cliente la posibilidad de pagar en efectivo en las siguientes redes.</p>
+	<p>Este método permite a tus clientes generar un comprobante y pagar en puntos de pago físicos autorizados.</p>
+<h2 id="cash-acquirers">Puntos de pago disponibles</h2>
+<p>Puedes ofrecer a tus clientes la posibilidad de pagar en efectivo en las siguientes redes:</p>
 <div id="shortTable"></div>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
+<th style="text-align:center">Logo</th>
+<th style="text-align:center">PaymentMethodID</th>
 <th style="text-align:left">Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>APC</code></td>
 <td style="text-align:left">Apostar</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>BCC</code></td>
 <td style="text-align:left">Bancolombia</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>EFC</code></td>
 <td style="text-align:left">Efecty</td>
 </tr>
 <tr>
-<td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" alt="Diners" width="52" /></td>
+<td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>GNC</code></td>
 <td style="text-align:left">Gana</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>PNC</code></td>
 <td style="text-align:left">Puntored</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>SPC</code></td>
 <td style="text-align:left">Superpagos</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>SRC</code></td>
 <td style="text-align:left">SuRed</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /></td>
+<td style="text-align:center"><code>SSC</code></td>
 <td style="text-align:left">SuSuerte</td>
 </tr>
 </tbody>
 </table>
-<h3 id="request-parameters-1">Parámetros del Request</h3>
-<p>Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters">operación de compra</a> para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.</p>
+<h3 id="request-parameters-1">Parámetros de la petición</h3>
+<p>Para procesar pagos en efectivo, necesitas incluir campos específicos en tu solicitud. Para información sobre autenticación, idiomas de respuesta y parámetros básicos como monto y moneda, consulta el artículo sobre <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#request-parameters">operación de compra</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1238,13 +1237,13 @@
 <td><code>PaymentMethodId</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">Sí</td>
-<td>Encuentre el valor en la tabla de <a href="../../../../es/docs/payment-methods/colombia.html#payment-methods">Medios de pago</a>.</td>
+<td>Consulta el identificador en la tabla de <a href="../../../../es/docs/payment-methods/colombia.html#payment-methods">Medios de pago</a>.</td>
 </tr>
 <tr>
 <td><code>TargetCountryISO</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">Sí</td>
-<td>Indica el país destino.</td>
+<td>País donde se procesará el pago.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Email</code></td>
@@ -1256,19 +1255,19 @@
 <td><code>Customer</code> → <code>FirstName</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Nombre del cliente.</td>
+<td>Nombres del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>LastName</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Apellido del cliente.</td>
+<td>Apellidos del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocumentType</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Tipo de documento del cliente.<br>Consulte la <a href="../../../../es/docs/payment-methods/colombia.html#document-types">tabla de tipos de documento</a> para ver los posibles valores.</td>
+<td>Tipo de documento del cliente.<br>Consulta los valores disponibles en la <a href="../../../../es/docs/payment-methods/colombia.html#document-types">tabla de tipos de documento</a>.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>DocumentNumber</code></td>
@@ -1280,43 +1279,43 @@
 <td><code>Customer</code> → <code>PhoneNumber</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Número de teléfono del cliente.</td>
+<td>Teléfono del cliente.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Address</code> → <code>Country</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>País del cliente.</td>
+<td>País.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Address</code> → <code>State</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Departamento del cliente.</td>
+<td>Departamento.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Address</code> → <code>City</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Ciudad del cliente.</td>
+<td>Ciudad.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Address</code> → <code>AddressDetail</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Detalle de la dirección del cliente.</td>
+<td>Dirección completa.</td>
 </tr>
 <tr>
 <td><code>Customer</code> → <code>Address</code> → <code>PostalCode</code></td>
 <td style="text-align:center"><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Código postal del cliente.</td>
+<td>Código postal.</td>
 </tr>
 <tr>
 <td><code>MetaDataIn</code> → <code>PaymentExpirationInMinutes</code></td>
 <td style="text-align:center"><code>numeric</code></td>
 <td style="text-align:center">No</td>
-<td>Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto.</td>
+<td>Tiempo de expiración del pago en minutos. Si no lo especificas, se aplicará un valor predeterminado.</td>
 </tr>
 </tbody>
 </table>
@@ -1324,15 +1323,18 @@
 
 <div class="alert alert-info" role="alert">
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Consideraciones</h4>
+    Importante</h4>
 <p class="alert-text"><ul>
-<li>Los Pesos Colombianos no soportan cantidades decimales, por lo que todos los valores recibidos serán redondeados.</li>
-<li>El valor <code>amount</code> debe incluir dos ceros como decimales. Ejemplo <code>COP 5.000</code> &gt; <code>500000</code>.</li>
+<li>Los montos en Pesos Colombianos no admiten decimales, todos los valores se redondean automáticamente.</li>
+<li>El campo <code>amount</code> debe incluir dos ceros como decimales. Por ejemplo, para COP 5.000 debes enviar 500000.</li>
 </ul>
 </p>
 </div>
 
-<h4 id="request-example-1">Ejemplo del Request</h4>
+<blockquote>
+<p>El <strong>estado de la compra</strong> para pagos alternativos permanecerá como <em>Pendiente</em> hasta que el cliente complete el pago en el punto físico.</p>
+</blockquote>
+<h4 id="request-example-1">Ejemplo de petición</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethodId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;EFC&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CH2023-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1353,8 +1355,8 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PaymentExpirationInMinutes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7200&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h3 id="response-parameters-1">Parámetros del Response</h3>
-<p>En el Response, se encuentran los siguientes parámetros:</p>
+<h3 id="response-parameters-1">Parámetros de respuesta</h3>
+<p>Recibirás los siguientes parámetros en la respuesta:</p>
 <table>
 <thead>
 <tr>
@@ -1367,27 +1369,27 @@
 <tr>
 <td><code>Response</code> → <code>Action</code> → <code>URL</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>URL del cupón que debe ser presentado en la red física.</td>
+<td>URL del comprobante que el cliente debe presentar en el punto de pago.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentCode</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Referencia de pago retornada por el adquirente que identifica la orden generada.</td>
+<td>Código de referencia que identifica la orden de pago.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>PaymentExpirationDate</code></td>
 <td style="text-align:center"><code>date</code></td>
-<td>Fecha de expiración del pago.<br>Formato <em>DD/MM/AAAA</em>.</td>
+<td>Fecha de vencimiento del pago.<br>Formato <em>DD/MM/AAAA</em>.</td>
 </tr>
 <tr>
 <td><code>Response</code> → <code>MetadataOut</code> → <code>AgreementCode</code></td>
 <td style="text-align:center"><code>string</code></td>
-<td>Número de convenio entre el adquirente y la red física.</td>
+<td>Número de convenio entre el punto de pago y el adquirente.</td>
 </tr>
 </tbody>
 </table>
-<p>Para más información sobre los parámetros del Response, consulte la <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters">sección de parámetros</a> de la creación de la compra.</p>
-<h4 id="response-example-1">Ejemplo del Response</h4>
+<p>Para más detalles sobre los parámetros de respuesta, consulta la <a href="../../../../es/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters">sección de parámetros</a> en la documentación de Compras.</p>
+<h4 id="response-example-1">Ejemplo de respuesta</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;79632697147789184&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Result&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ACTION_REQUIRED&#34;</span><span style="color:#000;font-weight:bold">,</span>

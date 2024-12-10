@@ -1,6 +1,6 @@
 ---
-title: "Bank Transfers - PSE"
-linkTitle: "Bank Transfers - PSE"
+title: "PSE"
+linkTitle: "PSE"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Learn how to integrate your solution to process payments with PSE.
@@ -8,11 +8,7 @@ weight: 20
 tags: ["subtopic"]
 ---
 
-{{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes the payment.
-{{% /alert %}}
-
-## PSE
+## Bank Transfer using PSE
 PSE (Pagos Seguros en Línea) is a widely used online payment system in Colombia. It enables secure electronic transactions by allowing users to make payments directly from their bank accounts.
 
 ### Request parameters
@@ -38,6 +34,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Redirection` → `Url_Canceled` | `string` | No | Callback URL when the purchase status is `Canceled`. |
 | `Redirection` → `Url_Pending` | `string` | No | Callback URL when the purchase status is `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | Webhook notification URL. The Purchase status is notified to this URL once the payment method processor notifies Bamboo. The notification to this URL is a REST POST with JSON payload instead of redirection. It can also be static and configured by Support Team. |
+
+> _The purchase status for Alternative Payment methods will remain **Pending** until the customer completes the payment._
 
 #### Request example
 {{< highlight json >}}

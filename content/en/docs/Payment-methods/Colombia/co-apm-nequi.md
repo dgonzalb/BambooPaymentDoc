@@ -8,12 +8,10 @@ weight: 40
 tags: ["subtopic"]
 ---
 
-{{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes the payment.
-{{% /alert %}}
-
 ## Nequi QR
 Allows your customer to pay by scanning a QR code using their Nequi application. Bamboo's Payment API generates the QR code in the response to the payment request.
+
+> _The purchase status for Alternative Payment methods will remain **Pending** until the customer completes the payment._
 
 #### Payment Flow {#qr-code}
 <img src="/assets/NequiQREN.png" width="100%" alt="Nequi QR Payment Flow"/>
@@ -41,6 +39,7 @@ You need to include specific fields for this payment method to work correctly. C
 {{% alert title="Important!" color="danger"%}}
 <sup>*</sup> If you wish to process refunds, the `PhoneNumber`, `DocumentType` and `DocumentNumber` parameters are required in the request. Otherwise, a refund cannot be processed if the parameters were not sent.
 {{% /alert %}}
+
 
 #### Request example
 {{< highlight json >}}

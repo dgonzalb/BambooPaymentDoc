@@ -18,11 +18,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/purchases/card_operations.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-12-06T16:46:37-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Pre-authorized Purchases: Capture and Cancel">
 <meta itemprop="description" content="Optimize your payment workflows by using capture and void operations for pre-authorized credit and debit card transactions. The capture function allows you to finalize purchases with adjustable amounts, while the void function lets you cancel unnecessary authorizations.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-12-06T16:46:37-03:00" />
+<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
 <meta itemprop="wordCount" content="613">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-authorized Purchases: Capture and Cancel"/>
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d60c6dffe3fa27034b4e27216ff4528d3a9da9ee9dbd3f83fc958bfe406dcf93f3ef2ac5fd08d5be0e053232b8f1064e48a3768fe5eb112be4f8091ecca70db5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.cfd10b50322f8dfebae5f67f46499c796dbfe79094caaec0297f4b1ba097f855930e466f0a7313983cb1493ddb171f78f6a4f90433f52232b667c57dad98fea6.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -348,7 +348,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Verification</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Validation</a>
       
       
       
@@ -699,7 +699,7 @@
       
       
       
-        <a id="/en/docs/payment-methods/colombia/co-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apm-banktransferhtml" href="../../../../en/docs/payment-methods/colombia/co-apm-banktransfer.html">Bank Transfers - PSE</a>
+        <a id="/en/docs/payment-methods/colombia/co-apm-pse.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apm-psehtml" href="../../../../en/docs/payment-methods/colombia/co-apm-pse.html">PSE</a>
       
       
       
@@ -711,7 +711,7 @@
       
       
       
-        <a id="/en/docs/payment-methods/colombia/co-apm-wallet.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apm-wallethtml" href="../../../../en/docs/payment-methods/colombia/co-apm-wallet.html">Nequi</a>
+        <a id="/en/docs/payment-methods/colombia/co-apm-nequi.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodscolombiaco-apm-nequihtml" href="../../../../en/docs/payment-methods/colombia/co-apm-nequi.html">Nequi</a>
       
       
     </li>
@@ -1205,7 +1205,9 @@
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v3/api/purchase/{{TransactionId}}/capture</code></li>
 </ul>
 <br />
-<p>Remember to include your merchant&rsquo;s Private Key in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
+<blockquote>
+<p>Remember to include your <strong>merchant&rsquo;s Private Key</strong> in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
+</blockquote>
 <h3 id="request-parameters">Request parameters</h3>
 <p>The request body is optional to confirm a purchase. If you don’t send any request, the method commits the pre-authorized purchase by its original amount.</p>
 <p>The purchase amount may vary concerning the one sent in the initial purchase process, but the new amount cannot be higher than the original amount.</p>
@@ -1269,7 +1271,7 @@
 </ul>
 <br />
 <blockquote>
-<p>Remember to include your merchant&rsquo;s Private Key in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
+<p>Remember to include your <strong>merchant&rsquo;s Private Key</strong> in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
 </blockquote>
 <h3 id="request-parameters-1">Request parameters</h3>
 <p>Request body is not required to cancel a purchase. If you don&rsquo;t send any request the purchase will be voided with its original amount.</p>
@@ -1327,7 +1329,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    December 6, 2024
+    December 10, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

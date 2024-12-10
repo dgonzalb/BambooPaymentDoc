@@ -8,12 +8,10 @@ weight: 40
 tags: ["subtopic"]
 ---
 
-{{% alert title="Info" color="info"%}}
-El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago.
-{{% /alert %}}
-
 ## Nequi QR
-Le permite a sus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo Payment genera el código QR en la respuesta del request.
+Le permite a tus clientes pagar escaneando un código QR utilizando su aplicación de Nequi. La API de Bamboo genera el código QR en la respuesta del request.
+
+> _El estado de la compra para Medios de Pago Alternativos permanecerá en **Pending** hasta que el cliente complete el pago._
 
 #### Flujo de Pago {#qr-code}
 <img src="/assets/NequiQRES.png" width="100%" alt="Nequi QR Payment Flow"/>
@@ -70,6 +68,8 @@ Resultado:
 
 ## Nequi Push
 Al utilizar este método de pago, su cliente recibirá una notificación para que abra su aplicación _Nequi_ y acepte o rechace el pago.
+
+> _El estado de la compra para Medios de Pago Alternativos permanecerá en **Pending** hasta que el cliente complete el pago._
 
 #### Payment Flow {#push-notification}
 <img src="/assets/NequiPushES.png" width="100%" alt="Nequi Flujo de Pago"/>

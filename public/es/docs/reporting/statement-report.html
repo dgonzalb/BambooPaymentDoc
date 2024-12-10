@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/reporting/statement-report.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-10-02T08:40:29-03:00" />
-<meta property="article:modified_time" content="2024-10-18T16:27:57-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="API de Movimientos Financieros">
 <meta itemprop="description" content="La API de Movimientos proporciona un reporte detallado de datos financieros. Permite obtener una visión general de los movimientos monetarios en la cuenta Bamboo en un periodo específico. Incluye créditos (fondos entrantes), débitos (pagos salientes o tarifas) y costos.
 "><meta itemprop="datePublished" content="2024-10-02T08:40:29-03:00" />
-<meta itemprop="dateModified" content="2024-10-18T16:27:57-03:00" />
-<meta itemprop="wordCount" content="526">
+<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
+<meta itemprop="wordCount" content="523">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Movimientos Financieros"/>
 <meta name="twitter:description" content="La API de Movimientos proporciona un reporte detallado de datos financieros. Permite obtener una visión general de los movimientos monetarios en la cuenta Bamboo en un periodo específico. Incluye créditos (fondos entrantes), débitos (pagos salientes o tarifas) y costos.
@@ -134,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d60c6dffe3fa27034b4e27216ff4528d3a9da9ee9dbd3f83fc958bfe406dcf93f3ef2ac5fd08d5be0e053232b8f1064e48a3768fe5eb112be4f8091ecca70db5.json"
+  data-offline-search-index-json-src="../../../offline-search-index.cfd10b50322f8dfebae5f67f46499c796dbfe79094caaec0297f4b1ba097f855930e466f0a7313983cb1493ddb171f78f6a4f90433f52232b667c57dad98fea6.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -699,19 +699,19 @@
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-banktransferhtml" href="../../../es/docs/payment-methods/colombia/co-apm-banktransfer.html">Transferencias bancarias - PSE</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-pse.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-psehtml" href="../../../es/docs/payment-methods/colombia/co-apm-pse.html">PSE</a>
       
       
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../es/docs/payment-methods/colombia/co-apm-cash.html">Efectivo</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-cash.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-cashhtml" href="../../../es/docs/payment-methods/colombia/co-apm-cash.html">Pagos en Efectivo</a>
       
       
       
       
       
-        <a id="/es/docs/payment-methods/colombia/co-apm-wallet.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-wallethtml" href="../../../es/docs/payment-methods/colombia/co-apm-wallet.html">Nequi</a>
+        <a id="/es/docs/payment-methods/colombia/co-apm-nequi.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodscolombiaco-apm-nequihtml" href="../../../es/docs/payment-methods/colombia/co-apm-nequi.html">Nequi</a>
       
       
     </li>
@@ -1102,7 +1102,6 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#request-url">URL para el Request</a></li>
-    <li><a href="#authorization">Authorization</a></li>
     <li><a href="#request-parameters">Parámetros de la solicitud (Request)</a>
       <ul>
         <li><a href="#format-and-example-of-the-request-request">Ejemplo de solicitud</a></li>
@@ -1168,8 +1167,10 @@
 <li><strong>Producción</strong>: <code>https://api.bamboopayment.com/v2/api/Reporting/billing-movements</code></li>
 <li><strong>Stage</strong>: <code>https://api.stage.bamboopayment.com/v2/api/Reporting/billing-movements</code></li>
 </ul>
-<h2 id="authorization">Authorization</h2>
-<p>En el encabezado de la solicitud, el parámetro <code>Authorization</code> debe configurarse concatenando la palabra <code>Basic</code>, un espacio y la <strong>Private Key</strong> del merchant.</p>
+<br />
+<blockquote>
+<p>Recuerda incluir la <strong>Clave Privada</strong> del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra <a href="../../../es/docs/purchase-workflow/authentication.html">Guía de Autenticación</a>.</p>
+</blockquote>
 <h2 id="request-parameters">Parámetros de la solicitud (Request)</h2>
 <table>
 <thead>
@@ -1412,7 +1413,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    18 de octubre de 2024
+    10 de diciembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

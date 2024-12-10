@@ -3,36 +3,31 @@ title: "Cash Payments"
 linkTitle: "Cash Payments"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with Cash.
+  Learn how to integrate your solution to process Cash payments in Colombia.
 weight: 30
 tags: ["subtopic"]
 ---
 
-{{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes the payment.
-{{% /alert %}}
+The Cash payment method allows your customers to generate a payment voucher and complete the payment at a physical payment location.
 
-## Cash
-The Cash payment method allows your customers to generate a coupon and complete the payment in a physical payment office.
-
-### Cash acquirers
-You can offer your customer the possibility to pay using cash in the following networks.
+## Payment Networks
+The following networks are available for cash payments.
 
 <div id="shortTable"></div>
 
-| | Description |
-|:-----:|:-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | Apostar |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> |  Bancolombia |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" /> |  Efecty |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" alt="Diners" width="52" /> |  Gana |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" /> |  Puntored |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" /> |  Superpagos |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> |  SuRed |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> |  SuSuerte |
+| Logo | PaymentMethodID | Description |
+|:-----:|:-----:|:-----|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | `APC` | Apostar |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | `BCC` | Bancolombia |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Efecty_PhysicalNetwork.png" width="52" /> | `EFC` | Efecty |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Gana_PhysicalNetwork.png" width="52" /> | `GNC` | Gana |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Puntored_PhysicalNetwork.png" width="52" /> | `PNC` | Puntored |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Superpagos_PhysicalNetwork.png" width="52" /> | `SPC` | Superpagos |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Sured_PhysicalNetwork.png" width="52" /> | `SRC` | SuRed |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Susuerte_PhysicalNetwork.png" width="52" /> | `SSC` | SuSuerte |
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+To process cash payments, you need to include specific fields in your request. For information about authentication, response languages, and basic purchase parameters such as amount and currency, please refer to the [Purchase operation]({{< ref purchase-operations.md >}}) article.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -52,9 +47,13 @@ You need to include specific fields for this payment method to work correctly. C
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Considerations" color="info"%}}
-* Colombian Pesos don't support decimal amounts, so all received values will be rounded.
-* The `amount` value needs to include two zeros as decimal places. Example `COP 5.000` > `500000`.
+* Colombian Pesos (COP) does not support decimal amounts; all values will be rounded.
+* The `amount` parameter must include two zeros as decimal places. For example, COP 5,000 should be sent as 500000.
 {{% /alert %}}
+
+
+> _The purchase status for Alternative Payment methods will remain **Pending** until the customer completes the payment at a physical location._
+
 
 #### Request example
 {{< highlight json >}}
@@ -62,11 +61,11 @@ You need to include specific fields for this payment method to work correctly. C
 {{< /highlight >}}
 
 ### Response parameters
-In the response, you will find the following parameters:
+The response will include the following parameters:
 
 | Property | Type | Description |
 |---|:-:|---|
-| `Response` → `Action` → `URL` | `string` | URL of the coupon to be presented by your customer in the physical network. |
+| `Response` → `Action` → `URL` | `string` | URL of the payment voucher to be presented by your customer at the physical network. |
 | `Response` → `MetadataOut` → `PaymentCode` | `string`  | Payment reference returned by the acquirer to identify the order generated. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Date when the payment will expire.<br>Format _DD/MM/YYYY_. |
 | `Response` → `MetadataOut` → `AgreementCode` | `string`  | Agreement number between the acquirer and the physical network. |
