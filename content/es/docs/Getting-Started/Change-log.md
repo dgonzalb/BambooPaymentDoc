@@ -15,8 +15,10 @@ weight: 50
 ### Diciembre
 | Página | Descripción |
 |---|---|
-| [GET Purchase]({{< ref Get_Purchase.md >}}) | Adicionamos nuevos parámetros de búsqueda de transacciones por Order y UniqueID. |
-| [Card Validator]({{< ref Card_Validation.md >}}) | Lanzamiento del endpoint de Validación de Tarjeta |
+| [Argentina]({{< ref "Argentina.md" >}}) | Adición del tipo de documento CUIT. |
+| [Colombia]({{< ref "Colombia.md" >}}) | Se agregó soporte de Autorización y Reembolso para tarjetas AMEX. |
+| [GET Purchase]({{< ref Get_Purchase.md >}}) | Nuevas capacidades para obtener transacciones usando UniqueID y Order. |
+| [Card Validator]({{< ref Card_Validation.md >}}) | Lanzamiento del endpoint de Validación de Tarjetas. |
 
 ### Octubre
 | Página | Descripción |

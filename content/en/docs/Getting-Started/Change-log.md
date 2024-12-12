@@ -12,6 +12,8 @@ weight: 50
 ### December
 | Page | Description |
 |---|---|
+| [Argentina]({{< ref "Argentina.md" >}}) | Addition of CUIT document type support. |
+| [Colombia]({{< ref "Colombia.md" >}}) | Added Authorization and Refund support for AMEX cards. |
 | [GET Purchase]({{< ref Get_Purchase.md >}}) | Adding new capabilities to GET transactions using UniqueID and Order. |
 | [Card Validator]({{< ref Card_Validation.md >}}) | Release of Card Validation endpoint |
 
