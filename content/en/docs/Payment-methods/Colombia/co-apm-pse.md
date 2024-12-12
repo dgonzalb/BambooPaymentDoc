@@ -16,7 +16,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/colombia.html#payment-methods). |
+| `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/colombia.html#payment-methods). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | No | Customer's first name. |

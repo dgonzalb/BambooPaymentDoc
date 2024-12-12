@@ -31,7 +31,7 @@ Para procesar pagos en efectivo, necesitas incluir campos específicos en tu sol
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Sí | Consulta el identificador en la tabla de [Medios de pago](/es/docs/payment-methods/colombia.html#payment-methods). |
+| `PaymentMethod` | `string` | Sí | Consulta el identificador en la tabla de [Medios de pago](/es/docs/payment-methods/colombia.html#payment-methods). |
 | `TargetCountryISO` | `string` | Sí | País donde se procesará el pago. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombres del cliente. |

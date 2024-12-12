@@ -23,7 +23,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
+| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | Sí | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | Sí | Apellido del cliente. |

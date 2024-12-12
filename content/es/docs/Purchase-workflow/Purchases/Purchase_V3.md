@@ -35,7 +35,7 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 |-----------|------|:------------:|-------------|
 | `TrxToken` | `string` | No<sup>1</sup> | Token de la tarjeta, generado previamente mediante el flujo de tokenización. Se usa para medios de pago - Tarjetas. |
 | `NetworkToken` | `object` | No<sup>1</sup> | Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red. |
-| `PaymentMethodId` | `string` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla [medios de pago](/es/docs/getting-started/payment-methods.html). |
+| `PaymentMethod` | `string` | No<sup>1</sup> | Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla [medios de pago](/es/docs/getting-started/payment-methods.html). |
 | `UniqueID` | `string` | No | Identificador único de la compra del lado del comercio. <br>Este valor es opcional y permite identificar una compra de forma única, evitando transacciones duplicadas. Para más información, consulte [Conceptos]({{< ref "Concepts.md">}}#UniqueID). |
 | `Capture` | `boolean` | No | Define si la compra debe realizarse en uno o dos pasos.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>Si es `false`, solo se procesa la autorización, y la compra queda pre-autorizada hasta la confirmación final mediante las llamadas de [captura y cancelación]({{< ref "Card_Operations.md" >}}).</li><li>Si es `true`, la transacción se autoriza y captura.</li></ul><br>Es posible que no todos los [medios de pago y países](/es/docs/payment-methods.html) admitan la función de pre-autorización. |
 | `TargetCountryISO` | `string` | Sí | Este parámetro indica el país donde se procesará el pago.<br>Envíe el país usando el formato `ISO-3166-1`. |
@@ -198,7 +198,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 
 
 {{% alert title="Notas" color="info"%}}
-* <sup>1</sup> Los parámetros `PaymentMethodId` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.
+* <sup>1</sup> Los parámetros `PaymentMethod` y `TrxToken` no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.
 * <sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de [Países y medios de pago](/es/docs/payment-methods.html) para verificar la disponibilidad.
 * <sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando [_CommerceToken_]({{< ref Registered-users.md >}}).
 * <sup>4</sup> Al utilizar [tarjetas en Brasil]({{< ref br-cards.md>}}), la descripción es obligatoria y debe usar un formato fijo, como se explica en los [parámetros de solicitud]({{< ref br-cards.md>}}#request-parameters).

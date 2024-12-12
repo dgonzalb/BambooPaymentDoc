@@ -16,7 +16,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/colombia.html#payment-methods). |
+| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/colombia.html#payment-methods). |
 | `TargetCountryISO` | `string` | Sí | Indica el país destino. |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |

@@ -24,7 +24,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
+| `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. **The API applies a default value if you don't provide this information.** |
 
@@ -64,7 +64,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
+| `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `DocumentType` | `string` | No | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/argentina.html#document-types) to see the possible values. |
 | `Customer` → `DocumentNumber` | `string` | Yes | Customer's Document Number. |

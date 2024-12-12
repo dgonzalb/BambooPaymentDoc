@@ -34,7 +34,7 @@ You must invoke a **POST** request to the following URLs according to your needs
 |-----------|------|:----------:|-------------|
 | `TrxToken` | `string` | No<sup>1</sup> | Card token, previously generated through the tokenization flow. Used for card payment methods. |
 | `NetworkToken` | `object` | No<sup>1</sup> | Network token information used in the transaction. For more information, review the Network Tokenization Object. |
-| `PaymentMethodId` | `string` | No<sup>1</sup> | Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.) Find the possible values ​​in the table [Payment methods](/en/docs/getting-started/payment-methods.html).|
+| `PaymentMethod` | `string` | No<sup>1</sup> | Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.) Find the possible values ​​in the table [Payment methods](/en/docs/getting-started/payment-methods.html).|
 | `UniqueID` | `string` | No | Unique identifier of the purchase.<br>This optional value allows you to identify a unique purchase and avoid duplication of transactions in case of communication errors. For more information, refer to [Concepts]({{< ref "Concepts.md">}}#UniqueID). |
 | `Capture` | `boolean` | No | Defines whether the purchase should be performed in one or two steps.<sup>2</sup><br><ul style="margin-bottom: initial;"><li>If `false`, only the authorization is processed, and the purchase is pre-authorized until the final confirmation through the [capture and cancel]({{< ref "Card_Operations.md" >}}) calls.</li><li>If `true`, the transaction is authorized and captured.</li></ul><br>All [payment methods and countries](/en/docs/payment-methods.html) may not support the pre-authorization feature. |
 | `TargetCountryISO` | `string` | Yes | This parameter indicates the country where the payment will be processed.<br>Send the country using `ISO-3166-1` format. |
@@ -139,7 +139,7 @@ You must invoke a **POST** request to the following URLs according to your needs
 
 <br>
 
-The fields **CardData**, **PaymentMethodId**, **NetworkToken** and **TrxToken** are not required; Nevertheless, one of them must be send depending of which flow to use.
+The fields **CardData**, **PaymentMethod**, **NetworkToken** and **TrxToken** are not required; Nevertheless, one of them must be send depending of which flow to use.
 
 ## Response
 The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.

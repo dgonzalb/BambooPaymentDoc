@@ -23,7 +23,7 @@ You need to include specific fields for this payment method to work correctly. C
 ### Mandatory and conditional {#request-parameters}
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
+| `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/argentina.html#payment-methods). |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |

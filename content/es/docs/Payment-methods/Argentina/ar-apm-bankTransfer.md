@@ -24,7 +24,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
+| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. **Si no envía este campo, la API asignará un valor por defecto.** |
 
@@ -63,7 +63,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 ### Obligatorios y condicionales {#request-parameters}
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
-| `PaymentMethodId` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
+| `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/argentina.html#payment-methods).  |
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `DocumentType` | `string` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/argentina.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocumentNumber` | `string` | Sí | Número de documento del cliente. |
