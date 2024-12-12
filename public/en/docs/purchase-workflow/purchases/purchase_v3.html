@@ -18,11 +18,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-12T10:43:41-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Create a Purchase">
 <meta itemprop="description" content="Create a purchase using the API flow providing its basic information for PCI and Non-PCI Merchants.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
+<meta itemprop="dateModified" content="2024-12-12T10:43:41-03:00" />
 <meta itemprop="wordCount" content="1700">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a Purchase"/>
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.cfd10b50322f8dfebae5f67f46499c796dbfe79094caaec0297f4b1ba097f855930e466f0a7313983cb1493ddb171f78f6a4f90433f52232b667c57dad98fea6.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.e7e7f35e5bc52d12ff1210719ed1e745e3fc969c66851cca719f5e0bce6417fd3d5edc8e4eb2d1bc8c56d58e24be59f5ceb37dfcd318d5af14f25c316f5417a8.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -343,6 +343,12 @@
   <ul class="side-main">
     <li class="" id="endocspurchase-workflowpurchaseshtml">
       
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
       
       
       
@@ -557,7 +563,7 @@
       
       
       
-        <a id="/en/docs/payment-methods/argentina/ar-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-apm-banktransferhtml" href="../../../../en/docs/payment-methods/argentina/ar-apm-banktransfer.html">Bank Transfers</a>
+        <a id="/en/docs/payment-methods/argentina/ar-apm-qrcode.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsargentinaar-apm-qrcodehtml" href="../../../../en/docs/payment-methods/argentina/ar-apm-qrcode.html">QR Code</a>
       
       
     </li>
@@ -1225,7 +1231,7 @@
 <td>Network token information used in the transaction. For more information, review the Network Tokenization Object.</td>
 </tr>
 <tr>
-<td><code>PaymentMethodId</code></td>
+<td><code>PaymentMethod</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
 <td>Payment method identifier. Used only for alternative payment methods (transfer, cash, etc.) Find the possible values ​​in the table <a href="../../../../en/docs/getting-started/payment-methods.html">Payment methods</a>.</td>
@@ -1578,7 +1584,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
 <br>
-<p>The fields <strong>CardData</strong>, <strong>PaymentMethodId</strong>, <strong>NetworkToken</strong> and <strong>TrxToken</strong> are not required; Nevertheless, one of them must be send depending of which flow to use.</p>
+<p>The fields <strong>CardData</strong>, <strong>PaymentMethod</strong>, <strong>NetworkToken</strong> and <strong>TrxToken</strong> are not required; Nevertheless, one of them must be send depending of which flow to use.</p>
 <h2 id="response">Response</h2>
 <p>The response structure for Direct Purchase operations performed by PCI-compliant merchants is identical to the standard Purchase response. This ensures consistency across different transaction types and simplifies integration processes.</p>
 <p>All fields, statuses, and error codes described in the standard Purchase response apply equally to Direct Purchase transactions.</p>
@@ -1932,7 +1938,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    December 10, 2024
+    December 12, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

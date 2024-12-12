@@ -18,11 +18,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/purchase-workflow/purchases/purchase_v3.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-08-22T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-12T10:43:41-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Crear una compra">
 <meta itemprop="description" content="Aprenda a crear una compra utilizando nuestra API. Este proceso es apto tanto para comercios con certificación PCI como para aquellos que no la tienen.
 "><meta itemprop="datePublished" content="2024-08-22T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
+<meta itemprop="dateModified" content="2024-12-12T10:43:41-03:00" />
 <meta itemprop="wordCount" content="1846">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Crear una compra"/>
@@ -134,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.cfd10b50322f8dfebae5f67f46499c796dbfe79094caaec0297f4b1ba097f855930e466f0a7313983cb1493ddb171f78f6a4f90433f52232b667c57dad98fea6.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.e7e7f35e5bc52d12ff1210719ed1e745e3fc969c66851cca719f5e0bce6417fd3d5edc8e4eb2d1bc8c56d58e24be59f5ceb37dfcd318d5af14f25c316f5417a8.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -557,7 +557,7 @@
       
       
       
-        <a id="/es/docs/payment-methods/argentina/ar-apm-banktransfer.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-banktransferhtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-banktransfer.html">Transferencias bancarias</a>
+        <a id="/es/docs/payment-methods/argentina/ar-apm-qrcode.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsargentinaar-apm-qrcodehtml" href="../../../../es/docs/payment-methods/argentina/ar-apm-qrcode.html">Código QR</a>
       
       
     </li>
@@ -1226,7 +1226,7 @@
 <td>Información del token de red utilizado en la transacción. Más detalles en la sección Tokenización de Red.</td>
 </tr>
 <tr>
-<td><code>PaymentMethodId</code></td>
+<td><code>PaymentMethod</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No<sup>1</sup></td>
 <td>Identificador del medio de pago. Se usa solo para medios de pago alternativos (transferencia, efectivo, etc.). Encuentre los valores posibles en la tabla <a href="../../../../es/docs/getting-started/payment-methods.html">medios de pago</a>.</td>
@@ -1548,7 +1548,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 </i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
     Notas</h4>
 <p class="alert-text"><ul>
-<li><sup>1</sup> Los parámetros <code>PaymentMethodId</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.</li>
+<li><sup>1</sup> Los parámetros <code>PaymentMethod</code> y <code>TrxToken</code> no son obligatorios. Sin embargo, es obligatorio enviar uno de ellos, dependiendo del flujo que desee utilizar.</li>
 <li><sup>2</sup> Es posible que no todos los medios de pago admitan la función de pre-autorización. Revise la sección de <a href="../../../../es/docs/payment-methods.html">Países y medios de pago</a> para verificar la disponibilidad.</li>
 <li><sup>3</sup> Este objeto no es obligatorio si crea la compra utilizando <a href="../../../../es/docs/purchase-workflow/customer-types/registered-users.html"><em>CommerceToken</em></a>.</li>
 <li><sup>4</sup> Al utilizar <a href="../../../../es/docs/payment-methods/brazil/br-cards.html">tarjetas en Brasil</a>, la descripción es obligatoria y debe usar un formato fijo, como se explica en los <a href="../../../../es/docs/payment-methods/brazil/br-cards.html#request-parameters">parámetros de solicitud</a>.</li>
@@ -2052,7 +2052,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 <div class="left-element">
     <b>Última modificación</b>
     
-    10 de diciembre de 2024
+    12 de diciembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

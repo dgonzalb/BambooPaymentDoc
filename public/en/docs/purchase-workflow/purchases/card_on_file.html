@@ -12,21 +12,21 @@
 
 
 <link rel="icon" type="image/x-icon" href="../../../../assets/bamboo.ico" sizes="32x32">
-<title>Payment Flow | Bamboo Payment</title><meta property="og:title" content="Payment Flow" />
-<meta property="og:description" content="This guide outlines the step-by-step process a customer follows when using Bamboo as a payment provider in a VTEX store.
+<title>Card on File | Bamboo Payment</title><meta property="og:title" content="Card on File" />
+<meta property="og:description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/en/docs/plugins/vtex/vtex_payment_flow.html" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2024-09-16T10:29:33-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Payment Flow">
-<meta itemprop="description" content="This guide outlines the step-by-step process a customer follows when using Bamboo as a payment provider in a VTEX store.
-"><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2024-09-16T10:29:33-03:00" />
-<meta itemprop="wordCount" content="84">
+<meta property="og:url" content="/en/docs/purchase-workflow/purchases/card_on_file.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-12-11T08:43:44-05:00" />
+<meta property="article:modified_time" content="2024-12-12T10:43:41-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Card on File">
+<meta itemprop="description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
+"><meta itemprop="datePublished" content="2024-12-11T08:43:44-05:00" />
+<meta itemprop="dateModified" content="2024-12-12T10:43:41-03:00" />
+<meta itemprop="wordCount" content="527">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Payment Flow"/>
-<meta name="twitter:description" content="This guide outlines the step-by-step process a customer follows when using Bamboo as a payment provider in a VTEX store.
+<meta name="twitter:title" content="Card on File"/>
+<meta name="twitter:description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -102,7 +102,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/docs/plugins/vtex/vtex_payment_flow.html">Español</a>
+	<a class="dropdown-item" href="../../../../es/">Español</a>
 	
 </div>
             </li>
@@ -168,7 +168,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/docs/plugins/vtex/vtex_payment_flow.html">Español</a>
+	<a class="dropdown-item" href="../../../../es/">Español</a>
 	
 </div>
     </div>
@@ -264,7 +264,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs/purchase-workflow.html" href="../../../../en/docs/purchase-workflow.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
+    <a id="/en/docs/purchase-workflow.html" href="../../../../en/docs/purchase-workflow.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Purchase API</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocspurchase-workflowhtml">
@@ -274,7 +274,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowauthenticationhtml" href="../../../../en/docs/purchase-workflow/authentication.html">Authentication</a>
+        <a id="/en/docs/purchase-workflow/authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowauthenticationhtml" href="../../../../en/docs/purchase-workflow/authentication.html">Authentication</a>
       
       
       
@@ -338,7 +338,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Purchase</a>
+    <a id="/en/docs/purchase-workflow/purchases.html" href="../../../../en/docs/purchase-workflow/purchases.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Purchase</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocspurchase-workflowpurchaseshtml">
@@ -348,43 +348,43 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Validation</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Validation</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/purchase_v3.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase_v3html" href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
+        <a id="/en/docs/purchase-workflow/purchases/purchase_v3.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase_v3html" href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html">Create a Purchase</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/get_purchase.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget_purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/get_purchase.html">Get a Purchase</a>
+        <a id="/en/docs/purchase-workflow/purchases/get_purchase.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasesget_purchasehtml" href="../../../../en/docs/purchase-workflow/purchases/get_purchase.html">Get a Purchase</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_operations.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_operationshtml" href="../../../../en/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_operations.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_operationshtml" href="../../../../en/docs/purchase-workflow/purchases/card_operations.html">Capture and Cancel</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
+        <a id="/en/docs/purchase-workflow/purchases/purchase-preview.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasespurchase-previewhtml" href="../../../../en/docs/purchase-workflow/purchases/purchase-preview.html">Purchase Preview</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/3d_secure.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchases3d_securehtml" href="../../../../en/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+        <a id="/en/docs/purchase-workflow/purchases/3d_secure.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchases3d_securehtml" href="../../../../en/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
       
       
     </li>
@@ -396,19 +396,19 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefundshtml" href="../../../../en/docs/purchase-workflow/refunds.html">Refunds</a>
+        <a id="/en/docs/purchase-workflow/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowrefundshtml" href="../../../../en/docs/purchase-workflow/refunds.html">Refunds</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/antifraud.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowantifraudhtml" href="../../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
+        <a id="/en/docs/purchase-workflow/antifraud.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflowantifraudhtml" href="../../../../en/docs/purchase-workflow/antifraud.html">Anti-fraud</a>
       
       
       
       
       
-        <a id="/en/docs/purchase-workflow/notification-webhooks.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflownotification-webhookshtml" href="../../../../en/docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
+        <a id="/en/docs/purchase-workflow/notification-webhooks.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocspurchase-workflownotification-webhookshtml" href="../../../../en/docs/purchase-workflow/notification-webhooks.html">Webhooks</a>
       
       
     </li>
@@ -929,7 +929,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs/plugins.html" href="../../../../en/docs/plugins.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Plug-ins</a>
+    <a id="/en/docs/plugins.html" href="../../../../en/docs/plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Plug-ins</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocspluginshtml">
@@ -948,7 +948,7 @@
 
 
 <li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/en/docs/plugins/vtex.html" href="../../../../en/docs/plugins/vtex.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">VTEX Connector</a>
+    <a id="/en/docs/plugins/vtex.html" href="../../../../en/docs/plugins/vtex.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">VTEX Connector</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocspluginsvtexhtml">
@@ -958,19 +958,19 @@
       
       
       
-        <a id="/en/docs/plugins/vtex/vtex_setup.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_setuphtml" href="../../../../en/docs/plugins/vtex/vtex_setup.html">Integration Guide</a>
+        <a id="/en/docs/plugins/vtex/vtex_setup.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_setuphtml" href="../../../../en/docs/plugins/vtex/vtex_setup.html">Integration Guide</a>
       
       
       
       
       
-        <a id="/en/docs/plugins/vtex/vtex_payment_flow.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspluginsvtexvtex_payment_flowhtml" href="../../../../en/docs/plugins/vtex/vtex_payment_flow.html">Payment Flow</a>
+        <a id="/en/docs/plugins/vtex/vtex_payment_flow.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_payment_flowhtml" href="../../../../en/docs/plugins/vtex/vtex_payment_flow.html">Payment Flow</a>
       
       
       
       
       
-        <a id="/en/docs/plugins/vtex/vtex_admin.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_adminhtml" href="../../../../en/docs/plugins/vtex/vtex_admin.html">Store Management</a>
+        <a id="/en/docs/plugins/vtex/vtex_admin.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspluginsvtexvtex_adminhtml" href="../../../../en/docs/plugins/vtex/vtex_admin.html">Store Management</a>
       
       
     </li>
@@ -1105,6 +1105,26 @@
 <p> </p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#request-url">Request URL</a></li>
+    <li><a href="#request-parameters">Request Parameters</a>
+      <ul>
+        <li><a href="#carddata-object">CardData Object</a></li>
+        <li><a href="#customer-object">Customer Object</a></li>
+        <li><a href="#request-example">Request example</a></li>
+      </ul>
+    </li>
+    <li><a href="#response-parameters">Response Parameters</a>
+      <ul>
+        <li><a href="#paymentmethod-object">PaymentMethod Object</a></li>
+      </ul>
+    </li>
+    <li><a href="#response-example">Response Example</a></li>
+    <li><a href="#status-values">Status Values</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1136,21 +1156,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="../../../../en/docs/plugins.html">Plug-ins</a>
+	<a href="../../../../en/docs/purchase-workflow.html">Purchase API</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="../../../../en/docs/plugins/vtex.html">VTEX Connector</a>
+	<a href="../../../../en/docs/purchase-workflow/purchases.html">Purchase</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../en/docs/plugins/vtex/vtex_payment_flow.html">Payment Flow</a>
+	<a href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
 </li>
 
 	</ol>
@@ -1158,30 +1178,304 @@
 
             
 <div class="td-content">
-	<h1>Payment Flow</h1>
-    <div class="lead">This guide outlines the step-by-step process a customer follows when using Bamboo as a payment provider in a VTEX store.</div>
+	<h1>Card on File</h1>
+    <div class="lead">The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.</div>
 	       
-	<p>When Bamboo is integrated with your VTEX store, customers can select Credit and Debit Cards as a payment option during checkout. Here&rsquo;s what the process looks like from the customer&rsquo;s perspective.</p>
-<h2 id="payment-flow">Payment Flow</h2>
-<ol>
-<li>Add products to cart</li>
-<li>Enter shipping and billing information</li>
-<li>Select &lsquo;Credit Card&rsquo; or &lsquo;Debit Card&rsquo; as the payment method. Review the <a href="../../../../en/docs/plugins/vtex.html">list of Payment Methods available</a> for Bamboo in VTEX.</li>
-</ol>
-<p><img src="../../../../assets/VTEX/bamboo-vtex-017.png" alt="PrintScreen"></p>
-<ol start="4">
-<li>Enter card details and <strong>choose payment terms</strong></li>
-</ol>
+	<h2 id="request-url">Request URL</h2>
+<p>Send a <strong>POST</strong> request to the following URLs according to your needs:</p>
 <ul>
-<li>Single payment (one-time charge)</li>
-<li>Installment plan <em>(if available)</em></li>
+<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v3/api/card/validate</code></li>
+<li><strong>Testing</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/card/validate</code></li>
 </ul>
-<p><img src="../../../../assets/VTEX/bamboo-vtex-018.png" alt="PrintScreen"></p>
-<ol start="5">
-<li>Complete the transaction</li>
-<li>View order confirmation</li>
-</ol>
-<p><img src="../../../../assets/VTEX/bamboo-vtex-019.png" alt="PrintScreen"></p>
+<br />
+<blockquote>
+<p>Remember to include your <strong>merchant&rsquo;s Private Key</strong> in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
+</blockquote>
+<h2 id="request-parameters">Request Parameters</h2>
+<p>The request consists of two main objects: <code>CardData</code> containing the card information and <code>Customer</code> with the cardholder&rsquo;s details.</p>
+<h3 id="carddata-object">CardData Object</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CardHolderName</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Full name as it appears on the card</td>
+</tr>
+<tr>
+<td><code>Pan</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Card number without spaces or separators</td>
+</tr>
+<tr>
+<td><code>CVV</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Card security code (3-4 digits)</td>
+</tr>
+<tr>
+<td><code>Expiration</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Card expiration date in format MM/YY</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Cardholder&rsquo;s email address</td>
+</tr>
+<tr>
+<td><code>Document</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes*</td>
+<td>Cardholder&rsquo;s document number (*Required for some countries)</td>
+</tr>
+<tr>
+<td><code>TargetCountryISO</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Two-letter ISO country code where the card will be processed. Send the country using <code>ISO-3166-1</code> format.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customer-object">Customer Object</h3>
+
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Country-specific Requirements</h4>
+<p class="alert-text">For Argentina and Brazil, Customer and Address fields are mandatory. These markets require complete customer information for card validation.</p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FirstName</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Customer&rsquo;s first name</td>
+</tr>
+<tr>
+<td><code>LastName</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Customer&rsquo;s last name</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Customer&rsquo;s email address</td>
+</tr>
+<tr>
+<td><code>DocumentNumber</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Customer&rsquo;s identification number. Use CPF for Brazil or DNI for Argentina</td>
+</tr>
+<tr>
+<td><code>DocumentType</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Type of document. Use &ldquo;CPF.BR&rdquo; for Brazil or &ldquo;DNI.AR&rdquo; for Argentina</td>
+</tr>
+<tr>
+<td><code>Address</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">No¹</td>
+<td>Customer&rsquo;s address information</td>
+</tr>
+</tbody>
+</table>
+<p>¹ It should be required for Argentina and Brazil.</p>
+<h4 id="address-object">Address Object</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Country</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>Two-letter ISO country code (BR or AR)</td>
+</tr>
+<tr>
+<td><code>State</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>State or province code (e.g., &ldquo;SP&rdquo; for São Paulo, &ldquo;BA&rdquo; for Buenos Aires)</td>
+</tr>
+<tr>
+<td><code>City</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No¹</td>
+<td>City name</td>
+</tr>
+<tr>
+<td><code>PostalCode</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Postal or ZIP code</td>
+</tr>
+<tr>
+<td><code>AddressDetail</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes¹</td>
+<td>Street address with number</td>
+</tr>
+</tbody>
+</table>
+<p>¹ It should be required for Argentina and Brazil.</p>
+<h3 id="request-example">Request example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardHolderName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Pan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4507990000004905&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CVV&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;08/30&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;41158995814&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;41158995814&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF.BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Address&#34;</span><span style="color:#000;font-weight:bold">:{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;São Paulo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01234-567&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rua da Consolação, 1234&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<h2 id="response-parameters">Response Parameters</h2>
+<p>The response includes information about the validation result and details about the payment method.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Status</code></td>
+<td><code>string</code></td>
+<td>Result of the validation. Possible values are <code>APPROVED</code>, <code>REJECTED</code></td>
+</tr>
+<tr>
+<td><code>ErrorCode</code></td>
+<td><code>string</code></td>
+<td>Error code if the validation was rejected. <code>null</code> if approved</td>
+</tr>
+<tr>
+<td><code>ErrorDescription</code></td>
+<td><code>string</code></td>
+<td>Detailed description of the error if the validation was rejected. <code>null</code> if approved</td>
+</tr>
+<tr>
+<td><code>PaymentMethod</code></td>
+<td><code>object</code></td>
+<td>Information about the validated card</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paymentmethod-object">PaymentMethod Object</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Brand</code></td>
+<td><code>string</code></td>
+<td>Card brand (e.g., &ldquo;MasterCard&rdquo;, &ldquo;Visa&rdquo;)</td>
+</tr>
+<tr>
+<td><code>IssuerBank</code></td>
+<td><code>string</code></td>
+<td>Name of the bank that issued the card</td>
+</tr>
+<tr>
+<td><code>Type</code></td>
+<td><code>string</code></td>
+<td>Type of card (e.g., &ldquo;CreditCard&rdquo;, &ldquo;DebitCard&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response-example">Response Example</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SANTANDER BRASIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<h2 id="status-values">Status Values</h2>
+<p>The validation can return the following status values:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APPROVED</code></td>
+<td>Card successfully validated</td>
+</tr>
+<tr>
+<td><code>REJECTED</code></td>
+<td>Card validation failed. Check <code>ErrorCode</code> and <code>ErrorDescription</code> for details</td>
+</tr>
+</tbody>
+</table>
+<p>When the status is <code>REJECTED</code>, the <code>ErrorCode</code> and <code>ErrorDescription</code> fields will provide specific information about why the validation failed. For more information about error codes, check our <a href="../../../../en/docs/getting-started/error-codes.html">Error Guide</a>.</p>
+
+
+<div class="alert alert-warning" role="alert">
+</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
+    Important</h4>
+<p class="alert-text">An small amount may be temporarily held on the card and automatically refunded. This amount varies by acquirer but is typically less than $1 USD.</p>
+</div>
+
 
 	
 	
@@ -1192,7 +1486,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    September 16, 2024
+    December 12, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

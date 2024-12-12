@@ -1,6 +1,6 @@
 ---
-title: "Transferencias bancarias"
-linkTitle: "Transferencias bancarias"
+title: "Código QR"
+linkTitle: "Código QR"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Aprenda a integrar su solución para procesar pagos con Medios alternativos de pago.

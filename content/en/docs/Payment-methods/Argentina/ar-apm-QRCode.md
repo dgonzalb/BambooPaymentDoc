@@ -1,6 +1,6 @@
 ---
-title: "Bank Transfers"
-linkTitle: "Bank Transfers"
+title: "QR Code"
+linkTitle: "QR Code"
 date: 2023-05-08T07:28:16-05:00
 description: >
   Learn how to integrate your solution to process payments with Alternative Payment Methods.
@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 {{% alert title="Info" color="info"%}}
-The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in their wallet or at a physical payment office.
+The purchase status for Alternative Payment methods will remain _Pending_ until the customer completes payment either in their bank.
 {{% /alert %}}
 
 ## Transferencias 3.0
