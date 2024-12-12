@@ -12,21 +12,21 @@
 
 
 <link rel="icon" type="image/x-icon" href="../../../../assets/bamboo.ico" sizes="32x32">
-<title>Card on File | Bamboo Payment</title><meta property="og:title" content="Card on File" />
-<meta property="og:description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
+<title>3DS pass-through | Bamboo Payment</title><meta property="og:title" content="3DS pass-through" />
+<meta property="og:description" content="Bamboo supports 3D Secure (3DS) as a pass-through with acquirers in Latin America by sending the cardholder authentication result when completing the payment.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/purchase-workflow/purchases/card_on_file.html" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2024-12-11T08:43:44-05:00" />
-<meta property="article:modified_time" content="2024-12-12T10:43:41-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
-<meta itemprop="name" content="Card on File">
-<meta itemprop="description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
-"><meta itemprop="datePublished" content="2024-12-11T08:43:44-05:00" />
-<meta itemprop="dateModified" content="2024-12-12T10:43:41-03:00" />
-<meta itemprop="wordCount" content="527">
+<meta property="article:published_time" content="2024-08-02T08:43:44-05:00" />
+<meta property="article:modified_time" content="2024-12-12T12:02:45-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="3DS pass-through">
+<meta itemprop="description" content="Bamboo supports 3D Secure (3DS) as a pass-through with acquirers in Latin America by sending the cardholder authentication result when completing the payment.
+"><meta itemprop="datePublished" content="2024-08-02T08:43:44-05:00" />
+<meta itemprop="dateModified" content="2024-12-12T12:02:45-03:00" />
+<meta itemprop="wordCount" content="243">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Card on File"/>
-<meta name="twitter:description" content="The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.
+<meta name="twitter:title" content="3DS pass-through"/>
+<meta name="twitter:description" content="Bamboo supports 3D Secure (3DS) as a pass-through with acquirers in Latin America by sending the cardholder authentication result when completing the payment.
 "/>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.e7e7f35e5bc52d12ff1210719ed1e745e3fc969c66851cca719f5e0bce6417fd3d5edc8e4eb2d1bc8c56d58e24be59f5ceb37dfcd318d5af14f25c316f5417a8.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.efa697413d6a5daa5c0eb7e924b7a20104bec5540b9566c9e065ce6150386ec7959f0ed9b2e4db11e3a5deadf6040a2b06cc02bef52d15cce80a1162e9fd8625.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -348,12 +348,6 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
-      
-      
-      
-      
-      
         <a id="/en/docs/purchase-workflow/purchases/card_validation.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_validationhtml" href="../../../../en/docs/purchase-workflow/purchases/card_validation.html">Card Validation</a>
       
       
@@ -385,6 +379,12 @@
       
       
         <a id="/en/docs/purchase-workflow/purchases/3d_secure.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchases3d_securehtml" href="../../../../en/docs/purchase-workflow/purchases/3d_secure.html">3DS Pass-through</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">3DS Pass-through</a>
       
       
     </li>
@@ -1107,21 +1107,12 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#request-url">Request URL</a></li>
-    <li><a href="#request-parameters">Request Parameters</a>
+    <li><a href="#threeds-object">ThreeDS Object</a>
       <ul>
-        <li><a href="#carddata-object">CardData Object</a></li>
-        <li><a href="#customer-object">Customer Object</a></li>
-        <li><a href="#request-example">Request example</a></li>
+        <li><a href="#request-fields">Request Fields</a></li>
+        <li><a href="#request-example-using-the-purchase-for-pci-compliant-merchants">Request Example using the <a href="HAHAHUGOSHORTCODE-s0-HBHB#direct-purchase-for-pci-compliant-merchants">Direct Purchase</a></a></li>
       </ul>
     </li>
-    <li><a href="#response-parameters">Response Parameters</a>
-      <ul>
-        <li><a href="#paymentmethod-object">PaymentMethod Object</a></li>
-      </ul>
-    </li>
-    <li><a href="#response-example">Response Example</a></li>
-    <li><a href="#status-values">Status Values</a></li>
   </ul>
 </nav>
 
@@ -1170,7 +1161,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
+	<a href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">3DS Pass-through</a>
 </li>
 
 	</ol>
@@ -1178,304 +1169,108 @@
 
             
 <div class="td-content">
-	<h1>Card on File</h1>
-    <div class="lead">The Card Validation endpoint allows merchants to verify the validity of cards across various acquirers in Latin America, using either Zero Auth operations or simulated minimal-amount purchases followed by automatic refunds.</div>
+	<h1>3DS pass-through</h1>
+    <div class="lead">Bamboo supports 3D Secure (3DS) as a pass-through with acquirers in Latin America by sending the cardholder authentication result when completing the payment.</div>
 	       
-	<h2 id="request-url">Request URL</h2>
-<p>Send a <strong>POST</strong> request to the following URLs according to your needs:</p>
-<ul>
-<li><strong>Production</strong>: <code>https://secure-api.bamboopayment.com/v3/api/card/validate</code></li>
-<li><strong>Testing</strong>: <code>https://secure-api.stage.bamboopayment.com/v3/api/card/validate</code></li>
-</ul>
-<br />
-<blockquote>
-<p>Remember to include your <strong>merchant&rsquo;s Private Key</strong> in the request headers. <br /> For more details, check our <a href="../../../../en/docs/purchase-workflow/authentication.html">Authentication Guide</a>.</p>
-</blockquote>
-<h2 id="request-parameters">Request Parameters</h2>
-<p>The request consists of two main objects: <code>CardData</code> containing the card information and <code>Customer</code> with the cardholder&rsquo;s details.</p>
-<h3 id="carddata-object">CardData Object</h3>
+	<p>3D Secure (3DS) is an authentication protocol designed to enhance the security of online transactions by verifying the cardholder before completing the payment. In Bamboo’s 3DS Pass-through flow, authentication is handled via an external authentication provider, known as an External MPI. This method allows merchants to use third-party authentication data to securely complete transactions without performing the authentication directly within Bamboo’s platform. It’s an ideal solution for merchants who prefer or require external control over the authentication process.</p>
+<h2 id="threeds-object">ThreeDS Object</h2>
+<h3 id="request-fields">Request Fields</h3>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
-<th style="text-align:center">Mandatory</th>
+<th style="text-align:center">Mandatory?</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>CardHolderName</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Full name as it appears on the card</td>
-</tr>
-<tr>
-<td><code>Pan</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Card number without spaces or separators</td>
-</tr>
-<tr>
-<td><code>CVV</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Card security code (3-4 digits)</td>
-</tr>
-<tr>
-<td><code>Expiration</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Card expiration date in format MM/YY</td>
-</tr>
-<tr>
-<td><code>Email</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Cardholder&rsquo;s email address</td>
-</tr>
-<tr>
-<td><code>Document</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes*</td>
-<td>Cardholder&rsquo;s document number (*Required for some countries)</td>
-</tr>
-<tr>
-<td><code>TargetCountryISO</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">Yes</td>
-<td>Two-letter ISO country code where the card will be processed. Send the country using <code>ISO-3166-1</code> format.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="customer-object">Customer Object</h3>
-
-
-<div class="alert alert-warning" role="alert">
-</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Country-specific Requirements</h4>
-<p class="alert-text">For Argentina and Brazil, Customer and Address fields are mandatory. These markets require complete customer information for card validation.</p>
-</div>
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>FirstName</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Customer&rsquo;s first name</td>
-</tr>
-<tr>
-<td><code>LastName</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Customer&rsquo;s last name</td>
-</tr>
-<tr>
-<td><code>Email</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Customer&rsquo;s email address</td>
-</tr>
-<tr>
-<td><code>DocumentNumber</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Customer&rsquo;s identification number. Use CPF for Brazil or DNI for Argentina</td>
-</tr>
-<tr>
-<td><code>DocumentType</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Type of document. Use &ldquo;CPF.BR&rdquo; for Brazil or &ldquo;DNI.AR&rdquo; for Argentina</td>
-</tr>
-<tr>
-<td><code>Address</code></td>
-<td><code>object</code></td>
-<td style="text-align:center">No¹</td>
-<td>Customer&rsquo;s address information</td>
-</tr>
-</tbody>
-</table>
-<p>¹ It should be required for Argentina and Brazil.</p>
-<h4 id="address-object">Address Object</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th style="text-align:center">Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Country</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>Two-letter ISO country code (BR or AR)</td>
-</tr>
-<tr>
-<td><code>State</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>State or province code (e.g., &ldquo;SP&rdquo; for São Paulo, &ldquo;BA&rdquo; for Buenos Aires)</td>
-</tr>
-<tr>
-<td><code>City</code></td>
-<td><code>string</code></td>
-<td style="text-align:center">No¹</td>
-<td>City name</td>
-</tr>
-<tr>
-<td><code>PostalCode</code></td>
+<td><code>ThreeDSAuthMethod</code></td>
 <td><code>string</code></td>
 <td style="text-align:center">No</td>
-<td>Postal or ZIP code</td>
+<td>3D Secure authentication method used: <code>&quot;EXTERNAL&quot;</code> or <code>&quot;DISABLED&quot;</code>.</td>
 </tr>
 <tr>
-<td><code>AddressDetail</code></td>
+<td><code>ThreeDS</code></td>
+<td><code>object</code></td>
+<td style="text-align:center">Yes</td>
+<td>3D Secure information when <code>ThreeDSAuthMethod=&quot;EXTERNAL&quot;</code>.</td>
+</tr>
+<tr>
+<td><code>ThreeDS</code> → <code>Eci</code></td>
 <td><code>string</code></td>
-<td style="text-align:center">Yes¹</td>
-<td>Street address with number</td>
+<td style="text-align:center">Yes</td>
+<td>3D Secure ECI code.</td>
+</tr>
+<tr>
+<td><code>ThreeDS</code> → <code>Xid</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>3D Secure transaction identifier.</td>
+</tr>
+<tr>
+<td><code>ThreeDS</code> → <code>Cavv</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Cardholder Authentication Verification Value (CAVV) in 3D Secure.</td>
+</tr>
+<tr>
+<td><code>ThreeDS</code> → <code>Version</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>3D Secure protocol version.</td>
+</tr>
+<tr>
+<td><code>ThreeDS</code> → <code>TransactionId</code></td>
+<td><code>string</code></td>
+<td style="text-align:center">Yes</td>
+<td>Transaction ID in 3D Secure.</td>
 </tr>
 </tbody>
 </table>
-<p>¹ It should be required for Argentina and Brazil.</p>
-<h3 id="request-example">Request example</h3>
+<h3 id="request-example-using-the-purchase-for-pci-compliant-merchants">Request Example using the <a href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#direct-purchase-for-pci-compliant-merchants">Direct Purchase</a></h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;CardData&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardHolderName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CardHolderName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Pan&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4507990000004905&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;CVV&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Expiration&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;08/30&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;41158995814&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;john.doe@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Document&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;74857601&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Capture&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">25000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CH2023-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Compra de teste&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;João&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Silva&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;41158995814&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;ReferenceCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;JS-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;11987654321&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;12345678901&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CPF.BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Address&#34;</span><span style="color:#000;font-weight:bold">:{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;joao.silva@example.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;São Paulo&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SP&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01234-567&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rua da Consolação, 1234&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PostalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;01310-200&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Avenida Paulista 1000&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ThreeDSAuthMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;EXTERNAL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ThreeDS&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Eci&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;05&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Xid&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MDAwMDAwMDAwMDAwMDAwMDAwMDE=&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Cavv&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;kBNcxqbmcXUxhAE1yKRHAAAAAAA=&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Version&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2.2.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;97267598-FAE6-48F2-8083-C23433990FBC&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h2 id="response-parameters">Response Parameters</h2>
-<p>The response includes information about the validation result and details about the payment method.</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Status</code></td>
-<td><code>string</code></td>
-<td>Result of the validation. Possible values are <code>APPROVED</code>, <code>REJECTED</code></td>
-</tr>
-<tr>
-<td><code>ErrorCode</code></td>
-<td><code>string</code></td>
-<td>Error code if the validation was rejected. <code>null</code> if approved</td>
-</tr>
-<tr>
-<td><code>ErrorDescription</code></td>
-<td><code>string</code></td>
-<td>Detailed description of the error if the validation was rejected. <code>null</code> if approved</td>
-</tr>
-<tr>
-<td><code>PaymentMethod</code></td>
-<td><code>object</code></td>
-<td>Information about the validated card</td>
-</tr>
-</tbody>
-</table>
-<h3 id="paymentmethod-object">PaymentMethod Object</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Brand</code></td>
-<td><code>string</code></td>
-<td>Card brand (e.g., &ldquo;MasterCard&rdquo;, &ldquo;Visa&rdquo;)</td>
-</tr>
-<tr>
-<td><code>IssuerBank</code></td>
-<td><code>string</code></td>
-<td>Name of the bank that issued the card</td>
-</tr>
-<tr>
-<td><code>Type</code></td>
-<td><code>string</code></td>
-<td>Type of card (e.g., &ldquo;CreditCard&rdquo;, &ldquo;DebitCard&rdquo;)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="response-example">Response Example</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;ErrorDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MasterCard&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;IssuerBank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SANTANDER BRASIL&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CreditCard&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
-<h2 id="status-values">Status Values</h2>
-<p>The validation can return the following status values:</p>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>APPROVED</code></td>
-<td>Card successfully validated</td>
-</tr>
-<tr>
-<td><code>REJECTED</code></td>
-<td>Card validation failed. Check <code>ErrorCode</code> and <code>ErrorDescription</code> for details</td>
-</tr>
-</tbody>
-</table>
-<p>When the status is <code>REJECTED</code>, the <code>ErrorCode</code> and <code>ErrorDescription</code> fields will provide specific information about why the validation failed. For more information about error codes, check our <a href="../../../../en/docs/getting-started/error-codes.html">Error Guide</a>.</p>
-
-
-<div class="alert alert-warning" role="alert">
-</i><h4 class="alert-heading"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-info" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-circle-info fa-fw decorative"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" class=""></path></svg>
-    Important</h4>
-<p class="alert-text">An small amount may be temporarily held on the card and automatically refunded. This amount varies by acquirer but is typically less than $1 USD.</p>
-</div>
-
 
 	
 	

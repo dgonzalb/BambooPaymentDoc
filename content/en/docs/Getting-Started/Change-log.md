@@ -12,6 +12,7 @@ weight: 50
 ### December
 | Page | Description |
 |---|---|
+| [Card on File]({{< ref "Card_on_File.md" >}}) | Card on File (CoF) for processing recurring payments and subscriptions |
 | [Argentina]({{< ref "Argentina.md" >}}) | Addition of CUIT document type support. |
 | [Colombia]({{< ref "Colombia.md" >}}) | Added Authorization and Refund support for AMEX cards. |
 | [GET Purchase]({{< ref Get_Purchase.md >}}) | Adding new capabilities to GET transactions using UniqueID and Order. |

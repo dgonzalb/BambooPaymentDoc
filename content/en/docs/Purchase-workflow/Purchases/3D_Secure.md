@@ -28,3 +28,7 @@ tags: ["subtopic"]
 {{< highlight json >}}
 {{< Payins/V3/3DSecure/3ds_request >}}
 {{< /highlight >}}
+
+<br /> 
+
+> The response follows the standard response format. See [Create a Purchase]({{< ref "purchase_v3.md#response" >}}) for details.
