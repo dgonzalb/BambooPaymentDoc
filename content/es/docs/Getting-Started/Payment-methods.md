@@ -25,7 +25,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" />| Transferencias 3.0 | Transferencia Bancaria | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" />| Transferencias Bancarias Offline | Transferencia Bancaria | Redirect |
 <!--| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Tarjeta de crédito | API |-->
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito, débito y prepago | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | MasterCard | `MCC` | Tarjeta de crédito, débito y prepago | API |
@@ -50,7 +50,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" width="52" style="" /> | Elo |  Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" width="52" style="" /> | Aura |  Tarjeta de crédito | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Tarjeta de crédito | API |
@@ -75,7 +75,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | Tarjeta de crédito, débito y prepago | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png" width="52" style="" />| Khipu | `KHI` | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png" width="52" style="" />| Klap Efectivo | `MLC` | Pago en efectivo | Redirect |
@@ -104,7 +104,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/NequiPush_BankTransfer.png" width="52" style="" /> | Nequi Push | Transferencia Bancaria | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Fasttrack_BankTransfer.png" width="52" style="" /> | PSE | Transferencia Bancaria | Redirect |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Tarjeta de crédito y débito | API |
@@ -128,7 +128,7 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Pago en efectivo | API | |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Pago en efectivo | API |
 
@@ -139,7 +139,7 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Ecuador | Pago en efectivo | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Ecuador | `PEE` | Pago en efectivo | API |
 
@@ -150,7 +150,7 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Pago en efectivo | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Pago en efectivo | API |
 
@@ -167,7 +167,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Tarjeta de crédito | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | `PYN` | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/BankTransfer.png" width="52" style="" /> | SPEI | `SPE` | Transferencia Bancaria | API |
@@ -184,7 +184,7 @@ weight: 30
 |-----|-----|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Pago en efectivo | API | |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Pago en efectivo | API |
 
@@ -201,7 +201,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/InfoNet_DebitCard.png" width="52" style="" /> | Infonet |  Tarjeta débito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoExpress_PhysicalNetwork.png" width="52" style="" /> | PagoExpress | Pago en efectivo | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito y débito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Tarjeta de crédito y débito | API |
@@ -234,7 +234,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | Diners Club | Tarjeta de crédito | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/12_diners.png" width="52" style="" /> | UnionPay | Tarjeta de crédito | API |-->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito, débito y prepago | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Tarjeta de crédito, débito y prepago  | API |
@@ -273,7 +273,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Scotiabank_BankTransfer.png" width="52" style="" /> | Scotiabank | Transferencia Bancaria | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Itau_BankTransfer.png" width="52" style="" /> | Itaú | Transferencia Bancaria | Redirect | -->
 
-| | Medio de pago | PaymentMethodId | Tipo | Flujo |
+| | Medio de pago | PaymentMethod | Tipo | Flujo |
 |-----|-----|---------------|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Tarjeta de crédito, débito y prepago | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Tarjeta de crédito, débito y prepago | API |

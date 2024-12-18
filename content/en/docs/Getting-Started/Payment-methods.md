@@ -14,7 +14,7 @@ weight: 30
 
 ## Argentina
 
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|----------------------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Credit, Debit, and Prepaid Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | MasterCard | `MCC` | Credit, Debit, and Prepaid Card | API |
@@ -39,7 +39,7 @@ weight: 30
 <!--| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | Credit Card | API |-->
 
 ## Brazil
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|--------------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | `VSC` | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit Card | API |
@@ -64,7 +64,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" width="52" style="" /> | Aura |  Credit Card | API |-->
 
 ## Chile
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|--------------------------|----------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png" width="52" style="" />| Khipu | `KHI` | Bank Transfer | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png" width="52" style="" />| Klap Cash | `MLC` | Cash Payment | Redirect |
@@ -85,7 +85,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" width="52" style="" /> | American Express | Credit Card | API |-->
 
 ## Colombia
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|--------------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Credit and Debit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit and Debit Card | API |
@@ -120,7 +120,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Fasttrack_BankTransfer.png" width="52" style="" /> | PSE | Bank Transfer | Redirect |-->
 
 ## Costa Rica
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|----------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Cash Payment | API |
 
@@ -130,7 +130,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment | API | |-->
 
 ## Ecuador
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|----------------------|----------------|----------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Ecuador | `PEE` | Cash Payment | API |
 
@@ -139,7 +139,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" width="52" style="" /> | PagoEfectivo Ecuador | Cash Payment | API |-->
 
 ## El Salvador
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|----------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Cash Payment | API |
 <!--
@@ -148,7 +148,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment | API |-->
 
 ## Mexico
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|----------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" width="52" style="" /> | Paynet | `PYN` | Cash Payment | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/BankTransfer.png" width="52" style="" /> | SPEI | `SPE` | Bank Transfer | API |
@@ -171,7 +171,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" width="52" style="" /> | Carnet |  Debit Card | API |-->
 
 ## Nicaragua
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|----------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | `PNX` | Cash Payment | API |
 
@@ -180,7 +180,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" width="52" style="" /> | PuntoXpress | Cash Payment | API | |-->
 
 ## Paraguay
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|----------------|----------------|-------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Credit and Debit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit and Debit Card | API |
@@ -204,7 +204,7 @@ weight: 30
 ## Peru
 
 
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|----------------|----------------|-----------------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Credit, Debit and Prepaid Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit, Debit and Prepaid Card | API |
@@ -248,7 +248,7 @@ weight: 30
 
 ## Uruguay
 
-| | Payment Method | PaymentMethodId | Type | Flow |
+| | Payment Method | PaymentMethod | Type | Flow |
 |-----|----------------|----------------|-----------------------------|--------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" width="52" style="" /> | Visa | `VSC` | Credit, Debit and Prepaid Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit, Debit and Prepaid Card | API |
