@@ -49,34 +49,36 @@ Currently, the API may return information up to D-1 (the previous day). This mea
 
 | Property | Type | Description |
 |----------|------|-------------|
+| `Data` | `Array` | Array of transaction objects |
+| `Data` → `transactionid` | `String` |  Transaction ID associated with this financial movement  |
+| `Data` → `movementid` | `Integer` | Identifier for the financial movement |
+| `Data` → `created` | `String` | Date and time when the financial movement was created |
+| `Data` → `type` | `String` | Type of transaction (e.g., `Refund`, `Purchase`, `Payout"` , `Fee`, `FX`, `Withdrawal`, `Debit adjustment`, `Credit adjustment`.) |
+| `Data` → `country` | `String` | Country code where the transaction occurred `ISO 3166-1 alpha-2 format` |
+| `Data` → `currency` | `String` | Currency code for the financial movement |
+| `Data` → `sign` | `String` | Indicates if the amount is a credit or debit |
+| `Data` → `amount` | `Integer` | Transaction amount |
+| `Data` → `availabledate` | `String` | Date when the funds become available |
+| `Data` → `referenceid` | `String` | Reference ID for the transaction |
+| `Data` → `endusernotes` | `String` | Any notes associated with the transaction |
+| `Data` → `exchangerate` | `Number` | Exchange rate used (if applicable) |
+| `Data` → `status` | `String` | Current status of the transaction |
+| `Data` → `merchant_account_id` | `Integer` | ID of the merchant account |
+| `Data` → `merchant_account_name` | `String` | Name of the merchant account |
+| `Data` → `merchant_id` | `Integer` | ID of the merchant |
+| `Data` → `merchant_name` | `String` | Name of the merchant |
+| `Data` → `payment_method` | `String` | Payment Method used |
+| `Data` → `payment_media_brand` | `String` | Brand of the payment method (if applicable) |
+| `Data` → `last_status_date` | `String` | Date of the last status update |
+| `Page` | `Integer` | Current page number |
+| `PageSize` | `Integer` | Number of records per page |
+| `Total` | `Integer` | Total number of records matching the query |
+| `Errors` | `Array` | Array of error messages if any occurred during the request processing |
+
+<!--
 | `success` | `Boolean` | Indicates if the request was successful |
 | `message` | `String` | Provides additional information about the response |
-| `data` | `Array` | Array of transaction objects |
-| `data` → `transactionid` | `String` |  Transaction ID associated with this financial movement  |
-| `data` → `movementid` | `Integer` | Identifier for the financial movement |
-| `data` → `created` | `String` | Date and time when the financial movement was created |
-| `data` → `type` | `String` | Type of transaction (e.g., `Refund`, `Purchase`, `Payout"` , `Fee`, `FX`, `Withdrawal`, `Debit adjustment`, `Credit adjustment`.) |
-| `data` → `country` | `String` | Country code where the transaction occurred `ISO 3166-1 alpha-2 format` |
-| `data` → `currency` | `String` | Currency code for the financial movement |
-| `data` → `sign` | `String` | Indicates if the amount is a credit or debit |
-| `data` → `amount` | `Integer` | Transaction amount |
-| `data` → `availabledate` | `String` | Date when the funds become available |
-| `data` → `referenceid` | `String` | Reference ID for the transaction |
-| `data` → `endusernotes` | `String` | Any notes associated with the transaction |
-| `data` → `exchangerate` | `Number` | Exchange rate used (if applicable) |
-| `data` → `status` | `String` | Current status of the transaction |
-| `data` → `merchant_account_id` | `Integer` | ID of the merchant account |
-| `data` → `merchant_account_name` | `String` | Name of the merchant account |
-| `data` → `merchant_id` | `Integer` | ID of the merchant |
-| `data` → `merchant_name` | `String` | Name of the merchant |
-| `data` → `payment_method` | `String` | Payment Method used |
-| `data` → `payment_media_brand` | `String` | Brand of the payment method (if applicable) |
-| `data` → `last_status_date` | `String` | Date of the last status update |
-| `total` | `Integer` | Total number of records matching the query |
-| `page` | `Integer` | Current page number |
-| `pageSize` | `Integer` | Number of records per page |
-| `errors` | `Array` | Array of error messages if any occurred during the request processing |
-
+-->
 
 ### Response example
 {{< highlight json >}}

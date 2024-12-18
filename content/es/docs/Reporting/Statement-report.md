@@ -44,33 +44,36 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 
 | Propiedad | Tipo | Descripción |
 |-----------|------|-------------|
+| `Data` | `Array` | Array de objetos por cada movimiento de cuenta |
+| `Data` → `transactionid` | `String` | ID de transacción asociado con este movimiento financiero |
+| `Data` → `movementid` | `Integer` | Identificador del movimiento financiero |
+| `Data` → `created` | `String` | Fecha y hora en que se creó el movimiento financiero |
+| `Data` → `type` | `String` | Tipo de transacción (Ejemplo: `Refund`, `Purchase`, `Payout"` , `Fee`, `FX`, `Withdrawal`, `Debit adjustment`, `Credit adjustment`.) |
+| `Data` → `country` | `String` | Código del país donde ocurrió la transacción `formato ISO 3166-1 alpha-2` |
+| `Data` → `currency` | `String` | Código de moneda utilizado en la transacción |
+| `Data` → `sign` | `String` | Indica si el monto es un crédito o un débito |
+| `Data` → `amount` | `Integer` | Valor de la transacción |
+| `Data` → `availabledate` | `String` | Fecha en que los fondos estarán disponibles |
+| `Data` → `referenceid` | `String` | ID de referencia |
+| `Data` → `endusernotes` | `String` | Notas asociadas con la transacción |
+| `Data` → `exchangerate` | `Number` | Tasa de cambio utilizada (si aplica) |
+| `Data` → `status` | `String` | Estado actual de la transacción |
+| `Data` → `merchant_account_id` | `Integer` | ID de la cuenta |
+| `Data` → `merchant_account_name` | `String` | Nombre de la cuenta |
+| `Data` → `merchant_id` | `Integer` | ID del comercio |
+| `Data` → `merchant_name` | `String` | Nombre del comercio |
+| `Data` → `payment_method` | `String` | Medio de pago utilizado |
+| `Data` → `payment_media_brand` | `String` | Marca del método de pago (si aplica) |
+| `Data` → `last_status_date` | `String` | Fecha de la última actualización de estado |
+| `Page` | `Integer` | Número de página actual |
+| `PageSize` | `Integer` | Número de registros por página |
+| `Total` | `Integer` | Número total de registros que coinciden con la consulta |
+| `Errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
+
+<!--
 | `success` | `Boolean` | Indica si la solicitud fue exitosa |
 | `message` | `String` | Proporciona información adicional sobre la respuesta |
-| `data` | `Array` | Array de objetos por cada movimiento de cuenta |
-| `data` → `transactionid` | `String` | ID de transacción asociado con este movimiento financiero |
-| `data` → `movementid` | `Integer` | Identificador del movimiento financiero |
-| `data` → `created` | `String` | Fecha y hora en que se creó el movimiento financiero |
-| `data` → `type` | `String` | Tipo de transacción (Ejemplo: `Refund`, `Purchase`, `Payout"` , `Fee`, `FX`, `Withdrawal`, `Debit adjustment`, `Credit adjustment`.) |
-| `data` → `country` | `String` | Código del país donde ocurrió la transacción `formato ISO 3166-1 alpha-2` |
-| `data` → `currency` | `String` | Código de moneda utilizado en la transacción |
-| `data` → `sign` | `String` | Indica si el monto es un crédito o un débito |
-| `data` → `amount` | `Integer` | Valor de la transacción |
-| `data` → `availabledate` | `String` | Fecha en que los fondos estarán disponibles |
-| `data` → `referenceid` | `String` | ID de referencia |
-| `data` → `endusernotes` | `String` | Notas asociadas con la transacción |
-| `data` → `exchangerate` | `Number` | Tasa de cambio utilizada (si aplica) |
-| `data` → `status` | `String` | Estado actual de la transacción |
-| `data` → `merchant_account_id` | `Integer` | ID de la cuenta |
-| `data` → `merchant_account_name` | `String` | Nombre de la cuenta |
-| `data` → `merchant_id` | `Integer` | ID del comercio |
-| `data` → `merchant_name` | `String` | Nombre del comercio |
-| `data` → `payment_method` | `String` | Medio de pago utilizado |
-| `data` → `payment_media_brand` | `String` | Marca del método de pago (si aplica) |
-| `data` → `last_status_date` | `String` | Fecha de la última actualización de estado |
-| `total` | `Integer` | Número total de registros que coinciden con la consulta |
-| `page` | `Integer` | Número de página actual |
-| `pageSize` | `Integer` | Número de registros por página |
-| `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
+-->
 
 ### Ejemplo del Response {#response-example}
 

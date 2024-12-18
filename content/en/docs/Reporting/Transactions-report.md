@@ -43,37 +43,40 @@ Currently, the API may return information up to D-1 (the previous day). This mea
 
 | Property | Type | Description |
 |----------|------|-------------|
+| `Data` | `Array` | Array of transaction objects containing the following fields: |
+| `Data` → `TransactionId` | `Integer` | Unique identifier for the transaction |
+| `Data` → `Type` | `String` | Type of transaction (e.g., "Purchase", "Refund") |
+| `Data` → `Created` | `Date-time` | Date and time when the transaction was created |
+| `Data` → `Status` | `String` | Status of the transaction (e.g., "Approved", "Rejected") |
+| `Data` → `Error_code` | `String` | Error code if applicable |
+| `Data` → `Amount` | `Decimal` | Amount of the transaction |
+| `Data` → `Currency` | `String` | Currency of the transaction |
+| `Data` → `Country` | `String` | Country where the transaction occurred |
+| `Data` → `Transaction_source` | `String` | Source of the transaction |
+| `Data` → `Tenant` | `String` | Name of the tenant |
+| `Data` → `Merchant_account` | `String` | Name of the merchant account |
+| `Data` → `Payment_method_type` | `String` | Type of payment method used |
+| `Data` → `Payment_method` | `String` | Specific payment method used |
+| `Data` → `Card_bin` | `String` | Bank Identification Number (6 digits) |
+| `Data` → `Card_last4` | `String` | Last 4 digits of the card |
+| `Data` → `Order` | `String` | Order identifier |
+| `Data` → `Unique_id` | `String` | Unique identifier for the transaction |
+| `Data` → `Authorization_code` | `String` | Authorization code for the transaction |
+| `Data` → `Installments` | `Integer` | Number of installments if applicable |
+| `Data` → `Issuer` | `String` | Name of the issuing bank |
+| `Data` → `Customer_name` | `String` | Full name of the customer |
+| `Data` → `Customer_document_type` | `String` | Type of identification document |
+| `Data` → `Customer_document_number` | `String` | Identification document number |
+| `Data` → `Customer_email` | `String` | Email address of the customer |
+| `Page` | `Integer` | Current page number |
+| `PageSize` | `Integer` | Number of records per page |
+| `Total` | `Integer` | Total number of records matching the query |
+| `Errors` | `Array` | Array of error messages if any occurred during the request processing |
+
+<!--
 | `success` | `Boolean` | Indicates if the request was successful |
 | `message` | `String` | Provides additional information about the response |
-| `data` | `Array` | Array of transaction objects containing the following fields: |
-| `data` → `TransactionId` | `Integer` | Unique identifier for the transaction |
-| `data` → `Type` | `String` | Type of transaction (e.g., "Purchase", "Refund") |
-| `data` → `Created` | `Date-time` | Date and time when the transaction was created |
-| `data` → `Status` | `String` | Status of the transaction (e.g., "Approved", "Rejected") |
-| `data` → `Error_code` | `String` | Error code if applicable |
-| `data` → `Amount` | `Decimal` | Amount of the transaction |
-| `data` → `Currency` | `String` | Currency of the transaction |
-| `data` → `Country` | `String` | Country where the transaction occurred |
-| `data` → `Transaction_source` | `String` | Source of the transaction |
-| `data` → `Tenant` | `String` | Name of the tenant |
-| `data` → `Merchant_account` | `String` | Name of the merchant account |
-| `data` → `Payment_method_type` | `String` | Type of payment method used |
-| `data` → `Payment_method` | `String` | Specific payment method used |
-| `data` → `Card_bin` | `String` | Bank Identification Number (6 digits) |
-| `data` → `Card_last4` | `String` | Last 4 digits of the card |
-| `data` → `Order` | `String` | Order identifier |
-| `data` → `Unique_id` | `String` | Unique identifier for the transaction |
-| `data` → `Authorization_code` | `String` | Authorization code for the transaction |
-| `data` → `Installments` | `Integer` | Number of installments if applicable |
-| `data` → `Issuer` | `String` | Name of the issuing bank |
-| `data` → `Customer_name` | `String` | Full name of the customer |
-| `data` → `Customer_document_type` | `String` | Type of identification document |
-| `data` → `Customer_document_number` | `String` | Identification document number |
-| `data` → `Customer_email` | `String` | Email address of the customer |
-| `total` | `Integer` | Total number of records matching the query |
-| `page` | `Integer` | Current page number |
-| `pageSize` | `Integer` | Number of records per page |
-| `errors` | `Array` | Array of error messages if any occurred during the request processing |
+-->
 
 ### Response example
 {{< highlight json >}}
