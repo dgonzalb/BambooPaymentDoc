@@ -10,8 +10,15 @@ tags: ["subtopic"]
 
 ## Transferencia Bancaria - PSE
 PSE (Pagos Seguros en Línea) es un sistema de pago en línea muy utilizado en Colombia. Permite realizar transacciones electrónicas seguras al permitir a los usuarios efectuar pagos directamente desde sus cuentas bancarias.
+Existen dos flujos posibles para realizar pagos:
 
-### Parámetros del Request {#request-parameters}
+1. **Primer flujo:**  
+   Se proporciona una URL al usuario, quien al acceder puede seleccionar su banco de preferencia para completar el pago. Posteriormente, será redirigido automáticamente al sitio web del banco seleccionado.
+
+2. **Segundo flujo:**  
+   Inicialmente, se utiliza la operación [obtener lista de bancos](/es/docs/payment-methods/colombia/co-apm-pse.html#request-parameters-get-bank-list) para obtener la lista de bancos disponibles. Esta lista puede ser desplegada en el proceso de checkout del comercio. Durante el procesamiento de la compra, se envían los datos necesarios para redirigir al usuario directamente al banco elegido, utilizando los campos adicionales en la solicitud.
+
+### Parámetros del Request - flujo URL selección de banco {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref Purchase_V3.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -35,6 +42,13 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Redirection` → `Url_Pending` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Pending`. |
 | `Redirection` → `Url_Notify` | `string` | No | URL del Webhook de notificación. Se notifica a esta URL el estado de la compra una vez que el procesador del medio de pago notifica a Bamboo. La notificación a esta URL es un POST REST con payload en JSON y no una redirección. Puede ser también estática y configurada por el equipo de soporte. |
 
+### Parámetros adicionales - flujo URL directo al banco {#request-parameters-get-bank-list}
+| Propiedad | Tipo | ¿Obligatorio? | Descripción |
+|---|:-:|:-:|---|
+| `MetaDataIn` → `financialInstitutionCode` | `string` | No | Código del banco donde se realizará la transacción.<br> Este código debe ser obtenido previamente desde el [endpoint de lista de bancos](/es/docs/payment-methods/colombia/co-apm-pse.html#get-bank-list)|
+| `MetaDataIn` → `personType` | `string` | No | Representa el tipo de persona que realiza la transacción. <br>Valores posibles: <br>`1` → Persona Natural (individuos).<br> `2` → Persona Jurídica (empresas). |
+| `MetaDataIn` → `identificationType` | `string` | No | Tipo de identificación del usuario que realiza la transacción.  <br>Valores posibles: <br>`RegistroCivilDeNacimiento`<br>`TarjetaDeIdentidad`<br>`CedulaDeCiudadania`<br>`TarjetaDeExtranjeria`<br>`CedulaDeExtranjeria`<br>`Pasaporte`	<br>`DocumentoDeIdentificacionExtranjero`<br>`NIT`|
+
 > _El estado de la compra para Medios de Pago Alternativos permanecerá en **Pending** hasta que el cliente complete el pago_
 
 #### Ejemplo del Request {#request-example}
@@ -44,6 +58,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 ### Parámetros del Response {#response-parameters}
 Retornamos la compra (`Purchase`) con estado _Pending for Redirection_ y un objeto `Action` con `Reason` como `REDIRECTION_NEEDED_EXTERNAL_SERVICE` y el parámetro `URL` con la URL del servicio externo. Debe redirigir al cliente a esta URL para finalizar el pago siguiendo el flujo PSE. En este flujo, su pagador selecciona su banco, elige si es una persona física o jurídica y su tipo de documento.
+<br> Si se envía el banco específico, obtenido y seleccionado desde la operación [obtener lista de bancos](/es/docs/payment-methods/colombia/co-apm-pse.html#request-parameters-get-bank-list), la redirección llevará directamente al sitio web del banco elegido.
 
 ![PrintScreen](/assets/PSE.png)
 
@@ -52,4 +67,19 @@ Según el resultado de la transacción, el pagador será dirigido a la URL defin
 #### Ejemplo del Response {#response-example}
 {{< highlight json >}}
 {{< Payins/V3/PaymentMethods/Colombia/responsePurchase_pse >}}
+{{< /highlight >}}
+
+### Endpoint de obtención de lista de bancos {#get-bank-list}
+
+* **Producción**: `https://pse.prod.bamboopayment.com/api/Bank/GetBanks`
+* **Stage**: `https://pse.stage.bamboopayment.com/api/Bank/GetBanks`
+
+#### Ejemplo del Response {#get-bank-list-response}
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Colombia/response_bankList_pse >}}
+{{< /highlight >}}
+
+#### Ejemplo del Request para banco específico {#request-example-bank}
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Colombia/requestPurchase_pse_bank >}}
 {{< /highlight >}}

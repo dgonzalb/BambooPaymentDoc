@@ -50,6 +50,7 @@ Es necesario realizar una petición **POST** a las siguientes URLs según sus ne
 | `AdditionalData` | `string` | No | Información adicional que pueda ser relevante para la transacción. |
 | `MetadataIn` | `object` | No | Datos adicionales de la transacción en formato clave-valor. |
 | `Customer` | `object` | Sí <sup>3</sup> | El objeto `Customer` proporciona los datos de la persona que realiza la compra. |
+| `SoftDescriptor` | `string` | No | Disponible solo en [Colombia para medios de pago de tarjetas]({{< ref co-cards.md >}}#request-parameters) |
 
 #### Objeto Customer {#customer-object}
 

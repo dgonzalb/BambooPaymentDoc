@@ -49,7 +49,7 @@ You must invoke a **POST** request to the following URLs according to your needs
 | `AdditionalData` | `string` | No | Additional information that may be relevant to the transaction. |
 | `MetadataIn` | `object` | No | Additional transaction data in key-value format. |
 | `Customer` | `object` | Yes <sup>3</sup> | The `Customer` object provides the data of the person who performs the purchase. |
-
+| `SoftDescriptor` | `string` | No | Available only in [Colombia for card payment methods]({{< ref co-cards.md >}}#request-parameters) |
 
 #### Customer Object
 
