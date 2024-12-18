@@ -15,7 +15,7 @@ The following networks are available for cash payments.
 
 <div id="shortTable"></div>
 
-| Logo | PaymentMethodID | Description |
+| Logo | PaymentMethod| Description |
 |:-----:|:-----:|:-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | `APC` | Apostar |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | `BCC` | Bancolombia |

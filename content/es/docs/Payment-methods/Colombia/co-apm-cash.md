@@ -15,7 +15,7 @@ Puedes ofrecer a tus clientes la posibilidad de pagar en efectivo en las siguien
 
 <div id="shortTable"></div>
 
-| Logo | PaymentMethodID | Descripción |
+| Logo | PaymentMethod | Descripción |
 |:-----:|:-----:|:-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Apostar_PhysicalNetwork.png" width="52" /> | `APC` | Apostar |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Bancolombia_PhysicalNetwork.png" width="52" /> | `BCC` | Bancolombia |

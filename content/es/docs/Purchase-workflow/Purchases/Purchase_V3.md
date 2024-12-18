@@ -255,7 +255,7 @@ Debe realizar una petición **POST** a las siguientes URLs según sus necesidade
 
 <br>
 
-Los campos **CardData**, **PaymentMethodId**, **NetworkToken** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.
+Los campos **CardData**, **PaymentMethod**, **NetworkToken** y **TrxToken** no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.
 
 
 ## Respuesta del Request. {#response}
