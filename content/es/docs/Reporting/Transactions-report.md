@@ -77,66 +77,7 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 | `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
 
 ### Ejemplo del Response {#response-example}
-```json
-{
-  "Response": {
-    "Data": [
-      {
-        "TransactionId": 15660802,
-        "Type": "Purchase",
-        "Created": "2024-08-01T21:34:34.1308881",
-        "Status": "Approved",
-        "Amount": 4279,
-        "Currency": "BRL",
-        "Country": "BR",
-        "Transaction_source": "DirectPurchase",
-        "Tenant": "Bamboo.BR",
-        "Merchant_account": "Loja Virtual BR",
-        "Payment_method_type": "PrePaid",
-        "Payment_method": "VISA",
-        "Card_bin": "426717",
-        "Card_last4": "5636",
-        "Order": "f4bb4b41-2476-41ce-ac7a-ad3e6e50d77e",
-        "Unique_id": "f922b26e-76af-476d-aada-502a46e3c365",
-        "Authorization_code": "202597",
-        "Installments": 1,
-        "Issuer": "VISA",
-        "Customer_name": "Maria Silva",
-        "Customer_document_type": "24",
-        "Customer_document_number": "12345678900",
-        "Customer_email": "maria.silva@mail.com"
-      },
-      {
-        "TransactionId": 15919451,
-        "Type": "Refund",
-        "Created": "2024-08-04T14:22:43.4766824",
-        "Status": "Rejected",
-        "Error_code": "TR019",
-        "Amount": 8560,
-        "Currency": "BRL",
-        "Country": "BR",
-        "Transaction_source": "DirectPurchase",
-        "Tenant": "Bamboo.BR",
-        "Merchant_account": "Loja Online BR",
-        "Payment_method_type": "PrePaid",
-        "Payment_method": "MasterCard",
-        "Card_bin": "569130",
-        "Card_last4": "8461",
-        "Order": "9cdc4d58-3aa9-4f2c-b204-8c2c96ab6bd7",
-        "Unique_id": "b5caf213-d76e-4d15-b691-6b0fccb16e86",
-        "Authorization_code": "526661",
-        "Installments": 1,
-        "Issuer": "MasterCard",
-        "Customer_name": "João Santos",
-        "Customer_document_type": "24",
-        "Customer_document_number": "98765432100",
-        "Customer_email": "joao.santos@mail.com"
-      }
-    ],
-    "Page": 2,
-    "PageSize": 2,
-    "Total": 4
-  },
-  "Errors": []
-}
-```
+
+{{< highlight json >}}
+{{< Payins/Reporting/transaction_api >}}
+{{< /highlight >}} 

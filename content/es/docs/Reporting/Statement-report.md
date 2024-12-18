@@ -73,37 +73,7 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 | `errors` | `Array` | Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud |
 
 ### Ejemplo del Response {#response-example}
-```json
-{
-  "success": true,
-  "message": null,
-  "data": [
-    {
-      "transactionid": "17041776",
-      "movementid": 13211952,
-      "created": "2024-08-12T13:44:18.397",
-      "type": "Refund",
-      "country": "PE",
-      "currency": "USD",
-      "sign": "Debit",
-      "amount": -1,
-      "availabledate": "2024-09-01T19:44:16.093",
-      "referenceid": "REF123456",
-      "endusernotes": "Customer requested refund",
-      "exchangerate": 3.73,
-      "status": "Confirmed",
-      "merchant_account_id": 2081,
-      "merchant_account_name": "ACME Online Store",
-      "merchant_id": 35,
-      "merchant_name": "Global Retail Group",
-      "payment_method": "BankTransfer",
-      "payment_media_brand": null,
-      "last_status_date": "2024-08-12T14:00:00.000"
-    }
-  ],
-  "total": 1,
-  "page": 1,
-  "pageSize": 10,
-  "errors": null
-}
-```
+
+{{< highlight json >}}
+{{< Payins/Reporting/movements_api >}}
+{{< /highlight >}} 
