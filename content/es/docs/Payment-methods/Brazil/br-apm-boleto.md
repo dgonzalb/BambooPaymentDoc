@@ -1,9 +1,9 @@
 ---
-title: "PIX"
-linkTitle: "PIX"
+title: "Boleto"
+linkTitle: "Boleto"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Aprenda a integrar su solución para procesar pagos con **PIX**.
+  Aprenda a integrar su solución para procesar pagos con **Boleto Bancario**.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -12,10 +12,10 @@ tags: ["subtopic"]
 El estado de la compra para Medios Alternativos de Pago permanecerá en _Pending_ hasta que el cliente complete el pago.
 {{% /alert %}}
 
-## PIX
-_PIX_ es un medio de pago oficial brasileño lanzado por el Banco Central local. Permite la confirmación inmediata del pago y está disponible 24 horas al día, 7 días a la semana. Para completar un pago, el pagador puede utilizar cualquier Home Banking o Wallet copiando y pegando el ID de transacción o escaneando el código QR.
+## Boleto Bancario
+_Boleto Bancário_ es un medio de pago popular en Brasil que permite pagar facturas y compras en línea sin necesidad de una tarjeta de crédito: Genera un código de barras único que puede ser imprimido o accedido a través de una plataforma digital y puede ser pagado en cualquier banco u oficina de pago autorizada.
 
-### Parámetros del Request {#request-parameters}
+### Parámetros del Request {#request-parameters-1}
 Para procesar pagos en efectivo, necesitas incluir campos específicos en tu solicitud. Para información sobre autenticación, idiomas de respuesta y parámetros básicos como monto y moneda, consulta el artículo sobre [operación de compra]({{< ref Purchase_V3.md >}}#request-parameters).
 
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
@@ -29,80 +29,80 @@ Para procesar pagos en efectivo, necesitas incluir campos específicos en tu sol
 | `Customer` → `DocumentNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
-| `Customer` → `Address` → `State` | `string` | No | Estado del cliente. |
-| `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
+| `Customer` → `Address` → `State` | `string` | Sí | Estado del cliente. |
+| `Customer` → `Address` → `City` | `string` | Sí | Ciudad del cliente. |
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
-| `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | Sí | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. |
-| `MetadataIn.` → `AddressStreet` | `string` | No | Calle de la dirección del cliente. |
-| `MetadataIn` → `AddressNumber` | `string` | No | Número, piso o apartamento de la dirección del cliente. |
-| `MetadataIn` → `AddressDistrict` | `string` | No | Distrito de la dirección del cliente. |
+| `Customer` → `Address` → `PostalCode` | `string` | Sí | Código postal del cliente. El código postal debe tener ocho dígitos; por ejemplo, `29018660`. |
+| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
+| `MetadataIn.` → `AddressStreet` | `string` | Sí | Calle de la dirección del cliente. |
+| `MetadataIn` → `AddressNumber` | `string` | Sí | Número, piso o apartamento de la dirección del cliente. |
+| `MetadataIn` → `AddressDistrict` | `string` | Sí | Distrito de la dirección del cliente. 
 
 
-#### Ejemplo del Request {#request-example}>
+#### Ejemplo del Request {#request-example-1}
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/Brasil/request_boleto >}}
+{{< /highlight >}}
 <!--```json
 {
-    "PaymentMediaId": "31",
-    "Capture": "true",
-    "Amount": 2000,
-    "Currency": "BRL",
-    "TargetCountryISO": "BR",
+    "PaymentMediaId": "66",
+    "Capture":"true",
+    "Amount":2000,
+    "Currency":"BRL",
+    "TargetCountryIso" : "BR",
     "Customer": {
         "Email": "john@mail.com",
-        "BillingAddress": {
-            "AddressDetail": "Avenida Anisio Fernandes Coelho, 661 ",
-            "PostalCode": "29060670",
-            "City": "Vitoria",
-            "State": "ES",
-            "Country": "Brasil"
-        },
-        "FirstName": "John",
+        "FirstName" : "John",
         "LastName": "Doe",
-        "DocNumber": "13394559358",
-        "DocumentTypeId": 25,
-        "PhoneNumber": "+59812345678"
+        "DocNumber" : "13394559358",
+        "DocumentTypeId": 24,
+        "BillingAddress": {
+          "AddressType": 1,
+          "Country": "Brasil",
+          "State": "ES",
+          "City": "Vitoria",
+          "AddressDetail": "Avenida Anisio Fernandes Coelho 661",
+          "PostalCode":"11100"
+        },
     },
-    "MetadataIn": {
-        "PaymentExpirationInMinutes": "14040",
-        "AddressStreet": "Avenida Anisio Fernandes Coelho",
-        "AddressNumber": "661",
-        "AddressDistrict": "PR"
-    },
-    "description": "Pagameto do Brazil"
+    "MetadataIn" : {
+      "PaymentExpirationInMinutes" :"1440",
+      "AddressStreet": "Avenida Anisio Fernandes Coelho",
+      "AddressNumber": "661",
+      "AddressDistrict": "ES"
+    }
 }
-```-->
-{{< highlight json >}}
-{{< Payins/V3/PaymentMethods/Brasil/request_pix >}}
-{{< /highlight >}}
+```--->
 
-### Parámetros del Response {#response-parameters}
+### Parámetros del Response {#response-parameters-1}
 En el Response, se encuentran los siguientes parámetros:
 
 | Propiedad | Tipo | Descripción |
 |---|:-:|---|
-| `Response` → `MetadataOut` → `PaymentCode` | `string` | Código del pago generado por **PIX**. |
-| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Este código, que corresponde en Brasil al _copia e cola_, permite a los pagadores copiarlo en su app bancaria.<br>Este parámetro es útil para generar el código QR cuando cree su propio checkout. |
-| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la página de pago. Esta página tiene el código QR generado en la cadena devuelta en el parámetro `PaymentBarCode`.<br>También puede redirigir al pagador a esta página para completar el pago. |
+| `Response` → `MetadataOut` → `PaymentCode` | `string` | Código de pago generado por **Boleto Bancario** |
+| `Response` → `MetadataOut` → `PaymentBarCode` | `string`  | Número del código de barras generado para completar el pago. |
+| `Response` → `MetadataOut` → `PaymentBarCodeUrl` | `string` | URL de la página de pago. Usted puede redirigir al pagador a esta página para descargar el boleto. |
 | `Response` → `MetadataOut` → `PaymentExpirationDate` | `date` | Fecha de expiración del pago.<br>Formato _DD/MM/AAAA HH:MM:SS_. |
 
-#### Página de pago en PIX {#payment-page-in-pix}
+#### Página de pago en Boleto {#payment-page-in-boleto}
 
-![PrintScreen](/assets/PIX.png)
+![PrintScreen](/assets/Boleto.png)
 
 #### Ejemplo del Response {#response-example}
 {{< highlight json >}}
-{{< Payins/V3/PaymentMethods/Brasil/response_pix >}}
+{{< Payins/V3/PaymentMethods/Brasil/response_boleto >}}
 {{< /highlight >}}
+
 <!--```json
 {
     "Response": {
-        "PurchaseId": 1167187,
-        "Created": "2023-08-31T15:44:31.104",
+        "PurchaseId": 1133697,
+        "Created": "2023-08-31T16:26:30.073",
         "TrxToken": null,
         "Order": null,
         "Transaction": {
-            "TransactionID": 1186084,
-            "Created": "2023-08-31T15:44:31.104",
+            "TransactionID": 1152594,
+            "Created": "2023-08-31T16:26:30.073",
             "AuthorizationDate": "",
             "TransactionStatusId": 2,
             "Status": "Pending",
@@ -126,11 +126,11 @@ En el Response, se encuentran los siguientes parámetros:
         "Capture": true,
         "Amount": 2000,
         "OriginalAmount": 2000,
-        "TaxableAmount": null,
+        "TaxableAmount": 0,
         "Tip": 0,
         "Installments": 1,
         "Currency": "BRL",
-        "Description": "Pagameto do Brazil",
+        "Description": null,
         "Customer": {
             "CustomerId": 88230,
             "Created": "2022-12-08T11:30:35.933",
@@ -200,7 +200,7 @@ En el Response, se encuentran los siguientes parámetros:
             "FirstName": "John",
             "LastName": "Doe",
             "DocNumber": "13394559358",
-            "DocumentTypeId": 25,
+            "DocumentTypeId": 24,
             "PhoneNumber": "+59812345678",
             "ExternalValue": null
         },
@@ -210,15 +210,15 @@ En el Response, se encuentran los siguientes parámetros:
         "AdditionalData": null,
         "CustomerUserAgent": null,
         "CustomerIP": null,
-        "URL": "https://api.stage.bamboopayment.com/Purchase/1167187",
+        "URL": "https://api.stage.bamboopayment.com/Purchase/1133697",
         "DataUY": {
             "IsFinalConsumer": false,
             "Invoice": null,
-            "TaxableAmount": null
+            "TaxableAmount": 0
         },
         "DataDO": {
             "Invoice": null,
-            "Tax": null
+            "Tax": 0
         },
         "Acquirer": {
             "AcquirerID": 63,
@@ -226,20 +226,20 @@ En el Response, se encuentran los siguientes parámetros:
             "CommerceNumber": null
         },
         "CommerceAction": null,
-        "PurchasePaymentProfileId": 98304,
+        "PurchasePaymentProfileId": 98311,
         "LoyaltyPlan": null,
         "DeviceFingerprintId": null,
         "MetadataIn": {
-            "PaymentExpirationInMinutes": "14040",
+            "PaymentExpirationInMinutes": "1440",
             "AddressStreet": "Avenida Anisio Fernandes Coelho",
             "AddressNumber": "661",
-            "AddressDistrict": "PR"
+            "AddressDistrict": "MO"
         },
         "MetadataOut": {
-            "PaymentCode": "33ff0bc703d33d4b3029b86abec12bfed2ccc972a87c8525c7dbdcc4f6753398",
-            "PaymentBarCode": "00020101226914br.gov.bcb.pix2571api-h.developer.wepayout.com/v1/p/v2/1e317df5-4d0a-43c2-ba6d-18e468392823000053039865802BR5908WePayOut6009Sao Paulo61080141000262070503***63041300",
-            "PaymentBarCodeUrl": "https://pagar.sandbox.goboleto.com/?hash=33ff0bc703d33d4b3029b86abec12bfed2ccc972a87c8525c7dbdcc4f6753398",
-            "PaymentExpirationDate": "09/10/2023 06:44:31"
+            "PaymentCode": "bd88102f813cface085ea4ac63038a65cd5378228be2d5694f67b8a83af45931",
+            "PaymentBarCode": "10491814900000002009632034000900041179634666",
+            "PaymentBarCodeUrl": "https://pagar.sandbox.goboleto.com/?hash=bd88102f813cface085ea4ac63038a65cd5378228be2d5694f67b8a83af45931",
+            "PaymentExpirationDate": "09/01/2023 00:00:00"
         },
         "CrossBorderData": null,
         "CrossBorderDataResponse": {

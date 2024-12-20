@@ -12,7 +12,19 @@ This section shows the available payment methods, currencies, and related inform
 
 ## Payment methods
 
-| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+|  | PaymentMethod PaymentMediaID | Name | Purchase | Authorization | Full refund | Partial Refund | Type |
+|------|----------------------------|---------|---------|--------------|-----------------|-------------------|------|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /> | `VSC` - `1` | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="master" style="min-width: 40px;" /> | `MCC` - `2` | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="amex" style="min-width: 40px;" /> | `AMC` - `3` | American Express | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Diners_CreditCard.png" alt="diners" style="min-width: 40px;" /> | `DNC` - `12` | Diners | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PIX_BankTransfer.png" alt="pix" style="min-width: 40px;" /> | `PIX` - `31` | PIX | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Bank Transfer |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" alt="hipercard" style="min-width: 40px;" /> | `HPC` - `62` | Hipercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" alt="elo" style="min-width: 40px;" /> | `ELC` - `63` | Elo | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" alt="aura" style="min-width: 40px;" /> | `AUC` - `64` | Aura | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" alt="boleto" style="min-width: 40px;" /> | `BLT` - `66` | Boleto | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash |
+
+<!--| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /> | 1 | Visa | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="master" style="min-width: 40px;" /> | 2 | Mastercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
@@ -22,7 +34,7 @@ This section shows the available payment methods, currencies, and related inform
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Hipercard_CreditCard.png" alt="amex" style="min-width: 40px;" /> | 62 | Hipercard | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Elo_CreditCard.png" alt="amex" style="min-width: 40px;" /> | 63 | Elo | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Aura_CreditCard.png" alt="amex" style="min-width: 40px;" /> | 64 | Aura | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Credit Card | API |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" alt="boleto" style="min-width: 40px;" /> | 66 | Boleto | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Boleto_PhysicalNetwork.png" alt="boleto" style="min-width: 40px;" /> | 66 | Boleto | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |-->
 
 ## Currencies
 
@@ -41,10 +53,10 @@ This section shows the available payment methods, currencies, and related inform
 ## Document types
 The following table describes the valid document types for Brazil:
 
-| Code (V3 API) | Code (Previous API) |  Document name                          | Abbreviation |
+| DocumentType | DocumentType (Previous API) |  Document name                          | Abbreviation |
 |:-------------:|:-------------------:|----------------------------------------|--------------|
 |  CPF.BR       | 24                   |  Cadastro de Pessoas Físicas            | CPF          |
-|  CNPG.BR      | 25                   |  Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
+|  CNPJ.BR      | 25                   |  Cadastro Nacional da Pessoas Jurídicas | CNPJ         |
 
 ## Customer's state of residence
 

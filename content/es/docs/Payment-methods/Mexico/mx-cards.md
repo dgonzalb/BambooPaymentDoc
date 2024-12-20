@@ -32,7 +32,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `AntifraudData` → `AntifraudFingerprintId` | `string` | Sí | Session Id (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
-| `CustomerIP` | `string` | Sí | IP correspondiente al cliente conectado al sitio web del comercio. |
+| `AntifraudData` → `CustomerIP` | `string` | Sí | IP correspondiente al cliente conectado al sitio web del comercio. |
 
 {{% alert title="Info" color="info"%}}
 

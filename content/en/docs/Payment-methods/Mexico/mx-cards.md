@@ -13,7 +13,7 @@ You can create the purchase using [API](#card-payments-using-api-flow) or [Redir
 Using this flow, you can offer the possibility to receive payments using cards without the intervention of the payer.
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref Purchase_V3.md >}}#request-parameters)  article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
@@ -31,7 +31,7 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `AntifraudData` → `AntifraudFingerprintId` | `string` | Yes | Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud]({{< ref Antifraud.md>}}#getsessionantifraud). |
-| `CustomerIP` | `string` | No | IP of to the customer connected to the commerce website. |
+| `AntifraudData` → `ClientIP` | `string` | No | IP of to the customer connected to the commerce website. |
 
 {{% alert title="Info" color="info"%}}
 
