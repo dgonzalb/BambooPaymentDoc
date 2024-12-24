@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/payment-methods/colombia/co-apm-pse.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-08T07:28:16-05:00" />
-<meta property="article:modified_time" content="2024-12-12T10:43:41-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-18T15:31:33-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="PSE">
 <meta itemprop="description" content="Learn how to integrate your solution to process payments with PSE.
 "><meta itemprop="datePublished" content="2023-05-08T07:28:16-05:00" />
-<meta itemprop="dateModified" content="2024-12-12T10:43:41-03:00" />
-<meta itemprop="wordCount" content="534">
+<meta itemprop="dateModified" content="2024-12-18T15:31:33-03:00" />
+<meta itemprop="wordCount" content="848">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PSE"/>
 <meta name="twitter:description" content="Learn how to integrate your solution to process payments with PSE.
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.efa697413d6a5daa5c0eb7e924b7a20104bec5540b9566c9e065ce6150386ec7959f0ed9b2e4db11e3a5deadf6040a2b06cc02bef52d15cce80a1162e9fd8625.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.626e791557a6814cd7b1515424a5a5b2d3c6cd1997bd63f3d8c6baecd90785c68468e09e34ed3340b9280b712d1b9e6569c918539d7c0373a67a2d037b823cb8.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -384,7 +384,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">3DS Pass-through</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
       
       
     </li>
@@ -600,7 +600,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/brazil/br-apm-boleto.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apm-boletohtml" href="../../../../en/docs/payment-methods/brazil/br-apm-boleto.html">Boleto</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../../en/docs/payment-methods/brazil/br-apm.html">PIX</a>
       
       
     </li>
@@ -785,7 +791,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../../en/docs/payment-methods/mexico/mx-apm.html">Cash Payments</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm-stp.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apm-stphtml" href="../../../../en/docs/payment-methods/mexico/mx-apm-stp.html">SPEI</a>
       
       
     </li>
@@ -1109,8 +1121,10 @@
   <ul>
     <li><a href="#bank-transfer-using-pse">Bank Transfer using PSE</a>
       <ul>
-        <li><a href="#request-parameters">Request parameters</a></li>
+        <li><a href="#request-parameters">Request Parameters - Bank Selection URL Flow</a></li>
+        <li><a href="#request-parameters-get-bank-list">Additional Parameters - Direct Bank URL Flow</a></li>
         <li><a href="#response-parameters">Response parameters</a></li>
+        <li><a href="#get-bank-list">Bank List Retrieval Endpoint</a></li>
       </ul>
     </li>
   </ul>
@@ -1173,8 +1187,19 @@
     <div class="lead">Learn how to integrate your solution to process payments with PSE.</div>
 	       
 	<h2 id="bank-transfer-using-pse">Bank Transfer using PSE</h2>
-<p>PSE (Pagos Seguros en Línea) is a widely used online payment system in Colombia. It enables secure electronic transactions by allowing users to make payments directly from their bank accounts.</p>
-<h3 id="request-parameters">Request parameters</h3>
+<p>PSE (Pagos Seguros en Línea) is a widely used online payment system in Colombia. It enables secure electronic transactions by allowing users to make payments directly from their bank accounts.
+There are two possible payment flows:</p>
+<ol>
+<li>
+<p><strong>First flow:</strong><br>
+A URL is provided to the user, who can access it to select their preferred bank to complete the payment. Then, they are automatically redirected to the selected bank&rsquo;s website.</p>
+</li>
+<li>
+<p><strong>Second flow:</strong><br>
+Initially, the <a href="../../../../en/docs/payment-methods/colombia/co-apm-pse.html#request-parameters-get-bank-list">get bank list</a> operation is used to retrieve the available bank list. This list can be displayed during the merchant&rsquo;s checkout process. During the purchase processing, the necessary data is sent to redirect the user directly to their preferred bank using the additional fields in the request.</p>
+</li>
+</ol>
+<h3 id="request-parameters">Request Parameters - Bank Selection URL Flow</h3>
 <p>You need to include specific fields for this payment method to work correctly. Check the <a href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters">Purchase operation</a> article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.</p>
 <table>
 <thead>
@@ -1296,6 +1321,37 @@
 </tr>
 </tbody>
 </table>
+<h3 id="request-parameters-get-bank-list">Additional Parameters - Direct Bank URL Flow</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MetaDataIn</code> → <code>financialInstitutionCode</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Bank code where the transaction will take place.<br> This code must be previously obtained from the <a href="../../../../en/docs/payment-methods/colombia/co-apm-pse.html#get-bank-list">bank list endpoint</a>.</td>
+</tr>
+<tr>
+<td><code>MetaDataIn</code> → <code>personType</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>Represents the type of person performing the transaction. <br>Possible values: <br><code>1</code> → Natural Person (individuals).<br> <code>2</code> → Legal Person (companies).</td>
+</tr>
+<tr>
+<td><code>MetaDataIn</code> → <code>identificationType</code></td>
+<td style="text-align:center"><code>string</code></td>
+<td style="text-align:center">No</td>
+<td>User identification type for the transaction. <br>Possible values: <br><code>RegistroCivilDeNacimiento</code><br><code>TarjetaDeIdentidad</code><br><code>CedulaDeCiudadania</code><br><code>TarjetaDeExtranjeria</code><br><code>CedulaDeExtranjeria</code><br><code>Pasaporte</code><br><code>DocumentoDeIdentificacionExtranjero</code><br><code>NIT</code></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><em>The purchase status for Alternative Payment methods will remain <strong>Pending</strong> until the customer completes the payment.</em></p>
 </blockquote>
@@ -1329,7 +1385,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
 <h3 id="response-parameters">Response parameters</h3>
-<p>We return the <code>Purchase</code> with the status <em>Pending for Redirection</em> and a <code>Action</code> object with <code>Reason</code> as <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code> and the <code>URL</code> parameter with the external service URL. You must redirect the customer to this URL to finish the payment following the PSE flow. In this flow, your payer selects their bank, choose whether they are a Natural or Legal person and their document type.</p>
+<p>We return the <code>Purchase</code> with the status <em>Pending for Redirection</em> and a <code>Action</code> object with <code>Reason</code> as <code>REDIRECTION_NEEDED_EXTERNAL_SERVICE</code> and the <code>URL</code> parameter with the external service URL. You must redirect the customer to this URL to finish the payment following the PSE flow. In this flow, your payer selects their bank, choose whether they are a Natural or Legal person and their document type.
+<br> If a specific bank is sent, obtained and selected from the <a href="../../../../es/docs/payment-methods/colombia/co-apm-pse.html#request-parameters-get-bank-list">get bank list</a> operation, the redirection will lead directly to the selected bank&rsquo;s website.</p>
 <p><img src="../../../../assets/PSE.png" alt="PrintScreen"></p>
 <p>According to the result of the transaction, the payer will be directed to the URL defined in the <code>Redirection</code> object. For more information on the response parameters, please refer to the <a href="../../../../en/docs/purchase-workflow/purchases/purchase_v3.html#response-parameters">Response parameters section</a> of the Purchase creation.</p>
 <h4 id="response-example">Response example</h4>
@@ -1363,6 +1420,62 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+<h3 id="get-bank-list">Bank List Retrieval Endpoint</h3>
+<ul>
+<li><strong>Production</strong>: <code>https://pse.prod.bamboopayment.com/api/Bank/GetBanks</code></li>
+<li><strong>Stage</strong>: <code>https://pse.stage.bamboopayment.com/api/Bank/GetBanks</code></li>
+</ul>
+<h4 id="get-bank-list-response">Response Example</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;A continuación seleccione su banco&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1815</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ALIANZA FIDUCIARIA&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1558</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BAN100&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>  <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">15580</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BAN100QA&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">]</span></span></span></code></pre></div>
+<h4 id="request-example-bank">Response example for a specific bank</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PaymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PSE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CH2023-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Purchase Test&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;TargetCountryISO&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Customer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;State&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Antioquia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;City&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Medellin&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;AddressDetail&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 45 # 76B Sur - 57&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;FirstName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Miguel&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;LastName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Moreno&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;52960268&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;DocumentType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC.CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;PhoneNumber&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;3188060418&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;mmoreno@mail.com&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Redirection&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Url_Approved&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/response&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Url_Rejected&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/response&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Url_Canceled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/response&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Url_Pending&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://dummystore.com/checkout/response&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;MetaDataIn&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;financialInstitutionCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1077&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;personType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;identificationType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DocumentoDeIdentificacionExtranjero&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
 
 	
 	
@@ -1373,7 +1486,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    December 12, 2024
+    December 18, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

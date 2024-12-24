@@ -15,7 +15,7 @@ You need to include specific fields for this payment method to work correctly. C
 |---|:-:|:-:|---|
 | `TrxToken` | `string` | Yes | The token that identifies the customer’s card.<br>For more information about how to create the token, refer to [Customers](/en/docs/purchase-workflow/customer-types.html). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
-| `SoftDescriptor` | `string` | No | Text that will appear on the customer's statement when making a purchase. |
+| `SoftDescriptor` | `string` | No | Text that will appear on the customer's bank statement after a purchase. If not sent in the specified format, it may not display correctly on the customer's statement.<br> <ul style="margin-bottom: initial;"><li>Suggested format `string*string`<li> Example `Bamboo*MerchantName123` |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |

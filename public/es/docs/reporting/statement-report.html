@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/reporting/statement-report.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-10-02T08:40:29-03:00" />
-<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-18T18:51:51-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="API de Movimientos Financieros">
 <meta itemprop="description" content="La API de Movimientos proporciona un reporte detallado de datos financieros. Permite obtener una visión general de los movimientos monetarios en la cuenta Bamboo en un periodo específico. Incluye créditos (fondos entrantes), débitos (pagos salientes o tarifas) y costos.
 "><meta itemprop="datePublished" content="2024-10-02T08:40:29-03:00" />
-<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
-<meta itemprop="wordCount" content="523">
+<meta itemprop="dateModified" content="2024-12-18T18:51:51-03:00" />
+<meta itemprop="wordCount" content="510">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Movimientos Financieros"/>
 <meta name="twitter:description" content="La API de Movimientos proporciona un reporte detallado de datos financieros. Permite obtener una visión general de los movimientos monetarios en la cuenta Bamboo en un periodo específico. Incluye créditos (fondos entrantes), débitos (pagos salientes o tarifas) y costos.
@@ -134,7 +134,7 @@
   aria-label="Buscar …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.efa697413d6a5daa5c0eb7e924b7a20104bec5540b9566c9e065ce6150386ec7959f0ed9b2e4db11e3a5deadf6040a2b06cc02bef52d15cce80a1162e9fd8625.json"
+  data-offline-search-index-json-src="../../../offline-search-index.626e791557a6814cd7b1515424a5a5b2d3c6cd1997bd63f3d8c6baecd90785c68468e09e34ed3340b9280b712d1b9e6569c918539d7c0373a67a2d037b823cb8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -594,7 +594,13 @@
       
       
       
-        <a id="/es/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apmhtml" href="../../../es/docs/payment-methods/brazil/br-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/brazil/br-apm-boleto.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apm-boletohtml" href="../../../es/docs/payment-methods/brazil/br-apm-boleto.html">Boleto</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsbrazilbr-apmhtml" href="../../../es/docs/payment-methods/brazil/br-apm.html">PIX</a>
       
       
     </li>
@@ -779,7 +785,13 @@
       
       
       
-        <a id="/es/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apmhtml" href="../../../es/docs/payment-methods/mexico/mx-apm.html">Medios alternativos de pago</a>
+        <a id="/es/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apmhtml" href="../../../es/docs/payment-methods/mexico/mx-apm.html">Pagos en Efectivo</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/payment-methods/mexico/mx-apm-stp.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocspayment-methodsmexicomx-apm-stphtml" href="../../../es/docs/payment-methods/mexico/mx-apm-stp.html">SPEI</a>
       
       
     </li>
@@ -1234,176 +1246,173 @@
 </thead>
 <tbody>
 <tr>
-<td><code>success</code></td>
-<td><code>Boolean</code></td>
-<td>Indica si la solicitud fue exitosa</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td><code>String</code></td>
-<td>Proporciona información adicional sobre la respuesta</td>
-</tr>
-<tr>
-<td><code>data</code></td>
+<td><code>Data</code></td>
 <td><code>Array</code></td>
 <td>Array de objetos por cada movimiento de cuenta</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>transactionid</code></td>
+<td><code>Data</code> → <code>transactionid</code></td>
 <td><code>String</code></td>
 <td>ID de transacción asociado con este movimiento financiero</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>movementid</code></td>
+<td><code>Data</code> → <code>movementid</code></td>
 <td><code>Integer</code></td>
 <td>Identificador del movimiento financiero</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>created</code></td>
+<td><code>Data</code> → <code>created</code></td>
 <td><code>String</code></td>
 <td>Fecha y hora en que se creó el movimiento financiero</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>type</code></td>
+<td><code>Data</code> → <code>type</code></td>
 <td><code>String</code></td>
 <td>Tipo de transacción (Ejemplo: <code>Refund</code>, <code>Purchase</code>, <code>Payout&quot;</code> , <code>Fee</code>, <code>FX</code>, <code>Withdrawal</code>, <code>Debit adjustment</code>, <code>Credit adjustment</code>.)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>country</code></td>
+<td><code>Data</code> → <code>country</code></td>
 <td><code>String</code></td>
 <td>Código del país donde ocurrió la transacción <code>formato ISO 3166-1 alpha-2</code></td>
 </tr>
 <tr>
-<td><code>data</code> → <code>currency</code></td>
+<td><code>Data</code> → <code>currency</code></td>
 <td><code>String</code></td>
 <td>Código de moneda utilizado en la transacción</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>sign</code></td>
+<td><code>Data</code> → <code>sign</code></td>
 <td><code>String</code></td>
 <td>Indica si el monto es un crédito o un débito</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>amount</code></td>
+<td><code>Data</code> → <code>amount</code></td>
 <td><code>Integer</code></td>
 <td>Valor de la transacción</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>availabledate</code></td>
+<td><code>Data</code> → <code>availabledate</code></td>
 <td><code>String</code></td>
 <td>Fecha en que los fondos estarán disponibles</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>referenceid</code></td>
+<td><code>Data</code> → <code>referenceid</code></td>
 <td><code>String</code></td>
 <td>ID de referencia</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>endusernotes</code></td>
+<td><code>Data</code> → <code>endusernotes</code></td>
 <td><code>String</code></td>
 <td>Notas asociadas con la transacción</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>exchangerate</code></td>
+<td><code>Data</code> → <code>exchangerate</code></td>
 <td><code>Number</code></td>
 <td>Tasa de cambio utilizada (si aplica)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>status</code></td>
+<td><code>Data</code> → <code>status</code></td>
 <td><code>String</code></td>
 <td>Estado actual de la transacción</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>merchant_account_id</code></td>
+<td><code>Data</code> → <code>merchant_account_id</code></td>
 <td><code>Integer</code></td>
 <td>ID de la cuenta</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>merchant_account_name</code></td>
+<td><code>Data</code> → <code>merchant_account_name</code></td>
 <td><code>String</code></td>
 <td>Nombre de la cuenta</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>merchant_id</code></td>
+<td><code>Data</code> → <code>merchant_id</code></td>
 <td><code>Integer</code></td>
 <td>ID del comercio</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>merchant_name</code></td>
+<td><code>Data</code> → <code>merchant_name</code></td>
 <td><code>String</code></td>
 <td>Nombre del comercio</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>payment_method</code></td>
+<td><code>Data</code> → <code>payment_method</code></td>
 <td><code>String</code></td>
 <td>Medio de pago utilizado</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>payment_media_brand</code></td>
+<td><code>Data</code> → <code>payment_media_brand</code></td>
 <td><code>String</code></td>
 <td>Marca del método de pago (si aplica)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>last_status_date</code></td>
+<td><code>Data</code> → <code>last_status_date</code></td>
 <td><code>String</code></td>
 <td>Fecha de la última actualización de estado</td>
 </tr>
 <tr>
-<td><code>total</code></td>
-<td><code>Integer</code></td>
-<td>Número total de registros que coinciden con la consulta</td>
-</tr>
-<tr>
-<td><code>page</code></td>
+<td><code>Page</code></td>
 <td><code>Integer</code></td>
 <td>Número de página actual</td>
 </tr>
 <tr>
-<td><code>pageSize</code></td>
+<td><code>PageSize</code></td>
 <td><code>Integer</code></td>
 <td>Número de registros por página</td>
 </tr>
 <tr>
-<td><code>errors</code></td>
+<td><code>Total</code></td>
+<td><code>Integer</code></td>
+<td>Número total de registros que coinciden con la consulta</td>
+</tr>
+<tr>
+<td><code>Errors</code></td>
 <td><code>Array</code></td>
 <td>Array de mensajes de error si ocurrieron durante el procesamiento de la solicitud</td>
 </tr>
 </tbody>
 </table>
+<!--
+| `success` | `Boolean` | Indica si la solicitud fue exitosa |
+| `message` | `String` | Proporciona información adicional sobre la respuesta |
+-->
 <h3 id="response-example">Ejemplo del Response</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;success&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;message&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;transactionid&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;17041776&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;movementid&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">13211952</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-12T13:44:18.397&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;sign&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Debit&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">-1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;availabledate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-09-01T19:44:16.093&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;referenceid&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REF123456&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;endusernotes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Customer requested refund&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;exchangerate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3.73</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Confirmed&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;merchant_account_id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2081</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;merchant_account_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ACME Online Store&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;merchant_id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">35</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;merchant_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Global Retail Group&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;payment_method&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;payment_media_brand&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;last_status_date&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-12T14:00:00.000&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">],</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;page&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;pageSize&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;TransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">17041776</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Refund&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2024-08-12T13:44:18.397&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Confirmed&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Amount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">-1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Transaction_source&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Tenant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Global Retail Group&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Merchant_account&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ACME Online Store&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BankTransfer&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Payment_method&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_bin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Card_last4&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REF123456&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Unique_id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Authorization_code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Installments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Issuer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_document_number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;Customer_email&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Page&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;PageSize&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1413,7 +1422,7 @@
 <div class="left-element">
     <b>Última modificación</b>
     
-    10 de diciembre de 2024
+    18 de diciembre de 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

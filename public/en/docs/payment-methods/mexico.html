@@ -130,7 +130,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.efa697413d6a5daa5c0eb7e924b7a20104bec5540b9566c9e065ce6150386ec7959f0ed9b2e4db11e3a5deadf6040a2b06cc02bef52d15cce80a1162e9fd8625.json"
+  data-offline-search-index-json-src="../../../offline-search-index.626e791557a6814cd7b1515424a5a5b2d3c6cd1997bd63f3d8c6baecd90785c68468e09e34ed3340b9280b712d1b9e6569c918539d7c0373a67a2d037b823cb8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -380,7 +380,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../en/docs/purchase-workflow/purchases/card_on_file.html">3DS Pass-through</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
       
       
     </li>
@@ -596,7 +596,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/brazil/br-apm-boleto.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apm-boletohtml" href="../../../en/docs/payment-methods/brazil/br-apm-boleto.html">Boleto</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../en/docs/payment-methods/brazil/br-apm.html">PIX</a>
       
       
     </li>
@@ -781,7 +787,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../en/docs/payment-methods/mexico/mx-apm.html">Cash Payments</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm-stp.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apm-stphtml" href="../../../en/docs/payment-methods/mexico/mx-apm-stp.html">SPEI</a>
       
       
     </li>
@@ -1161,151 +1173,142 @@
 <thead>
 <tr>
 <th></th>
-<th style="text-align:center">Payment MediaId</th>
-<th>Payment Method</th>
-<th style="text-align:center">Purchase</th>
-<th style="text-align:center">Pre-authorization</th>
-<th style="text-align:center">Full refund</th>
-<th style="text-align:center">Partial Refund</th>
+<th>PaymentMethod PaymentMediaID</th>
+<th>Name</th>
+<th>Purchase</th>
+<th>Authorization</th>
+<th>Full Refund</th>
+<th>Partial Refund</th>
 <th>Type</th>
-<th>Flow</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">1</td>
-<td>VISA</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td>Credit &amp; Debit Card</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">2</td>
-<td>MasterCard</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td>Credit &amp; Debit Card</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">3</td>
-<td>American Express</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td>Credit Card</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">30</td>
-<td>Paynet</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td>Cash</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">90</td>
-<td>OXXOPay</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td>Cash</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="../../../assets/SPEI.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">73</td>
-<td>SPEI</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td>Bank Transfer</td>
-<td>API</td>
-</tr>
-<tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">111</td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
+<td><code>VSC</code> - <code>1</code></td>
 <td>Visa</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Credit &amp; Debit Card</td>
-<td>Redirect</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">111</td>
-<td>Mastercard</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="mastercard" style="min-width: 40px;" /></td>
+<td><code>MCC</code> - <code>2</code></td>
+<td>MasterCard</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Credit &amp; Debit Card</td>
-<td>Redirect</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">111</td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="amex" style="min-width: 40px;" /></td>
+<td><code>AMC</code> - <code>3</code></td>
 <td>American Express</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Credit Card</td>
-<td>Redirect</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">111</td>
-<td>Carnet</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/x_mark_64.png" width="15px"/></td>
-<td>Credit Card</td>
-<td>Redirect</td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" alt="paynet" style="min-width: 40px;" /></td>
+<td><code>PYN</code> - <code>30</code></td>
+<td>Paynet</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Cash</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">113</td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" alt="oxxo" style="min-width: 40px;" /></td>
+<td><code>OXP</code> - <code>90</code></td>
+<td>OXXOPay</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Cash</td>
+</tr>
+<tr>
+<td><img src="../../../assets/SPEI.png" alt="spei" style="min-width: 40px;" /></td>
+<td><code>73</code> - <code>73</code></td>
+<td>SPEI</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Bank Transfer</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" alt="visa" style="min-width: 40px;" /></td>
+<td><code>OPC</code> - <code>111</code></td>
+<td>Visa</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit &amp; Debit Card</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" alt="mastercard" style="min-width: 40px;" /></td>
+<td><code>OPC</code> - <code>111</code></td>
+<td>MasterCard</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit &amp; Debit Card</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" alt="amex" style="min-width: 40px;" /></td>
+<td><code>OPC</code> - <code>111</code></td>
+<td>American Express</td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/x_mark_64.png" width="15px"/></td>
+<td>Credit Card</td>
+</tr>
+<tr>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" alt="carnet" style="min-width: 40px;" /></td>
+<td><code>CNC</code> - <code>113</code></td>
 <td>Carnet Crédito</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Credit Card</td>
-<td>API</td>
 </tr>
 <tr>
-<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /></td>
-<td style="text-align:center">114</td>
+<td><img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" alt="carnet" style="min-width: 40px;" /></td>
+<td><code>CND</code> - <code>114</code></td>
 <td>Carnet Débito</td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
-<td style="text-align:center"><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
+<td><img src="../../../assets/check_mark_64.png" width="15px"/></td>
 <td>Debit Card</td>
-<td>API</td>
 </tr>
 </tbody>
 </table>
+<!--| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+|-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /> | 1 | VISA | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Credit & Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /> | 2 | MasterCard | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Credit & Debit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" style="min-width: 40px;" /> | 3 | American Express | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/OpenPay_PhysicalNetwork.png" style="min-width: 40px;" /> | 30 | Paynet | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Cash | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Oxxo_PhysicalNetwork.png" style="min-width: 40px;" /> | 90 | OXXOPay | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Cash | API |
+| <img src="../../../assets/SPEI.png" style="min-width: 40px;" /> | 73 | SPEI | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Bank Transfer | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png" style="min-width: 40px;" /> | 111 | Visa | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Credit & Debit Card | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" style="min-width: 40px;" /> | 111 | Mastercard | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Credit & Debit Card| Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/AmericanExpress_CreditCard.png" style="min-width: 40px;" /> | 111 | American Express | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Credit Card | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /> | 111 | Carnet | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | <img src="../../../assets/x_mark_64.png" width="15px"/> | Credit Card | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /> | 113 | Carnet Crédito | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Credit Card | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Carnet_CreditCard.png" style="min-width: 40px;" /> | 114 | Carnet Débito | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | <img src="../../../assets/check_mark_64.png" width="15px"/> | Debit Card | API |-->
 <h2 id="currencies">Currencies</h2>
 <table>
 <thead>
@@ -1436,11 +1439,21 @@
             
         
             
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
                 <div class="entry">
                     <h5>
-                        <a href="../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+                        <a href="../../../en/docs/payment-methods/mexico/mx-apm.html">Cash Payments</a>
                     </h5>
-                    <p>Learn how to integrate your solution to process payments in physical payment branches or using Bank transfers.</p>
+                    <p>Learn how to integrate your solution to process payments in physical payment branches.</p>
                 </div>
             
         
@@ -1453,11 +1466,12 @@
             
         
             
-        
-            
-        
-            
-        
+                <div class="entry">
+                    <h5>
+                        <a href="../../../en/docs/payment-methods/mexico/mx-apm-stp.html">SPEI</a>
+                    </h5>
+                    <p>Learn how to integrate your solution to process payments with SPEI.</p>
+                </div>
             
         
             
@@ -1559,7 +1573,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    October 25, 2024
+    December 20, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/reporting/transactions-report.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-03-02T11:40:29-05:00" />
-<meta property="article:modified_time" content="2024-12-10T10:42:15-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2024-12-18T18:51:51-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="Transaction Report API">
 <meta itemprop="description" content="The Bamboo Transaction Report API offers detailed transactional data retrieval. It enables users to access transaction information for specified time periods, select specific data columns for customized reports and obtain comprehensive transaction details, including buyer information, payment methods, and transaction statuses.
 "><meta itemprop="datePublished" content="2023-03-02T11:40:29-05:00" />
-<meta itemprop="dateModified" content="2024-12-10T10:42:15-03:00" />
-<meta itemprop="wordCount" content="555">
+<meta itemprop="dateModified" content="2024-12-18T18:51:51-03:00" />
+<meta itemprop="wordCount" content="539">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Transaction Report API"/>
 <meta name="twitter:description" content="The Bamboo Transaction Report API offers detailed transactional data retrieval. It enables users to access transaction information for specified time periods, select specific data columns for customized reports and obtain comprehensive transaction details, including buyer information, payment methods, and transaction statuses.
@@ -134,7 +134,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.efa697413d6a5daa5c0eb7e924b7a20104bec5540b9566c9e065ce6150386ec7959f0ed9b2e4db11e3a5deadf6040a2b06cc02bef52d15cce80a1162e9fd8625.json"
+  data-offline-search-index-json-src="../../../offline-search-index.626e791557a6814cd7b1515424a5a5b2d3c6cd1997bd63f3d8c6baecd90785c68468e09e34ed3340b9280b712d1b9e6569c918539d7c0373a67a2d037b823cb8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -384,7 +384,7 @@
       
       
       
-        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../en/docs/purchase-workflow/purchases/card_on_file.html">3DS Pass-through</a>
+        <a id="/en/docs/purchase-workflow/purchases/card_on_file.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspurchase-workflowpurchasescard_on_filehtml" href="../../../en/docs/purchase-workflow/purchases/card_on_file.html">Card on File</a>
       
       
     </li>
@@ -600,7 +600,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../en/docs/payment-methods/brazil/br-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/brazil/br-apm-boleto.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apm-boletohtml" href="../../../en/docs/payment-methods/brazil/br-apm-boleto.html">Boleto</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/brazil/br-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsbrazilbr-apmhtml" href="../../../en/docs/payment-methods/brazil/br-apm.html">PIX</a>
       
       
     </li>
@@ -785,7 +791,13 @@
       
       
       
-        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../en/docs/payment-methods/mexico/mx-apm.html">Alternative Payment Methods</a>
+        <a id="/en/docs/payment-methods/mexico/mx-apm.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apmhtml" href="../../../en/docs/payment-methods/mexico/mx-apm.html">Cash Payments</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/payment-methods/mexico/mx-apm-stp.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocspayment-methodsmexicomx-apm-stphtml" href="../../../en/docs/payment-methods/mexico/mx-apm-stp.html">SPEI</a>
       
       
     </li>
@@ -1250,162 +1262,156 @@
 </thead>
 <tbody>
 <tr>
-<td><code>success</code></td>
-<td><code>Boolean</code></td>
-<td>Indicates if the request was successful</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td><code>String</code></td>
-<td>Provides additional information about the response</td>
-</tr>
-<tr>
-<td><code>data</code></td>
+<td><code>Data</code></td>
 <td><code>Array</code></td>
 <td>Array of transaction objects containing the following fields:</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>TransactionId</code></td>
+<td><code>Data</code> → <code>TransactionId</code></td>
 <td><code>Integer</code></td>
 <td>Unique identifier for the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Type</code></td>
+<td><code>Data</code> → <code>Type</code></td>
 <td><code>String</code></td>
 <td>Type of transaction (e.g., &ldquo;Purchase&rdquo;, &ldquo;Refund&rdquo;)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Created</code></td>
+<td><code>Data</code> → <code>Created</code></td>
 <td><code>Date-time</code></td>
 <td>Date and time when the transaction was created</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Status</code></td>
+<td><code>Data</code> → <code>Status</code></td>
 <td><code>String</code></td>
 <td>Status of the transaction (e.g., &ldquo;Approved&rdquo;, &ldquo;Rejected&rdquo;)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Error_code</code></td>
+<td><code>Data</code> → <code>Error_code</code></td>
 <td><code>String</code></td>
 <td>Error code if applicable</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Amount</code></td>
+<td><code>Data</code> → <code>Amount</code></td>
 <td><code>Decimal</code></td>
 <td>Amount of the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Currency</code></td>
+<td><code>Data</code> → <code>Currency</code></td>
 <td><code>String</code></td>
 <td>Currency of the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Country</code></td>
+<td><code>Data</code> → <code>Country</code></td>
 <td><code>String</code></td>
 <td>Country where the transaction occurred</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Transaction_source</code></td>
+<td><code>Data</code> → <code>Transaction_source</code></td>
 <td><code>String</code></td>
 <td>Source of the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Tenant</code></td>
+<td><code>Data</code> → <code>Tenant</code></td>
 <td><code>String</code></td>
 <td>Name of the tenant</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Merchant_account</code></td>
+<td><code>Data</code> → <code>Merchant_account</code></td>
 <td><code>String</code></td>
 <td>Name of the merchant account</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Payment_method_type</code></td>
+<td><code>Data</code> → <code>Payment_method_type</code></td>
 <td><code>String</code></td>
 <td>Type of payment method used</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Payment_method</code></td>
+<td><code>Data</code> → <code>Payment_method</code></td>
 <td><code>String</code></td>
 <td>Specific payment method used</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Card_bin</code></td>
+<td><code>Data</code> → <code>Card_bin</code></td>
 <td><code>String</code></td>
 <td>Bank Identification Number (6 digits)</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Card_last4</code></td>
+<td><code>Data</code> → <code>Card_last4</code></td>
 <td><code>String</code></td>
 <td>Last 4 digits of the card</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Order</code></td>
+<td><code>Data</code> → <code>Order</code></td>
 <td><code>String</code></td>
 <td>Order identifier</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Unique_id</code></td>
+<td><code>Data</code> → <code>Unique_id</code></td>
 <td><code>String</code></td>
 <td>Unique identifier for the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Authorization_code</code></td>
+<td><code>Data</code> → <code>Authorization_code</code></td>
 <td><code>String</code></td>
 <td>Authorization code for the transaction</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Installments</code></td>
+<td><code>Data</code> → <code>Installments</code></td>
 <td><code>Integer</code></td>
 <td>Number of installments if applicable</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Issuer</code></td>
+<td><code>Data</code> → <code>Issuer</code></td>
 <td><code>String</code></td>
 <td>Name of the issuing bank</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_name</code></td>
+<td><code>Data</code> → <code>Customer_name</code></td>
 <td><code>String</code></td>
 <td>Full name of the customer</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_document_type</code></td>
+<td><code>Data</code> → <code>Customer_document_type</code></td>
 <td><code>String</code></td>
 <td>Type of identification document</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_document_number</code></td>
+<td><code>Data</code> → <code>Customer_document_number</code></td>
 <td><code>String</code></td>
 <td>Identification document number</td>
 </tr>
 <tr>
-<td><code>data</code> → <code>Customer_email</code></td>
+<td><code>Data</code> → <code>Customer_email</code></td>
 <td><code>String</code></td>
 <td>Email address of the customer</td>
 </tr>
 <tr>
-<td><code>total</code></td>
-<td><code>Integer</code></td>
-<td>Total number of records matching the query</td>
-</tr>
-<tr>
-<td><code>page</code></td>
+<td><code>Page</code></td>
 <td><code>Integer</code></td>
 <td>Current page number</td>
 </tr>
 <tr>
-<td><code>pageSize</code></td>
+<td><code>PageSize</code></td>
 <td><code>Integer</code></td>
 <td>Number of records per page</td>
 </tr>
 <tr>
-<td><code>errors</code></td>
+<td><code>Total</code></td>
+<td><code>Integer</code></td>
+<td>Total number of records matching the query</td>
+</tr>
+<tr>
+<td><code>Errors</code></td>
 <td><code>Array</code></td>
 <td>Array of error messages if any occurred during the request processing</td>
 </tr>
 </tbody>
 </table>
+<!--
+| `success` | `Boolean` | Indicates if the request was successful |
+| `message` | `String` | Provides additional information about the response |
+-->
 <h3 id="response-example">Response example</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Response&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
@@ -1467,8 +1473,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;Total&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">4</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;Errors&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span></span></span></code></pre></div>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -1478,7 +1484,7 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    December 10, 2024
+    December 18, 2024
     
 </div>
 <div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>

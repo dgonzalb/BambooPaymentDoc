@@ -466,6 +466,12 @@
 &lt;td style=&#34;text-align:center&#34;&gt;Sí &lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;El objeto &lt;code&gt;Customer&lt;/code&gt; proporciona los datos de la persona que realiza la compra.&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SoftDescriptor&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;Disponible solo en &lt;a href=&#34;../../../../es/docs/payment-methods/colombia/co-cards.html#request-parameters&#34;&gt;Colombia para medios de pago de tarjetas&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;customer-object&#34;&gt;Objeto Customer&lt;/h4&gt;
@@ -851,7 +857,7 @@ El objeto PaymentMethod en los `Response` contiene información sobre el medio d
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;br&gt;
-&lt;p&gt;Los campos &lt;strong&gt;CardData&lt;/strong&gt;, &lt;strong&gt;PaymentMethodId&lt;/strong&gt;, &lt;strong&gt;NetworkToken&lt;/strong&gt; y &lt;strong&gt;TrxToken&lt;/strong&gt; no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.&lt;/p&gt;
+&lt;p&gt;Los campos &lt;strong&gt;CardData&lt;/strong&gt;, &lt;strong&gt;PaymentMethod&lt;/strong&gt;, &lt;strong&gt;NetworkToken&lt;/strong&gt; y &lt;strong&gt;TrxToken&lt;/strong&gt; no son obligatorios; sin embargo, se debe enviar uno de ellos dependiendo del flujo que desee utilizar.&lt;/p&gt;
 &lt;h2 id=&#34;response&#34;&gt;Respuesta del Request.&lt;/h2&gt;
 &lt;p&gt;La respuesta para las operaciones de compra directa realizadas por comercios con certificación PCI es idéntica a la respuesta de la compra estándar. Esto asegura la consistencia entre los diferentes tipos de transacciones y simplifica los procesos de integración.&lt;/p&gt;
 &lt;p&gt;Todos los campos, estados y códigos de error descritos en la respuesta de Compra estándar se aplican por igual a las transacciones de Compra Directa.&lt;/p&gt;
