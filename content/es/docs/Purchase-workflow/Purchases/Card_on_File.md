@@ -1,26 +1,26 @@
 ---
-title: "Tarjeta Guardada (Card on File)"
-linkTitle: "Tarjeta Guardada (Card on File)"
+title: "Card on File"
+linkTitle: "Card on File"
 date: 2024-08-02T08:43:44-05:00
 Description: >
-  Utilice la función de Tarjeta Guardada (CoF, por sus siglas en inglés) para procesar pagos recurrentes, suscripciones y transacciones con un solo clic. Esto ayuda a los comerciantes a cumplir con las regulaciones de Visa y Mastercard y mejora las tasas de aprobación.
+  Utilice la función de Card On File (CoF, por sus siglas en inglés) para procesar pagos recurrentes, suscripciones y transacciones con un solo clic. Esto ayuda a los comerciantes a cumplir con las regulaciones de Visa y Mastercard y mejora las tasas de aprobación.
 weight: 60
 tags: ["subtopic"]
 ---
 
-**Tarjeta Guardada (CoF)** es una funcionalidad que permite a los comerciantes procesar transacciones utilizando la información de la tarjeta del cliente para compras posteriores. Esta capacidad facilita varios tipos de transacciones dependiendo de quién inicie la transacción, ya sea el cliente o el comerciante.
+**Card On File (CoF)** es una funcionalidad que permite a los comerciantes procesar transacciones utilizando la información de la tarjeta del cliente para compras posteriores. Esta capacidad facilita varios tipos de transacciones dependiendo de quién inicie la transacción, ya sea el cliente o el comerciante.
 
 ## Resumen {#cof-overview}
 
 Las redes de tarjetas requieren que los comerciantes incluyan identificadores específicos al utilizar credenciales de tarjetas almacenadas en la solicitud de pago. La funcionalidad de COF ayuda a establecer confianza, confirmando que los clientes han autorizado el almacenamiento de sus datos de tarjeta y los pagos posteriores.
 
-Las transacciones de Tarjeta Guardada se pueden clasificar en tres tipos:
+Las transacciones de Card On File se pueden clasificar en tres tipos:
 
 <img src="/assets/CoF/CoFTypeES.png" width="100%" alt="Tipos de CoF"/>
 
 
 {{% alert title="Nota" color="info"%}}
-Consulte con su referente de cuenta sobre la disponibilidad de la funcionalidad de Tarjeta Guardada según el país.
+Consulte con su referente de cuenta sobre la disponibilidad de la funcionalidad de Card On File según el país.
 {{% /alert %}}
 
 ## Objeto **CardOnFile**
@@ -28,8 +28,8 @@ Consulte con su referente de cuenta sobre la disponibilidad de la funcionalidad 
 
 | Parámetro | Tipo | ¿Obligatorio? | Descripción |
 |-----------|------|:-------------:|-------------|
-| `CardOnFile` | `object` | No | Contiene información sobre la transacción de Tarjeta Guardada. |
-| `CardOnFile` → `TransactionType` | `string` | Sí | Especifica el tipo de transacción de Tarjeta Guardada. Valores posibles: `"CIT"`, `"FIT"`, `"MIT"`. |
+| `CardOnFile` | `object` | No | Contiene información sobre la transacción de Card On File. |
+| `CardOnFile` → `TransactionType` | `string` | Sí | Especifica el tipo de transacción de Card On File. Valores posibles: `"CIT"`, `"FIT"`, `"MIT"`. |
 | `CardOnFile` → `NetworkTransactionId` | `string` | No | Identificador para el seguimiento de la transacción, puede ser una transacción de red o un acuerdo de suscripción. |
 
 
