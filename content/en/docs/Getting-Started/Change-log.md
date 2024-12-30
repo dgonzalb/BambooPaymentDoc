@@ -12,6 +12,7 @@ weight: 50
 ### December
 | Page | Description |
 |---|---|
+| [Payment Link API]({{< ref "Create_Payment_Link.md" >}}) | Introduced the Payment Link API to generate payment URLs and QR codes for Gateway Model. |
 | [Card on File]({{< ref "Card_on_File.md" >}}) | Card on File (CoF) for processing recurring payments and subscriptions |
 | [Argentina]({{< ref "Argentina.md" >}}) | Addition of CUIT document type support. |
 | [Colombia]({{< ref "Colombia.md" >}}) | Added Authorization and Refund support for AMEX cards. |

@@ -3,7 +3,7 @@ title: "Plug-ins"
 date: 2023-05-08T07:28:16-05:00
 Description: >
   Empower your e-commerce with Bamboo's plugins. Seamless VTEX integration for Uruguay, plus solutions for major platforms. Boost sales with flexible payment options and real-time processing.
-weight: 80
+weight: 90
 ---
 
 ## Available Integrations

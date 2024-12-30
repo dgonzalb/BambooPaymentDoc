@@ -14,9 +14,6 @@ Currently, we offer the following API:
 
 - **[Statement Report API]({{< ref Statement-report.md >}}):** This API will allow you to retrieve reports on fund movements within your account, providing a clear picture of incoming and outgoing funds.
 
-- **Payouts Report API:** This API will offer detailed reports on payouts made to merchants, including payout amounts, frequencies, and statuses.
-
-
 ## Key Features
 
 - **Detailed Data**: Our APIs provide comprehensive information, allowing for in-depth analysis and reporting.
