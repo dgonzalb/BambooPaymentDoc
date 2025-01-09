@@ -1,0 +1,32 @@
+{
+	"PaymentMethod": "BTU",
+	"Order": "QA83",
+	"Amount": 100,
+	"Description" : "Test Purchase",
+    "Currency": "UYU",
+    "TargetCountryISO": "UY",
+    "Customer": {
+        "Email": "john@mail.com",
+        "FirstName": "John",
+        "LastName": "Smith",
+        "DocumentNumber": "12345672",
+        "DocumentType": "CI.UY",
+        "PhoneNumber": "24022330",
+        "Address": {
+            "Country": "Uruguay",
+            "State": "Montevideo",
+            "City": "Montevideo",
+            "AddressDetail": "Av. Sarmiento 22",
+            "PostalCode": "150000"
+        }
+    },
+	"MetaDataIn": {
+        "PaymentExpirationInMinutes": 60
+    },
+    "Redirection": {
+        "Url_Approved": "https://dummystore.com/checkout/response",
+        "Url_Rejected": "https://dummystore.com/checkout/response",
+        "Url_Canceled": "https://dummystore.com/checkout/response",
+        "Url_Pending": "https://dummystore.com/checkout/response"
+    }
+}

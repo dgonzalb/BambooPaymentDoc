@@ -11,10 +11,13 @@ tags: ["parenttopic"]
 This section shows the available payment methods, currencies, and related information to consider when processing in _Costa Rica_, _El Salvador_, and _Nicaragua_.
 
 ## Payment methods
+|  | PaymentMethod PaymentMediaID | Name | Purchase | Authorization | Full Refund | Partial Refund | Type |
+|------|----------------------------|---------|---------|--------------|-----------------|-------------------|------|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="min-width: 40px;" /> | `PNX` - `28` | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash |
 
-| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+<!--| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API | 
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PuntoXpress_PhysicalNetwork.png" alt="puntoxpress" style="" /> | 28 | PuntoXpress | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API | -->
 
 ## Currencies
 
