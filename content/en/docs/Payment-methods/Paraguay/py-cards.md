@@ -16,7 +16,7 @@ We only offer support for merchants in Paraguay through the **Gateway** model, a
 The acquirer does not accept online returns, only cancellations are allowed within the same business day (which ends at 7:59 p.m. Paraguay time). refunds must be processed manually by the merchant.
 
 ## Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref Purchase_V3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
