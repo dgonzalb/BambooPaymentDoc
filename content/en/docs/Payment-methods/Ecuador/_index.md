@@ -11,10 +11,14 @@ tags: ["parenttopic"]
 This section shows the available payment methods, currencies, and related information to consider when processing in _Ecuador_.
 
 ## Payment methods
+|  | PaymentMethod PaymentMediaID | Payment Method | Purchase | Pre-authorization | Full Refund | Partial Refund | Type |
+|------|----------------------------|----------------|----------|--------------------|-------------|-----------------|------|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | `PEE` - `29` | PagoEfectivo Ecuador | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash |
 
-| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
+
+<!--| | Payment MediaId | Payment Method | Purchase | Pre-authorization | Full refund | Partial Refund | Type | Flow |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Cash | API |-->
 
 ## Currencies
 

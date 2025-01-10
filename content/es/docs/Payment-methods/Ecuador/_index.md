@@ -11,10 +11,13 @@ tags: ["parenttopic"]
 Esta sección muestra los medios de pago disponibles, monedas e información relacionada que se debe tener en cuenta cuando procese en _Ecuador_.
 
 ## Medios de pago {#payment-methods}
+|  | PaymentMethod PaymentMediaID | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo |
+|------|----------------------------|---------------|--------|-----------------|-----------------|-------------------|------|
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | `PEE` - `29` | PagoEfectivo Ecuador | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo |
 
-| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
+<!--| | Payment MediaId | Medio de pago | Compra | Preautorización | Reembolso total | Reembolso parcial | Tipo | Flujo |
 |-----|:---:|---|:---:|:---:|:---:|:---:|-----|-----|
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoEfectivo_PhysicalNetwork.png" style="min-width: 40px;" /> | 29 | PagoEfectivo Ecuador  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo | API |-->
 
 ## Monedas {#currencies}
 

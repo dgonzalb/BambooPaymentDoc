@@ -1,9 +1,9 @@
 ---
-title: "Alternative Payment Methods"
-linkTitle: "Alternative Payment Methods"
+title: "Cash payments and bank transfers"
+linkTitle: "Cash payments and bank transfers"
 date: 2023-05-08T07:28:16-05:00
 description: >
-  Learn how to integrate your solution to process payments with **PagoEfectivo**.
+  Learn how to integrate your solution to process cash payments and bank transfers with **PagoEfectivo**.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -16,47 +16,29 @@ The purchase status for Alternative Payment methods will remain _Pending_ until 
 **PagoEfectivo** provides a network of physical payment centers where your customers can pay their purchases in cash or using their bank app. Your customer can pay giving the debt identifier (CIP) in a physical payment office or using their bank app. 
 
 ### Request parameters
-You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase-operations.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
+You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref Purchase_V3.md >}}#request-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
-| `PaymentMediaId` | `numeric` | Yes | The `PaymentMediaId` for this payment method is _**29**_. |
+| `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/ecuador.html#payment-methods). |
 | `TargetCountryISO` | `string` | Yes | Indicate the destination country. |
 | `Customer` → `Email` | `string` | Yes | Customer's email. |
 | `Customer` → `FirstName` | `string` | Yes | Customer's first name. |
 | `Customer` → `LastName` | `string` | Yes | Customer's last name. |
-| `Customer` → `DocumentTypeId` | `numeric` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/ecuador.html#document-types) to see the possible values. |
-| `Customer` → `DocNumber` | `string` | Yes | Customer's Document Number. |
+| `Customer` → `DocumentType` | `string` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/ecuador.html#document-types) to see the possible values. |
+| `Customer` → `DocumentNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. The phone number format must be `<characteristic>\|<number>`. Example: `+593\|971516229`. |
-| `Customer` → `BillingAddress` → `Country` | `string` | No | Customer's Country. |
-| `Customer` → `BillingAddress` → `State` | `string` | No | Customer's State. |
-| `Customer` → `BillingAddress` → `City` | `string` | No | Customer's City. |
-| `Customer` → `BillingAddress` → `AddressDetail` | `string` | No | Customer's Address Detail. |
-| `Customer` → `BillingAddress` → `PostalCode` | `string` | No | Customer's Postal Code. |
+| `Customer` → `Address` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `Address` → `State` | `string` | No | Customer's State. |
+| `Customer` → `Address` → `City` | `string` | No | Customer's City. |
+| `Customer` → `Address` → `AddressDetail` | `string` | No | Customer's Address Detail. |
+| `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information.<br>The expiration date must be at least 10 minutes and less than six months from the current date (in UTC GMT -5). |
 
 #### Request example
-```json
-{
-    "PaymentMediaId": "29",
-    "Amount": 1000,
-    "MetadataIn": {
-        "PaymentExpirationInMinutes": "1440"
-    },
-    "Currency": "USD",
-    "TargetCountryISO": "EC",
-    "Capture": true,
-    "Customer": {
-        "Email": "lvargas@mail.com",
-        "FirstName": "Luis",
-        "LastName": "Vargas",
-        "PhoneNumber": "+593|971516229",
-        "DocNumber": "12345672",
-        "DocumentTypeId": 10
-    },
-    "Description": "Prueba Ecuador Cash"
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/CentroAmerica/request_puntoExpress >}}
+{{< /highlight >}}
 
 ### Response parameters
 In the response, you will find the following parameters:
@@ -71,145 +53,6 @@ In the response, you will find the following parameters:
 
 #### Response example
 
-```json
-{
-    "Response": {
-        "PurchaseId": 6820007,
-        "Created": "2023-06-16T13:30:33.527",
-        "TrxToken": null,
-        "Order": null,
-        "Transaction": {
-            "TransactionID": 10597785,
-            "Created": "2023-06-16T13:30:33.527",
-            "AuthorizationDate": "",
-            "TransactionStatusId": 2,
-            "Status": "Pending",
-            "ErrorCode": null,
-            "Description": "",
-            "ApprovalCode": null,
-            "Steps": [
-                {
-                    "Step": "Pago Efectivo Ecuador Get Token",
-                    "Created": "2023-06-16T13:30:33.760",
-                    "Status": "Get Token OK",
-                    "ResponseCode": "100",
-                    "ResponseMessage": "Solicitud exitosa.",
-                    "Error": "",
-                    "AuthorizationCode": null,
-                    "UniqueID": null,
-                    "AcquirerResponseDetail": null
-                },
-                {
-                    "Step": "Pago Efectivo Ecuador Generate CIP",
-                    "Created": "2023-06-16T13:30:33.840",
-                    "Status": "PhysicalNetwork Pending",
-                    "ResponseCode": "100",
-                    "ResponseMessage": "Solicitud exitosa.",
-                    "Error": "",
-                    "AuthorizationCode": null,
-                    "UniqueID": null,
-                    "AcquirerResponseDetail": "{'code':'100','message':'Solicitud exitosa.','cip':'166358610','operationNumber':null}"
-                }
-            ]
-        },
-        "Capture": true,
-        "Amount": 1000,
-        "OriginalAmount": 1000,
-        "TaxableAmount": 0,
-        "Tip": 0,
-        "Installments": 1,
-        "Currency": "USD",
-        "Description": "Prueba Ecuador Cash",
-        "Customer": {
-            "CustomerId": 2989883,
-            "Created": "2023-06-16T13:30:32.383",
-            "CommerceCustomerId": null,
-            "Owner": "Anonymous",
-            "Email": "lvargas@mail.com",
-            "Enabled": true,
-            "ShippingAddress": null,
-            "BillingAddress": null,
-            "Plans": null,
-            "AdditionalData": null,
-            "PaymentProfiles": [
-                {
-                    "PaymentProfileId": 2980262,
-                    "PaymentMediaId": 29,
-                    "Created": "2023-06-16T13:30:32.400",
-                    "LastUpdate": "2023-06-16T13:30:32.727",
-                    "Brand": "PagoEfectivoEcuador",
-                    "CardOwner": null,
-                    "Bin": null,
-                    "IssuerBank": null,
-                    "Installments": null,
-                    "Type": "PhysicalNetwork",
-                    "IdCommerceToken": 0,
-                    "Token": null,
-                    "Expiration": null,
-                    "Last4": "",
-                    "Enabled": null,
-                    "DocumentNumber": "12345672",
-                    "DocumentTypeId": 10,
-                    "ExternalValue": null,
-                    "AffinityGroup": null
-                }
-            ],
-            "CaptureURL": null,
-            "UniqueID": null,
-            "URL": "https://api.siemprepago.com/v1/api/Customer/2989883",
-            "FirstName": "Luis",
-            "LastName": "Vargas",
-            "DocNumber": "12345672",
-            "DocumentTypeId": 10,
-            "PhoneNumber": "+593|971516229",
-            "ExternalValue": null
-        },
-        "RefundList": null,
-        "PlanID": null,
-        "UniqueID": null,
-        "AdditionalData": null,
-        "CustomerUserAgent": null,
-        "CustomerIP": null,
-        "URL": "https://api.siemprepago.com/v1/api/Purchase/6820007",
-        "DataUY": {
-            "IsFinalConsumer": false,
-            "Invoice": null,
-            "TaxableAmount": 0
-        },
-        "DataDO": {
-            "Invoice": null,
-            "Tax": 0
-        },
-        "Acquirer": {
-            "AcquirerID": 67,
-            "Name": "Pago Efectivo Ecuador",
-            "CommerceNumber": null
-        },
-        "CommerceAction": null,
-        "PurchasePaymentProfileId": 2980262,
-        "LoyaltyPlan": null,
-        "DeviceFingerprintId": null,
-        "MetadataIn": {
-            "PaymentExpirationInMinutes": "1440"
-        },
-        "MetadataOut": {
-            "PaymentCode": "166358610",
-            "PaymentExpirationDate": "2023-06-17T08:30:33-05:00",
-            "PaymentUrl": "https://payment.pagoefectivo.pe/A222B8A6-740A-4E75-8431-CA3B3E873180.html"
-        },
-        "CrossBorderData": null,
-        "CrossBorderDataResponse": {
-            "TargetCountryISO": "EC",
-            "TargetCurrencyISO": "USD",
-            "TargetAmount": 10.0
-        },
-        "Redirection": null,
-        "AntifraudData": null,
-        "PaymentMediaId": null,
-        "TargetCountryISO": null,
-        "PurchaseType": 1,
-        "IsFirstRecurrentPurchase": false
-    },
-    "Errors": []
-}
-```
+{{< highlight json >}}
+{{< Payins/V3/PaymentMethods/CentroAmerica/response_puntoExpress >}}
+{{< /highlight >}}
