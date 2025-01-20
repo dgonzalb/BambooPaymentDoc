@@ -45,7 +45,7 @@ Al consultar datos recientes, tenga en cuenta que la información más actualiza
 | Propiedad | Tipo | Descripción |
 |-----------|------|-------------|
 | `Data` | `Array` | Array de objetos de transacción que contienen los siguientes campos: |
-| `Data` → `TransactionId` | `Integer` | Identificador único de la transacción |
+| `Data` → `TransactionId` | `Long` | Identificador único de la transacción |
 | `Data` → `Type` | `String` | Tipo de transacción (ej. "Purchase", "Refund") |
 | `Data` → `Created` | `Date-time` | Fecha y hora en que se creó la transacción |
 | `Data` → `Status` | `String` | Estado de la transacción (ej. "Approved", "Rejected") |

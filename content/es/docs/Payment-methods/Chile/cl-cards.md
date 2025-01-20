@@ -322,10 +322,9 @@ Utilice las siguientes tarjetas para simular los diferentes estados de la compra
 
 | Marca | PAN | CVV | Fecha de Expiración | Tipo |
 |---|---|---|---|---|
-| Amex | `370000000002032` | `1234` | `10/29` | Crédito |
 | Visa | `4051885600446623` | `123` | `10/29` | Crédito |
 | Visa | `4051886000056590` | `123` | `10/29` | Prepago |
-
+<!--| Amex | `370000000002032` | `1234` | `10/29` | Crédito |-->
 
 {{% alert title="Info note" color="info"%}}
 Si se solicitan RUT y contraseña, utilice un RUT válido (por ejemplo **11.111.111-1**) y contraseña **123**.

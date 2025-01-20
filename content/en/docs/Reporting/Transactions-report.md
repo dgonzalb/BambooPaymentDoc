@@ -44,7 +44,7 @@ Currently, the API may return information up to D-1 (the previous day). This mea
 | Property | Type | Description |
 |----------|------|-------------|
 | `Data` | `Array` | Array of transaction objects containing the following fields: |
-| `Data` → `TransactionId` | `Integer` | Unique identifier for the transaction |
+| `Data` → `TransactionId` | `Long` | Unique identifier for the transaction |
 | `Data` → `Type` | `String` | Type of transaction (e.g., "Purchase", "Refund") |
 | `Data` → `Created` | `Date-time` | Date and time when the transaction was created |
 | `Data` → `Status` | `String` | Status of the transaction (e.g., "Approved", "Rejected") |

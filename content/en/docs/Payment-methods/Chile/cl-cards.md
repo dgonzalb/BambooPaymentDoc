@@ -322,9 +322,9 @@ Use the following cards to simulate the different status of the purchase. These 
 
 | Brand | PAN | CVV | Expiration Date | Type |
 |---|---|---|---|---|
-| Amex | `370000000002032` | `1234` | `10/29` | Credit |
 | Visa | `4051885600446623` | `123` | `10/29` | Credit |
 | Visa | `4051886000056590` | `123` | `10/29` | Prepaid |
+<!--| Amex | `370000000002032` | `1234` | `10/29` | Credit |-->
 
 {{% alert title="Info note" color="info"%}}
 If the RUT and password are requested, please use a valid RUT (for example **11.111.111-1**) and password **123**.
