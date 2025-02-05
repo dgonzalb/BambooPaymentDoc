@@ -1,52 +1,49 @@
 {
-    "CustomerId": 415589,
-    "CommerceId": 0,
-    "CommerceAccountId": 4924,
-    "Email": "test@bamboopayment.com",
-    "FirstName": "Jhon",
-    "LastName": "Doe",
-    "ExternalCustomerId": null,
-    "PhoneNumber": "549112345678",
-    "BornPlace": null,
-    "BornDate": null,
-    "IsAnonymous": false,
-    "Created": "0001-01-01T00:00:00.000",
-    "Document": {
-        "DocumentType": "DNI.AR",
-        "Value": "123456721",
-        "Abbreviation": null,
-        "Description": null
+    "Response": {
+      "CustomerId": 53479,
+      "Created": "2021-04-06T16:08:43.767",
+      "CommerceCustomerId": null,
+      "Owner": "Commerce",
+      "Email": "Email222222@mail.com",
+      "Enabled": true,
+      "ShippingAddress": null,
+      "BillingAddress": {
+        "AddressId": 51615,
+        "AddressType": 1,
+        "Country": "UY",
+        "State": "Montevideo",
+        "AddressDetail": "10000",
+        "PostalCode": null,
+        "City": "MONTEVIDEO"
+      },
+      "Plans": null,
+      "AdditionalData": null,
+      "PaymentProfiles": [
+        {
+          "PaymentProfileId": 55591,
+          "PaymentMediaId": 2,
+          "Created": "2021-04-19T11:26:17.693",
+          "LastUpdate": null,
+          "Brand": "MasterCard",
+          "CardOwner": "John Simpson",
+          "Bin": null,
+          "IssuerBank": "Santander",
+          "Installments": "1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24",
+          "Type": "CreditCard",
+          "Token": "CT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8SzQ_",
+          "Expiration": "202211",
+          "Last4": "0001",
+          "Enabled": true
+        }
+      ],
+      "CaptureURL": "https://testapi.BambooPayment.com/v1/Capture/",
+      "UniqueID": "UI_263b2dde-b151-4f09-b8bf-c65883d2cb3b",
+      "URL": "https://testapi.BambooPayment.com/v1/api/Customer/53479",
+      "FirstName": "FistName 2222",
+      "LastName": "LastName 2222",
+      "DocNumber": "12345672",
+      "DocumentTypeId": 2,
+      "PhoneNumber": "24022330"
     },
-    "Country": "AR",
-    "Gender": null,
-    "Address": {
-        "Country": "ARG",
-        "State": "Buenos Aires",
-        "City": "Buenos Aires",
-        "AddressDetail": "Solano Lopez 1774"
-    },
-    "SessionId": "UI_d657da45-d67a-46d4-a53b-22deb5e05691",
-    "PaymentProfiles": [
-    {
-        "PaymentProfileId": 435168,
-        "PaymentMediaId": 1,
-        "Created": "2025-01-16T18:26:30.753",
-        "LastUpdate": "2025-01-16T18:26:30.753",
-        "Brand": "VISA",
-        "CardOwner": "Sora Doe",
-        "Bin": "463403",
-        "IssuerBank": "Santander",
-        "Installments": null,
-        "Type": "CreditCard",
-        "IdCommerceToken": 53963,
-        "Token": "CT__gIOtp4dvXEiWnsxmFtHWTSSDAQ",
-        "Expiration": "202704",
-        "Last4": "1111",
-        "Enabled": true,
-        "DocumentNumber": "",
-        "DocumentTypeId": 2,
-        "ExternalValue": null,
-        "AffinityGroup": null
-    }
-    ]
-}
+    "Errors": []
+  }

@@ -1,38 +1,43 @@
 ---
 title: "Recurring Use Token"
 linkTitle: "Recurring Use Token"
-date: 2023-07-17T07:28:16-05:00
+date: 2024-02-05T07:28:16-05:00
 description: >
-  Unlike [Anonymous Users]({{< ref Anonymous-users.md>}}), these users are registered on the website, allowing you to identify them and associate their card information for subsequent purchases without re-entering the details.
+  Despite the [Anonymous users]({{< ref Anonymous-users.md>}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again.
 weight: 20
 tags: ["subtopic"]
 ---
 
 The client receives a _CommerceToken_ after registering their card, which can be used for future transactions. Below are the steps to purchase as a registered user on the website.
 
+{{% alert title="Attention" color="warning"%}}
+The **Customer Management** functionality is now available in version V3 of the API, but some operations remain under V1.
+{{% /alert %}}
+
 ## Create a Customer {#create-a-customer}
 The first step is to create the customer in Bamboo Payment. To do this, you need to send a **POST** request to the following URLs depending on your environment.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/customer`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/customer`
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 ### Request Parameters {#request-parameters}
 
 | Parameter | Type | Mandatory? | Description |
 |---|---|:-:|---|
-| `Email` | `string` | Yes | Customer's email address. |
-| `FirstName` | `string` | Yes | Customer's first name. |
-| `LastName` | `string` | Yes | Customer's last name. |
-| `DocumentType` | `string` | Yes | Customer's document type. Find possible values in the Document Types table based on the [country](/en/docs/payment-methods.html). |
-| `DocumentNumber` | `string` | Yes | Customer's document number. |
-| `Owner` | `string` | No | Indicates whether the user is anonymous or if the merchant or we registered them.<br>Possible values:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value.</li><li>_Anonymous_</li></ul>|
-| `PhoneNumber` | `string` | Yes | Customer's contact phone number. |
-| `Address` | `object` | Yes | This parameter is the customer's billing address. |
-| `Address`→`AddressType` | `string` | Yes | Type of address. |
-| `Address`→`Country` | `string` | Yes | Country of the address. |
-| `Address`→`State` | `string` | Yes | State of the address. |
-| `Address`→`City` | `string` | Yes | City of the address. |
-| `Address`→`AddressDetail` | `string` | Yes | Additional address information, such as street, number, etc. |
+| `Email` | `string` | Yes | Customer email address. |
+| `FirstName` | `string` | Yes | Customer name. |
+| `LastName` | `string` | Yes | Customer last name. |
+| `DocumentTypeId` | `string` | Yes | Customer document type. Find for the **Legacy** version, the possible values in the Document types table according to the [country](/en/docs/payment-methods.html). |
+| `DocNumber` | `string` | Yes | Customer document Number. |
+| `Owner` | `string` | No | It determines whether the user is anonymous or if the merchant, or us, registered it.<br>The possible values are:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. This is the default value</li><li>_Anonymous_</li></ul>|
+| `PhoneNumber` | `string` | Yes | Customer contact telephone number. |
+| `BillingAddress` | `object` | Yes | This parameter is the customer's billing address. |
+| `BillingAddress`→`AddressID` | `integer` | Yes | Address Identifier. |
+| `BillingAddress`→`AddressType` | `string` | Yes | Type of address. |
+| `BillingAddress`→`Country` | `string` | Yes | Country of the address. |
+| `BillingAddress`→`State` | `string` | Yes | State of the address. |
+| `BillingAddress`→`City` | `string` | Yes | City of the address. |
+| `BillingAddress`→`AddressDetail` | `string` | Yes | This parameter corresponds to the Additional information of the address, such as street, number, etc. |
 
 #### Request Example {#request-example}
 
@@ -45,7 +50,6 @@ The response object returns the newly created customer's information or any erro
 
 Use the following parameters for additional operations on customers:
 
-<!--* `CaptureURL`: URL for capturing card data. Open this URL in an iframe to begin capturing sensitive data. For more information, see [Invoking the Card Enrollment Form](#invoking-the-card-enrollment).-->
 * `UniqueID`: A temporary unique identifier used to register external payment methods. Each time you query the customer information, a new identifier is provided. For more details, see [Invoking the Card Enrollment Form](#invoking-the-card-enrollment).
 * `URL`: URL for querying customer information. For more details, see [Get a Customer](#get-a-customer).
 
@@ -63,14 +67,13 @@ You can retrieve customer information using their ID or email address.
 
 To do this, send a **GET** request to the following URLs based on your environment.
 
-* **Production**: `https://api.bamboopayment.com/v3/api/customer`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/customer`
-
-<div id="shortTable"></div>
+* **Production**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 | | Endpoint |
-|---|---|---|
-| Get by _customer email address_ | `/email/{{EmailAddress}}` |
+|---|---|
+| Get by _Customer ID_ | `/{{customer-id}}` |
+| Get by _Customer Email Address_ | `/email/{{EmailAddress}}` |
 
 The response includes a list containing the same object returned when [creating the customer](#response-example).
 
@@ -84,21 +87,10 @@ Where `{{customer-id}}` is the ID generated when the user was created. Include t
 
 The response includes the same object returned when [creating the customer](#response-example).
 
-{{% alert title="Alert" color="warning"%}}
-The **Update** customer operation has not yet been migrated to version 3 of the API.
-{{% /alert %}}
-
 ## Capturing Card Information {#capture-the-card-data}
 The next step is to obtain the customer's card token. You can either invoke the card enrollment form or use [Direct Tokenization]({{< ref "Direct-Tokenization.md" >}}) if your business complies with PCI standards.
 
-{{% alert title="Info" color="info"%}}
-If using an alternative payment method identifier, this step is not required, and you should include **PaymentMethod**.
-{{% /alert %}}
-
 ### Invoking the Card Enrollment Form {#invoking-the-card-enrollment}
-{{% alert title="Info" color="info"%}}
-If using the Legacy version of the card capture form, refer to the steps [here]({{< ref "Legacy-Registered-users.md" >}}).
-{{% /alert %}}
 To invoke the capture form for a previously created customer, follow these steps:
 
 1. Obtain the customer's **uniqueId** by executing the [Get Customer](#get-a-customer) operation.
@@ -110,6 +102,11 @@ Send the newly obtained token from the browser or mobile app to the application 
 From the server, invoke the [Create a Purchase]({{< ref Purchase_V3.md >}}#request-parameters) method, including the `Purchase` object with the token and additional transaction details.
 If operating with a previously created customer and a saved card through the [card capture form](#invoking-the-card-enrollment) or [direct tokenization](#capture-the-card-data), invoke the [Get Customer](#get-a-customer) function and obtain the **CommerceToken** of the selected card, detailed within the **PaymentProfile** object. Then, send the purchase with the obtained value.
 
+| CommerceToken Format | |
+|---|---|---|
+| Format | `"Token": "CT__{{string}}"` |
+| Example | `"Token": "CT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8QQQ_",` |
+
 ### Example of a Customer with a Saved Card Response {#get-csutomer-ct}
 {{< highlight json >}}
 {{< Payins/V3/Customers/get_customer_CTtoken >}}
@@ -120,11 +117,10 @@ If operating with a previously created customer and a saved card through the [ca
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/purchase_CT >}}
 {{< /highlight >}}
-<br>
 
 ## One-Click Recurring Purchases {#recurring-purchases-in-one-click}
-Once customers are successfully registered, some cards allow certain transactions without requiring a Verification Code (CVV), enabling a smoother user experience (one-click payments). <br> In these cases, purchases can be submitted directly without requesting additional customer information, as explained in the previous section, [Basic Purchase](#create-a-basic-purchase).
+Once customers are successfully registered, some cards allow certain transactions without requiring a Verification Code (CVV), enabling a smoother user experience (one-click payments).
 
 The Verification Code must be requested whenever transactions are made with cards that do not allow this feature, as it cannot be stored on our servers.
-<br>
+
 To invoke the Verification Code, follow the steps described in this [section](../../../../en/docs/forms.html#cvv-form).

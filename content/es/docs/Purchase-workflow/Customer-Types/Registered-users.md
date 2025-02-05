@@ -10,11 +10,15 @@ tags: ["subtopic"]
 
 El cliente recibe un _CommerceToken_ después de registrar su tarjeta, la cual puede ser utilizada para futuras transacciones. A continuación, se encuentran los pasos para comprar como un usuario registrado en el sitio web.
 
+{{% alert title="Atención" color="warning"%}}
+La administración de **Clientes** no está actualizada a la versión V3 de la API. Por lo tanto, las URLs de las operaciones siguen funcionando solo en la versión V1 de la API.
+{{% /alert %}}
+
 ## Crear un Cliente {#create-a-customer}
 El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un request **POST** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Producción**: `https://api.bamboopayment.com/v3/api/customer`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/customer`
+* **Producción**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 ### Parámetros del Request {#request-parameters}
 
@@ -23,16 +27,17 @@ El primer paso es crear el cliente en Bamboo Payment. Para esto, debe invocar un
 | `Email` | `string` | Sí | Dirección de correo electrónico del cliente. |
 | `FirstName` | `string` | Sí | Nombre del cliente. |
 | `LastName` | `string` | Sí | Apellido del cliente. |
-| `DocumentType` | `string` | Sí | Tipo de documento del cliente. Encuentre los posibles valores en la tabla de Tipos de Documento de acuerdo con el [país](/es/docs/payment-methods.html). |
-| `DocumentNumber` | `string` | Sí | Número de documento del cliente. |
+| `DocumentTypeId` | `string` | Sí | Tipo de documento del cliente. Encuentre para la versión **Legacy**, los posibles valores en la tabla de Tipos de Documento de acuerdo con el [país](/es/docs/payment-methods.html). |
+| `DocNumber` | `string` | Sí | Número de documento del cliente. |
 | `Owner` | `string` | No | Determina si el usuario es anónimo o si el comercio, o nosotros, lo registró.<br>Los posibles valores son:<ul style="margin-bottom: initial;"><li>_Our_</li><li>_Commerce_. Este es el valor por defecto.</li><li>_Anonymous_</li></ul>|
 | `PhoneNumber` | `string` | Sí | Número de teléfono de contacto del cliente. |
-| `Address` | `object` | Sí | Este parámetro es la dirección de facturación del cliente. |
-| `Address`→`AddressType` | `string` | Sí | Tipo de dirección. |
-| `Address`→`Country` | `string` | Sí | País de la dirección. |
-| `Address`→`State` | `string` | Sí | Estado de la dirección. |
-| `Address`→`City` | `string` | Sí | Ciudad de la dirección. |
-| `Address`→`AddressDetail` | `string` | Sí |Este parámetro corresponde a la información adicional de la dirección, como calle, número, etc. |
+| `BillingAddress` | `object` | Sí | Este parámetro es la dirección de facturación del cliente. |
+| `BillingAddress`→`AddressID` | `integer` | Sí | Identificador de la dirección. |
+| `BillingAddress`→`AddressType` | `string` | Sí | Tipo de dirección. |
+| `BillingAddress`→`Country` | `string` | Sí | País de la dirección. |
+| `BillingAddress`→`State` | `string` | Sí | Estado de la dirección. |
+| `BillingAddress`→`City` | `string` | Sí | Ciudad de la dirección. |
+| `BillingAddress`→`AddressDetail` | `string` | Sí |Este parámetro corresponde a la información adicional de la dirección, como calle, número, etc. |
 
 #### Ejemplo del Request {#request-example}
 
@@ -63,18 +68,15 @@ Se puede obtener la información del cliente usando su ID o su dirección de cor
 
 Para esto, debe invocar un request **GET** a las siguientes URL de acuerdo con sus necesidades.
 
-* **Producción**: `https://api.bamboopayment.com/v3/api/customer`
-* **Stage**: `https://api.stage.bamboopayment.com/v3/api/customer`
+* **Producción**: `https://api.bamboopayment.com/v1/api/customer`
+* **Stage**: `https://api.stage.bamboopayment.com/v1/api/customer`
 
 <div id="shortTable"></div>
 
-<!--| | Endpoint |
-|---|---|---|
-| Obtener por el _Identificador del cliente_ | `/{{customer-id}}` |
-| Obtener por el _correo electrónico del cliente_ | `/GetCustomerByEmail?email={{EmailAddress}}` |-->
 | | Endpoint |
 |---|---|---|
-| Obtener por el _correo electrónico del cliente_ | `/email/{{EmailAddress}}` |
+| Obtener por el _Identificador del cliente_ | `/{{customer-id}}` |
+| Obtener por el _correo electrónico del cliente_ | `/GetCustomerByEmail?email={{EmailAddress}}` |
 
 En la respuesta, se obtiene una lista con el mismo objeto retornado en la [creación del cliente](#response-example).
 
@@ -87,10 +89,6 @@ Para actualizar la información de un cliente, debe invocar un request **POST** 
 Donde `{{customer-id}}` es el id generado cuando se creó el usuario. En el cuerpo del request los [parámetros](#request-parameters) que quiera actualizar.
 
 En la respuesta, se obtiene el mismo objeto retornado en la [creación del cliente](#response-example).
-
-{{% alert title="Alert" color="warning"%}}
-La operación **Update** de cliente, aún no está migrada a la versión 3 de la API.
-{{% /alert %}}
 
 ## Capturar la información de la tarjeta {#capture-the-card-data}
 El siguiente paso es obtener el token de la tarjeta del cliente. Para esto, puede invocar el formulario de inscripción de tarjeta o utilizar la [Tokenización Directa]({{< ref "Direct-Tokenization.md" >}}) si su comercio cumple con la normativa PCI.
@@ -114,6 +112,11 @@ Debe enviar el token recién obtenido desde el navegador o la aplicación móvil
 
 Desde el servidor, invoque el método [Crear una Compra]({{< ref Purchase_V3.md >}}#request-parameters), incluyendo el objeto `Purchase` con el token y los datos de la transacción adicionales.
 En caso de operar con cliente previamente creado y con tarjeta guardada a través del [formulario de captura de tarjetas](#invoking-the-card-enrollment) o [tokenización directa](#capture-the-card-data), debe invocar la función [Get Customer](#get-a-customer) y obtener el **CommerceToken** de la tarjeta selecciona, detallado dentro del objeto **PaymentProfile**, para luego, enviar la compra con el valor obtenido.
+
+| Formato CommerceToken | |
+|---|---|---|
+| Formato | ` "Token": "CT__{{string}}"` |
+| Ejemplo | ` "Token": "CT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8QQQ_",` |
 
 ### Ejemplo del Response de Cliente con Tarjeta Guardada {#get-csutomer-ct}
 {{< highlight json >}}
