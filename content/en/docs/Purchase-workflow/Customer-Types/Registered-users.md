@@ -99,20 +99,19 @@ To invoke the capture form for a previously created customer, follow these steps
 ## Creating a Basic Purchase {#using-direct-tokenization}
 Send the newly obtained token from the browser or mobile app to the application server to create the purchase transaction.
 
-From the server, invoke the [Create a Purchase]({{< ref Purchase_V3.md >}}#request-parameters) method, including the `Purchase` object with the token and additional transaction details.
-If operating with a previously created customer and a saved card through the [card capture form](#invoking-the-card-enrollment) or [direct tokenization](#capture-the-card-data), invoke the [Get Customer](#get-a-customer) function and obtain the **CommerceToken** of the selected card, detailed within the **PaymentProfile** object. Then, send the purchase with the obtained value.
+From the server, invoke the [Create a Purchase]({{< ref Purchase_V3.md >}}#request-parameters) method, including the `Purchase` object with the token and additional transaction details.<br>If operating with a previously created customer and a saved card through the [card capture form](#invoking-the-card-enrollment) or [direct tokenization](#capture-the-card-data), invoke the [Get Customer](#get-a-customer) function and obtain the **CommerceToken** of the selected card, detailed within the **PaymentProfile** object. Then, send the purchase with the obtained value.
 
 | CommerceToken Format | |
 |---|---|---|
 | Format | `"Token": "CT__{{string}}"` |
 | Example | `"Token": "CT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8QQQ_",` |
 
-### Example of a Customer with a Saved Card Response {#get-csutomer-ct}
+### Example Response - GetCustomer for a customer with a Saved Card {#get-csutomer-ct}
 {{< highlight json >}}
 {{< Payins/V3/Customers/get_customer_CTtoken >}}
 {{< /highlight >}}
 
-### Request Example {#request-example}
+### Request Example for purchase with CommerceToken {#request-example}
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/purchase_CT >}}

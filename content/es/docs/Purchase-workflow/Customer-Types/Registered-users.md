@@ -110,20 +110,19 @@ Para invocar el formulario de captura para un customer creado previamente, se de
 ## Crear una Compra Básica {#using-direct-tokenization}
 Debe enviar el token recién obtenido desde el navegador o la aplicación móvil al servidor de aplicaciones para crear la transacción de compra.
 
-Desde el servidor, invoque el método [Crear una Compra]({{< ref Purchase_V3.md >}}#request-parameters), incluyendo el objeto `Purchase` con el token y los datos de la transacción adicionales.
-En caso de operar con cliente previamente creado y con tarjeta guardada a través del [formulario de captura de tarjetas](#invoking-the-card-enrollment) o [tokenización directa](#capture-the-card-data), debe invocar la función [Get Customer](#get-a-customer) y obtener el **CommerceToken** de la tarjeta selecciona, detallado dentro del objeto **PaymentProfile**, para luego, enviar la compra con el valor obtenido.
+Desde el servidor, invoque el método [Crear una Compra]({{< ref Purchase_V3.md >}}#request-parameters), incluyendo el objeto `Purchase` con el token y los datos de la transacción adicionales.<br>En caso de operar con cliente previamente creado y con tarjeta guardada a través del [formulario de captura de tarjetas](#invoking-the-card-enrollment) o [tokenización directa](#capture-the-card-data), debe invocar la función [Get Customer](#get-a-customer) y obtener el **CommerceToken** de la tarjeta selecciona, detallado dentro del objeto **PaymentProfile**, para luego, enviar la compra con el valor obtenido.
 
 | Formato CommerceToken | |
 |---|---|---|
 | Formato | ` "Token": "CT__{{string}}"` |
 | Ejemplo | ` "Token": "CT__wZcNQkcZtnYWeHIgR2vgWUUliS3lR18E4jiYpVJ8QQQ_",` |
 
-### Ejemplo del Response de Cliente con Tarjeta Guardada {#get-csutomer-ct}
+### Ejemplo del Response - GetCustomer para cliente con Tarjeta Guardada {#get-csutomer-ct}
 {{< highlight json >}}
 {{< Payins/V3/Customers/get_customer_CTtoken >}}
 {{< /highlight >}}
 
-### Ejemplo del Request {#request-example}
+### Ejemplo del Request de Compra con CommerceToken {#request-example}
 
 {{< highlight json >}}
 {{< Payins/V3/CreatePurchase/purchase_CT >}}
