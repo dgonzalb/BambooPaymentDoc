@@ -3,7 +3,7 @@ title: "Recurring Use Token"
 linkTitle: "Recurring Use Token"
 date: 2024-02-05T07:28:16-05:00
 description: >
-  Despite the [Anonymous users]({{< ref Anonymous-users.md>}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again.
+  Despite the [Anonymous users]({{< ref Anonymous-users.md>}}), these users are registered on the website so that you can identify them, and their card information can be associated to perform other purchases without having to provide this information again. 
 weight: 20
 tags: ["subtopic"]
 ---
