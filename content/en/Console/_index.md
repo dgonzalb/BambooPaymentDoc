@@ -1,13 +1,13 @@
 ---
-title: "Merchant Console"
-linkTitle: "Merchant Console"
+title: "Panel Comercio"
+linkTitle: "Panel Comercio"
 date: 2023-03-02
 type: docs
 description: >
-  Merchant Console
+  Panel Comercio
 menu:
   main:
-    name: Merchant Console
+    name: Panel Comercio
     weight: 70   
 ---
 
