@@ -4,7 +4,6 @@ linkTitle: "Migración desde Siempre Pago"
 date: 2025-02-14
 type: docs
 Description: > 
-   Descripción faltante
 weight: 20
 tags: ["subtopic"]
 parent: inicio_sesion

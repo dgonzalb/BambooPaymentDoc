@@ -4,7 +4,6 @@ linkTitle: "Inicio de Sesión"
 date: 2025-02-14
 type: docs
 Description: >
-    Descripción faltante
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -13,7 +12,7 @@ tags: ["parenttopic"]
 El Panel de Bamboo Payments es una plataforma web diseñada para la gestión diaria de operaciones de pago. A través de esta interfaz, los comercios pueden monitorear sus transacciones en tiempo real, administrar reembolsos y generar links de pago para sus clientes. 
 
 ## Idiomas disponibles: Inglés, Español y Portugués.
-# Inicio de Sesión
+
 
 <a href="/assets/MerchantPanel/1-Login.png" target="_blank">
     <img src="/assets/MerchantPanel/1-Login.png" width="100%" alt="PrintScreen"/>

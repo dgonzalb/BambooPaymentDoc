@@ -4,7 +4,6 @@ linkTitle: "Reporte de Payins"
 date: 2025-02-14
 type: docs
 Description: >
-    Descripción faltante
 weight: 35
 tags: ["parenttopic"]
 ---
@@ -58,4 +57,4 @@ El usuario puede personalizar los resultados mostrados utilizando el módulo de 
 ---
 
 ## Navegación
-Desde esta vista, el usuario puede hacer clic en el **ID de Transacción** para acceder a los detalles específicos de cada transacción.
+Desde esta vista, el usuario puede hacer clic en el **ID de Transacción** para acceder a los [detalles específicos de cada transacción]({{< ref "detalle_de_transaccion.md" >}}).

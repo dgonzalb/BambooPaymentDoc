@@ -4,7 +4,7 @@ linkTitle: "Detalle de transacción"
 date: 2025-02-14
 type: docs
 Description: >
-    Descripción faltante
+
 weight: 40
 tags: [subtopic]
 ---

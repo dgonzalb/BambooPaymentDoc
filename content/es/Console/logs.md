@@ -4,7 +4,6 @@ linkTitle: "Logs"
 date: 2025-02-14
 type: docs
 Description: >
-    Descripción faltante
 weight: 42
 tags: [subtopic]
 ---
@@ -12,8 +11,8 @@ tags: [subtopic]
 La sección de logs proporciona un registro detallado de todos los estados por los que ha pasado una transacción, permitiendo hacer seguimiento del flujo completo de la misma.
 
 
-<a href="/assets/MerchantPanel/5-Reembolsos con Historial.png" target="_blank">
-    <img src="/assets/MerchantPanel/5-Reembolsos con Historial.png" width="100%" alt="PrintScreen"/>
+<a href="/assets/MerchantPanel/6-Logs.png" target="_blank">
+    <img src="/assets/MerchantPanel/6-Logs.png" width="100%" alt="PrintScreen"/>
 </a>
 
 ## Información del Log

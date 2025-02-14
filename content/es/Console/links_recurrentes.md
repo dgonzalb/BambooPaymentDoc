@@ -4,7 +4,6 @@ linkTitle: "Links de Pagos Recurrentes"
 date: 2025-02-14
 type: docs
 Description: >
-    Descripción faltante
 weight: 65
 ---
 
@@ -23,12 +22,8 @@ La vista principal muestra una tabla con todos los links recurrentes y su inform
 | Creación | Fecha de generación del link | - |
 | Expiración | Fecha de vencimiento (si aplica) o "No expira" | - |
 
-# Menú Contextual
-## Opciones
-- **Copiar**: Copia el Link Recurrente seleccionado al portapapeles
-- **Cambiar a Activo/Inactivo**: Cambia el estado del Link Recurrente
-- **Eliminar**: Elimina el Link Recurrente
 
+El listado cuenta además con un **menú contextual** que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo.
 
 <a href="/assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
     <img src="/assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
@@ -36,14 +31,12 @@ La vista principal muestra una tabla con todos los links recurrentes y su inform
 
 ### Opciones de filtrado disponibles:
 
-El listado puede filtrarse por:
-- **Rango de fechas**: Período de creación
-- **Nombre**: Nombre del producto
-- **Detalles del link**:
- - Moneda
- - Precio
- - Estado
- - Referencia
+| Filtro | Descripción |
+|------|-------------|
+|Rango de fechas | Período de creación|
+|Nombre          | Nombre del producto|
+|Detalles del link | Moneda <br> Precio <br> Estado <br> Referencia|
+
 
 
 
