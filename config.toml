@@ -1,9 +1,5 @@
-# Configuración dinámica de baseURL según la rama
-[params.environments]
-  [params.environments.production]
-    baseURL = "https://docs.bamboopayment.com/"
-  [params.environments.develop]
-    baseURL = "https://doc.bamboopayment.com/"
+baseuURL = "https://docs.bamboopayment.com/public/"
+# baseURL = "https://docs.bamboopayment.com/"
 
 title = "Bamboo Payment Systems"
 
@@ -11,38 +7,53 @@ title = "Bamboo Payment Systems"
 offlineSearch = true
 
 navbar_logo = true
+
 enableRobotsTXT = true
 
+# Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["hugo-dynamic-tabs", "docsy"]
 relativeURLs = true
 uglyURLs = true
 SourceRelativeLinksEval = true
 
+# Will give values to .Lastmod etc.
 enableGitInfo = true
 
 # Language settings
 contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
+# Useful when translating.
 enableMissingTranslationPlaceholders = true
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
+# [taxonomies]
+#   tags = "tag"
 
 # Highlighting config
 pygmentsCodeFences = true
 pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
 pygmentsStyle = "tango"
 
+ # First one is picked as the Twitter card image if not set on page.
+ #images = ["images/project-illustration.png"]
+
+# Configure how URLs look like per section.
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
 
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
 plainIDAnchors = true
 hrefTargetBlank = true
 angledQuotes = false
 latexDashes = true
 
+# Image processing configuration.
 [imaging]
 resampleFilter = "CatmullRom"
 quality = 75
@@ -50,7 +61,10 @@ anchor = "smart"
 
 [services]
 [services.googleAnalytics]
+# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
 id = "UA-00000000-0"
+
+# Language configuration
 
 [languages]
 [languages.en]
@@ -58,15 +72,22 @@ title = "Bamboo Payment"
 description = "Bamboo Payment documentation"
 languageName ="English"
 contentDir = "content/en"
+# Weight used for sorting.
 weight = 2
-
 [languages.es]
 title = "Bamboo Payment"
 description = "Documentación de Bamboo Payment"
 languageName ="Español"
 contentDir = "content/es"
 weight = 1
+# [languages.pt]
+# title = "Bamboo Payment"
+# description = "Documentação do Bamboo Payment"
+# languageName ="Português"
+# contentDir = "content/pt"
+# weight = 3
 
+# Everything below this are Site Params
 [sitemap]
   changefreq = "monthly"
   filename = "sitemap.xml"
@@ -74,15 +95,77 @@ weight = 1
 
 [params]
 copyright = "Bamboo Payment"
-platformName= "Bamboo Payment"
+  # custom_css = ["css/bb.css","css/filterpage.css","css/providertopics.css","css/toc.css","css/cover.css","css/topics.css","css/gentoken.css", "css/custom.css"]
+  platformName= "Bamboo Payment"
 
+# privacy_policy = "https://policies.google.com/privacy"
+# github_repo = "https://github.com/google/docsy-example"
+
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "012481298268842215586:ys9xcn1xkxo"
+# Enable local search
+offlineSearch = true
+
+# User interface configuration
 [params.ui]
+# Enable to show the side bar menu in its compact state.
 sidebar_menu_compact = false
+#  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 
+# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
+# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
+# add "hide_feedback: true" to the page's front matter.
+# [params.ui.feedback]
+# enable = false
+# # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
+# yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+# no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+
+# [params.links]
+# # End user relevant links. These will show up on left side of footer and in the community page if you have one.
+# [[params.links.user]]
+# 	name = "User mailing list"
+# 	url = "https://example.org/mail"
+# 	icon = "fa fa-envelope"
+#         desc = "Discussion and help from your fellow users"
+# [[params.links.user]]
+# 	name ="Twitter"
+# 	url = "https://example.org/twitter"
+# 	icon = "fab fa-twitter"
+#         desc = "Follow us on Twitter to get the latest news!"
+# [[params.links.user]]
+# 	name = "Stack Overflow"
+# 	url = "https://example.org/stack"
+# 	icon = "fab fa-stack-overflow"
+#         desc = "Practical questions and curated answers"
+# # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+# [[params.links.developer]]
+# 	name = "GitHub"
+# 	url = "https://github.com/google/docsy"
+# 	icon = "fab fa-github"
+#         desc = "Development takes place here!"
+# [[params.links.developer]]
+# 	name = "Slack"
+# 	url = "https://example.org/slack"
+# 	icon = "fab fa-slack"
+#         desc = "Chat with other project developers"
+# [[params.links.developer]]
+# 	name = "Developer mailing list"
+# 	url = "https://example.org/mail"
+# 	icon = "fa fa-envelope"
+#         desc = "Discuss development issues around the project"
+
 [markup]
+
   [markup.goldmark]
+
     [markup.goldmark.renderer]
+
       	hardWraps = false
+
     	unsafe = true
+
     	xHTML = false
