@@ -5,7 +5,7 @@ date: 2025-02-14
 type: docs
 Description: >
   Descripción faltante
-weight: 60
+weight: 80
 ---
 
 La sección de Planes de Cuotas permite configurar las opciones de pago en cuotas que estarán disponibles para los clientes de un comercio, según el medio de pago y la moneda.
