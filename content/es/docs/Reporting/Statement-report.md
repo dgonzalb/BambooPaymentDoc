@@ -18,22 +18,22 @@ Para acceder a la API de Reportes de Transacciones, debe realizar una solicitud 
 > Recuerda incluir la **Clave Privada** del comercio en los encabezados de la petición. <br /> Para más detalles, consulta nuestra [Guía de Autenticación]({{< ref "Authentication.md" >}}).
 
 ## Parámetros de la solicitud (Request) {#request-parameters}
-| Campo | Tipo | Obligatorio | Descripción |
-|-------|------|-------------|-------------|
-| `ReferenceId` | string | Sí | Un identificador único para esta solicitud de retiro |
-| `CurrencyIsoCode` | string | Sí | El código ISO de la moneda para el retiro (por ejemplo, "USD") |
-| `Requester` | string | No | Identificador de la persona o sistema que solicita el retiro |
-| `TextNotes` | string | No | Notas o comentarios adicionales sobre el retiro |
+| Propiedad | Tipo | Obligatorio | Descripción |
+|-----------|------|-------------|-------------|
+| `from` | `String` | Sí | Fecha de inicio para la consulta de movimientos (formato: YYYY-MM-DD) |
+| `to` | `String` | Sí | Fecha de fin para la consulta de movimientos (formato: YYYY-MM-DD) |
+| `page` | `Integer` | Sí | Número de página para paginación |
+| `pageSize` | `Integer` | Sí | Número de registros por página |
 
-### Ejemplo de solicitud {#format-and-example-of-the-request-request}
-```json
-{
-  "ReferenceId": "retiro-001",
-  "CurrencyIsoCode": "USD",
-  "Requester": "comerciante-001",
-  "TextNotes": "Retiro para gastos operativos mensuales"
-}
-```
+{{% alert title="Importante" color="info"%}}
+Los parámetros van en el request añadidos en la URL del endpoint, seguido de un `?` indicando el comienzo de los parámetros.
+{{% /alert %}}
+
+
+### Formato y ejemplo de la solicitud (Request) {#format-and-example-of-the-request-request}
+* **Formato**: `{endpoint}?From=YYYY-MM-DD&To=YYYY-MM-DD&Page=#&PageSize=#`
+
+* **Ejemplo**: `https://api.bamboopayment.com/v2/api/Reporting/billing-movements?From=2024-01-01&To=2024-01-31&Page=1&PageSize=10`
 
 ## Parámetros de la Respuesta (Response) {#response-parameters}
 
