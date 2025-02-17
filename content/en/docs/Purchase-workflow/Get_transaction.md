@@ -1,7 +1,7 @@
 ---
-title: "Get a Transaction"
-linkTitle: "Get a Transaction"
-date: 2024-08-02T08:46:32-05:00
+title: "Get Transaction"
+linkTitle: "Get Transaction"
+date: 2025-02-17
 Description: >
    GET Transaction allows merchants to query any transaction type, such as purchase, refund, providing detailed information about the operation.
 weight: 35
