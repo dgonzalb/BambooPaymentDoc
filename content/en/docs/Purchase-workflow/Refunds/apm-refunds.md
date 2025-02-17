@@ -57,11 +57,11 @@ Allows customization of your customer’s experience when Bamboo manages the ban
 ### Request Examples
 
 
-{{< tabs tabTotal="2" tabID="Refunds for APM" tabName1="Bank Data Provided by Merchant" tabName2="Bank Data provided by Customer / Payee" >}}
+{{< tabs tabTotal="2" tabName1="Bank Data Provided by Merchant" tabName2="Bank Data provided by Customer / Payee" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-#### Bank Data Provided by Merchant
+**Bank Data Provided by Merchant**
 
 {{< highlight json >}}
 {{< Payins/V3/Refunds/refund_apm_data_merchant >}}
@@ -72,8 +72,7 @@ Allows customization of your customer’s experience when Bamboo manages the ban
 {{< tab tabNum="2" >}}
 <br>
 
-#### Bank Data provided by Customer / Payee
-
+**Bank Data provided by Customer / Payee**
 {{< highlight json >}}
 {{< Payins/V3/Refunds/refund_apm_data_payee >}}
 {{< /highlight >}} 
@@ -86,3 +85,9 @@ Allows customization of your customer’s experience when Bamboo manages the ban
 {{< highlight json >}}
 {{< Payins/V3/Refunds/refund_apm_response >}}
 {{< /highlight >}} 
+
+{{% alert title="Important Notes" color="info"%}}
+* **Pending Status**: APM refunds remain in `PENDING` status while the bank transfer is being processed.
+* **Final Result**: The final refund result will be notified through a [webhook]({{< ref "Notification-Webhooks.md" >}}). 
+* **Status Updates**: You can check the latest refund status using the [GET Transaction]({{< ref "Get_transaction.md" >}}) operation with the `Transaction ID` you get in the refund request response.
+{{% /alert %}}

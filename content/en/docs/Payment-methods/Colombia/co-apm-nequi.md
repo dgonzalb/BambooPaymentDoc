@@ -36,8 +36,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-{{% alert title="Important!" color="danger"%}}
-<sup>*</sup> If you wish to process refunds, the `PhoneNumber`, `DocumentType` and `DocumentNumber` parameters are required in the request. Otherwise, a refund cannot be processed if the parameters were not sent.
+{{% alert title="Important!" color="info"%}}
+<sup>*</sup> If you want to process refunds, the `DocumentType` and `DocumentNumber` parameters are required. If they are not sent in the purchase request, they must be sent in the refund request.
 {{% /alert %}}
 
 
@@ -95,8 +95,8 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
-{{% alert title="Important!" color="danger"%}}
-<sup>*</sup> To process refunds, the `DocumentType` and `DocumentNumber` parameters are required in the request.Otherwise, a refund cannot be processed if the parameters were not sent.
+{{% alert title="Important!" color="info"%}}
+<sup>*</sup> If you want to process refunds, the `DocumentType` and `DocumentNumber` parameters are required. If they are not sent in the purchase request, they must be sent in the refund request.
 {{% /alert %}}
 
 #### Request example
