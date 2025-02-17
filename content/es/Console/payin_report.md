@@ -57,4 +57,4 @@ El usuario puede personalizar los resultados mostrados utilizando el módulo de 
 ---
 
 ## Navegación
-Desde esta vista, el usuario puede hacer clic en el **ID de Transacción** para acceder a los [detalles específicos de cada transacción]({{< ref "detalle_de_transaccion.md" >}}).
+Desde esta vista, el usuario puede hacer clic en el **ID de Transacción** para acceder a los [detalles específicos de cada transacción]({{< ref "transaction_detail.md" >}}).

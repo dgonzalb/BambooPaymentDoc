@@ -65,4 +65,4 @@ Users can customize the displayed results using the filter module, accessible th
 ---
 
 ## Navigation
-From this view, users can click on the **Transaction ID** to access [specific transaction details]({{< ref "detalle_de_transaccion.md" >}}).
+From this view, users can click on the **Transaction ID** to access [specific transaction details]({{< ref "transaction_detail.md" >}}).

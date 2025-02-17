@@ -13,7 +13,7 @@ tags: ["parenttopic"]
 The Bamboo Payments Panel is a web platform designed for day-to-day payment operations management. Through this interface, merchants can monitor their transactions in real-time, manage refunds, and generate payment links for their customers.
 
 
-## Available Languages: English, Spanish and Portuguese.
+**Available Languages:** English, Spanish and Portuguese.
 
 
 
