@@ -163,6 +163,12 @@ The transaction webhook is a more advanced type of webhook that can not only not
 
 #### Notification example
 
+
+
+{{< tabs tabTotal="2" tabName1="Purchase" tabName2="Refund APM" >}}
+{{< tab tabNum="1" >}}
+<br>
+
 ```json
 {
   "TransactionId": 379245,
@@ -199,3 +205,55 @@ The transaction webhook is a more advanced type of webhook that can not only not
   }
 }
 ```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+```json
+{
+    "TransactionId": 148906700189999616,
+    "TransactionType": "Refund",
+    "TransactionStatusId": 1,
+    "Status": "Approved",
+    "Description": "Automation Test",
+    "ApprovalCode": "10",
+    "AdditionalData": null,
+    "ErrorCode": null,
+    "Created": "2025-02-14T21:42:03.88",
+    "UrlNotify": null,
+    "TargetCountryIso": "CO",
+    "Customer": {
+        "CustomerId": 148905131889422016,
+        "Email": "ltorres@bamboopayment.com",
+        "DocumentTypeId": 11,
+        "DocNumber": "1234567890",
+        "LastName": "Torres",
+        "FirstName": "Lisseth"
+    },
+    "PaymentMedia": {
+        "PaymentMediaId": 538,
+        "Brand": "PseAvanza",
+        "PaymentMediaType": "BankTransfer",
+        "IssuerBank": null,
+        "Bin": null,
+        "Last4": null,
+        "Owner": null
+    },
+    "UniqueId": "",
+    "Order": "Automation-999",
+    "Amount": -2058800,
+    "Installments": 1,
+    "Currency": "COP",
+    "MetadataOut": {
+        "RefundBankAccountNumber": "132132********2132",
+        "RefundBankId": "1063",
+        "RefundBankName": "BANCO FINANDINA S.A.",
+        "RefundBankAccountType": "Saving"
+    }
+}
+```
+
+{{< /tab >}}
+{{< /tabs >}}

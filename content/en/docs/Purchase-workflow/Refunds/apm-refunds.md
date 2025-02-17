@@ -88,6 +88,6 @@ Allows customization of your customer’s experience when Bamboo manages the ban
 
 {{% alert title="Important Notes" color="info"%}}
 * **Pending Status**: APM refunds remain in `PENDING` status while the bank transfer is being processed.
-* **Final Result**: The final refund result will be notified through a [webhook]({{< ref "Notification-Webhooks.md" >}}). 
+* **Final Result**: The final refund result will be notified through the [Transaction webhook]({{< ref "Notification-Webhooks.md" >}}#transaction-webhook). 
 * **Status Updates**: You can check the latest refund status using the [GET Transaction]({{< ref "Get_transaction.md" >}}) operation with the `Transaction ID` you get in the refund request response.
 {{% /alert %}}
