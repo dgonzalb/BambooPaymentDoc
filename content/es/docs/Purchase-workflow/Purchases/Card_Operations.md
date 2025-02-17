@@ -69,7 +69,7 @@ La anulación es el acto de cancelar una transacción preautorizada antes de que
 La documentación de la API versión V1 está disponible en la sección de [Legacy]({{< ref refunds-and-voids.md >}}#rollback-a-purchase)
 {{% /alert %}}
 
-La operación de _**cancelación**_ solo está disponible para compras previamente [autorizadas]({{< ref "Card_Operations.md" >}}#capturar-una-compra) con estado _PreAuthorized_. Si está interesado en reembolsar una compra que ya ha sido capturada, consulte la sección de [reembolsos]({{< ref "../Refunds/_index.md" >}}) para obtener instrucciones detalladas.
+La operación de _**cancelación**_ solo está disponible para compras previamente [autorizadas]({{< ref "Card_Operations.md" >}}#capturar-una-compra) con estado _PreAuthorized_. Si está interesado en reembolsar una compra que ya ha sido capturada, consulte la sección de [reembolsos]({{< ref "Refunds.md" >}}) para obtener instrucciones detalladas.
 
 {{% alert title="Nota" color="info"%}}
 La función de preautorización puede no estar soportada por todos los métodos de pago y está disponible para los siguientes países:
