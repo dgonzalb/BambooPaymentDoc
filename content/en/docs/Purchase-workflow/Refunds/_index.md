@@ -5,6 +5,7 @@ date: 2024-08-02T08:46:32-05:00
 Description: >
   Refunds allow you to reverse a confirmed purchase, either partially or in full, accommodating various scenarios such as customer returns, order cancellations, or billing corrections.
 weight: 40
+tags: ["parenttopic"]
 ---
 
 ## Refund a purchase
@@ -81,5 +82,5 @@ Consider the following parameters when invoking a refund request.
 
 
 {{% alert title="Important" color="info"%}}
-Refund availability and processing times may vary depending on the payment method and the country. For more detailed information about refund capabilities for specific payment methods in your country, please refer to our section [Payment Methods by Country.]({{< ref "../Payment-methods/_index.md" >}})
+Refund availability and processing times may vary depending on the payment method and the country. For more detailed information about refund capabilities for specific payment methods in your country, please refer to our section Payment Methods by Country.
 {{% /alert %}}
