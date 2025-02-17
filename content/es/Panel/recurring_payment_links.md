@@ -1,7 +1,7 @@
 ---
 title: "Links de Pagos Recurrentes"
 linkTitle: "Links de Pagos Recurrentes"
-date: 2025-02-14
+date: 2025-02-17
 type: docs
 Description: >
 weight: 65
