@@ -29,7 +29,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
 | `Customer` → `DocumentType` | `string` | No <sup>*</sup>| Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocumentNumber` | `string` | No <sup>*</sup>| Número de documento del cliente. |
-| `Customer` → `PhoneNumber` | `string` | No <sup>*</sup>| Número de teléfono del cliente. |
+| `Customer` → `PhoneNumber` | `string` | No | Número de teléfono del cliente. |
 | `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `Address` → `State` | `string` | No | Departamento del cliente. |
 | `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
@@ -37,9 +37,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
-{{% alert title="¡Importante!" color="danger"%}}
-<sup>*</sup> Si se desea operar con reembolsos, los parámetros `PhoneNumber`, `DocumentType` y `DocumentNumber` son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.
+{{% alert title="Important Notes" color="info"%}}
+<sup>*</sup> Si se desea operar con reembolsos, los parámetros `DocumentType` y `DocumentNumber` son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.
 {{% /alert %}}
+
 
 #### Ejemplo del Request {#request-example-2}
 {{< highlight json >}}
@@ -85,8 +86,8 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Email` | `string` | Sí | Correo electrónico del cliente. |
 | `Customer` → `FirstName` | `string` | No | Nombre del cliente. |
 | `Customer` → `LastName` | `string` | No | Apellido del cliente. |
-| `Customer` → `DocumentType` | `string` | No <sup>*</sup>| Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
-| `Customer` → `DocumentNumber` | `string` | No <sup>*</sup>| Número de documento del cliente. |
+| `Customer` → `DocumentType` | `string` | No | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
+| `Customer` → `DocumentNumber` | `string` | No | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. El número debe tener 10 dígitos y no debe tener prefijos. Ejemplo: _3188255555_. |
 | `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
 | `Customer` → `Address` → `State` | `string` | No | Departamento del cliente. |
@@ -95,9 +96,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
-{{% alert title="¡Importante!" color="danger"%}}
-<sup>*</sup> Si se desea operar con reembolsos, el parámetro `DocumentType` y `DocumentNumber` son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.
+{{% alert title="Important Notes" color="info"%}}
+<sup>*</sup> Si se desea operar con reembolsos, los parámetros `DocumentType` y `DocumentNumber` son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.
 {{% /alert %}}
+
 
 #### Ejemplo del Request {#request-example-3}
 {{< highlight json >}}

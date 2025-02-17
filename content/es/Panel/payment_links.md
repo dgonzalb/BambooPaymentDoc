@@ -1,7 +1,7 @@
 ---
 title: "Links de Pago"
 linkTitle: "Links de Pago"
-date: 2025-02-14
+date: 2025-02-17
 type: docs
 Description: >
 weight: 50

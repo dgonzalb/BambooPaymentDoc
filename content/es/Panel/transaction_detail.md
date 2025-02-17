@@ -1,7 +1,7 @@
 ---
 title: "Detalle de transacción"
 linkTitle: "Detalle de transacción"
-date: 2025-02-14
+date: 2025-02-17
 type: docs
 Description: >
 

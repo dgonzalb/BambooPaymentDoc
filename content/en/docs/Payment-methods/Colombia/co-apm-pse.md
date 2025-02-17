@@ -85,3 +85,8 @@ According to the result of the transaction, the payer will be directed to the UR
 {{< highlight json >}}
 {{< Payins/V3/PaymentMethods/Colombia/requestPurchase_pse_bank >}}
 {{< /highlight >}}
+
+
+{{% alert title="Important Notes" color="info"%}}
+**Refunds**: Bamboo allows you to refund a PSE purchase via a Bank Transfer to your customer, find more information in the [APM Refunds section]({{< ref "apm-refunds.md" >}}).
+{{% /alert %}}

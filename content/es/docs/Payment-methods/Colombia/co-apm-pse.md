@@ -83,3 +83,8 @@ Según el resultado de la transacción, el pagador será dirigido a la URL defin
 {{< highlight json >}}
 {{< Payins/V3/PaymentMethods/Colombia/requestPurchase_pse_bank >}}
 {{< /highlight >}}
+
+
+{{% alert title="Important Notes" color="info"%}}
+**Reembolsos**: Bamboo te permite realizar reembolsos a través de una transferencia bancaria para pagos procesados con PSE, para más información consulta la sección de Reembolsos de Medios de Pago Alternativos.
+{{% /alert %}}

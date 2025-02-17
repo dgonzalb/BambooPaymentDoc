@@ -1,7 +1,7 @@
 ---
 title: "Payment Links"
 linkTitle: "Payment Links"
-date: 2025-02-14
+date: 2025-02-17
 type: docs
 Description: >
 weight: 50
