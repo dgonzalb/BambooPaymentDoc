@@ -39,7 +39,7 @@ weight: 60
 | `812` | API Validation | Declined by validation for document. |
 | `813` | API Validation | Declined by validation for account. |
 | `814` | API Validation | Declined by validation for country. |
-| `816` | API Validation | Reference ID already used.<br>This error is not displayed in the [Payouts console](../payouts-merchant-console.html) but it is returned via API. |
+| `816` | API Validation | Reference ID already used.<br>This error is displayed in the [Payouts console](../payouts-merchant-console.html) and is also returned via Webhook. |
 | `817` | API Validation | Destination currency Unsupported. |
 | `901` | Rejections | Bank account is closed. |
 | `902` | Rejections | Invalid bank account. |

@@ -39,7 +39,7 @@ weight: 70
 | `812` | Validación del API | Declinado por validación del documento. |
 | `813` | Validación del API | Declinado por validación de la cuenta. |
 | `814` | Validación del API | Declinado por validación del país. |
-| `816` | Validación del API | ID de referencia ya utilizado.<br>Este error no se muestra en la [Consola de Payouts](../payouts-merchant-console.html) pero se devuelve a través de la API. |
+| `816` | Validación del API | ID de referencia ya utilizado.<br>Este error se muestra en la [Consola de Payouts](../payouts-merchant-console.html) y también se devuelve a través del Webhook. |
 | `817` | Validación del API | Moneda de destino no soportada. |
 | `901` | Rechazos | La cuenta bancaria está cerrada. |
 | `902` | Rechazos | Cuenta bancaria no válida. |
