@@ -35,6 +35,7 @@ weight: 30
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" width="52" style="" /> | Pago Fácil | `PFC` | Pago en efectivo | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" width="52" style="" /> | Transferencias 3.0 | `QRA` | Transferencia Bancaria | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" width="52" style="" /> | Transferencias Bancarias Offline | `BTU` | Transferencia Bancaria | Redirect |
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" width="52" style="" /> | Tarjeta Naranja | `NJD` | Tarjeta de crédito | API |
 
 ## Brasil {#brazil}
 
