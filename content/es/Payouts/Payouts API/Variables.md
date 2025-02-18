@@ -608,7 +608,7 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | NAFIN           | `135`  | `2` |
 | NU MEXICO       | `638`  | `2` |
 | NVIO            | `710`  | `2` |
-| PAGATODO        | `140`  | `2` |
+| PAGATODO        | `148`  | `2` |
 | PROFUTURO       | `620`  | `2` |
 | REFORMA         | `642`  | `2` |
 | SABADELL        | `156`  | `2` |
@@ -754,9 +754,8 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
 | CI | Cédula de Identidad| Individuos | Numérico | Entre 6 y 8 |
-| DE | | Individuos | Numérico | |
-| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | |
-| RUT | Rol Único Tributario | Individuos | Numérico | 12 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | 14 |
+| RUT | Registro Único Tributario | Compañías | Numérico | 12 |
 
 ## Monedas {#currencies}
 La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `destinationCurrency` para solicitud de Payouts.

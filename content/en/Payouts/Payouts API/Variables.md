@@ -607,7 +607,7 @@ The following tables show the bank code you can set in the parameter `payee.bank
 | NAFIN           | `135`  | `2` |
 | NU MEXICO       | `638`  | `2` |
 | NVIO            | `710`  | `2` |
-| PAGATODO        | `140`  | `2` |
+| PAGATODO        | `148`  | `2` |
 | PROFUTURO       | `620`  | `2` |
 | REFORMA         | `642`  | `2` |
 | SABADELL        | `156`  | `2` |
@@ -752,9 +752,8 @@ The following tables show the document types you must configure in the parameter
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
-| DE | | Individuals | Numeric | |
-| PASSPORT | International Travel Document | Individuals | Alphanumeric | |
-| RUT | Single Tax Role | Individuals | Numeric | 12 |
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 14 |
+| RUT | Single Tax Registry | Companies | Numeric | 12 |
 
 ## Currencies
 The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `destinationCurrency` for request Payouts.
