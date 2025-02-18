@@ -26,10 +26,7 @@ Esta sección muestra  los medios de pago disponibles, monedas y la información
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/PagoFacil_PhysicalNetwork.png" alt="PagoFacil" style="min-width: 40px;" /> | `PFC` - `61` | Pago Fácil | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Efectivo |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Transferencias_3_0_BankTransfer.png" alt="Transferencias30" style="min-width: 40px;" /> | `QRA` - `72` | QR Code - Transferencias 3.0 | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Transferencia Bancaria |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Infinia_BankTransfer.png" alt="BankTransfer" style="min-width: 40px;" /> | `BTU` - `532` | Transferencia Bancaria | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | <img src="/assets/x_mark_64.png" width="15px"/> | Transferencia Bancaria |
-
-
-
-<!--| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" alt="Naranja" style="min-width: 40px;" /> | 24 | Tarjeta Naranja | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |-->
+| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/TarjetaNaranja_CreditCard.png" alt="Naranja" style="min-width: 40px;" /> | `NJD` - `24` | Tarjeta Naranja | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | Tarjeta de crédito | API |
 
 ## Monedas {#currencies}
 
