@@ -550,6 +550,7 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | AUTOFIN         | `128`  | `2` |
 | AZTECA          | `127`  | `2` |
 | BAJIO           | `030`  | `2` |
+| BaBien          | `166`  | `2` |
 | BANAMEX         | `002`  | `2` |
 | BANCO COVALTO   | `154`  | `2` |
 | BANCO S3        | `160`  | `2` |
@@ -574,15 +575,19 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | CB INTERCAM     | `630`  | `2` |
 | CI BOLSA        | `631`  | `2` |
 | CIBANCO         | `143`  | `2` |
+| CITI MEXICO     | `124`  | `2` |
+| CLS             | `901`  | `2` |
 | COMPARTIMOS     | `130`  | `2` |
 | CONSUBANCO      | `140`  | `2` |
 | CREDICAPITAL    | `652`  | `2` |
+| CREDICLUB       | `688`  | `2` |
 | CRISTOBAL COLON | `680`  | `2` |
 | CUENCA          | `723`  | `2` |
 | CoDi Valida     | `903`  | `2` |
 | DONDE           | `151`  | `2` |
 | FINAMEX         | `616`  | `2` |
 | FINCOMUN        | `634`  | `2` |
+| FONDEADORA      | `699`  | `2` |
 | FOMPED          | `689`  | `2` |
 | FONDO (FIRA)    | `685`  | `2` |
 | GBM             | `601`  | `2` |
@@ -599,12 +604,12 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | KUSPIT          | `653`  | `2` |
 | LIBERTAD        | `670`  | `2` |
 | MASARI          | `602`  | `2` |
+| Mercado Pago W  | `722`  | `2` |
 | MIFEL           | `042`  | `2` |
 | MIZUHO BANK     | `158`  | `2` |
 | MONEXCB         | `600`  | `2` |
 | MUFG            | `108`  | `2` |
 | MULTIVA BANCO   | `132`  | `2` |
-| Mercado Pago W  | `722`  | `2` |
 | NAFIN           | `135`  | `2` |
 | NU MEXICO       | `638`  | `2` |
 | NVIO            | `710`  | `2` |
@@ -615,6 +620,7 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | SANTANDER       | `014`  | `2` |
 | SCOTIABANK      | `044`  | `2` |
 | SHINHAN         | `157`  | `2` |
+| SPIN BY OXXO    | `728`  | `2` |
 | STP             | `646`  | `2` |
 | TESORED         | `703`  | `2` |
 | TRANSFER        | `684`  | `2` |
