@@ -8,8 +8,13 @@ Description: >
 weight: 40
 tags: [subtopic]
 ---
-
 Al seleccionar una transacción desde el listado de Payins, se accede a una vista detallada que presenta la información organizada en cuatro secciones principales:
+
+<a href="/assets/MerchantPanel/3-DetallePayins.png" target="_blank">
+    <img src="/assets/MerchantPanel/3-DetallePayins.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
 
 | Tipo de Dato | Dato | Descripción |
 |--------------|------|-------------|
@@ -41,8 +46,4 @@ Al seleccionar una transacción desde el listado de Payins, se accede a una vist
 | Adquirente | Descripción | Detalle de la respuesta |
 | Adquirente | Número de orden | Identificador asignado por el adquirente |
 
-
-<a href="/assets/MerchantPanel/3-DetallePayins.png" target="_blank">
-    <img src="/assets/MerchantPanel/3-DetallePayins.png" width="100%" alt="PrintScreen"/>
-</a>
 

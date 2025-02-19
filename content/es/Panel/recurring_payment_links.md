@@ -11,7 +11,14 @@ Los Links Recurrentes permiten a los comercios generar URLs de pago que pueden s
 
 ## Listado de Links Recurrentes
 
-La vista principal muestra una tabla con todos los links recurrentes y su información:
+La vista principal muestra una tabla con todos los links recurrentes y su información. El listado cuenta además con un **menú contextual** que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo.
+
+
+<a href="/assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
+    <img src="/assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
 
 | Dato | Descripción | Estado |
 |------|-------------|--------|
@@ -23,11 +30,8 @@ La vista principal muestra una tabla con todos los links recurrentes y su inform
 | Expiración | Fecha de vencimiento (si aplica) o "No expira" | - |
 
 
-El listado cuenta además con un **menú contextual** que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo.
 
-<a href="/assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
-    <img src="/assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
-</a>
+
 
 ### Opciones de filtrado disponibles:
 

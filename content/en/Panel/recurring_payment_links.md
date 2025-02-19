@@ -14,7 +14,14 @@ Recurring Links allow merchants to generate payment URLs that can be used multip
 ## Recurring Links List
 
 
-The main view displays a table with all recurring links and their information:
+The main view displays a table with all recurring links and their information. The list also includes a **context menu** that allows you to copy the recurring link to the clipboard, change its status, or delete it.
+
+
+<a href="/assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
+    <img src="/assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
 
 
 | Field | Description | Status |
@@ -25,16 +32,6 @@ The main view displays a table with all recurring links and their information:
 | Status | Current link status | Active, Inactive |
 | Creation | Link generation date | - |
 | Expiration | Expiration date (if applicable) or "No expiration" | - |
-
-
-
-
-The list also includes a **context menu** that allows you to copy the recurring link to the clipboard, change its status, or delete it.
-
-
-<a href="/assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
-    <img src="/assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
-</a>
 
 
 ### Available Filter Options:

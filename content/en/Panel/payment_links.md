@@ -14,8 +14,13 @@ Payment Links allow merchants to generate unique URLs for their customers to mak
 ## Payment Links List
 
 
-The main view displays a table with all generated links and their relevant information:
+The main view displays a table with all generated links and their relevant information. The list also includes a **context menu** that allows you to copy the payment link to the clipboard or cancel it.
 
+<a href="/assets/MerchantPanel/7-Reporte Link de pago.png" target="_blank">
+    <img src="/assets/MerchantPanel/7-Reporte Link de pago.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
 
 | Field | Description |
 |------|-------------|
@@ -25,17 +30,6 @@ The main view displays a table with all generated links and their relevant infor
 | Amount | Payment amount and currency |
 | Creation | Link generation date and time |
 | Expiration | Date and time when the link will become invalid |
-
-
-The list also includes a **context menu** that allows you to copy the payment link to the clipboard or cancel it.
-
-
-<a href="/assets/MerchantPanel/7-Reporte Link de pago.png" target="_blank">
-    <img src="/assets/MerchantPanel/7-Reporte Link de pago.png" width="100%" alt="PrintScreen"/>
-</a>
-
-
-
 
 ### Available Filter Options:
 

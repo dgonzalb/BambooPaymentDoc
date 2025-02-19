@@ -13,6 +13,13 @@ tags: [subtopic]
 When selecting a transaction from the Payins list, you'll access a detailed view that presents information organized in four main sections:
 
 
+
+<a href="/assets/MerchantPanel/3-DetallePayins.png" target="_blank">
+    <img src="/assets/MerchantPanel/3-DetallePayins.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
+
 | Data Type | Field | Description |
 |--------------|------|-------------|
 | Purchase Details | Purchase ID | Unique transaction identifier |
@@ -43,10 +50,4 @@ When selecting a transaction from the Payins list, you'll access a detailed view
 | Acquirer | Description | Response details |
 | Acquirer | Order number | Identifier assigned by acquirer |
 
-
-
-
-<a href="/assets/MerchantPanel/3-DetallePayins.png" target="_blank">
-    <img src="/assets/MerchantPanel/3-DetallePayins.png" width="100%" alt="PrintScreen"/>
-</a>
 

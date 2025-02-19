@@ -11,7 +11,14 @@ Los Links de Pago permiten a los comercios generar URLs únicas para que sus cli
 
 ## Listado de Links de Pago
 
-La vista principal muestra una tabla con todos los links generados y su información relevante:
+La vista principal muestra una tabla con todos los links generados y su información relevante. El listado cuenta además con un **menú contextual** que permite copiar el link de pago al portapapeles, o cancelarlo.
+
+
+<a href="/assets/MerchantPanel/7-Reporte Link de pago.png" target="_blank">
+    <img src="/assets/MerchantPanel/7-Reporte Link de pago.png" width="100%" alt="PrintScreen"/>
+</a>
+
+<br>
 
 | Dato | Descripción |
 |------|-------------|
@@ -22,11 +29,8 @@ La vista principal muestra una tabla con todos los links generados y su informac
 | Creación | Fecha y hora de generación del link |
 | Expiración | Fecha y hora en que el link dejará de ser válido |
 
-El listado cuenta además con un **menú contextual** que permite copiar el link de pago al portapapeles, o cancelarlo.
 
-<a href="/assets/MerchantPanel/7-Reporte Link de pago.png" target="_blank">
-    <img src="/assets/MerchantPanel/7-Reporte Link de pago.png" width="100%" alt="PrintScreen"/>
-</a>
+
 
 
 ### Opciones de filtrado disponibles:
