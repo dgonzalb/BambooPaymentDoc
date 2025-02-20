@@ -109,6 +109,8 @@ Transaction errors always starts with `TR`.
 | `TR031` | Account closed | The bank has detected that the account associated with the card has been closed. The customer must contact the card-issuing bank to reactivate the account or use another card. |
 | `TR032` | Declined - contact your card-issuing bank | The bank has rejected the online purchase. The customer must contact the card-issuing bank. |
 | `TR033` | Installments not allowed for international cards | The customer must use a non-international card to make the purchase in installments. |
+| `TR035` | Missing bank information | Refund via Payout couldn't be processed, as customer didn't complete bank data. |
+| `TR036` | Bank data not valid  | Refund via Payout couldn't be processed, as bank data is not valid or beneficiary doesn't match with bank details. |
 | `TR075` | 3DSecure response indicates that it must require customer validation. | Acquirer response indicating that customer validation (**Verified by Visa** or HighProtection being _Santander_) is required. |
 | `TR076` | Payer authentication fails. | The acquirer indicates that the additional verification (or two-step verification) has failed (HighProtection for _Santander_ or **Verified By Visa** for other banks).<br>Your customer must contact the card issuer bank or the bank's home banking to check whether the service is enabled.<br>If it is enabled, verify what configuration it has (verification by email, SMS, token, etc) and then retry the purchase. |
 | `TR100` | The acquirer rejects for many reasons. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
