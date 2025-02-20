@@ -21,6 +21,10 @@ Existen dos flujos posibles para realizar pagos:
 ### Parámetros del Request - flujo URL selección de banco {#request-parameters}
 Es necesario incluir campos específicos para que este método de pago funcione correctamente. Consulte el artículo [operación de compra]({{< ref Purchase_V3.md >}}#request-parameters) para obtener información detallada sobre la autenticación, los idiomas de la respuesta y los parámetros de compra básica como el monto y la moneda.
 
+{{% alert title="Important Notes" color="info"%}}
+El tiempo de expiración en PSE es de 21 minutos por defecto y no puede ser modificado.
+{{% /alert %}}
+
 | Propiedad | Tipo | ¿Obligatorio? | Descripción |
 |---|:-:|:-:|---|
 | `PaymentMethod` | `string` | Sí | Encuentre el valor en la tabla de [Medios de pago](/es/docs/payment-methods/colombia.html#payment-methods). |

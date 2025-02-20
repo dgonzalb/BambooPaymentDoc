@@ -22,6 +22,10 @@ There are two possible payment flows:
 ### Request Parameters - Bank Selection URL Flow {#request-parameters}
 You need to include specific fields for this payment method to work correctly. Check the [Purchase operation]({{< ref purchase_v3.md >}}#response-parameters) article for details on authentication, languages of the response, and basic purchase parameters such as amount and currency.
 
+{{% alert title="Important Notes" color="info"%}}
+The expiration time in PSE is 21 minutes by default and cannot be modified.
+{{% /alert %}}
+
 | Property | Type | Mandatory? | Description |
 |---|:-:|:-:|---|
 | `PaymentMethod` | `string` | Yes | Find the value in the table [Payment Method](/en/docs/payment-methods/colombia.html#payment-methods). |

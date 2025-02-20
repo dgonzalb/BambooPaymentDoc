@@ -34,10 +34,10 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `City` | `string` | No | Customer's City. |
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Important!" color="info"%}}
 <sup>*</sup> If you want to process refunds, the `DocumentType` and `DocumentNumber` parameters are required. If they are not sent in the purchase request, they must be sent in the refund request.
+* The expiration time is controlled by Nequi, with a fixed value of 45 minutes by default.
 {{% /alert %}}
 
 
@@ -93,10 +93,10 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `Address` → `City` | `string` | No | Customer's City. |
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Customer's Address Detail. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure the expiration time for the payment using this field, specifying the duration in minutes. The API applies a default value if you don't provide this information. |
 
 {{% alert title="Important!" color="info"%}}
 <sup>*</sup> If you want to process refunds, the `DocumentType` and `DocumentNumber` parameters are required. If they are not sent in the purchase request, they must be sent in the refund request.
+* The expiration time is controlled by Nequi, with a fixed value of 45 minutes by default.
 {{% /alert %}}
 
 #### Request example

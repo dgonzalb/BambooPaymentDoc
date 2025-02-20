@@ -35,10 +35,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 {{% alert title="Important Notes" color="info"%}}
 <sup>*</sup> Si se desea operar con reembolsos, los parámetros `DocumentType` y `DocumentNumber` son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.
+* El tiempo de expiración es controlado por Nequi, con un valor fijo de 45 minutos por defecto.
 {{% /alert %}}
 
 
@@ -94,10 +94,10 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `Address` → `AddressDetail` | `string` | No | Detalle de la dirección del cliente. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
-| `MetaDataIn` → `PaymentExpirationInMinutes` | `numeric` | No | Configure el tiempo de expiración del pago a través de este campo, especificando la duración en minutos. Si no envía este campo, la API asignará un valor por defecto. |
 
 {{% alert title="Important Notes" color="info"%}}
 <sup>*</sup> Si se desea operar con reembolsos, los parámetros `DocumentType` y `DocumentNumber` son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.
+* El tiempo de expiración es controlado por Nequi, con un valor fijo de 45 minutos por defecto.
 {{% /alert %}}
 
 
