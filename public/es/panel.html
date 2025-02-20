@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="../es/panel/index.xml">
+
+
+
+<link rel="icon" type="image/x-icon" href="../assets/bamboo.ico" sizes="32x32">
+<title>Bamboo Payment</title><meta property="og:title" content="" />
+<meta property="og:description" content="Documentación de Bamboo Payment" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/es/panel.html" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Documentación de Bamboo Payment"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Documentación de Bamboo Payment"/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../scss/main.scss" as="style">
+<link href="../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+       
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="../es/">
+        <span class="navbar-logo"><img src="../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../es/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../es/panel.html" ><span class="active">Panel Comercio</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../en/panel.html">English</a>
+	
+</div>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../offline-search-index.b2ce667fc7d50b363139fe226ecf3298945039571a601cf3b9c992a4c63246b641cf047ffd8d40e5ea5f7f70eb7b567318cc0c4824dc77ee395e7e8c2ee582f3.json"
+  data-offline-search-base-href="../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../en/panel.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/panel.html" href="../es/panel.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">Panel Comercio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espanelhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/panel/sign_in.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelsign_inhtml" href="../es/panel/sign_in.html">Inicio de Sesión</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/migration.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelmigrationhtml" href="../es/panel/migration.html">Migración desde Siempre Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payin_report.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelpayin_reporthtml" href="../es/panel/payin_report.html">Reporte de Payins</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/transaction_detail.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espaneltransaction_detailhtml" href="../es/panel/transaction_detail.html">Detalle de transacción</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/panel_refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelpanel_refundshtml" href="../es/panel/panel_refunds.html">Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/logs.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanellogshtml" href="../es/panel/logs.html">Logs</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelpayment_linkshtml" href="../es/panel/payment_links.html">Links de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/recurring_payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelrecurring_payment_linkshtml" href="../es/panel/recurring_payment_links.html">Links de Pagos Recurrentes</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/installment_plans.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelinstallment_planshtml" href="../es/panel/installment_plans.html">Planes de Cuotas</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../es/panel.html">Panel Comercio</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1></h1>
+        
+	
+	<h1 id="panel-de-bamboo-payments">Panel de Bamboo Payments</h1>
+<ul>
+<li>El Panel de Bamboo Payments es una plataforma web diseñada para la gestión diaria de operaciones de pago. A través de esta interfaz, los comercios pueden monitorear sus transacciones en tiempo real, administrar reembolsos y generar links de pago para sus clientes.</li>
+</ul>
+
+		
+<div class="section-index">
+    <hr class="panel-line">
+    <h4 style="font-weight: bolder;">Temas en esta sección</h4>
+    
+    
+    
+    
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/sign_in.html">Inicio de Sesión</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/migration.html">Migración desde Siempre Pago</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/payin_report.html">Reporte de Payins</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/transaction_detail.html">Detalle de transacción</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/panel_refunds.html">Reembolsos</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/logs.html">Logs</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/payment_links.html">Links de Pago</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/recurring_payment_links.html">Links de Pagos Recurrentes</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../es/panel/installment_plans.html">Planes de Cuotas</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+    
+</div>
+
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    17 de febrero de 2025
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2025</strong></p></div>
+</div>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../js/scrollspy.js"></script>
+<script src="../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

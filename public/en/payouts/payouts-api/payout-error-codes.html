@@ -18,12 +18,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payouts/payouts-api/payout-error-codes.html" /><meta property="article:section" content="Payouts" />
 <meta property="article:published_time" content="2023-03-22T15:30:03-05:00" />
-<meta property="article:modified_time" content="2024-08-19T18:13:31-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta property="article:modified_time" content="2025-02-18T18:09:29-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
 <meta itemprop="name" content="API Error codes">
 <meta itemprop="description" content="This article provides information about the error codes you may find when using the Payouts integration.
 "><meta itemprop="datePublished" content="2023-03-22T15:30:03-05:00" />
-<meta itemprop="dateModified" content="2024-08-19T18:13:31-03:00" />
-<meta itemprop="wordCount" content="221">
+<meta itemprop="dateModified" content="2025-02-18T18:09:29-03:00" />
+<meta itemprop="wordCount" content="314">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API Error codes"/>
 <meta name="twitter:description" content="This article provides information about the error codes you may find when using the Payouts integration.
@@ -87,6 +87,18 @@
 				</a>
 			</li>
 			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/panel.html" ><span>Merchant Panel</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
             
             
             
@@ -134,7 +146,7 @@
   aria-label="Search …"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7590f5c7c861dbd3dee0d21e1b45b8ecdd82bc31a89fa334dd30b8c658ca5bb1ab0104402f292d97d6f9dedddb22b1ecb5f067fa5fc64b0024f942305ab133a9.json"
+  data-offline-search-index-json-src="../../../offline-search-index.b2ce667fc7d50b363139fe226ecf3298945039571a601cf3b9c992a4c63246b641cf047ffd8d40e5ea5f7f70eb7b567318cc0c4824dc77ee395e7e8c2ee582f3.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -491,17 +503,42 @@
 </tr>
 <tr>
 <td><code>601</code></td>
-<td>Purchase Preview</td>
+<td>Preview</td>
 <td>Invalid Destination Country.</td>
 </tr>
 <tr>
 <td><code>602</code></td>
-<td>Purchase Preview</td>
+<td>Preview</td>
 <td>Invalid Origin currency.</td>
 </tr>
 <tr>
+<td><code>603</code></td>
+<td>Preview</td>
+<td>Invalid amount.</td>
+</tr>
+<tr>
+<td><code>604</code></td>
+<td>Preview</td>
+<td>Invalid ISO code for destination currency.</td>
+</tr>
+<tr>
+<td><code>605</code></td>
+<td>Preview</td>
+<td>Merchant account not found.</td>
+</tr>
+<tr>
+<td><code>606</code></td>
+<td>Preview</td>
+<td>Merchant account not enabled.</td>
+</tr>
+<tr>
+<td><code>607</code></td>
+<td>Preview</td>
+<td>Merchant account has an invalid business model.</td>
+</tr>
+<tr>
 <td><code>699</code></td>
-<td>Purchase Preview</td>
+<td>Preview</td>
 <td>Generic error for Purchase Preview.</td>
 </tr>
 <tr>
@@ -525,6 +562,51 @@
 <td>Minimum payout amount is invalid.</td>
 </tr>
 <tr>
+<td><code>705</code></td>
+<td>Transactional errors</td>
+<td>Invalid origin currency ISO code.</td>
+</tr>
+<tr>
+<td><code>706</code></td>
+<td>Transactional errors</td>
+<td>The account was not found.</td>
+</tr>
+<tr>
+<td><code>707</code></td>
+<td>Transactional errors</td>
+<td>Account not enabled.</td>
+</tr>
+<tr>
+<td><code>708</code></td>
+<td>Transactional errors</td>
+<td>Invalid business model.</td>
+</tr>
+<tr>
+<td><code>709</code></td>
+<td>Transactional errors</td>
+<td>General error when obtaining business information.</td>
+</tr>
+<tr>
+<td><code>710</code></td>
+<td>Transactional errors</td>
+<td>Bank entered not valid.</td>
+</tr>
+<tr>
+<td><code>711</code></td>
+<td>Transactional errors</td>
+<td>Account entered not valid.</td>
+</tr>
+<tr>
+<td><code>712</code></td>
+<td>Transactional errors</td>
+<td>Data request expired.</td>
+</tr>
+<tr>
+<td><code>713</code></td>
+<td>Transactional errors</td>
+<td>General error when requesting data.</td>
+</tr>
+<tr>
 <td><code>812</code></td>
 <td>API Validation</td>
 <td>Declined by validation for document.</td>
@@ -542,7 +624,7 @@
 <tr>
 <td><code>816</code></td>
 <td>API Validation</td>
-<td>Reference ID already used.<br>This error is not be displayed in the <a href="../payouts-merchant-console.html">Payouts console</a> but it is returned via API.</td>
+<td>Reference ID already used.<br>This error is displayed in the <a href="../payouts-merchant-console.html">Payouts console</a> and is also returned via Webhook.</td>
 </tr>
 <tr>
 <td><code>817</code></td>
@@ -636,7 +718,41 @@
 </tr>
 </tbody>
 </table>
-
+<!--
+| `000` | Response codes | Invalid Code. |
+| `200` | Response codes | Success. |
+| `400` | Response codes | Bad Request. |
+| `401` | Response codes | Unauthorized. |
+| `409` | Response codes | Conflict. |
+| `601` | Purchase Preview | Invalid Destination Country. |
+| `602` | Purchase Preview | Invalid Origin currency. |
+| `699` | Purchase Preview | Generic error for Purchase Preview. |
+| `701` | Transactional errors | Insufficient balance. |
+| `702` | Transactional errors | Declined by compliance. |
+| `703` | Transactional errors | General Error Balance. |
+| `704` | Transactional errors | Minimum payout amount is invalid. |
+| `812` | API Validation | Declined by validation for document. |
+| `813` | API Validation | Declined by validation for account. |
+| `814` | API Validation | Declined by validation for country. |
+| `816` | API Validation | Reference ID already used.<br>This error is not be displayed in the [Payouts console](../payouts-merchant-console.html) but it is returned via API. |
+| `817` | API Validation | Destination currency Unsupported. |
+| `901` | Rejections | Bank account is closed. |
+| `902` | Rejections | Invalid bank account. |
+| `903` | Rejections | Invalid bank account type. |
+| `904` | Rejections | Invalid bank branch. |
+| `905` | Rejections | Monthly limit exceeded for user. |
+| `906` | Rejections | Rejected by merchant's request. |
+| `907` | Rejections | The bank account is unable to receive transfers. |
+| `908` | Rejections | Invalid beneficiary document. |
+| `909` | Rejections | Beneficiary name doesn't match bank details. |
+| `910` | Rejections | PIX key invalid. |
+| `911` | Rejections | Invalid state change requested. |
+| `912` | Rejections | Insufficient Balance. |
+| `913` | Rejections | Invalid process date. |
+| `914` | Rejections | Insufficient Balance in integration. |
+| `915` | Rejections | General error in integration. |
+| `916` | Rejections | Bank reject. |
+| `999` | Rejections | Error. |-->
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -646,10 +762,10 @@
 <div class="left-element">
     <b>Last modified</b>
     
-    August 19, 2024
+    February 18, 2025
     
 </div>
-<div class="right-element"><p>© Bamboo | All rights reserved <strong>2024</strong></p></div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2025</strong></p></div>
 </div>
 </div>
 </div>

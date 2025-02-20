@@ -4,7 +4,7 @@ linkTitle: "Uruguay"
 date: 2023-05-08T07:28:16-05:00
 description: >
   _**Uruguay**_ has a developing e-commerce industry that is progressively gaining favor with customers. A favorable regulatory framework, rising smartphone usage, and increased internet penetration contributed to Uruguay’s booming e-commerce sector.
-weight: 100
+weight: 99
 tags: ["parenttopic"]
 ---
 

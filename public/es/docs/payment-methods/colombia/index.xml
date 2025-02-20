@@ -541,6 +541,14 @@ Inicialmente, se utiliza la operación &lt;a href=&#34;../../../../es/docs/payme
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
+    Important Notes&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;strong&gt;Reembolsos&lt;/strong&gt;: Bamboo te permite realizar reembolsos a través de una transferencia bancaria para pagos procesados con PSE, para más información consulta la sección de Reembolsos de Medios de Pago Alternativos.&lt;/p&gt;
+&lt;/div&gt;
+
+
       </description>
     </item>
     
@@ -889,7 +897,7 @@ Inicialmente, se utiliza la operación &lt;a href=&#34;../../../../es/docs/payme
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;PhoneNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No &lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;td&gt;Número de teléfono del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -932,10 +940,10 @@ Inicialmente, se utiliza la operación &lt;a href=&#34;../../../../es/docs/payme
 &lt;/table&gt;
 
 
-&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    ¡Importante!&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;sup&gt;*&lt;/sup&gt; Si se desea operar con reembolsos, los parámetros &lt;code&gt;PhoneNumber&lt;/code&gt;, &lt;code&gt;DocumentType&lt;/code&gt; y &lt;code&gt;DocumentNumber&lt;/code&gt; son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.&lt;/p&gt;
+    Important Notes&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;sup&gt;*&lt;/sup&gt; Si se desea operar con reembolsos, los parámetros &lt;code&gt;DocumentType&lt;/code&gt; y &lt;code&gt;DocumentNumber&lt;/code&gt; son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&#34;request-example-2&#34;&gt;Ejemplo del Request&lt;/h4&gt;
@@ -1052,13 +1060,13 @@ Inicialmente, se utiliza la operación &lt;a href=&#34;../../../../es/docs/payme
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;DocumentType&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No &lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;td&gt;Tipo de documento del cliente.&lt;br&gt;Consulte la &lt;a href=&#34;../../../../es/docs/payment-methods/colombia.html#document-types&#34;&gt;tabla de tipos de documento&lt;/a&gt; para ver los posibles valores.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;Customer&lt;/code&gt; → &lt;code&gt;DocumentNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No &lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;td&gt;Número de documento del cliente.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1107,10 +1115,10 @@ Inicialmente, se utiliza la operación &lt;a href=&#34;../../../../es/docs/payme
 &lt;/table&gt;
 
 
-&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;/i&gt;&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;svg aria-hidden=&#34;true&#34; focusable=&#34;false&#34; data-prefix=&#34;fas&#34; data-icon=&#34;circle-info&#34; role=&#34;img&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34; class=&#34;svg-inline--fa fa-circle-info fa-fw decorative&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34; class=&#34;&#34;&gt;&lt;/path&gt;&lt;/svg&gt;
-    ¡Importante!&lt;/h4&gt;
-&lt;p class=&#34;alert-text&#34;&gt;&lt;sup&gt;*&lt;/sup&gt; Si se desea operar con reembolsos, el parámetro &lt;code&gt;DocumentType&lt;/code&gt; y &lt;code&gt;DocumentNumber&lt;/code&gt; son obligatorios en el request. Caso contrario, no podrá realizarse un reembolso si los parámetros no fueron enviados.&lt;/p&gt;
+    Important Notes&lt;/h4&gt;
+&lt;p class=&#34;alert-text&#34;&gt;&lt;sup&gt;*&lt;/sup&gt; Si se desea operar con reembolsos, los parámetros &lt;code&gt;DocumentType&lt;/code&gt; y &lt;code&gt;DocumentNumber&lt;/code&gt; son requeridos. Si no se envían en la solicitud de compra, se deben enviar en la solictud de reembolso.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h4 id=&#34;request-example-3&#34;&gt;Ejemplo del Request&lt;/h4&gt;

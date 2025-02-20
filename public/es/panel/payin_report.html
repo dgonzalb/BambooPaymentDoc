@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+
+<link rel="icon" type="image/x-icon" href="../../assets/bamboo.ico" sizes="32x32">
+<title>Reporte de Payins | Bamboo Payment</title><meta property="og:title" content="Reporte de Payins" />
+<meta property="og:description" content="La sección Reporte de Payins permite al usuario visualizar un listado detallado de todas las transacciones realizadas a través de Bamboo Payments. Esta vista proporciona información relevante sobre cada transacción, como el cliente, el estado, el importe, el medio de pago y otros detalles útiles para la gestión y análisis.
+Funcionalidades Principales 1. Listado de Transacciones Cada fila en la tabla representa una transacción individual y muestra:
+Dato Descripción Observaciones ID de compra Identificador único de la transacción Enlace clicable para más detalles Tipo Tipo de transacción - Cliente Nombre del cliente asociado a la transacción - Estado Estado actual de la transacción Aprobado, Rechazado, Cancelado, etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/panel/payin_report.html" /><meta property="article:section" content="Panel" />
+<meta property="article:published_time" content="2025-02-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-02-17T18:41:12-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Reporte de Payins">
+<meta itemprop="description" content="La sección Reporte de Payins permite al usuario visualizar un listado detallado de todas las transacciones realizadas a través de Bamboo Payments. Esta vista proporciona información relevante sobre cada transacción, como el cliente, el estado, el importe, el medio de pago y otros detalles útiles para la gestión y análisis.
+Funcionalidades Principales 1. Listado de Transacciones Cada fila en la tabla representa una transacción individual y muestra:
+Dato Descripción Observaciones ID de compra Identificador único de la transacción Enlace clicable para más detalles Tipo Tipo de transacción - Cliente Nombre del cliente asociado a la transacción - Estado Estado actual de la transacción Aprobado, Rechazado, Cancelado, etc."><meta itemprop="datePublished" content="2025-02-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-02-17T18:41:12-03:00" />
+<meta itemprop="wordCount" content="302">
+<meta itemprop="keywords" content="parenttopic," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reporte de Payins"/>
+<meta name="twitter:description" content="La sección Reporte de Payins permite al usuario visualizar un listado detallado de todas las transacciones realizadas a través de Bamboo Payments. Esta vista proporciona información relevante sobre cada transacción, como el cliente, el estado, el importe, el medio de pago y otros detalles útiles para la gestión y análisis.
+Funcionalidades Principales 1. Listado de Transacciones Cada fila en la tabla representa una transacción individual y muestra:
+Dato Descripción Observaciones ID de compra Identificador único de la transacción Enlace clicable para más detalles Tipo Tipo de transacción - Cliente Nombre del cliente asociado a la transacción - Estado Estado actual de la transacción Aprobado, Rechazado, Cancelado, etc."/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+       
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="../../es/">
+        <span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../es/panel.html" ><span class="active">Panel Comercio</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/panel/payin_report.html">English</a>
+	
+</div>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../offline-search-index.b2ce667fc7d50b363139fe226ecf3298945039571a601cf3b9c992a4c63246b641cf047ffd8d40e5ea5f7f70eb7b567318cc0c4824dc77ee395e7e8c2ee582f3.json"
+  data-offline-search-base-href="../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/panel/payin_report.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/panel.html" href="../../es/panel.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Panel Comercio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espanelhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/panel/sign_in.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelsign_inhtml" href="../../es/panel/sign_in.html">Inicio de Sesión</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/migration.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelmigrationhtml" href="../../es/panel/migration.html">Migración desde Siempre Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payin_report.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-espanelpayin_reporthtml" href="../../es/panel/payin_report.html">Reporte de Payins</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/transaction_detail.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espaneltransaction_detailhtml" href="../../es/panel/transaction_detail.html">Detalle de transacción</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/panel_refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelpanel_refundshtml" href="../../es/panel/panel_refunds.html">Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/logs.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanellogshtml" href="../../es/panel/logs.html">Logs</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelpayment_linkshtml" href="../../es/panel/payment_links.html">Links de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/recurring_payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelrecurring_payment_linkshtml" href="../../es/panel/recurring_payment_links.html">Links de Pagos Recurrentes</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/installment_plans.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelinstallment_planshtml" href="../../es/panel/installment_plans.html">Planes de Cuotas</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#funcionalidades-principales">Funcionalidades Principales</a>
+      <ul>
+        <li><a href="#1-listado-de-transacciones">1. Listado de Transacciones</a></li>
+        <li><a href="#2-descargar-reporte">2. Descargar Reporte</a></li>
+        <li><a href="#3-filtrado-avanzado">3. Filtrado Avanzado</a></li>
+      </ul>
+    </li>
+    <li><a href="#navegación">Navegación</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../es/panel.html">Panel Comercio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../es/panel/payin_report.html">Reporte de Payins</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Reporte de Payins</h1>
+    
+	       
+	<p>La sección <strong>Reporte de Payins</strong> permite al usuario visualizar un listado detallado de todas las transacciones realizadas a través de Bamboo Payments. Esta vista proporciona información relevante sobre cada transacción, como el cliente, el estado, el importe, el medio de pago y otros detalles útiles para la gestión y análisis.</p>
+<a href="../../assets/MerchantPanel/2-ReportePayins.png" target="_blank">
+    <img src="../../assets/MerchantPanel/2-ReportePayins.png" width="100%" alt="PrintScreen"/>
+</a>
+<h2 id="funcionalidades-principales">Funcionalidades Principales</h2>
+<h3 id="1-listado-de-transacciones">1. Listado de Transacciones</h3>
+<p>Cada fila en la tabla representa una transacción individual y muestra:</p>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Descripción</th>
+<th>Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID de compra</td>
+<td>Identificador único de la transacción</td>
+<td>Enlace clicable para más detalles</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo de transacción</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Nombre del cliente asociado a la transacción</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Estado actual de la transacción</td>
+<td>Aprobado, Rechazado, Cancelado, etc.</td>
+</tr>
+<tr>
+<td>Importe</td>
+<td>Monto de la transacción</td>
+<td>Incluye moneda utilizada</td>
+</tr>
+<tr>
+<td>Medio de pago</td>
+<td>Método utilizado para realizar el pago</td>
+<td>Mastercard, VISA, OCA, etc.</td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Fecha y hora en que se registró la transacción</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Orden</td>
+<td>Número o referencia asociada a la orden</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-descargar-reporte">2. Descargar Reporte</h3>
+<p>Opción para descargar un archivo con el reporte completo de las transacciones mostradas, adaptado al rango de fechas y filtros aplicados.</p>
+<h3 id="3-filtrado-avanzado">3. Filtrado Avanzado</h3>
+<p>El usuario puede personalizar los resultados mostrados utilizando el módulo de filtros, accesible mediante el botón <strong>Filtros</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de dato</th>
+<th>Filtro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General</td>
+<td>Cuenta</td>
+<td>Selección de cuentas del comercio</td>
+</tr>
+<tr>
+<td>General</td>
+<td>Estado</td>
+<td>Filtrar por estados de las transacciones</td>
+</tr>
+<tr>
+<td>General</td>
+<td>Orden</td>
+<td>Filtrar por tipo de orden</td>
+</tr>
+<tr>
+<td>General</td>
+<td>ID de Transacción</td>
+<td>Buscar por identificadores específicos</td>
+</tr>
+<tr>
+<td>General</td>
+<td>Tipo</td>
+<td>Filtrar por tipo de transacción</td>
+</tr>
+<tr>
+<td>Detalle de compra</td>
+<td>Medio de pago</td>
+<td>Seleccionar métodos específicos</td>
+</tr>
+<tr>
+<td>Detalle de compra</td>
+<td>Moneda</td>
+<td>Seleccionar tipos de moneda</td>
+</tr>
+<tr>
+<td>Detalle de compra</td>
+<td>Importe</td>
+<td>Filtrar por valor monetario</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Cliente</td>
+<td>Buscar por nombre del cliente</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Email</td>
+<td>Buscar por correo electrónico</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Documento</td>
+<td>Buscar por documento de identidad</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="navegación">Navegación</h2>
+<p>Desde esta vista, el usuario puede hacer clic en el <strong>ID de Transacción</strong> para acceder a los <a href="../../es/panel/transaction_detail.html">detalles específicos de cada transacción</a>.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    17 de febrero de 2025
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2025</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../js/scrollspy.js"></script>
+<script src="../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

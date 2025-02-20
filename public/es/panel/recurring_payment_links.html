@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.110.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+
+<link rel="icon" type="image/x-icon" href="../../assets/bamboo.ico" sizes="32x32">
+<title>Links de Pagos Recurrentes | Bamboo Payment</title><meta property="og:title" content="Links de Pagos Recurrentes" />
+<meta property="og:description" content="Los Links Recurrentes permiten a los comercios generar URLs de pago que pueden ser utilizadas múltiples veces para cobros repetitivos o servicios recurrentes, o bien para que distintos usuarios compren el mismo producto.
+Listado de Links Recurrentes La vista principal muestra una tabla con todos los links recurrentes y su información. El listado cuenta además con un menú contextual que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/panel/recurring_payment_links.html" /><meta property="article:section" content="Panel" />
+<meta property="article:published_time" content="2025-02-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-02-19T12:06:52-03:00" /><meta property="og:site_name" content="Bamboo Payment" />
+<meta itemprop="name" content="Links de Pagos Recurrentes">
+<meta itemprop="description" content="Los Links Recurrentes permiten a los comercios generar URLs de pago que pueden ser utilizadas múltiples veces para cobros repetitivos o servicios recurrentes, o bien para que distintos usuarios compren el mismo producto.
+Listado de Links Recurrentes La vista principal muestra una tabla con todos los links recurrentes y su información. El listado cuenta además con un menú contextual que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo."><meta itemprop="datePublished" content="2025-02-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-02-19T12:06:52-03:00" />
+<meta itemprop="wordCount" content="253">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Links de Pagos Recurrentes"/>
+<meta name="twitter:description" content="Los Links Recurrentes permiten a los comercios generar URLs de pago que pueden ser utilizadas múltiples veces para cobros repetitivos o servicios recurrentes, o bien para que distintos usuarios compren el mismo producto.
+Listado de Links Recurrentes La vista principal muestra una tabla con todos los links recurrentes y su información. El listado cuenta además con un menú contextual que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo."/>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+       
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="../../es/">
+        <span class="navbar-logo"><img src="../../assets/BambooPayment.svg" style="height: 36px;"></span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/docs.html" ><span>Payins</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../es/payouts.html" ><span>Payouts</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../es/panel.html" ><span class="active">Panel Comercio</span>
+					<div class="content-bar-menu2"></div>
+				</a>
+			</li>
+			
+            
+            
+            
+
+            
+            
+            <li class="nav-item dropdown d-none d-lg-block">
+                
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/panel/recurring_payment_links.html">English</a>
+	
+</div>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="input-wrapper">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="Buscar …"
+  aria-label="Buscar …"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../offline-search-index.b2ce667fc7d50b363139fe226ecf3298945039571a601cf3b9c992a4c63246b641cf047ffd8d40e5ea5f7f70eb7b567318cc0c4824dc77ee395e7e8c2ee582f3.json"
+  data-offline-search-base-href="../../"
+>
+
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="input-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+         clip-rule="evenodd"
+      />
+   </svg>
+
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      <img src="../../assets/burgermenu.png" height ="20" width="20" style="margin-left: 40px;"/>
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<div class="content-bar-menu"></div>
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../en/panel/recurring_payment_links.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/panel.html" href="../../es/panel.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Panel Comercio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="espanelhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/panel/sign_in.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelsign_inhtml" href="../../es/panel/sign_in.html">Inicio de Sesión</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/migration.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelmigrationhtml" href="../../es/panel/migration.html">Migración desde Siempre Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payin_report.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelpayin_reporthtml" href="../../es/panel/payin_report.html">Reporte de Payins</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/transaction_detail.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espaneltransaction_detailhtml" href="../../es/panel/transaction_detail.html">Detalle de transacción</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/panel_refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanelpanel_refundshtml" href="../../es/panel/panel_refunds.html">Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/logs.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-espanellogshtml" href="../../es/panel/logs.html">Logs</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelpayment_linkshtml" href="../../es/panel/payment_links.html">Links de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/recurring_payment_links.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-espanelrecurring_payment_linkshtml" href="../../es/panel/recurring_payment_links.html">Links de Pagos Recurrentes</a>
+      
+      
+      
+      
+      
+        <a id="/es/panel/installment_plans.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-espanelinstallment_planshtml" href="../../es/panel/installment_plans.html">Planes de Cuotas</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#listado-de-links-recurrentes">Listado de Links Recurrentes</a>
+      <ul>
+        <li><a href="#opciones-de-filtrado-disponibles">Opciones de filtrado disponibles:</a></li>
+      </ul>
+    </li>
+    <li><a href="#creación-de-links-recurrentes">Creación de Links Recurrentes</a>
+      <ul>
+        <li><a href="#paso-1-datos-del-link">Paso 1: Datos del Link</a></li>
+        <li><a href="#paso-2-producto">Paso 2: Producto</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../es/panel.html">Panel Comercio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../es/panel/recurring_payment_links.html">Links de Pagos Recurrentes</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Links de Pagos Recurrentes</h1>
+    
+	       
+	<p>Los Links Recurrentes permiten a los comercios generar URLs de pago que pueden ser utilizadas múltiples veces para cobros repetitivos o servicios recurrentes, o bien para que distintos usuarios compren el mismo producto.</p>
+<h2 id="listado-de-links-recurrentes">Listado de Links Recurrentes</h2>
+<p>La vista principal muestra una tabla con todos los links recurrentes y su información. El listado cuenta además con un <strong>menú contextual</strong> que permite copiar el link recurrente al portapapeles, cambiar el estado, o eliminarlo.</p>
+<a href="../../assets/MerchantPanel/10-Reporte Link Recurrente.png" target="_blank">
+    <img src="../../assets/MerchantPanel/10-Reporte Link Recurrente.png" width="100%" alt="PrintScreen"/>
+</a>
+<br>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Descripción</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre</td>
+<td>Identificador descriptivo del producto o servicio</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Referencia</td>
+<td>Código de referencia interno</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Monto</td>
+<td>Importe y moneda del pago</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Estado actual del link</td>
+<td>Activo, Inactivo</td>
+</tr>
+<tr>
+<td>Creación</td>
+<td>Fecha de generación del link</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Expiración</td>
+<td>Fecha de vencimiento (si aplica) o &ldquo;No expira&rdquo;</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opciones-de-filtrado-disponibles">Opciones de filtrado disponibles:</h3>
+<table>
+<thead>
+<tr>
+<th>Filtro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rango de fechas</td>
+<td>Período de creación</td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Nombre del producto</td>
+</tr>
+<tr>
+<td>Detalles del link</td>
+<td>Moneda <br> Precio <br> Estado <br> Referencia</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creación-de-links-recurrentes">Creación de Links Recurrentes</h2>
+<p>El proceso de creación se realiza en dos pasos:</p>
+<h3 id="paso-1-datos-del-link">Paso 1: Datos del Link</h3>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Descripción</th>
+<th>Mandatorio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cuenta</td>
+<td>Selección de la cuenta donde se procesarán los pagos</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Identificador del producto o servicio</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Estado inicial del link (activo/inactivo)</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Moneda</td>
+<td>Moneda en la que se realizarán los cobros</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Precio</td>
+<td>Monto a cobrar</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Referencia</td>
+<td>Identificador interno opcional</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Vencimiento</td>
+<td>Período de validez del link</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table>
+<a href="../../assets/MerchantPanel/11-Link Recurrente Creacion 1.png" target="_blank">
+    <img src="../../assets/MerchantPanel/11-Link Recurrente Creacion 1.png" width="100%" alt="PrintScreen"/>
+</a>
+<h3 id="paso-2-producto">Paso 2: Producto</h3>
+<p>Información adicional del producto:</p>
+<table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Descripción</th>
+<th>Mandatorio</th>
+<th>Restricciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descripción</td>
+<td>Detalle del producto o servicio</td>
+<td>No</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Imágenes</td>
+<td>Opción para subir imágenes del producto</td>
+<td>No</td>
+<td>Formatos: jpg, jpeg, png<br>Tamaño máximo: 10 MB por archivo</td>
+</tr>
+</tbody>
+</table>
+<a href="../../assets/MerchantPanel/12-Link Recurrente Creacion 2.png" target="_blank">
+    <img src="../../assets/MerchantPanel/12-Link Recurrente Creacion 2.png" width="100%" alt="PrintScreen"/>
+</a>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+<img src="https://s3.us-east-1.amazonaws.com/gateway.prod.bamboopayment.com/doc-online/footer-barra.png" alt="footer" style="max-width: 100%;padding-bottom: 20px;">
+<br>
+<div class="footerContainer">
+<div class="left-element">
+    <b>Última modificación</b>
+    
+    19 de febrero de 2025
+    
+</div>
+<div class="right-element"><p>© Bamboo | All rights reserved <strong>2025</strong></p></div>
+</div>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../js/scrollspy.js"></script>
+<script src="../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

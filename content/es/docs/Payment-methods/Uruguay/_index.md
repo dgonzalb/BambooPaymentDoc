@@ -4,7 +4,7 @@ linkTitle: "Uruguay"
 date: 2023-05-08T07:28:16-05:00
 description: >
   _**Uruguay**_ ha desarrollado una industria de comercio electrónico que ha ido ganando favorabilidad en los clientes de forma progresiva. Su favorable entorno regulatorio, el aumento del uso de teléfonos inteligentes y el aumento de la penetración de Internet han contribuido al boom del comercio electrónico en Uruguay.
-weight: 100
+weight: 99
 tags: ["parenttopic"]
 ---
 
