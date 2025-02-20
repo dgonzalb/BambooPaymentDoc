@@ -31,9 +31,9 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 | `Customer` → `DocumentType` | `string` | Sí | Tipo de documento del cliente.<br>Consulte la [tabla de tipos de documento](/es/docs/payment-methods/colombia.html#document-types) para ver los posibles valores. |
 | `Customer` → `DocumentNumber` | `string` | Sí | Número de documento del cliente. |
 | `Customer` → `PhoneNumber` | `string` | Sí | Número de teléfono del cliente. |
-| `Customer` → `Address` → `Country` | `string` | Sí | País del cliente. |
-| `Customer` → `Address` → `State` | `string` | Sí | Estado del cliente. |
-| `Customer` → `Address` → `City` | `string` | Sí | Ciudad del cliente. |
+| `Customer` → `Address` → `Country` | `string` | No | País del cliente. |
+| `Customer` → `Address` → `State` | `string` | No | Estado del cliente. |
+| `Customer` → `Address` → `City` | `string` | No | Ciudad del cliente. |
 | `Customer` → `Address` → `AddressDetail` | `string` | Sí | Detalle de la dirección del cliente. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Código postal del cliente. |
 | `Redirection` → `Url_Approved` | `string` | No | Se notifica a esta URL cuando el estado de la compra es `Approved`. |

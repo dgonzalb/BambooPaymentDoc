@@ -32,9 +32,9 @@ You need to include specific fields for this payment method to work correctly. C
 | `Customer` → `DocumentType` | `string` | Yes | Customer's document type.<br>Refer to the [Document types table](/en/docs/payment-methods/colombia.html#document-types) to see the possible values. |
 | `Customer` → `DocumentNumber` | `string` | Yes | Customer's Document Number. |
 | `Customer` → `PhoneNumber` | `string` | Yes | Customer's phone number. |
-| `Customer` → `Address` → `Country` | `string` | Yes | Customer's Country. |
-| `Customer` → `Address` → `State` | `string` | Yes | Customer's State. |
-| `Customer` → `Address` → `City` | `string` | Yes | Customer's City. |
+| `Customer` → `Address` → `Country` | `string` | No | Customer's Country. |
+| `Customer` → `Address` → `State` | `string` | No | Customer's State. |
+| `Customer` → `Address` → `City` | `string` | No | Customer's City. |
 | `Customer` → `Address` → `AddressDetail` | `string` | Yes | Customer's Address Detail. |
 | `Customer` → `Address` → `PostalCode` | `string` | No | Customer's Postal Code. |
 | `Redirection` → `Url_Approved` | `string` | No | Callback URL when the purchase status is `Approved`. |
