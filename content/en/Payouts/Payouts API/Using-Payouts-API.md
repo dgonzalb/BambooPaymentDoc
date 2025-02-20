@@ -44,7 +44,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `payee` → `address` | `string` | No | Address of the Payee. | 
 | `payee` → `document` → `type` | `string` | Yes | Document type of the Payee.<br>[Find the document list here](../payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Yes | Document number of the Payee. | 
-| `payee` → `bankaccount` → `number` | `string` | Yes<sup>2</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
+| `payee` → `bankaccount` → `number` | `string` | Yes<sup>2</sup> | Beneficiary's account number.<br>Please consider the following:<br><ul style="margin-bottom: initial;"><li>For Argentina, provide the CBU/CVU.</li><li>For Mexico, provide the CLABE number.</li><li>For Peru:<ul><li>If sending to a **bank**, use the **CCI**.</li><li>If sending to a **wallet**, use the **phone number** without the `+`.</li></ul></li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Yes<sup>2</sup> |  Account type of the Payee. Set `1` for Checking and `2` for Savings. |
 | `payee` → `bankaccount` → `codebank` | `string` |  Yes<sup>2</sup> | Bank code of the Payee.<br>You can get the list of banks for a given country using the [_**Get Bank list**_ method](getting-started.html#get-bank-list). Alternatively, [find the bank list here](variables.html#bank-codes). |  
 

@@ -61,7 +61,7 @@ Where `{{Country}}` represents the ISO code of the country you wish to inquire a
 | `payoutType` | `integer` | - | Payout type. Set any of the following values: <br> <ul style="list-style-type:disc;"><li>`1` for Cash.</li><li>`2` for Bank Transfer.</li><li>`3` for Wallet.</li><li>`4` for Instant Bank Transfer in Brazil.</li></ul> |
 
 {{% alert title="Info" color="info"%}}
-For Colombia, in the request it must be differentiated whether the entity is bank or wallet and consequently whether the type is `3` (wallet) or `2` (bank transfer).<br>
+For Colombia and Peru, in the request it must be differentiated whether the entity is bank or wallet and consequently whether the type is `3` (wallet) or `2` (bank transfer).<br>
 In the response of the operation, `"payoutType": 3` or `"payoutType": 2` is returned as appropriate. [List of banks and wallets in Colombia](../payouts-api/variables.html#colombia).
 {{% /alert %}}
 

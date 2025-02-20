@@ -641,14 +641,15 @@ The following tables show the bank code you can set in the parameter `payee.bank
 
 | Bank Name | Bank Code | Type of payout|
 |---|:---:|:---:|
-| BANCO DE COMERCIO | `023` | `2` |
-| BANCO DE CREDITO DEL PERU | `002` | `2` |
+| ALFIN BANCO | `058` | `2` |
+| BANBIF | `038` | `2` |
 | BANCO DE LA NACION | `018` | `2` |
-| BANCO FALABELLA PERU | `054` | `2` |
-| BANCO FINANCIERO | `035` | `2` |
-| BANCO GNB PERU S.A | `053` | `2` |
-| BANCO INTERAMERICANO DE FINANZAS (BIF) | `038` | `2` |
-| BBVA CONTINENTAL | `011` | `2` |
+| BANCO FALABELLA | `054` | `2` |
+| BANCO RIPLEY | `055` | `2` |
+| BBVA | `011` | `2` |
+| BCP | `002` | `2` |
+| CAJA ICA | `809` | `2` |
+| CAJA LOS ANDES | `849` | `2` |
 | CAJA METROPOLITANA DE LIMA | `800` | `2` |
 | CAJA MUNICIPAL DE AHORRO Y CREDITO AREQUIPA | `803` | `2` |
 | CAJA MUNICIPAL DE AHORRO Y CREDITO CUZCO | `806` | `2` |
@@ -656,12 +657,25 @@ The following tables show the bank code you can set in the parameter `payee.bank
 | CAJA MUNICIPAL DE AHORRO Y CREDITO PIURA SAC | `801` | `2` |
 | CAJA MUNICIPAL DE AHORRO Y CREDITO SULLANA | `805` | `2` |
 | CAJA MUNICIPAL DE AHORRO Y CREDITO TRUJILLO | `802` | `2` |
-| CITIBANK PERU | `007` | `2` |
+| CAJA TACNA | `813` | `2` |
+| CITIBANK | `007` | `2` |
+| BANCO DE COMERCIO | `023` | `2` |
+| COOPERATIVA ABACO | `910` | `2` |
 | CREDISCOTIA FINANCIERA | `043` | `2` |
+| DALE | `922` | `3` |
+| EEDE TARJETAS PERUANA | `921` | `2` |
+| FINANCIERA COMPARTAMOS | `091` | `2` |
+| FINANCIERA CONFIANZA | `099` | `2` |
+| FINANCIERA EFECTIVA | `096` | `2` |
+| FINANCIERA OH | `094` | `2` |
 | INTERBANK | `003` | `2` |
+| LUQEA | `775` | `3` |
 | MI BANCO | `049` | `2` |
-| SANTANDER PERU | `056` | `2` |
-| SCOTIABANK PERU | `009` | `2` |
+| PICHINCHA | `035` | `2` |
+| PLIN | `902` | `3` |
+| PREXPE | `776` | `3` |
+| SCOTIABANK | `009` | `2` |
+| YAPE | `901` | `3` |
 
 </div>
 </details>
@@ -751,8 +765,8 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
 | DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
-| PASSPORT | International Travel Document | Individuals | | Between 7 and 18 |
-| RUC | Single Taxpayer Registry | Individuals and Companies | | 11 |
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | Between 7 and 18 |
+| RUC | Single Taxpayer Registry | Individuals and Companies | Numeric | 11 |
 
 ### Uruguay
 | Abbreviation | Document name | Individuals / Companies | Type | Length |

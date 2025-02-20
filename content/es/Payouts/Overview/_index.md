@@ -45,11 +45,16 @@ Bamboo Payouts ofrece tres modelos que suponen una combinación de moneda de ori
 | Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | México  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Perú  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Perú  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 
-## Horarios de corte {#cut-off-schedule}
-Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de lo contrario, procesaremos el pago el siguiente día hábil.
+{{% alert title="Importante" color="info"%}}
+Para **Perú**, los pagos en **USD** solo pueden realizarse a **bancos**, mientras que los pagos en **Soles (PEN)** pueden enviarse tanto a **bancos** como a **billeteras**.
+{{% /alert %}}
+
+
+## Horarios de procesamiento {#processing-schedule}
+Los pagos en todos los países se procesan en **tiempo real**. No hay horarios de corte, lo que significa que las transacciones se realizan de inmediato, sin demoras.
 
 <div id="shortTable"></div>
 
@@ -57,19 +62,18 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 <thead>
   <tr>
     <th style="text-align: center;">País</th>
-    <th style="text-align: center;">Hora máxima<sup>*</sup></th>
-    <th style="text-align: center;">Zona horaria</th>
+    <th style="text-align: center;">Procesamiento</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Perú</td>
-    <td style="text-align: center;">09:00 am.</td>
-    <td style="text-align: center;">GMT-5</td>
+    <td colspan="1" rowspan="7" style="text-align: center; vertical-align: middle; border-radius: 0 0 10px 0; border-right: 1px solid #dae0eb; border-bottom: 1px solid #dae0eb; font-weight: bold; color: #28a745;">
+      Tiempo real
+    </td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
   <tr>
     <td>Brasil</td>
@@ -89,10 +93,7 @@ Tenga en cuenta el siguiente calendario para recibir el pago el mismo día; de l
 </tbody>
 </table>
 
-<sup>*</sup> _Hora indicada en hora local de Uruguay_.
-
 {{% alert title="Importante" color="info"%}}
-* Cuando los Payouts ocurren en **T+0**, el beneficiario recibe el pago el mismo día. Sin embargo, la consola mostrará el estado como _**Pagado**_ al día siguiente.
 * En México, los Payouts se procesan en tiempo real, pero la confirmación final y las notificaciones se producen 5 minutos después.
 * En Uruguay, los Payouts son en tiempo real los días hábiles de 10:00 a 16:30hs.
 {{% /alert %}}
@@ -130,8 +131,14 @@ Ejemplo: `21790064060296600`.
 
 ### Perú {#peru}
 
-* La cuenta bancaria **no puede** exceder 20 caracteres. Formato: `DDDDDDDDDDDDDDDDDDDD` donde `D` es un dígito.
-Ejemplo: `12345678901234567890`.
+* Si la cuenta bancaria es para un **banco** (**Type 2**), **no puede** exceder **20 caracteres**.  
+  Formato: `DDDDDDDDDDDDDDDDDDDD`, donde `D` es un dígito.  
+  **Ejemplo:** `12345678901234567890`.  
+
+* Si la cuenta es para una **wallet/billetera** (**Type 3**), el campo de la cuenta bancaria debe completarse con el **número de teléfono**,  
+  sin el símbolo `+`, con una longitud mínima de **9** y máxima de **15** caracteres numéricos.  
+  **Ejemplo:** `987654321` (mínimo) - `123456789012345` (máximo).
+
 
 ### Uruguay
 

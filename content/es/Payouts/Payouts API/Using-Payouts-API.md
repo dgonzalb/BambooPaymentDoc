@@ -42,7 +42,7 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `payee` → `address` | `string` | No | Dirección del Beneficiario. | 
 | `payee` → `document` → `type` | `string` | Sí | Tipo de documento del Beneficiario.<br>[Encuentre la lista de documentos aquí](../payouts-api/variables.html#document-types). |  
 | `payee` → `document` → `number` | `string` | Sí | Número de documento del Beneficiario. | 
-| `payee` → `bankaccount` → `number` | `string` | Sí<sup>2</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure the CBU/CVU.</li><li>Para México, configure el número CLABE.</li></ul> |
+| `payee` → `bankaccount` → `number` | `string` | Sí<sup>2</sup> | Número de cuenta del Beneficiario.<br>Tenga en cuenta las siguientes consideraciones:<br><ul style="margin-bottom: initial;"><li>Para Argentina, configure el CBU/CVU.</li><li>Para México, configure el número CLABE.</li><li>Para Perú:<ul><li>Si es a un **banco**, use el **CCI**.</li><li>Si es a una **wallet**, use el **número de teléfono** sin el `+`.</li></ul></li></ul> |
 | `payee` → `bankaccount` → `type` | `integer` | Sí<sup>2</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
 | `payee` → `bankaccount` → `codebank` | `string` |  Sí<sup>2</sup> | Código del banco del Beneficiario.<br>Puede obtener la lista de bancos de un país determinado utilizando el [método _**Obtener listado de bancos**_](getting-started.html#get-bank-list). También, [puede encontrar el listado de bancos](variables.html#bank-codes). |
 

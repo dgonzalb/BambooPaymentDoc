@@ -45,33 +45,38 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 | Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 
-## Cut-off Schedule
-Please consider the following schedule to receive the Payout on the same day; otherwise, we will process the Payout on the next business day.
+{{% alert title="Important" color="info"%}}
+For **Peru**, payouts in **USD** can only be made to **banks**, while payouts in **Peruvian Soles (PEN)** can be sent to both **banks** and **wallets**.
+{{% /alert %}}
+
+
+## Cut-off Schedule {#processing-schedule}
+Payments in all countries are processed in **real-time**. There are no cut-off times, meaning transactions are executed immediately without delays.
 
 <div id="shortTable"></div>
+
 <table>
 <thead>
   <tr>
-    <th style="text-align: center;">País</th>
-    <th style="text-align: center;">Hora máxima<sup>*</sup></th>
-    <th style="text-align: center;">Zona horaria</th>
+    <th style="text-align: center;">Country</th>
+    <th style="text-align: center;">Processing</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td style="border-right: 1px solid #dae0eb;">Perú</td>
-    <td style="text-align: center;">09:00 am.</td>
-    <td style="text-align: center;">GMT-5</td>
+    <td style="border-right: 1px solid #dae0eb;">Peru</td>
+    <td colspan="1" rowspan="7" style="text-align: center; vertical-align: middle; border-radius: 0 0 10px 0; border-right: 1px solid #dae0eb; border-bottom: 1px solid #dae0eb; font-weight: bold; color: #28a745;">
+      Real-time
+    </td>
   </tr>
   <tr>
     <td style="border-right: 1px solid #dae0eb;">Argentina</td>
-    <td colspan="2" rowspan="6" style="text-align: center;vertical-align: middle;border-radius: 0 0 10px 0;border-right: 1px solid #dae0eb;border-bottom: 1px solid #dae0eb;">Real time.</td>
   </tr>
   <tr>
-    <td>Brasil</td>
+    <td>Brazil</td>
   </tr>
   <tr>
     <td>Chile</td>
@@ -80,7 +85,7 @@ Please consider the following schedule to receive the Payout on the same day; ot
     <td>Colombia</td>
   </tr>
   <tr>
-    <td>México</td>
+    <td>Mexico</td>
   </tr>
   <tr>
     <td style="border-radius: 0 0 0 10px;">Uruguay</td>
@@ -88,10 +93,8 @@ Please consider the following schedule to receive the Payout on the same day; ot
 </tbody>
 </table>
 
-<sup>*</sup> _Time displayed in local time in Uruguay_.
 
 {{% alert title="Important" color="info"%}}
-* When payouts occur on **T+0**, the payee receives the payment on the same day. However, the console will display the status as _**Paid**_ the following day.
 * In Mexico, payouts are processed in real-time, but final confirmation and notifications occur 5 minutes later.
 * In Uruguay, payouts are in real time on business days from 10:00 to 16:30hs.
 {{% /alert %}}
@@ -129,8 +132,14 @@ Example: `21790064060296600`.
 
 ### Peru
 
-* The bank account **cannot** exceed 20 characters. Format: `DDDDDDDDDDDDDDDDDDDD` where `D` is a digit.
-Example: `12345678901234567890`.
+* If the bank account is for a **bank** (**Type 2**), it **cannot** exceed **20 characters**.  
+  Format: `DDDDDDDDDDDDDDDDDDDD`, where `D` is a digit.  
+  **Example:** `12345678901234567890`.  
+
+* If the account is for a **wallet** (**Type 3**), the bank account field must be filled with the **phone number**,  
+  without the `+` symbol, with a minimum length of **9** and a maximum of **15** numeric characters.  
+  **Example:** `987654321` (minimum) - `123456789012345` (maximum).
+
 
 ### Uruguay
 

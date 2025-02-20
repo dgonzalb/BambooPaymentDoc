@@ -61,7 +61,7 @@ Donde `{{Country}}` representa el código ISO del país que desea consultar, uti
 | `payoutType` | `integer` | - | Tipo de payout. Establecer cualquiera de los siguientes valores: <br> <ul style="list-style-type:disc;"><li>`1` para Efectivo.</li><li>`2` para Transferencia Bancaria.</li><li>`3` para Billetera.</li><li>`4` para Transferencia Bancaria Instantánea en Brasil.</li></ul> |
 
 {{% alert title="Info" color="info"%}}
-Para Colombia, en el request se debe diferenciar si la entidad es banco o billetera y en consecuencia si el type es `3` (billetera) o `2` (transferencia bancaria).<br>
+Para Colombia y Perú, en el request se debe diferenciar si la entidad es banco o billetera y en consecuencia si el type es `3` (billetera) o `2` (transferencia bancaria).<br>
 En la respuesta de la operación, se retorna `"payoutType": 3` o `"payoutType": 2` según corresponda. [Listado de bancos y billeteras en Colombia](../payouts-api/variables.html#colombia).
 {{% /alert %}}
 
