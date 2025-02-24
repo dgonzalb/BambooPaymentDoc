@@ -57,7 +57,7 @@ weight: 60
 | `914` | Rejections | Insufficient Balance in integration. |
 | `915` | Rejections | General error in integration. |
 | `916` | Rejections | Bank reject. |
-| `921` | BR_InvalidWallet | Invalid wallet |
+| `921` | Rejections | Invalid wallet |
 | `999` | Rejections | Error. |
 
 <!--

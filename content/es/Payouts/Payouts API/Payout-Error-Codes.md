@@ -57,7 +57,7 @@ weight: 70
 | `914` | Rechazos | Saldo insuficiente en la integración. |
 | `915` | Rechazos | Error general en la integración. |
 | `916` | Rechazos | Rechazado por el banco. |
-| `921` | BR_InvalidWallet | Billetera inválida |
+| `921` | Rechazos | Billetera inválida |
 | `999` | Rechazos | Error general. |
 
 
