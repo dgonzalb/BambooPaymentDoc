@@ -49,7 +49,7 @@ Allows customization of your customer’s experience when Bamboo manages the ban
 
 | Parameter | Type | Mandatory | Description |
 |-----------|------|:---------:|-------------|
-| `MetadataIn` → `MerchantLogoURL` | `string` | No | URL of merchant's logo for notifications and web forms |
+| `MetadataIn` → `PayinMerchantLogoURL` | `string` | No | URL of merchant's logo for notifications and web forms |
 | `MetadataIn` → `ResponseURL-Success` | `string` | No | Success page URL after customer completes bank data form |
 | `MetadataIn` → `ResponseURL-Failure` | `string` | No | Error page URL for failed bank data collection |
 
