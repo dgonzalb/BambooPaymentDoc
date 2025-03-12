@@ -11,7 +11,7 @@ tags: ["subtopic"]
 Next, we describe the steps to create a purchase with an anonymous user.
 
 ## Capture the Card Data
-The first step is to get the token of the customer's card. To do so, you can invoke the [Checkout Form]({{< ref "Checkout-Form.md" >}}) in the last stage of the shopping cart. Recall that you must gather the _**Checkout Form**_ through the Bamboo Payment JavaScript library. Alternatively, you can use [Direct tokenization]({{< ref "Direct-Tokenization.md" >}}) if your commerce is PCI-compliant.
+The first step is to get the token of the customer's card. To do so, you can invoke the [Checkout Form](../../../../en/docs/forms.html) in the last stage of the shopping cart. Recall that you must gather the _**Checkout Form**_ through the Bamboo Payment JavaScript library. Alternatively, you can use [Direct tokenization]({{< ref "Direct-Tokenization.md" >}}) if your commerce is PCI-compliant.
 
 This form is displayed within an iframe of your page and requests the Card data.
 
