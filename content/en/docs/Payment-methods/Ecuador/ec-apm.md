@@ -37,7 +37,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 #### Request example
 {{< highlight json >}}
-{{< Payins/V3/PaymentMethods/CentroAmerica/request_puntoExpress >}}
+{{< Payins/V3/PaymentMethods/Ecuador/request_pagoefectivo >}}
 {{< /highlight >}}
 
 ### Response parameters
@@ -52,7 +52,6 @@ In the response, you will find the following parameters:
 ![PrintScreen](/assets/PagoEfectivoEC.png)
 
 #### Response example
-
 {{< highlight json >}}
-{{< Payins/V3/PaymentMethods/CentroAmerica/response_puntoExpress >}}
+{{< Payins/V3/PaymentMethods/Ecuador/response_pagoefectivo >}}
 {{< /highlight >}}

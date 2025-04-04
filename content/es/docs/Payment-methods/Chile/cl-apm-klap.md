@@ -43,7 +43,7 @@ Es necesario incluir campos específicos para que este método de pago funcione 
 
 #### Ejemplo del Request {#request-example-1}
 {{< highlight json >}}
-{{< Payins/V3/PaymentMethods/Chile/response_klapmulticaja >}}
+{{< Payins/V3/PaymentMethods/Chile/request_klapmulticaja >}}
 {{< /highlight >}}
 
 

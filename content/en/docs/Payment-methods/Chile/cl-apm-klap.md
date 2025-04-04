@@ -42,7 +42,7 @@ You need to include specific fields for this payment method to work correctly. C
 
 #### Request example
 {{< highlight json >}}
-{{< Payins/V3/PaymentMethods/Chile/response_klapmulticaja >}}
+{{< Payins/V3/PaymentMethods/Chile/request_klapmulticaja >}}
 {{< /highlight >}}
 
 ### Response parameters
