@@ -20,12 +20,18 @@ Para integrar el Formulario de Tokenización, es necesario incluir un script que
 
 ```javascript
 //STAGE - Ambiente de Pruebas:
-<script src="https://capture.stage.bamboopayment.com"></script>
+<script src="https://capture.stage.bamboopayment.com/"
+		integrity="sha256-MZTrPbIEEQfZsVKZ0X2W0WKWynw90m2ZnLsf+K4d4f8= sha384-lR7NrY3+mgbapfzO93PhsFYrm2qY2U9qDGSb5pvZnrrQ+UgcwIuX3AQPAt0GXhn/ sha512-dFeUYkspbL2fl9a7cKzz0GJK/inIXIxd687/jHFMVEIv+/QV9FfnWK+CqkS9Lyq2iucNRvAz11kxkhlr7x9OMg=="
+		crossorigin="anonymous">
+	</script>
 ```
 
 ```javascript
 //PRODUCCIÓN:
-<script src="https://capture.bamboopayment.com"></script>
+<script src="https://capture.bamboopayment.com/"
+		integrity="sha256-VjLXumZeKViFVhMpiaW5IUQZ213LOzPRw5DTde6AiVU= sha384-GRjWfO5d//CNj5CCFEo3xVfWn/rmZLZOvFkkdXsHE/PsECHSRWXDqjfJ930Bq4bM sha512-guivUBLq1cpFO5KnYnwIvM6UYAF6yA2rjLT0rBgniE+XZdgjN1//abizyKbyJ2y9j8MKmSJbKhLD3gmJVMh5ug=="
+		crossorigin="anonymous"> 
+	</script>
 ```
 
 ### Método **renderTokenizationForm** {#rendertokenizationform-method}
