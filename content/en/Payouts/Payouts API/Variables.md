@@ -458,16 +458,18 @@ The following tables show the bank code you can set in the parameter `payee.bank
 | BANCO BICE | `028` | `2` |
 | BANCO CONSORCIO | `055` | `2` |
 | BANCO CREDITO E INVERSIONES | `016` | `2` |
-| BANCO DEL DESARROLLO | `507` | `2` |
 | BANCO FALABELLA | `051` | `2` |
 | BANCO RIPLEY | `053` | `2` |
 | BANCO SANTANDER - SANTIAGO | `037` | `2` |
 | BANCO SECURITY | `049` | `2` |
 | BBVA CHILE | `504` | `2` |
 | COOPEUCH | `672` | `2` |
+| GLOBAL 66 | `738` | `2` |
 | HSBC BANK | `031` | `2` |
 | ITAU CORPBANCA | `039` | `2` |
+| MERCADOPAGO| `875` | `2` |
 | PREPAGO LOS HEROES | `729` | `2` |
+| PREPAGO LOS ANDES | `732` | `2` |
 | SCOTIABANK CHILE | `014` | `2` |
 | TENPO PREPAGO | `730` | `2` |
 
@@ -765,14 +767,14 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | CE | Immigration ID | Individuals | Numeric | 9 |
 | DNI | National Identity Document | Individuals | Numeric<br><hr>Numeric or Alphanumeric | 8<br><hr>9 |
-| PASSPORT | International Travel Document | Individuals | Alphanumeric | Between 7 and 18 |
+| PASSPORT | International Travel Document | Individuals | Numeric | Between 7 and 18 |
 | RUC | Single Taxpayer Registry | Individuals and Companies | Numeric | 11 |
 
 ### Uruguay
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CI | Identity Card | Individuals | Numeric | Between 6 and 8 |
-| PASSPORT | International Travel Document | Individuals | Alphanumeric | 14 |
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 12 |
 | RUT | Single Tax Registry | Companies | Numeric | 12 |
 
 ## Currencies

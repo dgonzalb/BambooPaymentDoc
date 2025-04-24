@@ -459,16 +459,18 @@ Las siguientes tablas muestran el código bancario que puede asignar en el pará
 | BANCO BICE | `028` | `2` |
 | BANCO CONSORCIO | `055` | `2` |
 | BANCO CREDITO E INVERSIONES | `016` | `2` |
-| BANCO DEL DESARROLLO | `507` | `2` |
 | BANCO FALABELLA | `051` | `2` |
 | BANCO RIPLEY | `053` | `2` |
 | BANCO SANTANDER - SANTIAGO | `037` | `2` |
 | BANCO SECURITY | `049` | `2` |
 | BBVA CHILE | `504` | `2` |
 | COOPEUCH | `672` | `2` |
+| GLOBAL 66 | `738` | `2` |
 | HSBC BANK | `031` | `2` |
 | ITAU CORPBANCA | `039` | `2` |
+| MERCADOPAGO| `875` | `2` |
 | PREPAGO LOS HEROES | `729` | `2` |
+| PREPAGO LOS ANDES | `732` | `2` |
 | SCOTIABANK CHILE | `014` | `2` |
 | TENPO PREPAGO | `730` | `2` |
 
@@ -766,14 +768,14 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 |:-:|---|---|:-:|:-:|
 | CE | Cédula de Extranjería | Individuos | Numérico | 9 |
 | DNI | Documento Nacional de Identidad | Individuos | Numérico<br><hr>Numérico o Alfanumérico | 8<br><hr>9 |
-| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 7 y 18 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Numérico | Entre 7 y 18 |
 | RUC | Registro Único de Contribuyentes | Individuos y Compañías | Numérico | 11 |
 
 ### Uruguay
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
 | CI | Cédula de Identidad| Individuos | Numérico | Entre 6 y 8 |
-| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | 14 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | 12 |
 | RUT | Registro Único Tributario | Compañías | Numérico | 12 |
 
 ## Monedas {#currencies}
