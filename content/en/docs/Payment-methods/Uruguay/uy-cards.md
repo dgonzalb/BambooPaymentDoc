@@ -147,15 +147,20 @@ The behavior of the response will depend on the amount sent. Use the following c
 | Result: OK <br> Approved | <ul style="margin-bottom: initial;"><li>Less than or equal to **UYU** 1000,00</li><li>Greater than **UYU** 1061,00</li></ul> |
 
 ### Configured Behaviors for the Gateway model
-The behavior of the response will depend on the termination of the card. Generate the card using the corresponding [bin of the brand](#determination-of-bin), and send the following last four digits according to the expected result.
-
+The behavior of the response will depend of the card.
 <div id="shortTable"></div>
 
-| Termination | Behavior  |
-|:-----------:|-----------|
-| `0001` | Result: OK <br> Approved. |
-| `0002` | Result: Rejected <br> Error: TR007 <br> Error with some data of the payment method (card number, verification code or expiration date). |
-| `0013` | Result: Rejected <br> Error: TR012 <br> Credit limit exceeded. |
+| Brand | PAN | Expiration Date | Behaviors
+|---|---|---|---|
+| Mastercard Credit | `5385300000000001` |`12/29` | `Approved`|
+| Mastercard Prepaid | `5572400000000001` | `12/29` |`Approved`|
+| Mastercard Debit | `5558460000000001` | `12/29` |`Approved`|
+| Visa Credit | `4000020000000000` |`12/29` |`Approved`|
+| Visa Debit | `4659105569051157` |`12/29` |`Approved`|
+| Visa Prepaid | `4000148147058142` |`12/29` |`Approved`|
+| OCA Credit | `5429910000000001` |`12/29` |`Approved`|
+| Mastercard Credit | `5165850000000004` | `12/29` |`Rejected`|
+| Visa Credit | `4456530000001001` |`12/29` |`Rejected`|
 
 <!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Anda" tabName4="Créditos Directos" tabName5="Mastercard" tabName6="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
@@ -285,11 +290,11 @@ Example of BIN (first 6 digits) for testing specific card types:
 {{< /tabs >}}-->
 
 ## Special features for the Gateway model {#considerations}
+* **Creditel** and **PassCard** and **OCA** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
 * You can make purchases in installments as long as the Issuing Bank has it enabled.
 * You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
 * **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
 * **Fiserv** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **Fiserv** and notify us.
-* **Creditel** and **PassCard** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
 * **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
 

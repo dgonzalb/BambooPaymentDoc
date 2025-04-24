@@ -146,15 +146,29 @@ El comportamiento de la respuesta dependerá del monto enviado. Utilice las sigu
 | Resultado: OK <br> Aprobado | <ul style="margin-bottom: initial;"><li>Menor o igual a **UYU** 1000,00</li><li>Mayor a **UYU** 1061,00</li></ul> |
 
 ### Determinación de Comportamiento para el modelo Gateway {#configured-behaviors-for-the-gateway-model}
-El comportamiento de la respuesta dependerá de la terminación de la tarjeta. Genere la tarjeta utilizando el [bin de la marca](#determinación-del-bin) correspondiente, y envíe los siguientes cuatro últimos dígitos de acuerdo con el resultado esperado.
+El comportamiento de la respuesta dependerá de tarjeta utilizada.
 
 <div id="shortTable"></div>
 
+### Tarjetas para modelo Gateway
+
+| Marca | PAN | Fecha de Expiración | Comportamiento
+|---|---|---|---|
+| Mastercard Crédito | `5385300000000001` |`12/29` | `Aprobado`|
+| Mastercard Prepago | `5572400000000001` | `12/29` |`Aprobado`|
+| Mastercard Débito | `5558460000000001` | `12/29` |`Aprobado`|
+| Visa Crédito | `4000020000000000` |`12/29` |`Aprobado`|
+| Visa Débito | `4659105569051157` |`12/29` |`Aprobado`|
+| Visa Prepago | `4000148147058142` |`12/29` |`Aprobado`|
+| OCA Crédito | `5429910000000001` |`12/29` |`Aprobado`|
+| Mastercard crédito | `5165850000000004` | `12/29` |`Rechazado`|
+| Visa Crédito | `4456530000001001` |`12/29` |`Rechazado`|
+<!--
 | Terminación | Comportamiento  |
 |:-----------:|-----------|
 | `0001` | Resultado: OK <br> Aprobado. |
 | `0002` | Resultado: Rechazado <br> Error: TR007 <br> Error con algún dato del medio de pago (número de tarjeta, código de verificación y/o fecha de expiración). |
-| `0013` | Resultado: Rechazado <br> Error: TR012 <br> Límite de crédito excedido. |
+| `0013` | Resultado: Rechazado <br> Error: TR012 <br> Límite de crédito excedido. |-->
 
 <!--{{< tabs tabTotal="7" tabID="acquirers" tabName1="OCA" tabName2="VISA" tabName3="Anda" tabName4="Créditos Directos" tabName5="Mastercard" tabName6="AMEX (UY)" >}}
 {{< tab tabNum="1" >}}
@@ -284,11 +298,11 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 {{< /tabs >}}-->
 
 ## Particularidades para el modelo Gateway {#considerations}
+* **Creditel**,  **PassCard** y **OCA** requieren que el mensaje de `Purchase` incluya el número y tipo de documento del tarjetahabiente (campos `Customer.DocumentTypeId` y `Customer.DocNumber`).
 * Puede realizar compras a cuotas siempre que el Banco Emisor lo tenga habilitado.
 * Puede realizar compras con Tarjetas de Débito siempre que el Banco Emisor lo tenga habilitado.
 * **Visanet** exige la inclusión del CVV en la primera compra del cliente o en el alta del cliente.<br>Una vez realizado el registro y obtenido el _Commerce Token_, no es necesario solicitar el CVV en futuras transacciones.
 * **Fiserv** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Debe ejecutar [Flujo de solicitud de código de verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>Esta modalidad está activada por defecto. Si desea desactivarla, debe negociar con **Fiserv** y notificarnoslo.
-* **Creditel** y **PassCard** requieren que el mensaje de `Purchase` incluya el número y tipo de documento del tarjetahabiente (campos `Customer.DocumentTypeId` y `Customer.DocNumber`).
 * **PassCard** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Por lo tanto, debe ejecutar el [Flujo de Solicitud de Código de Verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * Cuando utilice **OCAOneClick2** (OCA Multi-Acquiring), necesita incluir la dirección IP de la persona que está haciendo la compra. Para esto, debe enviar el parámetro `CustomerIP` en el request.
 
