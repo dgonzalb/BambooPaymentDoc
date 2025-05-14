@@ -15,8 +15,8 @@ Below, you can find the required and suggested (optional) parameters to be sent 
 **Mandatory parameters:**
 
 * `{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}`<br>Name, last name and email corresponding to the customer of the commerce website.
-* `{"AntifraudData":{"AntifraudFingerprintId":""}}`<br>Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud).
-* `"CustomerIP":""`<br>IP of to the customer connected to the commerce website
+* `{"AntifraudData":{"AntifraudFingerprintId":"", "ClientIp":""}}`<br>Session Id (`AntifraudFingerprintId`) which is obtained by the javascript function [getSessionAntifraud](#getsessionantifraud).
+* `"ClientIp":""`<br>IP of to the customer connected to the commerce website
 
 **Suggested parameters:**
 
@@ -36,7 +36,7 @@ All the parameters in Column A and at least one in Column B.
 | Column A - Mandatory | Column B - At least one is mandatory |
 |---------|----------|
 | `AntifraudData` → `AntifraudFingerprintId` | `Email` |
-| `CustomerIp` | `FirstName` - `LastName`<br>`DocumentTypeId` - `DocNumber` |
+| `ClientIp` | `FirstName` - `LastName`<br>`DocumentTypeId` - `DocNumber` |
 
 **Suggested parameters:**
 

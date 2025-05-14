@@ -15,8 +15,8 @@ A continuación se listan los parámetros requeridos y sugeridos (opcionales) qu
 **Parámetros Obligatorios:**
 
 * `{“Customer”:{FirstName:””,”LastName”:””,”Email”:””}}`<br>Nombre, apellido y correo electrónico correspondientes al cliente conectado al sitio web del comercio.
-* `{"AntifraudData":{"AntifraudFingerprintId":""}}`<br>SessionId (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud](#getsessionantifraud).
-* `"CustomerIP":""`<br>IP correspondiente al cliente conectado al sitio web del comercio.
+* `{"AntifraudData":{"AntifraudFingerprintId":"", "ClientIp":""}}`<br>SessionId (`AntifraudFingerprintId`) que se obtiene por medio de la función JavaScript [getSessionAntifraud](#getsessionantifraud).
+* `"ClientIp":""`<br>IP correspondiente al cliente conectado al sitio web del comercio.
 
 **Parámetros sugeridos:**
 
@@ -34,7 +34,7 @@ Todos los de la columna A y al menos uno de la columna B
 | Columna A - Obligatorios | Columna B - Al menos un dato es obligatorio |
 |---------|----------|
 | `AntifraudData` → `AntifraudFingerprintId` | `Email` |
-| `CustomerIp` | `FirstName` - `LastName`<br>`DocumentTypeId` - `DocNumber` |
+| `ClientIp` | `FirstName` - `LastName`<br>`DocumentTypeId` - `DocNumber` |
 
 **Parámetros sugeridos:**
 
