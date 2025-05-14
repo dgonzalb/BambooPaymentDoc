@@ -10,7 +10,7 @@ weight: 70
 ## URL for the Request {#request-url}
 To access the Bamboo Payouts Report API, make a **GET** request to the following URLs depending on the environment:
 
-* **Production**: `https://payout-api.prod.bamboopayment.com/api/Payout/getreport`
+* **Production**: `https://payout-api.bamboopayment.com/api/payout/getreport`
 * **Stage**: `https://payout-api.stage.bamboopayment.com/api/Payout/getreport`
  
 ## Authorization {#authorization}
