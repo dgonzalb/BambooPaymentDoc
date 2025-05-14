@@ -231,7 +231,7 @@ Donde:
 
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-Falló la validación del mensaje y el Payout queda en estado **is not created**.
+Falló la validación del mensaje (error en validación de datos) y el Payout queda en estado **is not created**.
 
 **Response body**
 
@@ -240,6 +240,13 @@ Falló la validación del mensaje y el Payout queda en estado **is not created**
 {{< /highlight >}}
 <br>
 
+También aplica cuando un campo obligatorio de la API no es ingresado.
+<br>
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_http400_2 >}}
+{{< /highlight >}}
+
+<br>
 * `Unauthorized`: HttpCode `401`.<br>
 Error de autorización.
 

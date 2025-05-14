@@ -226,13 +226,19 @@ Where:
 | `errors` | Errors that may appear. Find the possible errors [here]({{< ref "Payout-Error-Codes.md">}}). |
 
 * `BadRequest`: HttpCode `HttpCode 400`.<br>
-The validation of the message failed, and the Payout **is not created**.
+The validation of the message failed (data validation error), and the Payout **is not created**.
 
 **Response body**
 {{< highlight json >}}
 {{< Payouts/Api/UsingPayoutsApi/response_http400 >}}
 {{< /highlight >}}
 <br>
+
+It also applies when a required API field is not entered.
+<br>
+{{< highlight json >}}
+{{< Payouts/Api/UsingPayoutsApi/response_http400_2 >}}
+{{< /highlight >}}
 
 * `Unauthorized`: HttpCode `401`.<br>
 Authorization error.
