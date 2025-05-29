@@ -38,7 +38,8 @@ Parameters should be added to the request URL of the endpoint, followed by a `?`
 ## Response Parameters {#response-parameters}
 
 {{% alert title="Note" color="info"%}}
-When querying recent data, note that the most up-to-date information available might be from the previous day (D-1). This means that the latest data available via the API could be from the day before the current date. Keep this in mind when querying recent payouts.
+* When querying recent data, note that the most up-to-date information available might be from the previous day (D-1). This means that the latest data available via the API could be from the day before the current date. Keep this in mind when querying recent payouts.
+* To bring information from a single day, e.g., 2025/05/19, you must put `from = 2025/05/19 <> to = 2025/05/20`.
 {{% /alert %}}
 
 | Property                             | Type          | Description                                                                                                          |

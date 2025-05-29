@@ -39,7 +39,8 @@ Los parámetros van en el request añadidos en la URL del endpoint, seguido de u
 ## Parámetros de la Respuesta (Response) {#response-parameters}
 
 {{% alert title="Note" color="info"%}}
-Al consultar datos recientes, tenga en cuenta que la información más actualizada disponible podría ser del día anterior (D-1). Esto implica que los datos más recientes disponibles a través de la API podrían ser del día anterior a la fecha actual. Tenga esto en cuenta al consultar los payouts recientes.
+* Al consultar datos recientes, tenga en cuenta que la información más actualizada disponible podría ser del día anterior (D-1). Esto implica que los datos más recientes disponibles a través de la API podrían ser del día anterior a la fecha actual. Tenga esto en cuenta al consultar los payouts recientes.
+* Para traer información de un solo día, ej, del 2025/05/19, hay que poner `from = 2025/05/19 <> to = 2025/05/20`.
 {{% /alert %}}
 
 
