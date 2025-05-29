@@ -68,7 +68,6 @@ weight: 30
 | | Payment Method | PaymentMethod | Type | Flow |
 |-----|-----------------|----------------|--------------------------|----------|
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Khipu_BankTransfer.png" width="52" style="" />| Khipu | `KHI` | Bank Transfer | Redirect |
-| <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Multicaja_PhysicalNetwork.png" width="52" style="" />| Klap Cash | `MLC` | Cash Payment | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | `VSC` | Credit Card | API |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/Visa_CreditCard.png"  width="52" style="" /> | Visa | `VSC` | Credit, Debit, and Prepaid Card | Redirect |
 | <img src="https://s3.amazonaws.com/gateway.prod.bamboopayment.com/payment-method-logos/MasterCard_CreditCard.png" width="52" style="" /> | Mastercard | `MCC` | Credit Card | API |
