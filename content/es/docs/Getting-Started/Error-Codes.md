@@ -67,6 +67,11 @@ Los errores del servicio Tokenization empiezan por `TK`.
 | `TK017` | Documento no válido. | El documento proporcionado no es válido según las normas del país. |
 | `TK018` | Tipo de documento no válido. | El tipo de documento enviado no es válido o no pertenece al país. |
 | `TK019` | Tipo de pago no válido. | El tipo de pago enviado no es válido o no pertenece al país. |
+| `TK020` | El token de autenticación enviado no es válido.| Verifica el token de autenticación.|
+| `TK021` | Falta el token de autenticación.| Verifica si el token de autenticación fue enviado.|
+| `TK022` | Los datos del token no se proporcionaron o son inválidos.| Contacta al soporte de Bamboo para más información.|
+| `TK023` | La autenticación ya ha sido procesada.| Verifica si el token de autenticación ya fue utilizado.|
+| `TK024` | La autenticación no requiere 3DS.| Verifica si el token ya fue usado o si se requiere autenticación.|
 | `TK999` | Error desconocido. | Contacte a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
 
 ### Errores del servicio Transactions {#transactions-service-errors}

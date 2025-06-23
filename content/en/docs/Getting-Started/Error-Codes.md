@@ -67,6 +67,11 @@ Tokenization errors always starts with `TK`.
 | `TK017` | Invalid document. | The document provided is not valid according to the country rules. |
 | `TK018` | Invalid document type | The document type sent is not valid or does not belong to the country. |
 | `TK019` | Invalid payment type | The payment type selected is not valid or does not belong to the country. |
+| `TK020` | The authentication token sent is invalid.| Verify authentication token.|
+| `TK021` | Authentication token is missing| Check if authentication token was sent.|
+| `TK022` | The token data is not provided or is invalid| Contact Bamboo support for more information.|
+| `TK023` | The authentication has already been processed.| Check if authentication token has already been used.|
+| `TK024` | The authentication does not need 3ds.| Check if authentication token has already been used, or if it is required. |
 | `TK999` | Unknown error. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
 
 
