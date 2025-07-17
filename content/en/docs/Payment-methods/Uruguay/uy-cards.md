@@ -293,10 +293,66 @@ Example of BIN (first 6 digits) for testing specific card types:
 * **Creditel** and **PassCard** and **OCA** require that the purchase message include the cardholder's document and type of document (fields `Customer.DocumentTypeId` and `Customer.DocNumber`).
 * You can make purchases in installments as long as the Issuing Bank has it enabled.
 * You can make purchases with Debit Cards as long as the Issuing Bank has it enabled
-* **Visanet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
+* **Totalnet** requires the inclusion of the CVV in the customer’s first purchase or the customer’s registration.<br>Once you make the registration and obtain the _Commerce Token_, it is not necessary to request the CVV in future transactions.
 * **Fiserv** requires you to send the CVV, even if you have the _Commerce Token_. You need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>This modality is enabled by default. If you wish to deactivate it, you must negotiate with **Fiserv** and notify us.
 * **PassCard** requires you to send the CVV, even if you have the _Commerce Token_. Therefore, you need to execute [Verification Code Request Flow]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * When using **OCAOneClick2** (OCA Multi-Acquiring), you need to include the IP address of the person making the purchase. To do this, you must send the `CustomerIP` parameter in the request.
+
+### Device Fingerprint Implementation for Totalnet
+
+For integrations using **Totalnet** acquiring, the merchant must implement *device fingerprint* collection as part of the payment process. This information must be included in the `fingerprintid` field within the `purchase` object.
+
+##### Environments and Org ID
+
+Depending on the environment, use the appropriate `org_id`:
+
+| Environment   | org_id     |
+|---------------|------------|
+| **TEST**      | `1snn5n9w` |
+| **PRODUCTION**| `k8vif92e` |
+
+##### HTML Implementation Example
+
+The following code must be included on the merchant's checkout page:
+
+```html
+<!-- HEAD -->
+<head>
+  <script type="text/javascript" src="https://h.online-metrix.net/fp/tags.js?org_id=1snn5n9w&session_id=merchantID123456789"></script>
+</head>
+
+<!-- BODY -->
+<body>
+  <noscript>
+    <iframe style="width: 100px; height: 100px; border: 0; position:absolute; top: -5000px;"
+            src="https://h.online-metrix.net/fp/tags?org_id=1snn5n9w&session_id=merchantID123456789">
+    </iframe>
+  </noscript>
+</body>
+```
+- Replace `merchantID123456789` with your **Totalnet Merchant ID**, formatted as `visanetuy_pw_###` followed by a unique identifier generated for each transaction.  
+  Example: `visanetuy_pw_200812311111111`
+
+- Ensure that the tags are placed exactly at the beginning of the `<head>` and `<body>` of your checkout page. If placed elsewhere, data collection may fail.
+
+##### Sending the Session ID
+
+Once the scripts have been executed and the `session_id` is generated, this value must be sent in the `AntifraudFingerprintId` field within the `purchase` transaction object:
+
+```json
+{
+  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
+  "Capture": true,
+  "Order": "20201229",
+  "Amount": "10000",
+  "Currency": "USD",
+  "TargetCountryISO": "UY",
+  "AntifraudData": {
+            "AntifraudFingerprintId": "e28eb34236754610b232198b9e0c1526"
+   }
+}
+```
+
 
 ### Purchases using MasterCard through OCA
 When using **MasterCard**, sending the device FingerPrint using the `SetDeviceFingerPrint` method is recommended.

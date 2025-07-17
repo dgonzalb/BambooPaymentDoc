@@ -301,14 +301,67 @@ Ejemplo de BIN (6 primeros dígitos) para comprobar tipos de tarjeta específico
 * **Creditel**,  **PassCard** y **OCA** requieren que el mensaje de `Purchase` incluya el número y tipo de documento del tarjetahabiente (campos `Customer.DocumentTypeId` y `Customer.DocNumber`).
 * Puede realizar compras a cuotas siempre que el Banco Emisor lo tenga habilitado.
 * Puede realizar compras con Tarjetas de Débito siempre que el Banco Emisor lo tenga habilitado.
-* **Visanet** exige la inclusión del CVV en la primera compra del cliente o en el alta del cliente.<br>Una vez realizado el registro y obtenido el _Commerce Token_, no es necesario solicitar el CVV en futuras transacciones.
+* **Totalnet** exige la inclusión del CVV en la primera compra del cliente o en el alta del cliente.<br>Una vez realizado el registro y obtenido el _Commerce Token_, no es necesario solicitar el CVV en futuras transacciones.
 * **Fiserv** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Debe ejecutar [Flujo de solicitud de código de verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).<br>Esta modalidad está activada por defecto. Si desea desactivarla, debe negociar con **Fiserv** y notificarnoslo.
 * **PassCard** requiere que se envíe el CVV, incluso si tiene el _Commerce Token_. Por lo tanto, debe ejecutar el [Flujo de Solicitud de Código de Verificación]({{< ref Registered-users.md >}}#verification-code-request-flow).
 * Cuando utilice **OCAOneClick2** (OCA Multi-Acquiring), necesita incluir la dirección IP de la persona que está haciendo la compra. Para esto, debe enviar el parámetro `CustomerIP` en el request.
 
+### Implementación de Device Fingerprint para Totalnet
+
+Para las integraciones con adquirencia **Totalnet**, el comercio debe implementar la recolección de *device fingerprint* como parte del proceso de pago. Esta información se debe incluir en el campo `fingerprintid` dentro del objeto `purchase`. 
+
+##### Ambientes y Org ID
+
+Según el ambiente, se debe utilizar uno de los siguientes `org_id`:
+
+| Ambiente    | org_id     |
+|-------------|------------|
+| **TEST**    | `1snn5n9w` |
+| **PRODUCCIÓN** | `k8vif92e` |
+
+##### Ejemplo de implementación HTML
+
+El siguiente código debe ser incluido en la página de checkout del comercio:
+
+```html
+<!-- HEAD -->
+<head>
+  <script type="text/javascript" src="https://h.online-metrix.net/fp/tags.js?org_id=1snn5n9w&session_id=merchantID123456789"></script>
+</head>
+
+<!-- BODY -->
+<body>
+  <noscript>
+    <iframe style="width: 100px; height: 100px; border: 0; position:absolute; top: -5000px;"
+            src="https://h.online-metrix.net/fp/tags?org_id=1snn5n9w&session_id=merchantID123456789">
+    </iframe>
+  </noscript>
+</body>
+```
+- Reemplaza `merchantID123456789` con tu **Totalnet Merchant ID**, determinado como `visanetuy_pw_###` seguido de un identificador único generado por cada transacción. Ejemplo: `visanetuy_pw_200812311111111`
+
+- Asegúrate de que los tags estén exactamente al comienzo del `<head>` y del `<body>` de tu página de checkout. Si se colocan en otra ubicación, la recopilación de datos puede fallar.
+
+##### Envío del session ID
+
+Una vez que los scripts han sido ejecutados y se ha generado el `session_id`, este valor debe ser enviado en el campo `AntifraudFingerprintId` dentro de la estructura de la transacción `purchase`:
+
+```json
+{
+  "TrxToken": "OT__AJrM-jq7nqEZUiuiTpUzImdM_6Cp7rxT4jiYpVJ8SzQ_",
+  "Capture": true,
+  "Order": "20201229",
+  "Amount": "10000",
+  "Currency": "USD",
+  "TargetCountryISO": "UY",
+  "AntifraudData": {
+            "AntifraudFingerprintId": "e28eb34236754610b232198b9e0c1526"
+   }
+}
+```
+
 ### Compras utilizando MasterCard a través de OCA {#purchases-using-mastercard-through-oca}
 Cuando utilice **MasterCard** en el model Gateway, se recomienda enviar el device FingerPrint utilizando el método `SetDeviceFingerPrint`.
-
 Agregue esta función al script utilizado en para el formulario de Checkout (`PWCheckOut`) para generar y retornar el valor utilizado en la compra.
 
 En este ejemplo, mostramos cómo invocar y obtener el resultado.
