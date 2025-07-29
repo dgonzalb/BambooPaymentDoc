@@ -27,7 +27,7 @@ El Payout se solicita en dólares estadounidenses y el beneficiario recibe los f
 El Payout se solicita en moneda local y el beneficiario recibe los fondos en moneda local.
 
 ### USD to USD (USD2USD)
-El Payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en dólares estadounidenses. Actualmente, este modelo sólo está disponible en Perú.
+El Payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en dólares estadounidenses. Actualmente, este modelo sólo está disponible en Perú y Uruguay.
 
 ## Payout
 _Payout_ se refiere a la dispersión de fondos a un tercero utilizando los fondos depositados en la cuenta del comercio. 

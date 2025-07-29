@@ -48,7 +48,7 @@ The WebHook service is a REST Service that must process a request with the follo
 | `localAmount` | `object` | Value and currency requested in the Payout in local currency. |
 | `exchangeRate` | `numeric` | Conversion value used in the Payout. |
 | `payee` | `object` | Information of the recipient or beneficiary of the Payout. |
-
+| `description` | `string` | The description/reason entered in the request. |
 
 ### Notification example
 {{< highlight json >}}

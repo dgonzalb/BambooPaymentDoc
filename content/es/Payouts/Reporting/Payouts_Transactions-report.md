@@ -82,6 +82,20 @@ Los parámetros van en el request añadidos en la URL del endpoint, seguido de u
 | `data` → `pixPhone`                 | `string`      | Número de teléfono para el pago mediante PIX.                                                                       |
 | `data` → `pixDocument`              | `string`      | Documento asociado al pago mediante PIX.                                                                            |
 | `data` → `pixEmail`                 | `string`      | Correo electrónico asociado al pago mediante PIX.                                                                   |
+|`data` → `description `       | `string`   | La descripción / razón ingresada en el request.|
+|`data` → `customerBirthDay`   | `datetime` | Fecha de nacimiento del beneficiario. 
+|`data` → `customerCity   `    | `string`   | Ciudad de residencia del beneficiario.
+|`data` → `customerZipCode `   | `string`   | Código postal de residencia del beneficiario.
+|`data` → `customerNationality`| `string`   | País de nacionalidad del beneficiario.|
+|`data` → `remitterFirstName ` | `string`   | Nombre del Remitente. 
+|`data` → `remitterLastName `  | `string`   | Apellido del Remitente. 
+|`data` → `remitterCompanyName`| `string`   | Nombre de la persona jurídica (empresa) Remitente. 
+|`data` → `remitterCountry  `  | `string`   | País de residencia del Remitente
+|`data` → `remitterBirthday  ` | `datetime` | Fecha de nacimiento del Remitente. 
+|`data` → `remitterAddress  `  | `string`   | Dirección del Remitente. 
+|`data` → `remitterZipCode  `  | `string`   | Código postal del Remitente. 
+|`data` → `remitterCity     `  | `string`   | Ciudad del Remitente. 
+|`data` → `bankSwift       `   | `string`   | Código de ruteo internacional.
 | `total`                             | `integer`     | Número total de registros en la respuesta.                                                                          |
 | `page`                              | `integer`     | Página actual en los resultados paginados.                                                                          |
 | `pageSize`                          | `integer`     | Tamaño de la página actual en los resultados paginados.                                                             |

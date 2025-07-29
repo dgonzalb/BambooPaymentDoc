@@ -33,7 +33,7 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 
 ![PrintScreen](/assets/Payouts/Payouts15_en.png)
 
-| Campo | ¿Obligatorio? | Descripción |
+<!--| Campo | ¿Obligatorio? | Descripción |
 |---|:-:|---|---|
  | **Country** | Sí | Código ISO del país en formato `ISO 3166-2`.<br>[Listado de países disponibles de Payouts](../overview.html#coverage). |
  | **Amount** | Sí | Monto del Payout, el formato tiene dos dígitos decimales.<br>Ejemplo _100_ => _$ 1,00_. |
@@ -54,11 +54,52 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
  | **Payee.BankAccount.Type** | Sí<sup>1</sup> | Tipo de cuenta del Beneficiario. Asigne `1` para Cuenta corriente y `2` para Cuenta de ahorros. |
  | **Payee.BankAccount.CodeBank** | Sí<sup>1</sup> | Código del banco del Beneficiario. | 
  | **Payee.BankAccount.Branch** | No | Código de la sucursal del banco del Beneficiario. Este campo solo aplica para Brasil y es obligatorio cuando utilice transferencia bancaria como tipo de Payout. | 
- | **Notification_Url** | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |
+ | **Notification_Url** | No | Webhook para notificar el resultado del Payout. Para más información sobre la configuración de este webhook, consulte este [artículo]({{< ref Payout-Webhook.md >}}). |-->
+
+ | Campo | ¿Obligatorio? | Descripción |
+|-------|:------------:|-------------|
+| **Country** | Sí | Código ISO del país en formato `ISO 3166-2`. [Listado de países disponibles](../overview.html#coverage). |
+| **Amount** | Sí | Monto con dos decimales. Ejemplo: `100` = $1.00. |
+| **Currency** | Sí | Código ISO de moneda origen. [Lista de monedas](../payouts-api/variables.html#currencies). |
+| **destinationCurrency** | Sí | Moneda de destino según modelo de cuenta (USD2L, USD2USD, L2L). |
+| **Reason** | No | Descripción del Payout. |
+| **Reference** | Sí | ID único (no debe repetirse en historial). |
+| **Type** | Sí | [Tipo de transferencia]({{< ref Variables.md >}}#transfer-types-for-payouts). |
+| **Payee.FirstName** | Sí<sup>2</sup> | Nombre beneficiario. |
+| **Payee.LastName** | Sí<sup>2</sup> | Apellido beneficiario. |
+| **Payee.CompanyName** | Sí<sup>2</sup> | Empresa (si aplica). |
+| **Payee.Email** | No | Email beneficiario. |
+| **Payee.Phone** | No | Teléfono beneficiario. |
+| **Payee.Birthday** | No | Fecha nacimiento (YYYY-MM-DD). |
+| **Payee.Nationality** | No | Nacionalidad (ISO 2 dígitos). |
+| **Payee.Address** | Sí<sup>4</sup> | Dirección beneficiario. |
+| **Payee.City** | Sí<sup>4</sup> | Ciudad residencia. |
+| **Payee.ZipCode** | No | Código postal. |
+| **Payee.Document.Type** | Sí | [Tipo documento]({{< ref Variables.md >}}#document-types). |
+| **Payee.Document.Number** | Sí | Número documento. |
+| **Payee.BankAccount.Number** | Sí<sup>1</sup> | CBU/CVU (AR), CLABE (MX), etc. |
+| **Payee.BankAccount.Swift** | Sí<sup>3</sup> | Código SWIFT (internacional). |
+| **Payee.BankAccount.Type** | Sí<sup>1</sup> | `1`=Corriente, `2`=Ahorros. |
+| **Payee.BankAccount.CodeBank** | Sí<sup>1</sup> | Código banco. |
+| **Payee.BankAccount.Branch** | No | Sucursal (obligatorio para BR en transfers). |
+| **Remitter.FirstName** | Sí<sup>3</sup> | Nombre remitente. |
+| **Remitter.LastName** | Sí<sup>3</sup> | Apellido remitente. |
+| **Remitter.CompanyName** | Sí<sup>3</sup> | Empresa remitente. |
+| **Remitter.Birthday** | No | Fecha nacimiento remitente. |
+| **Remitter.Country** | No | País residencia remitente. |
+| **Remitter.Address** | Sí<sup>3</sup> | Dirección remitente. |
+| **Remitter.ZipCode** | No | Código postal remitente. |
+| **Remitter.City** | No | Ciudad remitente. |
+| **Notification_Url** | No | Webhook para notificaciones. |
+
 
 <sup>1</sup> _Cuando utilice Transferencias Bancarias, estos parámetros son obligatorios para_ ***TODOS*** _los países. Para Transferencias Bancarias Instantáneas en Brasil, las columnas `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank` y `Payee.BankAccount.Branch` no deben estar presentes en el request._
 <br>
 <sup>2</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._
+<br>
+<sup>3</sup> _Estos campos son obligatorios **solamente** para hacer transferencias bancarias a los siguientes países: Bosnia y Herzegovina, Bulgaria, Costa Rica, República Dominicana, Egipto, Guatemala, Israel, Nicaragua, Noruega, Paraguay y Turquía._
+<br>
+<sup>4</sup> _Estos campos son obligatorios **solamente** para hacer transferencias bancarias a Egipto._
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
 * **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.

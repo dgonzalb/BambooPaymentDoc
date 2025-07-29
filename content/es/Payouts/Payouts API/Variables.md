@@ -11,6 +11,10 @@ weight: 60
 ## Códigos de bancos {#bank-codes}
 Las siguientes tablas muestran el código bancario que puede asignar en el parámetro `payee.bankaccount.codebank` en función del país.
 
+{{% alert title="Importante" color="warning"%}}
+Actualmente no disponemos del listado de nombres y códigos bancarios soportados para: **Bosnia y Herzegovina**, **Bulgaria**, **Costa Rica**, **República Dominicana**, **Egipto**, **Guatemala**, **Israel**, **Nicaragua**, **Noruega**, **Paraguay** y **Turquía**.
+{{% /alert %}}
+
 ### Argentina
 
 <details>
@@ -755,8 +759,8 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 ### México {#mexico-1}
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CURP | Clave Única de Registro de Población | Individuos | | Entre 8 y 18 |
-| RFC | Registro Federal de Contribuyentes | Individuos y Compañías | | Entre 8 y 18 |
+| CURP | Clave Única de Registro de Población | Individuos | Alfanumérico| Entre 8 y 18 |
+| RFC | Registro Federal de Contribuyentes | Individuos y Compañías | Alfanumérico| Entre 8 y 18 |
 
 <!--### Nicaragua
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
@@ -778,6 +782,71 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | 12 |
 | RUT | Registro Único Tributario | Compañías | Numérico | 12 |
 
+### Bosnia y Herzegovina {#bosnia-and-herzegovina}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+| DNI | Documento Nacional de Identidad | Individuos | Numérico | Entre 1 y 99 |
+
+### Bulgaria {#bulgaria}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| BULSTAT | Registro unificado de sujetos económicos y de sus sucursales | Individuos y Compañias | Alfanumérico | Entre 1 y 99 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+
+### Costa Rica {#costa-rica}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+| CI | Cédula de Identidad | Individuos | Numérico | Entre 9 y 12 |
+
+### Republica Dominicana {#dominican-republic}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| CI | Cédula de Identidad | Individuos | Numérico | 11 |
+| RNC | Registro Nacional de Contribuyentes | Individuos | Alfanumérico | 11 |
+
+### Egipto {#egypt}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| DNI | Documento Nacional de Identidad | Individuos | Alafunumérico | Entre 1 y 99 |
+
+### Guatemala {#guatemala}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| DNI | Documento Nacional de Identidad | Individuos | Alfanumérico | Entre 1 y 99 |
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+
+### Israel {#israel}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+| DNI | Documento Nacional de Identidad | Individuos | Alfanumérico | Entre 1 y 99 |
+
+### Nicaragua {#nicaragua}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| CEDULA | Cédula de Identificación Ciudadana | Individuos | Alfanumérico | Entre 1 y 99 |
+| RUC |  | Compañias | Alfanumérico | Entre 1 y 99 |
+
+### Noruega {#norway}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+| DNI | Documento Nacional de Identidad | Individuos | Alfanumérico | Entre 1 y 99 |
+
+### Paraguay {#paraguay}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | Documento de Viaje Internacional | Individuos | Alfanumérico | Entre 1 y 99 |
+| CEDULA | Cédula de identidad | Individuos | Alfanumérico | Entre 1 y 99 |
+| RUC | Registro Único de Contribuyente | Compañias | Alfanumérico | Entre 1 y 99 |
+
+### Turquía {#turkey}
+| Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| TCKN | Número de identificación nacional turco |  Individuos| Alfanumérico | Entre 1 y 99 |
+
 ## Monedas {#currencies}
 La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `destinationCurrency` para solicitud de Payouts.
 
@@ -785,14 +854,30 @@ La siguiente tabla muestra las divisas disponibles que puede configurar en los p
 
 | Moneda | Descripción |
 |:-:|---|
-| `USD` | Dólar estadounidense|
+| `USD` | Dólar estadounidense |
 | `ARS` | Peso argentino |
-| `BRL` | Real Brasileño|
+| `BRL` | Real brasileño |
 | `CLP` | Peso chileno |
 | `COP` | Peso colombiano |
 | `MXN` | Peso mexicano |
 | `PEN` | Sol peruano |
 | `UYU` | Peso uruguayo |
+| `BAM` | Marco bosnioherzegovino |
+| `BGN` | Lev búlgaro |
+| `CRC` | Colón costarricense |
+| `DOP` | Peso dominicano |
+| `EGP` | Libra egipcia |
+| `GTQ` | Quetzal guatemalteco |
+| `ILS` | Shekel israelí |
+| `NIO` | Córdoba nicaragüense |
+| `NOK` | Corona noruega |
+| `PYG` | Guaraní paraguayo |
+| `TRY` | Lira turca |
+
+{{% alert title="Info" color="info"%}}
+En **Uruguay** admitimos ambas monedas (UYU y USD), al igual que en **Bosnia y Herzegovina** donde aceptamos tanto BAM como EUR.
+{{% /alert %}}
+
 
 ## Tipos de Transferencias para Payout {#transfer-types-for-payouts}
 La siguiente tabla muestra los tipos de transferencias que puede configurar en el parámetro `type`.

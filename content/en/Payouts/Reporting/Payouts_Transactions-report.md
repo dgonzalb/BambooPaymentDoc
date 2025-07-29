@@ -80,6 +80,20 @@ Parameters should be added to the request URL of the endpoint, followed by a `?`
 | `data` → `pixPhone`                 | `string`      | Phone number for PIX payment.                                                                                       |
 | `data` → `pixDocument`              | `string`      | Document associated with PIX payment.                                                                               |
 | `data` → `pixEmail`                 | `string`      | Email associated with PIX payment.                                                                                  |
+| `data` → `description`         | `string`   | The description/reason entered in the request. |
+| `data` → `customerBirthDay`    | `datetime` | Beneficiary's date of birth. |
+| `data` → `customerCity`        | `string`   | Beneficiary's city of residence. |
+| `data` → `customerZipCode`     | `string`   | Beneficiary's postal code. |
+| `data` → `customerNationality` | `string`   | Beneficiary's country of nationality. |
+| `data` → `remitterFirstName`   | `string`   | Remitter's first name. |
+| `data` → `remitterLastName`    | `string`   | Remitter's last name. |
+| `data` → `remitterCompanyName` | `string`   | Legal entity name (company) of the remitter. |
+| `data` → `remitterCountry`     | `string`   | Remitter's country of residence. |
+| `data` → `remitterBirthday`    | `datetime` | Remitter's date of birth. |
+| `data` → `remitterAddress`     | `string`   | Remitter's address. |
+| `data` → `remitterZipCode`     | `string`   | Remitter's postal code. |
+| `data` → `remitterCity`        | `string`   | Remitter's city. |
+| `data` → `bankSwift`           | `string`   | International routing code (SWIFT/BIC). |
 | `total`                             | `integer`     | Total number of records in the response.                                                                            |
 | `page`                              | `integer`     | Current page in the paginated results.                                                                              |
 | `pageSize`                          | `integer`     | Size of the current page in the paginated results.                                                                  |

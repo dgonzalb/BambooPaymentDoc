@@ -48,7 +48,7 @@ El servicio WebHook es un servicio REST que debe procesar una solicitud con las 
 | `localAmount` | `object` | Valor y moneda solicitado en el Payout en moneda local. |
 | `exchangeRate` | `numeric` | Valor de conversión utilizado en el Payout. |
 | `payee` | `object` | Información del beneficiario del Payout.  |
-
+| `description` | `string` | La descripción / razón ingresada en el request.  |
 
 
 ### Ejemplo de la notificación {#notification-example}

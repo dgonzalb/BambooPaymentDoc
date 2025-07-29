@@ -33,32 +33,49 @@ Once you have the Excel file, you can fill it with the information of the Payout
 
 ![PrintScreen](/assets/Payouts/Payouts15_en.png)
 
-| Field | Mandatory? | Description |
-|---|:-:|---|---|
- | **Country** | Yes | ISO code of the country in the format `ISO 3166-2`.<br>[List of countries available for Payouts](../overview.html#coverage). |
- | **Amount** | Yes | Amount of the Payout, the format has two digits for decimals.<br>Example _100_ => _$ 1,00_. |
- | **Currency** | Yes | ISO code of your account's currency, which corresponds to the origin currency.<br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
- | **destinationCurrency** | Yes | ISO code of the currency in which the beneficiary will receive the payout. This currency must meet the [model]({{< ref  Payout-Concepts.md >}}#payout-models) of your account.<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the **Currency** column must be _USD_, and the **destinationCurrency** is optional.</li><li>For _**USD2USD**_, both **Currency** and **destinationCurrency** must be _USD_.</li><li>For _**L2L**_, **Currency** and **destinationCurrency** must be the chosen country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
- | **Reason** | No | Description of the Payout. |
- | **Reference** | Yes | Unique identifier of the Payout defined by you.<br>_This reference should not appear more than once in the file or exist in previous Payouts._. |
- | **Type** | Yes | Transfer Payout type.<br>[List of countries available for Payouts]({{< ref Variables.md >}}#transfer-types-for-payouts). |
- | **Payee.FirstName** | Yes<sup>2</sup> | First Name of the Payee. | 
- | **Payee.LastName** | Yes<sup>2</sup> | Last Name of the Payee. | 
- | **Payee.CompanyName** | Yes<sup>2</sup> | Name of the company. | 
- | **Payee.Email** | No | Email address of the Payee. | 
- | **Payee.Phone** | No | Phone number of the Payee. | 
- | **Payee.Address** | No | Address of the Payee. | 
- | **Payee.Document.Type** | Yes | Document type of the Payee.<br>[Find the document list here]({{< ref Variables.md >}}#document-types). | 
- | **Payee.Document.Number** | Yes | Document number of the Payee. | 
- | **Payee.BankAccount.Number** | Yes<sup>1</sup> | Bank account number of the Payee.<br>Take into account the following considerations:<br><ul style="margin-bottom: initial;"><li>For Argentina, set the CBU/CVU.</li><li>For Mexico, set the CLABE number.</li></ul> |
- | **Payee.BankAccount.Type** | Yes<sup>1</sup> | Account type of the Payee.<br>Set `1` for Checking and `2` for Savings. |
- | **Payee.BankAccount.CodeBank** | Yes<sup>1</sup> | Bank code of the Payee. | 
- | **Payee.BankAccount.Branch** | No | Branch code of the Payee's bank. This field applies only to Brazil and is mandatory when using Bank transfer as the Payout type. | 
- | **Notification_Url** | No | Webhook to notify the result of the Payout. For more information about the configuration of this webhook, refer to this [article]({{< ref Payout-Webhook.md >}}). |
+| Field | Required? | Description |
+|-------|:---------:|-------------|
+| **Country** | Yes | Country code in `ISO 3166-2` format. [List of available countries](../overview.html#coverage). |
+| **Amount** | Yes | Amount with two decimals. Example: `100` = $1.00. |
+| **Currency** | Yes | Origin currency ISO code. [Currency list](../payouts-api/variables.html#currencies). |
+| **destinationCurrency** | Yes | Destination currency according to account model (USD2L, USD2USD, L2L). |
+| **Reason** | No | Payout description. |
+| **Reference** | Yes | Unique ID (cannot be duplicated in history). |
+| **Type** | Yes | [Transfer type]({{< ref Variables.md >}}#transfer-types-for-payouts). |
+| **Payee.FirstName** | Yes<sup>2</sup> | Beneficiary first name. |
+| **Payee.LastName** | Yes<sup>2</sup> | Beneficiary last name. |
+| **Payee.CompanyName** | Yes<sup>2</sup> | Company name (if applicable). |
+| **Payee.Email** | No | Beneficiary email. |
+| **Payee.Phone** | No | Beneficiary phone number. |
+| **Payee.Birthday** | No | Date of birth (YYYY-MM-DD). |
+| **Payee.Nationality** | No | Nationality (2-digit ISO code). |
+| **Payee.Address** | Yes<sup>4</sup> | Beneficiary address. |
+| **Payee.City** | Yes<sup>4</sup> | City of residence. |
+| **Payee.ZipCode** | No | Postal code. |
+| **Payee.Document.Type** | Yes | [Document type]({{< ref Variables.md >}}#document-types). |
+| **Payee.Document.Number** | Yes | Document number. |
+| **Payee.BankAccount.Number** | Yes<sup>1</sup> | CBU/CVU (AR), CLABE (MX), etc. |
+| **Payee.BankAccount.Swift** | Yes<sup>3</sup> | SWIFT code (international). |
+| **Payee.BankAccount.Type** | Yes<sup>1</sup> | `1`=Checking, `2`=Savings. |
+| **Payee.BankAccount.CodeBank** | Yes<sup>1</sup> | Bank code. |
+| **Payee.BankAccount.Branch** | No | Branch code (required for BR in transfers). |
+| **Remitter.FirstName** | Yes<sup>3</sup> | Remitter first name. |
+| **Remitter.LastName** | Yes<sup>3</sup> | Remitter last name. |
+| **Remitter.CompanyName** | Yes<sup>3</sup> | Remitter company name. |
+| **Remitter.Birthday** | No | Remitter date of birth. |
+| **Remitter.Country** | No | Remitter country of residence. |
+| **Remitter.Address** | Yes<sup>3</sup> | Remitter address. |
+| **Remitter.ZipCode** | No | Remitter postal code. |
+| **Remitter.City** | No | Remitter city. |
+| **Notification_Url** | No | Webhook for notifications. |
 
-<sup>1</sup> _When using Bank transfer, these parameters are mandatory for_ ***ALL*** _countries. For Instant Bank Transfer in Brazil, the columns `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank`, and `Payee.BankAccount.Branch` must not be present in the request._
+<sup>1</sup> _Required for Bank Transfers in **ALL** countries. For Instant Bank Transfers in Brazil, the fields `Payee.BankAccount.Type`, `Payee.BankAccount.CodeBank` and `Payee.BankAccount.Branch` must not be included in the request._
 <br>
-<sup>2</sup> _The fields `firstName` and `lastName` for an individual and `companyName` for a legal person (company) are mandatory. If a payout is sent for a company only the `companyName` field has to be filled in, and if a payout is sent to a natural person only the `firstName` and `lastName` fields have to be filled in._
+<sup>2</sup> _Fields `firstName` and `lastName` are mandatory for individuals and `companyName` for legal entities (companies). For company payouts only `companyName` is required, while for individual payouts only `firstName` and `lastName` are required._
+<br>
+<sup>3</sup> _These fields are required **only** for bank transfers to the following countries: Bosnia and Herzegovina, Bulgaria, Costa Rica, Dominican Republic, Egypt, Guatemala, Israel, Nicaragua, Norway, Paraguay, and Turkey._
+<br>
+<sup>4</sup> _These fields are required **only** for bank transfers to Egypt._
 
 {{% alert title="Important about Express Payouts" color="warning"%}}
 * Do **NOT** modify the downloaded file by adding new columns, sheets or changing the column names.

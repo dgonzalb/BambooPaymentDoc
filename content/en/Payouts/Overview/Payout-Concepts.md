@@ -39,7 +39,7 @@ The payout is requested in US Dollars and the payee receives the funds in local 
 The payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.
 
 ### USD to USD (USD2USD)
-The payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.
+The payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru and Uruguay.
 
 ## Sanction screening
 _Sanction screening_ lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.

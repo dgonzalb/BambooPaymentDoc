@@ -11,6 +11,10 @@ weight: 50
 ## Bank codes
 The following tables show the bank code you can set in the parameter `payee.bankaccount.codebank` according to the country. 
 
+{{% alert title="Important" color="warning"%}}
+We currently do not have a list of supported bank names and codes for the following countries: **Bosnia and Herzegovina**, **Bulgaria**, **Costa Rica**, **Dominican Republic**, **Egypt**, **Guatemala**, **Israel**, **Nicaragua**, **Norway**, **Paraguay**, and **Turkey**.
+{{% /alert %}}
+
 ### Argentina
 
 <details>
@@ -754,8 +758,8 @@ The following tables show the document types you must configure in the parameter
 ### Mexico
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| CURP | Unique Population Registry Key | Individuals | | Between 8 and 18 |
-| RFC | Federal Taxpayer Registry | Individuals and Companies | | Between 8 and 18 |
+| CURP | Unique Population Registry Key | Individuals | Alphanumeric| Between 8 and 18 |
+| RFC | Federal Taxpayer Registry | Individuals and Companies |Alphanumeric | Between 8 and 18 |
 
 <!--### Nicaragua
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -777,6 +781,71 @@ The following tables show the document types you must configure in the parameter
 | PASSPORT | International Travel Document | Individuals | Alphanumeric | 12 |
 | RUT | Single Tax Registry | Companies | Numeric | 12 |
 
+### Bosnia and Herzegovina {#bosnia-and-herzegovina}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+| DNI | National Identity Document | Individuals | Numeric | 1 to 99 |
+
+### Bulgaria {#bulgaria}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| BULSTAT | Unified Register of Economic Entities and Their Branches | Individuals and Companies | Alphanumeric | 1 to 99 |
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+
+### Costa Rica {#costa-rica}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+| CI | Identity Card | Individuals | Numeric | 9 to 12 |
+
+### Dominican Republic {#dominican-republic}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CI | Identity Card | Individuals | Numeric | 11 |
+| RNC | National Taxpayer Registry | Individuals | Alphanumeric | 11 |
+
+### Egypt {#egypt}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| DNI | National Identity Document | Individuals | Alphanumeric | 1 to 99 |
+
+### Guatemala {#guatemala}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| DNI | National Identity Document | Individuals | Alphanumeric | 1 to 99 |
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+
+### Israel {#israel}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+| DNI | National Identity Document | Individuals | Alphanumeric | 1 to 99 |
+
+### Nicaragua {#nicaragua}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CEDULA | Citizen Identification Card | Individuals | Alphanumeric | 1 to 99 |
+| RUC |  | Companies | Alphanumeric | 1 to 99 |
+
+### Norway {#norway}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+| DNI | National Identity Document | Individuals | Alphanumeric | 1 to 99 |
+
+### Paraguay {#paraguay}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| PASSPORT | International Travel Document | Individuals | Alphanumeric | 1 to 99 |
+| CEDULA | Identity Card | Individuals | Alphanumeric | 1 to 99 |
+| RUC | Single Taxpayer Registry | Companies | Alphanumeric | 1 to 99 |
+
+### Turkey {#turkey}
+| Abbreviation | Document Name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| TCKN | Turkish National Identification Number | Individuals | Alphanumeric | 1 to 99 |
+
 ## Currencies
 The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `destinationCurrency` for request Payouts.
 
@@ -792,6 +861,22 @@ The following table shows the currency available you can configure in the parame
 | `MXN` | Mexican Peso |
 | `PEN` | Peruvian Sol |
 | `UYU` | Uruguayan Peso |
+| `BAM` | Bosnia-Herzegovinian Marka |
+| `BGN` | Bulgarian Lev |
+| `CRC` | Costa Rican Colon |
+| `DOP` | Dominican Peso |
+| `EGP` | Egyptian Pound |
+| `GTQ` | Guatemalan Quetzal |
+| `ILS` | Israeli Shekel |
+| `NIO` | Nicaraguan Cordoba |
+| `NOK` | Norwegian Krone |
+| `PYG` | Paraguayan Guarani |
+| `TRY` | Turkish Lira |
+
+{{% alert title="Info" color="info"%}}
+In **Uruguay** we accept both currencies (UYU and USD), just as in **Bosnia and Herzegovina** where we accept both BAM and EUR.
+{{% /alert %}}
+
 
 ## Transfer types for Payouts
 The following table shows the transfer types you can configure in the parameter `type`.

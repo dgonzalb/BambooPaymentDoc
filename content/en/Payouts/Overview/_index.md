@@ -34,9 +34,19 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 
 * **USD to Local (USD2L)**: the payout is requested in US Dollars and the payee receives the funds in local currency.
 * **Local to Local (L2L)**: the payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.
-* **USD to USD (USD2USD)**: the payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru.
+* **USD to USD (USD2USD)**: the payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru and Uruguay.
 
 ## Coverage
+
+<!--| Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Brazil | `BR` | | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |-->
 
 | Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -47,6 +57,17 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 | Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
 | Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Bosnia and Herzegovina | `BA` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Bulgaria | `BG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Costa Rica | `CR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Dominican Republic | `DO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Egypt | `EG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Guatemala | `GT` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Israel | `IL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Nicaragua | `NI` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Norway | `NO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Paraguay | `PY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Turkey | `TR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
 
 {{% alert title="Important" color="info"%}}
 For **Peru**, payouts in **USD** can only be made to **banks**, while payouts in **Peruvian Soles (PEN)** can be sent to both **banks** and **wallets**.
@@ -56,7 +77,7 @@ For **Peru**, payouts in **USD** can only be made to **banks**, while payouts in
 ## Cut-off Schedule {#processing-schedule}
 Payments in all countries are processed in **real-time**. There are no cut-off times, meaning transactions are executed immediately without delays.
 
-<div id="shortTable"></div>
+<!--div id="shortTable"></div>
 
 <table>
 <thead>
@@ -91,8 +112,51 @@ Payments in all countries are processed in **real-time**. There are no cut-off t
     <td style="border-radius: 0 0 0 10px;">Uruguay</td>
   </tr>
 </tbody>
-</table>
-
+</table-->
+<div id="shortTable" style="max-width: 900px; font-family: Arial, sans-serif;">
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div style="flex: 1;">
+        <h3 style="margin-top: 0; margin-bottom: 10px; color: #2c3e50; font-size: 16px;">Real-time Processing Countries</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Argentina</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Brazil</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Chile</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Colombia</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Mexico</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Peru</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Uruguay</span>
+        </div>
+      </div>
+      <div style="background: #28a745; color: white; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 120px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Processing</div>
+        <div style="font-weight: bold; font-size: 16px; margin-top: 5px;">Real-time</div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="flex: 1;">
+        <h3 style="margin-top: 0; margin-bottom: 10px; color: #2c3e50; font-size: 16px;">T+1/T+2 Processing Countries</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Bosnia and Herzegovina</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Bulgaria</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Costa Rica</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Dominican Republic</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Egypt</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Guatemala</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Israel</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Nicaragua</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Norway</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Paraguay</span>
+          <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Turkey</span>
+        </div>
+      </div>
+      <div style="background: #ffc107; color: #212529; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 120px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Processing</div>
+        <div style="font-weight: bold; font-size: 16px; margin-top: 5px;">T+1 / T+2</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {{% alert title="Important" color="info"%}}
 * In Mexico, payouts are processed in real-time, but final confirmation and notifications occur 5 minutes later.
@@ -140,6 +204,68 @@ Example: `21790064060296600`.
   without the `+` symbol, with a minimum length of **9** and a maximum of **15** numeric characters.  
   **Example:** `987654321` (minimum) - `123456789012345` (maximum).
 
+### Bosnia and Herzegovina {#bosnia}
+
+* **IBAN**: 20 characters (BA39 + 16 digits). Numeric only.  
+  **Format:** `BA39DDDDDDDDDDDDDDDD`  
+  **Example:** `BA391234567890123456`
+
+### Bulgaria {#bulgaria}
+
+* **IBAN**: 22 characters (BG + 2 IBAN check digits + 18 digits). Alphanumeric.  
+  **Format:** `BGDDXXXXXXXXXXXXXXXXXX`  
+  **Example:** `BG0012BG567890123456`
+
+### Costa Rica {#costa-rica}
+
+* **IBAN**: 22 characters (CR + 2 IBAN check digits + 4 bank digits + 14 account digits). Numeric only.  
+  **Format:** `CRDDDDDDDDDDDDDDDDDDDD`  
+  **Example:** `CR1234567890123456789012`
+
+### Dominican Republic {#dominican-republic}
+
+* **Does not use IBAN**. Provide account number directly (up to 35 alphanumeric characters).  
+  **Example:** `ABCD1234567890`
+
+### Egypt {#egypt}
+
+* **IBAN**: 29 characters (EG + 2 IBAN check digits + 25 digits). Numeric only.  
+  **Format:** `EGDDDDDDDDDDDDDDDDDDDDDDDDD`  
+  **Example:** `EG123456789012345678901234567`
+
+### Guatemala {#guatemala}
+
+* **IBAN**: 28 characters (GT + 26 alphanumeric characters).  
+  **Format:** `GTXXXXXXXXXXXXXXXXXXXXXXXXXX`  
+  **Example:** `GT12KDYE78901234567890123456`
+
+### Israel {#israel}
+
+* **IBAN**: 23 characters (IL + 21 digits). Numeric only.  
+  **Format:** `ILDDDDDDDDDDDDDDDDDDDDD`  
+  **Example:** `IL123456789012345678901`
+
+### Nicaragua {#nicaragua}
+
+* **Does not use IBAN**. Provide account number directly (up to 35 alphanumeric characters).  
+  **Example:** `NICA1234567890`
+
+### Norway {#norway}
+
+* **IBAN**: 15 characters (NO + 11 digits). Numeric only.  
+  **Format:** `NODDDDDDDDDDD`  
+  **Example:** `NO1234567890123`
+
+### Paraguay {#paraguay}
+
+* **Does not use IBAN**. Provide account number directly (up to 35 alphanumeric characters).  
+  **Example:** `PAR1234567890`
+
+### Turkey {#turkey}
+
+* **IBAN**: 26 characters (TR + 22 digits).  
+  **Format:** `TRDDDDDDDDDDDDDDDDDDDDDD`  
+  **Example:** `TR1234567890123456789012`
 
 ### Uruguay
 
