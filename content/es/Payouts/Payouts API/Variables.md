@@ -875,7 +875,7 @@ La siguiente tabla muestra las divisas disponibles que puede configurar en los p
 | `TRY` | Lira turca |
 
 {{% alert title="Info" color="info"%}}
-En **Uruguay** admitimos ambas monedas (UYU y USD), al igual que en **Bosnia y Herzegovina** donde aceptamos tanto BAM como EUR.
+En **Uruguay** admitimos ambas monedas (UYU y USD), al igual que en **Perú** (PEN y USD).
 {{% /alert %}}
 
 

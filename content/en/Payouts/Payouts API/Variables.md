@@ -874,7 +874,7 @@ The following table shows the currency available you can configure in the parame
 | `TRY` | Turkish Lira |
 
 {{% alert title="Info" color="info"%}}
-In **Uruguay** we accept both currencies (UYU and USD), just as in **Bosnia and Herzegovina** where we accept both BAM and EUR.
+In **Uruguay** we accept both currencies (UYU and USD), as well as in **Peru** (PEN and USD).
 {{% /alert %}}
 
 
