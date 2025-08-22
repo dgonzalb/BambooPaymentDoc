@@ -8,7 +8,7 @@ Description: >
 weight: 60
 ---
 
-## Códigos de bancos {#bank-codes}
+## Códigos de Bancos y Billeteras {#bank-codes}
 Las siguientes tablas muestran el código bancario que puede asignar en el parámetro `payee.bankaccount.codebank` en función del país.
 
 {{% alert title="Importante" color="warning"%}}
@@ -578,9 +578,7 @@ Actualmente no disponemos del listado de nombres y códigos bancarios soportados
 | BMONEX          | `112`  | `2` |
 | CAJA POP MEXICA | `677`  | `2` |
 | CAJA TELEFONIST | `683`  | `2` |
-| CB INTERCAM     | `630`  | `2` |
 | CI BOLSA        | `631`  | `2` |
-| CIBANCO         | `143`  | `2` |
 | CITI MEXICO     | `124`  | `2` |
 | CLS             | `901`  | `2` |
 | COMPARTIMOS     | `130`  | `2` |
@@ -603,7 +601,6 @@ Actualmente no disponemos del listado de nombres y códigos bancarios soportados
 | INBURSA         | `036`  | `2` |
 | INDEVAL         | `902`  | `2` |
 | INMOBILIARIO    | `150`  | `2` |
-| INTERCAM BANCO  | `136`  | `2` |
 | INVERCAP        | `686`  | `2` |
 | INVEX           | `059`  | `2` |
 | JP MORGAN       | `110`  | `2` |
@@ -634,7 +631,6 @@ Actualmente no disponemos del listado de nombres y códigos bancarios soportados
 | VALMEX          | `617`  | `2` |
 | VALUE           | `605`  | `2` |
 | VE POR MAS      | `113`  | `2` |
-| VECTOR          | `608`  | `2` |
 | VOLKSWAGEN      | `141`  | `2` |
 
 </div>

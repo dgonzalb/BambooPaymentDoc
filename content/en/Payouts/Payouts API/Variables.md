@@ -8,7 +8,7 @@ Description: >
 weight: 50
 ---
 
-## Bank codes
+## Bank and Wallets Codes
 The following tables show the bank code you can set in the parameter `payee.bankaccount.codebank` according to the country. 
 
 {{% alert title="Important" color="warning"%}}
@@ -577,9 +577,7 @@ We currently do not have a list of supported bank names and codes for the follow
 | BMONEX          | `112`  | `2` |
 | CAJA POP MEXICA | `677`  | `2` |
 | CAJA TELEFONIST | `683`  | `2` |
-| CB INTERCAM     | `630`  | `2` |
 | CI BOLSA        | `631`  | `2` |
-| CIBANCO         | `143`  | `2` |
 | CITI MEXICO     | `124`  | `2` |
 | CLS             | `901`  | `2` |
 | COMPARTIMOS     | `130`  | `2` |
@@ -602,7 +600,6 @@ We currently do not have a list of supported bank names and codes for the follow
 | INBURSA         | `036`  | `2` |
 | INDEVAL         | `902`  | `2` |
 | INMOBILIARIO    | `150`  | `2` |
-| INTERCAM BANCO  | `136`  | `2` |
 | INVERCAP        | `686`  | `2` |
 | INVEX           | `059`  | `2` |
 | JP MORGAN       | `110`  | `2` |
@@ -633,7 +630,6 @@ We currently do not have a list of supported bank names and codes for the follow
 | VALMEX          | `617`  | `2` |
 | VALUE           | `605`  | `2` |
 | VE POR MAS      | `113`  | `2` |
-| VECTOR          | `608`  | `2` |
 | VOLKSWAGEN      | `141`  | `2` |
 
 </div>
