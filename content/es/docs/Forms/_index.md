@@ -20,17 +20,18 @@ Para integrar el Formulario de Tokenización, es necesario incluir un script que
 
 ```javascript
 //STAGE - Ambiente de Pruebas:
-<script src="https://capture.stage.bamboopayment.com/"
-		integrity="sha256-MZTrPbIEEQfZsVKZ0X2W0WKWynw90m2ZnLsf+K4d4f8= sha384-lR7NrY3+mgbapfzO93PhsFYrm2qY2U9qDGSb5pvZnrrQ+UgcwIuX3AQPAt0GXhn/ sha512-dFeUYkspbL2fl9a7cKzz0GJK/inIXIxd687/jHFMVEIv+/QV9FfnWK+CqkS9Lyq2iucNRvAz11kxkhlr7x9OMg=="
-		crossorigin="anonymous">
+<script src="https://capture.stage.bamboopayment.com/"  		
+        integrity="sha256-X8C6kzz5r0uxNzqtXB8q2tAkorRayzErzeIUm1f0xm4= sha384-Vt+ySpe3/DHlyv34xym7TY55eJ49WxXv6d2cHasu/GG/7h22MGUESq+3kQeHOaLC
+        sha512-B132Bu3DX6JkgamkFER/g2rcsfdTzrwNWOY5O2Wsfe8lm/H7TD1uGdnEuPvudq4ZRdCQDrWk6PwCVkgP1o2Szg=="
+        crossorigin="anonymous"> 
 	</script>
 ```
 
 ```javascript
 //PRODUCCIÓN:
-<script src="https://capture.bamboopayment.com/"
-		integrity="sha256-VjLXumZeKViFVhMpiaW5IUQZ213LOzPRw5DTde6AiVU= sha384-GRjWfO5d//CNj5CCFEo3xVfWn/rmZLZOvFkkdXsHE/PsECHSRWXDqjfJ930Bq4bM sha512-guivUBLq1cpFO5KnYnwIvM6UYAF6yA2rjLT0rBgniE+XZdgjN1//abizyKbyJ2y9j8MKmSJbKhLD3gmJVMh5ug=="
-		crossorigin="anonymous"> 
+<script src="https://capture.bamboopayment.com/"  		
+        integrity="sha256-E4GdhdwL0BVk9Xq/21s9qxvjh+anbzbgDVtfH6iCu7E= sha384-vbOT5y4OCop26UzV2VOfg0IAK+ToPU+mR09IcQChnn5kfD5W7b3YQNWXkJob3WWs sha512-j9jTPXduda6zgSUmoTvy9xEOlJOnYS2fKO0dEMiSK5VSB4bGfmKWfSHFLe7pjsFj3lu0K426c9F+7lXf/810Kg=="  		
+crossorigin="anonymous">
 	</script>
 ```
 
