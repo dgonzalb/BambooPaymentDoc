@@ -729,9 +729,9 @@ The following tables show the document types you must configure in the parameter
 ### Chile
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
-| CI | Identity Card | Individuals | Numeric | 8 or 9 |
-| RUN | Unique National Role | Individuals | Numeric | 8 or 9 |
-| RUT | Individuals Tax Role | Individuals | Numeric | 8 or 9 |
+| CI | Identity Card | Individuals | Numeric or Alphanumeric | 8 or 9 |
+| RUN | Unique National Role | Individuals | Numeric or Alphanumeric | 8 or 9 |
+| RUT | Individuals Tax Role | Individuals and Companies | Numeric or Alphanumeric | 8 or 9 |
 
 ### Colombia
 | Abbreviation | Document name | Individuals / Companies | Type | Length |

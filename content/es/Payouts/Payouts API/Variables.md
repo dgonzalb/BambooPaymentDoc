@@ -730,9 +730,9 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 ### Chile
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
-| CI | Cédula de Identidad | Individuos | Numérico | 8 o 9 |
-| RUN | Rol Único Nacional | Individuos | Numérico | 8 o 9 |
-| RUT | Rol Único Tributario | Individuos | Numérico | 8 o 9 |
+| CI | Cédula de Identidad | Individuos | Numérico o Alfanumérico | 8 o 9 |
+| RUN | Rol Único Nacional | Individuos | Numérico o Alfanumérico | 8 o 9 |
+| RUT | Rol Único Tributario | Individuos y Compañías | Numérico o Alfanumérico | 8 o 9 |
 
 ### Colombia
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
