@@ -49,9 +49,9 @@ Once you have the Excel file, you can fill it with the information of the Payout
 | **Payee.Phone** | No | Beneficiary phone number. |
 | **Payee.Birthday** | No | Date of birth (YYYY-MM-DD). |
 | **Payee.Nationality** | No | Nationality (2-digit ISO code). |
-| **Payee.Address** | Yes<sup>4</sup> | Beneficiary address. |
-| **Payee.City** | Yes<sup>4</sup> | City of residence. |
-| **Payee.ZipCode** | No | Postal code. |
+| **Payee.Location.Address** | Yes<sup>4</sup> | Beneficiary address. |
+| **Payee.Location.City** | Yes<sup>4</sup> | City of residence. |
+| **Payee.Location.ZipCode** | No | Postal code. |
 | **Payee.Document.Type** | Yes | [Document type]({{< ref Variables.md >}}#document-types). |
 | **Payee.Document.Number** | Yes | Document number. |
 | **Payee.BankAccount.Number** | Yes<sup>1</sup> | CBU/CVU (AR), CLABE (MX), etc. |
@@ -71,11 +71,27 @@ Once you have the Excel file, you can fill it with the information of the Payout
 
 <sup>1</sup> _When using Bank Transfers for **Argentina, Chile, Colombia, Mexico, Peru, and Uruguay**, these parameters are mandatory. For Instant Bank Transfers in Brazil, the `payee.bankaccount` object and its parameters must not be included in the request. For Bank Transfers to countries that require the `bankaccount.Swift` field, only `bankaccount.number` should be completed, and `bankaccount.type` and `bankaccount.codebank` must be left empty._
 <br>
-<sup>2</sup> _Fields `firstName` and `lastName` are mandatory for individuals and `companyName` for legal entities (companies). For company payouts only `companyName` is required, while for individual payouts only `firstName` and `lastName` are required._
-<br>
-<sup>3</sup> _These fields are required **only** for bank transfers to the following countries: Bosnia and Herzegovina, Bulgaria, Costa Rica, Dominican Republic, Egypt, Guatemala, Israel, Nicaragua, Norway, Paraguay, and Turkey._
-<br>
-<sup>4</sup> _These fields are required **only** for bank transfers to Egypt._
+<sup>2</sup> _The fields `firstName` and `lastName` are mandatory for natural persons, and `companyName` is mandatory for legal entities (companies).  
+If a payout is sent to a company, only the `companyName` field must be completed.  
+If a payout is sent to an individual, only the `firstName` and `lastName` fields must be completed._
+
+***Important:***  
+* _The fields `firstName` and `lastName` do not support numbers or special characters, only letters._  
+* _The field `companyName` accepts all types of alphanumeric characters._  
+* _The combined length of the fields `firstName` and `lastName` or `companyName` cannot exceed 35 characters._
+
+<sup>3</sup> _These fields are mandatory for bank transfers **ONLY** to the following countries:  
+**Bosnia and Herzegovina, Bulgaria, Costa Rica, Dominican Republic, Egypt, Guatemala, Israel, Nicaragua, Norway, Paraguay, and Turkey.**_
+
+***Important:***  
+* _The combined length of the fields `Remitter -> firstName` and `Remitter -> lastName` or `Remitter -> companyName` cannot exceed 35 characters._  
+* _The field `Remitter → location → Address` cannot exceed 35 characters._
+
+<sup>4</sup> _These fields are mandatory **ONLY** for bank transfers to **Egypt**._
+
+***Important:***  
+* _The field `Location → City` cannot exceed 20 characters._  
+* _The field `Location → Address` cannot exceed 35 characters._
 
 {{% alert title="Important about Express Payouts" color="warning"%}}
 * Do **NOT** modify the downloaded file by adding new columns, sheets or changing the column names.

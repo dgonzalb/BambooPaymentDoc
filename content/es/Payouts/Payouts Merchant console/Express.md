@@ -72,9 +72,9 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 | **Payee.Phone** | No | Teléfono beneficiario. |
 | **Payee.Birthday** | No | Fecha nacimiento (YYYY-MM-DD). |
 | **Payee.Nationality** | No | Nacionalidad (ISO 2 dígitos). |
-| **Payee.Address** | Sí<sup>4</sup> | Dirección beneficiario. |
-| **Payee.City** | Sí<sup>4</sup> | Ciudad residencia. |
-| **Payee.ZipCode** | No | Código postal. |
+| **Payee.Location.Address** | Sí<sup>4</sup> | Dirección beneficiario. |
+| **Payee.Location.City** | Sí<sup>4</sup> | Ciudad residencia. |
+| **Payee.Location.ZipCode** | No | Código postal. |
 | **Payee.Document.Type** | Sí | [Tipo documento]({{< ref Variables.md >}}#document-types). |
 | **Payee.Document.Number** | Sí | Número documento. |
 | **Payee.BankAccount.Number** | Sí<sup>1</sup> | CBU/CVU (AR), CLABE (MX), etc. |
@@ -95,11 +95,28 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 
 <sup>1</sup> _Cuando utilice Transferencias Bancarias para **Argentina, Chile, Colombia, México, Perú y Uruguay**, estos parámetros son obligatorios. Para Transferencias Bancarias Instantáneas en Brasil, el objeto `payee.bankaccount` y sus parámetros no deben estar presentes en el request. Para Transferencias Bancarias a los países que requieren el campo `bankaccount.Swift`, solamente se debe completar `bankaccount.number` y dejar vacíos `bankaccount.type` y `bankaccount.codebank`._
 <br>
-<sup>2</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._
-<br>
-<sup>3</sup> _Estos campos son obligatorios **solamente** para hacer transferencias bancarias a los siguientes países: Bosnia y Herzegovina, Bulgaria, Costa Rica, República Dominicana, Egipto, Guatemala, Israel, Nicaragua, Noruega, Paraguay y Turquía._
-<br>
-<sup>4</sup> _Estos campos son obligatorios **solamente** para hacer transferencias bancarias a Egipto._
+<sup>2</sup> _Son obligatorios los campos `firstName` y `lastName` para persona física, y `companyName` para persona jurídica (empresa).  
+Si se envía un payout para empresa, solo se debe completar el campo `companyName`.  
+Si se envía un payout a una persona física, solo se deben completar los campos `firstName` y `lastName`._
+
+***Importante:***  
+* _Los campos `firstName` y `lastName` no soportan números ni caracteres especiales, únicamente letras._  
+* _El campo `companyName` sí acepta todo tipo de caracteres alfanuméricos._  
+* _La longitud combinada de los campos `firstName` y `lastName` o `companyName` no puede superar los 35 caracteres._
+
+<sup>3</sup> _Estos campos son obligatorios para transferencias bancarias **SOLAMENTE** a los siguientes países:  
+**Bosnia y Herzegovina, Bulgaria, Costa Rica, República Dominicana, Egipto, Guatemala, Israel, Nicaragua, Noruega, Paraguay y Turquía.**_
+
+***Importante:***  
+* _La longitud combinada de los campos `Remitter -> firstName` y `Remitter -> lastName` o `Remitter -> companyName` no puede superar los 35 caracteres._  
+* _El campo `Remitter → location → Address` no puede superar los 35 caracteres._
+
+<sup>4</sup> _Estos campos son obligatorios **SOLAMENTE** para transferencias bancarias a **Egipto**._
+
+***Importante:***  
+* _El campo `Location → City` no puede superar los 20 caracteres._  
+* _El campo `Location → Address` no puede superar los 35 caracteres._
+
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
 * **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.

@@ -65,9 +65,8 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 | `payee` → `companyName` | `string` | Sí<sup>3</sup> | Nombre de la empresa. | 
 | `payee` → `email` | `string` | No | Dirección de correo electrónico del Beneficiario. |  
 | `payee` → `phone` | `string` | No | Número de teléfono del Beneficiario. | 
-| `payee` → `nationalitiCode` | `string` | No | País de nacionalidad del beneficiario. Indicar country ISO code 2 dígitos. |
+| `payee` → `nationalityCode` | `string` | No | País de nacionalidad del beneficiario. Indicar country ISO code 2 dígitos. |
 | `payee` → `BirthDay` | `Date Time` | No | Fecha de nacimiento del beneficiario. Formato "YYYY-MM-DD". |
-| `payee` → `address` | `string` | No | Dirección del Beneficiario. | 
 | `Location` → `City` | `string` | Sí<sup>5</sup> | Ciudad de residencia del beneficiario. |
 | `Location` → `address` | `string` | Sí<sup>5</sup> | Dirección de residencia del beneficiario. |
 | `Location` → `zipCode` | `string` | No | Código postal de residencia del beneficiario. |
@@ -89,13 +88,25 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 
 <sup>1</sup> _Sólo aplica para Brasil usando Transferencia Bancaria Instantánea. En caso contrario, el objeto_ `payee.InstantPaymentData` _y sus parámetros no deben estar presentes en el request._<br>
 <sup>2</sup> _Cuando utilice Transferencias Bancarias para **Argentina, Chile, Colombia, México, Perú y Uruguay**, estos parámetros son obligatorios. Para Transferencias Bancarias Instantáneas en Brasil, el objeto `payee.bankaccount` y sus parámetros no deben estar presentes en el request. Para Transferencias Bancarias a los países que requieren el campo `bankaccount.Swift`, solamente se debe completar `bankaccount.number` y dejar vacíos `bankaccount.type` y `bankaccount.codebank`_<br>
-<sup>3</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`.<br>
-***Importante:*** Los campos `firstName` y `lastName` no soportan ni números ni caracteres especiales, solo letras. El campo `companyName` sí acepta todo tipo de caracteres alfanuméricos._<br>
+<sup>3</sup> _Son mandatorios los campos `firstName` y `lastName` para persona física y `companyName` para persona jurídica (empresa). Si se envía un payout para empresa solo se tiene que completar el campo `companyName`, y si se envía un payout a una persona física solo se tienen que completar los campos `firstName` y `lastName`._<br>
+***_Importante_***
+* _Los campos `firstName` y `lastName` no soportan ni números ni caracteres especiales, solo letras. El campo `companyName` sí acepta todo tipo de caracteres alfanuméricos._
+* _La longitud entre los 2 campos `firstName` y `lastName` o `companyName`  no puede superar los 35 caracteres._
 
 <sup>4</sup> _Estos campos son obligatorios para transferencias bancarias **SOLAMENTE** a los siguientes países:  
-   **Bosnia y Herzegovina**, **Bulgaria**, **Costa Rica**, **República Dominicana**, **Egipto**, **Guatemala**, **Israel**, **Nicaragua**, **Noruega**, **Paraguay** y **Turquía**. _<br>
+**Bosnia y Herzegovina, Bulgaria, Costa Rica, República Dominicana, Egipto, Guatemala, Israel, Nicaragua, Noruega, Paraguay y Turquía.**_
 
-<sup>5</sup> _Estos campos son obligatorios **solamente** para transferencias bancarias a **Egipto**._
+***Importante:***  
+* _La longitud combinada de los campos `Remitter -> firstName` y `Remitter -> lastName` o `Remitter -> companyName` no puede superar los 35 caracteres._  
+* _El campo `Remitter → location → Address` no puede superar los 35 caracteres._
+
+
+<sup>5</sup> _Estos campos son obligatorios **SOLAMENTE** para transferencias bancarias a **Egipto**._
+
+***Importante:***  
+* _El campo `Location → City` no puede superar los 20 caracteres._  
+* _El campo `Location → Address` no puede superar los 35 caracteres._
+
 
 
 #### Ejemplo del Request {#request-example}
