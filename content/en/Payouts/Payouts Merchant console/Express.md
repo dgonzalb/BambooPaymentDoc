@@ -71,6 +71,7 @@ Once you have the Excel file, you can fill it with the information of the Payout
 
 <sup>1</sup> _When using Bank Transfers for **Argentina, Chile, Colombia, Mexico, Peru, and Uruguay**, these parameters are mandatory. For Instant Bank Transfers in Brazil, the `payee.bankaccount` object and its parameters must not be included in the request. For Bank Transfers to countries that require the `bankaccount.Swift` field, only `bankaccount.number` should be completed, and `bankaccount.type` and `bankaccount.codebank` must be left empty._
 <br>
+<br>
 <sup>2</sup> _The fields `firstName` and `lastName` are mandatory for natural persons, and `companyName` is mandatory for legal entities (companies).  
 If a payout is sent to a company, only the `companyName` field must be completed.  
 If a payout is sent to an individual, only the `firstName` and `lastName` fields must be completed._

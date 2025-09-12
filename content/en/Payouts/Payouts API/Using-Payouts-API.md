@@ -67,7 +67,8 @@ The following table shows the mandatory and optional parameters to create a Payo
 <sup>3</sup> _The fields `firstName` and `lastName` are mandatory for natural persons, and `companyName` is mandatory for legal entities (companies). If a payout is sent to a company, only the `companyName` field must be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields must be completed._<br>
 ***Important:***  
 * _The fields `firstName` and `lastName` do not support numbers or special characters, only letters. The `companyName` field does accept all types of alphanumeric characters._<br>
-* _The length of the combined `firstName` and `lastName` fields or the `companyName` field cannot exceed 35 characters._<br>
+* _The length of the combined `firstName` and `lastName` fields or the `companyName` field cannot exceed 35 characters._
+
 <sup>4</sup> _These fields are mandatory for bank transfers **ONLY** to the following countries:  
 **Bosnia and Herzegovina, Bulgaria, Costa Rica, Dominican Republic, Egypt, Guatemala, Israel, Nicaragua, Norway, Paraguay, and Turkey.**_
 

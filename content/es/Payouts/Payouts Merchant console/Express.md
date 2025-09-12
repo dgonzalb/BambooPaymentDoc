@@ -95,6 +95,7 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 
 <sup>1</sup> _Cuando utilice Transferencias Bancarias para **Argentina, Chile, Colombia, México, Perú y Uruguay**, estos parámetros son obligatorios. Para Transferencias Bancarias Instantáneas en Brasil, el objeto `payee.bankaccount` y sus parámetros no deben estar presentes en el request. Para Transferencias Bancarias a los países que requieren el campo `bankaccount.Swift`, solamente se debe completar `bankaccount.number` y dejar vacíos `bankaccount.type` y `bankaccount.codebank`._
 <br>
+<br>
 <sup>2</sup> _Son obligatorios los campos `firstName` y `lastName` para persona física, y `companyName` para persona jurídica (empresa).  
 Si se envía un payout para empresa, solo se debe completar el campo `companyName`.  
 Si se envía un payout a una persona física, solo se deben completar los campos `firstName` y `lastName`._
