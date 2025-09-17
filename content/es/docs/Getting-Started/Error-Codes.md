@@ -115,6 +115,13 @@ Los errores del servicio Transactions empiezan por `TR`.
 | `TR033` | Cuotas no permitidas para tarjetas internacionales|El cliente debe utilizar una tarjeta no internacional para realizar la compra en cuotas|
 | `TR035` | Falta información bancaria | No se pudo procesar el reembolso a través de Payout, ya que el cliente no completó los datos bancarios. |
 | `TR036` | Datos bancarios no válidos | No se pudo procesar el reembolso a través de Payout, ya que los datos bancarios no son válidos o el beneficiario no coincide con los detalles bancarios. |
+| `TR039` | El monto proporcionado es inválido | Verificar que el monto sea un número válido y positivo. En caso de reembolsos, asegurar que no exceda el monto original de la transacción. |
+| `TR040` |  El email del cliente tiene formato incorrecto |Solicitar al cliente que verifique y corrija su dirección de email antes de reintentar la transacción. |
+| `TR041` | El token de autenticación 3DS es inválido | Generar un nuevo token de autenticación 3DS y reintentar la transacción. |
+| `TR042` | La autenticación 3DS ya ha sido procesada previamente | No es necesario reintentar. La autenticación ya está completa. |
+| `TR043` | La autenticación 3DS no aplica para esta transacción | Proceder con la transacción sin autenticación 3DS. |
+| `TR044` | No se encontró la autenticación 3DS solicitada |  Iniciar un nuevo proceso de autenticación 3DS. |
+| `TR045` | El tipo de servicio proporcionado es inválido | Usar uno de los valores válidos de service type. Actualmente solo se soporta `cybersource`. |
 | `TR075` | La respuesta de 3DSecure indica que debe solicitar la validación del cliente. | Respuesta de la entidad adquirente indicando que se requiere la validación del cliente (**Verified by Visa** o HighProtection siendo _Santander_). |
 | `TR076` | La autenticación del pagador falla. | La entidad adquirente indica que ha fallado la verificación adicional (o verificación en dos pasos) (HighProtection para _Santander_ o **Verified By Visa** para otros bancos).<br>El cliente debe ponerse en contacto con el banco emisor de la tarjeta o con el home banking del banco para comprobar si el servicio está habilitado.<br>Si está habilitado, verifique qué configuración tiene (verificación por email, SMS, token, etc) y vuelva a intentar la compra. |
 | `TR100` | La entidad adquirente rechaza por muchos motivos. | Contacta a [Soporte Bamboo](mailto:soportecomercios@bamboopayment.com) para más información. |
