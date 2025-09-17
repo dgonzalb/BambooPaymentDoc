@@ -116,13 +116,13 @@ Transaction errors always starts with `TR`.
 | `TR033` | Installments not allowed for international cards | The customer must use a non-international card to make the purchase in installments. |
 | `TR035` | Missing bank information | Refund via Payout couldn't be processed, as customer didn't complete bank data. |
 | `TR036` | Bank data not valid  | Refund via Payout couldn't be processed, as bank data is not valid or beneficiary doesn't match with bank details. |
-| `TR039` | The provided amount is invalid. Verify that the amount is a valid and positive number. In case of refunds, ensure it does not exceed the original transaction amount. |
-| `TR040` | The customer’s email has an incorrect format. Ask the customer to verify and correct their email address before retrying the transaction. |
-| `TR041` | The 3DS authentication token is invalid. Generate a new 3DS authentication token and retry the transaction. |
-| `TR042` | The 3DS authentication has already been processed. No need to retry. Authentication is already complete. |
-| `TR043` | 3DS authentication does not apply to this transaction. Proceed without 3DS authentication. |
-| `TR044` | The requested 3DS authentication was not found. Start a new 3DS authentication process. |
-| `TR045` | The provided service type is invalid. Use one of the valid service type values. Currently, only `cybersource` is supported. |
+| `TR039` | The provided amount is invalid | Verify that the amount is a valid and positive number. In the case of refunds, ensure it does not exceed the original transaction amount. |
+| `TR040` | The customer's email has an incorrect format | Ask the customer to verify and correct their email address before retrying the transaction. |
+| `TR041` | The 3DS authentication token is invalid | Generate a new 3DS authentication token and retry the transaction. |
+| `TR042` | The 3DS authentication has already been processed previously | No need to retry. The authentication is already complete. |
+| `TR043` | The 3DS authentication does not apply to this transaction | Proceed with the transaction without 3DS authentication. |
+| `TR044` | The requested 3DS authentication was not found | Start a new 3DS authentication process. |
+| `TR045` | The provided service type is invalid | Use one of the valid service type values. Currently only `cybersource` is supported. |
 | `TR075` | 3DSecure response indicates that it must require customer validation. | Acquirer response indicating that customer validation (**Verified by Visa** or HighProtection being _Santander_) is required. |
 | `TR076` | Payer authentication fails. | The acquirer indicates that the additional verification (or two-step verification) has failed (HighProtection for _Santander_ or **Verified By Visa** for other banks).<br>Your customer must contact the card issuer bank or the bank's home banking to check whether the service is enabled.<br>If it is enabled, verify what configuration it has (verification by email, SMS, token, etc) and then retry the purchase. |
 | `TR100` | The acquirer rejects for many reasons. | Contact [Bamboo support](mailto:merchantsupport@bamboopayment.com) for more information. |
