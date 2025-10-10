@@ -12,7 +12,7 @@ weight: 50
 The following tables show the bank code you can set in the parameter `payee.bankaccount.codebank` according to the country. 
 
 {{% alert title="Important" color="warning"%}}
-We currently do not have a list of supported bank names and codes for the following countries: **Bosnia and Herzegovina**, **Bulgaria**, **Costa Rica**, **Dominican Republic**, **Egypt**, **Guatemala**, **Israel**, **Nicaragua**, **Norway**, **Paraguay**, and **Turkey**.
+We currently do not have the list of supported bank names and codes for: **Bolivia**, **Bosnia and Herzegovina**, **Bulgaria**, **China**, **Costa Rica**, **Ecuador**, **Egypt**, **El Salvador**, **Guatemala**, **Honduras**, **Israel**, **Nicaragua**, **Norway**, **Panama**, **Paraguay**, **Dominican Republic**, and **Turkey**.
 {{% /alert %}}
 
 ### Argentina
@@ -709,6 +709,7 @@ We currently do not have a list of supported bank names and codes for the follow
 </div>
 </details>
 
+
 ## Document Types
 The following tables show the document types you must configure in the parameter `payee.document.type` according to the country.
 
@@ -732,6 +733,7 @@ The following tables show the document types you must configure in the parameter
 | CI | Identity Card | Individuals | Numeric or Alphanumeric | 8 or 9 |
 | RUN | Unique National Role | Individuals | Numeric or Alphanumeric | 8 or 9 |
 | RUT | Individuals Tax Role | Individuals and Companies | Numeric or Alphanumeric | 8 or 9 |
+
 
 ### Colombia
 | Abbreviation | Document name | Individuals / Companies | Type | Length |
@@ -842,6 +844,41 @@ The following tables show the document types you must configure in the parameter
 |:-:|---|---|:-:|:-:|
 | TCKN | Turkish National Identification Number | Individuals | Alphanumeric | 1 to 99 |
 
+### Bolivia
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CI | Identity Card | Individuals | Alphanumeric | Between 7 and 10 |
+
+### China
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| ID | Resident Identity Card | Individuals | Numeric or Alphanumeric | 18 |
+
+### Ecuador
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CI | Identity Card | Individuals | Numeric | 10 |
+| RUC | Single Taxpayer Registry | Companies | Numeric | 13 |
+| PASSPORT | International Travel Document | Individuals or Companies | Numeric or Alphanumeric | Between 6 and 15 |
+
+### El Salvador
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| DUI | Unique Identity Document | Individuals | Numeric | 9 |
+
+### Honduras
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| ID | Identity Card | Individuals | Numeric | 13 |
+| RTN | National Tax Registry | Companies | Numeric or Alphanumeric | 14 |
+
+### Panama
+| Abbreviation | Document name | Individuals / Companies | Type | Length |
+|:-:|---|---|:-:|:-:|
+| CEDULA | Identity Card | Individuals | Numeric or Alphanumeric | Between 7 and 15 |
+| RUC | Single Taxpayer Registry | Companies | Numeric or Alphanumeric | Between 7 and 12 |
+| PASSPORT | International Travel Document | Individuals or Companies | Numeric or Alphanumeric | Between 6 and 15 |
+
 ## Currencies
 The following table shows the currency available you can configure in the parameters `originalCurrencyIsoCode` and `destinationCurrencyIsoCode` of the Preview feature and the parameters `currency` and `destinationCurrency` for request Payouts.
 
@@ -868,6 +905,10 @@ The following table shows the currency available you can configure in the parame
 | `NOK` | Norwegian Krone |
 | `PYG` | Paraguayan Guarani |
 | `TRY` | Turkish Lira |
+| `CNY` | Chinese Yuan (Renminbi) |
+| `BOB` | Bolivian Peso |
+| `HNL` | Honduran Lempira |
+
 
 {{% alert title="Info" color="info"%}}
 In **Uruguay** we accept both currencies (UYU and USD), as well as in **Peru** (PEN and USD).
@@ -884,4 +925,4 @@ The following table shows the transfer types you can configure in the parameter 
 | `1` | Cash |
 | `2` | Bank Transfer |
 | `3` | Wallet |
-| `4` | Instant Bank Transfer (Only for 🇧🇷) |
+| `4` | Instant Payment (Pix or Breb) |

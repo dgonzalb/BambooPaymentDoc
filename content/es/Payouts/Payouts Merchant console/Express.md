@@ -65,6 +65,7 @@ Una vez tenga el archivo de Excel, puede diligenciarlo con la información de lo
 | **Reason** | No | Descripción del Payout. |
 | **Reference** | Sí | ID único (no debe repetirse en historial). |
 | **Type** | Sí | [Tipo de transferencia]({{< ref Variables.md >}}#transfer-types-for-payouts). |
+| **PaymentCode** | Sí <sup>5</sup>| Código del propósito del pago en China. Debe indicarse alguno de los códigos mencionados [aquí](../overview.html#considerations). |
 | **Payee.FirstName** | Sí<sup>2</sup> | Nombre beneficiario. |
 | **Payee.LastName** | Sí<sup>2</sup> | Apellido beneficiario. |
 | **Payee.CompanyName** | Sí<sup>2</sup> | Empresa (si aplica). |
@@ -118,24 +119,27 @@ Si se envía un payout a una persona física, solo se deben completar los campos
 * _El campo `Location → City` no puede superar los 20 caracteres._  
 * _El campo `Location → Address` no puede superar los 35 caracteres._
 
+<sup>5</sup> _Este campo es obligatorio **SOLAMENTE** para **China**._
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
 * **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.
 * La funcionalidad soporta un máximo de **100** registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.
 * Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.
 * Puede guardar el archivo utilizando cualquier nombre.
-* Cuando se utiliza PIX, es necesario configurar la clave PIX del beneficiario como se explica en la sección [Campos adicionales para PIX](#additional-columns-for-pix).
+* Cuando se utiliza PIX o BREB, es necesario configurar la clave del beneficiario como se explica en la sección [Campos adicionales para PIX o BREB](#additional-columns-for-pix).
 {{% /alert %}}
 
-#### Columnas adicionales para PIX {#additional-columns-for-pix}
-Al configurar PIX como tipo de pago del Payout (columna **Type** con el valor `4`), debe incluir una columna adicional de aqcuerdo con la clave PIX del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna **Notification_Url**, es decir, la columna **U** del archivo Excel:
+#### Columnas adicionales para PIX o BREB {#additional-columns-for-pix-or-breb}
+Al configurar **PIX o BREB** como tipo de pago del Payout (columna **Type** con el valor `4`), debe incluir una columna adicional de acuerdo con la clave **PIX o BREB** del beneficiario. Puede configurar cualquiera de las siguientes columnas, agregándolas junto a la columna **Notification_Url**, es decir, la columna **AI** del archivo Excel:
 
-* `PixDocument`: agregue esta columna para configurar el número CPF/CNPJ del beneficiario. El número de dígitos para **CPF** debe ser 11, y **CNPJ** debe ser 14.
-* `PixEmail`: agregue esta columna para configurar la dirección de correo electrónico del beneficiario.
-* `PixPhone`: agregue esta columna para configurar el número de teléfono del beneficiario. El número debe empezar por `+55`, y la celda debe estar configurada con formato de texto para permitir el uso del signo más.
-* `PixRandom`: agregue esta columna para configurar la clave aleatoria que genera el beneficiario.
+* `Key.Document`: agregue esta columna para configurar el número CPF/CNPJ del beneficiario en **PIX** o el documento válido en **BREB**. El número de dígitos para **CPF** debe ser 11, y **CNPJ** debe ser 14.  
+* `Key.Email`: agregue esta columna para configurar la dirección de correo electrónico del beneficiario en **PIX** o **BREB**.  
+* `Key.Phone`: agregue esta columna para configurar el número de teléfono del beneficiario. Para **PIX** el número debe empezar por **+55** y para **BREB** **NO** debe incluir el **+57**. La celda debe estar configurada con formato de texto para permitir el uso del signo más.  
+* `Key.Random`: agregue esta columna para configurar la clave aleatoria que genera el beneficiario para **PIX** o **BREB**.  
+* `Key.Commerce`: agregue esta columna para configurar la clave identificadora para las empresas en **BREB**.  
 
-Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, dos utilizan el número CPF/CNPJ y uno utiliza la clave aleatoria, debe incluir las columnas de la siguiente manera:
+
+Debe agregar una columna por cada clave diferente en sus pagos. Por ejemplo, si tiene cinco beneficiarios, uno utiliza la dirección de correo electrónico, uno utiliza el número de teléfono, un utilizan el número documento, uno utiliza la clave aleatoria y uno utiliza la clave de comercio, debe incluir las columnas de la siguiente manera:
 
 ![PrintScreen](/assets/Payouts/Payouts23_en.png)
 

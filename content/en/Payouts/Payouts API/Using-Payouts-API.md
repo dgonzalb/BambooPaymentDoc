@@ -30,11 +30,13 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `reason` | `string` | No | Description of the Payout. |
 | `destinationCurrency` | `string(3)` | Yes | ISO code of the currency in which the beneficiary will receive the payout. This parameter is not required for the _**USD2L**_ model, and the system will default to the currency of the destination country.<br>This currency must comply with your account's [payout model]({{< ref Payout-Concepts.md >}}#payout-models).<br>For example:<br><ul style="margin-bottom: initial;"><li>For _**USD2L**_, the `currency` must be _USD_, and `destinationCurrency` is optional.</li><li>For _**USD2USD**_, both `currency` and `destinationCurrency` must be _USD_.</li><li>For _**L2L**_, both must match the destination country's currency.</li></ul><br>[Find the currencies list here](../payouts-api/variables.html#currencies). |
 | `reference` | `string` | Yes | Unique identifier of the Payout defined by you.<br>_Ensure it is unique_. |
-| `type` | `integer` | Yes | Payout type. Assign any of these values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` for Instant Bank Transfers (Brazil)</li></ul> |
-| `InstantPaymentData` → `PixDocument` | `string` | Yes<sup>1</sup> | Payee's CPF/CNPJ number registered as a PIX key.<br>_Must be 11 digits for **CPF** or 14 for **CNPJ**._ |
-| `InstantPaymentData` → `PixEmail` | `string` | Yes<sup>1</sup> | Payee's email address registered as a PIX key.<br>_Must be a valid email._ |
-| `InstantPaymentData` → `PixPhone` | `string` | Yes<sup>1</sup> | Payee's phone number registered as a PIX key.<br>_Must start with `+55`._ |
-| `InstantPaymentData` → `PixRandom` | `string` | Yes<sup>1</sup> | Randomly generated PIX key assigned to the Payee. |
+| `type` | `integer` | Yes | Payout type. Assign any of these values:<br><ul style="margin-bottom: initial;"><li>`1` for Cash</li><li>`2` for Bank Transfer</li><li>`3` for Wallet</li><li>`4` Instant Payment (Pix o Breb)</li></ul> |
+| `paymentCode` | `string` | Yes<sup>6</sup> | Payment purpose code in China. One of the codes listed [**here**](../overview.html#china) must be provided. |
+| `InstantPaymentData` → `Document` | `string` | Yes<sup>1</sup> | Pix: The beneficiary’s CPF/CNPJ number configured as the Pix key. The number of digits for **CPF** must be 11 and for **CNPJ** must be 14.<br>Breb: The beneficiary’s document number configured as the Breb key. |
+| `InstantPaymentData` → `Email` | `string` | Yes<sup>1</sup> | Pix and Breb: The beneficiary’s email address configured as the Pix or Breb key.<br>_This parameter must be a valid email address._ |
+| `InstantPaymentData` → `Phone` | `string` | Yes<sup>1</sup> | Pix: The beneficiary’s phone number configured as the Pix key. The number must start with **+55**.<br>Breb: The beneficiary’s phone number configured as the Breb key. The number **MUST NOT** include **+57**. |
+| `InstantPaymentData` → `Random` | `string` | Yes<sup>1</sup> | Pix and Breb: The random key the beneficiary has generated as a Pix or Breb key. |
+| `InstantPaymentData` → `Commerce` | `string` | Yes<sup>1</sup> | Identifier key for businesses. |
 | `notification_Url` | `string` | No | Webhook to notify the Payout result. Learn more [here]({{< ref Payout-Webhook.md >}}). |
 | `payee` → `FirstName` | `string` | Yes<sup>3</sup> | Payee's first name. |
 | `payee` → `lastName` | `string` | Yes<sup>3</sup> | Payee's last name. |
@@ -62,15 +64,15 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `Remitter` → `location` → `Address` | `string` | Yes<sup>4</sup> | Remitter's physical address. |
 | `Remitter` → `location` → `ZipCode` | `string` | No | Remitter's postal/ZIP code. |
 
-<sup>1</sup> _Applies only to Brazil using Instant Bank Transfer. Otherwise, the object_ `payee.InstantPaymentData` _and its parameters must not be present in the request._<br>
+<sup>1</sup> _Applies only to Brazil (PIX) or Colombia (Breb) when using Instant Bank Transfer. Otherwise, the `payee.InstantPaymentData` object and its parameters must not be included in the request._<br>
 <sup>2</sup> _When using Bank Transfers for **Argentina, Chile, Colombia, Mexico, Peru, and Uruguay**, these parameters are mandatory. For Instant Bank Transfers in Brazil, the `payee.bankaccount` object and its parameters must not be included in the request. For Bank Transfers to countries that require the `bankaccount.Swift` field, only `bankaccount.number` should be completed, while `bankaccount.type` and `bankaccount.codebank` must be left empty._<br>
 <sup>3</sup> _The fields `firstName` and `lastName` are mandatory for natural persons, and `companyName` is mandatory for legal entities (companies). If a payout is sent to a company, only the `companyName` field must be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields must be completed._<br>
 ***Important:***  
 * _The fields `firstName` and `lastName` do not support numbers or special characters, only letters. The `companyName` field does accept all types of alphanumeric characters._<br>
 * _The length of the combined `firstName` and `lastName` fields or the `companyName` field cannot exceed 35 characters._
 
-<sup>4</sup> _These fields are mandatory for bank transfers **ONLY** to the following countries:  
-**Bosnia and Herzegovina, Bulgaria, Costa Rica, Dominican Republic, Egypt, Guatemala, Israel, Nicaragua, Norway, Paraguay, and Turkey.**_
+<sup>4</sup> _These fields are required for bank transfers **ONLY** to the following countries:_  
+**Bolivia, Bosnia and Herzegovina, Bulgaria, China, Costa Rica, Ecuador, Egypt, El Salvador, Guatemala, Honduras, Israel, Nicaragua, Norway, Panama, Paraguay, the Dominican Republic, and Turkey.**
 
 ***Important:***  
 * _The combined length of the fields `Remitter -> firstName` and `Remitter -> lastName` or `Remitter -> companyName` cannot exceed 35 characters._  
@@ -82,13 +84,14 @@ The following table shows the mandatory and optional parameters to create a Payo
 ***Important:***  
 * _The field `Location → City` cannot exceed 20 characters._  
 * _The field `Location → Address` cannot exceed 35 characters._
-
+<sup>6</sup> _This field is required **ONLY** for **China**._
 
 ### Request example
 Refer to the corresponding tab according to the payee's country.
 
 <!--tabID="countries"-->
-{{< tabs tabTotal="18" tabName1="Argentina" tabName2="Brazil" tabName3="Chile" tabName4="Colombia" tabName5="Mexico" tabName6="Peru" tabName7="Uruguay" tabName8="Bosnia and Herzegovina" tabName9="Bulgaria" tabName10="Costa Rica" tabName11="Dominican Republic" tabName12="Egypt" tabName13="Guatemala" tabName14="Israel" tabName15="Nicaragua" tabName16="Norway" tabName17="Paraguay" tabName18="Turkey" >}}
+{{< tabs tabTotal="24" tabName1="Argentina" tabName2="Brazil" tabName3="Chile" tabName4="Colombia" tabName5="Mexico" tabName6="Peru" tabName7="Uruguay" tabName8="Bosnia and Herzegovina" tabName9="Bulgaria" tabName10="Costa Rica" tabName11="Dominican Republic" tabName12="Egypt" tabName13="Guatemala" tabName14="Israel" tabName15="Nicaragua" tabName16="Norway" tabName17="Paraguay" tabName18="Turkey" tabName19="Bolivia" tabName20="China" tabName21="Ecuador" tabName22="Honduras" tabName23="Panama" tabName24="El Salvador"
+>}}
 
 {{< tab tabNum="1" >}}
 <br>
@@ -161,6 +164,65 @@ As mentioned before, the `payee.bankaccount` object should not be present in the
 {{< highlight json >}}
 {{< Payouts/Api/UsingPayoutsApi/CO/request_CO_COPtoCOP >}}
 {{< /highlight >}}
+
+<br>
+
+**Colombia: USD to COP using BREB**
+
+```json
+{
+    "country": "CO",
+    "amount": 519,
+    "currency": "USD",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 4,
+    "InstantPaymentData": {
+        "Email": "tcosta@mail.com"  // Can also be Document, Phone, Random or Commerce
+    },
+    "payee": {
+        "firstName": "Juan",
+        "lastName": "Garcia",
+        "email": "Juan@mail.com",
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "CC",
+            "number": "312111145"
+        }
+    },
+    "notification_Url": ""
+}
+```
+<br>
+
+**Colombia: COP to COP using BREB**
+
+```json
+{
+    "country": "CO",
+    "amount": 519,
+    "currency": "COP",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 4,
+    "InstantPaymentData": {
+        "Email": "tcosta@mail.com"  // Can also be Document, Phone, Random or Commerce
+    },
+    "payee": {
+        "firstName": "Juan",
+        "lastName": "Garcia",
+        "email": "Juan@mail.com",
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "CC",
+            "number": "312111145"
+        }
+    },
+    "notification_Url": ""
+}
+```
 
 {{< /tab >}}
 
@@ -352,6 +414,276 @@ As mentioned before, the `payee.bankaccount` object should not be present in the
 {{< /highlight >}}
 
 {{< /tab >}}
+
+
+{{< tab tabNum="19" >}}
+<br>
+
+**Bolivia: USD to BOB**
+```json
+{
+    "country": "BO",
+    "amount": 1000,
+    "currency": "USD",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 2,
+    "payee": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "email": null,
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "CI",
+            "number": "1234567A"
+        },
+        "bankAccount": {
+            "number": "1234567890",
+            "type": 1,
+            "swift": "BNBOBOLXXXX"
+        }
+    },
+    "remitter": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "birthDay": "1996-11-04",
+        "companyName": "michifusis",
+        "location": {
+            "city": "city",
+            "address": "address",
+            "zipCode": "zip"
+        },
+        "countryIsoCode": "AR"
+    },
+    "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="20" >}}
+<br>
+
+**China: USD to CNY**
+```json
+{
+    "country": "CN",
+    "amount": 1000,
+    "currency": "USD",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 2,
+    "paymentCode": "CGODDR",
+    "payee": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "email": null,
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "ID",
+            "number": "11010519491231002X"
+        },
+        "bankAccount": {
+            "number": "6222020200000000000",
+            "type": 1,
+            "swift": "ICBKCNBJGSU"
+        }
+    },
+    "remitter": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "birthDay": "1996-11-04",
+        "companyName": "michifusis",
+        "location": {
+            "city": "city",
+            "address": "address",
+            "zipCode": "zip"
+        },
+        "countryIsoCode": "AR"
+    },
+    "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="21" >}}
+<br>
+
+**Ecuador: USD to USD**
+```json
+{
+  "country": "EC",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "{{reference}}",
+  "type": 2,
+  "payee": {
+    "firstName": "Ari",
+    "lastName": "Carba",
+    "email": null,
+    "phone": "099999999",
+    "address": "address",
+    "document": {
+      "type": "CI",
+      "number": "1712345678"
+    },
+    "bankAccount": {
+      "number": "1234567890",
+      "type": 1,
+      "swift": "PACIEDQ1"
+    }
+  },"remitter": {
+            "firstName": "Ari",
+            "lastName": "Carba",
+            "birthDay": "1996-11-04",
+            "companyName": "michifusis",
+            "location": {
+              "city": "city",
+              "address": "address",
+              "zipCode": "zip"
+            },
+            "countryIsoCode": "AR"
+          },
+  "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="22" >}}
+<br>
+
+**Honduras: USD to HNL**
+```json
+{
+    "country": "HN",
+    "amount": 1000,
+    "currency": "USD",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 2,
+    "payee": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "email": null,
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "ID",
+            "number": "0801198012345"
+        },
+        "bankAccount": {
+            "number": "00001234567890",
+            "type": 1,
+            "swift": "BMILHNTEXXX"
+        }
+    },
+    "remitter": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "birthDay": "1996-11-04",
+        "companyName": "michifusis",
+        "location": {
+            "city": "city",
+            "address": "address",
+            "zipCode": "zip"
+        },
+        "countryIsoCode": "AR"
+    },
+    "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="23" >}}
+<br>
+
+**Panama: USD to USD**
+```json
+{
+  "country": "PA",
+  "amount": 1000,
+  "currency": "USD",
+  "reason": "string",
+  "reference": "{{reference}}",
+  "type": 2,
+  "payee": {
+    "firstName": "Ari",
+    "lastName": "Carba",
+    "email": null,
+    "phone": "099999999",
+    "address": "address",
+    "document": {
+      "type": "CEDULA",
+      "number": "8-123-456"
+    },
+    "bankAccount": {
+      "number": "040101234567",
+      "type": 1,
+      "swift": "BPAPUSPA"
+    }
+  },"remitter": {
+            "firstName": "Ari",
+            "lastName": "Carba",
+            "birthDay": "1996-11-04",
+            "companyName": "michifusis",
+            "location": {
+              "city": "city",
+              "address": "address",
+              "zipCode": "zip"
+            },
+            "countryIsoCode": "AR"
+          },
+  "notification_Url": "string"
+}
+```
+{{< /tab >}}
+{{< tab tabNum="24" >}}
+<br>
+
+**El Salvador: USD to USD**
+```json
+{
+    "country": "SV",
+    "amount": 1000,
+    "currency": "USD",
+    "reason": "string",
+    "reference": "{{reference}}",
+    "type": 2,
+    "payee": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "email": null,
+        "phone": "099999999",
+        "address": "address",
+        "document": {
+            "type": "DUI",
+            "number": "012345678"
+        },
+        "bankAccount": {
+            "number": "0012345678",
+            "type": 1,
+            "swift": "BACUSVSS"
+        }
+    },
+    "remitter": {
+        "firstName": "Ari",
+        "lastName": "Carba",
+        "birthDay": "1996-11-04",
+        "companyName": "michifusis",
+        "location": {
+            "city": "city",
+            "address": "address",
+            "zipCode": "zip"
+        },
+        "countryIsoCode": "AR"
+    },
+    "notification_Url": "string"
+}
+```
+{{< /tab >}}
+
 
 {{< /tabs >}}
 

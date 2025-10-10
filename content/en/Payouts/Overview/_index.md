@@ -30,11 +30,12 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 * ***Flexibility*** - You or your payee can assume the payout fee.
 
 ## Payout models
-Bamboo Payouts offers three models that means a combination of origin and destination currency.
+Bamboo Payouts offers four models that represent a combination of source and destination currencies.
 
 * **USD to Local (USD2L)**: the payout is requested in US Dollars and the payee receives the funds in local currency.
 * **Local to Local (L2L)**: the payout is requested in local currency and the payee receives the funds in local currency. In this model, the country of origin and recipient must be the same.
-* **USD to USD (USD2USD)**: the payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru and Uruguay.
+* **USD to USD (USD2USD)**: The payout is requested in U.S. dollars and the beneficiary receives the funds in U.S. dollars.
+* **Local to Local (L2L) with USD balance**: the payout is requested in local currency and the beneficiary receives the funds in local currency, but the balance is held in USD.
 
 ## Coverage
 
@@ -48,26 +49,33 @@ Bamboo Payouts offers three models that means a combination of origin and destin
 | Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
 | Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |-->
 
-| Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Brazil | `BR` | | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  |
-| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
-| Bosnia and Herzegovina | `BA` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Bulgaria | `BG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Costa Rica | `CR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Dominican Republic | `DO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Egypt | `EG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Guatemala | `GT` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Israel | `IL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Nicaragua | `NI` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Norway | `NO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Paraguay | `PY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
-| Turkey | `TR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |
+| Country | ISO Code | Local Bank Transfer | Instant Transfer | Wallet | USD2L | L2L | USD2USD | L2L<br>usd balance |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Argentina  | `AR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Brazil | `BR` |  | <img src="/assets/check_mark_64.png" width="15px"/> |   | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Chile  | `CL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Colombia  | `CO` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Mexico  | `MX` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Peru  | `PE` | <img src="/assets/check_mark_64.png" width="15px"/> |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Uruguay  | `UY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> | <img src="/assets/check_mark_64.png" width="15px"/> |
+| Bosnia and Herzegovina | `BA` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Bulgaria | `BG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Costa Rica | `CR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Dominican Republic | `DO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Egypt | `EG` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Guatemala | `GT` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Israel | `IL` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Nicaragua | `NI` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Norway | `NO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Paraguay | `PY` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Turkey | `TR` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Bolivia | `BO` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| China | `CN` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Ecuador | `EC` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| El Salvador | `SV` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+| Honduras | `HN` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |
+| Panama | `PA` | <img src="/assets/check_mark_64.png" width="15px"/> |  |  |  |  | <img src="/assets/check_mark_64.png" width="15px"/> |  |
+
 
 {{% alert title="Important" color="info"%}}
 For **Peru**, payouts in **USD** can only be made to **banks**, while payouts in **Peruvian Soles (PEN)** can be sent to both **banks** and **wallets**.
@@ -148,6 +156,13 @@ Payments in all countries are processed in **real-time**. There are no cut-off t
           <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Norway</span>
           <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Paraguay</span>
           <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Turkey</span>
+                      <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Bolivia</span>
+              <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">China</span>
+                <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Ecuador</span>
+                  <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">El Salvador</span>
+                    <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Honduras</span>
+                    <span style="background: white; padding: 6px 12px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); font-size: 14px;">Panama</span>
+        </div>
         </div>
       </div>
       <div style="background: #ffc107; color: #212529; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 120px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
@@ -183,6 +198,20 @@ When using the Payouts feature, consider the specific requirements for each paye
 
 * The bank account **cannot** exceed 16 characters. Format: `DDDDDDDDDDDDDDDD` where `D` is a digit.
 Example: `1234567890123456`.
+
+
+### China {#china}
+* Does not use IBAN. Enter the account number directly (**up to 35 numeric characters**).  
+Example: `1234567890`
+* The `PaymentCode` is a 6-letter field and must be one of the following codes.
+| **Purpose of PaymentCode** | **Description** |
+|-----------------------------|-----------------|
+| `CGODDR` | Goods Trade: such as sell or purchase for goods, import or export of goods, procurement of goods, Letter of Credit or documentary collection related to goods trade, prepayment of goods, etc. |
+| `CCTFDR` | Capital Account: capital injection, capital reduction, capital payment, investment, shareholder loan, non-trade fund transfer, other capital payments as approved by relevant regulatory authorities. |
+| `CSTRDR` | Service Trade: such as public utility, rent, audit fee, hotel and accommodation fee, legal fee, advertising and promotion fee, copyright and license fee, service contract fee, design fee, research and development fee, registration fee, medical expenses, etc. |
+| `CCDNDR` | Current Account: donation to charity organizations. |
+| `COCADR` | Current Account: dividend payment, profit distribution, tax payment, scholarships. |
+
 
 ### Colombia
 
@@ -281,3 +310,23 @@ Example: `21790064060296600`.
 | BBVA | `XXXXXXXXX` | 9 | Account number without filling with 0 on the left only numeric digits. | `123456789` |
 | HSBC | `XXXXXXXXXX` | 10 | Filled with 0 to the left. | `0123456789` |
 | Heritage | `XXXXXXXYY` | 9 | <ul style="margin-bottom: initial;"><li>`X` -> Account number filled with 0 on the left.</li><li>`Y` -> Sub Account number.</li></ul> | `012345678` 
+
+### Bolivia
+* Does not use IBAN. Enter the account number directly (**between 6 and 35 numeric characters**).  
+Example: `1234567890`
+
+### Ecuador
+* Does not use IBAN. Enter the account number directly (**up to 35 alphanumeric characters**).  
+Example: `ABCD1234567890`
+
+### El Salvador
+* Does not use IBAN. Enter the account number directly (**up to 35 alphanumeric characters**).  
+Example: `ABCD1234567890`
+
+### Honduras
+* Does not use IBAN. Enter the account number directly (**up to 35 numeric characters**).  
+Example: `1234567890`
+
+### Panama
+* Does not use IBAN. Enter the account number directly (**up to 35 alphanumeric characters**).  
+Example: `ABCD1234567890`

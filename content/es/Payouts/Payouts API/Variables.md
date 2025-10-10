@@ -12,7 +12,7 @@ weight: 60
 Las siguientes tablas muestran el código bancario que puede asignar en el parámetro `payee.bankaccount.codebank` en función del país.
 
 {{% alert title="Importante" color="warning"%}}
-Actualmente no disponemos del listado de nombres y códigos bancarios soportados para: **Bosnia y Herzegovina**, **Bulgaria**, **Costa Rica**, **República Dominicana**, **Egipto**, **Guatemala**, **Israel**, **Nicaragua**, **Noruega**, **Paraguay** y **Turquía**.
+Actualmente no disponemos del listado de nombres y códigos bancarios soportados para: **Bolivia**, **Bosnia y Herzegovina**, **Bulgaria**, **China**, **Costa Rica**, **Ecuador**, **Egipto**, **El Salvador**, **Guatemala**, **Honduras**, **Israel**, **Nicaragua**, **Noruega**, **Panamá**, **Paraguay**, **República Dominicana** y **Turquía**.
 {{% /alert %}}
 
 ### Argentina
@@ -843,6 +843,42 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 |:-:|---|---|:-:|:-:|
 | TCKN | Número de identificación nacional turco |  Individuos| Alfanumérico | Entre 1 y 99 |
 
+### Bolivia
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| CI | Cédula de Identidad | Individuos | Alfanumérico | Entre 7 y 10 |
+
+### China
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| ID | Tarjeta de Identidad de Residente | Individuos | Numérico o Alfanumérico | 18 |
+
+### Ecuador
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| CI | Cédula de Identidad | Individuos | Numérico | 10 |
+| RUC | Registro Único de Contribuyentes | Compañías | Numérico | 13 |
+| PASSPORT | Documento de Viaje Internacional | Individuos o Compañías | Numérico o Alfanumérico | Entre 6 y 15 |
+
+### El Salvador
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| DUI | Documento Único de Identidad | Individuos | Numérico | 9 |
+
+### Honduras
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| ID | Tarjeta de Identidad | Individuos | Numérico | 13 |
+| RTN | Registro Tributario Nacional | Compañías | Numérico o Alfanumérico | 14 |
+
+### Panamá
+| Abreviatura | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
+|:-:|---|---|:-:|:-:|
+| CEDULA | Cédula de Identidad | Individuos | Numérico o Alfanumérico | Entre 7 y 15 |
+| RUC | Registro Único de Contribuyentes | Compañías | Numérico o Alfanumérico | Entre 7 y 12 |
+| PASSPORT | Documento de Viaje Internacional | Individuos o Compañías | Numérico o Alfanumérico | Entre 6 y 15 |
+
+
 ## Monedas {#currencies}
 La siguiente tabla muestra las divisas disponibles que puede configurar en los parámetros `originalCurrencyIsoCode` y `destinationCurrencyIsoCode` de la función Payout Preview y los parámetros `currency` y `destinationCurrency` para solicitud de Payouts.
 
@@ -869,6 +905,10 @@ La siguiente tabla muestra las divisas disponibles que puede configurar en los p
 | `NOK` | Corona noruega |
 | `PYG` | Guaraní paraguayo |
 | `TRY` | Lira turca |
+| `CNY` | Yuan chino (Renminbi) |
+| `BOB` | Peso Boliviano |
+| `HNL` | Lempira Hondureño |
+
 
 {{% alert title="Info" color="info"%}}
 En **Uruguay** admitimos ambas monedas (UYU y USD), al igual que en **Perú** (PEN y USD).
@@ -885,4 +925,4 @@ La siguiente tabla muestra los tipos de transferencias que puede configurar en e
 | `1` | Efectivo |
 | `2` | Transferencia Bancaria |
 | `3` | Wallet |
-| `4` | Transferencias Bancarias Instantáneas (Solo para 🇧🇷) |
+| `4` | Instant Payment (Pix o Breb) |
