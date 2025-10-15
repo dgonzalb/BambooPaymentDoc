@@ -64,7 +64,7 @@ The following table shows the mandatory and optional parameters to create a Payo
 | `Remitter` → `location` → `Address` | `string` | Yes<sup>4</sup> | Remitter's physical address. |
 | `Remitter` → `location` → `ZipCode` | `string` | No | Remitter's postal/ZIP code. |
 
-<sup>1</sup> _Applies only to Brazil (PIX) or Colombia (Breb) when using Instant Bank Transfer. Otherwise, the `payee.InstantPaymentData` object and its parameters must not be included in the request._<br>
+<sup>1</sup> _Applies only to Brazil (PIX) or Colombia (Breb) when using `type` Instant Bank Transfer. Otherwise, the `payee.InstantPaymentData` object and its parameters must not be included in the request._<br>
 <sup>2</sup> _When using Bank Transfers for **Argentina, Chile, Colombia, Mexico, Peru, and Uruguay**, these parameters are mandatory. For Instant Bank Transfers in Brazil, the `payee.bankaccount` object and its parameters must not be included in the request. For Bank Transfers to countries that require the `bankaccount.Swift` field, only `bankaccount.number` should be completed, while `bankaccount.type` and `bankaccount.codebank` must be left empty._<br>
 <sup>3</sup> _The fields `firstName` and `lastName` are mandatory for natural persons, and `companyName` is mandatory for legal entities (companies). If a payout is sent to a company, only the `companyName` field must be completed, and if a payout is sent to an individual, only the `firstName` and `lastName` fields must be completed._<br>
 ***Important:***  
@@ -116,7 +116,7 @@ Refer to the corresponding tab according to the payee's country.
 {{< tab tabNum="2" >}}
 <br>
 
-As mentioned before, the `payee.bankaccount` object should not be present in the request. Therefore, when using _Instant Bank Transfers_ it must be sent as follows:
+As mentioned before, the `payee.bankaccount` object should not be present in the request. Therefore, when using _InstantPayment_ it must be sent as follows:
 
 **Brazil: From USD to BRL:**
 {{< highlight json >}}
