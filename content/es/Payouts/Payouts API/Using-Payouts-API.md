@@ -108,6 +108,8 @@ La siguiente tabla muestra los parámetros obligatorios y opcionales para crear 
 ***Importante:***  
 * _El campo `Location → City` no puede superar los 20 caracteres._  
 * _El campo `Location → Address` no puede superar los 35 caracteres._
+
+
 <sup>6</sup> _Este campo es obligatorio **SOLAMENTE** para **China**._
 
 

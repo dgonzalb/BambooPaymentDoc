@@ -84,6 +84,8 @@ The following table shows the mandatory and optional parameters to create a Payo
 ***Important:***  
 * _The field `Location → City` cannot exceed 20 characters._  
 * _The field `Location → Address` cannot exceed 35 characters._
+
+
 <sup>6</sup> _This field is required **ONLY** for **China**._
 
 ### Request example
