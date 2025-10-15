@@ -824,7 +824,7 @@ The following tables show the document types you must configure in the parameter
 | Abbreviation | Document Name | Individuals / Companies | Type | Length |
 |:-:|---|---|:-:|:-:|
 | CEDULA | Citizen Identification Card | Individuals | Alphanumeric | 1 to 99 |
-| RUC |  | Companies | Alphanumeric | 1 to 99 |
+| RUC | Single Taxpayer Registry | Companies | Alphanumeric | 1 to 99 |
 
 ### Norway {#norway}
 | Abbreviation | Document Name | Individuals / Companies | Type | Length |

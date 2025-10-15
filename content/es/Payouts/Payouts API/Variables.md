@@ -823,7 +823,7 @@ Las siguientes tablas muestran los tipos de documento que debe configurar en el 
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
 |:-:|---|---|:-:|:-:|
 | CEDULA | Cédula de Identificación Ciudadana | Individuos | Alfanumérico | Entre 1 y 99 |
-| RUC |  | Compañias | Alfanumérico | Entre 1 y 99 |
+| RUC | Registro Único de Contribuyente | Compañias | Alfanumérico | Entre 1 y 99 |
 
 ### Noruega {#norway}
 | Abreviación | Nombre del documento | Individuos / Compañías | Tipo | Longitud |
