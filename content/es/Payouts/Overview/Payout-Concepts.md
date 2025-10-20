@@ -29,6 +29,9 @@ El Payout se solicita en moneda local y el beneficiario recibe los fondos en mon
 ### USD to USD (USD2USD)
 El Payout se solicita en dólares estadounidenses y el beneficiario recibe los fondos en dólares estadounidenses. Actualmente, este modelo sólo está disponible en Perú y Uruguay.
 
+### Local to Local (L2L) con balance en USD ###
+El payout se solicita en moneda local y el beneficiario recibe los fondos en moneda local, pero el balance es en USD.
+
 ## Payout
 _Payout_ se refiere a la dispersión de fondos a un tercero utilizando los fondos depositados en la cuenta del comercio. 
 

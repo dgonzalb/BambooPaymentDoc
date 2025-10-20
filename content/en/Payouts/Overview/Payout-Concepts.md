@@ -41,6 +41,9 @@ The payout is requested in local currency and the payee receives the funds in lo
 ### USD to USD (USD2USD)
 The payout is requested in US Dollars and the payee receives the funds in US Dollars. Currently, this model is only available in Peru and Uruguay.
 
+### Local to Local (L2L) with USD balance ###
+The payout is requested in local currency and the beneficiary receives the funds in local currency, but the balance is held in USD.
+
 ## Sanction screening
 _Sanction screening_ lets us know if the merchant is making payouts to legally sanctioned persons. This process is essential as an Anti-Money Laundering (AML) and Payout limits control.
 
