@@ -4,7 +4,7 @@ linkTitle: "Webhooks"
 date: 2023-08-02T08:41:05-05:00
 description: >
   You can implement a service to receive and process notifications sent from the Bamboo Payment systems.
-weight: 60
+weight: 70
 ---
 
 This service is necessary in some of the transaction flows where the process cannot be completed synchronously, so the final status of the transaction will be informed asynchronously once it has been obtained.

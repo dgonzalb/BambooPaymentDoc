@@ -4,7 +4,7 @@ linkTitle: "Anti-fraud"
 date: 2023-08-02T08:43:44-05:00
 Description: >
   All the purchases received through API or Redirection flow for merchants in the [Payments Facilitator]({{< ref "Concepts.md">}}#payfac-model) model, are evaluated by the anti-fraud system.
-weight: 50
+weight: 60
 ---
 
 ## Parameters to send when making a purchase

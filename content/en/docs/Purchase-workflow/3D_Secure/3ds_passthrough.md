@@ -4,11 +4,14 @@ linkTitle: "3DS Pass-through"
 date: 2024-08-02T08:43:44-05:00
 Description: >
   Bamboo supports 3D Secure (3DS) as a pass-through with acquirers in Latin America by sending the cardholder authentication result when completing the payment.
-weight: 60
+weight: 70
 tags: ["subtopic"]
 ---
 
-3D Secure (3DS) is an authentication protocol designed to enhance the security of online transactions by verifying the cardholder before completing the payment. In Bamboo’s 3DS Pass-through flow, authentication is handled via an external authentication provider, known as an External MPI. This method allows merchants to use third-party authentication data to securely complete transactions without performing the authentication directly within Bamboo’s platform. It’s an ideal solution for merchants who prefer or require external control over the authentication process.
+External authentication enables merchants to perform 3DS verification through a third-party provider and submit the result in the payment request.  
+This section describes how to structure the `ThreeDS` object and include authentication fields when using `ThreeDSAuthMethod="EXTERNAL"`.
+
+----
 
 ## ThreeDS Object
 ### Request Fields
