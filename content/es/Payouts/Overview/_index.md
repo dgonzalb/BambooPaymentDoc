@@ -25,7 +25,7 @@ Puede configurar la tasa del Payout para que sea asumida por usted o por el bene
 * ***Disponibilidad*** - Ofrecemos transferencias bancarias y otras transferencias alternativas, como Nequi en Colombia.
 * ***Tecnología*** - Conéctese rápida y fácilmente usando nuestra API para todos los países.
 * ***Fiabilidad*** - Expertos de la industria crearon nuestra solución.
-* ***Cobertura*** - ¡Nuestro servicio está en 7 países y contando!
+* ***Cobertura*** - ¡Nuestro servicio está en 24 países y contando!
 * ***Transparencia*** - Obtendrá una consola fácil de navegar con saldos disponibles en tiempo real.
 * ***Flexibilidad*** - Usted o su beneficiario pueden asumir la tasa del Payout.
 

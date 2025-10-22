@@ -25,7 +25,7 @@ You can configure the Payout fee to be assumed by you or the payee. For more inf
 * ***Availability*** - We offer Bank Transfers and other alternative transfers, such as Nequi in Colombia.
 * ***Technology*** - Connect fast and easily using our API for all countries.
 * ***Reliability*** - Industry experts created our solution.
-* ***Coverage*** - Our service is in 7 countries and counting!
+* ***Coverage*** - Our service is in 24 countries and counting!
 * ***Transparency*** - You get an easy-to-navigate Merchant panel with balances available in real time!
 * ***Flexibility*** - You or your payee can assume the payout fee.
 

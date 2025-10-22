@@ -123,7 +123,7 @@ Si se envía un payout a una persona física, solo se deben completar los campos
 
 {{% alert title="Importante sobre Payouts exprés" color="warning"%}}
 * **No** modifique el archivo descargado agregando nuevas columnas, hojas o cambiando el nombre de las columnas.
-* La funcionalidad soporta un máximo de **100** registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.
+* La funcionalidad soporta un máximo de **1000** registros por archivo. Si necesita incluir más, repita el procedimiento para los Payouts restantes.
 * Si ya tiene la plantilla descargada, no es necesario descargarla de nuevo.
 * Puede guardar el archivo utilizando cualquier nombre.
 * Cuando se utiliza PIX o BREB, es necesario configurar la clave del beneficiario como se explica en la sección [Campos adicionales para PIX o BREB](#additional-columns-for-pix).

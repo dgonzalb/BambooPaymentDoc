@@ -100,7 +100,7 @@ If a payout is sent to an individual, only the `firstName` and `lastName` fields
 
 {{% alert title="Important about Express Payouts" color="warning"%}}
 * Do **NOT** modify the downloaded file by adding new columns, sheets or changing the column names.
-* The feature supports a maximum of **100** records per file. If you need to include more, repeat the procedure for the remaining payouts.
+* The feature supports a maximum of **1000** records per file. If you need to include more, repeat the procedure for the remaining payouts.
 * If you already have the template downloaded, it is not required to download it again.
 * You can save the file using any name of your choice.
 * When using PIX or BREB, it is necessary to set up the beneficiary’s key as explained in the section [Additional fields for PIX or BREB](#additional-columns-for-pix).
